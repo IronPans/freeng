@@ -1,0 +1,119 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        复选框允许用户从一组中选择多个选项。
+      </p>
+      <ul class="free-ul-padding">
+        <li>多种可选的主题样式</li>
+      </ul>
+      <hr>
+      <h3 class="free-head-title">API 选项</h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-checkbox</h3>
+        <p>单个复选框</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>label</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>自定义文本，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>name</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置复选框的名称，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>checked</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否默认选中，默认为false，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>disabled</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否禁用，默认为false，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>color</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>color</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置主题样式，可选</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-checkbox label="多选框" [checked]="true"></free-checkbox>
+            <free-checkbox label="多选框"></free-checkbox>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-checkbox label="多选框" [checked]="true"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox label="多选框"&gt;&lt;/free-checkbox&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-checkbox *ngFor="let t of theme" color="{{t.name}}" label="Theme: {{t.name}}"
+                           name="theme" [checked]="true"></free-checkbox>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-checkbox color="green" label="Theme: green" name="theme" [checked]="true"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox color="blue" label="Theme: blue" name="theme"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox color="lightblue" label="Theme: lightblue" name="theme"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox color="yellow" label="Theme: yellow" name="theme"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox color="red" label="Theme: red" name="theme"&gt;&lt;/free-checkbox&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Disabled</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-checkbox [disabled]="true" label="disabled checkbox"></free-checkbox>
+            <free-checkbox [disabled]="true" label="disabled checkbox" [checked]="true"></free-checkbox>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-checkbox [disabled]="true" label="disabled checkbox"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox [disabled]="true" label="disabled checkbox" [checked]="true"&gt;&lt;/free-checkbox&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+</div>

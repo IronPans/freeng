@@ -1,0 +1,110 @@
+:host /deep/ .free-calendar {
+  background: #009688;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  border-radius: 2px;
+  overflow: hidden; }
+
+:host /deep/ .calendar {
+  color: #333; }
+
+:host /deep/ .calendar .calendar-header {
+  background: rgba(0, 0, 0, 0.7); }
+
+:host /deep/ .calendar .calendar-header,
+:host /deep/ .calendar .calendar-body,
+:host /deep/ .calendar .calendar-tool {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-box-lines: multiple;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center; }
+
+:host /deep/ .calendar .calendar-body .item,
+:host /deep/ .calendar .calendar-header .item {
+  text-align: center; }
+
+:host /deep/ .calendar .calendar-header .item {
+  height: 2rem !important;
+  line-height: 2rem !important;
+  color: #fff; }
+
+:host /deep/ .calendar .calendar-body {
+  background: #fff; }
+
+:host /deep/ .calendar .calendar-body .item.current {
+  background-color: #E2E2E2;
+  color: #666; }
+
+:host /deep/ .calendar .calendar-body .item.selected {
+  color: #fff;
+  background: #1ABC9C; }
+
+:host /deep/ .calendar .calendar-body .pass,
+:host /deep/ .calendar .calendar-body .future {
+  color: #999 !important; }
+
+:host /deep/ .calendar .calendar-body .item {
+  cursor: pointer;
+  color: #333;
+  background: rgba(78, 178, 207, 0);
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+:host /deep/ .calendar .calendar-tool {
+  position: relative;
+  padding: 20px 15px 19px;
+  color: #fff; }
+
+:host /deep/ .calendar .calendar-tool .calendar-week {
+  width: 3.5rem; }
+
+:host /deep/ .calendar .calendar-tool .calendar-select {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -webkit-box-lines: multiple; }
+
+:host /deep/ .calendar .calendar-tool .calendar-select .calendar-select-prev,
+:host /deep/ .calendar .calendar-tool .calendar-select .calendar-select-next {
+  color: #fff;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  cursor: pointer;
+  line-height: 2rem;
+  border-radius: 50%; }
+
+:host /deep/ .calendar .calendar-tool .calendar-select .calendar-select-prev:hover,
+:host /deep/ .calendar .calendar-tool .calendar-select .calendar-select-next:hover {
+  color: #009688;
+  background: #fff; }
+
+:host /deep/ .calendar .calendar-tool .calendar-today {
+  font-size: 1.5rem; }
+
+:host /deep/ .free-calendar {
+  box-shadow: 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1), 0 0.5em 0 -0.25em #f2f2f2, 0 0.5em 0.1875em -0.25em rgba(0, 0, 0, 0.1), 0 1em 0 -0.5em #e5e5e5, 0 1em 0.1875em -0.5em rgba(0, 0, 0, 0.1); }
+
+/*# sourceMappingURL=calendar.component.css.map */

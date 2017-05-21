@@ -1,0 +1,59 @@
+@import "../../../assets/sass/variables";
+.free-modal {
+  position: fixed;
+  background: #222733;
+  overflow: hidden;
+  min-width: 10rem;
+  border-radius: 2px;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.free-modal .free-modal-header,
+.free-modal-footer {
+  position:relative;
+  padding: .5rem .75rem;
+  background: rgba(0,0,0,0.1);
+}
+
+.free-modal-footer {
+  text-align: right;
+}
+
+.free-modal .free-modal-close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.2;
+  line-height: 1rem;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.free-modal .free-modal-close:hover {
+  background: #1c1d24;
+  opacity: 0.5;
+}
+
+.free-modal .free-modal-content {
+  padding: .75rem;
+  color: #fff;
+}
+
+@each $theme, $color in $theme {
+  :host-context(.free-#{$theme}) /deep/ {
+    .free-modal {
+      background: $color;
+    }
+  }
+
+  .free-modal.free-#{$theme} {
+    background: $color !important;
+  }
+}

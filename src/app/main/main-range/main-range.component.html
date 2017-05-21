@@ -1,0 +1,108 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        范围控件允许用户通过沿滑杆或轨道移动滑块旋钮从一系列值中进行选择。
+      </p>
+      <h3 class="free-head-title">API 选项</h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-range</h3>
+        <p>单个范围控件</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>value</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置当前值。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>min</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置最小值，默认为0</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>max</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置最大值，默认为100</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>color</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置主题色</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-range></free-range>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-range&gt;&lt;/free-range&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Min and Max</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-range [min]="10"></free-range>
+            <free-range [min]="-5" [max]="80"></free-range>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-range [min]="10"&gt;&lt;/free-range&gt;
+              &lt;free-range [min]="-5" [max]="80"&gt;&lt;/free-range&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-range [value]="20" color="red"></free-range>
+            <free-range [value]="20" color="lightblue"></free-range>
+            <free-range [value]="20" color="green"></free-range>
+            <free-range [value]="20" color="yellow"></free-range>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-range [value]="20" color="red"&gt;&lt;/free-range&gt;
+              &lt;free-range [value]="20" color="lightblue"&gt;&lt;/free-range&gt;
+              &lt;free-range [value]="20" color="green"&gt;&lt;/free-range&gt;
+              &lt;free-range [value]="20" color="yellow"&gt;&lt;/free-range&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,83 @@
+@import "../../../assets/sass/mixin";
+:host /deep/ {
+  .free-select {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  .free-select-input label {
+    @include flexbox;
+    position: relative;
+    width: calc(100% - 25px);
+    height: 100%;
+    padding: 5px 10px 0 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: transparent;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .free-select-input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .free-select-input:before {
+    font-family: FontAwesome;
+    content: "\f0dd";
+    position:absolute;
+    right: 0;
+    top: 50%;
+    display: inline-block;
+    padding: 0 .5rem;
+    line-height: 0;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+
+  .free-select-menu {
+    position: absolute;
+    top:0;
+    left: 0;
+    @include boxShadow;
+    background: #fff;
+    min-width: 100%;
+    max-height: 10rem;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .free-select-item {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .free-select-item:hover {
+    background: #eee;
+  }
+
+  .free-select-item-content {
+    @include flexbox;
+    padding: 5px 10px;
+    white-space: nowrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .free-select-item.free-select-active {
+    background: #eee;
+    font-weight: bold;
+  }
+}

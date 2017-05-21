@@ -1,0 +1,21 @@
+@import '../../../assets/sass/mixin';
+.main-container free-accordion-group{
+  margin-bottom: .75rem;
+}
+
+.main-container free-panel{
+  margin-bottom: .75rem;
+}
+
+:host /deep/ .main-container .accordion-content {
+  border: 1px solid rgba(120, 130, 140, 0.5);
+  border-top: none;
+}
+
+:host /deep/ .main-container .accordion-content .accordion-inner {
+  padding: .5rem !important;
+}
+
+:host /deep/ .main-point {
+  padding: 0 10px;
+}

@@ -1,0 +1,120 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        星星评分
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项</h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-rating</h3>
+        <p>单个星星评分框。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>value</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置当前值。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>color</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置主题色</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>readonly</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否只读，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>监听change事件</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-rating></free-rating>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-rating&gt;&lt;/free-rating&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-rating color="lightblue" [value]="3"></free-rating>
+            <free-rating color="blue" [value]="3"></free-rating>
+            <free-rating color="red" [value]="3"></free-rating>
+            <free-rating color="green" [value]="3"></free-rating>
+            <free-rating color="yellow" [value]="3"></free-rating>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-rating color="lightblue" [value]="3"&gt;&lt;/free-rating&gt;
+              &lt;free-rating color="blue" [value]="3"&gt;&lt;/free-rating&gt;
+              &lt;free-rating color="red" [value]="3"&gt;&lt;/free-rating&gt;
+              &lt;free-rating color="green" [value]="3"&gt;&lt;/free-rating&gt;
+              &lt;free-rating color="yellow" [value]="3"&gt;&lt;/free-rating&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Change Event</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-rating (onChange)="ratingChange($event)"></free-rating>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-rating (onChange)="ratingChange($event)"&gt;&lt;/free-rating&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Readonly</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-rating [readonly]="true" [value]="3"></free-rating>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-rating [readonly]="true" [value]="3"&gt;&lt;/free-rating&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+</div>

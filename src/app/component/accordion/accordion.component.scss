@@ -1,0 +1,63 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixin";
+
+free-accordion-group {
+  flex: 1 0 auto;
+}
+
+:host /deep/ {
+
+  .accordion-item {
+    background: #fff;
+  }
+  .accordion-toggle {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 2rem;
+    padding: .25rem .75rem;
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+    user-select: none;
+  }
+
+  .accordion-toggle:after {
+    font: normal normal normal .8rem/1 FontAwesome;
+  }
+
+  .accordion-toggle:after {
+    content: "\f105";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 0 .8rem;
+    transform: translate(0, -50%);
+    transition: all .2s linear;
+  }
+  .accordion-toggle.accordion-item-expand:after {
+    transform: translate(0, -50%) rotate(90deg);
+  }
+
+  .accordion-toggle-inner {
+    @include flexbox;
+    align-items: center;
+  }
+
+  .accordion-content {
+    position: relative;
+    overflow: hidden;
+    font-size: .7rem;
+  }
+
+  .accordion-content .accordion-inner,
+  .accordion-content div {
+    padding: .5rem;
+  }
+
+  .accordion-toggle .accordion-toggle-title {
+    transition: all .2s linear;
+  }
+}
+
+

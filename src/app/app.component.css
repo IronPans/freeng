@@ -1,0 +1,412 @@
+:host-context(.free-green) /deep/ .free-theme-setting,
+:host-context(.free-green) /deep/ .theme-setting {
+  background: #46be8a; }
+:host-context(.free-green) /deep/ h3.free-head-title {
+  color: #46be8a !important; }
+:host-context(.free-green) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #46be8a; }
+:host-context(.free-green) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #46be8a; }
+  :host-context(.free-green) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #46be8a; }
+
+:host-context(.free-green:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-green:not(.free-theme-2)) /deep/ .aside-header {
+  background: #46be8a; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #46be8a !important; }
+
+:host-context(.free-theme-2.free-green) /deep/ .top-menu,
+:host-context(.free-theme-2.free-green) /deep/ .aside-header,
+:host-context(.free-theme-2.free-green) /deep/ .ripple {
+  background: #46be8a !important; }
+
+:host-context(.free-deepblue) /deep/ .free-theme-setting,
+:host-context(.free-deepblue) /deep/ .theme-setting {
+  background: #115d8e; }
+:host-context(.free-deepblue) /deep/ h3.free-head-title {
+  color: #115d8e !important; }
+:host-context(.free-deepblue) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #115d8e; }
+:host-context(.free-deepblue) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #115d8e; }
+  :host-context(.free-deepblue) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #115d8e; }
+
+:host-context(.free-deepblue:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-deepblue:not(.free-theme-2)) /deep/ .aside-header {
+  background: #115d8e; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #115d8e !important; }
+
+:host-context(.free-theme-2.free-deepblue) /deep/ .top-menu,
+:host-context(.free-theme-2.free-deepblue) /deep/ .aside-header,
+:host-context(.free-theme-2.free-deepblue) /deep/ .ripple {
+  background: #115d8e !important; }
+
+:host-context(.free-blue) /deep/ .free-theme-setting,
+:host-context(.free-blue) /deep/ .theme-setting {
+  background: #677ae4; }
+:host-context(.free-blue) /deep/ h3.free-head-title {
+  color: #677ae4 !important; }
+:host-context(.free-blue) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #677ae4; }
+:host-context(.free-blue) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #677ae4; }
+  :host-context(.free-blue) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #677ae4; }
+
+:host-context(.free-blue:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-blue:not(.free-theme-2)) /deep/ .aside-header {
+  background: #677ae4; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #677ae4 !important; }
+
+:host-context(.free-theme-2.free-blue) /deep/ .top-menu,
+:host-context(.free-theme-2.free-blue) /deep/ .aside-header,
+:host-context(.free-theme-2.free-blue) /deep/ .ripple {
+  background: #677ae4 !important; }
+
+:host-context(.free-lightblue) /deep/ .free-theme-setting,
+:host-context(.free-lightblue) /deep/ .theme-setting {
+  background: #169e9f; }
+:host-context(.free-lightblue) /deep/ h3.free-head-title {
+  color: #169e9f !important; }
+:host-context(.free-lightblue) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #169e9f; }
+:host-context(.free-lightblue) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #169e9f; }
+  :host-context(.free-lightblue) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #169e9f; }
+
+:host-context(.free-lightblue:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-lightblue:not(.free-theme-2)) /deep/ .aside-header {
+  background: #169e9f; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #169e9f !important; }
+
+:host-context(.free-theme-2.free-lightblue) /deep/ .top-menu,
+:host-context(.free-theme-2.free-lightblue) /deep/ .aside-header,
+:host-context(.free-theme-2.free-lightblue) /deep/ .ripple {
+  background: #169e9f !important; }
+
+:host-context(.free-yellow) /deep/ .free-theme-setting,
+:host-context(.free-yellow) /deep/ .theme-setting {
+  background: #fa9e0c; }
+:host-context(.free-yellow) /deep/ h3.free-head-title {
+  color: #fa9e0c !important; }
+:host-context(.free-yellow) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #fa9e0c; }
+:host-context(.free-yellow) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #fa9e0c; }
+  :host-context(.free-yellow) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #fa9e0c; }
+
+:host-context(.free-yellow:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-yellow:not(.free-theme-2)) /deep/ .aside-header {
+  background: #fa9e0c; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #fa9e0c !important; }
+
+:host-context(.free-theme-2.free-yellow) /deep/ .top-menu,
+:host-context(.free-theme-2.free-yellow) /deep/ .aside-header,
+:host-context(.free-theme-2.free-yellow) /deep/ .ripple {
+  background: #fa9e0c !important; }
+
+:host-context(.free-red) /deep/ .free-theme-setting,
+:host-context(.free-red) /deep/ .theme-setting {
+  background: #f96868; }
+:host-context(.free-red) /deep/ h3.free-head-title {
+  color: #f96868 !important; }
+:host-context(.free-red) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #f96868; }
+:host-context(.free-red) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #f96868; }
+  :host-context(.free-red) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #f96868; }
+
+:host-context(.free-red:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-red:not(.free-theme-2)) /deep/ .aside-header {
+  background: #f96868; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #f96868 !important; }
+
+:host-context(.free-theme-2.free-red) /deep/ .top-menu,
+:host-context(.free-theme-2.free-red) /deep/ .aside-header,
+:host-context(.free-theme-2.free-red) /deep/ .ripple {
+  background: #f96868 !important; }
+
+:host-context(.free-purple) /deep/ .free-theme-setting,
+:host-context(.free-purple) /deep/ .theme-setting {
+  background: #6633B9; }
+:host-context(.free-purple) /deep/ h3.free-head-title {
+  color: #6633B9 !important; }
+:host-context(.free-purple) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #6633B9; }
+:host-context(.free-purple) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #6633B9; }
+  :host-context(.free-purple) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #6633B9; }
+
+:host-context(.free-purple:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-purple:not(.free-theme-2)) /deep/ .aside-header {
+  background: #6633B9; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #6633B9 !important; }
+
+:host-context(.free-theme-2.free-purple) /deep/ .top-menu,
+:host-context(.free-theme-2.free-purple) /deep/ .aside-header,
+:host-context(.free-theme-2.free-purple) /deep/ .ripple {
+  background: #6633B9 !important; }
+
+:host-context(.free-orange) /deep/ .free-theme-setting,
+:host-context(.free-orange) /deep/ .theme-setting {
+  background: #f2a654; }
+:host-context(.free-orange) /deep/ h3.free-head-title {
+  color: #f2a654 !important; }
+:host-context(.free-orange) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #f2a654; }
+:host-context(.free-orange) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #f2a654; }
+  :host-context(.free-orange) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #f2a654; }
+
+:host-context(.free-orange:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-orange:not(.free-theme-2)) /deep/ .aside-header {
+  background: #f2a654; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #f2a654 !important; }
+
+:host-context(.free-theme-2.free-orange) /deep/ .top-menu,
+:host-context(.free-theme-2.free-orange) /deep/ .aside-header,
+:host-context(.free-theme-2.free-orange) /deep/ .ripple {
+  background: #f2a654 !important; }
+
+:host-context(.free-brown) /deep/ .free-theme-setting,
+:host-context(.free-brown) /deep/ .theme-setting {
+  background: #8d6658; }
+:host-context(.free-brown) /deep/ h3.free-head-title {
+  color: #8d6658 !important; }
+:host-context(.free-brown) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #8d6658; }
+:host-context(.free-brown) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #8d6658; }
+  :host-context(.free-brown) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #8d6658; }
+
+:host-context(.free-brown:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-brown:not(.free-theme-2)) /deep/ .aside-header {
+  background: #8d6658; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #8d6658 !important; }
+
+:host-context(.free-theme-2.free-brown) /deep/ .top-menu,
+:host-context(.free-theme-2.free-brown) /deep/ .aside-header,
+:host-context(.free-theme-2.free-brown) /deep/ .ripple {
+  background: #8d6658 !important; }
+
+:host-context(.free-cyan) /deep/ .free-theme-setting,
+:host-context(.free-cyan) /deep/ .theme-setting {
+  background: #57c7d4; }
+:host-context(.free-cyan) /deep/ h3.free-head-title {
+  color: #57c7d4 !important; }
+:host-context(.free-cyan) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #57c7d4; }
+:host-context(.free-cyan) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #57c7d4; }
+  :host-context(.free-cyan) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #57c7d4; }
+
+:host-context(.free-cyan:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-cyan:not(.free-theme-2)) /deep/ .aside-header {
+  background: #57c7d4; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #57c7d4 !important; }
+
+:host-context(.free-theme-2.free-cyan) /deep/ .top-menu,
+:host-context(.free-theme-2.free-cyan) /deep/ .aside-header,
+:host-context(.free-theme-2.free-cyan) /deep/ .ripple {
+  background: #57c7d4 !important; }
+
+:host-context(.free-pink) /deep/ .free-theme-setting,
+:host-context(.free-pink) /deep/ .theme-setting {
+  background: #f96197; }
+:host-context(.free-pink) /deep/ h3.free-head-title {
+  color: #f96197 !important; }
+:host-context(.free-pink) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #f96197; }
+:host-context(.free-pink) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #f96197; }
+  :host-context(.free-pink) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #f96197; }
+
+:host-context(.free-pink:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-pink:not(.free-theme-2)) /deep/ .aside-header {
+  background: #f96197; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #f96197 !important; }
+
+:host-context(.free-theme-2.free-pink) /deep/ .top-menu,
+:host-context(.free-theme-2.free-pink) /deep/ .aside-header,
+:host-context(.free-theme-2.free-pink) /deep/ .ripple {
+  background: #f96197 !important; }
+
+:host-context(.free-teal) /deep/ .free-theme-setting,
+:host-context(.free-teal) /deep/ .theme-setting {
+  background: #3aa99e; }
+:host-context(.free-teal) /deep/ h3.free-head-title {
+  color: #3aa99e !important; }
+:host-context(.free-teal) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #3aa99e; }
+:host-context(.free-teal) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #3aa99e; }
+  :host-context(.free-teal) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #3aa99e; }
+
+:host-context(.free-teal:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-teal:not(.free-theme-2)) /deep/ .aside-header {
+  background: #3aa99e; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #3aa99e !important; }
+
+:host-context(.free-theme-2.free-teal) /deep/ .top-menu,
+:host-context(.free-theme-2.free-teal) /deep/ .aside-header,
+:host-context(.free-theme-2.free-teal) /deep/ .ripple {
+  background: #3aa99e !important; }
+
+:host-context(.free-dark) /deep/ .free-theme-setting,
+:host-context(.free-dark) /deep/ .theme-setting {
+  background: #393D49; }
+:host-context(.free-dark) /deep/ h3.free-head-title {
+  color: #393D49 !important; }
+:host-context(.free-dark) /deep/ .main-container .accordion-toggle {
+  color: #fff !important;
+  background: #393D49; }
+:host-context(.free-dark) /deep/ .free-tab-group .free-tab-nav.active span {
+  color: #393D49; }
+  :host-context(.free-dark) /deep/ .free-tab-group .free-tab-nav.active span:after {
+    background: #393D49; }
+
+:host-context(.free-dark:not(.free-theme-2)) /deep/ .left-menu,
+:host-context(.free-dark:not(.free-theme-2)) /deep/ .aside-header {
+  background: #393D49; }
+
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #393D49 !important; }
+
+:host-context(.free-theme-2.free-dark) /deep/ .top-menu,
+:host-context(.free-theme-2.free-dark) /deep/ .aside-header,
+:host-context(.free-theme-2.free-dark) /deep/ .ripple {
+  background: #393D49 !important; }
+
+:host-context(.free-theme-2) /deep/ .left-menu {
+  background: #fff !important;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+  z-index: 100; }
+  :host-context(.free-theme-2) /deep/ .left-menu li a em {
+    color: #666; }
+  :host-context(.free-theme-2) /deep/ .left-menu .left-menu-item li a,
+  :host-context(.free-theme-2) /deep/ .left-menu .accordion-toggle,
+  :host-context(.free-theme-2) /deep/ .left-menu .accordion-inner ul li > a {
+    color: #262626; }
+    :host-context(.free-theme-2) /deep/ .left-menu .left-menu-item li a:hover,
+    :host-context(.free-theme-2) /deep/ .left-menu .accordion-toggle:hover,
+    :host-context(.free-theme-2) /deep/ .left-menu .accordion-inner ul li > a:hover {
+      color: #262626 !important;
+      background-color: #eee !important; }
+  :host-context(.free-theme-2) /deep/ .left-menu .left-menu-item li a.active,
+  :host-context(.free-theme-2) /deep/ .left-menu .accordion-inner ul li > a.active {
+    color: #262626 !important;
+    background-color: #eee !important; }
+:host-context(.free-theme-2) /deep/ .top-menu .hamburge-line span,
+:host-context(.free-theme-2) /deep/ .top-menu .navbar-header .search-form {
+  background: #fff; }
+:host-context(.free-theme-2) /deep/ .top-menu button {
+  background: transparent;
+  color: #fff !important; }
+:host-context(.free-theme-2) /deep/ .free-scroll-thumb {
+  background: rgba(0, 0, 0, 0.29804); }
+:host-context(.free-theme-2) /deep/ .top-menu,
+:host-context(.free-theme-2) /deep/ .aside-header {
+  background: #115d8e !important; }
+:host-context(.free-theme-2) /deep/ .navbar-header li a,
+:host-context(.free-theme-2) /deep/ .aside-header li a {
+  color: #fff; }
+:host-context(.free-theme-2) /deep/ .free-theme-setting {
+  box-shadow: 0 0 .5rem #fff; }
+:host-context(.free-theme-2) /deep/ .navbar-header .navbar-header-right .free-dropdown-header.active, :host-context(.free-theme-2) /deep/ .navbar-header .navbar-header-right .free-dropdown-header:active, :host-context(.free-theme-2) /deep/ .navbar-header .navbar-header-right .free-dropdown-header:hover {
+  background: transparent !important; }
+  :host-context(.free-theme-2) /deep/ .navbar-header .navbar-header-right .free-dropdown-header.active:before, :host-context(.free-theme-2) /deep/ .navbar-header .navbar-header-right .free-dropdown-header:active:before, :host-context(.free-theme-2) /deep/ .navbar-header .navbar-header-right .free-dropdown-header:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); }
+
+:host-context(.free-mini) /deep/ .main-layout-container {
+  left: 2.5rem; }
+:host-context(.free-mini) /deep/ .left-menu .accordion-item .accordion-toggle i {
+  padding-right: 0 !important; }
+:host-context(.free-mini) /deep/ .left-menu .accordion-toggle:hover + .accordion-content {
+  position: absolute;
+  top: 0;
+  left: 45px;
+  height: auto; }
+:host-context(.free-mini) /deep/ .aside-header {
+  width: 2.5rem; }
+:host-context(.free-mini) /deep/ .aside-header-inner > span.top-logo-mini {
+  display: block; }
+:host-context(.free-mini) /deep/ .aside-header-inner > span.top-logo {
+  display: none; }
+
+:host-context(.free-mini.free-theme-2) /deep/ .main-layout-container {
+  left: 0 !important; }
+:host-context(.free-mini.free-theme-2) /deep/ .left-menu {
+  left: -12.5rem !important; }
+:host-context(.free-mini.free-theme-2) /deep/ .aside-header {
+  width: 12.5rem !important; }
+:host-context(.free-mini.free-theme-2) /deep/ .aside-header-inner > span.top-logo-mini {
+  display: none !important; }
+:host-context(.free-mini.free-theme-2) /deep/ .aside-header-inner > span.top-logo {
+  display: block !important; }
+
+/*# sourceMappingURL=app.component.css.map */

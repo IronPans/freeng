@@ -1,0 +1,80 @@
+:host /deep/ {
+  .free-chip {
+    position: relative;
+    height: 32px;
+    padding: 8px 12px;
+    display: inline-block;
+    border-radius: 32px;
+    transition: all .4s cubic-bezier(.25,.8,.25,1);
+    font-size: 13px;
+    line-height: 16px;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, .12);
+  }
+
+  .free-chip-group input {
+    background: none;
+    border: none;
+    height: 32px;
+  }
+
+  .free-chip-group {
+    position: relative;
+  }
+
+  .free-chip-group.free-chip-input:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0,0,0,.12);
+    -webkit-transition: all .4s cubic-bezier(.25,.8,.25,1);
+    transition: all .4s cubic-bezier(.25,.8,.25,1);
+  }
+
+  .free-chip-group.free-chip-input.free-chip-focus:after {
+    background: #3949ab;
+    height: 2px;
+  }
+
+  .free-chip-group.free-chip-input .free-chip {
+    margin-right: 8px;
+    margin-bottom: 5px;
+  }
+
+  .free-chip.free-chip-delete {
+    padding-right: 32px;
+  }
+
+  .free-chip .delete-btn {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, .38);
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all .4s cubic-bezier(.25,.8,.25,1);
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+
+  .free-chip .delete-btn:hover {
+    color: rgba(0, 0, 0, .5);
+  }
+
+  .free-chip:active:not(.free-disabled),
+  .free-chip:focus:not(.free-disabled) {
+    cursor: pointer;
+    box-shadow: 0 1px 5px rgba(0,0,0,.2),0 2px 2px rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12);
+  }
+}

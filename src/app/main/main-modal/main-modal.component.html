@@ -1,0 +1,152 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        模态框包含专门针对特定任务的文本和UI控件。 它们向用户通知关键信息，要求用户作出决定或涉及多个任务
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项</h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-modal</h3>
+        <p>单个模态框。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>header</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>模态框标题。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>visible</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示模态框，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>modalColor</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置模态框的背景色。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="open()">弹出框</button>
+            <button fButton color="blue" (click)="blueVisible = !blueVisible">弹出框</button>
+            <button fButton color="lightblue" (click)="lightblueVisible = !lightblueVisible">弹出框</button>
+            <button fButton color="green" (click)="greenVisible = !greenVisible">弹出框</button>
+            <button fButton color="yellow" (click)="yellowVisible = !yellowVisible">弹出框</button>
+            <button fButton color="red" (click)="redVisible = !redVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" [(visible)]="visible"&gt;
+                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+                &lt;f-footer&gt;
+                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
+                &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+
+              &lt;free-modal header="弹出框" modalColor="lightblue" [(visible)]="lightblueVisible"&gt;
+                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+                &lt;f-footer&gt;
+                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
+                &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+
+              &lt;free-modal header="弹出框" modalColor="green" [(visible)]="greenVisible"&gt;
+                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+                &lt;f-footer&gt;
+                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
+                &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+
+              &lt;free-modal header="弹出框" modalColor="yellow" [(visible)]="yellowVisible"&gt;
+                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+                &lt;f-footer&gt;
+                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
+                &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+
+              &lt;free-modal header="弹出框" modalColor="red" [(visible)]="redVisible"&gt;
+                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+                &lt;f-footer&gt;
+                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
+                &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+
+              &lt;free-modal header="弹出框" modalColor="blue" [(visible)]="blueVisible"&gt;
+                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+                &lt;f-footer&gt;
+                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
+                &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+
+  <free-modal header="弹出框" [(visible)]="visible">
+    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+    <f-footer>
+      <button type="button" class="btn-default btn">关闭</button>
+    </f-footer>
+  </free-modal>
+
+  <free-modal header="弹出框" modalColor="lightblue" [(visible)]="lightblueVisible">
+    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+    <f-footer>
+      <button type="button" class="btn-default btn">关闭</button>
+    </f-footer>
+  </free-modal>
+
+  <free-modal header="弹出框" modalColor="green" [(visible)]="greenVisible">
+    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+    <f-footer>
+      <button type="button" class="btn-default btn">关闭</button>
+    </f-footer>
+  </free-modal>
+
+  <free-modal header="弹出框" modalColor="yellow" [(visible)]="yellowVisible">
+    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+    <f-footer>
+      <button type="button" class="btn-default btn">关闭</button>
+    </f-footer>
+  </free-modal>
+
+  <free-modal header="弹出框" modalColor="red" [(visible)]="redVisible">
+    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+    <f-footer>
+      <button type="button" class="btn-default btn">关闭</button>
+    </f-footer>
+  </free-modal>
+
+  <free-modal header="弹出框" modalColor="blue" [(visible)]="blueVisible">
+    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+    <f-footer>
+      <button type="button" class="btn-default btn">关闭</button>
+    </f-footer>
+  </free-modal>
+</div>

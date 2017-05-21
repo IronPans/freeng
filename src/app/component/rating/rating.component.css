@@ -1,0 +1,37 @@
+.free-rating {
+  display: flex;
+  padding: .5rem;
+  -webkit-align-items: center;
+  align-items: center; }
+
+:host /deep/ .free-rating-item {
+  padding: 0 .2rem;
+  font-size: 1rem; }
+:host /deep/ .free-rating.free-green {
+  color: #46be8a; }
+:host /deep/ .free-rating.free-deepblue {
+  color: #115d8e; }
+:host /deep/ .free-rating.free-blue {
+  color: #677ae4; }
+:host /deep/ .free-rating.free-lightblue {
+  color: #169e9f; }
+:host /deep/ .free-rating.free-yellow {
+  color: #fa9e0c; }
+:host /deep/ .free-rating.free-red {
+  color: #f96868; }
+:host /deep/ .free-rating.free-purple {
+  color: #6633B9; }
+:host /deep/ .free-rating.free-orange {
+  color: #f2a654; }
+:host /deep/ .free-rating.free-brown {
+  color: #8d6658; }
+:host /deep/ .free-rating.free-cyan {
+  color: #57c7d4; }
+:host /deep/ .free-rating.free-pink {
+  color: #f96197; }
+:host /deep/ .free-rating.free-teal {
+  color: #3aa99e; }
+:host /deep/ .free-rating.free-dark {
+  color: #393D49; }
+
+/*# sourceMappingURL=rating.component.css.map */

@@ -1,0 +1,55 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        碎片可以用来表示小块信息，它们最常用于联系人或标记。
+      </p>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chip-group [chips]="animals"></free-chip-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chip-group [chips]="animals"&gt;&lt;/free-chip-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chip-group [chips]="citys"></free-chip-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chip-group [chips]="citys"&gt;&lt;/free-chip-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chip-group [(chips)]="citys" placeholder="Add a chip"></free-chip-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chip-group [chips]="citys" placeholder="Add a chip"&gt;&lt;/free-chip-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+
+  </div>
+</div>

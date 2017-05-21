@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,kBAAM;EACJ,WAAW,EAAE,IAAI",
+"sources": ["main-grid.component.scss"],
+"names": [],
+"file": "main-grid.component.css"
+}

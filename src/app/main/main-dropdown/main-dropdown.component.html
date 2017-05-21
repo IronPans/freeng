@@ -1,0 +1,86 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        下拉菜单
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项</h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-dropdown</h3>
+        <p>单个下拉菜单</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>menus</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>菜单子项数组</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>color</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>主题样式</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-dropdown [menus]="menus" color="green">
+              <f-header>Dropdown</f-header>
+            </free-dropdown>
+
+            <free-dropdown [menus]="menus" color="lightblue">
+              <f-header>Dropdown</f-header>
+            </free-dropdown>
+
+            <free-dropdown [menus]="menus" color="red">
+              <f-header>Dropdown</f-header>
+            </free-dropdown>
+
+            <free-dropdown [menus]="menus" color="blue">
+              <f-header>Dropdown</f-header>
+            </free-dropdown>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus" color="green"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+
+              &lt;free-dropdown [menus]="menus" color="lightblue"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+
+              &lt;free-dropdown [menus]="menus" color="red"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+
+              &lt;free-dropdown [menus]="menus" color="blue"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+</div>

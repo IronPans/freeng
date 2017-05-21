@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,4BAA6B;EAC3B,OAAO,EAAE,eAAe",
+"sources": ["main-gallery.component.scss"],
+"names": [],
+"file": "main-gallery.component.css"
+}

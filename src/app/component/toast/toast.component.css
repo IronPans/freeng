@@ -1,0 +1,26 @@
+.free-toast-group {
+  position: fixed;
+  right: 1rem;
+  top: 2rem;
+  z-index: 10000; }
+
+.free-toast {
+  position: relative;
+  max-width: 12.5rem;
+  min-width: 5rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  padding: .5rem 1.2rem .5rem .5rem;
+  border-radius: 2px;
+  margin-bottom: .5rem; }
+
+.free-toast-close {
+  position: absolute;
+  right: .2rem;
+  top: .2rem;
+  padding: .05rem;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer; }
+
+/*# sourceMappingURL=toast.component.css.map */

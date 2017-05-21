@@ -1,0 +1,21 @@
+:host /deep/ .free-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7); }
+:host /deep/ .free-mask .free-loading span {
+  background: #fff !important; }
+
+/*# sourceMappingURL=mask.component.css.map */

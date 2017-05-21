@@ -1,0 +1,191 @@
+@import "../assets/sass/variables";
+@import "../assets/sass/mixin";
+
+@each $theme, $color in $theme {
+  :host-context(.free-#{$theme}) /deep/ {
+    .free-theme-setting,
+    .theme-setting {
+      background: $color;
+    }
+
+    h3.free-head-title {
+      color: $color !important;
+    }
+
+    .main-container .accordion-toggle {
+      color: #fff !important;
+      background: $color;
+    }
+
+    .free-tab-group .free-tab-nav.active span {
+      color: $color;
+
+      &:after {
+        background: $color;
+      }
+    }
+  }
+
+  :host-context(.free-#{$theme}:not(.free-theme-2)) /deep/ {
+    .left-menu,
+    .aside-header {
+      background: $color;
+    }
+  }
+
+  :host-context(.free-theme-2) /deep/ {
+    .top-menu,
+    .aside-header {
+      background: $color !important;
+    }
+  }
+
+  :host-context(.free-theme-2.free-#{$theme}) /deep/ {
+    .top-menu,
+    .aside-header,
+    .ripple {
+      background: $color !important;
+    }
+  }
+}
+
+:host-context(.free-theme-2) /deep/ {
+  .left-menu {
+    background: #fff !important;
+    box-shadow: 3px 0 6px rgba(0,0,0,0.24);
+    z-index: 100;
+
+    li a em {
+      color: #666;
+    }
+
+    .left-menu-item li a,
+    .accordion-toggle,
+    .accordion-inner ul li > a {
+      color: #262626;
+      &:hover {
+        color: #262626 !important;
+        background-color: #eee !important;
+      }
+    }
+
+    .left-menu-item li a.active,
+    .accordion-inner ul li > a.active {
+      color: #262626 !important;
+      background-color: #eee !important;
+    }
+  }
+
+  .top-menu {
+    .hamburge-line span,
+    .navbar-header .search-form {
+      background: #fff;
+    }
+
+    button {
+      background: transparent;
+      color: #fff !important;
+    }
+  }
+
+  .free-scroll-thumb {
+    background: rgba(0, 0, 0, 0.298039);
+  }
+  .top-menu,
+  .aside-header {
+    background: $default !important;
+  }
+
+  .navbar-header li a,
+  .aside-header li a {
+    color: #fff;
+  }
+
+  .free-theme-setting {
+    box-shadow: 0 0 .5rem #fff;
+  }
+
+  .navbar-header .navbar-header-right {
+
+    .free-dropdown-header {
+      &.active,
+      &:active,
+      &:hover {
+        background: transparent !important;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,.1);
+        }
+      }
+    }
+  }
+}
+
+:host-context(.free-mini) /deep/ {
+
+  .main-layout-container {
+    left: $leftMenuWidthOfMini;
+  }
+
+  .left-menu {
+    .accordion-item .accordion-toggle i {
+      padding-right: 0 !important;
+    }
+
+    .accordion-toggle:hover + .accordion-content {
+      @include position(absolute, 0, $left: 45px);
+      height: auto;
+    }
+  }
+
+  .aside-header {
+    width: $leftMenuWidthOfMini;
+  }
+
+  .aside-header-inner {
+    & > span {
+
+      &.top-logo-mini {
+        display: block;
+      }
+
+      &.top-logo {
+        display: none;
+      }
+    }
+  }
+
+}
+
+:host-context(.free-mini.free-theme-2) /deep/ {
+  .main-layout-container {
+    left: 0 !important;
+  }
+
+  .left-menu {
+    left: -#{$leftMenuWidth} !important;
+  }
+
+  .aside-header {
+    width: $leftMenuWidth !important;
+  }
+
+  .aside-header-inner {
+    & > span {
+
+      &.top-logo-mini {
+        display: none !important;
+      }
+
+      &.top-logo {
+        display: block !important;
+      }
+    }
+  }
+}

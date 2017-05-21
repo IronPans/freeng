@@ -1,0 +1,23 @@
+@import "../../../assets/sass/variables";
+
+.free-rating {
+  display: flex;
+  padding: .5rem;
+  -webkit-align-items: center;
+  align-items: center;
+}
+:host /deep/ {
+
+  .free-rating-item {
+    padding: 0 .2rem;
+    font-size: 1rem;
+  }
+
+  @each $theme, $color in $theme {
+    .free-rating {
+      &.free-#{$theme} {
+        color: $color;
+      }
+    }
+  }
+}

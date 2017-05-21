@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,+CAAgD;EAC9C,MAAM,EAAE,mCAAmC;EAC3C,UAAU,EAAE,IAAI",
+"sources": ["main-accordion.component.scss"],
+"names": [],
+"file": "main-accordion.component.css"
+}

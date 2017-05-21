@@ -1,0 +1,34 @@
+.free-scroll {
+  position: relative;
+  overflow: hidden; }
+
+:host /deep/ .free-scroll-scrollbar {
+  position: absolute;
+  width: 7px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  overflow: hidden;
+  z-index: 101;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+  opacity: 0; }
+
+:host /deep/ .free-scroll-wrapper {
+  position: relative; }
+
+:host /deep/ .free-scroll-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=scroll.component.css.map */

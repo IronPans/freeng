@@ -1,0 +1,87 @@
+.input-field {
+  position: relative;
+  min-width: 4rem;
+}
+
+.input-field input {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  height: 35px;
+  width: 100%;
+  padding: 0;
+  box-shadow: none;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.input-field input+span {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: inline-block;
+  max-width: 100%;
+  z-index: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.input-field span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2196f3;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+.input-field input:focus+span:after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.input-field.input-field-icon i{
+  position:absolute;
+  right:0;
+  top:50%;
+  padding:0 5px;
+  font-size: .75rem;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.input-field.input-field-icon input{
+  padding-right:30px;
+}
+
+.input-field.success input+span{
+  border-color: #b5dfb7;
+}
+.input-field.warning input+span{
+  border-color: #ffd699;
+}
+.input-field.error input+span{
+  border-color: #fccbc7;
+}
+.input-field.success span:after {
+  background:#4caf50;
+}
+.input-field.warning span:after{
+  background:#ffc107;
+}
+.input-field.error span:after{
+  background:#f44336;
+}
+.input-field.input-field-icon.success i{
+  color: #4caf50;
+}
+.input-field.input-field-icon.error i{
+  color: #f44336;
+}
+.input-field.input-field-icon.warning i{
+  color: #ffc107;
+}

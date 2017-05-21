@@ -1,0 +1,663 @@
+@import "../../../assets/sass/mixin";
+@import "../../../assets/sass/variables";
+$size: 5rem;
+
+.free-loading {
+  display: inline-block;
+}
+
+.loader {
+  position: relative;
+  width: $size;
+  height: $size;
+}
+
+.loader.small {
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+}
+
+.loader.circle-line,
+.loader.circle-round {
+  height: $size;
+}
+
+/*circle-line*/
+
+.loader.circle-line span {
+  position: absolute;
+  display: inline-block;
+  width: 1.5rem;
+  height: .5rem;
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+  background: $theme-blue;
+  opacity: .05;
+  -webkit-animation: circle-line 1s ease infinite;
+  animation: circle-line 1s ease infinite;
+}
+
+.loader.circle-line span:nth-child(1) {
+  top: 50%;
+  left: 0;
+  margin-top: -.25rem;
+  -webkit-animation-delay: .13s;
+  animation-delay: .13s;
+}
+
+.loader.circle-line span:nth-child(2) {
+  top: 1rem;
+  left: .5rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation-delay: .26s;
+  animation-delay: .26s;
+}
+
+.loader.circle-line span:nth-child(3) {
+  left: 50%;
+  top: .5rem;
+  margin-left: -.75rem;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-animation-delay: .39s;
+  animation-delay: .39s;
+}
+
+.loader.circle-line span:nth-child(4) {
+  right: .5rem;
+  top: 1rem;
+  -webkit-transform: rotate(145deg);
+  transform: rotate(145deg);
+  -webkit-animation-delay: .52s;
+  animation-delay: .52s;
+}
+
+.loader.circle-line span:nth-child(5) {
+  left: 3.5rem;
+  top: 50%;
+  margin-top: -.25rem;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-animation-delay: .65s;
+  animation-delay: .65s;
+}
+
+.loader.circle-line span:nth-child(6) {
+  bottom: 1rem;
+  right: .5rem;
+  -webkit-transform: rotate(-145deg);
+  transform: rotate(-145deg);
+  -webkit-animation-delay: .78s;
+  animation-delay: .78s;
+}
+
+.loader.circle-line span:nth-child(7) {
+  left: 50%;
+  bottom: .5rem;
+  margin-left: -15px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-animation-delay: .91s;
+  animation-delay: .91s;
+}
+
+.loader.circle-line span:nth-child(8) {
+  bottom: 1rem;
+  left: .5rem;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation-delay: 1.04s;
+  animation-delay: 1.04s;
+}
+
+@keyframes circle-line {
+  0% {
+    opacity: .05;
+  }
+  100% {
+    opacity: .7;
+  }
+}
+
+@-webkit-keyframes circle-line {
+  0% {
+    opacity: .05;
+  }
+  100% {
+    opacity: .7;
+  }
+}
+
+
+/*circle-line-spin*/
+
+.loader.circle-line-spin .circle-line-inner {
+  width: 100%;
+  height: 100%;
+  -webkit-animation: circle-line-spin 1.5s linear infinite;
+  animation: circle-line-spin 1.5s linear infinite;
+}
+
+.loader.circle-line-spin span {
+  position: absolute;
+  display: inline-block;
+  width: 1.5rem;
+  height: .5rem;
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+  background: $theme-blue;
+  opacity: .7;
+}
+
+.loader.circle-line-spin span:nth-child(1) {
+  top: 50%;
+  left: 0;
+  margin-top: -.25rem;
+}
+
+.loader.circle-line-spin span:nth-child(2) {
+  top: 1rem;
+  left: .5rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.loader.circle-line-spin span:nth-child(3) {
+  left: 50%;
+  top: .5rem;
+  margin-left: -.75rem;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.loader.circle-line-spin span:nth-child(4) {
+  right: .5rem;
+  top: 1rem;
+  -webkit-transform: rotate(145deg);
+  transform: rotate(145deg);
+}
+
+.loader.circle-line-spin span:nth-child(5) {
+  left: 3.5rem;
+  top: 50%;
+  margin-top: -.25rem;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.loader.circle-line-spin span:nth-child(6) {
+  bottom: 1rem;
+  right: .5rem;
+  -webkit-transform: rotate(-145deg);
+  transform: rotate(-145deg);
+}
+
+.loader.circle-line-spin span:nth-child(7) {
+  left: 50%;
+  bottom: .5rem;
+  margin-left: -15px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.loader.circle-line-spin span:nth-child(8) {
+  bottom: 1rem;
+  left: .5rem;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+@keyframes circle-line-spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes circle-line-spin {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+
+/*circle-round*/
+
+.loader.circle-round span {
+  opacity: .05;
+  -webkit-animation: circle-round 1s ease infinite;
+  animation: circle-round 1s ease infinite;
+}
+
+.loader.circle-round-fade span {
+  -webkit-animation: circle-round-fade 1s ease infinite;
+  animation: circle-round-fade 1s ease infinite;
+}
+
+.loader.circle-round span,
+.loader.circle-round-fade span {
+  position: absolute;
+  width: .8rem;
+  height: .8rem;
+  display: inline-block;
+  border-radius: 50%;
+  background: $theme-blue;
+}
+
+.loader.circle-round span:nth-child(1),
+.loader.circle-round-fade span:nth-child(1) {
+  top: 50%;
+  left: 0;
+  margin-top: -.4rem;
+  -webkit-animation-delay: -1.04s;
+  animation-delay: -1.04s;
+}
+
+.loader.circle-round span:nth-child(2),
+.loader.circle-round-fade span:nth-child(2) {
+  top: .7rem;
+  left: .7rem;
+  -webkit-animation-delay: -.91s;
+  animation-delay: -.91s;
+}
+
+.loader.circle-round span:nth-child(3),
+.loader.circle-round-fade span:nth-child(3) {
+  top: 0;
+  left: 50%;
+  margin-left: -.4rem;
+  -webkit-animation-delay: -.78s;
+  animation-delay: -.78s;
+}
+
+.loader.circle-round span:nth-child(4),
+.loader.circle-round-fade span:nth-child(4) {
+  right: .7rem;
+  top: .7rem;
+  -webkit-animation-delay: -.65s;
+  animation-delay: -.65s;
+}
+
+.loader.circle-round span:nth-child(5),
+.loader.circle-round-fade span:nth-child(5) {
+  right: 0;
+  top: 50%;
+  margin-top: -.4rem;
+  -webkit-animation-delay: -.52s;
+  animation-delay: -.52s;
+}
+
+.loader.circle-round span:nth-child(6),
+.loader.circle-round-fade span:nth-child(6) {
+  bottom: .7rem;
+  right: .7rem;
+  -webkit-animation-delay: -.39s;
+  animation-delay: -.39s;
+}
+
+.loader.circle-round span:nth-child(7),
+.loader.circle-round-fade span:nth-child(7) {
+  bottom: 0;
+  left: 50%;
+  margin-left: -.4rem;
+  -webkit-animation-delay: -.26s;
+  animation-delay: -.26s;
+}
+
+.loader.circle-round span:nth-child(8),
+.loader.circle-round-fade span:nth-child(8) {
+  left: .7rem;
+  bottom: .7rem;
+  -webkit-animation-delay: -.13s;
+  animation-delay: -.13s;
+}
+
+@keyframes circle-round {
+  0% {
+    opacity: .05;
+  }
+  100% {
+    opacity: .7;
+  }
+}
+
+@-webkit-keyframes circle-round {
+  0% {
+    opacity: .05;
+  }
+  100% {
+    opacity: .7;
+  }
+}
+
+@keyframes circle-round-fade {
+  0% {
+    opacity: .25;
+    transform: scale(.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes circle-round-fade {
+  0% {
+    opacity: .25;
+    transform: scale(.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/*line-square*/
+
+.loader.line-square {
+  width: 6rem;
+  height: .8rem;
+}
+
+.loader.line-square span {
+  position: absolute;
+  top: 0;
+  width: .8rem;
+  height: .8rem;
+  display: inline-block;
+  background: $theme-blue;
+  -webkit-animation: line-square 1s ease infinite;
+  animation: line-square 1s ease infinite;
+}
+
+.loader.line-square span:nth-child(1) {
+  left: 0;
+  -webkit-animation-delay: .13s;
+  animation-delay: .13s;
+}
+
+.loader.line-square span:nth-child(2) {
+  left: 1.3rem;
+  -webkit-animation-delay: .26s;
+  animation-delay: .26s;
+}
+
+.loader.line-square span:nth-child(3) {
+  left: 2.6rem;
+  -webkit-animation-delay: .39s;
+  animation-delay: .39s;
+}
+
+.loader.line-square span:nth-child(4) {
+  left: 3.9rem;
+  -webkit-animation-delay: .52s;
+  animation-delay: .52s;
+}
+
+.loader.line-square span:nth-child(5) {
+  left: 5.2rem;
+  -webkit-animation-delay: .65s;
+  animation-delay: .65s;
+}
+
+@keyframes line-square {
+  0% {
+    opacity: 1;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    opacity: .2;
+    transform: scale(.2);
+    -webkit-transform: scale(.2);
+  }
+}
+
+@-webkit-keyframes line-square {
+  0% {
+    opacity: 1;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    opacity: .2;
+    transform: scale(.2);
+    -webkit-transform: scale(.2);
+  }
+}
+
+
+/*line-round*/
+
+.loader.line-round {
+  width: 6rem;
+  height: .8rem;
+}
+
+.loader.line-round span {
+  position: absolute;
+  top: 0;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  display: inline-block;
+  background: $theme-blue;
+  -webkit-animation: line-round 1s ease infinite;
+  animation: line-round 1s ease infinite;
+}
+
+.loader.line-round span:nth-child(1) {
+  left: 0;
+  -webkit-animation-delay: .13s;
+  animation-delay: .13s;
+}
+
+.loader.line-round span:nth-child(2) {
+  left: 1.3rem;
+  -webkit-animation-delay: .26s;
+  animation-delay: .26s;
+}
+
+.loader.line-round span:nth-child(3) {
+  left: 2.6rem;
+  -webkit-animation-delay: .39s;
+  animation-delay: .39s;
+}
+
+.loader.line-round span:nth-child(4) {
+  left: 3.9rem;
+  -webkit-animation-delay: .52s;
+  animation-delay: .52s;
+}
+
+.loader.line-round span:nth-child(5) {
+  left: 5.2rem;
+  -webkit-animation-delay: .65s;
+  animation-delay: .65s;
+}
+
+@keyframes line-round {
+  0% {
+    opacity: 1;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    opacity: .2;
+    transform: scale(.2);
+    -webkit-transform: scale(.2);
+  }
+}
+
+@-webkit-keyframes line-round {
+  0% {
+    opacity: 1;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    opacity: .2;
+    transform: scale(.2);
+    -webkit-transform: scale(.2);
+  }
+}
+
+
+/*line-bounce*/
+
+.loader.line-bounce {
+  width: 6rem;
+  height: 2.5rem;
+}
+
+.loader.line-bounce span {
+  position: absolute;
+  top: 0;
+  width: .5rem;
+  height: 2.5rem;
+  border-radius:5px;
+  display: inline-block;
+  background: $theme-blue;
+  -webkit-animation: line-bounce 1s ease infinite;
+  animation: line-bounce 1s ease infinite;
+}
+
+.loader.line-bounce span:nth-child(1) {
+  left: 0;
+  -webkit-animation-delay: -.65s;
+  animation-delay: -.65s;
+}
+
+.loader.line-bounce span:nth-child(2) {
+  left: 1.3rem;
+  -webkit-animation-delay: -.78s;
+  animation-delay: -.78s;
+}
+
+.loader.line-bounce span:nth-child(3) {
+  left: 2.6rem;
+  -webkit-animation-delay: -.91s;
+  animation-delay: -.91s;
+}
+
+.loader.line-bounce span:nth-child(4) {
+  left: 3.9rem;
+  -webkit-animation-delay: -.78s;
+  animation-delay: -78s;
+}
+
+.loader.line-bounce span:nth-child(5) {
+  left: 5.2rem;
+  -webkit-animation-delay: -.65s;
+  animation-delay: -.65s;
+}
+
+@keyframes line-bounce {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(.3);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes line-bounce {
+  0% {
+    -webkit-transform: scaleY(1);
+  }
+  50% {
+    -webkit-transform: scaleY(.3);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+
+/*circle-spin*/
+
+.loader.circle-spin {
+  border-radius: 50%;
+  border: .2rem solid rgba(0, 0, 0, .05);
+  width: 4rem;
+  height: 4rem;
+  box-sizing: content-box;
+}
+
+.loader.circle-spin .loader-placeholder {
+  position: absolute;
+  top: -.2rem;
+  left: -.2rem;
+  border-radius: 50%;
+  border: .2rem solid transparent;
+  border-top: .2rem solid $theme-blue;
+  width: 4rem;
+  height: 4rem;
+  box-sizing: content-box;
+  -webkit-animation: circle-spin 1s ease infinite;
+  animation: circle-spin 1s ease infinite;
+}
+
+@keyframes circle-spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes circle-spin {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@each $theme, $color in $theme {
+  .free-#{$theme} .loader {
+    &.circle-line span,
+    &.circle-line-spin span,
+    &.circle-round span,
+    &.circle-round-fade span,
+    &.line-square span,
+    &.line-round span,
+    &.line-bounce span {
+      background: $color !important;
+    }
+
+    &.circle-spin .loader-placeholder {
+      border-top: .2rem solid $color !important;
+    }
+  }
+
+  :host-context(.free-#{$theme}) {
+    .loader {
+      &.circle-line span,
+      &.circle-line-spin span,
+      &.circle-round span,
+      &.circle-round-fade span,
+      &.line-square span,
+      &.line-round span,
+      &.line-bounce span {
+        background: $color;
+      }
+
+      &.circle-spin .loader-placeholder {
+        border-top: .2rem solid $color;
+      }
+    }
+  }
+}

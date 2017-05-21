@@ -1,0 +1,83 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        输入允许用户输入文本，通常以表单形式出现。用户可以输入文字，数字或混合格式类型的输入。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项</h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-inputtext</h3>
+        <p>单个输入表单</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>color</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>表单线框颜色，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>icon</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否增加图标，可选(采用FontAwesome)</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-inputtext></free-inputtext>
+            <free-inputtext color="success"></free-inputtext>
+            <free-inputtext color="error"></free-inputtext>
+            <free-inputtext color="warning"></free-inputtext>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-inputtext&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext color="success"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext color="error"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext color="warning"&gt;&lt;/free-inputtext&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-inputtext color="success" icon="check"></free-inputtext>
+            <free-inputtext color="error" icon="close"></free-inputtext>
+            <free-inputtext color="warning" icon="exclamation"></free-inputtext>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-inputtext color="success" icon="check"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext color="error" icon="close"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext color="warning" icon="exclamation"&gt;&lt;/free-inputtext&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+</div>
+

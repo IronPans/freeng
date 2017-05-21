@@ -1,0 +1,102 @@
+@import "../../../assets/sass/variables";
+
+:host /deep/ {
+  .free-tree ul {
+    list-style: none;
+    color: #333;
+
+    li:before,
+    li:after,
+    li span:before,
+    li span:after {
+      font-family: "FontAwesome";
+    }
+
+    li.free-tree-item {
+      cursor: pointer;
+      line-height: 1.2rem;
+
+      & > ul {
+        overflow: hidden;
+      }
+
+      ul li {
+        margin: 0 20px;
+      }
+
+      & > span {
+        display: inline-flex;
+        align-items: center;
+
+        &:before {
+          content: "\f105";
+          order: -2;
+        }
+
+        &:after {
+          content: "\f07b";
+          order: -1;
+          padding: 0 .3rem;
+          color: $default;
+        }
+
+        &:before,
+        &:after {
+          transition: all .25s;
+        }
+
+        &:hover {
+          color: $default;
+        }
+      }
+
+      &.open {
+        height: auto;
+
+        & > span:after {
+          content: "\f07c";
+        }
+        & > span:before {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    li.last span {
+      position: relative;
+      display: inline-block;
+      padding-left: 15px;
+
+      &:before {
+        content: "\f15c";
+        padding-right: .3rem;
+        color: $default;
+      }
+
+      &.image:before {
+        content: "\f1c5";
+      }
+    }
+  }
+}
+
+@each $theme, $color in $theme {
+  :host-context(.free-#{$theme}) /deep/ {
+    .free-tree ul li.free-tree-item > span {
+      &:hover:after,
+      &:after  {
+        color: $color;
+      }
+    }
+
+    .free-tree ul li.last > span {
+      &:before {
+       color: $color;
+      }
+
+      &.image:before {
+        content: "\f1c5";
+      }
+    }
+  }
+}

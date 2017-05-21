@@ -1,0 +1,49 @@
+$theme-blue: #3949ab;
+$theme-green: #4CAF50;
+$link-color: #fff;
+$link-background: #29368B;
+$background: #2B2C30;
+$top: 50px;
+$aside-width: 250px;
+$left-menu: 'left-menu';
+
+@mixin borderRadius($radius: 2px) {
+  border-radius: $radius;
+}
+
+@mixin boxShadow {
+  //box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin transition($duration, $attribute: all) {
+  -webkit-transition: $attribute $duration;
+  -moz-transition: $attribute $duration;
+  transition: $attribute $duration;
+}
+
+@mixin position($type, $top: '', $right: '', $bottom: '', $left: '') {
+  position: $type;
+  @if $top != '' { top: $top; }
+  @if $right != '' { right: $right; }
+  @if $bottom != '' { bottom: $bottom; }
+  @if $left != '' { left: $left; }
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}

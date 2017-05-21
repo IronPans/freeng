@@ -1,0 +1,25 @@
+@import "../../../assets/sass/mixin";
+
+.free-panel-header {
+  position: relative;
+  font-size: .85rem;
+  font-weight: bold;
+  padding: .35rem .75rem;
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+}
+.free-panel {
+  background: #fff;
+  color: rgba(0,0,0, 0.87);
+  border-radius: 2px;
+  @include boxShadow;
+  @include clearfix;
+  @include borderRadius(2px);
+}
+
+.free-panel-inner {
+  padding: .75rem;
+}
+
+.free-panel.theme-black .free-panel-header {
+  border-top-color: #313b3f;
+}

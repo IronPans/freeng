@@ -1,0 +1,27 @@
+.free-panel-header {
+  position: relative;
+  font-size: .85rem;
+  font-weight: bold;
+  padding: .35rem .75rem;
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13); }
+
+.free-panel {
+  background: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 2px; }
+  .free-panel::after {
+    content: '';
+    display: table;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+
+.free-panel-inner {
+  padding: .75rem; }
+
+.free-panel.theme-black .free-panel-header {
+  border-top-color: #313b3f; }
+
+/*# sourceMappingURL=panel.component.css.map */

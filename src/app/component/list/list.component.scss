@@ -1,0 +1,124 @@
+@import "../../../assets/sass/mixin";
+
+:host /deep/ {
+  .free-list-item {
+    @include flexbox;
+    min-height: 2.4rem;
+    margin: 0;
+    padding: 0 16px;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    font-size: .8rem;
+    font-weight: 400;
+    text-align: left;
+    text-transform: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  .free-list {
+    background-color: #fff;
+    color: rgba(0, 0, 0, .87);
+  }
+
+  .free-list {
+    @include flexbox;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    position: relative;
+    list-style: none;
+  }
+
+  .free-avatar {
+    width: 1.6rem;
+    min-width: 1.6rem;
+    height: 1.6rem;
+    min-height: 1.6rem;
+    margin: 0 1rem 0 0;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    border-radius:50%;
+    vertical-align: middle;
+  }
+
+  .free-avatar.free-avatar-large {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .free-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .free-list-content {
+    @include flexbox;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    line-height: 1.25em;
+    white-space: normal;
+    padding: .5rem 0;
+  }
+
+  .free-list-content>* {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .free-list-content>:nth-child(3) {
+    margin: 0;
+    color: rgba(0,0,0,.54);
+    font-size: 14px;
+  }
+
+  .free-icon {
+    margin-right: 1.2rem;
+    color: rgba(0,0,0,.54);
+  }
+
+  .btn {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 24px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-right: -.6rem;
+  }
+
+  .free-list.free-list-hover .free-list-item {
+    cursor: pointer;
+  }
+
+  .free-list.free-list-hover .free-list-item:hover {
+    background: #eee;
+  }
+
+  .free-list.free-list-line .free-list-item:after {
+    content: "";
+    position: absolute;
+    left: 3.5rem;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #d9d9d9;
+  }
+}

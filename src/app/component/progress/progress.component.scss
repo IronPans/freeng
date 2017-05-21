@@ -1,0 +1,59 @@
+@import "../../../assets/sass/variables";
+
+:host /deep/ {
+
+  .free-progress {
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+
+    &.free-progress-striped .free-progress-bar {
+      background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+      background-image: linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+      background-size: 30px 30px;
+    }
+  }
+
+  .free-progress-bar {
+    width: 0;
+    height: 100%;
+    background: #009dd8;
+    font-size: .6rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+    transition: width .6s ease;
+  }
+
+  .free-progress-striped.free-active .free-progress-bar {
+    -webkit-animation: free-progress-bar-stripes 2s linear infinite;
+    animation: free-progress-bar-stripes 2s linear infinite;
+  }
+}
+
+@keyframes free-progress-bar-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+
+@each $theme, $color in $theme {
+  :host /deep/ .free-progress.free-#{$theme} .free-progress-bar {
+    background-color: $color !important;
+  }
+
+  :host-context(.free-#{$theme}) {
+    .free-progress-bar {
+      background-color: $color;
+    }
+  }
+}

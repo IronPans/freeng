@@ -1,0 +1,73 @@
+:host /deep/ .free-select {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  border-bottom: 1px solid #d9d9d9; }
+:host /deep/ .free-select-input label {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  width: calc(100% - 25px);
+  height: 100%;
+  padding: 5px 10px 0 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent;
+  -webkit-align-items: center;
+  align-items: center; }
+:host /deep/ .free-select-input {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+:host /deep/ .free-select-input:before {
+  font-family: FontAwesome;
+  content: "\f0dd";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  display: inline-block;
+  padding: 0 .5rem;
+  line-height: 0;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  transform: translate(0, -50%); }
+:host /deep/ .free-select-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  min-width: 100%;
+  max-height: 10rem;
+  overflow: hidden;
+  overflow-y: auto; }
+:host /deep/ .free-select-item {
+  list-style: none;
+  cursor: pointer; }
+:host /deep/ .free-select-item:hover {
+  background: #eee; }
+:host /deep/ .free-select-item-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 5px 10px;
+  white-space: nowrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center; }
+:host /deep/ .free-select-item.free-select-active {
+  background: #eee;
+  font-weight: bold; }
+
+/*# sourceMappingURL=select.component.css.map */

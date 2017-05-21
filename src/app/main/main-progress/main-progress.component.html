@@ -1,0 +1,156 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        线性进度条填充0％至100％以显示任务的进度。 它还将动画显示有一个任务等待完成。
+      </p>
+      <ul class="free-ul-padding">
+        <li>丰富的颜色选择</li>
+        <li>酷炫的动画效果</li>
+      </ul>
+      <hr>
+      <h3 class="free-head-title">API 选项</h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-progress</h3>
+        <p>代表一个进度条</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>value</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>当前加载值</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>striped</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否增加斑马条纹，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>color</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置进度条颜色</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>move</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否增加动态效果，默认为false</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-progress value="40%"></free-progress>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-progress value="40%"&gt;&lt;/free-progress&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-progress color="green" value="70%"></free-progress>
+            <free-progress color="blue" value="70%"></free-progress>
+            <free-progress color="lightblue" value="70%"></free-progress>
+            <free-progress color="yellow" value="70%"></free-progress>
+            <free-progress color="red" value="70%"></free-progress>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-progress color="green" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress color="blue" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress color="lightblue" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress color="yellow" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress color="red" value="70%"&gt;&lt;/free-progress&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Percent</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-progress color="green" value="70%" [percent]="true"></free-progress>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-progress [percent]="true" color="green" value="70%"&gt;&lt;/free-progress&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Striped</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-progress  [striped]="true" color="green" value="70%"></free-progress>
+            <free-progress  [striped]="true" color="blue" value="70%"></free-progress>
+            <free-progress  [striped]="true" color="lightblue" value="70%"></free-progress>
+            <free-progress  [striped]="true" color="yellow" value="70%"></free-progress>
+            <free-progress  [striped]="true" color="red" value="70%"></free-progress>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-progress [striped]="true" color="green" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress [striped]="true" color="blue" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress [striped]="true" color="lightblue" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress [striped]="true" color="yellow" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress [striped]="true" color="red" value="70%"&gt;&lt;/free-progress&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Move</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-progress  [striped]="true" [move]="true" color="green" value="70%"></free-progress>
+            <free-progress  [striped]="true" [move]="true" color="blue" value="70%"></free-progress>
+            <free-progress  [striped]="true" [move]="true" color="lightblue" value="70%"></free-progress>
+            <free-progress  [striped]="true" [move]="true" color="yellow" value="70%"></free-progress>
+            <free-progress  [striped]="true" [move]="true" color="red" value="70%"></free-progress>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-progress [striped]="true" [move]="true" color="green" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress [striped]="true" [move]="true" color="blue" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress [striped]="true" [move]="true" color="lightblue" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress [striped]="true" [move]="true" color="yellow" value="70%"&gt;&lt;/free-progress&gt;
+              &lt;free-progress [striped]="true" [move]="true" color="red" value="70%"&gt;&lt;/free-progress&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+</div>

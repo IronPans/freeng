@@ -1,0 +1,123 @@
+@import "../../../assets/sass/mixin";
+@import "../../../assets/sass/variables";
+
+$theme: theme-line, theme-block;
+
+@each $type in $theme {
+  @if $type == 'theme-block' {
+    :host /deep/ .free-tab-group.#{$type} {
+      ul.free-tab-navs {
+        background: $default;
+        border: none;
+        li span {
+          color: #fff;
+        }
+      }
+      .free-tab-nav.active span {
+        background: #fff;
+        color: #3949ab;
+      }
+
+      .free-tab-nav span:after {
+        height: 0;
+      }
+    }
+  } @else {
+    :host /deep/ .free-tab-group {
+      ul.free-tab-navs {
+        background: #fff;
+        border-bottom: 1px solid #d9d9d9;
+        li span {
+          color: #333;
+        }
+      }
+
+      .free-tab-nav.active span {
+        color: $default;
+        font-weight: bold;
+        &:after {
+          transform: scale(1);
+        }
+      }
+      .free-tab-nav span:after {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: $default;
+        transform: scale(0);
+        transition: all .3s;
+      }
+    }
+  }
+}
+
+:host /deep/ .free-tab-group {
+  @include boxShadow;
+
+  ul.free-tab-navs {
+    @include flexbox;
+    padding: .2rem .2rem 0;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &.free-tab-right > free-tab-nav > ul.free-tab-navs {
+    justify-content: flex-end
+  }
+
+  &.free-tab-center > free-tab-nav > ul.free-tab-navs {
+    justify-content: center
+  }
+
+  ul.free-tab-navs {
+    &:after {
+      display: table;
+      content: '';
+      clear: both;
+    }
+    li {
+      list-style: none;
+      span {
+        position: relative;
+        display: inline-block;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: .25rem 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+:host /deep/ .free-tab-box {
+  position: relative;
+  overflow: hidden;
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+
+  free-tab {
+    width: 100%;
+    flex-shrink: 0;
+    border-top: 0;
+  }
+
+  .free-tab {
+    width: 100%;
+    background: #fff;
+    display: none;
+    padding: .75rem;
+    &.active {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,0BAAc;EACZ,MAAM,EAAE,SAAS;AAGlB,6BAAiB;EACf,WAAW,EAAE,eAAe",
+"sources": ["main-range.component.scss"],
+"names": [],
+"file": "main-range.component.css"
+}

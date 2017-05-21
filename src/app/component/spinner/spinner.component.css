@@ -1,0 +1,59 @@
+:host /deep/ .free-spinner {
+  border: 1px solid #bbb;
+  overflow: hidden;
+  border-radius: 2px; }
+:host /deep/ .free-spinner,
+:host /deep/ .free-spinner-minus,
+:host /deep/ .free-spinner-add {
+  position: relative;
+  display: inline-flex; }
+:host /deep/ .free-spinner input {
+  background: transparent;
+  border: none;
+  padding: 0 .2rem;
+  min-width: 1.5rem;
+  max-width: 2rem;
+  text-align: center; }
+:host /deep/ .free-spinner-minus,
+:host /deep/ .free-spinner-add {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #f9f9f9;
+  cursor: pointer;
+  border: none; }
+:host /deep/ .free-spinner-minus {
+  border-right: 1px solid #bbb; }
+  :host /deep/ .free-spinner-minus:active {
+    background: #ddd; }
+  :host /deep/ .free-spinner-minus:disabled {
+    opacity: .8; }
+    :host /deep/ .free-spinner-minus:disabled:before {
+      background: silver; }
+:host /deep/ .free-spinner-add {
+  border-left: 1px solid #bbb; }
+  :host /deep/ .free-spinner-add:active {
+    background: #ddd; }
+  :host /deep/ .free-spinner-add:disabled {
+    opacity: .8; }
+    :host /deep/ .free-spinner-add:disabled:before {
+      background: silver; }
+    :host /deep/ .free-spinner-add:disabled:after {
+      background: silver; }
+:host /deep/ .free-spinner-minus:before,
+:host /deep/ .free-spinner-add:before,
+:host /deep/ .free-spinner-add:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #bbb;
+  transform: translate3d(-50%, -50%, 0); }
+:host /deep/ .free-spinner-minus:before,
+:host /deep/ .free-spinner-add:before {
+  width: .4rem;
+  height: .1em; }
+:host /deep/ .free-spinner-add:after {
+  height: .4rem;
+  width: .1em; }
+
+/*# sourceMappingURL=spinner.component.css.map */
