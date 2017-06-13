@@ -12,4 +12,4 @@ FreeNG是一款完全响应式的前端UI框架，它采用了主流的左右两
 
 ## 线上浏览
 
-![FreeNGO线上浏览](http://ghmagical.com/freeng)
+[FreeNG线上浏览](http://ghmagical.com/freeng)
