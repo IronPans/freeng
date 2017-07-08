@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Component, OnInit, AfterViewInit, Input, Renderer2, ElementRef } from '@angular/core';
+import { NgModule, Component, AfterViewInit, Input, ElementRef } from '@angular/core';
 import { DomRenderer } from '../common/dom';
 
 @Component({
@@ -7,23 +7,19 @@ import { DomRenderer } from '../common/dom';
   template: `<span class="free-badge" [class.free-badge-up]="up">{{content}}</span>`,
   providers: [DomRenderer]
 })
-export class BadgeComponent implements OnInit, AfterViewInit {
+export class BadgeComponent implements AfterViewInit {
 
   @Input() content: string;
   @Input() up: boolean;
-  constructor(private renderer2: Renderer2,
-              private domRenderer: DomRenderer,
+  constructor(private domRenderer: DomRenderer,
               private er: ElementRef) { }
-
-  ngOnInit() {
-  }
 
   ngAfterViewInit() {
     const container = this.er.nativeElement;
-    const parent = this.renderer2.parentNode(container);
+    const parent = this.domRenderer.parentNode(container);
     const position = this.domRenderer.getStyle(container, 'position');
     if (!position || position === 'static') {
-      this.renderer2.setStyle(parent, 'position', 'relative');
+      this.domRenderer.css(parent, {'position': 'relative'});
     }
   }
 

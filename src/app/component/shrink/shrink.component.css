@@ -1,47 +1,51 @@
 :host /deep/ .suspend {
   position: relative;
   font-size: 20px;
-  width: 3em;
-  height: 3em;
+  width: 2.8em;
+  height: 2.8em;
   z-index: 99; }
 :host /deep/ .suspend-btn {
-  z-index: 99; }
+  z-index: 99;
+  width: 100%;
+  height: 100%; }
 :host /deep/ .suspend-btn,
 :host /deep/ .suspend-item {
-  display: block;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 100%;
   color: #fff;
-  line-height: 3em;
-  background-color: #ff9800;
+  background-color: #115d8e;
   border-color: #e68900;
   text-align: center;
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12); }
-:host /deep/ .suspend-item,
-:host /deep/ .suspend-btn {
-  position: absolute;
-  top: 0;
-  left: 0; }
+  :host /deep/ .suspend-btn:after,
+  :host /deep/ .suspend-item:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(0); }
 :host /deep/ .suspend-item {
   opacity: 0;
-  z-index: 1; }
-:host /deep/ .suspend-item:after,
-:host /deep/ .suspend-btn:after {
-  content: "";
-  position: absolute;
   top: 0;
-  left: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  border-radius: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  transform: scale(0); }
+  transform: scale(0.8); }
+:host /deep/ .suspend-vertical .suspend-item,
+:host /deep/ .suspend-vertical-reverse .suspend-item {
+  left: 0; }
 :host /deep/ .suspend-item,
 :host /deep/ .suspend-item:after,
 :host /deep/ .suspend-btn:after,

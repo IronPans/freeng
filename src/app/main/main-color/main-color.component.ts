@@ -1,8 +1,5 @@
-import {Component, OnInit, HostBinding, NgModule, Renderer2 } from '@angular/core';
+import {Component, OnInit, HostBinding, Renderer2 } from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {PanelModule} from '../../component/panel/panel.component';
-import {CommonModule} from '@angular/common';
-import {GridModule} from '../../component/grid/grid.directive';
 import { config } from '../../common/config';
 
 @Component({
@@ -24,19 +21,10 @@ export class MainColorComponent implements OnInit {
 
   selectTheme(value: string) {
     const className = document.body.className;
-    const theme = /free-theme-2/.test(className);
-    document.body.className = theme ? 'free-theme-2' : '';
+    const theme = /free-type-2/.test(className);
+    document.body.className = theme ? 'free-type-2' : '';
     this.renderer2.addClass(document.body, `free-${value}`);
   }
 
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    PanelModule,
-    GridModule
-  ],
-  declarations: [MainColorComponent]
-})
 
-export class MainColorModule {}

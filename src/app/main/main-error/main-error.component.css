@@ -62,43 +62,43 @@
     overflow: hidden;
     white-space: nowrap; }
 
-:host-context(.free-green) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-green) /deep/ .free-error-page .free-error-board {
   background: #46be8a; }
 
-:host-context(.free-deepblue) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-deepblue) /deep/ .free-error-page .free-error-board {
   background: #115d8e; }
 
-:host-context(.free-blue) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-blue) /deep/ .free-error-page .free-error-board {
   background: #677ae4; }
 
-:host-context(.free-lightblue) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-lightblue) /deep/ .free-error-page .free-error-board {
   background: #169e9f; }
 
-:host-context(.free-yellow) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-yellow) /deep/ .free-error-page .free-error-board {
   background: #fa9e0c; }
 
-:host-context(.free-red) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-red) /deep/ .free-error-page .free-error-board {
   background: #f96868; }
 
-:host-context(.free-purple) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-purple) /deep/ .free-error-page .free-error-board {
   background: #6633B9; }
 
-:host-context(.free-orange) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-orange) /deep/ .free-error-page .free-error-board {
   background: #f2a654; }
 
-:host-context(.free-brown) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-brown) /deep/ .free-error-page .free-error-board {
   background: #8d6658; }
 
-:host-context(.free-cyan) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-cyan) /deep/ .free-error-page .free-error-board {
   background: #57c7d4; }
 
-:host-context(.free-pink) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-pink) /deep/ .free-error-page .free-error-board {
   background: #f96197; }
 
-:host-context(.free-teal) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-teal) /deep/ .free-error-page .free-error-board {
   background: #3aa99e; }
 
-:host-context(.free-dark) /deep/ .free-error-page .free-error-board {
+:host-context(.free-theme-dark) /deep/ .free-error-page .free-error-board {
   background: #393D49; }
 
 /*# sourceMappingURL=main-error.component.css.map */

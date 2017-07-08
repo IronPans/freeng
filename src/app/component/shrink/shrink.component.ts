@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Component, OnInit, AfterViewInit, Input, Output, ElementRef,
-    ViewChild, ViewChildren, QueryList } from '@angular/core';
+import {
+  NgModule, Component, OnInit, AfterViewInit, Input, Output, ElementRef,
+  ViewChild, ViewChildren, QueryList, Renderer2, HostListener
+} from '@angular/core';
 import { DomRenderer } from '../common/dom';
 
 @Component({
@@ -25,7 +27,7 @@ export class ShrinkItemComponent implements OnInit {
   selector: 'free-shrink',
   template: `
     <div class="suspend" #container>
-				<span class="suspend-btn burge burge-line" #btn (click)="toggle()">
+				<span class="suspend-btn burge burge-line" #btn (click)="!hover && toggle()">
 				<span></span>
 				<span></span>
 				<span></span>
@@ -37,27 +39,38 @@ export class ShrinkItemComponent implements OnInit {
   providers: [DomRenderer]
 })
 export class ShrinkComponent implements OnInit, AfterViewInit {
-
   expanded: boolean;
+  _items: any;
+  btn: HTMLDivElement;
+  container: HTMLDivElement;
   @Input()  reverse: boolean;
   @Input() menus: any;
   @Input() type = 'horizontal';
+  @Input() direction = 'lt';
+  @Input() hover: boolean;
   itemWidth: any;
   distance: number;
   delay: any;
-  direction: string;
   angle: number;
   @ViewChild('btn') _btn: ElementRef;
   @ViewChild('container') _container: ElementRef;
   @ViewChildren(ShrinkItemComponent) items: QueryList<ShrinkItemComponent>;
-  _items: any;
-  btn: HTMLDivElement;
-  container: HTMLDivElement;
-  constructor(private domRenderer: DomRenderer) { }
+  @HostListener('mouseover') onMouseover() {
+    if (this.hover) {
+      this.toggle();
+    }
+  };
+  @HostListener('mouseout') onMouseout() {
+    if (this.hover) {
+      this.toggle();
+    }
+  };
+  constructor(private domRenderer: DomRenderer, private renderer2: Renderer2) { }
 
   ngOnInit() {
     this.reverse = false;
     this.distance = 10;
+    this.angle = 60;
   }
 
   ngAfterViewInit() {
@@ -70,6 +83,8 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
       this.type = type[0];
       this.reverse = true;
     }
+
+    this.renderer2.addClass(this.container, `suspend-${this.type}`);
   }
 
   toggle() {
@@ -87,14 +102,14 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
       case 'horizontal':
         for (let i = 0; i < this._items.length; i++) {
           const x = op + ((this.itemWidth + this.distance) * (i + 1)) + 'px';
-          this._items[i].itemStyle = {'top': '0px', 'opacity': 1, 'left': x};
-        };
+          this._items[i].itemStyle = {'opacity': 1, 'left': x};
+        }
         break;
       case 'vertical':
         for (let i = 0; i < this._items.length; i++) {
           const x = op + ((this.itemWidth + this.distance) * (i + 1)) + 'px';
-          this._items[i].itemStyle = {'left': '0px', 'opacity': 1, 'top': x};
-        };
+          this._items[i].itemStyle = { 'opacity': 1, 'top': x};
+        }
         break;
       case 'circle':
         const r = this.itemWidth + this.distance;
@@ -107,19 +122,10 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
         const rotation = dir[this.direction];
         this.delay = parseInt(this.delay, 10);
         for (let i = 0; i < this._items.length; i++) {
-          if (this.delay) {
-            this._items[i].intervalId = setInterval(function() {
-              this.anim(i, rotation, r);
-            }, this.delay * i);
-            this.domRenderer.transitionEnd(this.items[i], function(){
-              clearInterval(this.intervalId);
-            });
-          } else {
-            this.anim(i, rotation, r);
-          }
-        };
+          this.anim(i, rotation, r);
+        }
         break;
-    };
+    }
     this.expanded = true;
     this.domRenderer.addClass(this.container, 'suspend-expanded');
   }
@@ -131,10 +137,11 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
     let y = Math.cos(angle) * r;
     x = parseFloat(x.toFixed(3));
     y = parseFloat(y.toFixed(3));
+    if (this.delay) {
+      this._items[i].itemStyle = { 'transition-delay': this.delay * i + 'ms'};
+    }
     const xy = 'translate(' + x + 'px,' + y + 'px)';
-    this.domRenderer.setTransform(this._items[i], xy);
-    this._items[i].style.top = '0px';
-    this._items[i].style.opacity = 1;
+    this._items[i].itemStyle = {'opacity': 1, 'top': 0, 'transform': xy};
   }
 
   close() {
@@ -143,7 +150,8 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
       case 'vertical':
       case 'circle':
         for (let i = 0; i < this._items.length; i++) {
-          this._items[i].itemStyle = {'left': '0px', 'opacity': 0, 'top': '0px'};
+          this._items[i].itemStyle = {'left': '0px', 'opacity': 0,
+            'top': '0px', 'transform': 'translate(0,0)'};
         };
         break;
     };

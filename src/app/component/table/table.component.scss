@@ -3,6 +3,8 @@
   .free-table {
     width: 100%;
     @include flexbox;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .free-table table {
@@ -14,8 +16,8 @@
 
   .free-table .free-table-head {
       position: relative;
-      color: rgba(0,0,0,.54);
-      font-size: .6rem;
+      font-size: .7rem;
+    font-weight: bold;
       text-align: left;
   }
 
@@ -128,6 +130,10 @@
 
   .free-checkbox-title {
     padding-left: .3rem;
+  }
+
+  .free-table-footer {
+    flex: 1 0 auto;
   }
 
 }

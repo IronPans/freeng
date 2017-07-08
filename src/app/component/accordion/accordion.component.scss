@@ -20,23 +20,25 @@ free-accordion-group {
     cursor: pointer;
     border-bottom: 1px solid rgba(120, 130, 140, 0.13);
     user-select: none;
-  }
 
-  .accordion-toggle:after {
-    font: normal normal normal .8rem/1 FontAwesome;
-  }
+    &:after {
+      font: normal normal normal .8rem/1 FontAwesome;
+      content: "\f105";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      padding: 0 .8rem;
+      transform: translate(0, -50%);
+      transition: all .2s linear;
+    }
 
-  .accordion-toggle:after {
-    content: "\f105";
-    position: absolute;
-    top: 50%;
-    right: 0;
-    padding: 0 .8rem;
-    transform: translate(0, -50%);
-    transition: all .2s linear;
-  }
-  .accordion-toggle.accordion-item-expand:after {
-    transform: translate(0, -50%) rotate(90deg);
+    &.accordion-item-expand:after {
+      transform: translate(0, -50%) rotate(90deg);
+    }
+
+    .accordion-toggle-title {
+      transition: all .2s linear;
+    }
   }
 
   .accordion-toggle-inner {
@@ -48,15 +50,11 @@ free-accordion-group {
     position: relative;
     overflow: hidden;
     font-size: .7rem;
-  }
 
-  .accordion-content .accordion-inner,
-  .accordion-content div {
-    padding: .5rem;
-  }
-
-  .accordion-toggle .accordion-toggle-title {
-    transition: all .2s linear;
+    .accordion-inner,
+    & > div {
+      padding: .5rem;
+    }
   }
 }
 

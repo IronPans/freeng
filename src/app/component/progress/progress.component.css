@@ -33,79 +33,79 @@
 :host /deep/ .free-progress.free-green .free-progress-bar {
   background-color: #46be8a !important; }
 
-:host-context(.free-green) .free-progress-bar {
+:host-context(.free-theme-green) .free-progress-bar {
   background-color: #46be8a; }
 
 :host /deep/ .free-progress.free-deepblue .free-progress-bar {
   background-color: #115d8e !important; }
 
-:host-context(.free-deepblue) .free-progress-bar {
+:host-context(.free-theme-deepblue) .free-progress-bar {
   background-color: #115d8e; }
 
 :host /deep/ .free-progress.free-blue .free-progress-bar {
   background-color: #677ae4 !important; }
 
-:host-context(.free-blue) .free-progress-bar {
+:host-context(.free-theme-blue) .free-progress-bar {
   background-color: #677ae4; }
 
 :host /deep/ .free-progress.free-lightblue .free-progress-bar {
   background-color: #169e9f !important; }
 
-:host-context(.free-lightblue) .free-progress-bar {
+:host-context(.free-theme-lightblue) .free-progress-bar {
   background-color: #169e9f; }
 
 :host /deep/ .free-progress.free-yellow .free-progress-bar {
   background-color: #fa9e0c !important; }
 
-:host-context(.free-yellow) .free-progress-bar {
+:host-context(.free-theme-yellow) .free-progress-bar {
   background-color: #fa9e0c; }
 
 :host /deep/ .free-progress.free-red .free-progress-bar {
   background-color: #f96868 !important; }
 
-:host-context(.free-red) .free-progress-bar {
+:host-context(.free-theme-red) .free-progress-bar {
   background-color: #f96868; }
 
 :host /deep/ .free-progress.free-purple .free-progress-bar {
   background-color: #6633B9 !important; }
 
-:host-context(.free-purple) .free-progress-bar {
+:host-context(.free-theme-purple) .free-progress-bar {
   background-color: #6633B9; }
 
 :host /deep/ .free-progress.free-orange .free-progress-bar {
   background-color: #f2a654 !important; }
 
-:host-context(.free-orange) .free-progress-bar {
+:host-context(.free-theme-orange) .free-progress-bar {
   background-color: #f2a654; }
 
 :host /deep/ .free-progress.free-brown .free-progress-bar {
   background-color: #8d6658 !important; }
 
-:host-context(.free-brown) .free-progress-bar {
+:host-context(.free-theme-brown) .free-progress-bar {
   background-color: #8d6658; }
 
 :host /deep/ .free-progress.free-cyan .free-progress-bar {
   background-color: #57c7d4 !important; }
 
-:host-context(.free-cyan) .free-progress-bar {
+:host-context(.free-theme-cyan) .free-progress-bar {
   background-color: #57c7d4; }
 
 :host /deep/ .free-progress.free-pink .free-progress-bar {
   background-color: #f96197 !important; }
 
-:host-context(.free-pink) .free-progress-bar {
+:host-context(.free-theme-pink) .free-progress-bar {
   background-color: #f96197; }
 
 :host /deep/ .free-progress.free-teal .free-progress-bar {
   background-color: #3aa99e !important; }
 
-:host-context(.free-teal) .free-progress-bar {
+:host-context(.free-theme-teal) .free-progress-bar {
   background-color: #3aa99e; }
 
 :host /deep/ .free-progress.free-dark .free-progress-bar {
   background-color: #393D49 !important; }
 
-:host-context(.free-dark) .free-progress-bar {
+:host-context(.free-theme-dark) .free-progress-bar {
   background-color: #393D49; }
 
 /*# sourceMappingURL=progress.component.css.map */

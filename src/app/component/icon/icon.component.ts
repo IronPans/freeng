@@ -26,7 +26,11 @@ export class IconComponent implements OnInit, AfterViewInit {
     const _container = this.container.nativeElement;
 
     if (this.size) {
-      this.renderer2.addClass(_container, 'fa-' + this.size + 'x');
+      this.renderer2.addClass(_container, 'fa-' + this.size);
+    }
+
+    if (this.spin) {
+      this.renderer2.addClass(_container, 'fa-spin');
     }
   }
 

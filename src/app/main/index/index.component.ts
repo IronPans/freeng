@@ -1,24 +1,12 @@
-import {Component, OnInit, AfterViewInit,
-  HostListener, Renderer2, OnDestroy, NgModule} from '@angular/core';
+import {
+  Component, OnInit, AfterViewInit,
+  HostListener, Renderer2, OnDestroy, ViewChild
+} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
-import {ButtonModule} from '../../component/button/button.directive';
-import {ScrollModule} from '../../component/scroll/scroll.component';
-import {IconModule} from '../../component/icon/icon.component';
-import {AccordionModule} from '../../component/accordion/accordion.component';
-import {DropdownModule} from '../../component/dropdown/dropdown.component';
-import {PopoverModule} from '../../component/popover/popover.component';
-import {HamburgeModule} from '../../component/hamburge/hamburge.component';
-import {ShareModule} from '../../component/common/share';
-import {CommonModule} from '@angular/common';
-import {GridModule} from '../../component/grid/grid.directive';
-import {RippleModule} from '../../component/ripple/ripple.directive';
-import {RouterModule} from '@angular/router';
 import { config } from '../../common/config';
-import {BadgeModule} from '../../component/badge/badge.component';
 import { DomRenderer } from '../../component/common/dom';
-import {ShrinkModule} from '../../component/shrink/shrink.component';
 
 @Component({
   selector: 'free-root',
@@ -37,14 +25,19 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
   theme = [];
   isOpen: boolean;
   searchState: boolean;
+  sidebarActive: boolean;
+  @ViewChild('setting') settingBtn; ElementRef;
+  @ViewChild('main') main;
   @HostListener('window:resize') onResize() {
-    console.log(1);
+    this.resize();
   }
   constructor(private renderer2: Renderer2,
               private fb: FormBuilder,
              private route: ActivatedRoute,
              private domRenderer: DomRenderer,
-             private pageTitle: Title) { }
+             private pageTitle: Title) {
+    this.resize();
+  }
 
   ngOnInit() {
     this.title = '首页';
@@ -54,17 +47,22 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
       'name': 'TGCode',
       'icon': 'user'
     }, {
-      'name': '邮件',
-      'icon': 'envelope'
+      'name': 'GitHub',
+      'icon': 'github',
+      'url': 'https://github.com/IronPans/freeng',
+      'target': '_target'
     }, {
       'name': '帮助',
-      'icon': 'question-circle'
+      'icon': 'question-circle',
+      'routerLink': '/main/getting-started'
     }, {
-      'name': '设置',
-      'icon': 'cog'
+      'name': '系统消息',
+      'icon': 'bell-o',
+      'routerLink': '/main/changelog'
     }, {
       'name': '登出',
-      'icon': 'sign-out'
+      'icon': 'sign-out',
+      'routerLink': '/login'
     }];
 
     this.searchForm = this.fb.group({
@@ -78,6 +76,13 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
     ];
 
     this.theme = config.theme;
+  }
+
+  resize() {
+    if (window.innerWidth < 900) {
+      this.renderer2.addClass(document.body, 'free-mini');
+      this.isMini = true;
+    }
   }
 
   ngAfterViewInit() {
@@ -114,33 +119,36 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
       title = 'FreeNG';
     }
     this.pageTitle.setTitle(title);
+
+    // if (!this.isMini) {
+    //   this.toggleAside();
+    // }
+
+    this.renderer2. setProperty(this.main.nativeElement, 'scrollTop', 0);
   }
 
   onDeactivate(component) {
   }
 
+  open(event: any) {
+    this.sidebarActive = !this.sidebarActive;
+
+    if (this.sidebarActive) {
+      this.renderer2.addClass(this.settingBtn.nativeElement, 'open');
+    } else {
+      this.renderer2.removeClass(this.settingBtn.nativeElement, 'open');
+    }
+  }
+
+  selectTheme(value: string) {
+    const className = document.body.className.split(/\s+/);
+    for (const c of className) {
+      if (/^free-theme/.test(c)) {
+        this.renderer2.removeClass(document.body, c);
+      }
+    }
+    this.renderer2.addClass(document.body, `free-theme-${value}`);
+  }
+
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    RouterModule,
-    ScrollModule,
-    IconModule,
-    AccordionModule,
-    DropdownModule,
-    PopoverModule,
-    HamburgeModule,
-    ShareModule,
-    GridModule,
-    RippleModule,
-    BadgeModule,
-    ShrinkModule
-  ],
-  declarations: [
-    IndexComponent
-  ]
-})
-export class IndexModule {}
+

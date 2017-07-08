@@ -6,112 +6,118 @@
   border-radius: 2px;
   color: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+  .free-modal.free-modal-spinner {
+    min-width: 1rem;
+    background: transparent;
+    box-shadow: none; }
+    .free-modal.free-modal-spinner .free-modal-content {
+      padding: 0; }
+  .free-modal .free-modal-content {
+    padding: .75rem;
+    color: #fff; }
+  .free-modal .free-modal-header,
+  .free-modal .free-modal-footer {
+    position: relative;
+    padding: .5rem .75rem;
+    background: rgba(0, 0, 0, 0.1); }
+  .free-modal .free-modal-footer {
+    text-align: right; }
+  .free-modal .free-modal-close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.2;
+    line-height: 1rem;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%); }
+    .free-modal .free-modal-close:hover {
+      background: #1c1d24;
+      opacity: 0.5; }
+  .free-modal .free-prompt-input input {
+    width: 100%;
+    border: none;
+    background: #fff;
+    border-radius: 3px;
+    color: #333;
+    padding: 0 .5rem; }
 
-.free-modal .free-modal-header,
-.free-modal-footer {
-  position: relative;
-  padding: .5rem .75rem;
-  background: rgba(0, 0, 0, 0.1); }
-
-.free-modal-footer {
-  text-align: right; }
-
-.free-modal .free-modal-close {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 1rem;
-  height: 1rem;
-  opacity: 0.2;
-  line-height: 1rem;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-
-.free-modal .free-modal-close:hover {
-  background: #1c1d24;
-  opacity: 0.5; }
-
-.free-modal .free-modal-content {
-  padding: .75rem;
-  color: #fff; }
-
-:host-context(.free-green) /deep/ .free-modal {
+:host-context(.free-theme-green) /deep/ .free-modal {
   background: #46be8a; }
 
 .free-modal.free-green {
   background: #46be8a !important; }
 
-:host-context(.free-deepblue) /deep/ .free-modal {
+:host-context(.free-theme-deepblue) /deep/ .free-modal {
   background: #115d8e; }
 
 .free-modal.free-deepblue {
   background: #115d8e !important; }
 
-:host-context(.free-blue) /deep/ .free-modal {
+:host-context(.free-theme-blue) /deep/ .free-modal {
   background: #677ae4; }
 
 .free-modal.free-blue {
   background: #677ae4 !important; }
 
-:host-context(.free-lightblue) /deep/ .free-modal {
+:host-context(.free-theme-lightblue) /deep/ .free-modal {
   background: #169e9f; }
 
 .free-modal.free-lightblue {
   background: #169e9f !important; }
 
-:host-context(.free-yellow) /deep/ .free-modal {
+:host-context(.free-theme-yellow) /deep/ .free-modal {
   background: #fa9e0c; }
 
 .free-modal.free-yellow {
   background: #fa9e0c !important; }
 
-:host-context(.free-red) /deep/ .free-modal {
+:host-context(.free-theme-red) /deep/ .free-modal {
   background: #f96868; }
 
 .free-modal.free-red {
   background: #f96868 !important; }
 
-:host-context(.free-purple) /deep/ .free-modal {
+:host-context(.free-theme-purple) /deep/ .free-modal {
   background: #6633B9; }
 
 .free-modal.free-purple {
   background: #6633B9 !important; }
 
-:host-context(.free-orange) /deep/ .free-modal {
+:host-context(.free-theme-orange) /deep/ .free-modal {
   background: #f2a654; }
 
 .free-modal.free-orange {
   background: #f2a654 !important; }
 
-:host-context(.free-brown) /deep/ .free-modal {
+:host-context(.free-theme-brown) /deep/ .free-modal {
   background: #8d6658; }
 
 .free-modal.free-brown {
   background: #8d6658 !important; }
 
-:host-context(.free-cyan) /deep/ .free-modal {
+:host-context(.free-theme-cyan) /deep/ .free-modal {
   background: #57c7d4; }
 
 .free-modal.free-cyan {
   background: #57c7d4 !important; }
 
-:host-context(.free-pink) /deep/ .free-modal {
+:host-context(.free-theme-pink) /deep/ .free-modal {
   background: #f96197; }
 
 .free-modal.free-pink {
   background: #f96197 !important; }
 
-:host-context(.free-teal) /deep/ .free-modal {
+:host-context(.free-theme-teal) /deep/ .free-modal {
   background: #3aa99e; }
 
 .free-modal.free-teal {
   background: #3aa99e !important; }
 
-:host-context(.free-dark) /deep/ .free-modal {
+:host-context(.free-theme-dark) /deep/ .free-modal {
   background: #393D49; }
 
 .free-modal.free-dark {

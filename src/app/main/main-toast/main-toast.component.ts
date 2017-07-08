@@ -1,32 +1,26 @@
-import {Component, NgModule, OnInit} from '@angular/core';
-import {GridModule} from '../../component/grid/grid.directive';
-import {TableModule} from '../../component/table/table.component';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CommonModule} from '@angular/common';
+import {Component, HostBinding, OnInit} from '@angular/core';
+import {fadeInUp} from '../../component/common/animations';
+import {ToastController} from '../../component/toast/toast.controller';
 
 @Component({
   selector: 'free-main-toast',
   templateUrl: './main-toast.component.html',
-  styleUrls: ['./main-toast.component.scss']
+  styleUrls: ['./main-toast.component.scss'],
+  animations: [fadeInUp]
 })
 export class MainToastComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('@fadeInUpState') fadeInUpState;
+  @HostBinding('style.display') display = 'block';
+  constructor(private toastCtrl: ToastController) { }
 
   ngOnInit() {
   }
 
+  open() {
+    this.toastCtrl.create({
+      message: '警告！警告！'
+    });
+  }
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    TabGroupModule,
-    CodeModule,
-    TableModule,
-    GridModule
-  ],
-  declarations: [MainToastComponent]
-})
 
-export class MainToastModule { }

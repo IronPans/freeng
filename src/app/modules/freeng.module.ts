@@ -3,8 +3,7 @@
  */
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {BrowserModule} from '@angular/platform-browser';
+import {CommonModule} from '@angular/common';
 
 import { ShareModule } from '../component/common/share';
 import { AccordionModule } from '../component/accordion/accordion.component';
@@ -12,12 +11,10 @@ import { RangeModule } from '../component/range/range.component';
 import { PanelModule } from '../component/panel/panel.component';
 import { TabGroupModule } from '../component/tab/tab.component';
 import { DropdownModule } from '../component/dropdown/dropdown.component';
-import { CalendarModule } from '../component/calendar/calendar.component';
 import { TooltipModule } from '../component/tooltip/tooltip.directive';
 import { ToastModule } from '../component/toast/toast.component';
 import { LoadingModule } from '../component/loading/loading.component';
 import { InputtextModule } from '../component/inputtext/inputtext.component';
-import { ScrollModule } from '../component/scroll/scroll.component';
 import { ModalModule } from '../component/modal/modal.component';
 import { ProgressModule } from '../component/progress/progress.component';
 import { BreadcrumbModule } from '../component/breadcrumb/breadcrumb.component';
@@ -34,7 +31,6 @@ import { MaskModule } from '../component/mask/mask.component';
 import { SelectModule } from '../component/select/select.component';
 import { ChipModule } from '../component/chip/chip.component';
 import { SwitchModule } from '../component/switch/switch.component';
-import { PopoverModule } from '../component/popover/popover.component';
 import { HamburgeModule } from '../component/hamburge/hamburge.component';
 import { SpinnerModule } from '../component/spinner/spinner.component';
 
@@ -42,9 +38,13 @@ import { ButtonModule } from '../component/button/button.directive';
 import { RippleModule } from '../component/ripple/ripple.directive';
 import { GridModule } from '../component/grid/grid.directive';
 import { CodeModule } from '../component/code/code.component';
+import {FileModule} from '../component/file/file.component';
 
 @NgModule({
   imports: [
+    CommonModule,
+    FormsModule,
+    ShareModule,
     CheckboxModule,
     RippleModule,
     GridModule,
@@ -56,19 +56,13 @@ import { CodeModule } from '../component/code/code.component';
     RadioModule,
     RangeModule,
     DropdownModule,
-    CalendarModule,
     TooltipModule,
     ToastModule,
     LoadingModule,
     RatingModule,
-    ScrollModule,
     TabGroupModule,
     SpinnerModule,
     ProgressModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ShareModule,
     InputtextModule,
     AccordionModule,
     ImageModule,
@@ -80,9 +74,9 @@ import { CodeModule } from '../component/code/code.component';
     ChipModule,
     TableModule,
     CardModule,
-    PopoverModule,
     BreadcrumbModule,
-    HamburgeModule
+    HamburgeModule,
+    FileModule
   ]
 })
 export class FreeNGModule { }

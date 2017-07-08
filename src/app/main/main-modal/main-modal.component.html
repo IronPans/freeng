@@ -41,6 +41,27 @@
               </free-table-cell>
               <free-table-cell>设置模态框的背景色。</free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>type</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置模态框类型(alert,confirm,prompt)，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>spinner</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置Loading类型，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>delay</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置Loading自动隐藏时间，可选。</free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -52,11 +73,6 @@
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
             <button fButton (click)="open()">弹出框</button>
-            <button fButton color="blue" (click)="blueVisible = !blueVisible">弹出框</button>
-            <button fButton color="lightblue" (click)="lightblueVisible = !lightblueVisible">弹出框</button>
-            <button fButton color="green" (click)="greenVisible = !greenVisible">弹出框</button>
-            <button fButton color="yellow" (click)="yellowVisible = !yellowVisible">弹出框</button>
-            <button fButton color="red" (click)="redVisible = !redVisible">弹出框</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -66,40 +82,101 @@
                   &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
                 &lt;/f-footer&gt;
               &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
 
-              &lt;free-modal header="弹出框" modalColor="lightblue" [(visible)]="lightblueVisible"&gt;
-                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
-                &lt;f-footer&gt;
-                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
-                &lt;/f-footer&gt;
-              &lt;/free-modal&gt;
-
-              &lt;free-modal header="弹出框" modalColor="green" [(visible)]="greenVisible"&gt;
-                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
-                &lt;f-footer&gt;
-                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
-                &lt;/f-footer&gt;
-              &lt;/free-modal&gt;
-
-              &lt;free-modal header="弹出框" modalColor="yellow" [(visible)]="yellowVisible"&gt;
-                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
-                &lt;f-footer&gt;
-                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
-                &lt;/f-footer&gt;
-              &lt;/free-modal&gt;
-
-              &lt;free-modal header="弹出框" modalColor="red" [(visible)]="redVisible"&gt;
-                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
-                &lt;f-footer&gt;
-                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
-                &lt;/f-footer&gt;
-              &lt;/free-modal&gt;
-
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton color="blue" (click)="blueVisible = !blueVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
               &lt;free-modal header="弹出框" modalColor="blue" [(visible)]="blueVisible"&gt;
                 这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
                 &lt;f-footer&gt;
                   &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
                 &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Alert</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="alertVisible = !alertVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" type="alert" [(visible)]="alertVisible"&gt;
+                这是一个Alert弹出框，通过设置type属性为alert
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Confirm</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="confirmVisible = !confirmVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" type="confirm" [(visible)]="confirmVisible"&gt;
+                这是一个Confirm弹出框，通过设置type属性为confirm
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Prompt</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="promptVisible = !promptVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" type="confirm" [(visible)]="promptVisible"&gt;
+                这是一个Prompt弹出框，通过设置type属性为prompt
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Loading</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="Loading = !Loading">Loading</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal spinner="circleLineSpin" [(visible)]="loading"&gt;&lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Delay</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="delayLoading = !delayLoading">Loading</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal spinner="lineSquare" [delay]="1500" [(visible)]="delayLoading"&gt;
               &lt;/free-modal&gt;
             </free-code>
           </free-tab>
@@ -111,42 +188,30 @@
   <free-modal header="弹出框" [(visible)]="visible">
     这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
     <f-footer>
-      <button type="button" class="btn-default btn">关闭</button>
-    </f-footer>
-  </free-modal>
-
-  <free-modal header="弹出框" modalColor="lightblue" [(visible)]="lightblueVisible">
-    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
-    <f-footer>
-      <button type="button" class="btn-default btn">关闭</button>
-    </f-footer>
-  </free-modal>
-
-  <free-modal header="弹出框" modalColor="green" [(visible)]="greenVisible">
-    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
-    <f-footer>
-      <button type="button" class="btn-default btn">关闭</button>
-    </f-footer>
-  </free-modal>
-
-  <free-modal header="弹出框" modalColor="yellow" [(visible)]="yellowVisible">
-    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
-    <f-footer>
-      <button type="button" class="btn-default btn">关闭</button>
-    </f-footer>
-  </free-modal>
-
-  <free-modal header="弹出框" modalColor="red" [(visible)]="redVisible">
-    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
-    <f-footer>
-      <button type="button" class="btn-default btn">关闭</button>
+      <button fButton class="cancel">关闭</button>
     </f-footer>
   </free-modal>
 
   <free-modal header="弹出框" modalColor="blue" [(visible)]="blueVisible">
-    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+    可以使用modalColor设置主题色
     <f-footer>
-      <button type="button" class="btn-default btn">关闭</button>
+      <button fButton class="cancel">关闭</button>
     </f-footer>
   </free-modal>
+
+  <free-modal header="弹出框" type="alert" [(visible)]="alertVisible">
+    这是一个Alert弹出框，通过设置type属性为alert
+  </free-modal>
+
+  <free-modal header="弹出框" type="confirm" [(visible)]="confirmVisible">
+    这是一个Confirm弹出框，通过设置type属性为confirm
+  </free-modal>
+
+  <free-modal header="弹出框" type="prompt" [(visible)]="promptVisible">
+    这是一个Prompt弹出框，通过设置type属性为prompt
+  </free-modal>
+
+  <free-modal spinner="circleLineSpin" [(visible)]="Loading"></free-modal>
+
+  <free-modal spinner="lineSquare" [delay]="1500" [(visible)]="delayLoading"></free-modal>
 </div>

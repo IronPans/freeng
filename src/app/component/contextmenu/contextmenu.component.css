@@ -1,3 +1,50 @@
-
+:host /deep/ .free-contextmenu {
+  position: fixed;
+  z-index: 50000;
+  padding: .2rem;
+  min-width: 7.5rem;
+  background: #333;
+  color: #e0dbdb;
+  border-radius: 3px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2); }
+  :host /deep/ .free-contextmenu .free-contextmenu-wrapper {
+    min-width: 7.5rem;
+    background: #333;
+    color: #e0dbdb;
+    border-radius: 3px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2); }
+  :host /deep/ .free-contextmenu .free-contextmenu-separator {
+    height: 1px;
+    width: 100%;
+    background: #666;
+    margin: .25rem 0; }
+  :host /deep/ .free-contextmenu ul li.free-contextmenu-item {
+    position: relative;
+    list-style: none;
+    border-radius: 3px;
+    font-size: .65rem;
+    padding: 0 .5rem; }
+    :host /deep/ .free-contextmenu ul li.free-contextmenu-item:not(.free-contextmenu-disabled):hover {
+      background: #347eff;
+      color: #fff; }
+      :host /deep/ .free-contextmenu ul li.free-contextmenu-item:not(.free-contextmenu-disabled):hover a {
+        color: #fff; }
+    :host /deep/ .free-contextmenu ul li.free-contextmenu-item.free-contextmenu-disabled a {
+      color: #655e5e; }
+    :host /deep/ .free-contextmenu ul li.free-contextmenu-item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: default;
+      color: #e0dbdb; }
+      :host /deep/ .free-contextmenu ul li.free-contextmenu-item a > span:first-child i {
+        padding-right: .5rem; }
+  :host /deep/ .free-contextmenu .free-contextmenu-child {
+    position: absolute;
+    padding: .2rem;
+    white-space: nowrap;
+    display: none; }
+  :host /deep/ .free-contextmenu .free-contextmenu-active > free-contextmenu-item > ul {
+    display: block !important; }
 
 /*# sourceMappingURL=contextmenu.component.css.map */

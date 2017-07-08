@@ -81,7 +81,7 @@
 }
 
 @each $theme, $color in $theme {
-  :host-context(.free-#{$theme}) /deep/ {
+  :host-context(.free-theme-#{$theme}) /deep/ {
     .free-tree ul li.free-tree-item > span {
       &:hover:after,
       &:after  {

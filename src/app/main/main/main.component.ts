@@ -1,10 +1,6 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {CommonModule} from '@angular/common';
-import {ShareModule} from '../../component/common/share';
-import {AccordionModule} from '../../component/accordion/accordion.component';
-import {PanelModule} from '../../component/panel/panel.component';
-import {GridModule} from '../../component/grid/grid.directive';
+import {config} from '../../common/config';
 
 @Component({
   selector: 'free-main',
@@ -15,21 +11,12 @@ import {GridModule} from '../../component/grid/grid.directive';
 export class MainComponent implements OnInit {
   @HostBinding('@fadeInUpState') fadeInUpState;
   @HostBinding('style.display') display = 'block';
-  constructor() { }
+  version: string;
+  constructor() {
+    this.version = config.version;
+  }
 
   ngOnInit() {
   }
 }
 
-@NgModule({
-  imports: [
-    CommonModule,
-    ShareModule,
-    AccordionModule,
-    PanelModule,
-    GridModule
-  ],
-  declarations: [MainComponent]
-})
-
-export class MainModule {}

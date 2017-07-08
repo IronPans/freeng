@@ -91,6 +91,48 @@
 
     <div fGrid="6" class="free-demo-board">
       <div class="free-card-board">
+        <h3 class="free-toolbar">Pagination</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-table [pagination]="true">
+              <free-table-header>
+                <free-table-row>
+                  <free-table-head>Dessert (100g serving)</free-table-head>
+                  <free-table-head>Calories (g)</free-table-head>
+                </free-table-row>
+              </free-table-header>
+
+              <free-table-body>
+                <free-table-row *ngFor="let cell of cells">
+                  <free-table-cell>{{cell.pro}}</free-table-cell>
+                  <free-table-cell>{{cell.intro}}</free-table-cell>
+                </free-table-row>
+              </free-table-body>
+            </free-table>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-table [pagination]="true"&gt;
+              &lt;free-table-header&gt;
+              &lt;free-table-row&gt;
+              &lt;free-table-head&gt;Dessert (100g serving)&lt;/free-table-head&gt;
+              &lt;free-table-head&gt;Calories (g)&lt;/free-table-head&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-header&gt;
+
+              &lt;free-table-body&gt;
+              &lt;free-table-row *ngFor="let cell of cells"&gt;
+              &lt;free-table-cell&gt;{{'cell.pro'}}&lt;/free-table-cell&gt;
+              &lt;free-table-cell&gt;{{'cell.intro'}}&lt;/free-table-cell&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-body&gt;
+              &lt;/free-table&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
@@ -112,8 +154,21 @@
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
+              &lt;free-table&gt;
+                &lt;free-table-header&gt;
+                  &lt;free-table-row&gt;
+                    &lt;free-table-head&gt;Dessert (100g serving)&lt;/free-table-head&gt;
+                    &lt;free-table-head&gt;Calories (g)&lt;/free-table-head&gt;
+                  &lt;/free-table-row&gt;
+                &lt;/free-table-header&gt;
+
+                &lt;free-table-body&gt;
+                  &lt;free-table-row *ngFor="let cell of cells"&gt;
+                    &lt;free-table-cell&gt;{{'cell.pro'}}&lt;/free-table-cell&gt;
+                    &lt;free-table-cell&gt;{{'cell.intro'}}&lt;/free-table-cell&gt;
+                  &lt;/free-table-row&gt;
+                &lt;/free-table-body&gt;
+              &lt;/free-table&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -141,8 +196,21 @@
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
+              &lt;free-table [border]="true"&gt;
+              &lt;free-table-header&gt;
+              &lt;free-table-row&gt;
+              &lt;free-table-head&gt;Dessert (100g serving)&lt;/free-table-head&gt;
+              &lt;free-table-head&gt;Calories (g)&lt;/free-table-head&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-header&gt;
+
+              &lt;free-table-body&gt;
+              &lt;free-table-row *ngFor="let cell of cells"&gt;
+              &lt;free-table-cell&gt;{{'cell.pro'}}&lt;/free-table-cell&gt;
+              &lt;free-table-cell&gt;{{'cell.intro'}}&lt;/free-table-cell&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-body&gt;
+              &lt;/free-table&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -170,8 +238,21 @@
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
+              &lt;free-table [striped]="true"&gt;
+              &lt;free-table-header&gt;
+              &lt;free-table-row&gt;
+              &lt;free-table-head&gt;Dessert (100g serving)&lt;/free-table-head&gt;
+              &lt;free-table-head&gt;Calories (g)&lt;/free-table-head&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-header&gt;
+
+              &lt;free-table-body&gt;
+              &lt;free-table-row *ngFor="let cell of cells"&gt;
+              &lt;free-table-cell&gt;{{'cell.pro'}}&lt;/free-table-cell&gt;
+              &lt;free-table-cell&gt;{{'cell.intro'}}&lt;/free-table-cell&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-body&gt;
+              &lt;/free-table&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -199,8 +280,21 @@
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
+              &lt;free-table&gt;
+              &lt;free-table-header&gt;
+              &lt;free-table-row&gt;
+              &lt;free-table-head&gt;Dessert (100g serving)&lt;/free-table-head&gt;
+              &lt;free-table-head&gt;Calories (g)&lt;/free-table-head&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-header&gt;
+
+              &lt;free-table-body&gt;
+              &lt;free-table-row *ngFor="let cell of cells"&gt;
+              &lt;free-table-cell&gt;{{'cell.pro'}}&lt;/free-table-cell&gt;
+              &lt;free-table-cell&gt;{{'cell.intro'}}&lt;/free-table-cell&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-body&gt;
+              &lt;/free-table&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -228,8 +322,21 @@
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
+              &lt;free-table [hover]="true"&gt;
+              &lt;free-table-header&gt;
+              &lt;free-table-row&gt;
+              &lt;free-table-head&gt;Dessert (100g serving)&lt;/free-table-head&gt;
+              &lt;free-table-head&gt;Calories (g)&lt;/free-table-head&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-header&gt;
+
+              &lt;free-table-body&gt;
+              &lt;free-table-row *ngFor="let cell of cells"&gt;
+              &lt;free-table-cell&gt;{{'cell.pro'}}&lt;/free-table-cell&gt;
+              &lt;free-table-cell&gt;{{'cell.intro'}}&lt;/free-table-cell&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-body&gt;
+              &lt;/free-table&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -257,8 +364,21 @@
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
+              &lt;free-table [selection]="true"&gt;
+              &lt;free-table-header&gt;
+              &lt;free-table-row&gt;
+              &lt;free-table-head&gt;Dessert (100g serving)&lt;/free-table-head&gt;
+              &lt;free-table-head&gt;Calories (g)&lt;/free-table-head&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-header&gt;
+
+              &lt;free-table-body&gt;
+              &lt;free-table-row *ngFor="let cell of cells"&gt;
+              &lt;free-table-cell&gt;{{'cell.pro'}}&lt;/free-table-cell&gt;
+              &lt;free-table-cell&gt;{{'cell.intro'}}&lt;/free-table-cell&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-body&gt;
+              &lt;/free-table&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -268,7 +388,7 @@
         <h3 class="free-toolbar">Pagination</h3>
         <free-tab-group direction="right" [theme]="'line'">
           <free-tab header="PREVIEW">
-            <free-table [selection]="true" [pagination]="true">
+            <free-table [pagination]="true">
               <free-table-header>
                 <free-table-row>
                   <free-table-head>Dessert (100g serving)</free-table-head>
@@ -286,8 +406,21 @@
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
-              &lt;free-chip [value]="'chip'"&gt;&lt;/free-chip&gt;
+              &lt;free-table [pagination]="true"&gt;
+              &lt;free-table-header&gt;
+              &lt;free-table-row&gt;
+              &lt;free-table-head&gt;Dessert (100g serving)&lt;/free-table-head&gt;
+              &lt;free-table-head&gt;Calories (g)&lt;/free-table-head&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-header&gt;
+
+              &lt;free-table-body&gt;
+              &lt;free-table-row *ngFor="let cell of cells"&gt;
+              &lt;free-table-cell&gt;{{'cell.pro'}}&lt;/free-table-cell&gt;
+              &lt;free-table-cell&gt;{{'cell.intro'}}&lt;/free-table-cell&gt;
+              &lt;/free-table-row&gt;
+              &lt;/free-table-body&gt;
+              &lt;/free-table&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

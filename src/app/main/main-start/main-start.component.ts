@@ -1,10 +1,5 @@
-import {Component, HostBinding, NgModule, OnInit} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {fadeInUp} from '../../component/common/animations';
-import {CommonModule} from '@angular/common';
-import {PanelModule} from '../../component/panel/panel.component';
-import {GridModule} from '../../component/grid/grid.directive';
-import {CodeModule} from '../../component/code/code.component';
-import {TreeModule} from '../../component/tree/tree.component';
 import {config} from '../../common/config';
 
 @Component({
@@ -30,6 +25,7 @@ export class MainStartComponent implements OnInit {
         title: 'freeng',
         expanded: true,
         folder: [
+          {title: 'config'},
           {
             title: 'src',
             expanded: true,
@@ -85,23 +81,13 @@ export class MainStartComponent implements OnInit {
           },
           {
             title: 'tsconfig.json'
-          }
+          },
+          {title: 'tslint.json'},
+          {title: 'webpack.config.js'}
         ]
       }
     ];
   }
 
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    PanelModule,
-    GridModule,
-    CodeModule,
-    TreeModule
-  ],
-  declarations: [MainStartComponent]
-})
 
-export class MainStartModule {
-}

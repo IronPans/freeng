@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACE,sBAAU;EACR,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,KAAK;EAChB,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,eAAe",
-"sources": ["main-icon.component.scss"],
-"names": [],
-"file": "main-icon.component.css"
-}

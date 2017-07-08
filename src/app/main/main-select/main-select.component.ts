@@ -1,57 +1,41 @@
-import {Component, NgModule, OnInit} from '@angular/core';
-import {TableModule} from '../../component/table/table.component';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CommonModule} from '@angular/common';
-import {SelectModule} from '../../component/select/select.component';
-import {PanelModule} from '../../component/panel/panel.component';
-import {GridModule} from '../../component/grid/grid.directive';
-import {FormsModule} from '@angular/forms';
-
+import {Component, HostBinding, OnInit} from '@angular/core';
+import {fadeInUp} from '../../component/common/animations';
 
 @Component({
   selector: 'free-main-select',
   templateUrl: './main-select.component.html',
-  styleUrls: ['./main-select.component.scss']
+  styleUrls: ['./main-select.component.scss'],
+  animations: [fadeInUp]
 })
 export class MainSelectComponent implements OnInit {
 
+  @HostBinding('@fadeInUpState') fadeInUpState;
+  @HostBinding('style.display') display = 'block';
   options: any;
   selectedOption: any;
-  test: any;
+  fruit: any;
+  selectedFruit: any;
   constructor() { }
 
   ngOnInit() {
     this.options = [
-      { label: 'just a city for select!just a city for select', value: '2'},
-      { label: 'city2', value: '2'},
-      { label: 'city3', value: '2'},
-      { label: 'city4', value: '2'},
-      { label: 'city5', value: '2'},
-      { label: 'city6', value: '2'},
-      { label: 'city7', value: '2'},
-      { label: 'city8', value: '2'}
+      { label: '广东', value: 'gd'},
+      { label: '北京', value: 'bj'},
+      { label: '上海', value: 'sh'},
+      { label: '南京', value: 'nj'},
+      { label: '云南', value: 'yn'}
     ];
+    this.fruit = [
+      { label: 'apple', value: 'apple'},
+      { label: 'orange', value: 'orange'},
+      { label: 'banana', value: 'banana'}
+    ];
+    this.selectedFruit = this.fruit[2];
   }
 
-  onChange($event) {
-    console.log($event);
-    console.log(this.test);
+  onChange(event: any): void {
+    console.log(event);
   }
 
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    TabGroupModule,
-    CodeModule,
-    TableModule,
-    SelectModule,
-    PanelModule,
-    GridModule
-  ],
-  declarations: [MainSelectComponent]
-})
 
-export class MainSelectModule {}

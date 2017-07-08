@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACE,2BAAe;EACb,MAAM,EAAE,QACV",
-"sources": ["main-form.component.scss"],
-"names": [],
-"file": "main-form.component.css"
-}

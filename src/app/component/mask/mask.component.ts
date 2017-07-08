@@ -5,8 +5,8 @@ import { fadeIn } from '../common/animations';
 @Component({
   selector: 'free-mask',
   template: `
-    <div class="free-mask" *ngIf="visible" [@fadeInState] 
-       (@fadeInState.done)="transitionEnd()">
+    <div class="free-mask" *ngIf="visible" [@fadeInState]
+         (@fadeInState.done)="transitionEnd()">
       <ng-content></ng-content>
       <span *ngIf="close" class="fa fa-close"></span>
     </div>`,

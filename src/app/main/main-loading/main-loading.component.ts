@@ -1,11 +1,5 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {TableModule} from '../../component/table/table.component';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CommonModule} from '@angular/common';
-import {LoadingModule} from '../../component/loading/loading.component';
-import {GridModule} from '../../component/grid/grid.directive';
 
 @Component({
   selector: 'free-main-loading',
@@ -25,16 +19,4 @@ export class MainLoadingComponent implements OnInit {
 
 }
 
-@NgModule({
-  imports: [
-    CommonModule,
-    TabGroupModule,
-    CodeModule,
-    TableModule,
-    LoadingModule,
-    GridModule
-  ],
-  declarations: [MainLoadingComponent]
-})
 
-export class MainLoadingModule {}

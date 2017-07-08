@@ -3,9 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppRoutingModule } from './modules/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainDemoModule } from './modules/main.module';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {ToastController} from './component/toast/toast.controller';
+import {App} from './main/app';
+import {ToastModule} from './component/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,13 @@ import { MainDemoModule } from './modules/main.module';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    MainDemoModule
+    ToastModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    ToastController,
+    App
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

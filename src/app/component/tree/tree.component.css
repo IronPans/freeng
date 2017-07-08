@@ -45,95 +45,95 @@
     :host /deep/ .free-tree ul li.last span.image:before {
       content: "\f1c5"; }
 
-:host-context(.free-green) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-green) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-green) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-green) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #46be8a; }
-:host-context(.free-green) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-green) /deep/ .free-tree ul li.last > span:before {
   color: #46be8a; }
-:host-context(.free-green) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-green) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-deepblue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-deepblue) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-deepblue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-deepblue) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #115d8e; }
-:host-context(.free-deepblue) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-deepblue) /deep/ .free-tree ul li.last > span:before {
   color: #115d8e; }
-:host-context(.free-deepblue) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-deepblue) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-blue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-blue) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-blue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-blue) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #677ae4; }
-:host-context(.free-blue) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-blue) /deep/ .free-tree ul li.last > span:before {
   color: #677ae4; }
-:host-context(.free-blue) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-blue) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-lightblue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-lightblue) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-lightblue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-lightblue) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #169e9f; }
-:host-context(.free-lightblue) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-lightblue) /deep/ .free-tree ul li.last > span:before {
   color: #169e9f; }
-:host-context(.free-lightblue) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-lightblue) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-yellow) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-yellow) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-yellow) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-yellow) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #fa9e0c; }
-:host-context(.free-yellow) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-yellow) /deep/ .free-tree ul li.last > span:before {
   color: #fa9e0c; }
-:host-context(.free-yellow) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-yellow) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-red) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-red) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-red) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-red) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #f96868; }
-:host-context(.free-red) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-red) /deep/ .free-tree ul li.last > span:before {
   color: #f96868; }
-:host-context(.free-red) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-red) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-purple) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-purple) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-purple) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-purple) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #6633B9; }
-:host-context(.free-purple) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-purple) /deep/ .free-tree ul li.last > span:before {
   color: #6633B9; }
-:host-context(.free-purple) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-purple) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-orange) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-orange) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-orange) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-orange) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #f2a654; }
-:host-context(.free-orange) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-orange) /deep/ .free-tree ul li.last > span:before {
   color: #f2a654; }
-:host-context(.free-orange) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-orange) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-brown) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-brown) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-brown) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-brown) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #8d6658; }
-:host-context(.free-brown) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-brown) /deep/ .free-tree ul li.last > span:before {
   color: #8d6658; }
-:host-context(.free-brown) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-brown) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-cyan) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-cyan) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-cyan) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-cyan) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #57c7d4; }
-:host-context(.free-cyan) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-cyan) /deep/ .free-tree ul li.last > span:before {
   color: #57c7d4; }
-:host-context(.free-cyan) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-cyan) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-pink) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-pink) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-pink) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-pink) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #f96197; }
-:host-context(.free-pink) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-pink) /deep/ .free-tree ul li.last > span:before {
   color: #f96197; }
-:host-context(.free-pink) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-pink) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-teal) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-teal) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-teal) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-teal) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #3aa99e; }
-:host-context(.free-teal) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-teal) /deep/ .free-tree ul li.last > span:before {
   color: #3aa99e; }
-:host-context(.free-teal) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-teal) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
-:host-context(.free-dark) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-dark) /deep/ .free-tree ul li.free-tree-item > span:after {
+:host-context(.free-theme-dark) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-dark) /deep/ .free-tree ul li.free-tree-item > span:after {
   color: #393D49; }
-:host-context(.free-dark) /deep/ .free-tree ul li.last > span:before {
+:host-context(.free-theme-dark) /deep/ .free-tree ul li.last > span:before {
   color: #393D49; }
-:host-context(.free-dark) /deep/ .free-tree ul li.last > span.image:before {
+:host-context(.free-theme-dark) /deep/ .free-tree ul li.last > span.image:before {
   content: "\f1c5"; }
 
 /*# sourceMappingURL=tree.component.css.map */

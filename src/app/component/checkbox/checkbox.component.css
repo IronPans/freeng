@@ -1,9 +1,16 @@
+:root {
+  display: inline-flex; }
+
 .free-checkbox,
 .free-checkbox-inner,
 .free-checkbox-ins {
   display: flex;
   cursor: pointer;
   align-items: center; }
+
+.free-checkbox-title {
+  max-width: 10rem;
+  white-space: nowrap; }
 
 .free-sr-only .free-checkbox-title {
   display: none; }

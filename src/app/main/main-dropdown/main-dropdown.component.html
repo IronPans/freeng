@@ -2,7 +2,7 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        下拉菜单
+        下拉菜单可以帮助你节省空间，同时提供更多选择
       </p>
       <hr>
       <h3 class="free-head-title">API 选项</h3>
@@ -28,11 +28,26 @@
               <free-table-cell>菜单子项数组</free-table-cell>
             </free-table-row>
             <free-table-row>
+              <free-table-cell>direction</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置下拉菜单展开的位置(bottom-left, bottom-right)，
+                可选，默认为bottom-left。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>hover</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置鼠标移动上去时展开，可选，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
               <free-table-cell>color</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>主题样式</free-table-cell>
+              <free-table-cell>设置主题样式，可选</free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -44,38 +59,106 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-dropdown [menus]="menus" color="green">
-              <f-header>Dropdown</f-header>
-            </free-dropdown>
-
-            <free-dropdown [menus]="menus" color="lightblue">
-              <f-header>Dropdown</f-header>
-            </free-dropdown>
-
-            <free-dropdown [menus]="menus" color="red">
-              <f-header>Dropdown</f-header>
-            </free-dropdown>
-
-            <free-dropdown [menus]="menus" color="blue">
-              <f-header>Dropdown</f-header>
-            </free-dropdown>
+            <div class="main-dropdown-box">
+              <free-dropdown [menus]="menus" color="green">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+            </div>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-dropdown [menus]="menus" color="green"&gt;
                 &lt;f-header&gt;Dropdown&lt;/f-header&gt;
               &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Direction</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div class="main-dropdown-box">
+              <free-dropdown [menus]="menus" direction="bottom-right" color="green">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus" direction="bottom-right" color="green"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Hover</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div class="main-dropdown-box">
+              <free-dropdown [menus]="menus" color="lightblue" [hover]="true">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus" color="lightblue" [hover]="true"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div class="main-dropdown-box">
+              <free-dropdown [menus]="menus" color="green">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+
+              <free-dropdown [menus]="menus" color="lightblue">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus" color="green"&gt;
+              &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
 
               &lt;free-dropdown [menus]="menus" color="lightblue"&gt;
-                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;f-header&gt;Dropdown&lt;/f-header&gt;
               &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
 
-              &lt;free-dropdown [menus]="menus" color="red"&gt;
-                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
-              &lt;/free-dropdown&gt;
-
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Content</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height:200px">
+              <free-dropdown color="blue">
+                <f-header>Dropdown</f-header>
+                123123yidsfsidf
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
               &lt;free-dropdown [menus]="menus" color="blue"&gt;
                 &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+                123123yidsfsidf
               &lt;/free-dropdown&gt;
             </free-code>
           </free-tab>

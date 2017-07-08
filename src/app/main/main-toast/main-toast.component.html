@@ -16,49 +16,14 @@
 
     <div class="free-demo-board" fGrid="6">
       <div class="free-card-board">
-        <h3 class="free-toolbar">Default</h3>
-        <free-tab-group direction="right">
-          <free-tab header="PREVIEW">
-
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-radio label="男" name="sex" [checked]="true"&gt;&lt;/free-radio&gt;
-              &lt;free-radio label="女" name="sex"&gt;&lt;/free-radio&gt;
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
-
-      <div class="free-card-board">
         <h3 class="free-toolbar">Theme</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-
+            <button fButton (click)="open()">警告提示</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-radio color="green" label="Theme: green" name="theme" [checked]="true"&gt;&lt;/free-radio&gt;
-              &lt;free-radio color="blue" label="Theme: blue" name="theme"&gt;&lt;/free-radio&gt;
-              &lt;free-radio color="lightblue" label="Theme: lightblue" name="theme"&gt;&lt;/free-radio&gt;
-              &lt;free-radio color="yellow" label="Theme: yellow" name="theme"&gt;&lt;/free-radio&gt;
-              &lt;free-radio color="red" label="Theme: red" name="theme"&gt;&lt;/free-radio&gt;
-              &lt;free-radio color="orange" label="Theme: orange" name="theme"&gt;&lt;/free-radio&gt;
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
-
-      <div class="free-card-board">
-        <h3 class="free-toolbar">Disabled</h3>
-        <free-tab-group direction="right">
-          <free-tab header="PREVIEW">
-
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-radio label="disabled" [disabled]="true"&gt;&lt;/free-radio&gt;
-              &lt;free-radio label="disabled" [disabled]="true" [checked]="true"&gt;&lt;/free-radio&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

@@ -1,7 +1,6 @@
 export * from '../component/accordion/accordion.component';
 export * from '../component/breadcrumb/breadcrumb.component';
 export * from '../component/button/button.directive';
-export * from '../component/calendar/calendar.component';
 export * from '../component/card/card.component';
 export * from '../component/checkbox/checkbox.component';
 export * from '../component/chip/chip.component';
@@ -18,7 +17,6 @@ export * from '../component/radio/radio.component';
 export * from '../component/range/range.component';
 export * from '../component/rating/rating.component';
 export * from '../component/ripple/ripple.directive';
-export * from '../component/scroll/scroll.component';
 export * from '../component/switch/switch.component';
 export * from '../component/tab/tab.component';
 export * from '../component/table/table.component';

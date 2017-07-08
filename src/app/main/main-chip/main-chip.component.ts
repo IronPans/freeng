@@ -1,11 +1,5 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {TableModule} from '../../component/table/table.component';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CommonModule} from '@angular/common';
-import {ChipModule} from '../../component/chip/chip.component';
-import {GridModule} from '../../component/grid/grid.directive';
 
 @Component({
   selector: 'free-main-chip',
@@ -18,36 +12,30 @@ export class MainChipComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
 
   animals: any[];
-  citys: any[];
+  city: any[];
+  fruit: any[];
   constructor() { }
 
   ngOnInit() {
     this.animals = [
-      {'value': 'chip'},
-      {'value': 'chip'},
-      {'value': 'chip'},
-      {'value': 'chip'}
+      {'value': 'dog'},
+      {'value': 'cat'},
+      {'value': 'wolf'},
+      {'value': 'fish'}
     ];
 
-    this.citys = [
-      {'value': 'chip1', 'delete': true},
-      {'value': 'chip2', 'delete': true},
-      {'value': 'chip3', 'delete': true},
-      {'value': 'chip4', 'delete': true},
+    this.fruit = [
+      {'value': 'apple'},
+      {'value': 'banana', 'delete': true},
+      {'value': 'orange', 'delete': true}
+    ];
+
+    this.city = [
+      {'value': 'beijing'},
+      {'value': 'guangzhou', 'delete': true},
+      {'value': 'shanghai', 'delete': true},
+      {'value': 'hunan', 'delete': true},
     ];
   }
-
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    TabGroupModule,
-    CodeModule,
-    TableModule,
-    ChipModule,
-    GridModule
-  ],
-  declarations: [MainChipComponent]
-})
 
-export class MainChipModule {}

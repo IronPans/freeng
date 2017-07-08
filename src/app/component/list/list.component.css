@@ -7,13 +7,9 @@
   min-height: 2.4rem;
   margin: 0;
   padding: 0 16px;
-  -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex: 1;
   flex: 1;
   position: relative;
   font-size: .8rem;
@@ -59,11 +55,8 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  -ms-flex: 1;
   flex: 1;
   overflow: hidden;
   line-height: 1.25em;

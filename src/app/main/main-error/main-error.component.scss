@@ -82,7 +82,7 @@
 }
 
 @each $theme, $color in $theme {
-  :host-context(.free-#{$theme}) /deep/ {
+  :host-context(.free-theme-#{$theme}) /deep/ {
     .free-error-page .free-error-board {
       background: $color;
     }

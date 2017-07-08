@@ -1,6 +1,153 @@
 <div class="main-container">
-  <free-panel header="select">
-    <free-select [(selected)]="selectedOption" (onChange)="onChange($event)"
-                 [options]="options" placeholder="select"></free-select>
-  </free-panel>
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        下拉选择框可在多个选择之间进行选择。选择显示当前状态和向下箭头。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项</h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-select</h3>
+        <p>下拉选择框。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>options</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置option，必选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>pholder</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置可描述输入字段预期值的提示信息，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>selected</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置可描述输入字段预期值的提示信息，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>multiple</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否可选择多个选项，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>filter</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示过滤输入框，可选</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>事件</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>当元素的值发生改变时，会发生 onChange 事件。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <div style="height:300px">
+              <free-select [(selected)]="selectedOption" (onChange)="onChange($event)"
+                           [options]="options" pholder="select"></free-select>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-rating&gt;&lt;/free-rating&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Selected</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <div style="height:250px">
+              <free-select [(selected)]="selectedFruit" (onChange)="onChange($event)"
+                           [options]="fruit" pholder="select"></free-select>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-rating&gt;&lt;/free-rating&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Filter</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <div style="height:300px">
+              <free-select [(selected)]="selectedOption" (onChange)="onChange($event)"
+                           [options]="options" pholder="select" [filter]="true"></free-select>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-rating&gt;&lt;/free-rating&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Multiple</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <div style="height:300px">
+              <free-select [(selected)]="selectedOption" (onChange)="onChange($event)" [multiple]="true"
+                           [options]="options" pholder="select" [filter]="true"></free-select>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-rating&gt;&lt;/free-rating&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+    </div>
+  </div>
 </div>

@@ -1,13 +1,6 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {TableModule} from '../../component/table/table.component';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CommonModule} from '@angular/common';
-import {CheckboxModule} from '../../component/checkbox/checkbox.component';
-import {GridModule} from '../../component/grid/grid.directive';
 import { config } from '../../common/config';
-import {ButtonModule} from '../../component/button/button.directive';
 
 @Component({
   selector: 'free-main-checkbox',
@@ -27,17 +20,4 @@ export class MainCheckboxComponent implements OnInit {
   }
 
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    TabGroupModule,
-    CodeModule,
-    TableModule,
-    CheckboxModule,
-    GridModule,
-    ButtonModule
-  ],
-  declarations: [MainCheckboxComponent]
-})
 
-export class MainCheckboxModule {}

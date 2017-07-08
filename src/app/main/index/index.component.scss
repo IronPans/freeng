@@ -9,13 +9,47 @@
     height: $topMenuHeight;
     background: #fff;
     z-index: 9500;
-    @include boxShadow;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
     @include transition(.25s);
+
+    free-dropdown f-header {
+      height: 2rem !important;
+      font-size: 1rem;
+      position: relative;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 1rem;
+    }
+  }
+
+  .nav-item {
+    free-dropdown {
+      height: 2rem !important;
+
+      .free-dropdown-header f-header {
+        padding: 0 .6rem !important;
+
+      }
+
+      .btn {
+        &:before {
+          transform: scale(0) !important;
+        }
+      }
+    }
+    a {
+      padding: 0 !important;
+    }
   }
 
   .left-menu {
     @include position(absolute, $topMenuHeight, '', 0, 0);
     width: $leftMenuWidth;
+    overflow: hidden;
+    overflow-y: auto;
 
     .ripple {
       background: rgba(0,0,0,.3);
@@ -75,6 +109,14 @@
     @include transition(.25s);
   }
 
+  .free-demo-row .free-table .free-table-head {
+    background: #f5f5f5;
+  }
+
+  .free-demo-row .free-table {
+    border: 1px solid #d9d9d9;
+  }
+
   .page-title {
     padding: .75rem .75rem .75rem 0;
   }
@@ -111,6 +153,10 @@
     @include flexbox;
     height: 100%;
     justify-content: space-between;
+
+    &>ul>li>a {
+      height: 2rem;
+    }
 
     .free-dropdown,
     .free-dropdown-header,
@@ -175,14 +221,13 @@
         outline: none;
         background: transparent;
         border: none;
-        padding: 0 .5rem;
+        padding: 0;
         box-shadow: none;
-
-        &.active,
-        &:hover {
-          background: #f3f3f3 !important;
-        }
       }
+    }
+
+    .nav-user .free-dropdown-header {
+      padding: 0 .75rem;
     }
 
   }
@@ -190,6 +235,7 @@
   .navbar-header,
   .aside-header {
     height: 100%;
+
     li {
       list-style: none;
       height: 100%;
@@ -198,12 +244,14 @@
       padding: 0 .25rem;
 
       a {
-        height: 35px;
-        padding: 0 .5rem;
-        font-size: .8rem;
+        padding: 0 .6rem;
+        font-size: 1rem;
         position: relative;
         cursor: pointer;
         text-align: center;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
 
         &:before {
           content: "";
@@ -223,6 +271,10 @@
           transform: scale(1);
         }
       }
+    }
+
+    .aside-header-inner li a {
+      height: 2rem;
     }
   }
 
@@ -348,12 +400,12 @@
       max-height: 22.5rem;
       overflow-y: auto;
     }
-  }
 
-  .free-tab:hover .code-clone {
-    opacity: .7;
-    &:hover {
-      opacity: 1;
+    &:hover .code-clone {
+      opacity: .7;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
@@ -381,6 +433,10 @@
   .free-demo-board,
   .free-card-board {
     position: relative;
+  }
+
+  .free-demo-board:not(:first-child) {
+    margin-top: .75rem;
   }
 
   .free-card-board {
@@ -459,20 +515,78 @@
 
   .theme-setting {
     position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+    right: 0;
+    top: 3rem;
     font-size: 18px;
-    background: $default;
-    border-radius: 50%;
     width: 2rem;
     height: 2rem;
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #333;
+    background: #fff;
+    border-radius: 0 0 0 50%;
     cursor: pointer;
-    @include boxShadow;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all .3s;
+
+    i {
+      pointer-events: none;
+    }
+
+    &.open {
+      right: 12.5rem;
+    }
+  }
+
+  free-sidebar {
+    .free-sidebar {
+      padding: 0 .5rem;
+    }
+
+    .row {
+      padding: .75rem .5rem;
+    }
+    h4 {
+      display: flex;
+      justify-content: center;
+      padding: .5rem 0;
+      margin: 0;
+      border-bottom: 1px solid #d9d9d9;
+    }
+    .theme-color-list {
+      @include flexbox;
+      overflow: hidden;
+      flex-wrap: wrap;
+
+      .theme-color-item {
+        @include flexbox;
+        list-style: none;
+        margin: 0 .5rem .5rem 0;
+        height: 1.8rem;
+        width: 1.8rem;
+        color: #fff;
+        border-radius: 50%;
+        flex: 0 1 auto;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .25s;
+        text-transform: capitalize;
+
+        * {
+          text-align: center;
+          line-height: 22px;
+        }
+
+        &:hover {
+          @include boxShadow;
+          transform: scale(.8);
+        }
+      }
+    }
   }
 
   .search-box {
@@ -561,6 +675,10 @@
       }
     }
   }
+
+  .color-white {
+    color: #fff;
+  }
 }
 
 @media (min-width: 768px) {
@@ -578,55 +696,38 @@
 @media (max-width: 900px) {
   :host /deep/ {
     .left-menu {
-      left: -#{$leftMenuWidth};
+      left: 0;
     }
     .main-layout-container {
       left: 0;
+    }
+    .aside-header {
+      width: auto;
+    }
+
+    .search-box .search-input input {
+      width: 85%;
+    }
+
+    .search-box .search-box-close {
+      right: .3rem;
+    }
+
+    .free-card-board > h3.free-toolbar {
+      position: relative;
+      top:0;
+      padding: 10px 0;
     }
   }
   :host-context(.free-mini) {
     .left-menu,
-    .aside-header,
     .main-layout-container {
-      left: 0;
+      left: -#{$leftMenuWidth};
     }
   }
 
-}
-
-/* Scrollbar */
-
-.main-layout-container {
-  &::-webkit-scrollbar {
-    width: 5px;
-    height: 10px;
-  }
-
-  &::-webkit-scrollbar-track,
-  &::-webkit-scrollbar-thumb {
-    border-right: 1px solid transparent;
-    border-left: 1px solid transparent;
-  }
-
-  &::-webkit-scrollbar-button:start:hover,
-  &::-webkit-scrollbar-button:end:hover {
-    background-color: #eee;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.298039);
-  }
-
-  &::-webkit-scrollbar-corner {
-    display: block;
-  }
-
-  &::-webkit-scrollbar-track:hover {
-    background-color: rgba(0, 0, 0, 0.15);
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+  .navbar-header-right li:not(:first-child):not(:last-child) {
+    display: none;
   }
 
 }
@@ -656,4 +757,3 @@
     }
   }
 }
-

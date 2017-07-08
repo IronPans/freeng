@@ -3,4 +3,12 @@
     width: 100%;
     flex: 1 0 auto;
   }
+
+  .blockquote-box {
+    flex: 1 0 auto;
+
+    blockquote {
+      margin-top: 10px;
+    }
+  }
 }

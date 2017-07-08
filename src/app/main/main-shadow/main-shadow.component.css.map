@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACA,WAAY;EACV,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,MAAM,EAAE,mBAAmB;EAC3B,OAAO,EAAE,kBAAkB;EAC3B,OAAO,EAAE,WAAW;EACpB,aAAa,EAAE,MAAM;EACrB,eAAe,EAAE,MAAM;EACvB,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,cAAc",
-"sources": ["main-shadow.component.scss"],
-"names": [],
-"file": "main-shadow.component.css"
-}

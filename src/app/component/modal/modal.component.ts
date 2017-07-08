@@ -1,23 +1,51 @@
 import {CommonModule} from '@angular/common';
-import { NgModule, Component, OnInit, Input, Output, EventEmitter,
-         Renderer2, ElementRef, ViewChild } from '@angular/core';
+import {
+  NgModule, Component, OnInit, Input, Output, EventEmitter,
+  Renderer2, ElementRef, ViewChild, AfterContentInit, AfterViewInit
+} from '@angular/core';
 import { trigger, style, state, animate, transition} from '@angular/animations';
 import { ShareModule } from '../common/share';
+import {ButtonModule} from '../button/button.directive';
+import {LoadingModule} from '../loading/loading.component';
 
 @Component({
   selector: 'free-modal',
   template: `
     <div #modal class="free-modal" [style.width.px]="width" [style.height.px]="height"
-         [@fadeInScale]="modalClass" [style.display]="visible ? 'block' : 'none'">
-      <div class="free-modal-header">
+         [@fadeInScale]="modalClass" (@fadeInScale.start)="animationEnd($event)"
+         [style.display]="visible ? 'block' : 'none'">
+      <div class="free-modal-header" *ngIf="!spinner">
         <span *ngIf="header">{{header}}</span>
         <span><ng-content select="f-header"></ng-content></span>
-        <span *ngIf="closeIcon" class="free-modal-close" (click)="close()"><i class="fa fa-close"></i></span>
+        <span *ngIf="closeIcon" class="free-modal-close" (click)="close()">
+          <i class="fa fa-close"></i>
+        </span>
       </div>
       <div class="free-modal-content">
-        <ng-content></ng-content>
+        <ng-container *ngIf="!spinner">
+          <ng-content></ng-content>
+          <div *ngIf="type === 'prompt'" class="free-prompt-input">
+            <input type="text" #prompt>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="spinner">
+          <free-loading [type]="spinner"></free-loading>
+        </ng-container>
       </div>
-      <div class="free-modal-footer">
+      <div class="free-modal-footer" *ngIf="!spinner">
+        <ng-container [ngSwitch]="type">
+          <ng-template ngSwitchCase="alert">
+            <button fButton (click)="confirm()">确认</button>
+          </ng-template>
+          <ng-template ngSwitchCase="confirm">
+            <button fButton (click)="close()">关闭</button>
+            <button fButton (click)="confirm()">确认</button>
+          </ng-template>
+          <ng-template ngSwitchCase="prompt">
+            <button fButton (click)="close()">关闭</button>
+            <button fButton (click)="confirm()">确认</button>
+          </ng-template>
+        </ng-container>
         <ng-content select="f-footer"></ng-content>
       </div>
     </div>
@@ -37,24 +65,29 @@ import { ShareModule } from '../common/share';
     ])
   ]
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, AfterContentInit, AfterViewInit {
 
-  @Input() header: string;
-  @Input() width: any;
-  @Input() height: any;
-  @Input() modalColor: string;
-  @Input() draggable: boolean;
-  @Input() closeIcon = true;
   _visible: boolean;
-  @ViewChild('modal') modalViewChild: ElementRef;
-
-  @Output() visibleChange: EventEmitter<any> = new EventEmitter();
   modal: HTMLDivElement;
   mask: HTMLDivElement;
   modalClass: string;
   maskClickListener: Function;
+  container: any;
+  @Input() header: string;
+  @Input() width: any;
+  @Input() height: any;
+  @Input() modalColor: string;
+  @Input() delay: number;
+  @Input() closeIcon = true;
+  @Input() type: string;
+  @Input() spinner: string;
+  @Output() visibleChange: EventEmitter<any> = new EventEmitter();
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
+  @ViewChild('modal') modalViewChild: ElementRef;
+  @ViewChild('prompt') promptInput: ElementRef;
 
-  constructor(public renderer2: Renderer2) { }
+  constructor(private er: ElementRef,
+              public renderer2: Renderer2) { }
 
   @Input()
   get visible(): boolean {
@@ -71,14 +104,46 @@ export class ModalComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    this.modal = this.modalViewChild.nativeElement;
+    if (this.spinner) {
+      this.renderer2.addClass(this.modal, 'free-modal-spinner');
+    }
+  }
+
+  ngAfterContentInit() {
+    this.container = this.er.nativeElement;
+
+    const cancel = Array.from(this.container.querySelectorAll('.cancel'));
+    for (const c of cancel) {
+      this.renderer2.listen(c, 'click', () => this.close());
+    }
+  }
+
+  animationEnd(event: any) {
   }
 
   show() {
     this.center();
     this.modalClass = this.visible ? 'active' : 'inactive';
-
     this.addOverlay();
+
+    if (this.delay) {
+      setTimeout(() => {
+        this.close();
+      }, this.delay);
+    }
+  }
+
+  confirm() {
+    let data = { value: null };
+    if (this.type === 'prompt') {
+      data = { value: this.promptInput.nativeElement.value};
+    }
+    this.onChange.emit(data);
+    this.close();
   }
 
   close() {
@@ -105,7 +170,6 @@ export class ModalComponent implements OnInit {
   }
 
   center() {
-    this.modal = this.modalViewChild.nativeElement;
     this.modal.style.zIndex = '10002';
     this.modal.classList.add('free-' + this.modalColor);
     const win = {
@@ -136,7 +200,7 @@ export class ModalComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonModule, LoadingModule],
   declarations: [ModalComponent],
   exports: [ModalComponent, ShareModule]
 })

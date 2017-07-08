@@ -22,6 +22,19 @@ export class DomRenderer {
     }
   }
 
+  public getHiddenElementOuterHeight(dom: any): any {
+    dom.style.visibility = 'hidden';
+    dom.style.display = 'block';
+    const height = dom.offsetHeight;
+    const width = dom.offsetWidth;
+    dom.style.display = 'none';
+    dom.style.visibility = 'visible';
+    return {
+      width: width,
+      height: height
+    };
+  }
+
   public addPrefix(element, attr, value): void {
     const prefix = ['webkit', 'moz', 'o', 'ms'];
     let uattr = attr.split('');
@@ -44,17 +57,17 @@ export class DomRenderer {
         docElm.webkitRequestFullScreen();
       } else if (docElm.msRequestFullscreen) {
         docElm.msRequestFullscreen();
-      };
+      }
     } else {
       if (document.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.webkitCancelFullScreen) {
         document.webkitCancelFullScreen();
       }
-    };
+    }
   };
 
-  public getStyle(dom, attr) {
+  public getStyle(dom, attr): any {
     return dom.currentStyle ? dom.currentStyle[attr] : getComputedStyle(dom, 'false')[attr];
   }
 
@@ -143,6 +156,13 @@ export class DomRenderer {
     element.style.transitionDuration = times + 'ms';
   }
 
+  public transitionStart(elem, handler): void {
+    elem.addEventListener('transitionstart', handler, false);
+    elem.addEventListener('webkitTransitionStart', handler, false);
+    elem.addEventListener('mozTransitionStart', handler, false);
+    elem.addEventListener('oTransitionStart', handler, false);
+  }
+
   public transitionEnd(elem, handler): void {
     elem.addEventListener('transitionend', handler, false);
     elem.addEventListener('webkitTransitionEnd', handler, false);
@@ -179,6 +199,39 @@ export class DomRenderer {
       platform: userAngent,
       isMobile: isMobile
     };
+  }
+
+  public listen(dom, type, handler): void {
+    this.renderer2.listen(dom, type, handler);
+  }
+
+  public parentNode(dom): HTMLElement {
+    return this.renderer2.parentNode(dom);
+  }
+
+  public createElement(dom): HTMLElement {
+    return this.renderer2.createElement(dom);
+  }
+
+  public insertBefore(parent: any, newDom, oldDom): void {
+    this.renderer2.insertBefore(parent, newDom, oldDom);
+  }
+
+  public appendChild(parent: any, newDom: any): void {
+    this.renderer2.appendChild(parent, newDom);
+  }
+
+  public insertAfter(parent: any, newDom, oldChild) {
+    const nextDom =  oldChild.nextElementSibling;
+    if (nextDom) {
+      this.renderer2.insertBefore(parent, newDom, nextDom);
+    } else {
+      this.renderer2.appendChild(parent, newDom);
+    }
+  }
+
+  public removeChild(parent: any, oldChild: any) : void {
+    this.renderer2.removeChild(parent, oldChild);
   }
 
 }

@@ -1473,6 +1473,7 @@ button, input, optgroup, select, textarea {
 }
 
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1980,12 +1981,6 @@ blockquote {
   border-left: 3px solid $default;
 }
 
-@each $theme, $color in $theme {
-  .free-#{$theme} blockquote {
-    border-color: $color;
-  }
-}
-
 .free-tooltip {
   position: fixed;
   max-width: 12.5rem;
@@ -2101,7 +2096,7 @@ blockquote {
 
 .free-badge {
   display: inline-block;
-  padding: 2px 3px;
+  padding: 3px 4px;
   font-size: .5rem;
   line-height: 12px;
   border-radius: 3px;
@@ -2111,8 +2106,8 @@ blockquote {
 
   &.free-badge-up {
     position: absolute;
-    right: -3px;
-    top: -3px;
+    right: 0px;
+    top: 0px;
     margin-left: 0;
   }
 }
@@ -2252,4 +2247,13 @@ blockquote {
 
 .free-shadow-24dp {
   box-shadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12)
+}
+
+.iscroll::-webkit-scrollbar, body::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.iscroll::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  background-color: #6e6e6e;
+  outline: 1px solid #333;
 }

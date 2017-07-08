@@ -1,7 +1,5 @@
 import {Location} from '@angular/common';
-import {Component, NgModule, OnInit} from '@angular/core';
-import {GridModule} from '../../component/grid/grid.directive';
-import {IconModule} from '../../component/icon/icon.component';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'free-main-error',
@@ -21,12 +19,4 @@ export class MainErrorComponent implements OnInit {
 
 }
 
-@NgModule({
-  imports: [
-    GridModule,
-    IconModule
-  ],
-  declarations: [MainErrorComponent]
-})
 
-export class MainErrorModule {}

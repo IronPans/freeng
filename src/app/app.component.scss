@@ -1,12 +1,12 @@
 @import "../assets/sass/variables";
 @import "../assets/sass/mixin";
 
+.free-main {
+  height: 100%;
+}
+
 @each $theme, $color in $theme {
-  :host-context(.free-#{$theme}) /deep/ {
-    .free-theme-setting,
-    .theme-setting {
-      background: $color;
-    }
+  :host-context(.free-theme-#{$theme}) /deep/ {
 
     h3.free-head-title {
       color: $color !important;
@@ -24,23 +24,27 @@
         background: $color;
       }
     }
+
+    .search-box {
+      background: $color;
+    }
   }
 
-  :host-context(.free-#{$theme}:not(.free-theme-2)) /deep/ {
+  :host-context(.free-theme-#{$theme}:not(.free-type-2)) /deep/ {
     .left-menu,
     .aside-header {
       background: $color;
     }
   }
 
-  :host-context(.free-theme-2) /deep/ {
+  :host-context(.free-type-2) /deep/ {
     .top-menu,
     .aside-header {
       background: $color !important;
     }
   }
 
-  :host-context(.free-theme-2.free-#{$theme}) /deep/ {
+  :host-context(.free-type-2.free-theme-#{$theme}) /deep/ {
     .top-menu,
     .aside-header,
     .ripple {
@@ -49,10 +53,10 @@
   }
 }
 
-:host-context(.free-theme-2) /deep/ {
+:host-context(.free-type-2) /deep/ {
   .left-menu {
     background: #fff !important;
-    box-shadow: 3px 0 6px rgba(0,0,0,0.24);
+    box-shadow: 6px 0 6px rgba(0,0,0,.1);
     z-index: 100;
 
     li a em {
@@ -96,7 +100,6 @@
     background: $default !important;
   }
 
-  .navbar-header li a,
   .aside-header li a {
     color: #fff;
   }
@@ -163,17 +166,13 @@
 
 }
 
-:host-context(.free-mini.free-theme-2) /deep/ {
+:host-context(.free-mini.free-type-2) /deep/ {
   .main-layout-container {
     left: 0 !important;
   }
 
   .left-menu {
     left: -#{$leftMenuWidth} !important;
-  }
-
-  .aside-header {
-    width: $leftMenuWidth !important;
   }
 
   .aside-header-inner {
@@ -187,5 +186,11 @@
         display: block !important;
       }
     }
+  }
+}
+
+@each $theme, $color in $theme {
+  .free-theme-#{$theme} blockquote {
+    border-color: $color;
   }
 }

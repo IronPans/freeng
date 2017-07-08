@@ -1,10 +1,5 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {GridModule} from '../../component/grid/grid.directive';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {SpinnerComponent, SpinnerModule} from "../../component/spinner/spinner.component";
-import {TableModule} from "../../component/table/table.component";
 
 @Component({
   selector: 'free-main-spinner',
@@ -23,15 +18,4 @@ export class MainSpinnerComponent implements OnInit {
   }
 
 }
-@NgModule({
-  imports: [
-    TabGroupModule,
-    TableModule,
-    CodeModule,
-    GridModule,
-    SpinnerModule
-  ],
-  declarations: [MainSpinnerComponent]
-})
 
-export class MainSpinnerModule {}

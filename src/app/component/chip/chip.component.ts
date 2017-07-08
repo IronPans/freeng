@@ -8,9 +8,9 @@ import {
   selector: 'free-chip-group',
   template: `
     <div class="free-chip-group" [ngClass]="chipClass">
-      <free-chip *ngFor="let chip of chips" [value]="chip.value" 
+      <free-chip *ngFor="let chip of value" [value]="chip.value"
         [delete]="chip.delete"></free-chip>
-      <input type="text" *ngIf="placeholder" placeholder="placeholder"
+      <input spellcheck="false" type="text" *ngIf="placeholder" placeholder="placeholder"
              (focus)="onFocus()" (blur)="onFocus()" (keyup.enter)="onEnter($event)">
     </div>
   `,
@@ -19,12 +19,29 @@ import {
 
 export class ChipGroupComponent implements OnInit {
 
-  @Input() chips: any;
+  @Input()
+  set chips(value: any) {
+    this.value = [];
+    for (const v of value) {
+      const isExited = this.value.find((elem, index, array) => {
+        return elem.value === v.value;
+      });
+      if (!isExited) {
+        this.value.push(v);
+      }
+    }
+  }
+
+  get chips(): any {
+    return this.value;
+  }
+
   @Output() chipsChange: EventEmitter<any> = new EventEmitter();
   @Input() placeholder: boolean;
   chipClass = {};
   focus: boolean;
   groups: ChipComponent[] = [];
+  value: any[] = [];
   constructor() {}
 
   ngOnInit() {
@@ -43,11 +60,13 @@ export class ChipGroupComponent implements OnInit {
   }
 
   removeGroup(value: ChipComponent) {
-    let i = this.groups.length;
-    while (i--) {
-      if (this.groups[i] === value) {
-        this.groups.splice(i, 1);
-      }
+    const index = this.value.findIndex((elem, i, array) => {
+      return elem.value === value.value;
+    });
+    if (index !== -1) {
+      this.groups.splice(index, 1);
+      this.value.splice(index, 1);
+      this.chipsChange.emit(this.value);
     }
   }
 
@@ -57,10 +76,15 @@ export class ChipGroupComponent implements OnInit {
   }
 
   onEnter(event: any) {
-    this.chips.push({
-      value: event.target.value,
-      delete: true
-    });
+    const value = event.target.value.trim();
+    if (value) {
+      this.chips.push({
+        value: value,
+        delete: true
+      });
+      this.chips = this.chips.slice();
+      event.target.value = '';
+    }
   }
 }
 
@@ -79,13 +103,12 @@ export class ChipComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() delete: boolean;
   @ViewChild('container') container: ElementRef;
   constructor(private renderer2: Renderer2,
-              private er: ElementRef,
               group: ChipGroupComponent) {
     this.group = group;
   }
 
   ngOnInit() {
-    if (this.group && this.group.chips.indexOf(this.value) > 0) {
+    if (this.group) {
       this.group.addGroup(this);
     }
   }
@@ -99,12 +122,9 @@ export class ChipComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onDelete() {
-    const chips = this.group.groups;
-    const index = chips.indexOf(this);
-    if (index >= 0 ) {
-      chips.splice(index, 1);
+    if (this.group) {
+      this.group.removeGroup(this);
     }
-    console.log(index);
   }
 
   ngOnDestroy() {

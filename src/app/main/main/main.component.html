@@ -9,10 +9,13 @@
       </p>
       <p>FreeNG还很年轻，首个版本发布于2017年5月。</p>
       <p>
-        <b>当前版本：</b> v0.1.0
+        <b>当前版本：</b> v{{version}}
       </p>
       <p>
-        <b>重要声明：</b> 如其名Free，FreeNG框架是免费开源的!
+        <b>备注：</b> 如其名Free，FreeNG框架是免费开源的!
+      </p>
+      <p style="padding-top: 10px;">
+        <iframe src="https://ghbtns.com/github-btn.html?user=IronPans&repo=freeng&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
       </p>
     </free-panel>
 
@@ -20,7 +23,7 @@
       <f-header>关于作者</f-header>
       <p>
         <span><i class="fa fa-user"></i> 作者：</span>
-        <a href="" target="_blank">铁锅(TG)</a>，90后未进化完全的地球人，也是一名传说中会很早秃顶的程序猿，
+        <a href="" target="_blank">TG</a>，90后未进化完全的地球人，也是一名传说中会很早秃顶的程序猿，
         从事前端开发，平时爱瞎折腾，每天主要的工作就是对着电脑撸码。
       </p>
       <p>
@@ -35,17 +38,75 @@
     <free-panel fGrid="4">
       <f-header>功能特点</f-header>
       <ol class="main-point">
-        <li>基于Angular4开发</li>
+        <li>基于最新的Angular4开发</li>
         <li>采取Flex布局实现完全响应式布局</li>
         <li>丰富的主题选择</li>
-        <li>提供了诸多可组合的UI组件</li>
+        <li>易用的API，可按需组合的UI组件</li>
       </ol>
+      <p>
+        <a fButton [routerLink]="'/main/getting-started'">开始使用</a>
+        <a fButton href="https://github.com/IronPans/freeng" target="_blank">Github</a>
+      </p>
     </free-panel>
 
     <free-panel fGrid="4">
       <f-header>更新日志</f-header>
       <free-accordion-group [closeOthers]="true">
-        <free-accordion class="let-menu-item" header="v0.1.0 - 初始版本">
+        <free-accordion class="let-menu-item" header="v0.1.1">
+          <h4>新增</h4>
+          <ul class="free-ul-padding">
+            <li>
+              <a [routerLink]="['/main/slide']">幻灯片(Slide)</a>
+            </li>
+            <li>
+              <a [routerLink]="['/main/chip']">碎片(Chip)</a>
+            </li>
+            <li>
+              <a [routerLink]="['/main/shrink']">浮动按钮(Shrink)</a>
+            </li>
+            <li>
+              <a [routerLink]="['/main/select']">选择框(select)</a>
+            </li>
+            <li>
+              <a [routerLink]="['/main/pagination']">分页器(pagination)</a>
+            </li>
+            <li>
+              <a [routerLink]="['/main/contextmenu']">上下文菜单(contextmenu)</a>
+            </li>
+            <li>
+              粒子效果(particle)
+            </li>
+          </ul>
+          <h4>更新</h4>
+          <ul class="free-ul-padding">
+            <li><a [routerLink]="['/main/input']">输入框(inputtext)</a>新增正则验证</li>
+            <li>
+              <p>
+                <a [routerLink]="['/main/dropdown']">下拉菜单(Dropdown)</a>
+              </p>
+              <p>1) 新增自定义内容</p>
+              <p>2) 新增hover事件</p>
+            </li>
+            <li>
+              <p>
+                <a [routerLink]="['/main/modals']">模态框(modal)</a>
+              </p>
+              <p>1) 新增loading模态框</p>
+              <p>2) 新增延时隐藏模态框</p>
+            </li>
+          </ul>
+          <h4>修改</h4>
+          <ul class="free-ul-padding">
+            <li>使用默认滚动条(可自定义)</li>
+            <li>登录界面新增粒子效果/注册与登录模块之间的切换</li>
+            <li>将主题设置调整到右上角按钮</li>
+          </ul>
+          <h4>结构更新</h4>
+          <ul class="free-ul-padding">
+            <li>统一采用异步路由</li>
+          </ul>
+        </free-accordion>
+        <free-accordion class="let-menu-item" header="v0.1.0">
           <ul class="free-ul-padding">
             <li>UI 元素</li>
             <li>基础组件</li>

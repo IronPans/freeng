@@ -51,7 +51,7 @@
     background-color: $color !important;
   }
 
-  :host-context(.free-#{$theme}) {
+  :host-context(.free-theme-#{$theme}) {
     .free-progress-bar {
       background-color: $color;
     }

@@ -13,18 +13,19 @@ free-accordion-group {
   cursor: pointer;
   border-bottom: 1px solid rgba(120, 130, 140, 0.13);
   user-select: none; }
-:host /deep/ .accordion-toggle:after {
-  font: normal normal normal .8rem/1 FontAwesome; }
-:host /deep/ .accordion-toggle:after {
-  content: "\f105";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  padding: 0 .8rem;
-  transform: translate(0, -50%);
-  transition: all .2s linear; }
-:host /deep/ .accordion-toggle.accordion-item-expand:after {
-  transform: translate(0, -50%) rotate(90deg); }
+  :host /deep/ .accordion-toggle:after {
+    font: normal normal normal .8rem/1 FontAwesome;
+    content: "\f105";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 0 .8rem;
+    transform: translate(0, -50%);
+    transition: all .2s linear; }
+  :host /deep/ .accordion-toggle.accordion-item-expand:after {
+    transform: translate(0, -50%) rotate(90deg); }
+  :host /deep/ .accordion-toggle .accordion-toggle-title {
+    transition: all .2s linear; }
 :host /deep/ .accordion-toggle-inner {
   display: -webkit-box;
   display: -moz-box;
@@ -36,10 +37,7 @@ free-accordion-group {
   position: relative;
   overflow: hidden;
   font-size: .7rem; }
-:host /deep/ .accordion-content .accordion-inner,
-:host /deep/ .accordion-content div {
-  padding: .5rem; }
-:host /deep/ .accordion-toggle .accordion-toggle-title {
-  transition: all .2s linear; }
+  :host /deep/ .accordion-content .accordion-inner, :host /deep/ .accordion-content > div {
+    padding: .5rem; }
 
 /*# sourceMappingURL=accordion.component.css.map */

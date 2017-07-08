@@ -1,12 +1,5 @@
-import {Component, HostBinding, NgModule, OnInit} from '@angular/core';
-import {TableModule} from '../../component/table/table.component';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CommonModule} from '@angular/common';
-import {GridModule} from '../../component/grid/grid.directive';
-import {BadgeModule} from '../../component/badge/badge.component';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {fadeInUp} from '../../component/common/animations';
-import {IconModule} from '../../component/icon/icon.component';
 
 @Component({
   selector: 'free-main-badge',
@@ -25,17 +18,4 @@ export class MainBadgeComponent implements OnInit {
   }
 
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    TabGroupModule,
-    CodeModule,
-    TableModule,
-    GridModule,
-    BadgeModule,
-    IconModule
-  ],
-  declarations: [MainBadgeComponent]
-})
 
-export class MainBadgeModule {}

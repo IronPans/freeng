@@ -1,5 +1,5 @@
 .free-loading {
-  display: inline-block; }
+  display: flex; }
 
 .loader {
   position: relative;
@@ -491,9 +491,9 @@
 .free-green .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #46be8a !important; }
 
-:host-context(.free-green) .loader.circle-line span, :host-context(.free-green) .loader.circle-line-spin span, :host-context(.free-green) .loader.circle-round span, :host-context(.free-green) .loader.circle-round-fade span, :host-context(.free-green) .loader.line-square span, :host-context(.free-green) .loader.line-round span, :host-context(.free-green) .loader.line-bounce span {
+:host-context(.free-theme-green) .loader.circle-line span, :host-context(.free-theme-green) .loader.circle-line-spin span, :host-context(.free-theme-green) .loader.circle-round span, :host-context(.free-theme-green) .loader.circle-round-fade span, :host-context(.free-theme-green) .loader.line-square span, :host-context(.free-theme-green) .loader.line-round span, :host-context(.free-theme-green) .loader.line-bounce span {
   background: #46be8a; }
-:host-context(.free-green) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-green) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #46be8a; }
 
 .free-deepblue .loader.circle-line span, .free-deepblue .loader.circle-line-spin span, .free-deepblue .loader.circle-round span, .free-deepblue .loader.circle-round-fade span, .free-deepblue .loader.line-square span, .free-deepblue .loader.line-round span, .free-deepblue .loader.line-bounce span {
@@ -501,9 +501,9 @@
 .free-deepblue .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #115d8e !important; }
 
-:host-context(.free-deepblue) .loader.circle-line span, :host-context(.free-deepblue) .loader.circle-line-spin span, :host-context(.free-deepblue) .loader.circle-round span, :host-context(.free-deepblue) .loader.circle-round-fade span, :host-context(.free-deepblue) .loader.line-square span, :host-context(.free-deepblue) .loader.line-round span, :host-context(.free-deepblue) .loader.line-bounce span {
+:host-context(.free-theme-deepblue) .loader.circle-line span, :host-context(.free-theme-deepblue) .loader.circle-line-spin span, :host-context(.free-theme-deepblue) .loader.circle-round span, :host-context(.free-theme-deepblue) .loader.circle-round-fade span, :host-context(.free-theme-deepblue) .loader.line-square span, :host-context(.free-theme-deepblue) .loader.line-round span, :host-context(.free-theme-deepblue) .loader.line-bounce span {
   background: #115d8e; }
-:host-context(.free-deepblue) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-deepblue) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #115d8e; }
 
 .free-blue .loader.circle-line span, .free-blue .loader.circle-line-spin span, .free-blue .loader.circle-round span, .free-blue .loader.circle-round-fade span, .free-blue .loader.line-square span, .free-blue .loader.line-round span, .free-blue .loader.line-bounce span {
@@ -511,9 +511,9 @@
 .free-blue .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #677ae4 !important; }
 
-:host-context(.free-blue) .loader.circle-line span, :host-context(.free-blue) .loader.circle-line-spin span, :host-context(.free-blue) .loader.circle-round span, :host-context(.free-blue) .loader.circle-round-fade span, :host-context(.free-blue) .loader.line-square span, :host-context(.free-blue) .loader.line-round span, :host-context(.free-blue) .loader.line-bounce span {
+:host-context(.free-theme-blue) .loader.circle-line span, :host-context(.free-theme-blue) .loader.circle-line-spin span, :host-context(.free-theme-blue) .loader.circle-round span, :host-context(.free-theme-blue) .loader.circle-round-fade span, :host-context(.free-theme-blue) .loader.line-square span, :host-context(.free-theme-blue) .loader.line-round span, :host-context(.free-theme-blue) .loader.line-bounce span {
   background: #677ae4; }
-:host-context(.free-blue) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-blue) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #677ae4; }
 
 .free-lightblue .loader.circle-line span, .free-lightblue .loader.circle-line-spin span, .free-lightblue .loader.circle-round span, .free-lightblue .loader.circle-round-fade span, .free-lightblue .loader.line-square span, .free-lightblue .loader.line-round span, .free-lightblue .loader.line-bounce span {
@@ -521,9 +521,9 @@
 .free-lightblue .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #169e9f !important; }
 
-:host-context(.free-lightblue) .loader.circle-line span, :host-context(.free-lightblue) .loader.circle-line-spin span, :host-context(.free-lightblue) .loader.circle-round span, :host-context(.free-lightblue) .loader.circle-round-fade span, :host-context(.free-lightblue) .loader.line-square span, :host-context(.free-lightblue) .loader.line-round span, :host-context(.free-lightblue) .loader.line-bounce span {
+:host-context(.free-theme-lightblue) .loader.circle-line span, :host-context(.free-theme-lightblue) .loader.circle-line-spin span, :host-context(.free-theme-lightblue) .loader.circle-round span, :host-context(.free-theme-lightblue) .loader.circle-round-fade span, :host-context(.free-theme-lightblue) .loader.line-square span, :host-context(.free-theme-lightblue) .loader.line-round span, :host-context(.free-theme-lightblue) .loader.line-bounce span {
   background: #169e9f; }
-:host-context(.free-lightblue) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-lightblue) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #169e9f; }
 
 .free-yellow .loader.circle-line span, .free-yellow .loader.circle-line-spin span, .free-yellow .loader.circle-round span, .free-yellow .loader.circle-round-fade span, .free-yellow .loader.line-square span, .free-yellow .loader.line-round span, .free-yellow .loader.line-bounce span {
@@ -531,9 +531,9 @@
 .free-yellow .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #fa9e0c !important; }
 
-:host-context(.free-yellow) .loader.circle-line span, :host-context(.free-yellow) .loader.circle-line-spin span, :host-context(.free-yellow) .loader.circle-round span, :host-context(.free-yellow) .loader.circle-round-fade span, :host-context(.free-yellow) .loader.line-square span, :host-context(.free-yellow) .loader.line-round span, :host-context(.free-yellow) .loader.line-bounce span {
+:host-context(.free-theme-yellow) .loader.circle-line span, :host-context(.free-theme-yellow) .loader.circle-line-spin span, :host-context(.free-theme-yellow) .loader.circle-round span, :host-context(.free-theme-yellow) .loader.circle-round-fade span, :host-context(.free-theme-yellow) .loader.line-square span, :host-context(.free-theme-yellow) .loader.line-round span, :host-context(.free-theme-yellow) .loader.line-bounce span {
   background: #fa9e0c; }
-:host-context(.free-yellow) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-yellow) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #fa9e0c; }
 
 .free-red .loader.circle-line span, .free-red .loader.circle-line-spin span, .free-red .loader.circle-round span, .free-red .loader.circle-round-fade span, .free-red .loader.line-square span, .free-red .loader.line-round span, .free-red .loader.line-bounce span {
@@ -541,9 +541,9 @@
 .free-red .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #f96868 !important; }
 
-:host-context(.free-red) .loader.circle-line span, :host-context(.free-red) .loader.circle-line-spin span, :host-context(.free-red) .loader.circle-round span, :host-context(.free-red) .loader.circle-round-fade span, :host-context(.free-red) .loader.line-square span, :host-context(.free-red) .loader.line-round span, :host-context(.free-red) .loader.line-bounce span {
+:host-context(.free-theme-red) .loader.circle-line span, :host-context(.free-theme-red) .loader.circle-line-spin span, :host-context(.free-theme-red) .loader.circle-round span, :host-context(.free-theme-red) .loader.circle-round-fade span, :host-context(.free-theme-red) .loader.line-square span, :host-context(.free-theme-red) .loader.line-round span, :host-context(.free-theme-red) .loader.line-bounce span {
   background: #f96868; }
-:host-context(.free-red) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-red) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #f96868; }
 
 .free-purple .loader.circle-line span, .free-purple .loader.circle-line-spin span, .free-purple .loader.circle-round span, .free-purple .loader.circle-round-fade span, .free-purple .loader.line-square span, .free-purple .loader.line-round span, .free-purple .loader.line-bounce span {
@@ -551,9 +551,9 @@
 .free-purple .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #6633B9 !important; }
 
-:host-context(.free-purple) .loader.circle-line span, :host-context(.free-purple) .loader.circle-line-spin span, :host-context(.free-purple) .loader.circle-round span, :host-context(.free-purple) .loader.circle-round-fade span, :host-context(.free-purple) .loader.line-square span, :host-context(.free-purple) .loader.line-round span, :host-context(.free-purple) .loader.line-bounce span {
+:host-context(.free-theme-purple) .loader.circle-line span, :host-context(.free-theme-purple) .loader.circle-line-spin span, :host-context(.free-theme-purple) .loader.circle-round span, :host-context(.free-theme-purple) .loader.circle-round-fade span, :host-context(.free-theme-purple) .loader.line-square span, :host-context(.free-theme-purple) .loader.line-round span, :host-context(.free-theme-purple) .loader.line-bounce span {
   background: #6633B9; }
-:host-context(.free-purple) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-purple) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #6633B9; }
 
 .free-orange .loader.circle-line span, .free-orange .loader.circle-line-spin span, .free-orange .loader.circle-round span, .free-orange .loader.circle-round-fade span, .free-orange .loader.line-square span, .free-orange .loader.line-round span, .free-orange .loader.line-bounce span {
@@ -561,9 +561,9 @@
 .free-orange .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #f2a654 !important; }
 
-:host-context(.free-orange) .loader.circle-line span, :host-context(.free-orange) .loader.circle-line-spin span, :host-context(.free-orange) .loader.circle-round span, :host-context(.free-orange) .loader.circle-round-fade span, :host-context(.free-orange) .loader.line-square span, :host-context(.free-orange) .loader.line-round span, :host-context(.free-orange) .loader.line-bounce span {
+:host-context(.free-theme-orange) .loader.circle-line span, :host-context(.free-theme-orange) .loader.circle-line-spin span, :host-context(.free-theme-orange) .loader.circle-round span, :host-context(.free-theme-orange) .loader.circle-round-fade span, :host-context(.free-theme-orange) .loader.line-square span, :host-context(.free-theme-orange) .loader.line-round span, :host-context(.free-theme-orange) .loader.line-bounce span {
   background: #f2a654; }
-:host-context(.free-orange) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-orange) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #f2a654; }
 
 .free-brown .loader.circle-line span, .free-brown .loader.circle-line-spin span, .free-brown .loader.circle-round span, .free-brown .loader.circle-round-fade span, .free-brown .loader.line-square span, .free-brown .loader.line-round span, .free-brown .loader.line-bounce span {
@@ -571,9 +571,9 @@
 .free-brown .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #8d6658 !important; }
 
-:host-context(.free-brown) .loader.circle-line span, :host-context(.free-brown) .loader.circle-line-spin span, :host-context(.free-brown) .loader.circle-round span, :host-context(.free-brown) .loader.circle-round-fade span, :host-context(.free-brown) .loader.line-square span, :host-context(.free-brown) .loader.line-round span, :host-context(.free-brown) .loader.line-bounce span {
+:host-context(.free-theme-brown) .loader.circle-line span, :host-context(.free-theme-brown) .loader.circle-line-spin span, :host-context(.free-theme-brown) .loader.circle-round span, :host-context(.free-theme-brown) .loader.circle-round-fade span, :host-context(.free-theme-brown) .loader.line-square span, :host-context(.free-theme-brown) .loader.line-round span, :host-context(.free-theme-brown) .loader.line-bounce span {
   background: #8d6658; }
-:host-context(.free-brown) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-brown) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #8d6658; }
 
 .free-cyan .loader.circle-line span, .free-cyan .loader.circle-line-spin span, .free-cyan .loader.circle-round span, .free-cyan .loader.circle-round-fade span, .free-cyan .loader.line-square span, .free-cyan .loader.line-round span, .free-cyan .loader.line-bounce span {
@@ -581,9 +581,9 @@
 .free-cyan .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #57c7d4 !important; }
 
-:host-context(.free-cyan) .loader.circle-line span, :host-context(.free-cyan) .loader.circle-line-spin span, :host-context(.free-cyan) .loader.circle-round span, :host-context(.free-cyan) .loader.circle-round-fade span, :host-context(.free-cyan) .loader.line-square span, :host-context(.free-cyan) .loader.line-round span, :host-context(.free-cyan) .loader.line-bounce span {
+:host-context(.free-theme-cyan) .loader.circle-line span, :host-context(.free-theme-cyan) .loader.circle-line-spin span, :host-context(.free-theme-cyan) .loader.circle-round span, :host-context(.free-theme-cyan) .loader.circle-round-fade span, :host-context(.free-theme-cyan) .loader.line-square span, :host-context(.free-theme-cyan) .loader.line-round span, :host-context(.free-theme-cyan) .loader.line-bounce span {
   background: #57c7d4; }
-:host-context(.free-cyan) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-cyan) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #57c7d4; }
 
 .free-pink .loader.circle-line span, .free-pink .loader.circle-line-spin span, .free-pink .loader.circle-round span, .free-pink .loader.circle-round-fade span, .free-pink .loader.line-square span, .free-pink .loader.line-round span, .free-pink .loader.line-bounce span {
@@ -591,9 +591,9 @@
 .free-pink .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #f96197 !important; }
 
-:host-context(.free-pink) .loader.circle-line span, :host-context(.free-pink) .loader.circle-line-spin span, :host-context(.free-pink) .loader.circle-round span, :host-context(.free-pink) .loader.circle-round-fade span, :host-context(.free-pink) .loader.line-square span, :host-context(.free-pink) .loader.line-round span, :host-context(.free-pink) .loader.line-bounce span {
+:host-context(.free-theme-pink) .loader.circle-line span, :host-context(.free-theme-pink) .loader.circle-line-spin span, :host-context(.free-theme-pink) .loader.circle-round span, :host-context(.free-theme-pink) .loader.circle-round-fade span, :host-context(.free-theme-pink) .loader.line-square span, :host-context(.free-theme-pink) .loader.line-round span, :host-context(.free-theme-pink) .loader.line-bounce span {
   background: #f96197; }
-:host-context(.free-pink) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-pink) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #f96197; }
 
 .free-teal .loader.circle-line span, .free-teal .loader.circle-line-spin span, .free-teal .loader.circle-round span, .free-teal .loader.circle-round-fade span, .free-teal .loader.line-square span, .free-teal .loader.line-round span, .free-teal .loader.line-bounce span {
@@ -601,9 +601,9 @@
 .free-teal .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #3aa99e !important; }
 
-:host-context(.free-teal) .loader.circle-line span, :host-context(.free-teal) .loader.circle-line-spin span, :host-context(.free-teal) .loader.circle-round span, :host-context(.free-teal) .loader.circle-round-fade span, :host-context(.free-teal) .loader.line-square span, :host-context(.free-teal) .loader.line-round span, :host-context(.free-teal) .loader.line-bounce span {
+:host-context(.free-theme-teal) .loader.circle-line span, :host-context(.free-theme-teal) .loader.circle-line-spin span, :host-context(.free-theme-teal) .loader.circle-round span, :host-context(.free-theme-teal) .loader.circle-round-fade span, :host-context(.free-theme-teal) .loader.line-square span, :host-context(.free-theme-teal) .loader.line-round span, :host-context(.free-theme-teal) .loader.line-bounce span {
   background: #3aa99e; }
-:host-context(.free-teal) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-teal) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #3aa99e; }
 
 .free-dark .loader.circle-line span, .free-dark .loader.circle-line-spin span, .free-dark .loader.circle-round span, .free-dark .loader.circle-round-fade span, .free-dark .loader.line-square span, .free-dark .loader.line-round span, .free-dark .loader.line-bounce span {
@@ -611,9 +611,9 @@
 .free-dark .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #393D49 !important; }
 
-:host-context(.free-dark) .loader.circle-line span, :host-context(.free-dark) .loader.circle-line-spin span, :host-context(.free-dark) .loader.circle-round span, :host-context(.free-dark) .loader.circle-round-fade span, :host-context(.free-dark) .loader.line-square span, :host-context(.free-dark) .loader.line-round span, :host-context(.free-dark) .loader.line-bounce span {
+:host-context(.free-theme-dark) .loader.circle-line span, :host-context(.free-theme-dark) .loader.circle-line-spin span, :host-context(.free-theme-dark) .loader.circle-round span, :host-context(.free-theme-dark) .loader.circle-round-fade span, :host-context(.free-theme-dark) .loader.line-square span, :host-context(.free-theme-dark) .loader.line-round span, :host-context(.free-theme-dark) .loader.line-bounce span {
   background: #393D49; }
-:host-context(.free-dark) .loader.circle-spin .loader-placeholder {
+:host-context(.free-theme-dark) .loader.circle-spin .loader-placeholder {
   border-top: 0.2rem solid #393D49; }
 
 /*# sourceMappingURL=loading.component.css.map */

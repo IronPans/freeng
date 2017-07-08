@@ -56,7 +56,6 @@ export class TabNavComponent {
 export class TabComponent implements OnInit {
   @Input() header: string;
   @Input()
-
   get selected(): boolean {
     return this._selected;
   }
@@ -66,7 +65,7 @@ export class TabComponent implements OnInit {
     this.toggleClass();
   }
 
-  tabClass;
+  tabClass: any;
   _selected: boolean;
 
   constructor() {}
@@ -95,7 +94,7 @@ export class TabComponent implements OnInit {
       <div class="free-tab-box">
         <ng-content></ng-content>
       </div>
-    </div> 
+    </div>
   `,
   styleUrls: ['./tab.component.scss']
 })
@@ -116,10 +115,10 @@ export class TabGroupComponent implements OnInit, AfterContentInit {
     this.tabInit();
     if (this.theme) {
       this.renderer2.addClass(this.groups.nativeElement, 'theme-' + this.theme);
-    };
+    }
     if (this.direction) {
       this.renderer2.addClass(this.groups.nativeElement, 'free-tab-' + this.direction);
-    };
+    }
   }
 
   tabInit() {

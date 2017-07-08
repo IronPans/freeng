@@ -1,9 +1,5 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {PanelModule} from '../../component/panel/panel.component';
-import {GridModule} from '../../component/grid/grid.directive';
-import {CommonModule} from '@angular/common';
-import {TableModule} from "../../component/table/table.component";
 
 @Component({
   selector: 'free-main-changelog',
@@ -20,14 +16,4 @@ export class MainChangelogComponent implements OnInit {
   ngOnInit() {
   }
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    PanelModule,
-    GridModule,
-    TableModule
-  ],
-  declarations: [MainChangelogComponent]
-})
 
-export class MainChangelogModule {}

@@ -5,7 +5,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 @Component({
   selector: 'free-tree-item',
   template: `
-    <li class="free-tree-item">
+    <li class="free-tree-item" [class.open]="expanded">
       <span (click)="toggle($event)">{{title}}</span>
       <ul *ngIf="folder" [@treeState]="isActive">
         <free-tree-item *ngFor="let f of folder" title="{{f.title}}"
@@ -42,7 +42,6 @@ export class TreeItemComponent implements OnChanges {
   }
 
   ngOnChanges() {
-    console.log(this.expanded);
     if (this.expanded) {
       this.isActive = 'active';
       this.isOpen = true;

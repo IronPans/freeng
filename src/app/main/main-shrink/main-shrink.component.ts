@@ -1,24 +1,24 @@
-import {Component, NgModule, OnInit} from '@angular/core';
-import {TableModule} from '../../component/table/table.component';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CommonModule} from '@angular/common';
-import {ShrinkModule} from '../../component/shrink/shrink.component';
-import {GridModule} from '../../component/grid/grid.directive';
+import {Component, HostBinding, OnInit} from '@angular/core';
+import {fadeInUp} from '../../component/common/animations';
 
 @Component({
   selector: 'free-main-shrink',
   templateUrl: './main-shrink.component.html',
-  styleUrls: ['./main-shrink.component.scss']
+  styleUrls: ['./main-shrink.component.scss'],
+  animations: [fadeInUp]
 })
 export class MainShrinkComponent implements OnInit {
+
+  @HostBinding('@fadeInUpState') fadeInUpState;
+  @HostBinding('style.display') display = 'block';
 
   menus: any;
   constructor() {
     this.menus = [
-      { 'icon': 'user'},
-      { 'icon': 'user'},
-      { 'icon': 'user'}
+      { 'icon': 'weibo'},
+      { 'icon': 'weixin'},
+      { 'icon': 'qq'},
+      { 'icon': 'renren'}
     ];
   }
 
@@ -26,16 +26,4 @@ export class MainShrinkComponent implements OnInit {
   }
 
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    TabGroupModule,
-    CodeModule,
-    TableModule,
-    ShrinkModule,
-    GridModule
-  ],
-  declarations: [MainShrinkComponent]
-})
 
-export class MainShrinkModule {}

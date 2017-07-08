@@ -1,34 +1,66 @@
 @import "../../../assets/sass/mixin";
+@import "../../../assets/sass/variables";
 
 :host /deep/ {
   .free-pagination {
-    display: inline-block;
-  }
+    display: flex;
+    justify-content: center;
 
-  .free-pagination>ul {
-    @include flexbox;
+    &>ul {
+      display: flex;
+
+      li {
+        list-style: none;
+      }
+    }
   }
 
   .free-pagination-item {
     margin: 0 2px;
     position: relative;
     vertical-align: top;
+
+    a {
+      display: inline-block;
+      min-width: 16px;
+      padding: 3px 5px;
+      line-height: 20px;
+      text-decoration: none;
+      box-sizing: content-box;
+      text-align: center;
+      border-radius: 4px;
+      color: #666;
+      border: 1px solid #d9d9d9;
+      background-origin: border-box;
+      background-image: linear-gradient(to bottom,#fff,#eee);
+      text-shadow: 1px 1px #fff;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #fafafa;
+        outline: 0;
+        background-image: none
+      }
+    }
+
+    &.free-pagination-active a {
+      background: #009dd8;
+      color: #fff;
+      background-origin: border-box;
+      background-image: linear-gradient(to bottom,#00b4f5,#008dc5);
+      text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+
+      &:hover {
+        cursor: auto;
+        background: #009dd8;
+        background-image: none
+      }
+    }
+
+    &.free-pagination-disabled a {
+      opacity: 0.4;
+      pointer-events: none;
+    }
   }
 
-  .free-pagination-item a {
-    @include flexbox;
-    border-radius: 50% !important;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    font-size: 14px;
-    z-index: 1;
-    border: 0;
-    position: relative;
-    text-decoration: none;
-    color: #7e7e7e;
-    background-color: #e2e2e2;
-    margin-left: -1px;
-  }
 }

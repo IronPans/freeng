@@ -1,87 +1,138 @@
-.input-field {
-  position: relative;
-  min-width: 4rem;
+:host /deep/ {
+  .input-field {
+    position: relative;
+    min-width: 4rem;
+
+    input {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      height: 35px;
+      width: 100%;
+      padding: 0;
+      box-shadow: none;
+      outline: none;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+
+      & + span {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: inline-block;
+        max-width: 100%;
+        z-index: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid #d9d9d9;
+      }
+
+      &:focus + span:after {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+
+      &:focus + span + i {
+        opacity: 1;
+      }
+    }
+
+    span:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #2196f3;
+      transform: scale(0);
+      transition: all .2s ease-out;
+    }
+
+    &.input-field-icon i {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      opacity: 0;
+      padding: 0 5px;
+      font-size: .75rem;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+    }
+    &.input-field-icon input {
+      padding-right: 25px;
+    }
+
+    &.success input + span {
+      border-color: #b5dfb7;
+    }
+    &.warning input + span {
+      border-color: #ffd699;
+    }
+    &.error input + span {
+      border-color: #fccbc7;
+    }
+    &.success span:after {
+      background: #4caf50;
+    }
+    &.warning span:after {
+      background: #ffc107;
+    }
+    &.error span:after {
+      background: #f44336;
+    }
+    &.input-field-icon.success i {
+      color: #4caf50;
+    }
+    &.input-field-icon.error i {
+      color: #f44336;
+    }
+    &.input-field-icon.warning i {
+      color: #ffc107;
+    }
+  }
 }
 
-.input-field input {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  height: 35px;
-  width: 100%;
-  padding: 0;
-  box-shadow: none;
-  outline: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.free-tip {
+  position: fixed;
+  max-width: 20rem;
+  min-width: 12rem;
+  padding: .5rem;
+  border-radius: 3px;
+  line-height: 1.1rem;
+  z-index: 998;
+  color: #fff;
+  background: rgba(33, 150, 243, .8);
+  opacity: 0;
+  transition: all .3s;
+  backface-visibility: hidden;
+
+  &.free-tip-top {
+    transform: translate3d(0, -4rem, 0);
+
+    &:before {
+      bottom: -1rem;
+      left: 50%;
+      border-top: .5rem solid rgba(33, 150, 243, .8);
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  &.free-tip-right {
+    transform: translate3d(4rem, 0, 0);
+
+    &:before {
+      top: 50%;
+      left: -1rem;
+      border-right: .5rem solid rgba(33, 150, 243, .8);
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    border: .5rem solid transparent;
+  }
 }
 
-.input-field input+span {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: inline-block;
-  max-width: 100%;
-  z-index: 0;
-  width: 100%;
-  height: 1px;
-  border-bottom: 1px solid #d9d9d9;
-}
-
-.input-field span:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #2196f3;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
-}
-.input-field input:focus+span:after {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-.input-field.input-field-icon i{
-  position:absolute;
-  right:0;
-  top:50%;
-  padding:0 5px;
-  font-size: .75rem;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-}
-.input-field.input-field-icon input{
-  padding-right:30px;
-}
-
-.input-field.success input+span{
-  border-color: #b5dfb7;
-}
-.input-field.warning input+span{
-  border-color: #ffd699;
-}
-.input-field.error input+span{
-  border-color: #fccbc7;
-}
-.input-field.success span:after {
-  background:#4caf50;
-}
-.input-field.warning span:after{
-  background:#ffc107;
-}
-.input-field.error span:after{
-  background:#f44336;
-}
-.input-field.input-field-icon.success i{
-  color: #4caf50;
-}
-.input-field.input-field-icon.error i{
-  color: #f44336;
-}
-.input-field.input-field-icon.warning i{
-  color: #ffc107;
-}

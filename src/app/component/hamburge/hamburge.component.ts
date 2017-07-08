@@ -23,7 +23,6 @@ export class HamburgeComponent implements OnInit {
 
   @HostListener('click')
   onClick() {
-    console.log(123);
     const con = this.container.nativeElement;
     this.isOpen = !this.isOpen;
     if (this.isOpen) {

@@ -1,9 +1,6 @@
-/**
- * Created by TGCode on 2017/5/13.
- */
 
 export const config = {
-  version: '0.1.0',
+  version: '0.1.1',
   theme: [
     { name: 'green', color: '#46be8a'},
     { name: 'deepblue', color: '#115d8e'},

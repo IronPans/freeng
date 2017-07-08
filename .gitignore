@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+*.js.map
 
 # dependencies
 /node_modules
@@ -26,6 +27,7 @@
 
 # misc
 /.sass-cache
+*.css.map
 /connect.lock
 /coverage
 /libpeerconnection.log

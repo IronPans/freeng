@@ -1,0 +1,86 @@
+:host /deep/ {
+
+  .free-fullpage-container,
+  .free-fullpage-wrapper,
+  .free-fullpage-slide  {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .free-fullpage-wrapper {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transition-property: transform;
+  }
+
+  .free-fullpage-wrapper {
+    transform: translate3d(0, 0, 0);
+    transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) .8s;
+  }
+
+  .free-fullpage-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .free-fullpage-pagination {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    width: 50px;
+    padding-left: 20px;
+    transform: translate3d(0, -50%, 0);
+    transition: .3s;
+    z-index: 1000;
+  }
+
+  .free-pagination-bullet {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #fff;
+    cursor: pointer;
+    margin: 15px 0;
+    display: block;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: -4px;
+      left: -4px;
+      border-radius: 50%;
+      z-index: -1;
+      transition: all .3s;
+    }
+
+    &:not(.free-pagination-bullet-active):hover:before {
+      background: rgba(17, 93, 142, .7);
+    }
+
+    &.free-pagination-bullet-active {
+      &:before {
+        background: rgba(17, 93, 142, .7);
+        animation: fadeIn .83s ease-in-out infinite;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.1;
+    }
+  }
+}

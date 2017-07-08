@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACE,0BAAc;EACZ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,IAAI",
-"sources": ["main-progress.component.scss"],
-"names": [],
-"file": "main-progress.component.css"
-}

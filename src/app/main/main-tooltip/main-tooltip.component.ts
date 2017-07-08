@@ -1,10 +1,5 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CodeModule} from '../../component/code/code.component';
-import {GridModule} from '../../component/grid/grid.directive';
-import {TooltipModule} from '../../component/tooltip/tooltip.directive';
-import {TableModule} from '../../component/table/table.component';
 
 @Component({
   selector: 'free-main-tooltip',
@@ -23,15 +18,4 @@ export class MainTooltipComponent implements OnInit {
   }
 }
 
-@NgModule({
-  imports: [
-    TabGroupModule,
-    CodeModule,
-    GridModule,
-    TooltipModule,
-    TableModule
-  ],
-  declarations: [MainTooltipComponent]
-})
 
-export class MainTooltipModule {}

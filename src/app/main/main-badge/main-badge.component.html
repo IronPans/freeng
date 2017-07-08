@@ -21,6 +21,13 @@
 
           <free-table-body>
             <free-table-row>
+              <free-table-cell>content</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>小徽章内容</free-table-cell>
+            </free-table-row>
+            <free-table-row>
               <free-table-cell>up</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
@@ -54,10 +61,10 @@
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Default</h3>
+        <h3 class="free-toolbar">Icon</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <a>
+            <a style="padding: 0 10px;">
               <free-icon icon="bell"></free-icon>
               <free-badge content="1" [up]="true"></free-badge>
             </a>

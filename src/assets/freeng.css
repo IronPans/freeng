@@ -1222,6 +1222,7 @@ button, input, optgroup, select, textarea {
   color: white; }
 
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1245,7 +1246,7 @@ button, input, optgroup, select, textarea {
 
 .btn,
 .btn-group {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12); }
 
 .btn.btn-block {
   display: block;
@@ -1862,45 +1863,6 @@ blockquote {
   border-radius: 3px;
   border-left: 3px solid #115d8e; }
 
-.free-green blockquote {
-  border-color: #46be8a; }
-
-.free-deepblue blockquote {
-  border-color: #115d8e; }
-
-.free-blue blockquote {
-  border-color: #677ae4; }
-
-.free-lightblue blockquote {
-  border-color: #169e9f; }
-
-.free-yellow blockquote {
-  border-color: #fa9e0c; }
-
-.free-red blockquote {
-  border-color: #f96868; }
-
-.free-purple blockquote {
-  border-color: #6633B9; }
-
-.free-orange blockquote {
-  border-color: #f2a654; }
-
-.free-brown blockquote {
-  border-color: #8d6658; }
-
-.free-cyan blockquote {
-  border-color: #57c7d4; }
-
-.free-pink blockquote {
-  border-color: #f96197; }
-
-.free-teal blockquote {
-  border-color: #3aa99e; }
-
-.free-dark blockquote {
-  border-color: #393D49; }
-
 .free-tooltip {
   position: fixed;
   max-width: 12.5rem;
@@ -2000,7 +1962,7 @@ blockquote {
 
 .free-badge {
   display: inline-block;
-  padding: 2px 3px;
+  padding: 3px 4px;
   font-size: .5rem;
   line-height: 12px;
   border-radius: 3px;
@@ -2009,8 +1971,8 @@ blockquote {
   margin-left: 3px; }
   .free-badge.free-badge-up {
     position: absolute;
-    right: -3px;
-    top: -3px;
+    right: 0px;
+    top: 0px;
     margin-left: 0; }
 
 .free-depth {
@@ -2115,5 +2077,13 @@ blockquote {
 
 .free-shadow-24dp {
   box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12); }
+
+.iscroll::-webkit-scrollbar, body::-webkit-scrollbar {
+  height: 6px;
+  width: 6px; }
+
+.iscroll::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  background-color: #6e6e6e;
+  outline: 1px solid #333; }
 
 /*# sourceMappingURL=freeng.css.map */

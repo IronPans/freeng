@@ -4,7 +4,9 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
 :host /deep/ .free-table table {
   width: 100%;
   border-spacing: 0;
@@ -12,8 +14,8 @@
   overflow: hidden; }
 :host /deep/ .free-table .free-table-head {
   position: relative;
-  color: rgba(0, 0, 0, 0.54);
-  font-size: .6rem;
+  font-size: .7rem;
+  font-weight: bold;
   text-align: left; }
 :host /deep/ .free-table .free-table-head-inner {
   display: -webkit-box;
@@ -96,5 +98,7 @@
   color: #fff; }
 :host /deep/ .free-checkbox-title {
   padding-left: .3rem; }
+:host /deep/ .free-table-footer {
+  flex: 1 0 auto; }
 
 /*# sourceMappingURL=table.component.css.map */

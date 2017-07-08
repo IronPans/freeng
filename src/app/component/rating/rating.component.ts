@@ -6,7 +6,7 @@ import { NgModule, Component, OnInit, AfterViewInit, Input, Output, EventEmitter
   selector: 'free-rating',
   template: `
     <div class="free-rating" #container>
-      <span class="free-rating-item" *ngFor="let star of starArray;let i = index" 
+      <span class="free-rating-item" *ngFor="let star of starArray;let i = index"
           (click)="onClick($event, i)">
         <i class="fa" [ngClass]="{'fa-star-o': (!value || i >= value), 'fa-star': (i < value)}"></i>
       </span>

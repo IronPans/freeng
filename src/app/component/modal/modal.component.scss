@@ -7,47 +7,64 @@
   border-radius: 2px;
   color: #fff;
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
 
-.free-modal .free-modal-header,
-.free-modal-footer {
-  position:relative;
-  padding: .5rem .75rem;
-  background: rgba(0,0,0,0.1);
-}
+  &.free-modal-spinner {
+    min-width: 1rem;
+    background: transparent;
+    box-shadow: none;
 
-.free-modal-footer {
-  text-align: right;
-}
+    .free-modal-content {
+      padding: 0;
+    }
+  }
 
-.free-modal .free-modal-close {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 1rem;
-  height: 1rem;
-  opacity: 0.2;
-  line-height: 1rem;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+  .free-modal-content {
+    padding: .75rem;
+    color: #fff;
+  }
 
-.free-modal .free-modal-close:hover {
-  background: #1c1d24;
-  opacity: 0.5;
-}
+  .free-modal-header,
+  .free-modal-footer {
+    position:relative;
+    padding: .5rem .75rem;
+    background: rgba(0,0,0,0.1);
+  }
 
-.free-modal .free-modal-content {
-  padding: .75rem;
-  color: #fff;
+  .free-modal-footer {
+    text-align: right;
+  }
+
+  .free-modal-close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.2;
+    line-height: 1rem;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+
+    &:hover {
+      background: #1c1d24;
+      opacity: 0.5;
+    }
+  }
+
+  .free-prompt-input input {
+    width: 100%;
+    border: none;
+    background: #fff;
+    border-radius: 3px;
+    color: #333;
+    padding: 0 .5rem;
+  }
 }
 
 @each $theme, $color in $theme {
-  :host-context(.free-#{$theme}) /deep/ {
+  :host-context(.free-theme-#{$theme}) /deep/ {
     .free-modal {
       background: $color;
     }

@@ -1,8 +1,5 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {GridModule} from '../../component/grid/grid.directive';
 
 @Component({
   selector: 'free-main-typography',
@@ -20,13 +17,4 @@ export class MainTypographyComponent implements OnInit {
   }
 
 }
-@NgModule({
-  imports: [
-    TabGroupModule,
-    CodeModule,
-    GridModule
-  ],
-  declarations: [MainTypographyComponent]
-})
 
-export class MainTypographyModule {}

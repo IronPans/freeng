@@ -1,17 +1,53 @@
-<div class="panel">
+<div class="particle-bg" fParticle></div>
+<div class="panel" #panel>
  <div class="panel-body">
-   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-     <div class="form-group">
-       <label for="account" class="sr-only">账号</label>
-       <input type="text" id="account" placeholder="账号" formControlName="account">
+   <div class="free-panel-front">
+     <p class="logo">FreeNG</p>
+     <p class="subtitle">从这里启航，进入FreeNG的世界</p>
+     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+       <div class="form-group">
+         <label for="account" class="sr-only">账号</label>
+         <input type="text" id="account" placeholder="账号" formControlName="account">
+       </div>
+       <div class="form-group">
+         <label for="pwd" class="sr-only">密码</label>
+         <input type="password" id="pwd" placeholder="密码" formControlName="password">
+       </div>
+       <div class="form-group">
+         <button type="submit" fButton color="deepblue" block>登陆</button>
+       </div>
+     </form>
+     <div class="form-group panel-footer">
+       <a (click)="onToggle()">注册</a>
      </div>
-     <div class="form-group">
-       <label for="pwd" class="sr-only">密码</label>
-       <input type="password" id="pwd" placeholder="密码" formControlName="password">
+   </div>
+   <div class="free-panel-back">
+     <p class="logo">FreeNG</p>
+     <p class="subtitle">从这里启航，进入FreeNG的世界</p>
+     <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+       <div class="form-group">
+         <label for="account" class="sr-only">昵称</label>
+         <input type="text" id="username" placeholder="昵称" formControlName="username">
+       </div>
+       <div class="form-group">
+         <label for="account" class="sr-only">邮箱</label>
+         <input type="text" id="email" placeholder="邮箱" formControlName="email">
+       </div>
+       <div class="form-group">
+         <label for="pwd1" class="sr-only">密码</label>
+         <input type="password" id="pwd1" placeholder="密码" formControlName="password1">
+       </div>
+       <div class="form-group">
+         <label for="pwd1" class="sr-only">确认密码</label>
+         <input type="password" id="pwd2" placeholder="确认密码" formControlName="password2">
+       </div>
+       <div class="form-group">
+         <button type="submit" fButton color="deepblue" block>注册</button>
+       </div>
+     </form>
+     <div class="form-group panel-footer">
+       <a (click)="onToggle()">登录</a>
      </div>
-     <div class="form-group">
-       <button type="submit" fButton color="deepblue" block>登陆</button>
-     </div>
-   </form>
+   </div>
  </div>
 </div>

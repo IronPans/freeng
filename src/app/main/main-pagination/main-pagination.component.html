@@ -1,0 +1,60 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        分页器
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项</h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-pagination</h3>
+        <p>分页器。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>page</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>最多显示页数，可选。默认8.</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>activeIndex</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>当前页码，可选。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-pagination [total]="8"></free-pagination>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-pagination [total]="8"&gt;&lt;/free-pagination&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+    </div>
+  </div>
+
+</div>

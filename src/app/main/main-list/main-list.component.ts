@@ -1,13 +1,5 @@
-import {Component, OnInit, HostBinding, NgModule} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import { fadeInUp } from '../../component/common/animations';
-import {TableModule} from '../../component/table/table.component';
-import {CodeModule} from '../../component/code/code.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CommonModule} from '@angular/common';
-import {IconModule} from '../../component/icon/icon.component';
-import {ListModule} from '../../component/list/list.component';
-import {ImageModule} from '../../component/image/image.component';
-import {GridModule} from '../../component/grid/grid.directive';
 
 @Component({
   selector: 'free-main-list',
@@ -30,18 +22,4 @@ export class MainListComponent implements OnInit {
 
 }
 
-@NgModule({
-  imports: [
-    CommonModule,
-    TabGroupModule,
-    CodeModule,
-    TableModule,
-    IconModule,
-    ListModule,
-    ImageModule,
-    GridModule
-  ],
-  declarations: [MainListComponent]
-})
 
-export class MainListModule {}

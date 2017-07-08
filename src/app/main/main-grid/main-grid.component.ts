@@ -1,9 +1,5 @@
-import {Component, HostBinding, NgModule, OnInit} from '@angular/core';
-import {GridModule} from '../../component/grid/grid.directive';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {fadeInUp} from '../../component/common/animations';
-import {TableModule} from '../../component/table/table.component';
-import {TabGroupModule} from '../../component/tab/tab.component';
-import {CodeModule} from '../../component/code/code.component';
 
 @Component({
   selector: 'free-main-grid',
@@ -22,14 +18,4 @@ export class MainGridComponent implements OnInit {
 
 }
 
-@NgModule({
-  imports: [
-    GridModule,
-    TableModule,
-    TabGroupModule,
-    CodeModule
-  ],
-  declarations: [MainGridComponent]
-})
 
-export class MainGridModule {}

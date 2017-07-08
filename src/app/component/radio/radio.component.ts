@@ -9,7 +9,7 @@ import {
     template: `
     <label class="free-radio" #container>
       <div class="free-radio-inner">
-        <input type="radio" value="{{label}}" [disabled]="disabled"  
+        <input type="radio" value="{{label}}" [disabled]="disabled"
             [checked]="checked" name="{{name}}" (change)="onChange($event)">
         <div class="free-radio-ins"></div>
       </div>

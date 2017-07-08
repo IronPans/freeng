@@ -28,6 +28,39 @@
               <free-table-cell>表单线框颜色，可选</free-table-cell>
             </free-table-row>
             <free-table-row>
+              <free-table-cell>placeholder</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置提示信息，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>pattern</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  设置正则匹配信息，可选。<br>
+                  可选值：
+                  <ul class="free-ul-padding">
+                    <li><code>tel</code>:手机号</li>
+                    <li><code>email</code>:邮箱</li>
+                    <li><code>card</code>:身份证号码</li>
+                    <li><code>chinese</code>:中文</li>
+                  </ul>
+                  注：如果值不在内置验证中，会使用该值作为验证信息
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>message</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置验证失败时的提示信息，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
               <free-table-cell>icon</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
@@ -67,6 +100,29 @@
             <free-inputtext color="success" icon="check"></free-inputtext>
             <free-inputtext color="error" icon="close"></free-inputtext>
             <free-inputtext color="warning" icon="exclamation"></free-inputtext>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-inputtext color="success" icon="check"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext color="error" icon="close"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext color="warning" icon="exclamation"&gt;&lt;/free-inputtext&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Pattern</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-inputtext placeholder="请输入手机号码" pattern="tel"
+                            message="必须是11位的手机号码!"></free-inputtext>
+            <free-inputtext placeholder="请输入邮箱" pattern="email"
+                            message="必须是正确的邮箱!"></free-inputtext>
+            <free-inputtext placeholder="请输入身份证号码" pattern="card"
+                            message="必须是15位或18位身份证号码!"></free-inputtext>
+            <free-inputtext placeholder="请输入至少一位中文" pattern="chinese"
+                            message="至少是1位中文!"></free-inputtext>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">

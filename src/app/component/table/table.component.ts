@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import {
   NgModule, Component, OnInit, AfterViewInit, Input, Output, ViewChild, ViewChildren,
-  ContentChildren, ElementRef, QueryList, EventEmitter, Renderer2, TemplateRef, ContentChild, ViewContainerRef,
-  EmbeddedViewRef
+  ContentChildren, ElementRef, QueryList, EventEmitter, Renderer2, TemplateRef, ContentChild,
 } from '@angular/core';
-
+import {PaginationModule} from '../pagination/pagination.component';
+import {ShareModule} from '../common/share';
 @Component({
   selector: 'free-tcheckbox',
   template: `
@@ -50,23 +50,6 @@ export class TCheckboxComponent implements OnInit, AfterViewInit {
 }
 
 @Component({
-  selector: 'free-template',
-  template: ``
-})
-
-export class TemplateComponent implements OnInit {
-
-  @Input() template: any;
-  view: EmbeddedViewRef<any>;
-
-  constructor(public viewContainer: ViewContainerRef) {}
-
-  ngOnInit() {
-    this.view = this.viewContainer.createEmbeddedView(this.template, {});
-  }
-}
-
-@Component({
   selector: 'free-table',
   template: `
     <div class="free-table" #container>
@@ -91,14 +74,14 @@ export class TemplateComponent implements OnInit {
           </tr>
         </thead>
         <tbody *ngFor="let body of bodys">
-          <tr class="free-table-row" *ngFor="let row of body.rows; let i = index" 
+          <tr class="free-table-row" *ngFor="let row of body.rows; let i = index"
               (click)="onSelect(row, i)" [class.free-selected]="row.selected">
             <td *ngIf="selection" class="free-table-cell">
               <div class="free-table-cell-inner">
                 <free-tcheckbox (onClick)="itemClick($event, row, i)"></free-tcheckbox>
               </div>
             </td>
-            <td class="free-table-cell" *ngFor="let cell of row.cells" 
+            <td class="free-table-cell" *ngFor="let cell of row.cells"
                 [attr.colspan]="cell.colspan" [attr.rowspan]="cell.rowspan">
               <div class="free-table-cell-inner">
                 <span *ngIf="!cell.cellTemplate">{{cell.value}}</span>
@@ -108,7 +91,9 @@ export class TemplateComponent implements OnInit {
           </tr>
         </tbody>
       </table>
-      
+      <div class="free-table-footer" *ngIf="pagination">
+        <free-pagination [total]="bodys[0].rows.length"></free-pagination>
+      </div>
     </div>
   `,
   styleUrls: ['./table.component.scss']
@@ -320,11 +305,11 @@ export class TableCellComponent implements OnInit, AfterViewInit {
 }
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, PaginationModule, ShareModule],
   declarations: [TCheckboxComponent, TableHeaderComponent, TableRowComponent,
-    TableHeadComponent, TableCellComponent, TableBodyComponent, TableComponent, TemplateComponent],
+    TableHeadComponent, TableCellComponent, TableBodyComponent, TableComponent],
   exports: [TCheckboxComponent, TableHeaderComponent, TableRowComponent,
-    TableHeadComponent, TableCellComponent, TableBodyComponent, TableComponent, TemplateComponent]
+    TableHeadComponent, TableCellComponent, TableBodyComponent, TableComponent]
 })
 
 export class TableModule {}

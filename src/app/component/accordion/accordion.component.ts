@@ -36,7 +36,7 @@ export class AccordionGroupComponent {
       <div (click)="toggle()" class="accordion-toggle" [ngClass]="itemClass">
         <span class="accordion-toggle-inner">
           <ng-container *ngIf="header">
-            <i class="fa {{'fa-' + _icon}}" *ngIf="!!_icon"></i> 
+            <i class="fa {{'fa-' + _icon}}" *ngIf="!!_icon"></i>
             <span class="accordion-toggle-title">{{ header }}</span>
           </ng-container>
           <ng-content select="f-header"></ng-content>
@@ -48,8 +48,7 @@ export class AccordionGroupComponent {
           <ng-content></ng-content>
         </div>
       </div>
-    </div>
-  `,
+    </div>`,
   styleUrls: ['./accordion.component.scss'],
   animations: [trigger('accordionState', [
     state('active', style({
