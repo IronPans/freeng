@@ -1,12 +1,18 @@
-import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {
   NgModule, Component, OnInit, Input, EventEmitter,
-  Output, AfterViewInit, ViewChild, ElementRef, Renderer2,
+  Output, AfterViewInit, ViewChild, ElementRef, Renderer2, forwardRef, OnDestroy,
 } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
-import {FilterValuePipe} from '../pipe/filterValue.pipe';
+import {trigger, state, style, animate, transition} from '@angular/animations';
 import {CheckboxModule} from '../checkbox/checkbox.component';
+import {ObjectUtils} from '../common/util';
+
+const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => SelectComponent),
+  multi: true
+};
 
 @Component({
   selector: 'free-select',
@@ -16,79 +22,84 @@ import {CheckboxModule} from '../checkbox/checkbox.component';
         <label *ngIf="value">{{value}}</label>
         <label *ngIf="!value">{{pholder}}</label>
       </div>
-      <div #menu class="free-select-menu" [@selectState]="activeState" (click)="onMenuClick()"
-          (@selectState.start)="transitionStart()" (@selectState.done)="transitionEnd()">
-          <div class="free-select-filter" *ngIf="filter">
-            <free-checkbox *ngIf="multiple" [checked]="multipleTotal" (onClick)="onMultipleTotal($event)">
-            </free-checkbox>
-           <div class="free-select-inner">
-             <i class="fa fa-search"></i>
-             <input type="text" [(ngModel)]="_filterValue" (input)="onFilterChange($event)">
-           </div>
+      <div class="free-select-menu" *ngIf="opened" [@selectState]="'in'" (click)="onMenuClick()">
+        <div class="free-select-filter" *ngIf="filter">
+          <free-checkbox *ngIf="multiple" [checked]="multipleTotal" (onChange)="onMultipleTotal($event)">
+          </free-checkbox>
+          <div class="free-select-inner">
+            <i class="fa fa-search"></i>
+            <input type="text" [(ngModel)]="_filterValue" (input)="onFilterChange($event)">
           </div>
-          <div class="free-select-wrapper iscroll">
-            <ul *ngIf="!multiple">
-              <free-select-item *ngFor="let option of (options | filterValue: _filterValue : 'label')"
-                                (onClick)="iClick($event)"
-                [selected]="option == selected"
-                                [option]="option"></free-select-item>
-            </ul>
-            <ul *ngIf="multiple">
-              <li *ngFor="let option of (options | filterValue: _filterValue : 'label')">
-                <free-checkbox (onClick)="clickMultiple($event, option)"
-                               [checked]="option.checked"
-                               [label]="option.label" [value]="option.value"></free-checkbox>
-              </li>
-            </ul>
-          </div>
+        </div>
+        <div class="free-select-wrapper free-iscroll">
+          <ul *ngIf="!multiple">
+            <free-select-item
+              *ngFor="let option of filterValue(options, 'label'); index as i"
+              (onClick)="onItemClick($event)" [option]="option"></free-select-item>
+          </ul>
+          <ul *ngIf="multiple">
+            <li *ngFor="let option of filterValue(options, 'label')">
+              <free-checkbox (onChange)="onCheckboxSelect($event, option)" [checked]="option.checked"
+                             [label]="option.label" [value]="option.value"></free-checkbox>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   `,
-  styleUrls: ['./select.component.scss'],
   animations: [
     trigger('selectState', [
-      state('active', style({
-        opacity: 1
+      state('in', style({
+        opacity: 1,
+        transform: 'translate3d(0, 0, 0)'
       })),
-      state('inactive', style({
+      transition(':enter', [
+        style({
+          opacity: 0,
+          transform: 'translate3d(0, 80px, 0)'
+        }), animate('.4s cubic-bezier(.25,.8,.25,1)')
+      ]),
+      transition(':leave', animate('.1s', style({
         opacity: 0
-      })),
-     transition('active <=> inactive', animate('.4s cubic-bezier(.25,.8,.25,1)'))
+      })))
     ])
-  ]
+  ],
+  providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR, ObjectUtils]
 })
-export class SelectComponent implements OnInit, AfterViewInit {
-
-  _options: any;
-  opened: boolean;
-  _filterValue: any;
-  activeState: string;
-  value: string;
-  itemClick: boolean;
-  items: SelectItemComponent[] = [];
-  _menu: HTMLUListElement;
-  selfClick: boolean;
-  bindDocumentClickListener: Function;
+export class SelectComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
   @Input() pholder: string;
   @Input() multipleTotal: boolean;
   @Input() editable: boolean;
   @Input() filter: boolean;
   @Input() selected: any;
   @Input() multiple: boolean;
-  @Output() selectedChange: EventEmitter<any> = new EventEmitter();
   @Output() onChange: EventEmitter<any> = new EventEmitter();
-  @ViewChild('menu') menu: ElementRef;
   @ViewChild('input') input: ElementRef;
+
   @Input()
   get options(): any {
     return this._options;
   }
+
   set options(value: any) {
     this._options = value;
   }
 
-  constructor(private renderer2: Renderer2) {
-    this.activeState = 'inactive';
+  _options: any;
+  opened: boolean;
+  _filterValue: any;
+  value: string;
+  itemClick: boolean;
+  items: SelectItemComponent[] = [];
+  selfClick: boolean;
+  bindDocumentClickListener: Function;
+  onModelChange: Function = () => {
+  };
+  onTouchedChange: Function = () => {
+  };
+
+  constructor(public renderer2: Renderer2, public objUtil: ObjectUtils) {
+    this.onDocumentClickListener();
   }
 
   ngOnInit() {
@@ -98,14 +109,24 @@ export class SelectComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this._menu = this.menu.nativeElement;
     if (this.pholder) {
       this.value = this.pholder;
     }
+  }
 
-    if (this.selected) {
+  writeValue(value: any) {
+    if (value) {
+      this.selected = value;
       this.getValue();
     }
+  }
+
+  registerOnChange(fn: Function) {
+    this.onModelChange = fn;
+  }
+
+  registerOnTouched(fn: Function) {
+    this.onTouchedChange = fn;
   }
 
   onMultipleTotal(event: any) {
@@ -118,10 +139,10 @@ export class SelectComponent implements OnInit, AfterViewInit {
     for (const option of this.options) {
       option['checked'] = event.checked;
     }
-    this.getValue();
+    this.getSelectedValue();
   }
 
-  clickMultiple(event: any, option: any) {
+  onCheckboxSelect(event: any, option: any) {
     this.multipleTotal = false;
     if (event.checked) {
       option.checked = true;
@@ -137,7 +158,30 @@ export class SelectComponent implements OnInit, AfterViewInit {
         i--;
       }
     }
-    this.getValue();
+    this.getSelectedValue();
+  }
+
+  compareWith(value: string) {
+    let isEqual = false;
+    if (value && this.selected) {
+      if (Array.isArray(this.selected)) {
+        for (const o of this.selected) {
+          isEqual = this.objUtil.equals(value, o['value']);
+          break;
+        }
+      } else {
+        isEqual = this.objUtil.equals(value, this.selected.value);
+      }
+    }
+    return isEqual;
+  }
+
+  onItemClick($event) {
+    this.itemClick = $event;
+    this.selected = $event;
+    this.value = $event.label;
+    this.getSelectedValue();
+    this.close();
   }
 
   getValue() {
@@ -148,9 +192,15 @@ export class SelectComponent implements OnInit, AfterViewInit {
         selectedValue.push(s.label);
       }
       this.value = selectedValue.join(',');
-    } else {
+    } else if (this.selected) {
       this.value = this.selected.label;
     }
+  }
+
+  getSelectedValue() {
+    this.getValue();
+    this.onModelChange(this.selected);
+    this.onChange.emit(this.selected);
   }
 
   onFilterChange(event: any) {
@@ -193,42 +243,30 @@ export class SelectComponent implements OnInit, AfterViewInit {
     }
   }
 
+  filterValue(options: any[], value: string) {
+    if (this.filter && options && Array.isArray(options)) {
+      return options.filter((v, k, arr) => {
+        const regexp = new RegExp(this._filterValue, 'ig');
+        if (regexp.test(v[value])) {
+          return true;
+        }
+      })
+    }
+    return options;
+  }
+
   open() {
     this.selfClick = true;
-    this.activeState = 'active';
     this.opened = true;
-    this.onDocumentClickListener();
   }
 
   close() {
     this.opened = false;
     this.selfClick = false;
-    this.activeState = 'inactive';
+  }
+
+  ngOnDestroy() {
     this.offDocumentClickListener();
-  }
-
-  transitionStart() {
-    this.renderer2.setStyle(this._menu, 'display', 'block');
-  }
-
-  transitionEnd() {
-    if (!this.opened) {
-      this.renderer2.setStyle(this._menu, 'display', 'none');
-    }
-  }
-
-  iClick($event) {
-    this.itemClick = $event;
-    this.selected = $event;
-    this.value = $event.label;
-    this.onChange.emit($event);
-    this.close();
-  }
-
-  setSelected() {
-    for (const item of this.items) {
-      item['selected'] = false;
-    }
   }
 
 }
@@ -236,7 +274,8 @@ export class SelectComponent implements OnInit, AfterViewInit {
 @Component({
   selector: 'free-select-item',
   template: `
-    <li class="free-select-item" [class.free-select-active]="selected" (click)="itemClick()">
+    <li class="free-select-item" [class.free-select-active]="selector.compareWith(option.value)"
+        (click)="itemClick()">
       <div class="free-select-item-content">
         <span>{{option.label}}</span>
       </div>
@@ -247,9 +286,8 @@ export class SelectComponent implements OnInit, AfterViewInit {
 export class SelectItemComponent implements OnInit {
 
   @Input() option: any;
-  @Input() selected: boolean;
   @Output() onClick: EventEmitter<any> = new EventEmitter();
-  protected selector: SelectComponent;
+  selector: SelectComponent;
 
   constructor(selector: SelectComponent) {
     this.selector = selector;
@@ -257,26 +295,18 @@ export class SelectItemComponent implements OnInit {
 
   ngOnInit() {
     this.selector.addGroup(this);
-    this.setActive();
-  }
-
-  setActive() {
-    if (this.selected) {
-      this.selector.setSelected();
-    }
   }
 
   itemClick() {
     this.onClick.emit(this.option);
-    this.selector.setSelected();
-    this.selected = true;
   }
 }
 
 @NgModule({
   imports: [CommonModule, FormsModule, CheckboxModule],
-  declarations: [SelectComponent, SelectItemComponent, FilterValuePipe],
+  declarations: [SelectComponent, SelectItemComponent],
   exports: [SelectComponent, SelectItemComponent]
 })
 
-export class SelectModule {}
+export class SelectModule {
+}

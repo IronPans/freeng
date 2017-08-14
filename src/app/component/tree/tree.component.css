@@ -1,139 +1,48 @@
-:host /deep/ .free-tree ul {
+.free-tree ul {
   list-style: none;
   color: #333; }
-  :host /deep/ .free-tree ul li:before,
-  :host /deep/ .free-tree ul li:after,
-  :host /deep/ .free-tree ul li span:before,
-  :host /deep/ .free-tree ul li span:after {
+  .free-tree ul li:before,
+  .free-tree ul li:after,
+  .free-tree ul li span:before,
+  .free-tree ul li span:after {
     font-family: "FontAwesome"; }
-  :host /deep/ .free-tree ul li.free-tree-item {
+  .free-tree ul li.free-tree-item {
     cursor: pointer;
     line-height: 1.2rem; }
-    :host /deep/ .free-tree ul li.free-tree-item > ul {
+    .free-tree ul li.free-tree-item > ul {
       overflow: hidden; }
-    :host /deep/ .free-tree ul li.free-tree-item ul li {
+    .free-tree ul li.free-tree-item ul li {
       margin: 0 20px; }
-    :host /deep/ .free-tree ul li.free-tree-item > span {
+    .free-tree ul li.free-tree-item > span {
       display: inline-flex;
       align-items: center; }
-      :host /deep/ .free-tree ul li.free-tree-item > span:before {
+      .free-tree ul li.free-tree-item > span:before {
         content: "\f105";
         order: -2; }
-      :host /deep/ .free-tree ul li.free-tree-item > span:after {
+      .free-tree ul li.free-tree-item > span:after {
         content: "\f07b";
         order: -1;
         padding: 0 .3rem;
         color: #115d8e; }
-      :host /deep/ .free-tree ul li.free-tree-item > span:before, :host /deep/ .free-tree ul li.free-tree-item > span:after {
+      .free-tree ul li.free-tree-item > span:before, .free-tree ul li.free-tree-item > span:after {
         transition: all .25s; }
-      :host /deep/ .free-tree ul li.free-tree-item > span:hover {
+      .free-tree ul li.free-tree-item > span:hover {
         color: #115d8e; }
-    :host /deep/ .free-tree ul li.free-tree-item.open {
+    .free-tree ul li.free-tree-item.open {
       height: auto; }
-      :host /deep/ .free-tree ul li.free-tree-item.open > span:after {
+      .free-tree ul li.free-tree-item.open > span:after {
         content: "\f07c"; }
-      :host /deep/ .free-tree ul li.free-tree-item.open > span:before {
+      .free-tree ul li.free-tree-item.open > span:before {
         transform: rotate(90deg); }
-  :host /deep/ .free-tree ul li.last span {
+  .free-tree ul li.last span {
     position: relative;
     display: inline-block;
     padding-left: 15px; }
-    :host /deep/ .free-tree ul li.last span:before {
+    .free-tree ul li.last span:before {
       content: "\f15c";
       padding-right: .3rem;
       color: #115d8e; }
-    :host /deep/ .free-tree ul li.last span.image:before {
+    .free-tree ul li.last span.image:before {
       content: "\f1c5"; }
-
-:host-context(.free-theme-green) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-green) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #46be8a; }
-:host-context(.free-theme-green) /deep/ .free-tree ul li.last > span:before {
-  color: #46be8a; }
-:host-context(.free-theme-green) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-deepblue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-deepblue) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #115d8e; }
-:host-context(.free-theme-deepblue) /deep/ .free-tree ul li.last > span:before {
-  color: #115d8e; }
-:host-context(.free-theme-deepblue) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-blue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-blue) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #677ae4; }
-:host-context(.free-theme-blue) /deep/ .free-tree ul li.last > span:before {
-  color: #677ae4; }
-:host-context(.free-theme-blue) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-lightblue) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-lightblue) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #169e9f; }
-:host-context(.free-theme-lightblue) /deep/ .free-tree ul li.last > span:before {
-  color: #169e9f; }
-:host-context(.free-theme-lightblue) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-yellow) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-yellow) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #fa9e0c; }
-:host-context(.free-theme-yellow) /deep/ .free-tree ul li.last > span:before {
-  color: #fa9e0c; }
-:host-context(.free-theme-yellow) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-red) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-red) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #f96868; }
-:host-context(.free-theme-red) /deep/ .free-tree ul li.last > span:before {
-  color: #f96868; }
-:host-context(.free-theme-red) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-purple) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-purple) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #6633B9; }
-:host-context(.free-theme-purple) /deep/ .free-tree ul li.last > span:before {
-  color: #6633B9; }
-:host-context(.free-theme-purple) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-orange) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-orange) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #f2a654; }
-:host-context(.free-theme-orange) /deep/ .free-tree ul li.last > span:before {
-  color: #f2a654; }
-:host-context(.free-theme-orange) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-brown) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-brown) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #8d6658; }
-:host-context(.free-theme-brown) /deep/ .free-tree ul li.last > span:before {
-  color: #8d6658; }
-:host-context(.free-theme-brown) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-cyan) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-cyan) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #57c7d4; }
-:host-context(.free-theme-cyan) /deep/ .free-tree ul li.last > span:before {
-  color: #57c7d4; }
-:host-context(.free-theme-cyan) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-pink) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-pink) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #f96197; }
-:host-context(.free-theme-pink) /deep/ .free-tree ul li.last > span:before {
-  color: #f96197; }
-:host-context(.free-theme-pink) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-teal) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-teal) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #3aa99e; }
-:host-context(.free-theme-teal) /deep/ .free-tree ul li.last > span:before {
-  color: #3aa99e; }
-:host-context(.free-theme-teal) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
-
-:host-context(.free-theme-dark) /deep/ .free-tree ul li.free-tree-item > span:hover:after, :host-context(.free-theme-dark) /deep/ .free-tree ul li.free-tree-item > span:after {
-  color: #393D49; }
-:host-context(.free-theme-dark) /deep/ .free-tree ul li.last > span:before {
-  color: #393D49; }
-:host-context(.free-theme-dark) /deep/ .free-tree ul li.last > span.image:before {
-  content: "\f1c5"; }
 
 /*# sourceMappingURL=tree.component.css.map */

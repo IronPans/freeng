@@ -1,0 +1,120 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        浮动按钮组件，它们被塑造成一个代表一个被提升的动作的圆圈。按下时，可能会包含更多的相关操作。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-shrink</h3>
+        <p>一个浮动按钮组件。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>menus</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>必选，浮动按钮数组</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>type</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                可选，设置浮动按钮的类型(vertical、vertical-reverse、horizontal、horizontal-reverse、circle)，默认horizontal
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>direction</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>可选，圆形浮动按钮的位置(lt、lb、rt、rb)，默认lt</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-demo-board">
+        <div class="free-card-board">
+          <h3 class="free-toolbar">Import</h3>
+          <free-tab-group direction="right" theme="line">
+            <free-tab header="CODE">
+              <free-code lang="typescript">
+                import &#123;ShrinkModule&#125; from 'freeng/freeng';
+              </free-code>
+            </free-tab>
+          </free-tab-group>
+        </div>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height:400px">
+              <free-shrink [menus]="menus"></free-shrink>
+              <free-shrink class="tr" [menus]="menus" type="vertical"></free-shrink>
+              <free-shrink class="lb" [menus]="menus" type="vertical-reverse"></free-shrink>
+              <free-shrink class="rb" [menus]="menus" type="horizontal-reverse"></free-shrink>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-shrink [menus]="menus"&gt;&lt;/free-shrink&gt;
+              &lt;free-shrink class="tr" [menus]="menus" type="vertical"&gt;&lt;/free-shrink&gt;
+              &lt;free-shrink class="lb" [menus]="menus" type="vertical-reverse"&gt;&lt;/free-shrink&gt;
+              &lt;free-shrink class="rb" [menus]="menus" type="horizontal-reverse"&gt;&lt;/free-shrink&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="javascript">
+              this.menus = [
+              &#123;'icon': 'weibo'&#125;,
+              &#123;'icon': 'weixin'&#125;,
+              &#123;'icon': 'qq'&#125;,
+              &#123;'icon': 'renren'&#125;
+              ];
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Circle</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height:300px">
+              <free-shrink class="crb" [menus]="menus" type="circle" direction="rb"></free-shrink>
+              <free-shrink class="ctr" [menus]="menus" type="circle" direction="lb"></free-shrink>
+              <free-shrink class="clb" [menus]="menus" type="circle" direction="rt"></free-shrink>
+              <free-shrink class="clt" [menus]="menus" type="circle"></free-shrink>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-shrink class="crb" [menus]="menus" type="circle" direction="rb"&gt;&lt;/free-shrink&gt;
+              &lt;free-shrink class="ctr" [menus]="menus" type="circle" direction="lb"&gt;&lt;/free-shrink&gt;
+              &lt;free-shrink class="clb" [menus]="menus" type="circle" direction="rt"&gt;&lt;/free-shrink&gt;
+              &lt;free-shrink class="clt" [menus]="menus" type="circle"&gt;&lt;/free-shrink&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

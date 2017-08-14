@@ -58,8 +58,7 @@ export class CardHeaderTextComponent {}
     <div class="free-card" [ngClass]="cardClass">
       <ng-content></ng-content>
     </div>
-  `,
-  styleUrls: ['./card.component.scss']
+  `
 })
 export class CardComponent implements OnInit {
 

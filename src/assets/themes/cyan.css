@@ -1,0 +1,48 @@
+.free-accordion-group .accordion-toggle {
+  background: #57c7d4; }
+
+.free-tab-group .free-tab-nav.active span {
+  color: #57c7d4; }
+
+.free-tab-group .free-tab-nav.active span:after {
+  background: #57c7d4; }
+
+.search-box {
+  background: #57c7d4; }
+
+.top-menu,
+.aside-header,
+.ripple {
+  background: #57c7d4; }
+
+.free-tree ul li.free-tree-item > span:hover:after, .free-tree ul li.free-tree-item > span:after {
+  color: #57c7d4; }
+
+.free-tree ul li.last > span:before {
+  color: #57c7d4; }
+
+.free-tab-group .free-tab-nav.active span {
+  color: #57c7d4; }
+
+blockquote {
+  border-color: #57c7d4; }
+
+.free-timeline .free-timeline-item:after {
+  border: 1px solid #57c7d4; }
+
+h3.free-head-title {
+  color: #57c7d4; }
+
+.left-menu,
+.search-box {
+  background: #57c7d4; }
+
+.left-menu .left-menu-item li a:not(.active):hover, .left-menu .left-menu-item li a.active,
+.left-menu .accordion-toggle:not(.active):hover,
+.left-menu .accordion-toggle.active,
+.left-menu .accordion-inner ul li > a:not(.active):hover,
+.left-menu .accordion-inner ul li > a.active {
+  color: #57c7d4 !important;
+  background-color: #eee; }
+
+/*# sourceMappingURL=cyan.css.map */

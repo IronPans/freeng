@@ -1,73 +1,91 @@
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
+import highlight from 'highlight.js/lib/highlight.js';
+import highlightJavascript from 'highlight.js/lib/languages/javascript';
+import highlightCSS from 'highlight.js/lib/languages/css';
+import highlightBash from 'highlight.js/lib/languages/bash';
+import highlightXML from 'highlight.js/lib/languages/xml';
 import {
-  NgModule, Component, OnInit, Input,
-  ViewChild, AfterViewInit, ElementRef, Renderer2
+  NgModule, Component, Input, ViewChild, AfterViewInit, ElementRef, Renderer2
 } from '@angular/core';
-import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
-import { ButtonModule } from '../button/button.directive';
-import { ClipboardModule } from 'ngx-clipboard';
 
 @Component({
   selector: 'free-code',
   template: `
-    <div class="free-code">
-      <pre><code class="lang typescript highlight" #code><ng-content></ng-content></code></pre>
-      <button class="code-clone" ngxClipboard [cbContent]="codeText" fButton icon="copy"></button>
+    <div class="free-code" lang="{{lang}}">
+      <pre><code class="hljs {{lang}} free-iscroll" #code>
+        <ng-content></ng-content>
+      </code></pre>
+      <button *ngIf="copy" class="free-code-clone" (click)="onCopy()">
+        <i class="fa fa-copy"></i>
+      </button>
     </div>
-    `
+  `
 })
-export class CodeComponent implements OnInit, AfterViewInit {
+export class CodeComponent implements AfterViewInit {
 
   @Input() lang: string;
-  @ViewChild('code') code: ElementRef;
+  @Input() copy: boolean;
+  @ViewChild('code') codeViewChild: ElementRef;
   codeText: string;
-  container: any;
-  constructor(private er: ElementRef,
-              private service: HighlightJsService,
-              private renderer2: Renderer2) {
+  code: HTMLElement;
+
+  constructor(public renderer2: Renderer2) {
+    this.copy = true;
   }
 
-  ngOnInit() {}
-
   ngAfterViewInit() {
-    this.container = this.code.nativeElement;
+    highlight.registerLanguage('javascript', highlightJavascript);
+    highlight.registerLanguage('xml', highlightXML);
+    highlight.registerLanguage('bash', highlightBash);
+    highlight.registerLanguage('css', highlightCSS);
+    this.code = this.codeViewChild.nativeElement;
     this.codeText = this.format();
-    this.checkCode();
+    highlight.highlightBlock(this.code);
   }
 
   format() {
-    let lines = this.container.textContent.split('\n');
+    let lines = this.code.textContent.split('\n');
     let matches;
     if (lines[0] === '') {
       lines.shift();
     }
     const indentation = (matches = (/^[\s\t]+/).exec(lines[0])) !== null ? matches[0] : null;
     if (indentation) {
-      lines = lines.map(function(line) {
+      lines = lines.map(function (line) {
         line = line.replace(indentation, '');
         return line.replace(/\t/g, '  ');
       });
       const text = lines.join('\n').trim();
-      this.container.textContent = text;
+      this.code.textContent = text;
       return text;
     }
   }
 
-  checkCode() {
-    if (this.lang) {
-      this.renderer2.addClass(this.container, this.lang);
-      this.service.highlight(this.container);
+  clearSelection() {
+    const selection = window.getSelection();
+    try {
+      selection.removeAllRanges();
+    } catch (ex) {
+      document.body['createTextRange']().select();
+      document['selection'].empty();
     }
   }
 
+  onCopy() {
+    this.clearSelection();
+    this.code.appendChild(document.createTextNode(''));
+    const range = document.createRange();
+    range.setStart(this.code, 0);
+    range.setEnd(this.code.lastChild, 0);
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+  }
 }
 @NgModule({
-  imports: [CommonModule, ButtonModule, ClipboardModule, HighlightJsModule],
+  imports: [CommonModule],
   declarations: [CodeComponent],
-  exports: [CodeComponent, ButtonModule],
-  providers: [
-    HighlightJsService
-  ]
+  exports: [CodeComponent]
 })
 
-export class CodeModule {}
+export class CodeModule {
+}

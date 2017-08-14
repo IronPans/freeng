@@ -1,0 +1,114 @@
+<div class="main-container">
+  <div class="row">
+    <div class="free-demo-board" fGrid="12">
+      <p>
+        FreeNG框架是使用基于flex显示属性的网格系统。
+      </p>
+      <ul class="free-ul-padding">
+        <li>响应式修饰符可以在xs、sm、md、lg四个视口宽度上指定不同的列大小，偏移量，对齐和分布。</li>
+        <li>通过“行（row）”在水平方向创建一组“列（column）”</li>
+      </ul>
+      <hr>
+      <h3 class="free-head-title">栅格参数</h3>
+
+      <div class="free-demo-row">
+        <free-table [striped]="true" [border]="true">
+          <free-table-header>
+            <free-table-row>
+              <free-table-head></free-table-head>
+              <free-table-head>
+                <ng-template>
+                  超小屏幕<small>手机</small><br>
+                  (&lt;768px)
+                </ng-template>
+              </free-table-head>
+              <free-table-head>
+                <ng-template>
+                  小屏幕<small>平板</small><br>
+                  (≥768px)
+                </ng-template>
+              </free-table-head>
+              <free-table-head>
+                <ng-template>
+                  中屏幕<small>桌面显示器</small><br>
+                  (≥992px)
+                </ng-template>
+              </free-table-head>
+              <free-table-head>
+                <ng-template>
+                  大屏幕<small>大桌面显示器</small><br>
+                  (≥1200px)
+                </ng-template>
+              </free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>类前缀</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>.col-xs</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template><code>.col-sm</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template><code>.col-md</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template><code>.col-lg</code></ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>
+                <ng-template>
+                  <code>.container</code> 最大宽度
+                </ng-template>
+              </free-table-cell>
+              <free-table-cell>None （自动）</free-table-cell>
+              <free-table-cell>750px</free-table-cell>
+              <free-table-cell>970px</free-table-cell>
+              <free-table-cell>1170px</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>列（column）数</free-table-cell>
+              <free-table-cell [colspan]="4">12</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>可嵌套</free-table-cell>
+              <free-table-cell [colspan]="4">是</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>偏移（Offsets）</free-table-cell>
+              <free-table-cell [colspan]="4">是</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+
+      <h3 class="free-head-title">简单语法</h3>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;GridModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-demo-row">
+        <p>所有你需要记住的是行，列，内容。</p>
+        <free-code lang="html">
+          &lt;div class="row"&gt;
+            &lt;div class="col-xs-12"&gt;
+              &lt;div class="box"&gt;12&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        </free-code>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,69 +1,68 @@
 @import "../../../assets/sass/mixin";
-:host /deep/ {
-  .free-table {
-    width: 100%;
-    @include flexbox;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
 
-  .free-table table {
+.free-table {
+  width: 100%;
+  @include flexbox;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  table {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
     overflow: hidden;
   }
 
-  .free-table .free-table-head {
-      position: relative;
-      font-size: .7rem;
+  .free-table-head {
+    position: relative;
+    font-size: .7rem;
     font-weight: bold;
-      text-align: left;
+    text-align: left;
   }
 
-  .free-table .free-table-head-inner {
+  .free-table-head-inner {
     @include flexbox;
     padding: .5rem 0;
-    transition: all .4s cubic-bezier(.25,.8,.25,1);
+    transition: all .4s cubic-bezier(.25, .8, .25, 1);
   }
 
-  .free-table .free-table-head .free-table-head-text {
+  .free-table-head .free-table-head-text {
     padding: 0 .75rem;
     position: relative;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  .free-table .free-table-row {
+  .free-table-row {
     border-top: 1px solid #e0e0e0;
   }
 
-  .free-table .free-table-cell-inner {
+  .free-table-cell-inner {
     @include flexbox;
     -webkit-flex-direction: column;
     flex-direction: column;
     padding: .5rem .75rem;
   }
 
-  .free-table .free-table-cell {
+  .free-table-cell {
     position: relative;
-    transition: all .4s cubic-bezier(.25,.8,.25,1);
+    transition: all .4s cubic-bezier(.25, .8, .25, 1);
     font-size: .75rem;
   }
 
-  .free-table tbody .free-table-row.free-selected .free-table-cell {
+  tbody .free-table-row.free-selected .free-table-cell {
     background-color: #f5f5f5
   }
 
-  .free-table.free-table-hover tbody .free-table-row:hover .free-table-cell {
+  &.free-table-hover tbody .free-table-row:hover .free-table-cell {
     background-color: #eee
   }
 
-  .free-table.free-table-striped tbody tr:nth-child(odd) {
+  &.free-table-striped tbody tr:nth-child(odd) {
     background-color: #f9f9f9;
   }
 
-  .free-table.free-table-bordered {
+  &.free-table-bordered {
     $border: 1px solid #e0e0e0;
     border: $border;
     tr td,
@@ -80,10 +79,6 @@
   .free-checkbox,
   .free-checkbox-inner,
   .free-checkbox-ins {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     cursor: pointer;
   }
@@ -120,11 +115,11 @@
     }
   }
 
-  .free-checkbox-inner>input:checked+.free-checkbox-ins {
+  .free-checkbox-inner > input:checked + .free-checkbox-ins {
     background: #3949ab;
   }
 
-  .free-checkbox-inner>input:checked+.free-checkbox-ins::after {
+  .free-checkbox-inner > input:checked + .free-checkbox-ins::after {
     color: #fff;
   }
 
@@ -135,5 +130,4 @@
   .free-table-footer {
     flex: 1 0 auto;
   }
-
 }

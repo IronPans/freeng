@@ -1,6 +1,6 @@
 import {
   AfterViewInit, Component, ElementRef,
-  forwardRef, Inject, Input, NgModule, OnDestroy, ViewChild
+  forwardRef, Inject, Input, NgModule, OnDestroy, Renderer2, ViewChild
 } from '@angular/core';
 import {CommonModule, Location} from '@angular/common';
 import {RouterModule} from '@angular/router';
@@ -43,8 +43,8 @@ export class ContextmenuItemComponent {
   @Input() root: boolean;
   activeItem: any;
   constructor(@Inject(forwardRef(() => ContextmenuComponent)) public contextMenu: ContextmenuComponent,
-              private location: Location,
-              private domRenderer: DomRenderer) {
+              public location: Location,
+              public domRenderer: DomRenderer) {
   }
   onMouseenter(event: any, child: any, item: any) {
     if (child.disabled) { return; }
@@ -55,15 +55,18 @@ export class ContextmenuItemComponent {
       this.position(childItem, item);
     }
   }
+
   clickDisabled(event: any, item: any) {
     if (!item.url) {
       event.preventDefault();
       return false;
     }
   }
+
   onMouseleave(event: any) {
     this.activeItem = null;
   }
+
   position(childItem: any, item: any) {
     const rect = this.domRenderer.getRect(item);
     const [wWidth, wHeight] = [window.innerWidth, window.innerHeight];
@@ -85,6 +88,7 @@ export class ContextmenuItemComponent {
     childItem.style.left = left;
     childItem.style.top = top;
   }
+
   itemClick(event: any, child?: any) {
     this.contextMenu.hide();
     if (child && child.back) {
@@ -100,7 +104,6 @@ export class ContextmenuItemComponent {
       <free-contextmenu-item [root]="true" [item]="menu"></free-contextmenu-item>
     </div>
   `,
-  styleUrls: ['./contextmenu.component.scss'],
   providers: [DomRenderer]
 })
 export class ContextmenuComponent implements AfterViewInit, OnDestroy {
@@ -114,23 +117,23 @@ export class ContextmenuComponent implements AfterViewInit, OnDestroy {
   visible: boolean;
   container: HTMLDivElement;
 
-  constructor(private domRenderer: DomRenderer) {
+  constructor(public domRenderer: DomRenderer, public renderer2: Renderer2) {
   }
 
   ngAfterViewInit() {
     this.container = this.containerViewChild.nativeElement;
-    this.documentClickListener = this.domRenderer.listen('document', 'click', () => {
+    this.documentClickListener = this.renderer2.listen('document', 'click', () => {
       this.hide();
     });
     if (this.global) {
-      this.documentClickListener = this.domRenderer.listen('document', 'contextmenu', () => {
+      this.documentClickListener = this.renderer2.listen('document', 'contextmenu', () => {
         if (this.container) {
           this.show(event);
           event.preventDefault();
         }
       });
     } else if (this.target) {
-      this.childClickListener = this.domRenderer.listen(this.target, 'contextmenu', (event) => {
+      this.childClickListener = this.renderer2.listen(this.target, 'contextmenu', (event) => {
         this.show(event);
         event.stopPropagation();
         event.preventDefault();

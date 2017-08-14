@@ -5,58 +5,10 @@
   height: 100%;
 }
 
-@each $theme, $color in $theme {
-  :host-context(.free-theme-#{$theme}) /deep/ {
-
-    h3.free-head-title {
-      color: $color !important;
-    }
-
-    .main-container .accordion-toggle {
-      color: #fff !important;
-      background: $color;
-    }
-
-    .free-tab-group .free-tab-nav.active span {
-      color: $color;
-
-      &:after {
-        background: $color;
-      }
-    }
-
-    .search-box {
-      background: $color;
-    }
-  }
-
-  :host-context(.free-theme-#{$theme}:not(.free-type-2)) /deep/ {
-    .left-menu,
-    .aside-header {
-      background: $color;
-    }
-  }
-
-  :host-context(.free-type-2) /deep/ {
-    .top-menu,
-    .aside-header {
-      background: $color !important;
-    }
-  }
-
-  :host-context(.free-type-2.free-theme-#{$theme}) /deep/ {
-    .top-menu,
-    .aside-header,
-    .ripple {
-      background: $color !important;
-    }
-  }
-}
-
-:host-context(.free-type-2) /deep/ {
+:host /deep/ {
   .left-menu {
     background: #fff !important;
-    box-shadow: 6px 0 6px rgba(0,0,0,.1);
+    box-shadow: 6px 0 6px rgba(0, 0, 0, .1);
     z-index: 100;
 
     li a em {
@@ -67,16 +19,6 @@
     .accordion-toggle,
     .accordion-inner ul li > a {
       color: #262626;
-      &:hover {
-        color: #262626 !important;
-        background-color: #eee !important;
-      }
-    }
-
-    .left-menu-item li a.active,
-    .accordion-inner ul li > a.active {
-      color: #262626 !important;
-      background-color: #eee !important;
     }
   }
 
@@ -94,10 +36,6 @@
 
   .free-scroll-thumb {
     background: rgba(0, 0, 0, 0.298039);
-  }
-  .top-menu,
-  .aside-header {
-    background: $default !important;
   }
 
   .aside-header li a {
@@ -123,10 +61,14 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(0,0,0,.1);
+          background: rgba(0, 0, 0, .1);
         }
       }
     }
+  }
+
+  .free-panel-inner h4 {
+    padding: 10px 0;
   }
 }
 
@@ -163,10 +105,6 @@
       }
     }
   }
-
-}
-
-:host-context(.free-mini.free-type-2) /deep/ {
   .main-layout-container {
     left: 0 !important;
   }
@@ -186,11 +124,5 @@
         display: block !important;
       }
     }
-  }
-}
-
-@each $theme, $color in $theme {
-  .free-theme-#{$theme} blockquote {
-    border-color: $color;
   }
 }

@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import {NgModule, Component, OnInit, ElementRef,
-  ViewChild, Input, Renderer2, AfterViewInit} from '@angular/core';
+import {
+  NgModule, Component, ElementRef,
+  ViewChild, Input, AfterViewInit, OnDestroy, Renderer2
+} from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ButtonModule } from '../button/button.directive';
 import { DomRenderer } from '../common/dom';
@@ -10,9 +12,9 @@ import {RouterModule} from '@angular/router';
   selector: 'free-dropdown',
   template: `
     <div class="free-dropdown" #container (mouseover)="onMouseover()" (mouseout)="onMouseout()">
-      <button #btn class="free-dropdown-header" fButton [color]="color"
+      <button #btn class="free-dropdown-header" fButton [theme]="theme"
               [class.active]="isOpen" (click)="open($event)">
-        <span class="free-dropdown-header-title" *ngIf="header">{{name}}</span>
+        <span class="free-dropdown-header-title" *ngIf="header">{{header}}</span>
         <ng-content select="f-header"></ng-content>
         <span class="fa fa-caret-down d-caret" *ngIf="caret"></span>
       </button>
@@ -34,7 +36,6 @@ import {RouterModule} from '@angular/router';
       </div>
     </div>
   `,
-  styleUrls: ['./dropdown.component.scss'],
   animations: [
     trigger('dropdownState', [
       state('active', style({
@@ -50,12 +51,11 @@ import {RouterModule} from '@angular/router';
   ],
   providers: [DomRenderer]
 })
-export class DropdownComponent implements OnInit, AfterViewInit {
+export class DropdownComponent implements AfterViewInit, OnDestroy {
   @Input() menus: any;
   @Input() header: string;
   @Input() direction = 'bottom-left';
-  @Input() dropdownStateClass: string;
-  @Input() color: string;
+  @Input() theme: string;
   @Input() caret = true;
   @Input() hover: boolean;
   @ViewChild('btn') button: ElementRef;
@@ -67,11 +67,7 @@ export class DropdownComponent implements OnInit, AfterViewInit {
   itemClick: boolean;
   documentClickListener: any;
   modal: any;
-  constructor(private domRenderer: DomRenderer,
-              private renderer2: Renderer2) { }
-
-  ngOnInit() {
-  }
+  constructor(public domRenderer: DomRenderer, public renderer2: Renderer2) { }
 
   clickDisabled(event: any, item: any) {
     if (!item.url) {
@@ -81,7 +77,7 @@ export class DropdownComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.renderer2.addClass(this.dropdownMenu.nativeElement, `free-dropdown-${this.direction}`);
+    this.domRenderer.addClass(this.dropdownMenu.nativeElement, `free-dropdown-${this.direction}`);
   }
 
   open(event?: any) {
@@ -118,7 +114,6 @@ export class DropdownComponent implements OnInit, AfterViewInit {
 
   onDocumentClickListener() {
     if (!this.documentClickListener) {
-      // 给body绑定点击事件
       this.documentClickListener = this.renderer2.listen('body', 'click', () => {
         if (!this.selfClick && !this.itemClick) {
           this.close();
@@ -139,6 +134,10 @@ export class DropdownComponent implements OnInit, AfterViewInit {
       this.documentClickListener();
       this.documentClickListener = null;
     }
+  }
+
+  ngOnDestroy() {
+    this.offDocumentClickListener();
   }
 }
 

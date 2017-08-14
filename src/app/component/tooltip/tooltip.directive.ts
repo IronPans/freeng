@@ -13,9 +13,9 @@ export class TooltipDirective implements OnInit, AfterViewInit {
   @Input() tooltipPosition = 'right';
   tooltip: any;
 
-  constructor(private domRenderer: DomRenderer,
-              private er: ElementRef,
-              private renderer2: Renderer2) { }
+  constructor(public domRenderer: DomRenderer,
+              public er: ElementRef,
+              public renderer2: Renderer2) { }
 
   @HostListener('mouseenter', ['$event'])
   onMouseEnter(e: Event) {

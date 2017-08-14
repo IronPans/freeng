@@ -25,8 +25,8 @@ export class GridDirective implements AfterViewInit {
     'col-lg-12 col-md-12 col-sm-12 col-xs-12'
   ];
 
-  constructor(private er: ElementRef,
-      private domRenderer: DomRenderer) { }
+  constructor(public er: ElementRef,
+      public domRenderer: DomRenderer) { }
 
   ngAfterViewInit() {
     this.container = this.er.nativeElement;

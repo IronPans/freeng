@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {NgModule, Component, OnInit, Input, OnChanges} from '@angular/core';
+import {NgModule, Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -12,7 +12,9 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
                         [file]="f?.file"  [folder]="f?.folder" [expanded]="f.expanded"></free-tree-item>
       </ul>
       <ul *ngIf="file" [@treeState]="isActive">
-        <li *ngFor="let f of file" class="last" (click)="f?.click(f)"><span>{{f.title}}</span></li>
+        <li *ngFor="let f of file" class="last" (click)="onClick(f)">
+          <span>{{f.title}}</span>
+        </li>
       </ul>
     </li>
   `,
@@ -35,6 +37,7 @@ export class TreeItemComponent implements OnChanges {
   @Input() folder: any;
   @Input() file: any;
   @Input() expanded: boolean;
+  @Output() onSelect: EventEmitter<any> = new EventEmitter();
   isActive: string;
   isOpen: boolean;
   constructor() {
@@ -55,6 +58,10 @@ export class TreeItemComponent implements OnChanges {
     this.isOpen = !this.isOpen;
     this.isActive = this.isOpen ? 'active' : 'inactive';
   }
+
+  onClick(item: any) {
+    this.onSelect.emit(item);
+  }
 }
 
 @Component({
@@ -63,10 +70,10 @@ export class TreeItemComponent implements OnChanges {
     <div class="free-tree">
       <ul>
        <free-tree-item *ngFor="let menu of menus" title="{{menu.title}}"
-                     [file]="menu?.file"  [folder]="menu?.folder" [expanded]="menu.expanded"></free-tree-item>
+                     [file]="menu?.file"  [folder]="menu?.folder" [expanded]="menu.expanded">
+       </free-tree-item>
       </ul>
-    </div>`,
-  styleUrls: ['./tree.component.scss']
+    </div>`
 })
 
 export class TreeComponent implements OnInit {

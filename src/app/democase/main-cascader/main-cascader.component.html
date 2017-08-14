@@ -1,0 +1,183 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        级联选择器，可以从一组相关联的数据集合进行选择，例如省市区，事物分类等。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-cascader</h3>
+        <p>级联选择器</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>options</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置数据源，必选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>pholder</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置可描述输入字段预期值的提示信息，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>separator</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置分隔符，可选。默认是"/"</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>deploy</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>输入框的长度是否随着选择值的长度而展开，可选。默认为false</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+
+        <h3 class="free-title">回调事件</h3>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>事件</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  选择完成后的回调，可选。返回值格式：
+                  <code>{{'{value: ["第一级值", "第二级值"...], label: "以字符串显示的选择值"}'}}</code>
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;CascaderModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <p style="width: 100%;padding-bottom: 1rem">{{userCity}}</p>
+            <div style="height:300px">
+              <free-cascader [options]="food" [(ngModel)]="selectFood" pholder="选择菜系"></free-cascader>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-cascader [options]="food" [(ngModel)]="selectFood"
+                pholder="选择菜系"&gt;&lt;/free-cascader&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="typescript">
+              this.food = [&#123;
+                value: '10',
+                label: '海鲜',
+                children: [&#123;
+                  value: '101',
+                  label: '鱼',
+                    children: [&#123;
+                      value: '1011',
+                      label: '红烧'
+                    &#125;, &#123;
+                      value: '1012',
+                      label: '清蒸'
+                    &#125;]
+                &#125;, &#123;
+                  value: '102',
+                  label: '虾',
+                  children: [&#123;
+                    value: '1021',
+                    label: '水煮'
+                  &#125;, &#123;
+                    value: '1022',
+                    label: '爆炒'
+                  &#125;]
+                &#125;]
+                &#125;, &#123;
+                  value: '20',
+                  label: '蔬菜',
+                  children: [&#123;
+                    value: '201',
+                    label: '萝卜',
+                    children: [&#123;
+                      value: '2011',
+                      label: '凉拌'
+                    &#125;]
+                  &#125;, &#123;
+                    value: '202',
+                    label: '白菜',
+                    children: [&#123;
+                      value: '2021',
+                      label: '水煮'
+                    &#125;, &#123;
+                      value: '2022',
+                      label: '清炒'
+                    &#125;]
+                &#125;]
+              &#125;];
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <p style="width: 100%;padding-bottom: 1rem">您选择的城市：{{userCity}}</p>
+            <div style="height:300px">
+              <free-cascader [options]="options" [(ngModel)]="selectCity"
+                             (onChange)="onSelectCity($event)" pholder="选择地址"></free-cascader>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-cascader [options]="options" [(ngModel)]="selectCity"
+                                 (onChange)="onSelectCity($event)" pholder="选择地址"&gt;&lt;/free-cascader&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="typescript">
+              this.selectCity = ['440000', '440100', '440111'];
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+    </div>
+  </div>
+
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

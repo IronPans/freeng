@@ -20,7 +20,7 @@ export class FullpageSlideComponent {
   @Input() index: number;
   active: boolean;
   height: number;
-  constructor(@Inject(forwardRef(() => FullpageComponent)) private group: FullpageComponent) {
+  constructor(@Inject(forwardRef(() => FullpageComponent)) public group: FullpageComponent) {
     this.group.addSlide(this);
   }
 }
@@ -52,7 +52,6 @@ export class FullpageBulletComponent {
       </div>
     </div>
   `,
-  styleUrls: ['./fullpage.component.scss'],
   providers: [DomRenderer]
 })
 export class FullpageComponent implements AfterViewInit, OnDestroy {
@@ -97,7 +96,7 @@ export class FullpageComponent implements AfterViewInit, OnDestroy {
         }
       }
   }
-  constructor(private domRenderer: DomRenderer) {
+  constructor(public domRenderer: DomRenderer) {
     this.win = {
       width: window.innerWidth,
       height: window.innerHeight

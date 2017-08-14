@@ -1,0 +1,190 @@
+.free-calendar {
+  position: relative;
+  display: inline-block; }
+  .free-calendar.free-calendar-inline {
+    box-shadow: 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1), 0 0.5em 0 -0.25em #f2f2f2, 0 0.5em 0.1875em -0.25em rgba(0, 0, 0, 0.1), 0 1em 0 -0.5em #e5e5e5, 0 1em 0.1875em -0.5em rgba(0, 0, 0, 0.1); }
+    .free-calendar.free-calendar-inline .calendar {
+      position: relative;
+      top: 0; }
+  .free-calendar .free-calendar-header {
+    border-bottom: 1px solid #d9d9d9; }
+  .free-calendar .free-calendar-year,
+  .free-calendar .free-calendar-month {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 2rem);
+    background: #fff; }
+    .free-calendar .free-calendar-year table,
+    .free-calendar .free-calendar-month table {
+      width: 100%;
+      height: 100%;
+      table-layout: fixed; }
+      .free-calendar .free-calendar-year table tr td,
+      .free-calendar .free-calendar-month table tr td {
+        height: 25%;
+        text-align: center;
+        cursor: pointer; }
+        .free-calendar .free-calendar-year table tr td:hover,
+        .free-calendar .free-calendar-month table tr td:hover {
+          background: #eee; }
+  .free-calendar .free-calendar-year table tr:first-child td:first-child,
+  .free-calendar .free-calendar-year table tr:last-child td:last-child {
+    color: #999; }
+    .free-calendar .free-calendar-year table tr:first-child td:first-child:hover,
+    .free-calendar .free-calendar-year table tr:last-child td:last-child:hover {
+      background: transparent; }
+  .free-calendar .free-select-input {
+    position: relative;
+    border-radius: 2px;
+    width: 9rem;
+    height: 1.75rem;
+    border: 1px solid #d9d9d9;
+    cursor: pointer; }
+    .free-calendar .free-select-input input {
+      width: 100%;
+      height: 100%;
+      padding: 0 1.5rem 0 .25rem;
+      border: none;
+      outline: none; }
+      .free-calendar .free-select-input input:disabled {
+        cursor: pointer; }
+    .free-calendar .free-select-input label {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      position: relative;
+      width: calc(100% - 25px);
+      height: 100%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: transparent;
+      align-items: center; }
+    .free-calendar .free-select-input:before {
+      font-family: FontAwesome;
+      content: "\f073";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      display: inline-block;
+      padding: 0 .5rem;
+      line-height: 0;
+      transform: translate(0, -50%); }
+  .free-calendar .free-calendar-wrapper {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    padding: 0 .25rem .25rem;
+    min-width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    z-index: 999; }
+    .free-calendar .free-calendar-wrapper .free-calendar-time {
+      display: flex;
+      align-items: center;
+      flex: 1 0 auto; }
+      .free-calendar .free-calendar-wrapper .free-calendar-time .free-calendar-time-wrapper {
+        display: flex;
+        align-items: center;
+        border: 1px solid #d9d9d9;
+        border-radius: 3px;
+        margin-left: .25rem;
+        height: 1.4rem; }
+      .free-calendar .free-calendar-wrapper .free-calendar-time span {
+        margin-right: .25rem; }
+        .free-calendar .free-calendar-wrapper .free-calendar-time span input {
+          width: 1.2rem;
+          padding: 0 .2rem;
+          font-size: .6rem;
+          height: 100%;
+          border: none; }
+      .free-calendar .free-calendar-wrapper .free-calendar-time input::-webkit-outer-spin-button,
+      .free-calendar .free-calendar-wrapper .free-calendar-time input::-webkit-inner-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0; }
+      .free-calendar .free-calendar-wrapper .free-calendar-time input[type="number"] {
+        -moz-appearance: textfield; }
+    .free-calendar .free-calendar-wrapper .free-calendar-footer {
+      height: 1.8rem;
+      padding-top: .25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid #d9d9d9; }
+      .free-calendar .free-calendar-wrapper .free-calendar-footer span {
+        cursor: pointer; }
+    .free-calendar .free-calendar-wrapper table tr th {
+      font-weight: 500; }
+    .free-calendar .free-calendar-wrapper .calendar-header {
+      flex-wrap: nowrap;
+      border-bottom: 1px solid #d9d9d9; }
+    .free-calendar .free-calendar-wrapper .calendar-body .item,
+    .free-calendar .free-calendar-wrapper .calendar-header .item {
+      text-align: center; }
+    .free-calendar .free-calendar-wrapper .calendar-body {
+      background: #fff;
+      padding: .25rem 0; }
+      .free-calendar .free-calendar-wrapper .calendar-body .pass,
+      .free-calendar .free-calendar-wrapper .calendar-body .future {
+        color: #999 !important;
+        cursor: auto; }
+      .free-calendar .free-calendar-wrapper .calendar-body .item {
+        color: #333;
+        box-sizing: border-box;
+        transition: all .25s;
+        user-select: none;
+        font-size: .9em; }
+        .free-calendar .free-calendar-wrapper .calendar-body .item.current {
+          color: #666; }
+        .free-calendar .free-calendar-wrapper .calendar-body .item.today {
+          background-color: #eee; }
+        .free-calendar .free-calendar-wrapper .calendar-body .item.selected {
+          color: #fff;
+          background-color: #115d8e; }
+        .free-calendar .free-calendar-wrapper .calendar-body .item:not(.pass):not(.future) {
+          cursor: pointer; }
+        .free-calendar .free-calendar-wrapper .calendar-body .item:not(.pass):not(.future):not(.selected):hover {
+          background: #eee; }
+    .free-calendar .free-calendar-wrapper .free-calendar-header {
+      position: relative;
+      padding: 4px 5px;
+      height: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .free-calendar .free-calendar-wrapper .free-calendar-header .calendar-week {
+        width: 3.5rem; }
+      .free-calendar .free-calendar-wrapper .free-calendar-header .calendar-select {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap; }
+        .free-calendar .free-calendar-wrapper .free-calendar-header .calendar-select .calendar-select-prev,
+        .free-calendar .free-calendar-wrapper .free-calendar-header .calendar-select .calendar-select-next {
+          display: inline-flex;
+          width: 1rem;
+          height: 1rem;
+          font-size: 1rem;
+          text-align: center;
+          cursor: pointer;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%; }
+          .free-calendar .free-calendar-wrapper .free-calendar-header .calendar-select .calendar-select-prev:hover,
+          .free-calendar .free-calendar-wrapper .free-calendar-header .calendar-select .calendar-select-next:hover {
+            color: #009688;
+            background: #eee; }
+      .free-calendar .free-calendar-wrapper .free-calendar-header .calendar-today {
+        font-size: .75rem;
+        cursor: pointer; }
+
+/*# sourceMappingURL=calendar.component.css.map */

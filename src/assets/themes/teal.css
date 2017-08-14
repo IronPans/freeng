@@ -1,0 +1,48 @@
+.free-accordion-group .accordion-toggle {
+  background: #3aa99e; }
+
+.free-tab-group .free-tab-nav.active span {
+  color: #3aa99e; }
+
+.free-tab-group .free-tab-nav.active span:after {
+  background: #3aa99e; }
+
+.search-box {
+  background: #3aa99e; }
+
+.top-menu,
+.aside-header,
+.ripple {
+  background: #3aa99e; }
+
+.free-tree ul li.free-tree-item > span:hover:after, .free-tree ul li.free-tree-item > span:after {
+  color: #3aa99e; }
+
+.free-tree ul li.last > span:before {
+  color: #3aa99e; }
+
+.free-tab-group .free-tab-nav.active span {
+  color: #3aa99e; }
+
+blockquote {
+  border-color: #3aa99e; }
+
+.free-timeline .free-timeline-item:after {
+  border: 1px solid #3aa99e; }
+
+h3.free-head-title {
+  color: #3aa99e; }
+
+.left-menu,
+.search-box {
+  background: #3aa99e; }
+
+.left-menu .left-menu-item li a:not(.active):hover, .left-menu .left-menu-item li a.active,
+.left-menu .accordion-toggle:not(.active):hover,
+.left-menu .accordion-toggle.active,
+.left-menu .accordion-inner ul li > a:not(.active):hover,
+.left-menu .accordion-inner ul li > a.active {
+  color: #3aa99e !important;
+  background-color: #eee; }
+
+/*# sourceMappingURL=teal.css.map */

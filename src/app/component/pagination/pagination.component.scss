@@ -1,17 +1,15 @@
 @import "../../../assets/sass/mixin";
 @import "../../../assets/sass/variables";
 
-:host /deep/ {
-  .free-pagination {
+.free-pagination {
+  display: flex;
+  justify-content: center;
+
+  & > ul {
     display: flex;
-    justify-content: center;
 
-    &>ul {
-      display: flex;
-
-      li {
-        list-style: none;
-      }
+    li {
+      list-style: none;
     }
   }
 
@@ -32,28 +30,20 @@
       color: #666;
       border: 1px solid #d9d9d9;
       background-origin: border-box;
-      background-image: linear-gradient(to bottom,#fff,#eee);
-      text-shadow: 1px 1px #fff;
       cursor: pointer;
 
       &:hover {
-        background-color: #fafafa;
-        outline: 0;
-        background-image: none
+        background: #115d8e;
+        color: #fff;
       }
     }
 
     &.free-pagination-active a {
-      background: #009dd8;
       color: #fff;
-      background-origin: border-box;
-      background-image: linear-gradient(to bottom,#00b4f5,#008dc5);
-      text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+      background: #115d8e;
 
       &:hover {
         cursor: auto;
-        background: #009dd8;
-        background-image: none
       }
     }
 
@@ -62,5 +52,4 @@
       pointer-events: none;
     }
   }
-
 }

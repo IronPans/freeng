@@ -1,4 +1,29 @@
-:host /deep/ .free-list-item {
+.free-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  position: relative;
+  list-style: none;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87); }
+  .free-list.free-list-hover .free-list-item {
+    cursor: pointer; }
+  .free-list.free-list-hover .free-list-item:hover {
+    background: #eee; }
+  .free-list.free-list-line .free-list-item:after {
+    content: "";
+    position: absolute;
+    left: 3.5rem;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #d9d9d9; }
+
+.free-list-item {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -6,7 +31,7 @@
   display: flex;
   min-height: 2.4rem;
   margin: 0;
-  padding: 0 16px;
+  padding: 0 .5rem;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
@@ -18,83 +43,61 @@
   text-transform: none;
   -webkit-transition: all .3s;
   transition: all .3s; }
-:host /deep/ .free-list {
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.87); }
-:host /deep/ .free-list {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  position: relative;
-  list-style: none; }
-:host /deep/ .free-avatar {
-  width: 1.6rem;
-  min-width: 1.6rem;
-  height: 1.6rem;
-  min-height: 1.6rem;
-  margin: 0 1rem 0 0;
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  border-radius: 50%;
-  vertical-align: middle; }
-:host /deep/ .free-avatar.free-avatar-large {
-  width: 2rem;
-  height: 2rem; }
-:host /deep/ .free-avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%; }
-:host /deep/ .free-list-content {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex: 1 1 auto;
-  flex-flow: column nowrap;
-  flex: 1;
-  overflow: hidden;
-  line-height: 1.25em;
-  white-space: normal;
-  padding: .5rem 0; }
-:host /deep/ .free-list-content > * {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-:host /deep/ .free-list-content > :nth-child(3) {
-  margin: 0;
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 14px; }
-:host /deep/ .free-icon {
-  margin-right: 1.2rem;
-  color: rgba(0, 0, 0, 0.54); }
-:host /deep/ .btn {
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
-  text-align: center;
-  border-radius: 50%;
-  line-height: 24px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  margin-right: -.6rem; }
-:host /deep/ .free-list.free-list-hover .free-list-item {
-  cursor: pointer; }
-:host /deep/ .free-list.free-list-hover .free-list-item:hover {
-  background: #eee; }
-:host /deep/ .free-list.free-list-line .free-list-item:after {
-  content: "";
-  position: absolute;
-  left: 3.5rem;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background-color: #d9d9d9; }
+  .free-list-item .free-avatar {
+    width: 1.6rem;
+    min-width: 1.6rem;
+    height: 1.6rem;
+    min-height: 1.6rem;
+    margin: 0 1rem 0 0;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle; }
+    .free-list-item .free-avatar.free-avatar-circle, .free-list-item .free-avatar.free-avatar-circle img {
+      border-radius: 50%; }
+    .free-list-item .free-avatar img {
+      width: 100%; }
+    .free-list-item .free-avatar.free-avatar-large {
+      width: 2rem;
+      height: 2rem; }
+  .free-list-item .free-list-content {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    overflow: hidden;
+    line-height: 1.25em;
+    white-space: normal;
+    padding: .5rem 0; }
+  .free-list-item .free-list-content > * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .free-list-item .free-list-content > :nth-child(3) {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px; }
+  .free-list-item .free-icon {
+    margin-right: 1.2rem;
+    color: rgba(0, 0, 0, 0.54); }
+  .free-list-item .btn {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 24px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-right: -.6rem; }
+  .free-list-item .free-image {
+    display: flex;
+    max-height: 100%; }
+    .free-list-item .free-image img {
+      align-items: center; }
 
 /*# sourceMappingURL=list.component.css.map */

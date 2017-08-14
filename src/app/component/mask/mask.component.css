@@ -1,4 +1,4 @@
-:host /deep/ .free-mask {
+.free-mask {
   position: fixed;
   top: 0;
   right: 0;
@@ -15,7 +15,7 @@
   justify-content: center;
   z-index: 9999;
   background: rgba(0, 0, 0, 0.7); }
-:host /deep/ .free-mask .free-loading span {
-  background: #fff !important; }
+  .free-mask .free-loading span {
+    background: #fff !important; }
 
 /*# sourceMappingURL=mask.component.css.map */

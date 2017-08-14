@@ -1,38 +1,58 @@
-/**
- * Created by root on 17-5-12.
- */
 import {Injectable, Renderer2} from '@angular/core';
 
 @Injectable()
 export class DomRenderer {
 
-  constructor(private renderer2: Renderer2) {}
+  public static zIndex: number = 9990;
 
-  public addClass(dom, className): void {
+  constructor(public renderer2: Renderer2) {
+  }
+
+  public addClass(elem, className): void {
     const classes = className.split(/\s+/);
     for (const cName of classes) {
-      this.renderer2.addClass(dom, cName);
+      this.renderer2.addClass(elem, cName);
     }
   }
 
-  public removeClass(dom, className): void {
+  public hasClass(elem, className): boolean {
+    return elem.className.indexOf(className) !== -1;
+  }
+
+  public removeClass(elem, className): void {
     const classes = className.split(/\s+/);
     for (const cName of classes) {
-      this.renderer2.removeClass(dom, cName);
+      this.renderer2.removeClass(elem, cName);
     }
   }
 
-  public getHiddenElementOuterHeight(dom: any): any {
-    dom.style.visibility = 'hidden';
-    dom.style.display = 'block';
-    const height = dom.offsetHeight;
-    const width = dom.offsetWidth;
-    dom.style.display = 'none';
-    dom.style.visibility = 'visible';
+  public getHiddenElementOuterHeight(elem: any): any {
+    if (elem.style.display !== 'none') {
+      return {
+        width: elem.offsetWidth,
+        height: elem.offsetHeight
+      }
+    }
+    elem.style.visibility = 'hidden';
+    elem.style.display = 'block';
+    const height = elem.offsetHeight;
+    const width = elem.offsetWidth;
+    elem.style.display = 'none';
+    elem.style.visibility = 'visible';
     return {
       width: width,
       height: height
     };
+  }
+
+  public getHiddenElementClient(parent: any, elem: any, property: any) {
+    if (parent.style.display !== 'none') { return parseFloat(elem[property]); }
+    parent.style.display = 'block';
+    parent.style.visibility = 'hidden';
+    const p = elem[property];
+    parent.style.display = 'none';
+    parent.style.visibility = 'visible';
+    return parseFloat(p);
   }
 
   public addPrefix(element, attr, value): void {
@@ -40,7 +60,7 @@ export class DomRenderer {
     let uattr = attr.split('');
     uattr[0] = uattr[0].toUpperCase();
     uattr = uattr.join('');
-    prefix.forEach(function(x) {
+    prefix.forEach(function (x) {
       element.style[x + uattr] = value;
     });
     element.style[attr] = value;
@@ -67,8 +87,8 @@ export class DomRenderer {
     }
   };
 
-  public getStyle(dom, attr): any {
-    return dom.currentStyle ? dom.currentStyle[attr] : getComputedStyle(dom, 'false')[attr];
+  public getStyle(elem, attr): any {
+    return elem.currentStyle ? elem.currentStyle[attr] : getComputedStyle(elem, 'false')[attr];
   }
 
   public getRandom(max, min): number {
@@ -79,7 +99,7 @@ export class DomRenderer {
   public getWebType(): string {
     const type = ['webkit', 'moz', 'o', 'ms'];
     let cur = '';
-    type.forEach(function(t) {
+    type.forEach(function (t) {
       const mo = t + 'Transform';
       if (mo in document.createElement('div').style) {
         cur = t;
@@ -88,8 +108,8 @@ export class DomRenderer {
     return cur;
   }
 
-  public getRect(dom): any {
-    return dom.getBoundingClientRect();
+  public getRect(elem): any {
+    return elem.getBoundingClientRect();
   }
 
   public fadeIn(element, duration: number): void {
@@ -103,7 +123,11 @@ export class DomRenderer {
       last = +new Date();
 
       if (+opacity < 1) {
-        (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        if (window.requestAnimationFrame) {
+          requestAnimationFrame(tick);
+        } else {
+          setTimeout(tick, 16);
+        }
       }
     };
 
@@ -128,9 +152,11 @@ export class DomRenderer {
     }, interval);
   }
 
-  public css(dom, style): void {
+  public css(elem, style): void {
     for (const s in style) {
-      dom.style[s] = style[s];
+      if (style.hasOwnProperty(s)) {
+        elem.style[s] = style[s];
+      }
     }
   }
 
@@ -189,49 +215,204 @@ export class DomRenderer {
           userAngent = 'ipad';
         }
         isMobile = true;
-      } catch (e) {}
+      } catch (e) {
+      }
     } else {
       isMobile = false;
       userAngent = 'window';
-    };
-
+    }
     return {
       platform: userAngent,
       isMobile: isMobile
     };
   }
 
-  public listen(dom, type, handler): void {
-    this.renderer2.listen(dom, type, handler);
+  public isIE() {
+    return 'ActiveXObject' in window;
   }
 
-  public parentNode(dom): HTMLElement {
-    return this.renderer2.parentNode(dom);
+  public listen(elem, type, handler): void {
+    this.renderer2.listen(elem, type, handler);
   }
 
-  public createElement(dom): HTMLElement {
-    return this.renderer2.createElement(dom);
+  public parentNode(elem): HTMLElement {
+    return this.renderer2.parentNode(elem);
   }
 
-  public insertBefore(parent: any, newDom, oldDom): void {
-    this.renderer2.insertBefore(parent, newDom, oldDom);
+  public createElement(elem): HTMLElement {
+    return this.renderer2.createElement(elem);
   }
 
   public appendChild(parent: any, newDom: any): void {
     this.renderer2.appendChild(parent, newDom);
   }
 
+  public insertBefore(parent: any, newDom, oldDom): void {
+    parent.insertBefore(newDom, oldDom);
+  }
+
   public insertAfter(parent: any, newDom, oldChild) {
-    const nextDom =  oldChild.nextElementSibling;
+    const nextDom = oldChild.nextElementSibling;
     if (nextDom) {
-      this.renderer2.insertBefore(parent, newDom, nextDom);
+      parent.insertBefore(newDom, nextDom);
     } else {
-      this.renderer2.appendChild(parent, newDom);
+      parent.appendChild(newDom);
     }
   }
 
-  public removeChild(parent: any, oldChild: any) : void {
+  public removeChild(parent: any, oldChild: any): void {
     this.renderer2.removeChild(parent, oldChild);
   }
 
+  public getOffsetTop(elem): number {
+    let tmp = elem.offsetTop;
+    let val = elem.offsetParent;
+    while (val != null) {
+      tmp += val.offsetTop;
+      val = val.offsetParent;
+    }
+    return tmp;
+  }
+
+  public getOffsetLeft(elem): number {
+    let tmp = elem.offsetLeft;
+    let val = elem.offsetParent;
+    while (val != null) {
+      tmp += val.offsetLeft;
+      val = val.offsetParent;
+    }
+    return tmp;
+  }
+
+  public getTouchEvent(): object {
+    const isMobile = 'ontouchstart' in document;
+    let event;
+    if (isMobile) {
+      event = {
+        touchstart: 'touchstart',
+        touchmove: 'touchmove',
+        touchend: 'touchend',
+        mobile: true
+      }
+    } else {
+      event = {
+        touchstart: 'mousedown',
+        touchmove: 'mousemove',
+        touchend: 'mouseup',
+        mobile: false
+      }
+    }
+
+    return event;
+  }
+
+  public setProperty(elem: any, name: string, value: any): void {
+    return this.renderer2.setProperty(elem, name, value);
+  }
+
+  public getScrollbarWidth() {
+    const div = document.createElement('div');
+    this.addClass(div, 'free-iscroll');
+    this.css(div, {
+      width: '100%',
+      height: '100%',
+      opacity: 0,
+      overflow: 'scroll'
+    });
+    document.body.appendChild(div);
+    const scrollbarWidth = div.offsetWidth - div.clientWidth;
+    document.body.removeChild(div);
+    return scrollbarWidth;
+  }
+
+  public dateFormat(date: any, fmt: string) {
+    const o = {
+      'M+': date.getMonth() + 1,
+      'd+': date.getDate(),
+      'h+': date.getHours(),
+      'm+': date.getMinutes(),
+      's+': date.getSeconds(),
+      'q+': Math.floor((date.getMonth() + 3) / 3),
+      'S': date.getMilliseconds()
+    };
+    if (/(y+)/.test(fmt)) {
+      fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+    }
+    for (const k in o) {
+      if (o.hasOwnProperty(k)) {
+        const regExp = new RegExp('(' + k + ')');
+        if (regExp.test(fmt)) {
+          fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) :
+            (('00' + o[k]).substr(('' + o[k]).length)));
+        }
+      }
+    }
+    return fmt;
+  }
+
+  public  forEach(arr: any, callback: Function) {
+    if (arr) {
+      if (Array.isArray(arr)) {
+        arr.forEach((value, index, arrs) => {
+          callback(value, index, arrs);
+        })
+      } else {
+        for (let i = 0; i < arr.length; i++) {
+          callback(arr[i], i, arr);
+        }
+      }
+    }
+  }
+
+  public createEvent(type: string, detail: any = {}) {
+    return new CustomEvent(type, {
+      bubbles: true,
+      cancelable: true,
+      detail: detail
+    });
+  }
+
+  public triggerEvent(dom, event) {
+    dom.dispatchEvent(event);
+  }
+
+  public parentsUntil(dom: any, parent: any) {
+    const parentNode = [];
+    if (typeof parent === 'string') {
+      let target = dom;
+      while (target) {
+        if (this.hasClass(target, parent)) {
+          break;
+        }
+        parentNode.push(target);
+        target = target.parentNode;
+      }
+    } else {
+      let target = dom;
+      while (target) {
+        if (target === parent) {
+          break;
+        }
+        parentNode.push(target);
+        target = target.parentNode;
+      }
+    }
+    return parentNode;
+  }
+
+  public preventDefault(event: any) {
+    if (event.preventDefault) {
+      event.preventDefault();
+    } else if (event.returnValue) {
+      event.returnValue = false;
+    }
+  }
+
+  public stopPropagation(event: any) {
+    if (event.stopPropagation) {
+      event.stopPropagation();
+    } else if (event.cancelBubble) {
+      event.cancelBubble = false;
+    }
+  }
 }

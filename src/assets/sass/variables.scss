@@ -1,5 +1,6 @@
 $theme-blue: #3949ab;
 $theme-green: #138265;
+$theme-default: #222222;
 $default: #115d8e;
 $defaultFontColor: #115d8e;
 
@@ -8,9 +9,16 @@ $leftMenuWidthOfMini: 2.5rem;
 $topMenuHeight: 3rem;
 
 $theme: (
+  primary: #177bbb,
+  info: #1ccacc,
+  success: #1aae88,
+  warning: #fbb23e,
+  danger: #e33244);
+
+$color: (
   green: #46be8a,
   deepblue: #115d8e,
-  blue: #677ae4,
+  blue: #1976d2,
   lightblue: #169e9f,
   yellow: #fa9e0c,
   red: #f96868,

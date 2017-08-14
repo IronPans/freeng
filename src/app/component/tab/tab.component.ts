@@ -1,6 +1,3 @@
-/**
- * Created by tg on 17-4-4.
- */
 import {CommonModule} from '@angular/common';
 import { NgModule, Component, ContentChildren, ViewChild, OnInit,
   Input, Output, AfterContentInit, QueryList, EventEmitter, ElementRef, Renderer2
@@ -12,8 +9,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   template: `
        <ul class="free-tab-navs">
          <li class="free-tab-nav" *ngFor="let tab of tabs; let i = index;"
-             [class.active]="tab.selected">
-           <span (click)="tabClick(i)">{{tab.header}}</span>
+             [class.active]="tab.selected" [class.free-tab-disabled]="tab.disabled">
+           <span (click)="tabClick(i, tab.disabled)">{{tab.header}}</span>
          </li>
        </ul>
     `
@@ -27,8 +24,10 @@ export class TabNavComponent {
 
   constructor() {}
 
-  tabClick(index) {
-    this.onTabClick.emit(index);
+  tabClick(index: number, disabled: boolean) {
+    if (!disabled) {
+      this.onTabClick.emit(index);
+    }
   }
 }
 
@@ -55,6 +54,7 @@ export class TabNavComponent {
 
 export class TabComponent implements OnInit {
   @Input() header: string;
+  @Input() disabled: boolean;
   @Input()
   get selected(): boolean {
     return this._selected;
@@ -91,24 +91,25 @@ export class TabComponent implements OnInit {
   template: `
     <div class="free-tab-group" #group>
       <free-tab-nav [tabs]="tabs" (onTabClick)="tabClick($event)"></free-tab-nav>
-      <div class="free-tab-box">
+      <div class="free-tab-box free-iscroll">
         <ng-content></ng-content>
       </div>
     </div>
-  `,
-  styleUrls: ['./tab.component.scss']
+  `
 })
 
 export class TabGroupComponent implements OnInit, AfterContentInit {
   @Input() theme: string;
+  @Input() direction: string;
+  @Input() activeIndex: number;
   @ViewChild('group') groups: ElementRef;
   @ViewChild('nav') nav: ElementRef;
   @ContentChildren(TabComponent) tabGroup: QueryList<TabComponent>;
-  @Input() direction: string;
-
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
   tabs: TabComponent[];
-  @Input() activeIndex = 0;
-  constructor(private renderer2: Renderer2) {}
+  constructor(public renderer2: Renderer2) {
+    this.activeIndex = 0;
+  }
   ngOnInit() {}
 
   ngAfterContentInit() {
@@ -137,8 +138,13 @@ export class TabGroupComponent implements OnInit, AfterContentInit {
     }
   }
 
-  tabClick(index) {
+  tabClick(index: number) {
+    const prevIndex = this.activeIndex;
     this.open(index);
+    this.onChange.emit({
+      prevIndex: prevIndex,
+      activeIndex: this.activeIndex
+    });
   }
 }
 

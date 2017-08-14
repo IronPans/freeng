@@ -1,0 +1,17 @@
+.free-image-group {
+  display: flex;
+  flex-wrap: wrap; }
+  .free-image-group free-image {
+    width: 24.99999%;
+    padding: .2rem .2rem 0 0; }
+  .free-image-group:after {
+    content: "";
+    clear: both;
+    display: inline-block; }
+
+.free-image img {
+  display: block;
+  width: 100%;
+  line-height: 0; }
+
+/*# sourceMappingURL=image.component.css.map */

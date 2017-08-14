@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { fadeIn } from '../common/animations';
+import { trigger, style, state, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'free-mask',
@@ -10,8 +10,13 @@ import { fadeIn } from '../common/animations';
       <ng-content></ng-content>
       <span *ngIf="close" class="fa fa-close"></span>
     </div>`,
-  styleUrls: ['./mask.component.scss'],
-  animations: [fadeIn]
+  animations: [trigger('fadeInState', [
+    state('in', style({opacity: 1})),
+    transition('void => *', [
+      style({opacity: 0}),
+      animate('.3s cubic-bezier(.35,0,.25,1)')
+    ])
+  ])]
 })
 export class MaskComponent implements OnInit {
 

@@ -1,0 +1,175 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        下拉菜单可以帮助你节省空间，同时提供更多选择
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-dropdown</h3>
+        <p>单个下拉菜单</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>menus</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>菜单子项数组</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>direction</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置下拉菜单展开的位置(bottom-left, bottom-right)，
+                可选，默认为bottom-left。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>hover</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置鼠标移动上去时展开，可选，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;DropdownModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div class="main-dropdown-box">
+              <free-dropdown [menus]="menus">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Direction</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div class="main-dropdown-box">
+              <free-dropdown [menus]="menus" direction="bottom-right">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus" direction="bottom-right"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Hover</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div class="main-dropdown-box">
+              <free-dropdown [menus]="menus" [hover]="true">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus" [hover]="true"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div class="main-dropdown-box">
+              <free-dropdown [menus]="menus" theme="danger">
+                <f-header>Dropdown</f-header>
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus" theme="danger"&gt;
+              &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+              &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Content</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height:200px">
+              <free-dropdown>
+                <f-header>Dropdown</f-header>
+                123123yidsfsidf
+              </free-dropdown>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-dropdown [menus]="menus"&gt;
+                &lt;f-header&gt;Dropdown&lt;/f-header&gt;
+                123123yidsfsidf
+              &lt;/free-dropdown&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

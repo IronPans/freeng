@@ -1,0 +1,93 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        垂直展示的时间流信息。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-timeline</h3>
+        <p>时间轴。</p>
+      </div>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-timeline-item</h3>
+        <p>时间轴的每一个节点。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>header</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>节点描述标题，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>dot</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>节点图形，默认圆形，可选(square)</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-demo-board">
+        <div class="free-card-board">
+          <h3 class="free-toolbar">Import</h3>
+          <free-tab-group direction="right" theme="line">
+            <free-tab header="CODE">
+              <free-code lang="typescript">
+                import &#123;TimelineModule&#125; from 'freeng/freeng';
+              </free-code>
+            </free-tab>
+          </free-tab-group>
+        </div>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-timeline>
+              <free-timeline-item header="2017/07/30">
+                很高兴的通知各位，经过四个月时间的紧密开发，FreeNG@1.0.0 终于发布了。
+                这个版本我重构了底层代码，持续更新新组件功能和完善优化现有组件功能，并提供了完整的使用文档。
+                欢迎各位持续关注和鞭策。在使用过程中遇到任何问题，请及时 反馈给我。
+              </free-timeline-item>
+              <free-timeline-item header="2017/07/30">
+                <free-image-group [images]="images"></free-image-group>
+              </free-timeline-item>
+            </free-timeline>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-timeline&gt;
+                &lt;free-timeline-item header="2017/07/30"&gt;
+                  很高兴的通知各位，经过四个月时间的紧密开发，FreeNG@1.0.0 终于发布了。
+                  这个版本我重构了底层代码，持续更新新组件功能和完善优化现有组件功能，并提供了完整的使用文档。
+                  欢迎各位持续关注和鞭策。在使用过程中遇到任何问题，请及时 反馈给我。
+                &lt;/free-timeline-item&gt;
+                &lt;free-timeline-item header="2017/07/30"&gt;
+                  &lt;free-image-group [images]="images"&gt;&lt;/free-image-group&gt;
+                &lt;/free-timeline-item&gt;
+              &lt;/free-timeline&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

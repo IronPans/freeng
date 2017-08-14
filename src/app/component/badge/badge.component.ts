@@ -11,8 +11,8 @@ export class BadgeComponent implements AfterViewInit {
 
   @Input() content: string;
   @Input() up: boolean;
-  constructor(private domRenderer: DomRenderer,
-              private er: ElementRef) { }
+  constructor(public domRenderer: DomRenderer,
+              public er: ElementRef) { }
 
   ngAfterViewInit() {
     const container = this.er.nativeElement;

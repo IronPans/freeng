@@ -1,0 +1,237 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        卡片视图常用于展现一段完整独立的信息，比如一篇文章的预览图、作者信息、点赞数量等
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-card</h3>
+        <p>卡片容器</p>
+      </div>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-card-header</h3>
+        <p>卡片头 主要用于显示卡片标题。可选的</p>
+      </div>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-card-header-title</h3>
+        <p>卡头标题</p>
+      </div>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-card-media</h3>
+        <p>媒体元素</p>
+      </div>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-card-content</h3>
+        <p>卡片内容的主容器</p>
+      </div>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-card-footer</h3>
+        <p>卡片页脚用于某些附加信息或自定义操作/链接。可选的</p>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;CardModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">DEFAULT</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-card fGrid="8">
+              <free-card-header>
+                <free-card-header-text>
+                  <div class="free-card-title">标题</div>
+                  <div class="free-card-text">子标题</div>
+                </free-card-header-text>
+              </free-card-header>
+              <free-card-content>
+                这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+              </free-card-content>
+              <free-card-footer>
+                <button fButton>cancel</button>
+              </free-card-footer>
+            </free-card>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-card fGrid="8"&gt;
+                &lt;free-card-header&gt;
+                  &lt;free-card-header-text&gt;
+                    &lt;div class="free-card-title"&gt;标题&lt;/div&gt;
+                    &lt;div class="free-card-text"&gt;子标题&lt;/div&gt;
+                  &lt;/free-card-header-text&gt;
+                &lt;/free-card-header&gt;
+                &lt;free-card-content&gt;
+                  这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+                &lt;/free-card-content&gt;
+                &lt;free-card-footer&gt;
+                  &lt;button fButton&gt;cancel&lt;/button&gt;
+                &lt;/free-card-footer&gt;
+              &lt;free-card&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">MEDIA</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-card fGrid="8">
+              <free-card-media>
+                <free-image src="assets/images/landscape1.jpg"></free-image>
+              </free-card-media>
+              <free-card-header>
+                <free-card-header-text>
+                  <div class="free-card-title">标题</div>
+                  <div class="free-card-text">子标题</div>
+                </free-card-header-text>
+              </free-card-header>
+            </free-card>
+            <free-card fGrid="8">
+              <free-card-media>
+                <free-image src="assets/images/landscape1.jpg"></free-image>
+              </free-card-media>
+             <free-card-content>
+               这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+             </free-card-content>
+            </free-card>
+            <free-card fGrid="8">
+              <free-card-media>
+                <free-image src="assets/images/landscape1.jpg"></free-image>
+              </free-card-media>
+              <free-card-header>
+                <free-card-header-text>
+                  <div class="free-card-title">标题</div>
+                  <div class="free-card-text">子标题</div>
+                </free-card-header-text>
+              </free-card-header>
+              <free-card-content>
+                这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+              </free-card-content>
+            </free-card>
+            <free-card fGrid="8">
+              <free-card-media>
+                <free-image src="assets/images/landscape1.jpg"></free-image>
+              </free-card-media>
+              <free-card-content>
+                这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+              </free-card-content>
+              <free-card-footer>
+                <button fButton>cancel</button>
+              </free-card-footer>
+            </free-card>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-card fGrid="8"&gt;
+                &lt;free-card-media&gt;
+                  &lt;free-image src="assets/images/landscape1.jpg"&gt;&lt;/free-image&gt;
+                &lt;/free-card-media&gt;
+                &lt;free-card-header&gt;
+                  &lt;free-card-header-text&gt;
+                    &lt;div class="free-card-title"&gt;标题&lt;/div&gt;
+                    &lt;div class="free-card-text"&gt;子标题&lt;/div&gt;
+                  &lt;/free-card-header-text&gt;
+                &lt;/free-card-header&gt;
+              &lt;/free-card&gt;
+              &lt;free-card fGrid="8"&gt;
+                &lt;free-card-media&gt;
+                  &lt;free-image src="assets/images/landscape1.jpg"&gt;&lt;/free-image&gt;
+                &lt;/free-card-media&gt;
+                &lt;free-card-content&gt;
+                  这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+                &lt;/free-card-content&gt;
+              &lt;/free-card&gt;
+              &lt;free-card fGrid="8"&gt;
+                &lt;free-card-media&gt;
+                  &lt;free-image src="assets/images/landscape1.jpg"&gt;&lt;/free-image&gt;
+                &lt;/free-card-media&gt;
+                &lt;free-card-header&gt;
+                  &lt;free-card-header-text&gt;
+                    &lt;div class="free-card-title"&gt;标题&lt;/div&gt;
+                    &lt;div class="free-card-text"&gt;子标题&lt;/div&gt;
+                  &lt;/free-card-header-text&gt;
+                &lt;/free-card-header&gt;
+                &lt;free-card-content&gt;
+                  这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+                &lt;/free-card-content&gt;
+              &lt;/free-card&gt;
+              &lt;free-card fGrid="8"&gt;
+                &lt;free-card-media&gt;
+                  &lt;free-image src="assets/images/landscape1.jpg"&gt;&lt;/free-image&gt;
+                &lt;/free-card-media&gt;
+                &lt;free-card-content&gt;
+                  这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+                &lt;/free-card-content&gt;
+                &lt;free-card-footer&gt;
+                  &lt;button fButton&gt;cancel&lt;/button&gt;
+                &lt;/free-card-footer&gt;
+              &lt;/free-card&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Hover Effect</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-card fGrid="8" [hover]="true">
+              <free-card-header>
+                <free-card-header-text>
+                  <div class="free-card-title">标题</div>
+                  <div class="free-card-text">子标题</div>
+                </free-card-header-text>
+              </free-card-header>
+              <free-card-content>
+                这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+              </free-card-content>
+              <free-card-footer>
+                <button fButton>cancel</button>
+              </free-card-footer>
+            </free-card>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-card fGrid="8" [hover]="true"&gt;
+                &lt;free-card-header&gt;
+                  &lt;free-card-header-text&gt;
+                    &lt;div class="free-card-title"&gt;标题&lt;/div&gt;
+                    &lt;div class="free-card-text"&gt;子标题&lt;/div&gt;
+                  &lt;/free-card-header-text&gt;
+                &lt;/free-card-header&gt;
+                &lt;free-card-content&gt;
+                这是一个用纯文本的简单卡片。但卡片可以包含自己的页头，页脚，列表视图，图像，和里面的任何元素。
+                &lt;/free-card-content&gt;
+                &lt;free-card-footer&gt;
+                  &lt;button fButton&gt;cancel&lt;/button&gt;
+                &lt;/free-card-footer&gt;
+              &lt;free-card&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+
+  </div>
+
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

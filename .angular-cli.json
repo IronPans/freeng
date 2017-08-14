@@ -17,10 +17,11 @@
       "tsconfig": "tsconfig.app.json",
       "prefix": "free",
       "styles": [
-        "styles.css",
-        "../node_modules/font-awesome/css/font-awesome.min.css"
+        "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/chart.js/dist/Chart.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -35,6 +36,29 @@
   ],
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {
+      "spec": false
+    },
+    "directive": {
+      "spec": false
+    },
+    "pipe": {
+      "spec": false
+    },
+    "module": {
+      "spec": false
+    },
+    "class": {
+      "spec": false
+    },
+    "service": {
+      "spec": false
+    },
+    "build": {
+      "sourcemaps": true
+    },
+    "serve": {
+      "port": 8081
+    }
   }
 }

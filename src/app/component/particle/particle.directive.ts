@@ -10,6 +10,11 @@ import {DomRenderer} from '../common/dom';
 
 export class ParticleDirective implements OnInit, AfterViewInit {
 
+  @Input() size = 8;
+  @Input() distance = 100;
+  @Input() color: string[] | string;
+  @Input() total = 100;
+  @Input() backgroundColor = 'linear-gradient(to bottom,#115d8e 0, #347eff 100%)';
   container: HTMLCanvasElement;
   particles: Particle[];
   ctx: any;
@@ -18,17 +23,12 @@ export class ParticleDirective implements OnInit, AfterViewInit {
   defaultColor = 'rgba(255,255,255,.2)';
   isRunning: boolean;
   canvas: HTMLCanvasElement;
-  @Input() size = 8;
-  @Input() distance = 100;
-  @Input() color: string[] | string;
-  @Input() total = 80;
-  @Input() backgroundColor = 'linear-gradient(to bottom,#115d8e 0, #347eff 100%)';
   @HostListener('window:resize') onResize() {
     this.reset();
   };
-  constructor(private er: ElementRef,
-      private domRenderer: DomRenderer,
-      private renderer2: Renderer2) {
+  constructor(public er: ElementRef,
+      public domRenderer: DomRenderer,
+      public renderer2: Renderer2) {
   }
 
   ngOnInit() {
@@ -64,6 +64,7 @@ export class ParticleDirective implements OnInit, AfterViewInit {
     this.ctx.fillRect(0, 0, width, height);
     this.ctx.restore();
   }
+
   addParticle() {
     this.particles = [];
     for (let i = 0; i < this.total; i++) {

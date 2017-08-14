@@ -1,0 +1,30 @@
+:host /deep/ .rb {
+  position: absolute;
+  right: 10px;
+  bottom: 10px; }
+:host /deep/ .tr {
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+:host /deep/ .lb {
+  position: absolute;
+  left: 10px;
+  bottom: 10px; }
+:host /deep/ .ctr {
+  position: absolute;
+  left: 230px;
+  top: 180px; }
+:host /deep/ .clb {
+  position: absolute;
+  left: 230px;
+  top: 85px; }
+:host /deep/ .crb {
+  position: absolute;
+  left: 330px;
+  top: 130px; }
+:host /deep/ .clt {
+  position: absolute;
+  left: 140px;
+  top: 130px; }
+
+/*# sourceMappingURL=main-shrink.component.css.map */

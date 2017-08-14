@@ -4,7 +4,9 @@
 /dist
 /tmp
 /out-tsc
-*.js.map
+/components
+/resources
+/aot
 
 # dependencies
 /node_modules
@@ -27,13 +29,18 @@
 
 # misc
 /.sass-cache
-*.css.map
+src/**/*.scss
+src/**/*.js
 /connect.lock
 /coverage
 /libpeerconnection.log
 npm-debug.log
 testem.log
 /typings
+
+#map
+*.js.map
+*.css.map
 
 # e2e
 /e2e/*.js

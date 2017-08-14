@@ -1,0 +1,269 @@
+<div class="group main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        按钮是与应用程序交互的重要元素，它可以由文本或图标组成，并且可以通过各种属性进行增强美化。
+      </p>
+      <ul class="free-ul-padding">
+        <li>图标按钮</li>
+        <li>圆形按钮</li>
+        <li>按钮组</li>
+      </ul>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol directive"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-button-group</h3>
+        <p>可选，按钮组</p>
+      </div>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">fButton</h3>
+        <p>必选，用来定义一个按钮</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>size</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>可选，用来设置按钮的尺寸(big,middle(默认),small,mini)</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>disabled</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>可选，禁用按钮并阻止他的动作。 默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>icon</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>可选，用来设置图标，默认采取<a target="_blank" href="http://fontawesome.io/icons/">Fontawesome图标</a></ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>block</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>无</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>可选，以块元素展示</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>circle</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>可选，圆角</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;ButtonModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="Demo">
+            <a fButton>Link</a>
+            <button fButton>Button</button>
+          </free-tab>
+          <free-tab header="Code">
+            <free-code lang="html">
+              &lt;a fButton&gt;default&lt;/a&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="Demo">
+            <button fButton>default</button>
+            <button fButton theme="primary">primary</button>
+            <button fButton theme="info">info</button>
+            <button fButton theme="success">success</button>
+            <button fButton theme="warning">warning</button>
+            <button fButton theme="danger">danger</button>
+          </free-tab>
+          <free-tab header="Code">
+            <free-code lang="html">
+              &lt;button fButton&gt;default&lt;/button&gt;
+              &lt;button fButton theme="primary"&gt;primary&lt;/button&gt;
+              &lt;button fButton theme="info"&gt;info&lt;/button&gt;
+              &lt;button fButton theme="success"&gt;success&lt;/button&gt;
+              &lt;button fButton theme="warning"&gt;warning&lt;/button&gt;
+              &lt;button fButton theme="danger"&gt;danger&lt;/button&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Size</h3>
+        <free-tab-group direction="right">
+          <free-tab header="Demo">
+            <button fButton theme="danger" size="big">danger</button>
+            <button fButton theme="danger">danger</button>
+            <button fButton theme="danger" size="small">danger</button>
+            <button fButton theme="danger" size="mini">danger</button>
+          </free-tab>
+          <free-tab header="Code">
+            <free-code lang="html">
+              &lt;button fButton theme="danger" size="big"&gt;danger&lt;/button&gt;
+              &lt;button fButton theme="danger"&gt;danger&lt;/button&gt;
+              &lt;button fButton theme="danger" size="small"&gt;danger&lt;/button&gt;
+              &lt;button fButton theme="danger" size="mini"&gt;danger&lt;/button&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">GROUP</h3>
+        <free-tab-group direction="right">
+          <free-tab header="Demo">
+            <free-button-group>
+              <button fButton>default</button>
+              <button fButton>default</button>
+              <button fButton>default</button>
+            </free-button-group>
+            <free-button-group>
+              <button fButton theme="danger">danger</button>
+              <button fButton theme="danger">danger</button>
+              <button fButton theme="danger">danger</button>
+            </free-button-group>
+            <free-button-group>
+              <button fButton theme="primary">primary</button>
+              <button fButton theme="primary">primary</button>
+              <button fButton theme="primary">primary</button>
+            </free-button-group>
+            <free-button-group>
+              <button fButton theme="info">info</button>
+              <button fButton theme="info">info</button>
+              <button fButton theme="info">info</button>
+            </free-button-group>
+            <free-button-group>
+              <button fButton theme="success">success</button>
+              <button fButton theme="success">success</button>
+              <button fButton theme="success">success</button>
+            </free-button-group>
+          </free-tab>
+          <free-tab header="Code">
+            <free-code lang="html">
+              &lt;free-button-group&gt;
+                &lt;button fButton&gt;default&lt;/button&gt;
+                &lt;button fButton&gt;default&lt;/button&gt;
+                &lt;button fButton&gt;default&lt;/button&gt;
+              &lt;/free-button-group&gt;
+              &lt;free-button-group&gt;
+                &lt;button fButton theme="danger"&gt;danger&lt;/button&gt;
+                &lt;button fButton theme="danger"&gt;danger&lt;/button&gt;
+                &lt;button fButton theme="danger"&gt;danger&lt;/button&gt;
+              &lt;/free-button-group&gt;
+              &lt;free-button-group&gt;
+                &lt;button fButton theme="primary"&gt;primary&lt;/button&gt;
+                &lt;button fButton theme="primary"&gt;primary&lt;/button&gt;
+                &lt;button fButton theme="primary"&gt;primary&lt;/button&gt;
+              &lt;/free-button-group&gt;
+              &lt;free-button-group&gt;
+                &lt;button fButton theme="info"&gt;info&lt;/button&gt;
+                &lt;button fButton theme="info"&gt;info&lt;/button&gt;
+                &lt;button fButton theme="info"&gt;info&lt;/button&gt;
+              &lt;/free-button-group&gt;
+              &lt;free-button-group&gt;
+                &lt;button fButton theme="success"&gt;success&lt;/button&gt;
+                &lt;button fButton theme="success"&gt;success&lt;/button&gt;
+                &lt;button fButton theme="success"&gt;success&lt;/button&gt;
+              &lt;/free-button-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+      <h3 class="free-toolbar">ICON</h3>
+      <free-tab-group direction="right">
+        <free-tab header="Demo">
+          <button fButton icon="home">HOME</button>
+          <button fButton icon="user"></button>
+          <button fButton circle="true" icon="user"></button>
+        </free-tab>
+        <free-tab header="Code">
+          <free-code lang="html">
+            &lt;button fButton icon="home"&gt;HOME&lt;/button&gt;
+            &lt;button fButton icon="user"&gt;&lt;/button&gt;
+            &lt;button fButton circle="true" icon="user"&gt;&lt;/button&gt;
+          </free-code>
+        </free-tab>
+      </free-tab-group>
+    </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Disabled</h3>
+        <free-tab-group direction="right">
+          <free-tab header="Demo">
+            <button fButton theme="success" icon="user" [disabled]="true">success</button>
+          </free-tab>
+          <free-tab header="Code">
+            <free-code lang="html">
+              &lt;button fButton theme="success" icon="user" [disabled]="true"&gt;success&lt;/button&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">BLOCK</h3>
+        <free-tab-group direction="right">
+          <free-tab header="Demo">
+            <button fButton block>default</button>
+            <button fButton block theme="danger">danger</button>
+          </free-tab>
+          <free-tab header="Code">
+            <free-code lang="html">
+              &lt;button fButton block&gt;default&lt;/button&gt;
+              &lt;button fButton block theme="danger"&gt;danger&lt;/button&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <!--<free-toast [value]="msg" delay="1000"></free-toast>-->
+</div>

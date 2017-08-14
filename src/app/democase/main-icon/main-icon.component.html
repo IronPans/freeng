@@ -1,0 +1,146 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        Icon组件将渲染您项目中包含的任何样式表中定义的任何图标。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-icon</h3>
+        <p>字体图标</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>icon</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  必选，图标名称
+                  (当前使用<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>)
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>size</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                可选，改变图标的大小
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>spin</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                 可选，设置图片旋转。默认为false
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;IconModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-icon icon="home"></free-icon>
+            <free-icon icon="user"></free-icon>
+            <free-icon icon="bars"></free-icon>
+            <free-icon icon="cog"></free-icon>
+            <free-icon icon="angle-down"></free-icon>
+            <free-icon icon="angle-left"></free-icon>
+            <free-icon icon="angle-right"></free-icon>
+            <free-icon icon="angle-up"></free-icon>
+            <free-icon icon="trash"></free-icon>
+            <free-icon icon="tag"></free-icon>
+            <free-icon icon="tags"></free-icon>
+            <free-icon icon="bell"></free-icon>
+            <free-icon icon="folder"></free-icon>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-icon icon="home"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="user"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="bars"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="cog"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="angle-down"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="angle-left"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="angle-right"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="angle-up"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="trash"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="tag"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="tags"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="bell"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="folder"&gt;&lt;/free-icon&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Size</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-icon icon="home" size="2x"></free-icon>
+            <free-icon icon="home" size="3x"></free-icon>
+            <free-icon icon="home" size="4x"></free-icon>
+            <free-icon icon="home" size="5x"></free-icon>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-icon icon="home" size="2x"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="home" size="3x"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="home" size="4x"&gt;&lt;/free-icon&gt;
+              &lt;free-icon icon="home" size="5x"&gt;&lt;/free-icon&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Animated</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-icon icon="spinner" [spin]="true" size="2x"></free-icon>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-icon icon="spinner" [spin]="true" size="2x"&gt;&lt;/free-icon&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Component, OnInit, Input } from '@angular/core';
+import { NgModule, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'free-breadcrumb',
@@ -15,16 +15,14 @@ import { NgModule, Component, OnInit, Input } from '@angular/core';
           </li>
         </ng-template>
       </ol>
-  `,
-  styleUrls: ['./breadcrumb.component.scss']
+  `
 })
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent {
   @Input() menus: any;
-  @Input() separator = '/';
+  @Input() separator: string;
   @Input() icon: string;
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    this.separator = '/';
   }
 
 }

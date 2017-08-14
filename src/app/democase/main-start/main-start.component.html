@@ -1,0 +1,80 @@
+<div class="main-container">
+  <div class="row">
+    <div class="free-demo-board" fGrid="12">
+      <p style="padding-right: 1rem;">
+        FreeNG是一款完全响应式的前端UI框架， 它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
+        同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+      </p>
+      <p>FreeNG还很年轻，首个版本发布于2017年5月。</p>
+      <p><b>当前版本</b>： v{{version}}</p>
+      <hr>
+      <div class="free-card-board">
+        <free-panel header="Download">
+          <free-code lang="javascript">
+            npm install freeng --save
+          </free-code>
+        </free-panel>
+      </div>
+      <div class="free-card-board">
+        <free-panel header="Usage">
+          <h4>从freeng模块中导入(使用这种方式导入，会将所有的模块都导入)：</h4>
+          <free-code lang="javascript">
+            import &#123;AccordionModule&#125; from 'freeng/freeng'; //accordion
+
+            @NgModule(&#123;
+              declarations: [AppComponent, ...],
+              imports: [AccordionModule, ...],
+              bootstrap: [AppComponent]
+            &#125;)
+            export class AppModule &#123;&#125;
+          </free-code>
+          <h4>导入单个组件模块(有<span class="symbol component"></span>标注)</h4>
+          <free-code lang="javascript">
+            //import &#123;ComponentModule&#125; from 'freeng/component/componentname/componentname.component';
+
+            import &#123;AccordionModule&#125; from 'freeng/component/accordion/accordion.component';
+          </free-code>
+          <h4>导入单个指令模块(有<span class="symbol directive"></span>标注)</h4>
+          <free-code lang="javascript">
+            //import &#123;ComponentModule&#125; from 'freeng/component/directivename/directivename.directive';
+
+            import &#123;ButtonModule&#125; from 'freeng/component/button/button.directive';
+          </free-code>
+        </free-panel>
+      </div>
+      <div class="free-card-board">
+        <free-panel header="Dependencies">
+          <free-code lang="javascript">
+            &lt;link rel="stylesheet" href="&lt;YOUR_PATH&gt;/font-awesome.min.css" /&gt;
+            &lt;link rel="stylesheet" href="/node_modules/freeng/resources/freeng.min.css" /&gt;
+            &lt;link rel="stylesheet" href="/node_modules/freeng/resources/themes/blue.css"/&gt;
+          </free-code>
+        </free-panel>
+      </div>
+
+      <div class="free-card-board">
+        <free-panel header="Angular CLI">
+          <h4>Dependencies</h4>
+          <free-code lang="javascript">
+            "dependencies": &#123;
+              "freeng": "^0.1.2",
+              "font-awesome": "^4.7.0"
+            &#125;
+          </free-code>
+          <h4>Styles</h4>
+          <free-code lang="javascript">
+            "styles": [
+              "styles.css"
+            ]
+          </free-code>
+          <h4>styles.css</h4>
+          <free-code lang="css">
+            @import "../node_modules/font-awesome/css/font-awesome.min.css";
+            @import '../node_modules/freeng/resources/freeng.min.css';
+            @import '../node_modules/freeng/resources/themes/blue.css';
+          </free-code>
+        </free-panel>
+      </div>
+    </div>
+  </div>
+</div>

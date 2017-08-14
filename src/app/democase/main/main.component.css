@@ -1,0 +1,22 @@
+.main-container free-accordion-group {
+  margin-bottom: .75rem; }
+
+.main-container free-panel,
+.main-container free-tab-group {
+  margin-bottom: .75rem; }
+
+.donate {
+  display: flex; }
+  .donate div {
+    width: 50%; }
+    .donate div img {
+      width: 97%;
+      margin-right: 3%; }
+
+:host /deep/ .main-container .accordion-content .accordion-inner {
+  padding: .5rem !important; }
+
+:host /deep/ .main-point {
+  padding: 0 10px; }
+
+/*# sourceMappingURL=main.component.css.map */

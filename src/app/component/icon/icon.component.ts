@@ -4,8 +4,7 @@ import {NgModule, Component, OnInit, AfterViewInit, Input,
 
 @Component({
   selector: 'free-icon',
-  template: `<i #container class="free-icon fa fa-{{icon}}" [ngClass]="iconClass"></i>`,
-  styleUrls: ['./icon.component.scss']
+  template: `<i #container class="free-icon fa fa-{{icon}}" [ngClass]="iconClass"></i>`
 })
 export class IconComponent implements OnInit, AfterViewInit {
 
@@ -14,7 +13,7 @@ export class IconComponent implements OnInit, AfterViewInit {
   @Input() size: string;
   iconClass: any;
   @ViewChild('container') container: ElementRef;
-  constructor(private renderer2: Renderer2) { }
+  constructor(public renderer2: Renderer2) { }
 
   ngOnInit() {
     this.iconClass = {

@@ -1,0 +1,127 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        支持缩略图预览、列表显示图片大小。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-upload</h3>
+        <p>表单上传组件</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>multiple</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否可以多选，默认为false，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>review</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否预览，默认为false，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>media</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  设置上传文件类型
+                  (<a href="http://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank">类型</a>)，可选
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-demo-board">
+        <div class="free-card-board">
+          <h3 class="free-toolbar">Import</h3>
+          <free-tab-group direction="right" theme="line">
+            <free-tab header="CODE">
+              <free-code lang="typescript">
+                import &#123;UploadModule&#125; from 'freeng/freeng';
+              </free-code>
+            </free-tab>
+          </free-tab-group>
+        </div>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">DEFAULT</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-upload></free-upload>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-upload&gt;&lt;/free-upload&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Multiple</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-upload [review]="true" [multiple]="true"></free-upload>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-upload [multiple]="true"&gt;&lt;/free-upload&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Review</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-upload [review]="true" [multiple]="true"></free-upload>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-upload [review]="true" [multiple]="true"&gt;&lt;/free-upload&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Media</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-upload [review]="true" media="image/*" [multiple]="true"></free-upload>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-upload [review]="true" media="image/*" [multiple]="true"&gt;&lt;/free-upload&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

@@ -1,0 +1,148 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        侧边栏以滑动方式展现菜单或导航等内容。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-sidenav</h3>
+        <p>侧边栏。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>visible</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否展开，必选。默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>direction</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置侧边栏的位置。默认为left。可选(left/right)</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>overlay</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示半透明背景(可点击关闭侧边栏)，可选。默认为false</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <div class="free-demo-row">
+        <h3 class="free-title">事件</h3>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>事件</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  当侧边栏关闭或打开时触发的回调函数，可选。返回值: <code>&#123;open: true | false&#125;</code>
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-demo-board">
+        <div class="free-card-board">
+          <h3 class="free-toolbar">Import</h3>
+          <free-tab-group direction="right" theme="line">
+            <free-tab header="CODE">
+              <free-code lang="typescript">
+                import &#123;SidenavModule&#125; from 'freeng/freeng';
+              </free-code>
+            </free-tab>
+          </free-tab-group>
+        </div>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+             <div class="simulation-browser">
+               <button fButton (click)="leftSidenav = !leftSidenav">打开左侧</button>
+               <button fButton (click)="rightSidenav = !rightSidenav">打开右侧</button>
+               <free-sidenav [visible]="leftSidenav">
+                 <h3>左侧侧边栏</h3>
+                 <button fButton (click)="leftSidenav = !leftSidenav">关闭</button>
+               </free-sidenav>
+               <free-sidenav [visible]="rightSidenav" [direction]="'right'">
+                 <h3>右侧侧边栏</h3>
+                 <button fButton (click)="rightSidenav = !rightSidenav">关闭</button>
+               </free-sidenav>
+             </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;button fButton (click)="leftSidenav = !leftSidenav"&gt;打开左侧&lt;/button&gt;
+              &lt;button fButton (click)="rightSidenav = !rightSidenav"&gt;打开右侧&lt;/button&gt;
+              &lt;free-sidenav [visible]="leftSidenav"&gt;
+                &lt;h3&gt;左侧侧边栏&lt;/h3&gt;
+                &lt;button fButton (click)="leftSidenav = !leftSidenav"&gt;关闭&lt;/button&gt;
+              &lt;/free-sidenav&gt;
+              &lt;free-sidenav [visible]="rightSidenav" [direction]="'right'"&gt;
+                &lt;h3&gt;右侧侧边栏&lt;/h3&gt;
+                &lt;button fButton (click)="rightSidenav = !rightSidenav"&gt;关闭&lt;/button&gt;
+              &lt;/free-sidenav&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Overlay</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <div class="simulation-browser">
+              <button fButton (click)="overlay = !overlay">打开</button>
+              <free-sidenav [visible]="overlay" [overlay]="true">
+                <h3>侧边栏</h3>
+              </free-sidenav>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;button fButton (click)="overlay = !overlay"&gt;打开&lt;/button&gt;
+              &lt;free-sidenav [visible]="overlay" [overlay]="true"&gt;
+                &lt;h3&gt;侧边栏&lt;/h3&gt;
+              &lt;/free-sidenav&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>
+
+

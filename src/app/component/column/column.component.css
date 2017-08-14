@@ -1,0 +1,9 @@
+free-column {
+  width: 100%; }
+
+.free-column {
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+  column-gap: 1em; }
+
+/*# sourceMappingURL=column.component.css.map */

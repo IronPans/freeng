@@ -1,0 +1,231 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        模态框包含专门针对特定任务的文本和UI控件。 它们向用户通知关键信息，要求用户作出决定或涉及多个任务
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-modal</h3>
+        <p>单个模态框。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>header</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>模态框标题。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>visible</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示模态框，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>type</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置模态框类型(alert,confirm,prompt)，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>spinner</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置Loading类型，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>delay</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置Loading自动隐藏时间，可选。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;ModalModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="open()">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" [(visible)]="visible"&gt;
+                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+                &lt;f-footer&gt;
+                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
+                &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton theme="blue" (click)="blueVisible = !blueVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" theme="primary" [(visible)]="blueVisible"&gt;
+                这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+                &lt;f-footer&gt;
+                  &lt;button type="button" class="btn-default btn"&gt;关闭&lt;/button&gt;
+                &lt;/f-footer&gt;
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Alert</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="alertVisible = !alertVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" type="alert" [(visible)]="alertVisible"&gt;
+                这是一个Alert弹出框，通过设置type属性为alert
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Confirm</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="confirmVisible = !confirmVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" type="confirm" [(visible)]="confirmVisible"&gt;
+                这是一个Confirm弹出框，通过设置type属性为confirm
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Prompt</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="promptVisible = !promptVisible">弹出框</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal header="弹出框" type="confirm" [(visible)]="promptVisible"&gt;
+                这是一个Prompt弹出框，通过设置type属性为prompt
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Loading</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="Loading = !Loading">Loading</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal spinner="circleLineSpin" [(visible)]="loading"&gt;&lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Delay</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="delayLoading = !delayLoading">Loading</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-modal spinner="lineSquare" [delay]="1500" [(visible)]="delayLoading"&gt;
+              &lt;/free-modal&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <free-modal header="弹出框" [(visible)]="visible">
+    这是一个弹出框，点击右上角叉叉可关闭，点击半透明遮罩可关闭
+    <f-footer>
+      <button fButton class="cancel">关闭</button>
+    </f-footer>
+  </free-modal>
+
+  <free-modal header="弹出框" theme="primary" [(visible)]="blueVisible">
+    可以使用theme设置主题色
+    <f-footer>
+      <button fButton class="cancel">关闭</button>
+    </f-footer>
+  </free-modal>
+
+  <free-modal header="弹出框" type="alert" [(visible)]="alertVisible">
+    这是一个Alert弹出框，通过设置type属性为alert
+  </free-modal>
+
+  <free-modal header="弹出框" type="confirm" [(visible)]="confirmVisible">
+    这是一个Confirm弹出框，通过设置type属性为confirm
+  </free-modal>
+
+  <free-modal header="弹出框" type="prompt" [(visible)]="promptVisible">
+    这是一个Prompt弹出框，通过设置type属性为prompt
+  </free-modal>
+
+  <free-modal spinner="circleLineSpin" [(visible)]="Loading"></free-modal>
+
+  <free-modal spinner="lineSquare" [delay]="1500" [(visible)]="delayLoading"></free-modal>
+</div>

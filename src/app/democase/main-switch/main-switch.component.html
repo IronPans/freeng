@@ -1,0 +1,171 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        拨动开关用作切换单个设置选项的状态。
+      </p>
+      <ul class="free-ul-padding">
+        <li>支持三种风格</li>
+        <li>多种可选的样式</li>
+      </ul>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-switch</h3>
+        <p>单个Switch开关</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>label</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>自定义文本，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>type</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>主题类型</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>checked</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否默认选中，默认false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>disabled</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否禁用，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>change监听事件</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-demo-board">
+        <div class="free-card-board">
+          <h3 class="free-toolbar">Import</h3>
+          <free-tab-group direction="right" theme="line">
+            <free-tab header="CODE">
+              <free-code lang="typescript">
+                import &#123;SwitchModule&#125; from 'freeng/freeng';
+              </free-code>
+            </free-tab>
+          </free-tab-group>
+        </div>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <p style="width: 100%">当前状态：{{checked}}</p>
+            <p>
+              <free-switch label="Switch" [(ngModel)]="checked"></free-switch>
+              <free-switch label="Switch" type="2" [checked]="true"></free-switch>
+              <free-switch label="Switch" type="3"></free-switch>
+            </p>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-switch label="Switch"&gt;&lt;/free-switch&gt;
+              &lt;free-switch label="Switch" type="2" [checked]="true"&gt;&lt;/free-switch&gt;
+              &lt;free-switch label="Switch" type="3"&gt;&lt;/free-switch&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Disabled</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-switch label="Switch" [disabled]="true"></free-switch>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-switch label="Switch" [disabled]="true"&gt;&lt;/free-switch&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-switch label="Switch"></free-switch>
+            <free-switch label="Switch" theme="primary"></free-switch>
+            <free-switch label="Switch" theme="info"></free-switch>
+            <free-switch label="Switch" theme="success"></free-switch>
+            <free-switch label="Switch" theme="warning"></free-switch>
+            <free-switch label="Switch" theme="danger"></free-switch>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-switch label="Switch"&gt;&lt;/free-switch&gt;
+              &lt;free-switch label="Switch" theme="primary"&gt;&lt;/free-switch&gt;
+              &lt;free-switch label="Switch" theme="info"&gt;&lt;/free-switch&gt;
+              &lt;free-switch label="Switch" theme="success"&gt;&lt;/free-switch&gt;
+              &lt;free-switch label="Switch" theme="warning"&gt;&lt;/free-switch&gt;
+              &lt;free-switch label="Switch" theme="danger"&gt;&lt;/free-switch&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Change Event</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-switch label="Switch" (onChange)="onChange($event)"></free-switch>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-switch label="Switch" (onChange)="onChange($event)"&gt;&lt;/free-switch&gt;
+            </free-code>
+
+            <free-code lang="javascript">
+              onChange(event: any) &#123;
+                console.log(event.target.checked);
+              &#125;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

@@ -1,20 +1,19 @@
-:host /deep/ {
-  $borderColor: #bbb;
+$borderColor: #bbb;
 
-  .free-spinner {
-    border: 1px solid $borderColor;
-    overflow: hidden;
-    border-radius: 2px;
-  }
+.free-spinner {
+  position: relative;
+  display: inline-flex;
+  border: 1px solid $borderColor;
+  overflow: hidden;
+  border-radius: 2px;
 
-  .free-spinner,
   .free-spinner-minus,
   .free-spinner-add {
     position: relative;
     display: inline-flex;
   }
 
-  .free-spinner input {
+  input {
     background: transparent;
     border: none;
     padding: 0 .2rem;

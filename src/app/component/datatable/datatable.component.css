@@ -1,0 +1,134 @@
+.free-datatable {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: column; }
+  .free-datatable table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    overflow: hidden;
+    table-layout: fixed; }
+    .free-datatable table thead tr th {
+      background: #f5f5f5; }
+  .free-datatable .free-datatable-head {
+    position: relative;
+    font-size: .7rem;
+    font-weight: 500;
+    text-align: left; }
+  .free-datatable .free-expand-arrow {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer; }
+    .free-datatable .free-expand-arrow:hover {
+      background: rgba(0, 0, 0, 0.2); }
+  .free-datatable .free-column-resizer {
+    display: block;
+    position: absolute !important;
+    top: 0;
+    right: -.25rem;
+    margin: 0;
+    width: .5rem;
+    height: 100%;
+    padding: 0;
+    cursor: col-resize;
+    border: 1px solid transparent; }
+  .free-datatable .free-column-resizer-line {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    cursor: col-resize;
+    background: red; }
+  .free-datatable .free-datatable-body {
+    overflow: auto;
+    min-height: 0;
+    max-height: 12.5rem; }
+    .free-datatable .free-datatable-body table {
+      border-right: none !important; }
+  .free-datatable .free-datatable-head-inner {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: .5rem 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .free-datatable .free-datatable-head .free-datatable-head-text {
+    display: flex;
+    align-items: center;
+    padding: 0 .75rem;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .free-datatable .free-datatable-head .free-datatable-head-text .free-datatable-sort {
+      width: .7rem;
+      line-height: .4rem;
+      display: inline-block;
+      padding-left: .25rem;
+      color: #aaa;
+      cursor: pointer; }
+      .free-datatable .free-datatable-head .free-datatable-head-text .free-datatable-sort i {
+        line-height: 4px;
+        height: .3rem;
+        overflow: hidden; }
+        .free-datatable .free-datatable-head .free-datatable-head-text .free-datatable-sort i:hover, .free-datatable .free-datatable-head .free-datatable-head-text .free-datatable-sort i.free-sort-active {
+          color: #333; }
+  .free-datatable .free-datatable-row {
+    border-top: 1px solid #e0e0e0; }
+    .free-datatable .free-datatable-row:first-child {
+      border-top: none; }
+  .free-datatable .free-datatable-cell-inner {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem .75rem; }
+  .free-datatable .free-datatable-cell {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: .75rem; }
+  .free-datatable tbody .free-datatable-row.free-selected .free-datatable-cell {
+    background-color: #f5f5f5; }
+  .free-datatable.free-datatable-hover tbody .free-datatable-row:hover .free-datatable-cell {
+    background-color: #eee; }
+  .free-datatable.free-datatable-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; }
+  .free-datatable.free-datatable-bordered table {
+    border: 1px solid #e0e0e0; }
+    .free-datatable.free-datatable-bordered table tr td,
+    .free-datatable.free-datatable-bordered table tr th {
+      border-left: 1px solid #e0e0e0; }
+      .free-datatable.free-datatable-bordered table tr td:first-child,
+      .free-datatable.free-datatable-bordered table tr th:first-child {
+        border-left: none; }
+  .free-datatable .free-datatable-head-selection,
+  .free-datatable .free-datatable-head-expand {
+    text-align: center;
+    min-width: 3.1rem;
+    width: 3.1rem;
+    word-break: break-all; }
+  .free-datatable .free-datatable-footer {
+    flex: 1 0 auto;
+    padding: .5rem 0; }
+  .free-datatable .free-datatable-scrollable .free-datatable-scrollable-head {
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    background: #f5f5f5; }
+    .free-datatable .free-datatable-scrollable .free-datatable-scrollable-head table {
+      border: none; }
+
+.free-iscroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px; }
+.free-iscroll::-webkit-scrollbar-thumb {
+  background-color: #6e6e6e;
+  outline: 1px solid #333; }
+.free-iscroll::-webkit-scrollbar-corner, .free-iscroll::-webkit-scrollbar-track {
+  background-color: #ccc; }
+
+/*# sourceMappingURL=datatable.component.css.map */

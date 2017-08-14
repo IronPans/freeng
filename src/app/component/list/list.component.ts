@@ -4,15 +4,14 @@ import {NgModule, Component, OnInit, AfterViewInit, Input,
 
 @Component({
   selector: 'free-list',
-  template: `<div class="free-list" #list><ng-content></ng-content></div>`,
-  styleUrls: ['./list.component.scss']
+  template: `<div class="free-list" #list><ng-content></ng-content></div>`
 })
 export class ListComponent implements OnInit, AfterViewInit {
 
   @Input() hover: boolean;
   @Input() line: boolean;
   @ViewChild('list') list: ElementRef;
-  constructor(private renderer2: Renderer2) {}
+  constructor(public renderer2: Renderer2) {}
 
   ngOnInit() {}
 
@@ -47,13 +46,16 @@ export class ListItemComponent {
 
 @Component({
   selector: 'free-avatar',
-  template:  `<div class="free-avatar" #avatar><ng-content select="free-image"></ng-content></div>`
+  template:  `<div class="free-avatar" #avatar [class.free-avatar-circle]="circle">
+    <ng-content select="free-image"></ng-content>
+  </div>`
 })
 
 export class ListAvatarComponent implements AfterViewInit {
   @Input() large: boolean;
   @ViewChild('avatar') avatar: ElementRef;
-  constructor(private renderer2: Renderer2) {}
+  @Input() circle: boolean;
+  constructor(public renderer2: Renderer2) {}
 
   ngAfterViewInit() {
     if (this.large) {

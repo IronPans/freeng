@@ -1,23 +1,90 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Component, OnInit, AfterViewInit,
+import { NgModule, Component, AfterViewInit,
   Input, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'free-loading',
-  templateUrl: './loading.component.html',
-  styleUrls: ['./loading.component.scss']
-})
-export class LoadingComponent implements OnInit, AfterViewInit {
-  @Input() type: string;
-  @Input() color: string;
-  @ViewChild('container') container: ElementRef;
-  constructor(private renderer2: Renderer2) { }
+  template: `
+    <div class="free-loading" [ngSwitch]="type" #container>
+      <div class="loader circle-line small" *ngSwitchCase="'circleLine'">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="loader circle-line-spin small" *ngSwitchCase="'circleLineSpin'">
+        <div class="circle-line-inner">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="loader circle-round-fade small" *ngSwitchCase="'circleRoundFade'">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="loader line-square small" *ngSwitchCase="'lineSquare'">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="loader line-round small" *ngSwitchCase="'lineRound'">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="loader line-bounce small" *ngSwitchCase="'lineBounce'">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="loader circle-spin small" *ngSwitchCase="'circleSpin'">
+        <div class="loader-placeholder"></div>
+      </div>
+      <div class="loader circle-round small" *ngSwitchDefault>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  ngOnInit() {}
+    </div>
+  `
+})
+export class LoadingComponent implements AfterViewInit {
+  @Input() type: string;
+  @Input() theme: string;
+  @ViewChild('container') container: ElementRef;
+  constructor(public renderer2: Renderer2) { }
 
   ngAfterViewInit() {
-   if (this.color) {
-     this.renderer2.addClass(this.container.nativeElement, `free-${this.color}`);
+   if (this.theme) {
+     this.renderer2.addClass(this.container.nativeElement, `free-${this.theme}`);
    }
   }
 }

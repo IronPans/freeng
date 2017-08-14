@@ -1,0 +1,22 @@
+:host /deep/ .draggable-test-item {
+  padding: 10px;
+  border-bottom: 1px solid #d9d9d9; }
+  :host /deep/ .draggable-test-item:last-child {
+    border: none; }
+:host /deep/ .drop-box,
+:host /deep/ free-draggable {
+  width: 50%;
+  min-height: 15rem;
+  padding: .5rem;
+  border: 1px solid #d9d9d9; }
+  :host /deep/ .drop-box .free-draggable-item,
+  :host /deep/ free-draggable .free-draggable-item {
+    border: 1px solid #d9d9d9;
+    margin-bottom: .5rem; }
+:host /deep/ .drop-box {
+  border-left: none; }
+  :host /deep/ .drop-box .free-list-item {
+    border: 1px solid #d9d9d9;
+    margin-bottom: .5rem; }
+
+/*# sourceMappingURL=main-draggable.component.css.map */

@@ -1,24 +1,24 @@
-:host /deep/ .free-switch {
+.free-switch {
   position: relative;
   overflow: hidden;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: space-between; }
-  :host /deep/ .free-switch input {
+  .free-switch input {
     display: none; }
-  :host /deep/ .free-switch input[type='checkbox']:checked + .free-switch-media .switch-label {
+  .free-switch input[type='checkbox']:checked + .free-switch-media .switch-label {
     background: #1ABC9C; }
-    :host /deep/ .free-switch input[type='checkbox']:checked + .free-switch-media .switch-label:after {
+    .free-switch input[type='checkbox']:checked + .free-switch-media .switch-label:after {
       background: #1ABC9C;
       -webkit-transform: translate3d(1rem, 0, 0);
       transform: translate3d(1rem, 0, 0); }
-  :host /deep/ .free-switch .free-switch-inner {
+  .free-switch .free-switch-inner {
     -webkit-flex: 1;
     flex: 1;
     padding: 0.5rem;
     order: 3; }
-  :host /deep/ .free-switch .switch-label {
+  .free-switch .switch-label {
     position: relative;
     display: block;
     width: 2.5rem;
@@ -27,12 +27,12 @@
     background: #aaa;
     -webkit-transition: all 0.35s;
     transition: all 0.35s; }
-    :host /deep/ .free-switch .switch-label:before, :host /deep/ .free-switch .switch-label:after {
+    .free-switch .switch-label:before, .free-switch .switch-label:after {
       content: '';
       position: absolute;
       -webkit-transition: all 0.35s;
       transition: all 0.35s; }
-    :host /deep/ .free-switch .switch-label:after {
+    .free-switch .switch-label:after {
       top: 4px;
       left: 4px;
       bottom: 4px;
@@ -41,14 +41,14 @@
       border-radius: 50%;
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
-    :host /deep/ .free-switch .switch-label:before {
+    .free-switch .switch-label:before {
       background: #fff;
       top: 2px;
       left: 2px;
       right: 2px;
       bottom: 2px;
       border-radius: 999px; }
-  :host /deep/ .free-switch .free-switch-media {
+  .free-switch .free-switch-media {
     -webkit-order: 2;
     order: 2;
     display: -moz-box;
@@ -60,152 +60,87 @@
     -webkit-align-items: center;
     align-items: center;
     margin-left: 3px; }
-:host /deep/ .free-switch.free-switch-2 .switch-label {
-  width: 2rem;
-  background: #fff; }
-  :host /deep/ .free-switch.free-switch-2 .switch-label:before {
-    background: #bdbdbd;
-    top: 0.45rem;
-    bottom: 0.45rem;
-    left: 0;
-    right: 0; }
-  :host /deep/ .free-switch.free-switch-2 .switch-label:after {
-    background: whitesmoke;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
-    left: 0; }
-:host /deep/ .free-switch.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #fff; }
-  :host /deep/ .free-switch.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-    background: #1ABC9C; }
-  :host /deep/ .free-switch.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #fff;
-    -webkit-transform: translate3d(1rem, 0, 0);
-    transform: translate3d(1rem, 0, 0); }
-:host /deep/ .free-switch.free-switch-3 .switch-label {
-  background: #fff; }
-  :host /deep/ .free-switch.free-switch-3 .switch-label:before {
-    background: transparent;
-    border: solid 2px #e6e6e6;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
-  :host /deep/ .free-switch.free-switch-3 .switch-label:after {
+  .free-switch.free-switch-2 .switch-label {
+    width: 2rem;
+    background: #fff; }
+    .free-switch.free-switch-2 .switch-label:before {
+      background: #bdbdbd;
+      top: 0.45rem;
+      bottom: 0.45rem;
+      left: 0;
+      right: 0; }
+    .free-switch.free-switch-2 .switch-label:after {
+      background: whitesmoke;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+      left: 0; }
+  .free-switch.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label {
+    background: #fff; }
+    .free-switch.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+      background: #1ABC9C; }
+    .free-switch.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:after {
+      background: #fff;
+      -webkit-transform: translate3d(1rem, 0, 0);
+      transform: translate3d(1rem, 0, 0); }
+  .free-switch.free-switch-3 .switch-label {
+    background: #fff; }
+    .free-switch.free-switch-3 .switch-label:before {
+      background: transparent;
+      border: solid 2px #e6e6e6;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0; }
+    .free-switch.free-switch-3 .switch-label:after {
+      background: #fff;
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15); }
+  .free-switch.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:after {
     background: #fff;
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15); }
-:host /deep/ .free-switch.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-  background: #fff;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15); }
-:host /deep/ .free-switch.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #1ABC9C; }
-:host /deep/ .free-switch.free-switch-green input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #46be8a; }
-  :host /deep/ .free-switch.free-switch-green input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #46be8a; }
-:host /deep/ .free-switch.free-switch-green.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #46be8a; }
-:host /deep/ .free-switch.free-switch-green.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #46be8a; }
-:host /deep/ .free-switch.free-switch-deepblue input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #115d8e; }
-  :host /deep/ .free-switch.free-switch-deepblue input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #115d8e; }
-:host /deep/ .free-switch.free-switch-deepblue.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #115d8e; }
-:host /deep/ .free-switch.free-switch-deepblue.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #115d8e; }
-:host /deep/ .free-switch.free-switch-blue input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #677ae4; }
-  :host /deep/ .free-switch.free-switch-blue input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #677ae4; }
-:host /deep/ .free-switch.free-switch-blue.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #677ae4; }
-:host /deep/ .free-switch.free-switch-blue.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #677ae4; }
-:host /deep/ .free-switch.free-switch-lightblue input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #169e9f; }
-  :host /deep/ .free-switch.free-switch-lightblue input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #169e9f; }
-:host /deep/ .free-switch.free-switch-lightblue.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #169e9f; }
-:host /deep/ .free-switch.free-switch-lightblue.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #169e9f; }
-:host /deep/ .free-switch.free-switch-yellow input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #fa9e0c; }
-  :host /deep/ .free-switch.free-switch-yellow input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #fa9e0c; }
-:host /deep/ .free-switch.free-switch-yellow.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #fa9e0c; }
-:host /deep/ .free-switch.free-switch-yellow.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #fa9e0c; }
-:host /deep/ .free-switch.free-switch-red input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #f96868; }
-  :host /deep/ .free-switch.free-switch-red input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #f96868; }
-:host /deep/ .free-switch.free-switch-red.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #f96868; }
-:host /deep/ .free-switch.free-switch-red.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #f96868; }
-:host /deep/ .free-switch.free-switch-purple input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #6633B9; }
-  :host /deep/ .free-switch.free-switch-purple input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #6633B9; }
-:host /deep/ .free-switch.free-switch-purple.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #6633B9; }
-:host /deep/ .free-switch.free-switch-purple.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #6633B9; }
-:host /deep/ .free-switch.free-switch-orange input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #f2a654; }
-  :host /deep/ .free-switch.free-switch-orange input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #f2a654; }
-:host /deep/ .free-switch.free-switch-orange.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #f2a654; }
-:host /deep/ .free-switch.free-switch-orange.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #f2a654; }
-:host /deep/ .free-switch.free-switch-brown input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #8d6658; }
-  :host /deep/ .free-switch.free-switch-brown input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #8d6658; }
-:host /deep/ .free-switch.free-switch-brown.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #8d6658; }
-:host /deep/ .free-switch.free-switch-brown.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #8d6658; }
-:host /deep/ .free-switch.free-switch-cyan input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #57c7d4; }
-  :host /deep/ .free-switch.free-switch-cyan input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #57c7d4; }
-:host /deep/ .free-switch.free-switch-cyan.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #57c7d4; }
-:host /deep/ .free-switch.free-switch-cyan.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #57c7d4; }
-:host /deep/ .free-switch.free-switch-pink input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #f96197; }
-  :host /deep/ .free-switch.free-switch-pink input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #f96197; }
-:host /deep/ .free-switch.free-switch-pink.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #f96197; }
-:host /deep/ .free-switch.free-switch-pink.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #f96197; }
-:host /deep/ .free-switch.free-switch-teal input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #3aa99e; }
-  :host /deep/ .free-switch.free-switch-teal input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #3aa99e; }
-:host /deep/ .free-switch.free-switch-teal.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #3aa99e; }
-:host /deep/ .free-switch.free-switch-teal.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #3aa99e; }
-:host /deep/ .free-switch.free-switch-dark input[type='checkbox']:checked + .free-switch-media .switch-label {
-  background: #393D49; }
-  :host /deep/ .free-switch.free-switch-dark input[type='checkbox']:checked + .free-switch-media .switch-label:after {
-    background: #393D49; }
-:host /deep/ .free-switch.free-switch-dark.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  background: #393D49; }
-:host /deep/ .free-switch.free-switch-dark.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
-  border-color: #393D49; }
-
-.free-switch input[type='checkbox']:disabled + .free-switch-media .switch-label {
-  background: rgba(170, 170, 170, 0.4) !important; }
-  .free-switch input[type='checkbox']:disabled + .free-switch-media .switch-label:after {
+  .free-switch.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    border-color: #1ABC9C; }
+  .free-switch.free-primary input[type='checkbox']:checked + .free-switch-media .switch-label {
+    background: #177bbb; }
+    .free-switch.free-primary input[type='checkbox']:checked + .free-switch-media .switch-label:after {
+      background: #177bbb; }
+  .free-switch.free-primary.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    background: #177bbb; }
+  .free-switch.free-primary.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    border-color: #177bbb; }
+  .free-switch.free-info input[type='checkbox']:checked + .free-switch-media .switch-label {
+    background: #1ccacc; }
+    .free-switch.free-info input[type='checkbox']:checked + .free-switch-media .switch-label:after {
+      background: #1ccacc; }
+  .free-switch.free-info.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    background: #1ccacc; }
+  .free-switch.free-info.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    border-color: #1ccacc; }
+  .free-switch.free-success input[type='checkbox']:checked + .free-switch-media .switch-label {
+    background: #1aae88; }
+    .free-switch.free-success input[type='checkbox']:checked + .free-switch-media .switch-label:after {
+      background: #1aae88; }
+  .free-switch.free-success.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    background: #1aae88; }
+  .free-switch.free-success.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    border-color: #1aae88; }
+  .free-switch.free-warning input[type='checkbox']:checked + .free-switch-media .switch-label {
+    background: #fbb23e; }
+    .free-switch.free-warning input[type='checkbox']:checked + .free-switch-media .switch-label:after {
+      background: #fbb23e; }
+  .free-switch.free-warning.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    background: #fbb23e; }
+  .free-switch.free-warning.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    border-color: #fbb23e; }
+  .free-switch.free-danger input[type='checkbox']:checked + .free-switch-media .switch-label {
+    background: #e33244; }
+    .free-switch.free-danger input[type='checkbox']:checked + .free-switch-media .switch-label:after {
+      background: #e33244; }
+  .free-switch.free-danger.free-switch-2 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    background: #e33244; }
+  .free-switch.free-danger.free-switch-3 input[type='checkbox']:checked + .free-switch-media .switch-label:before {
+    border-color: #e33244; }
+  .free-switch input[type='checkbox']:disabled + .free-switch-media .switch-label {
     background: rgba(170, 170, 170, 0.4) !important; }
+    .free-switch input[type='checkbox']:disabled + .free-switch-media .switch-label:after {
+      background: rgba(170, 170, 170, 0.4) !important; }
 
 /*# sourceMappingURL=switch.component.css.map */

@@ -1,44 +1,96 @@
 # FreeNG
 
-FreeNG是一款完全响应式的前端UI框架，它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+UI Components for Angular.
 
-**启动项目的步骤**
+## Demo
 
-```
-// 下载
-git clone https://github.com/IronPans/freeng.git
+View all the Components in action at [http://ghmagical.com/freeng](http://ghmagical.com/freeng)
 
-// 进入项目
-cd freeng
+## Installation
 
-// 安装依赖(国内推荐使用cnpm install)
-npm install
-
-// 启动项目
-npm start
-```
-接着打开浏览器并访问`http://localhost:8080/`。
-
-**打包项目**
-
-```
-npm run build
+```bash
+npm install freeng --save
 ```
 
-**GitHub**
+## Usage
 
+UI components are configured as modules, once FreeNG is downloaded and configured, modules and apis can be imported from 'freeng/freeng' shorthand in your application code.
+
+```js
+import {AccordionModule} from 'freeng/freeng'; //accordion
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [AccordionModule],  
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
 ```
-https://github.com/IronPans/freeng
+
+Importing from freeng/freeng will load all other components as well, to only import a specific component pattern would result in a smaller bundle size.
+
+```js
+//import {ComponentModule} from 'freeng/component/componentname/componentname.component';
+
+import {AccordionModule} from 'freeng/component/accordion/accordion.component'; 
+
+//import {DirectiveModule} from 'freeng/component/directivename/directivename.directive'; 
+
+import {ButtonModule} from 'freeng/component/button/button.directive';
 ```
 
-**线上预览**
+## Dependencies
 
-[FreeNG线上预览](http://ghmagical.com/freeng)
+FreeNG having some 3rd party dependencies(Like Chart.js). In addition, components require font-awesome for icons.
 
-**问题反馈**
+The css dependencies are as follows, note that font-awesome should be loaded before FreeNG css.
 
-[问题反馈](http://ghmagical.com/article/page/id/ZwMHNDRWAFeR)
+```html
+<link rel="stylesheet" href="<YOUR_PATH>/font-awesome.min.css" />
+<link rel="stylesheet" href="/node_modules/freeng/resources/freeng.min.css" /> 
+<link rel="stylesheet" href="/node_modules/freeng/resources/themes/blue.css" />
+```
 
-**交流群**
+## Angular CLI Integration
 
-QQ交流群：`540629196`
+Angular CLI is the official CLI tool for Angular. We strongly suggest using Angular CLI when starting an Angular project.
+
+**Dependencies**
+
+Add FreeNG and FontAwesome as a dependency
+```js
+"dependencies": {
+    "freeng": "^0.1.2",
+    "font-awesome": "^4.7.0"
+}
+```
+
+**Styles Configuration**
+
+Configure required styles at the styles section:
+```js
+"styles": [
+    "styles.css"
+]
+```
+
+**styles.css**
+
+```css
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import '../node_modules/freeng/resources/freeng.min.css';
+@import '../node_modules/freeng/resources/themes/blue.css';
+```
+
+## What's changed?
+
+See the [Changelog](CHANGELOG.md).
+
+## Getting Help
+
+- [Getting Help](http://ghmagical.com/article/page/id/ZwMHNDRWAFeR)
+- QQ Group：540629196
+
+## Licence
+
+MIT License

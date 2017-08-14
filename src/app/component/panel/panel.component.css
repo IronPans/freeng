@@ -1,10 +1,3 @@
-.free-panel-header {
-  position: relative;
-  font-size: .85rem;
-  font-weight: bold;
-  padding: .35rem .75rem;
-  border-bottom: 1px solid rgba(120, 130, 140, 0.13); }
-
 .free-panel {
   background: #fff;
   color: rgba(0, 0, 0, 0.87);
@@ -17,11 +10,16 @@
     height: 0;
     clear: both;
     visibility: hidden; }
-
-.free-panel-inner {
-  padding: .75rem; }
-
-.free-panel.theme-black .free-panel-header {
-  border-top-color: #313b3f; }
+  .free-panel .free-panel-header {
+    position: relative;
+    font-size: .85rem;
+    padding: .35rem .75rem;
+    border-bottom: 1px solid rgba(120, 130, 140, 0.13); }
+    .free-panel .free-panel-header f-header, .free-panel .free-panel-header > span {
+      font-weight: bold; }
+  .free-panel .free-panel-inner {
+    padding: .75rem; }
+  .free-panel.theme-black .free-panel-header {
+    border-top-color: #313b3f; }
 
 /*# sourceMappingURL=panel.component.css.map */

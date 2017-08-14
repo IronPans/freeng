@@ -1,0 +1,112 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        分页器
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-pagination</h3>
+        <p>采用分页的形式分隔长列表</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>maxPage</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>最多显示页数，可选。默认5.</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>row</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>每页显示的数据数，可选，默认为10</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>activeIndex</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>当前页码，可选。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+        <h3 class="free-title">事件</h3>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>事件</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onPageChange</free-table-cell>
+              <free-table-cell>每次点击触发，返回参数类似： {{'{activeIndex: 1}'}}</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;PaginationModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-pagination [total]="100" [row]="10" (onPageChange)="onChange1($event)"></free-pagination>
+            <p style="width: 100%;padding-top: 20px;">当前页码：{{activeIndex1}}</p>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-pagination [total]="8"&gt;&lt;/free-pagination&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">ActiveIndex</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-pagination [total]="100" [row]="10" [activeIndex]="6"
+                             (onPageChange)="onChange2($event)"></free-pagination>
+            <p style="width: 100%;padding-top: 20px;">当前页码：{{activeIndex2}}</p>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-pagination [total]="8"&gt;&lt;/free-pagination&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+    </div>
+  </div>
+
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

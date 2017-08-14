@@ -1,22 +1,20 @@
 @import "../../../assets/sass/mixin";
 
-:host /deep/ {
-  .free-mask {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    @include flexbox;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    z-index: 9999;
-    background: rgba(0, 0, 0, .7);
-  }
+.free-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include flexbox;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  z-index: 9999;
+  background: rgba(0, 0, 0, .7);
 
-  .free-mask .free-loading span {
+  .free-loading span {
     background: #fff !important;
   }
 }

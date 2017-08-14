@@ -1,55 +1,59 @@
-:host /deep/ .free-fullpage-container,
-:host /deep/ .free-fullpage-wrapper,
-:host /deep/ .free-fullpage-slide {
+.free-fullpage-container {
   position: relative;
   width: 100%;
   height: 100%; }
-:host /deep/ .free-fullpage-wrapper {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  transition-property: transform; }
-:host /deep/ .free-fullpage-wrapper {
-  transform: translate3d(0, 0, 0);
-  transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.8s; }
-:host /deep/ .free-fullpage-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0; }
-:host /deep/ .free-fullpage-pagination {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  width: 50px;
-  padding-left: 20px;
-  transform: translate3d(0, -50%, 0);
-  transition: .3s;
-  z-index: 1000; }
-:host /deep/ .free-pagination-bullet {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  background: #fff;
-  cursor: pointer;
-  margin: 15px 0;
-  display: block; }
-  :host /deep/ .free-pagination-bullet:before {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    top: -4px;
-    left: -4px;
-    border-radius: 50%;
-    z-index: -1;
-    transition: all .3s; }
-  :host /deep/ .free-pagination-bullet:not(.free-pagination-bullet-active):hover:before {
-    background: rgba(17, 93, 142, 0.7); }
-  :host /deep/ .free-pagination-bullet.free-pagination-bullet-active:before {
-    background: rgba(17, 93, 142, 0.7);
-    animation: fadeIn .83s ease-in-out infinite; }
+  .free-fullpage-container .free-fullpage-wrapper,
+  .free-fullpage-container .free-fullpage-slide {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  .free-fullpage-container .free-fullpage-wrapper {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transition-property: transform; }
+  .free-fullpage-container .free-fullpage-wrapper {
+    transform: translate3d(0, 0, 0);
+    transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.8s; }
+  .free-fullpage-container .free-fullpage-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; }
+  .free-fullpage-container .free-fullpage-pagination {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    width: 50px;
+    padding-left: 20px;
+    transform: translate3d(0, -50%, 0);
+    transition: .3s;
+    z-index: 1000; }
+  .free-fullpage-container .free-pagination-bullet {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #fff;
+    cursor: pointer;
+    margin: 15px 0;
+    display: block; }
+    .free-fullpage-container .free-pagination-bullet:before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: -4px;
+      left: -4px;
+      border-radius: 50%;
+      z-index: -1;
+      transition: all .3s; }
+    .free-fullpage-container .free-pagination-bullet:not(.free-pagination-bullet-active):hover:before {
+      background: rgba(17, 93, 142, 0.7); }
+    .free-fullpage-container .free-pagination-bullet.free-pagination-bullet-active:before {
+      background: rgba(17, 93, 142, 0.7);
+      animation: fadeIn .83s ease-in-out infinite; }
+
 @keyframes fadeIn {
   from {
     opacity: 0.1; }

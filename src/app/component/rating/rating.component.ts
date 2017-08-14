@@ -6,26 +6,30 @@ import { NgModule, Component, OnInit, AfterViewInit, Input, Output, EventEmitter
   selector: 'free-rating',
   template: `
     <div class="free-rating" #container>
-      <span class="free-rating-item" *ngFor="let star of starArray;let i = index"
+      <span class="free-rating-item" *ngFor="let star of starArray;let i = index" (mouseover)="onMouseover($event, i)"
           (click)="onClick($event, i)">
         <i class="fa" [ngClass]="{'fa-star-o': (!value || i >= value), 'fa-star': (i < value)}"></i>
       </span>
     </div>
-  `,
-  styleUrls: ['./rating.component.scss']
+  `
 })
 export class RatingComponent implements OnInit, AfterViewInit {
 
-  @Input() stars = 5;
-  @Input() type = 'star';
+  @Input() stars: number;
+  @Input() type: string;
   @Input() value: number;
   @Input() readonly: boolean;
-  @Input() color: string;
-  starArray: Number[];
+  @Input() theme: string;
+  @Input() hover: boolean;
   @ViewChild('container') container: ElementRef;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
+  starArray: Number[];
+  currentValue: number;
 
-  constructor(private renderer2: Renderer2) { }
+  constructor(public renderer2: Renderer2) {
+    this.stars = 5;
+    this.type = 'star'
+  }
 
   ngOnInit() {
     this.starArray = [];
@@ -35,8 +39,8 @@ export class RatingComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if (this.color) {
-      this.renderer2.addClass(this.container.nativeElement, `free-${this.color}`);
+    if (this.theme) {
+      this.renderer2.addClass(this.container.nativeElement, `free-${this.theme}`);
     }
   }
 
@@ -45,6 +49,17 @@ export class RatingComponent implements OnInit, AfterViewInit {
       this.value = value + 1;
       this.onChange.emit(this.value);
     }
+  }
+
+  onMouseover($event: any, value: number) {
+    if (this.hover && !this.readonly) {
+      this.value = value + 1;
+      this.currentValue = this.value;
+    }
+  }
+
+  onMouseout() {
+
   }
 }
 

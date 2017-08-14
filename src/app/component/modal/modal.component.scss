@@ -6,6 +6,7 @@
   min-width: 10rem;
   border-radius: 2px;
   color: #fff;
+  z-index: 9999;
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 
   &.free-modal-spinner {
@@ -32,6 +33,10 @@
 
   .free-modal-footer {
     text-align: right;
+
+    button {
+      margin: 0;
+    }
   }
 
   .free-modal-close {
@@ -61,16 +66,12 @@
     color: #333;
     padding: 0 .5rem;
   }
-}
 
-@each $theme, $color in $theme {
-  :host-context(.free-theme-#{$theme}) /deep/ {
-    .free-modal {
-      background: $color;
+  @each $theme, $color in $theme {
+    &.free-#{$theme} {
+      background: $color !important;
     }
   }
-
-  .free-modal.free-#{$theme} {
-    background: $color !important;
-  }
 }
+
+

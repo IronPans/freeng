@@ -1,0 +1,275 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        可输入或选择日期的选择器
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-calendar</h3>
+        <p>日期选择器</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>defaultDate</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置默认值，只在初始化时生效一次，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>minDate</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置可选择的最小日期，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>maxDate</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置可选择的最大日期，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>firstDayOfWeek</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置第一天为星期几，可选，默认为7(也就是星期天）</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>lang</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置语言，可选，默认是“en”。(中文为“cn”）</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>format</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置日期格式，可选，默认为“yyyy-MM-dd”</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>hourFormat</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置小时制，可选，默认24小时</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>pholder</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置提示信息，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>readonly</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置是否可输入，可选，默认为true</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>showTime</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示时间(时分秒)，可选，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>inline</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否内联显示，可选，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>width</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置宽度(只有内联显示时才生效)，可选，默认为250</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <div class="free-demo-row">
+        <h3 class="free-title">事件</h3>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>事件</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>当选择值时触发的回调事件，可选。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;CalendarModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px">
+              <free-calendar></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-calendar&gt;&lt;/free-calendar&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">DefaultDate</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px">
+              <free-calendar [defaultDate]="defaultDate"></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-calendar [defaultDate]="defaultDate"&gt;&lt;/free-calendar&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="javascript">
+              this.defaultDate = '2015/10/11';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">minDate and maxDate</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px; display: flex;">
+              <span>范围选择：</span>
+              <free-calendar [(ngModel)]="minDate" [maxDate]="maxDate"></free-calendar>
+              <span> - </span>
+              <free-calendar [(ngModel)]="maxDate" [minDate]="minDate"></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;span&gt;范围选择：&lt;/span&gt;
+              &lt;free-calendar [(ngModel)]="minDate" [maxDate]="maxDate"&gt;&lt;/free-calendar&gt;
+              &lt;span&gt; - &lt;/span&gt;
+              &lt;free-calendar [(ngModel)]="maxDate" [minDate]="minDate"&gt;&lt;/free-calendar&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Disabled</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px; display: flex;">
+              <free-calendar [readonly]="true"></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-calendar [readonly]="true"&gt;&lt;/free-calendar&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">ShowTime</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px;">
+              <p style="margin-bottom: 1rem;">
+                <free-calendar [showTime]="true"></free-calendar>
+              </p>
+              <free-calendar [showTime]="true" [defaultDate]="'2014-10-11 20:10:10'"></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-calendar [showTime]="true"&gt;&lt;/free-calendar&gt;
+              &lt;free-calendar [showTime]="true" [defaultDate]="'2014-10-11 20:10:10'"&gt;&lt;/free-calendar&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">CN</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px">
+              <free-calendar lang="cn"></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-calendar lang="cn"&gt;&lt;/free-calendar&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Inline</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px">
+              <free-calendar [inline]="true"></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-calendar [inline]="true"&gt;&lt;/free-calendar&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

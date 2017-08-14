@@ -1,0 +1,79 @@
+.free-picker {
+  position: relative; }
+  .free-picker .free-color-picker-block {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #000; }
+  .free-picker .picker,
+  .free-picker .slider-picker {
+    cursor: pointer; }
+  .free-picker .free-color-input {
+    position: relative; }
+    .free-picker .free-color-input input {
+      border: 1px solid #d9d9d9;
+      border-radius: 3px;
+      height: 1.5rem;
+      padding: 0 .5rem; }
+    .free-picker .free-color-input .free-color-block {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 1.5rem;
+      height: calc(100% - 4px); }
+  .free-picker .free-color-picker {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: 1000;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px; }
+    .free-picker .free-color-picker .free-picking-area {
+      width: 198px;
+      height: 198px;
+      margin-bottom: 5px;
+      border: 1px solid #DDD;
+      position: relative; }
+    .free-picker .free-color-picker[data-mode='HSL'] .free-picking-area {
+      background: -ms-linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 50%, transparent 50%, black 100%), -ms-linear-gradient(to right, gray 0%, rgba(128, 128, 128, 0) 100%);
+      background: -moz-linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 50%, transparent 50%, black 100%), -moz-linear-gradient(to right, gray 0%, rgba(128, 128, 128, 0) 100%);
+      background: -o-linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 50%, transparent 50%, black 100%), -o-linear-gradient(to right, gray 0%, rgba(128, 128, 128, 0) 100%);
+      background: -webkit-linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 50%, transparent 50%, black 100%), -webkit-linear-gradient(to right, gray 0%, rgba(128, 128, 128, 0) 100%);
+      background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 50%, transparent 50%, black 100%), linear-gradient(to right, gray 0%, rgba(128, 128, 128, 0) 100%);
+      cursor: crosshair; }
+    .free-picker .free-color-picker .picker {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid #FFF;
+      position: absolute;
+      top: 45%;
+      left: 45%; }
+      .free-picker .free-color-picker .picker:before {
+        width: 8px;
+        height: 8px;
+        content: "";
+        position: absolute;
+        border: 1px solid #999;
+        border-radius: 50%; }
+    .free-picker .free-color-picker .free-hue-area {
+      background: -ms-linear-gradient(to right, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%, #00F 66.66%, #F0F 83.33%, #F00 100%);
+      background: -moz-linear-gradient(to right, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%, #00F 66.66%, #F0F 83.33%, #F00 100%);
+      background: -o-linear-gradient(to right, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%, #00F 66.66%, #F0F 83.33%, #F00 100%);
+      background: -webkit-linear-gradient(to right, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%, #00F 66.66%, #F0F 83.33%, #F00 100%);
+      background: linear-gradient(to right, #F00 0%, #FF0 16.66%, #0F0 33.33%, #0FF 50%, #00F 66.66%, #F0F 83.33%, #F00 100%); }
+    .free-picker .free-color-picker .free-hue-area, .free-picker .free-color-picker .alpha {
+      width: 198px;
+      height: 28px;
+      margin: 5px;
+      border: 1px solid #FFF; }
+    .free-picker .free-color-picker .slider-picker {
+      width: 6px;
+      height: calc(100% + 2px);
+      border: 2px solid #000;
+      position: relative;
+      top: -1px; }
+
+/*# sourceMappingURL=colorpicker.component.css.map */

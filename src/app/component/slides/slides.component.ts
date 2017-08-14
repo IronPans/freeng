@@ -9,7 +9,7 @@ import {DomRenderer} from '../common/dom';
 @Component({
   selector: 'free-slides',
   template: `
-    <div class="free-slides-container" [ngStyle]="styles" #container>
+    <div class="free-slides" [ngStyle]="styles" #container>
       <div class="free-slides-wrapper" #wrapper (mousedown)="onMousedown($event)"
            (mousemove)="onMousemove($event)" (mouseup)="onMouseup($event)">
         <ng-content></ng-content>
@@ -32,7 +32,6 @@ import {DomRenderer} from '../common/dom';
       </div>
     </div>
   `,
-  styleUrls: ['./slides.component.scss'],
   providers: [DomRenderer]
 })
 export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit {
@@ -68,7 +67,7 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
   loopActiveIndex = 0;
   loopAdditionalSlides = 2;
   autoplayTimeoutId: any;
-  constructor(private er: ElementRef, private domRender: DomRenderer) { }
+  constructor(public er: ElementRef, public domRender: DomRenderer) { }
 
   ngOnInit() {
     this.bullets = [];

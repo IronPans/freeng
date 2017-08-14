@@ -1,108 +1,110 @@
-:host /deep/ .free-select {
+.free-select {
   position: relative;
   display: inline-block;
   width: 7.5rem;
   height: 1.75rem;
   padding-left: .5rem;
-  border-bottom: 1px solid #d9d9d9; }
-:host /deep/ .free-select-input {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  cursor: pointer; }
-  :host /deep/ .free-select-input label {
+  border: 1px solid #d9d9d9; }
+  .free-select .free-select-input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer; }
+    .free-select .free-select-input label {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      position: relative;
+      width: calc(100% - 25px);
+      height: 100%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: transparent;
+      align-items: center; }
+    .free-select .free-select-input:before {
+      font-family: FontAwesome;
+      content: "\f0dd";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      display: inline-block;
+      padding: 0 .5rem;
+      line-height: 0;
+      transform: translate(0, -50%); }
+  .free-select .free-select-menu {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    min-width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    background: #fff;
+    z-index: 999; }
+    .free-select .free-select-menu .free-select-wrapper {
+      min-width: 100%;
+      max-height: 10rem;
+      overflow: hidden;
+      overflow-y: auto; }
+      .free-select .free-select-menu .free-select-wrapper li {
+        display: block;
+        padding: 5px 10px; }
+        .free-select .free-select-menu .free-select-wrapper li free-checkbox {
+          display: block; }
+        .free-select .free-select-menu .free-select-wrapper li:hover {
+          background: #eee; }
+        .free-select .free-select-menu .free-select-wrapper li.free-select-active {
+          background: #eee;
+          font-weight: bold; }
+  .free-select .free-select-item {
+    list-style: none;
+    cursor: pointer; }
+    .free-select .free-select-item.free-select-active {
+      background: #eee;
+      font-weight: bold; }
+  .free-select .free-select-item-content {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    position: relative;
-    width: calc(100% - 25px);
-    height: 100%;
-    padding: 5px 10px 0 0;
-    outline: none;
-    border: none;
-    cursor: pointer;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background: transparent;
+    justify-content: space-between;
     align-items: center; }
-  :host /deep/ .free-select-input:before {
-    font-family: FontAwesome;
-    content: "\f0dd";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    display: inline-block;
-    padding: 0 .5rem;
-    line-height: 0;
-    transform: translate(0, -50%); }
-:host /deep/ .free-select-menu {
-  position: absolute;
-  top: calc(100% + 2px);
-  left: 0;
-  min-width: 100%;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
-  background: #fff;
-  z-index: 999; }
-  :host /deep/ .free-select-menu .free-select-wrapper {
-    min-width: 100%;
-    max-height: 10rem;
-    overflow: hidden;
-    overflow-y: auto; }
-    :host /deep/ .free-select-menu .free-select-wrapper li {
-      display: block;
-      padding: 5px 10px; }
-      :host /deep/ .free-select-menu .free-select-wrapper li free-checkbox {
-        display: block; }
-      :host /deep/ .free-select-menu .free-select-wrapper li:hover {
-        background: #eee; }
-      :host /deep/ .free-select-menu .free-select-wrapper li.free-select-active {
-        background: #eee;
-        font-weight: bold; }
-:host /deep/ .free-select-item {
-  list-style: none;
-  cursor: pointer; }
-  :host /deep/ .free-select-item.free-select-active {
-    background: #eee;
-    font-weight: bold; }
-:host /deep/ .free-select-item-content {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  white-space: nowrap;
-  justify-content: space-between;
-  align-items: center; }
-:host /deep/ .free-select-filter {
-  position: relative;
-  padding: .5rem;
-  display: flex;
-  align-items: center; }
-:host /deep/ .free-select-inner {
-  position: relative; }
-  :host /deep/ .free-select-inner input {
-    width: 100%;
-    height: 1.5rem;
-    border: 1px solid #d9d9d9;
-    font-size: .65rem;
-    padding: 0 .5rem 0 1.5rem;
-    border-radius: 3px;
-    color: #666; }
-  :host /deep/ .free-select-inner i.fa {
-    position: absolute;
-    top: 50%;
-    left: .5rem;
-    color: #999;
-    text-align: center;
-    transform: translate(0, -50%); }
-:host /deep/ .iscroll::-webkit-scrollbar {
+  .free-select .free-select-filter {
+    position: relative;
+    padding: .5rem;
+    display: flex;
+    align-items: center; }
+  .free-select .free-select-inner {
+    position: relative; }
+    .free-select .free-select-inner input {
+      width: 100%;
+      height: 1.5rem;
+      border: 1px solid #d9d9d9;
+      font-size: .65rem;
+      padding: 0 .5rem 0 1.5rem;
+      border-radius: 3px;
+      color: #666; }
+    .free-select .free-select-inner i.fa {
+      position: absolute;
+      top: 50%;
+      left: .5rem;
+      color: #999;
+      text-align: center;
+      transform: translate(0, -50%); }
+
+.free-iscroll::-webkit-scrollbar {
   height: 6px;
   width: 6px; }
-:host /deep/ .iscroll::-webkit-scrollbar-thumb {
+.free-iscroll::-webkit-scrollbar-thumb {
   background-color: #6e6e6e;
   outline: 1px solid #333; }
+.free-iscroll::-webkit-scrollbar-corner, .free-iscroll::-webkit-scrollbar-track {
+  background-color: #ccc; }
 
 /*# sourceMappingURL=select.component.css.map */

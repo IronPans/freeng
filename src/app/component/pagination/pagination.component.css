@@ -1,45 +1,37 @@
-:host /deep/ .free-pagination {
+.free-pagination {
   display: flex;
   justify-content: center; }
-  :host /deep/ .free-pagination > ul {
+  .free-pagination > ul {
     display: flex; }
-    :host /deep/ .free-pagination > ul li {
+    .free-pagination > ul li {
       list-style: none; }
-:host /deep/ .free-pagination-item {
-  margin: 0 2px;
-  position: relative;
-  vertical-align: top; }
-  :host /deep/ .free-pagination-item a {
-    display: inline-block;
-    min-width: 16px;
-    padding: 3px 5px;
-    line-height: 20px;
-    text-decoration: none;
-    box-sizing: content-box;
-    text-align: center;
-    border-radius: 4px;
-    color: #666;
-    border: 1px solid #d9d9d9;
-    background-origin: border-box;
-    background-image: linear-gradient(to bottom, #fff, #eee);
-    text-shadow: 1px 1px #fff;
-    cursor: pointer; }
-    :host /deep/ .free-pagination-item a:hover {
-      background-color: #fafafa;
-      outline: 0;
-      background-image: none; }
-  :host /deep/ .free-pagination-item.free-pagination-active a {
-    background: #009dd8;
-    color: #fff;
-    background-origin: border-box;
-    background-image: linear-gradient(to bottom, #00b4f5, #008dc5);
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2); }
-    :host /deep/ .free-pagination-item.free-pagination-active a:hover {
-      cursor: auto;
-      background: #009dd8;
-      background-image: none; }
-  :host /deep/ .free-pagination-item.free-pagination-disabled a {
-    opacity: 0.4;
-    pointer-events: none; }
+  .free-pagination .free-pagination-item {
+    margin: 0 2px;
+    position: relative;
+    vertical-align: top; }
+    .free-pagination .free-pagination-item a {
+      display: inline-block;
+      min-width: 16px;
+      padding: 3px 5px;
+      line-height: 20px;
+      text-decoration: none;
+      box-sizing: content-box;
+      text-align: center;
+      border-radius: 4px;
+      color: #666;
+      border: 1px solid #d9d9d9;
+      background-origin: border-box;
+      cursor: pointer; }
+      .free-pagination .free-pagination-item a:hover {
+        background: #115d8e;
+        color: #fff; }
+    .free-pagination .free-pagination-item.free-pagination-active a {
+      color: #fff;
+      background: #115d8e; }
+      .free-pagination .free-pagination-item.free-pagination-active a:hover {
+        cursor: auto; }
+    .free-pagination .free-pagination-item.free-pagination-disabled a {
+      opacity: 0.4;
+      pointer-events: none; }
 
 /*# sourceMappingURL=pagination.component.css.map */

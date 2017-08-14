@@ -13,8 +13,7 @@ import {
       <input spellcheck="false" type="text" *ngIf="placeholder" placeholder="placeholder"
              (focus)="onFocus()" (blur)="onFocus()" (keyup.enter)="onEnter($event)">
     </div>
-  `,
-  styleUrls: ['./chip.component.scss']
+  `
 })
 
 export class ChipGroupComponent implements OnInit {
@@ -23,7 +22,7 @@ export class ChipGroupComponent implements OnInit {
   set chips(value: any) {
     this.value = [];
     for (const v of value) {
-      const isExited = this.value.find((elem, index, array) => {
+      const isExited = this.value.find((elem) => {
         return elem.value === v.value;
       });
       if (!isExited) {
@@ -36,8 +35,8 @@ export class ChipGroupComponent implements OnInit {
     return this.value;
   }
 
-  @Output() chipsChange: EventEmitter<any> = new EventEmitter();
-  @Input() placeholder: boolean;
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
+  @Input() placeholder: string;
   chipClass = {};
   focus: boolean;
   groups: ChipComponent[] = [];
@@ -57,16 +56,19 @@ export class ChipGroupComponent implements OnInit {
 
   addGroup(value: ChipComponent) {
     this.groups.push(value);
+    if (this.placeholder) {
+      this.onChange.emit(this.value);
+    }
   }
 
   removeGroup(value: ChipComponent) {
-    const index = this.value.findIndex((elem, i, array) => {
+    const index = this.value.findIndex((elem) => {
       return elem.value === value.value;
     });
     if (index !== -1) {
       this.groups.splice(index, 1);
       this.value.splice(index, 1);
-      this.chipsChange.emit(this.value);
+      this.onChange.emit(this.value);
     }
   }
 
@@ -82,6 +84,7 @@ export class ChipGroupComponent implements OnInit {
         value: value,
         delete: true
       });
+      this.value.push(value);
       this.chips = this.chips.slice();
       event.target.value = '';
     }
@@ -98,11 +101,11 @@ export class ChipGroupComponent implements OnInit {
 })
 export class ChipComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  protected group: ChipGroupComponent;
+  group: ChipGroupComponent;
   @Input() value: any;
   @Input() delete: boolean;
   @ViewChild('container') container: ElementRef;
-  constructor(private renderer2: Renderer2,
+  constructor(public renderer2: Renderer2,
               group: ChipGroupComponent) {
     this.group = group;
   }

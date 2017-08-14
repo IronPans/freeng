@@ -1,83 +1,83 @@
-:host /deep/ .suspend {
+.suspend {
   position: relative;
   font-size: 20px;
   width: 2.8em;
   height: 2.8em;
   z-index: 99; }
-:host /deep/ .suspend-btn {
-  z-index: 99;
-  width: 100%;
-  height: 100%; }
-:host /deep/ .suspend-btn,
-:host /deep/ .suspend-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  color: #fff;
-  background-color: #115d8e;
-  border-color: #e68900;
-  text-align: center;
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12); }
-  :host /deep/ .suspend-btn:after,
-  :host /deep/ .suspend-item:after {
-    content: "";
+  .suspend .suspend-btn {
+    z-index: 99;
+    width: 100%;
+    height: 100%; }
+  .suspend .suspend-btn,
+  .suspend .suspend-item {
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #fff;
+    background-color: #115d8e;
+    border-color: #e68900;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12); }
+    .suspend .suspend-btn:after,
+    .suspend .suspend-item:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      border-radius: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      transform: scale(0); }
+  .suspend .suspend-item {
+    opacity: 0;
+    top: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    border-radius: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    transform: scale(0); }
-:host /deep/ .suspend-item {
-  opacity: 0;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  transform: scale(0.8); }
-:host /deep/ .suspend-vertical .suspend-item,
-:host /deep/ .suspend-vertical-reverse .suspend-item {
-  left: 0; }
-:host /deep/ .suspend-item,
-:host /deep/ .suspend-item:after,
-:host /deep/ .suspend-btn:after,
-:host /deep/ .suspend-btn span {
-  transition: all .3s ease-out; }
-:host /deep/ .suspend-item:hover:after,
-:host /deep/ .suspend-btn:hover:after {
-  transform: scale(2);
-  opacity: .6; }
-:host /deep/ .burge {
-  position: absolute;
-  top: 0;
-  left: 0; }
-:host /deep/ .burge-line span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  height: 3px;
-  background: #fff;
-  transform: translate(-50%, -50%); }
-:host /deep/ .burge-line span:nth-child(1) {
-  margin-top: -8px; }
-:host /deep/ .burge-line span:nth-child(3) {
-  margin-top: 8px; }
-:host /deep/ .burge.burge-open span:nth-child(1) {
-  margin: 0;
-  transform: translate(-50%, 0) rotate(45deg); }
-:host /deep/ .burge.burge-open span:nth-child(2) {
-  transform: translate(-50%, 0) scale(0.1); }
-:host /deep/ .burge.burge-open span:nth-child(3) {
-  margin: 0;
-  transform: translate(-50%, 0) rotate(-45deg); }
+    transform: scale(0.8); }
+  .suspend .suspend-vertical .suspend-item,
+  .suspend .suspend-vertical-reverse .suspend-item {
+    left: 0; }
+  .suspend .suspend-item,
+  .suspend .suspend-item:after,
+  .suspend .suspend-btn:after,
+  .suspend .suspend-btn span {
+    transition: all .3s ease-out; }
+  .suspend .suspend-item:hover:after,
+  .suspend .suspend-btn:hover:after {
+    transform: scale(2);
+    opacity: .6; }
+  .suspend .burge {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .suspend .burge-line span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 3px;
+    background: #fff;
+    transform: translate(-50%, -50%); }
+  .suspend .burge-line span:nth-child(1) {
+    margin-top: -8px; }
+  .suspend .burge-line span:nth-child(3) {
+    margin-top: 8px; }
+  .suspend .burge.burge-open span:nth-child(1) {
+    margin: 0;
+    transform: translate(-50%, 0) rotate(45deg); }
+  .suspend .burge.burge-open span:nth-child(2) {
+    transform: translate(-50%, 0) scale(0.1); }
+  .suspend .burge.burge-open span:nth-child(3) {
+    margin: 0;
+    transform: translate(-50%, 0) rotate(-45deg); }
 
 /*# sourceMappingURL=shrink.component.css.map */

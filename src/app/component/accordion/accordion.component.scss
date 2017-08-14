@@ -5,11 +5,12 @@ free-accordion-group {
   flex: 1 0 auto;
 }
 
-:host /deep/ {
+.free-accordion-group {
 
   .accordion-item {
     background: #fff;
   }
+
   .accordion-toggle {
     display: flex;
     align-items: center;
@@ -50,6 +51,8 @@ free-accordion-group {
     position: relative;
     overflow: hidden;
     font-size: .7rem;
+    border: 1px solid rgba(120, 130, 140, 0.13);
+    border-top: none;
 
     .accordion-inner,
     & > div {

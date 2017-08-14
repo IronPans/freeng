@@ -1,9 +1,5 @@
-/**
- * Created by tg on 17-4-10.
- */
 import { CommonModule } from '@angular/common';
-import { NgModule, Directive, OnInit, AfterViewInit,
-ElementRef, HostListener } from '@angular/core';
+import {NgModule, Directive, AfterViewInit, ElementRef, HostListener, Input} from '@angular/core';
 import { DomRenderer } from '../common/dom';
 
 @Directive({
@@ -11,8 +7,9 @@ import { DomRenderer } from '../common/dom';
   providers: [DomRenderer]
 })
 
-export class RippleDirective implements OnInit, AfterViewInit {
+export class RippleDirective implements AfterViewInit {
 
+  @Input('fRipple') rippleColor: string;
   container: HTMLDivElement;
 
   @HostListener('click', ['$event'])
@@ -20,12 +17,8 @@ export class RippleDirective implements OnInit, AfterViewInit {
     this.ripple(e, this.container);
   }
 
-  constructor(private er: ElementRef,
-      private domRenderer: DomRenderer) {}
-
-  ngOnInit() {
-
-  }
+  constructor(public er: ElementRef,
+      public domRenderer: DomRenderer) {}
 
   ngAfterViewInit() {
     this.container = this.er.nativeElement;
@@ -42,14 +35,21 @@ export class RippleDirective implements OnInit, AfterViewInit {
     const ripple = document.createElement('span');
     ripple.className = 'ripple';
     const firstChild = $this.firstChild;
+    if (this.rippleColor) {
+      ripple.style.backgroundColor = this.rippleColor;
+    }
     if (firstChild) {
       $this.insertBefore(ripple, firstChild);
     } else {
       $this.appendChild(ripple);
-    };
-    ripple.style.cssText = 'width: ' + wx + 'px;height: ' +
-      wx + 'px;top: ' + y + 'px;left: ' + x + 'px';
-    ripple.classList.add('rippleEffect');
+    }
+    this.domRenderer.css(ripple, {
+      width: wx + 'px',
+      height: wx + 'px',
+      top: y + 'px',
+      left: x + 'px'
+    });
+    this.domRenderer.addClass(ripple, 'rippleEffect');
     this.domRenderer.animationEnd(ripple, function() {
       this.parentNode.removeChild(ripple);
     });

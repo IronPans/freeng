@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
-  NgModule, Directive, OnInit, AfterViewInit, ElementRef, Input, Component
+  NgModule, Directive, AfterViewInit, ElementRef, Input, Component
 } from '@angular/core';
 import {DomRenderer} from '../common/dom';
 
@@ -9,29 +9,26 @@ import {DomRenderer} from '../common/dom';
   providers: [DomRenderer]
 })
 
-export class ButtonDirective implements OnInit, AfterViewInit {
+export class ButtonDirective implements AfterViewInit {
   button: HTMLButtonElement;
   @Input() icon: string;
-  @Input() color: string;
-  @Input() direction = 'left';
+  @Input() theme: string;
+  @Input() direction: string;
   @Input() circle: string;
   @Input() round: number;
   @Input() size: string;
   @Input() loading: string;
 
-  constructor(private er: ElementRef,
-              private domRenderer: DomRenderer) {}
-
-  ngOnInit() {
-    if (!this.color) {
-      this.color = 'default';
-    }
+  constructor(public er: ElementRef,
+              public domRenderer: DomRenderer) {
+    this.direction = 'left';
+    this.theme = 'default';
   }
 
   ngAfterViewInit() {
     this.button = this.er.nativeElement;
     this.domRenderer.addClass(this.button, 'btn');
-    this.domRenderer.addClass(this.button, 'btn-' + this.color);
+    this.domRenderer.addClass(this.button, 'btn-' + this.theme);
 
     if (this.size) {
       this.domRenderer.addClass(this.button, `btn-${this.size}`);
@@ -71,8 +68,8 @@ export class ButtonDirective implements OnInit, AfterViewInit {
 export class BlockDirective implements AfterViewInit {
 
   constructor(
-      private domRenderer: DomRenderer,
-      private er: ElementRef) {}
+      public domRenderer: DomRenderer,
+      public er: ElementRef) {}
 
   ngAfterViewInit() {
     this.domRenderer.addClass(this.er.nativeElement, 'btn-block');

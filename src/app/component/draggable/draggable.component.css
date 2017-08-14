@@ -1,0 +1,16 @@
+.free-draggable-target {
+  position: fixed;
+  z-index: 1000;
+  opacity: .8;
+  background: #fff;
+  border: 1px dashed #d9d9d9; }
+  .free-draggable-target .free-draggable-item {
+    cursor: crosshair !important; }
+
+.free-draggable-active {
+  border: 1px dashed #1e87f0 !important; }
+
+.free-draggable-item {
+  cursor: crosshair; }
+
+/*# sourceMappingURL=draggable.component.css.map */

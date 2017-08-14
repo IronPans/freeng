@@ -1,0 +1,112 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        加载组件是一个覆盖，可以防止用户在指示活动时进行交互，以显示任务的进度，或等待任务完成。
+      </p>
+      <ul class="free-ul-padding">
+        <li>丰富的类型选择</li>
+      </ul>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-loading</h3>
+        <p>一个loading。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>type</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>可选，用来设置Loading的类型(circleLine、circleLineSpin、circleRoundFade、
+                lineSquare、lineRound、lineBounce、circleSpin)</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;LoadingModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-loading></free-loading>
+            <free-loading type="circleLine"></free-loading>
+            <free-loading type="circleLineSpin"></free-loading>
+            <free-loading type="circleRoundFade"></free-loading>
+            <free-loading type="lineSquare"></free-loading>
+            <free-loading type="lineRound"></free-loading>
+            <free-loading type="lineBounce"></free-loading>
+            <free-loading type="circleSpin"></free-loading>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-loading&gt;&lt;/free-loading&gt;
+              &lt;free-loading type="circleLine"&gt;&lt;/free-loading&gt;
+              &lt;free-loading type="circleLineSpin"&gt;&lt;/free-loading&gt;
+              &lt;free-loading type="circleRoundFade"&gt;&lt;/free-loading&gt;
+              &lt;free-loading type="lineSquare"&gt;&lt;/free-loading&gt;
+              &lt;free-loading type="lineRound"&gt;&lt;/free-loading&gt;
+              &lt;free-loading type="lineBounce"&gt;&lt;/free-loading&gt;
+              &lt;free-loading type="circleSpin"&gt;&lt;/free-loading&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-loading theme="primary"></free-loading>
+            <free-loading theme="info"></free-loading>
+            <free-loading theme="success"></free-loading>
+            <free-loading theme="warning"></free-loading>
+            <free-loading theme="danger"></free-loading>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-loading theme="primary"&gt;&lt;/free-loading&gt;
+              &lt;free-loading theme="info"&gt;&lt;/free-loading&gt;
+              &lt;free-loading theme="success"&gt;&lt;/free-loading&gt;
+              &lt;free-loading theme="warning"&gt;&lt;/free-loading&gt;
+              &lt;free-loading theme="danger"&gt;&lt;/free-loading&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

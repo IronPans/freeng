@@ -5,12 +5,12 @@ import { ShareModule } from '../common/share';
 
 @Component({
   selector: 'free-accordion-group',
-  template: '<ng-content></ng-content>'
+  template: '<div class="free-accordion-group"><ng-content></ng-content></div>'
 })
 
 export class AccordionGroupComponent {
   @Input() closeOthers: boolean;
-  protected groups: AccordionComponent[] = [];
+  groups: AccordionComponent[] = [];
   constructor() {}
 
   closeOther(activeItem: AccordionComponent) {
@@ -49,7 +49,6 @@ export class AccordionGroupComponent {
         </div>
       </div>
     </div>`,
-  styleUrls: ['./accordion.component.scss'],
   animations: [trigger('accordionState', [
     state('active', style({
       height: '*'
@@ -62,8 +61,8 @@ export class AccordionGroupComponent {
 })
 export class AccordionComponent implements OnInit {
   @Input() header: string;
-  @Input() disabled = false;
-  @Input() toggleable = true;
+  @Input() disabled: boolean;
+  @Input() toggleable: boolean;
   @Input()
   get iconName(): string {
     return this._icon;
@@ -86,14 +85,17 @@ export class AccordionComponent implements OnInit {
     this.toggleClass();
   }
 
-  protected  _isExpanded = false;
-  protected  _icon: string;
-  isActive = 'inactive';
-  itemClass = {};
+  _isExpanded: boolean;
+  _icon: string;
+  isActive: string;
+  itemClass: any;
   isAnimating: boolean;
-  protected accordionGroup: AccordionGroupComponent;
+  accordionGroup: AccordionGroupComponent;
   constructor(accordionGroup: AccordionGroupComponent) {
     this.accordionGroup = accordionGroup;
+    this.toggleable = true;
+    this.isActive = 'inactive';
+    this.itemClass = {};
   }
 
   ngOnInit() {

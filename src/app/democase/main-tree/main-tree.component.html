@@ -1,0 +1,99 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        文件树，简单实用
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-tree</h3>
+        <p>树形菜单。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>menus</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置树形菜单数据</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>expanded</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否展开，默认false。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-demo-board">
+        <div class="free-card-board">
+          <h3 class="free-toolbar">Import</h3>
+          <free-tab-group direction="right" theme="line">
+            <free-tab header="CODE">
+              <free-code lang="typescript">
+                import &#123;TreeModule&#125; from 'freeng/freeng';
+              </free-code>
+            </free-tab>
+          </free-tab-group>
+        </div>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-tree [menus]="menus"></free-tree>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tree [menus]="menus"&gt;&lt;/free-tree&gt;
+            </free-code>
+
+            <h4>Javasript代码：</h4>
+            <free-code lang="javascript">
+              this.menus = [
+                &#123;
+                  title: '菜单',
+                  folder: [
+                  &#123;
+                      title: '子菜单',
+                      file: [
+                    &#123;
+                         title: '孙菜单'
+                    &#125;
+                      ]
+                 &#125;
+                  ]
+               &#125;,
+                &#123;
+                   title: '菜单',
+                   file: [
+                 &#123;
+                      title: '子菜单'
+                  &#125;
+                   ]
+                &#125;
+              ];
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

@@ -12,8 +12,7 @@ import {
       <span></span>
       <span></span>
     </i>
-  `,
-  styleUrls: ['./hamburge.component.scss']
+  `
 })
 export class HamburgeComponent implements OnInit {
 
@@ -32,7 +31,7 @@ export class HamburgeComponent implements OnInit {
     }
   };
 
-  constructor(private renderer2: Renderer2) { }
+  constructor(public renderer2: Renderer2) { }
 
   ngOnInit() {}
 }

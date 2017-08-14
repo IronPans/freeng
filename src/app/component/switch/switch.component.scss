@@ -1,90 +1,88 @@
 @import "../../../assets/sass/variables";
 
-:host /deep/ {
-  .free-switch {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
+.free-switch {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
 
-    input {
-      display: none;
-    }
+  input {
+    display: none;
+  }
 
-    input[type='checkbox']:checked+.free-switch-media .switch-label {
+  input[type='checkbox']:checked + .free-switch-media .switch-label {
+    background: #1ABC9C;
+
+    &:after {
       background: #1ABC9C;
-
-      &:after {
-        background: #1ABC9C;
-        -webkit-transform: translate3d(1rem, 0, 0);
-        transform: translate3d(1rem, 0, 0);
-      }
-    }
-
-    .free-switch-inner {
-      -webkit-flex: 1;
-      flex: 1;
-      padding: 0.5rem;
-      order: 3;
-    }
-
-    .switch-label {
-      position: relative;
-      display: block;
-      width: 2.5rem;
-      height: 1.5rem;
-      border-radius: 999px;
-      background: #aaa;
-      -webkit-transition: all 0.35s;
-      transition: all 0.35s;
-
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        -webkit-transition: all 0.35s;
-        transition: all 0.35s;
-      }
-
-      &:after {
-        top: 4px;
-        left: 4px;
-        bottom: 4px;
-        width: 1.1rem;
-        background: #aaa;
-        border-radius: 50%;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-      }
-
-      &:before {
-        background: #fff;
-        top: 2px;
-        left: 2px;
-        right: 2px;
-        bottom: 2px;
-        border-radius: 999px;
-      }
-    }
-
-    .free-switch-media {
-      -webkit-order: 2;
-      order: 2;
-      display: -moz-box;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-      margin-left: 3px;
+      -webkit-transform: translate3d(1rem, 0, 0);
+      transform: translate3d(1rem, 0, 0);
     }
   }
 
-  .free-switch.free-switch-2 {
+  .free-switch-inner {
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 0.5rem;
+    order: 3;
+  }
+
+  .switch-label {
+    position: relative;
+    display: block;
+    width: 2.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    background: #aaa;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s;
+    }
+
+    &:after {
+      top: 4px;
+      left: 4px;
+      bottom: 4px;
+      width: 1.1rem;
+      background: #aaa;
+      border-radius: 50%;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    &:before {
+      background: #fff;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      border-radius: 999px;
+    }
+  }
+
+  .free-switch-media {
+    -webkit-order: 2;
+    order: 2;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-left: 3px;
+  }
+
+  &.free-switch-2 {
     .switch-label {
       width: 2rem;
       background: #fff;
@@ -119,7 +117,7 @@
     }
   }
 
-  .free-switch.free-switch-3 {
+  &.free-switch-3 {
     .switch-label {
       background: #fff;
 
@@ -151,7 +149,7 @@
   }
 
   @each $name, $color in $theme {
-    .free-switch.free-switch-#{$name} {
+    &.free-#{$name} {
       input[type='checkbox']:checked+.free-switch-media .switch-label {
         background: $color;
 
@@ -174,15 +172,11 @@
     }
   }
 
-}
-
-.free-switch{
   $color: rgba(170, 170, 170, .4) !important;
-  input[type='checkbox']:disabled +.free-switch-media .switch-label {
+  input[type='checkbox']:disabled + .free-switch-media .switch-label {
     background: $color;
     &:after {
       background: $color;
     }
   }
-
 }

@@ -1,0 +1,48 @@
+.free-accordion-group .accordion-toggle {
+  background: #f96868; }
+
+.free-tab-group .free-tab-nav.active span {
+  color: #f96868; }
+
+.free-tab-group .free-tab-nav.active span:after {
+  background: #f96868; }
+
+.search-box {
+  background: #f96868; }
+
+.top-menu,
+.aside-header,
+.ripple {
+  background: #f96868; }
+
+.free-tree ul li.free-tree-item > span:hover:after, .free-tree ul li.free-tree-item > span:after {
+  color: #f96868; }
+
+.free-tree ul li.last > span:before {
+  color: #f96868; }
+
+.free-tab-group .free-tab-nav.active span {
+  color: #f96868; }
+
+blockquote {
+  border-color: #f96868; }
+
+.free-timeline .free-timeline-item:after {
+  border: 1px solid #f96868; }
+
+h3.free-head-title {
+  color: #f96868; }
+
+.left-menu,
+.search-box {
+  background: #f96868; }
+
+.left-menu .left-menu-item li a:not(.active):hover, .left-menu .left-menu-item li a.active,
+.left-menu .accordion-toggle:not(.active):hover,
+.left-menu .accordion-toggle.active,
+.left-menu .accordion-inner ul li > a:not(.active):hover,
+.left-menu .accordion-inner ul li > a.active {
+  color: #f96868 !important;
+  background-color: #eee; }
+
+/*# sourceMappingURL=red.css.map */

@@ -1,0 +1,178 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        图表组件是基于<a href="http://www.chartjs.org/" target="_blank">Chart.js</a>，
+        一个基于开源的基于HTML5的图表库。
+      </p>
+      <hr>
+      <h3 class="free-head-title">Chart.js</h3>
+      <div class="free-demo-row">
+        <p>为了让图表控件生效，必须引入chart.js，有两种方式：</p>
+        <ul class="free-ul-padding">
+          <li>通过外链</li>
+          <li>通过CLI</li>
+        </ul>
+        <h3 class="free-title">外链chart.js</h3>
+        <div>
+          <free-code lang="javascript">
+            &lt;script src="&lt;Your_Path&gt;/Chart.js"&gt;&lt;/script&gt;
+          </free-code>
+        </div>
+        <h3 class="free-title">CLI</h3>
+        <div>
+          <free-code lang="javascript">
+            "scripts": [
+              "../node_modules/chart.js/dist/Chart.js"
+            ]
+          </free-code>
+        </div>
+      </div>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-chart</h3>
+        <p>图表控件</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>width</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>图表宽度，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>height</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>图表高度，可选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>type</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>图表类型，必选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>data</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>any</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>图表数据结构，必选。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>options</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>any</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>图表配置数据，可选。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <div class="free-demo-row">
+        <h3 class="free-title">事件</h3>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>事件</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onDataSelect</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>当点击图表时触发的回调事件，可选。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;ChartModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Bar</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chart type="bar" [data]="barData"></free-chart>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chart type="bar" [data]="barData"&gt;&lt;/free-chart&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Line</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chart type="line" [data]="lineData"></free-chart>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chart type="line" [data]="lineData"&gt;&lt;/free-chart&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Pie</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chart type="pie" [data]="pieData"></free-chart>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chart type="pie" [data]="pieData"&gt;&lt;/free-chart&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Doughnut</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chart type="doughnut" [data]="doughnutData"></free-chart>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chart type="doughnut" [data]="doughnutData"&gt;&lt;/free-chart&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

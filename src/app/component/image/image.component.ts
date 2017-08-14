@@ -21,12 +21,10 @@ export class ImageComponent implements OnInit, AfterViewInit {
     return this.width;
   }
   @HostBinding('style.width') width: any;
-  constructor(private er: ElementRef) { }
+  constructor(public er: ElementRef) { }
   ngOnInit() {
   }
   ngAfterViewInit() {
-    // this.er.nativeElement.style.width = this._imageWidth;
-    // console.log(this._imageWidth);
   }
 }
 
@@ -38,8 +36,7 @@ export class ImageComponent implements OnInit, AfterViewInit {
                   [src]="image.src" [alt]="image.alt"
                   [highlight]="image.highlight"></free-image>
     </div>
-  `,
-  styleUrls: ['./image.component.scss']
+  `
 })
 
 export class ImageGroupComponent implements OnInit {

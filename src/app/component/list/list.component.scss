@@ -1,36 +1,49 @@
 @import "../../../assets/sass/mixin";
 
-:host /deep/ {
-  .free-list-item {
-    @include flexbox;
-    min-height: 2.4rem;
-    margin: 0;
-    padding: 0 16px;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-    position: relative;
-    font-size: .8rem;
-    font-weight: 400;
-    text-align: left;
-    text-transform: none;
-    -webkit-transition: all .3s;
-    transition: all .3s;
+.free-list {
+  @include flexbox;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  position: relative;
+  list-style: none;
+  background-color: #fff;
+  color: rgba(0, 0, 0, .87);
+
+  &.free-list-hover .free-list-item {
+    cursor: pointer;
   }
 
-  .free-list {
-    background-color: #fff;
-    color: rgba(0, 0, 0, .87);
+  &.free-list-hover .free-list-item:hover {
+    background: #eee;
   }
 
-  .free-list {
-    @include flexbox;
-    -ms-flex-flow: column nowrap;
-    flex-flow: column nowrap;
-    position: relative;
-    list-style: none;
+  &.free-list-line .free-list-item:after {
+    content: "";
+    position: absolute;
+    left: 3.5rem;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #d9d9d9;
   }
+}
+
+.free-list-item {
+  @include flexbox;
+  min-height: 2.4rem;
+  margin: 0;
+  padding: 0 .5rem;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+  font-size: .8rem;
+  font-weight: 400;
+  text-align: left;
+  text-transform: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 
   .free-avatar {
     width: 1.6rem;
@@ -41,24 +54,25 @@
     display: inline-block;
     overflow: hidden;
     position: relative;
-    border-radius:50%;
     vertical-align: middle;
-  }
 
-  .free-avatar.free-avatar-large {
-    width: 2rem;
-    height: 2rem;
-  }
+    &.free-avatar-circle,
+    &.free-avatar-circle img {
+      border-radius: 50%;
+    }
 
-  .free-avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    img {
+       width: 100%;
+     }
+
+    &.free-avatar-large {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   .free-list-content {
     @include flexbox;
-    flex: 1 1 auto;
     flex-flow: column nowrap;
     flex: 1;
     overflow: hidden;
@@ -97,21 +111,12 @@
     margin-right: -.6rem;
   }
 
-  .free-list.free-list-hover .free-list-item {
-    cursor: pointer;
-  }
+  .free-image {
+    display: flex;
+    max-height: 100%;
 
-  .free-list.free-list-hover .free-list-item:hover {
-    background: #eee;
-  }
-
-  .free-list.free-list-line .free-list-item:after {
-    content: "";
-    position: absolute;
-    left: 3.5rem;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background-color: #d9d9d9;
+    img {
+      align-items: center;
+    }
   }
 }

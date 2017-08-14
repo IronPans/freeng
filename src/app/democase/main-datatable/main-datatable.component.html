@@ -1,0 +1,413 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        数据表格可用于显示数据列表。
+      </p>
+      <ul class="free-ul-padding">
+        <li>分页，固定头和排序</li>
+        <li>提供了丰富的支持,复选框</li>
+      </ul>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-datatable</h3>
+        <p>必选，类似HTML的table，一个free-datatable对应一个table。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>value</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>数据数组，必选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>border</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示边框，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>striped</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示斑马线，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>hover</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否添加悬停效果，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>selectionMode</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否添加复选框或单选框，可选。可选值(single/multiple)</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>pagination</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示分页器，可选，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>row</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>每页数据数，可选，默认为10</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>expandableRows</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                是否展示可折叠内容，默认为false。需结合ng-template，可参考右侧例子。
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>scrollable</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                是否固定头，默认为false。
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-datatable-column</h3>
+        <p>必选，类似HTML的td，表示一列数据。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>field</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>列的名称，必须，对应free-datatable里value数据里的键</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>header</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>列的描述名称，必选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>sort</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>当前列是否可排序，默认为fasel</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;DatatableModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <free-datatable-column field="job" header="job"></free-datatable-column>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Border</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book" [border]="true">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <free-datatable-column field="job" header="job"></free-datatable-column>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book" [border]="true"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Resize</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book" [border]="true" [resizable]="true">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <free-datatable-column field="job" header="job"></free-datatable-column>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book" [border]="true" [resizable]="true"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Striped</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book" [striped]="true">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <free-datatable-column field="job" header="job"></free-datatable-column>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book" [striped]="true"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Hover</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book" [hover]="true">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <free-datatable-column field="job" header="job"></free-datatable-column>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book" [hover]="true"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">SelectionMode</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book" [selectionMode]="'multiple'">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <free-datatable-column field="job" header="job"></free-datatable-column>
+            </free-datatable>
+            <free-datatable [value]="book" [selectionMode]="'single'">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <free-datatable-column field="job" header="job"></free-datatable-column>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book" [selectionMode]="'multiple'"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+              &lt;free-datatable [value]="book" [selectionMode]="'single'"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Pagination</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book" [pagination]="true" [row]="2">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <free-datatable-column field="job" header="job">
+                <ng-template let-col let-row="rowData">{{row['job']}}</ng-template>
+              </free-datatable-column>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book" [pagination]="true" [row]="2"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="job" header="job"&gt;
+                  &lt;ng-template let-col let-row="rowData"&gt;&#123;&#123;b?.job&#125;&#125;&lt;/ng-template&gt;
+                &lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Sort</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book" [row]="2">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age" [sort]="true"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book" [row]="2"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age" [sort]="true"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Expand</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="book" [expandableRows]="true">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <ng-template fTemplate="rowexpansion" let-b>
+                {{b['job']}}
+              </ng-template>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="book" [expandableRows]="true"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;ng-template fTemplate="rowexpansion" let-b&gt;
+                  &#123;&#123;b?.job&#125;&#125;
+                &lt;/ng-template&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Scrollable</h3>
+        <free-tab-group direction="right" [theme]="'line'">
+          <free-tab header="PREVIEW">
+            <free-datatable [value]="persons" [scrollable]="true" [border]="true">
+              <free-datatable-column field="name" header="name"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
+              <free-datatable-column field="address" header="address"></free-datatable-column>
+              <ng-template fTemplate="rowexpansion" let-b>
+                {{b['job']}}
+              </ng-template>
+            </free-datatable>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-datatable [value]="persons" [scrollable]="true" [border]="true"&gt;
+                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
+                &lt;ng-template fTemplate="rowexpansion" let-b&gt;
+              &#123;&#123;b?.job&#125;&#125;
+                &lt;/ng-template&gt;
+              &lt;/free-datatable&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

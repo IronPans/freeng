@@ -1,1 +1,5 @@
-
+@import "./assets/css/reset.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~highlight.js/styles/monokai-sublime.css";
+@import './assets/css/freeng.css';
+@import './assets/css/symbol.css';

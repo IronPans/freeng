@@ -1,0 +1,120 @@
+
+.free-notification {
+  position: fixed;
+
+  .free-notification-item {
+    max-width: 15rem;
+    padding: .8rem 1.5rem .8rem .8rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+    line-height: 1.5;
+    position: relative;
+    margin-bottom: .5rem;
+    display: flex;
+    overflow: hidden;
+
+    &.free-notification-default {
+      background: #fff;
+    }
+
+    &.free-notification-error {
+      background: #d9534f;
+    }
+
+    &.free-notification-info {
+      background: #1ccacc;
+    }
+
+    &.free-notification-warning {
+      background: #fa9e0c;
+    }
+
+    &.free-notification-success {
+      background: #1aae88;
+    }
+
+    &:not(.free-notification-default) {
+      color: #fff;
+    }
+
+    .free-notification-avatar {
+      padding-right: .5rem;
+
+      & > i {
+        font-size: 1.25rem;
+      }
+
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    .free-notification-item-content {
+      display: flex;
+      flex-direction: column;
+
+      .free-notification-message {
+        display: block;
+      }
+    }
+
+    .free-notification-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: .1rem;
+      background: hsla(0, 0%, 100%, .2);
+
+      .free-notification-progress-bar {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .3);
+        transition-delay: 100ms;
+        transition-timing-function: linear;
+
+        &.free-notification-progress-hide {
+          width: 0px;
+        }
+      }
+    }
+  }
+
+  .free-notification-close {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    color: rgba(0, 0, 0, .43);
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(0, 0, 0, .8);
+    }
+  }
+
+  &.free-notification-topLeft {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  &.free-notification-topRight {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &.free-notification-bottomLeft {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  &.free-notification-bottomRight {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+

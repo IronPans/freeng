@@ -1,14 +1,21 @@
 import { CommonModule} from '@angular/common';
 import {
   NgModule, Component, OnInit, AfterViewInit, Input, Output,
-  ViewChild, ElementRef, Renderer2, EventEmitter
+  ViewChild, ElementRef, Renderer2, EventEmitter, forwardRef, OnDestroy
 } from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {DomRenderer} from '../common/dom';
+
+const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => RangeComponent),
+  multi: true
+};
 
 @Component({
   selector: 'free-range',
   template: `
-    <div #range class="range-slider free-range" (mousedown)="onTouchstart($event)">
+    <div #range class="free-range" (mousedown)="onTouchstart($event)">
       <div class="range-bar"></div>
       <div class="range-bar range-bar-active" #track></div>
       <div class="range-knob-handle" #thumb>
@@ -17,21 +24,14 @@ import {DomRenderer} from '../common/dom';
       <span class="range-slider-tooltip" #tooltip></span>
     </div>
   `,
-  styleUrls: ['./range.component.scss'],
-  providers: [DomRenderer]
+  providers: [DomRenderer, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class RangeComponent implements OnInit, AfterViewInit {
-  isTouch: boolean;
-  touchstart = null;
-  touchmove = null;
-  touchend = null;
-  timeoutID = null;
-  input: any;
-  @Input() min: any = 0;
-  @Input() max: any = 100;
-  @Input() value: any = 0;
-  @Input() width: any = 150;
-  @Input() color: string;
+export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+  @Input() min: number;
+  @Input() max: number;
+  @Input() value: any;
+  @Input() width: number;
+  @Input() theme: string;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('range') _range: ElementRef;
   @ViewChild('tooltip') _tooltip: ElementRef;
@@ -41,27 +41,28 @@ export class RangeComponent implements OnInit, AfterViewInit {
   range: HTMLDivElement;
   thumb: HTMLDivElement;
   track: HTMLDivElement;
-  maxPercent: any = 100;
+  touch: any;
+  timeoutID: any;
+  input: any;
+  maxPercent: number;
   percent: any;
   isPressed: boolean;
   documentTouchmoveListener: any;
   documentTouchendListener: any;
+  onModelChange: Function = () => {};
+  onTouchedChange: Function = () => {};
 
-  constructor(private renderer2: Renderer2,
-              private domRenderer: DomRenderer) {
+  constructor(public renderer2: Renderer2,
+              public domRenderer: DomRenderer) {
+    this.maxPercent = 100;
+    this.min = 0;
+    this.max = 100;
+    this.value = 0;
+    this.width = 150;
   }
 
   ngOnInit() {
-    this.isTouch = ('ontouchend' in document);
-    if (this.isTouch) {
-      this.touchstart = 'touchstart';
-      this.touchmove = 'touchmove';
-      this.touchend = 'touchend';
-    } else {
-      this.touchstart = 'mousedown';
-      this.touchmove = 'mousemove';
-      this.touchend = 'mouseup';
-    }
+    this.touch = this.domRenderer.getTouchEvent();
   }
 
   ngAfterViewInit() {
@@ -69,14 +70,27 @@ export class RangeComponent implements OnInit, AfterViewInit {
     this.range = this._range.nativeElement;
     this.thumb = this._thumb.nativeElement;
     this.track = this._track.nativeElement;
-    if (this.color) {
-      this.renderer2.addClass(this.range, `free-${this.color}`);
+    if (this.theme) {
+      this.renderer2.addClass(this.range, `free-${this.theme}`);
     }
     this.pageInit();
   }
 
+  writeValue(value: number) {
+    if (value) {
+      this.value = value;
+    }
+  }
+
+  registerOnChange(fn: Function) {
+    this.onModelChange = fn;
+  }
+
+  registerOnTouched(fn: Function) {
+    this.onTouchedChange = fn;
+  }
+
   pageInit() {
-    // 计算当前值的百分比
     const t = this.max - this.min;
     const p = (this.value - this.min) / t;
     const current = Math.floor(p * this.range.offsetWidth);
@@ -86,9 +100,8 @@ export class RangeComponent implements OnInit, AfterViewInit {
   }
 
   getPoint(element, event) {
-    /*将当前的触摸点坐标值减去元素的偏移位置，返回触摸点相对于element的坐标值*/
     event = event || window.event;
-    const touchEvent = this.isTouch ? event.changedTouches[0] : event;
+    const touchEvent = this.touch.mobile ? event.changedTouches[0] : event;
     const rect = this.domRenderer.getRect(element);
     let x = (touchEvent.pageX ||
     touchEvent.clientX + document.body.scrollLeft + document.documentElement.scrollLeft);
@@ -108,9 +121,8 @@ export class RangeComponent implements OnInit, AfterViewInit {
       percent = this.maxPercent;
     } else if (percent <= 0) {
       percent = 0;
-    };
+    }
     percent = parseFloat(percent.toFixed(4));
-    // 计算真实百分比
     const t = this.max - this.min;
     const cp = Math.ceil(t * percent / 100) + this.min;
     this.thumb['style'].left = percent + '%';
@@ -128,6 +140,7 @@ export class RangeComponent implements OnInit, AfterViewInit {
     const v = this.getPoint(this.range, e);
     this.setValue(v.x);
     this.onChange.emit({'value': this.value});
+    this.onModelChange(this.value);
   }
 
   onTouchstart(e) {
@@ -138,38 +151,50 @@ export class RangeComponent implements OnInit, AfterViewInit {
     this.getValue(e);
     this.show(this.tooltip);
     this.isPressed = true;
-    this.documentTouchmoveListener = this.renderer2.listen('body', this.touchmove, ($event) => {
+    this.documentTouchmoveListener = this.renderer2.listen('body', this.touch.touchmove, ($event) => {
       this.onTouchmove($event);
     });
-    this.documentTouchendListener = this.renderer2.listen('body', this.touchend, ($event) => {
-      this.onTouchend($event);
+    this.documentTouchendListener = this.renderer2.listen('body', this.touch.touchend, () => {
+      this.onTouchend();
     });
   }
 
-  onTouchmove(e) {
+  onTouchmove(event: any) {
     if (this.isPressed) {
       this.show(this.tooltip);
-      this.getValue(e);
+      this.getValue(event);
     }
   }
 
-  onTouchend(e) {
+  onTouchend() {
     this.isPressed = false;
     this.hide(this.tooltip);
-    this.documentTouchmoveListener();
-    this.documentTouchendListener();
-    this.documentTouchmoveListener = null;
-    this.documentTouchendListener = null;
+    this.unbindDocumentClickListener();
   }
 
-  hide(dom) {
+  hide(elem) {
     this.timeoutID = setTimeout(function () {
-      dom.style.display = 'none';
+      elem.style.display = 'none';
     }, 200);
   }
 
-  show(dom) {
-    dom.style.display = 'block';
+  show(elem) {
+    elem.style.display = 'block';
+  }
+
+  unbindDocumentClickListener() {
+    if (this.documentTouchmoveListener) {
+      this.documentTouchmoveListener();
+      this.documentTouchmoveListener = null;
+    }
+    if (this.documentTouchendListener) {
+     this.documentTouchendListener();
+     this.documentTouchendListener = null;
+    }
+  }
+
+  ngOnDestroy() {
+    this.unbindDocumentClickListener();
   }
 
 }

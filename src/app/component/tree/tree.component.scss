@@ -1,7 +1,8 @@
 @import "../../../assets/sass/variables";
 
-:host /deep/ {
-  .free-tree ul {
+.free-tree {
+
+  ul {
     list-style: none;
     color: #333;
 
@@ -71,27 +72,6 @@
         content: "\f15c";
         padding-right: .3rem;
         color: $default;
-      }
-
-      &.image:before {
-        content: "\f1c5";
-      }
-    }
-  }
-}
-
-@each $theme, $color in $theme {
-  :host-context(.free-theme-#{$theme}) /deep/ {
-    .free-tree ul li.free-tree-item > span {
-      &:hover:after,
-      &:after  {
-        color: $color;
-      }
-    }
-
-    .free-tree ul li.last > span {
-      &:before {
-       color: $color;
       }
 
       &.image:before {

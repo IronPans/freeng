@@ -10,13 +10,12 @@ import { NgModule, Component, OnInit, AfterViewInit, Renderer2,
         <ng-container *ngIf="percent">{{value}}</ng-container>
       </div>
     </div>
-  `,
-  styleUrls: ['./progress.component.scss']
+  `
 })
 export class ProgressComponent implements OnInit, AfterViewInit {
 
   @Input() value: string;
-  @Input() color: string;
+  @Input() theme: string;
   @Input() move: boolean;
   @Input() striped: boolean;
   @Input() percent: boolean;
@@ -24,7 +23,7 @@ export class ProgressComponent implements OnInit, AfterViewInit {
   @ViewChild('bar') bar: ElementRef;
   _bar: HTMLElement;
   _container: HTMLElement;
-  constructor(private renderer2: Renderer2) { }
+  constructor(public renderer2: Renderer2) { }
 
   ngOnInit() {}
 
@@ -44,8 +43,8 @@ export class ProgressComponent implements OnInit, AfterViewInit {
       this.renderer2.setStyle(this._bar, 'width', this.value);
     }
 
-    if (this.color) {
-      this.renderer2.addClass(this._container, 'free-' + this.color);
+    if (this.theme) {
+      this.renderer2.addClass(this._container, 'free-' + this.theme);
     }
   }
 }

@@ -1,0 +1,124 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        ColorPicker是用于选择颜色的输入组件。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-color-picker</h3>
+        <p>颜色选择器</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>colorInput</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否显示输入框，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>inline</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                是否内联显示，默认为false。
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <div class="free-demo-row">
+        <h3 class="free-title">事件</h3>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>事件</free-table-head>
+              <free-table-head>参数</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  <code>&#123;value: '#000', rgb: 'rgb(0,0,0)', hsl: 'hsl(0, 0%, 0%)'&#125;</code>
+                </ng-template>
+              </free-table-cell>
+              <free-table-cell>当选定颜色时的回调事件</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;ColorpickerModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px">
+              <free-color-picker [(ngModel)]="defaultColor" ></free-color-picker>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-color-picker [(ngModel)]="defaultColor"&gt;&lt;/free-color-picker&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Input</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px">
+              <free-color-picker (onChange)="onColorSelect($event)"
+                                 [(ngModel)]="color" [colorInput]="true"></free-color-picker>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-color-picker (onChange)="onColorSelect($event)"
+                  [(ngModel)]="color" [colorInput]="true"&gt;&lt;/free-color-picker&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="typescript">
+              this.color = 'rgb(110, 11, 248)';
+
+              onColorSelect(event: any) &#123;
+                console.log(event);
+              &#125;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>
+

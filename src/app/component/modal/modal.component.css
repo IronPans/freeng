@@ -5,6 +5,7 @@
   min-width: 10rem;
   border-radius: 2px;
   color: #fff;
+  z-index: 9999;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
   .free-modal.free-modal-spinner {
     min-width: 1rem;
@@ -22,6 +23,8 @@
     background: rgba(0, 0, 0, 0.1); }
   .free-modal .free-modal-footer {
     text-align: right; }
+    .free-modal .free-modal-footer button {
+      margin: 0; }
   .free-modal .free-modal-close {
     position: absolute;
     right: 0;
@@ -44,83 +47,15 @@
     border-radius: 3px;
     color: #333;
     padding: 0 .5rem; }
-
-:host-context(.free-theme-green) /deep/ .free-modal {
-  background: #46be8a; }
-
-.free-modal.free-green {
-  background: #46be8a !important; }
-
-:host-context(.free-theme-deepblue) /deep/ .free-modal {
-  background: #115d8e; }
-
-.free-modal.free-deepblue {
-  background: #115d8e !important; }
-
-:host-context(.free-theme-blue) /deep/ .free-modal {
-  background: #677ae4; }
-
-.free-modal.free-blue {
-  background: #677ae4 !important; }
-
-:host-context(.free-theme-lightblue) /deep/ .free-modal {
-  background: #169e9f; }
-
-.free-modal.free-lightblue {
-  background: #169e9f !important; }
-
-:host-context(.free-theme-yellow) /deep/ .free-modal {
-  background: #fa9e0c; }
-
-.free-modal.free-yellow {
-  background: #fa9e0c !important; }
-
-:host-context(.free-theme-red) /deep/ .free-modal {
-  background: #f96868; }
-
-.free-modal.free-red {
-  background: #f96868 !important; }
-
-:host-context(.free-theme-purple) /deep/ .free-modal {
-  background: #6633B9; }
-
-.free-modal.free-purple {
-  background: #6633B9 !important; }
-
-:host-context(.free-theme-orange) /deep/ .free-modal {
-  background: #f2a654; }
-
-.free-modal.free-orange {
-  background: #f2a654 !important; }
-
-:host-context(.free-theme-brown) /deep/ .free-modal {
-  background: #8d6658; }
-
-.free-modal.free-brown {
-  background: #8d6658 !important; }
-
-:host-context(.free-theme-cyan) /deep/ .free-modal {
-  background: #57c7d4; }
-
-.free-modal.free-cyan {
-  background: #57c7d4 !important; }
-
-:host-context(.free-theme-pink) /deep/ .free-modal {
-  background: #f96197; }
-
-.free-modal.free-pink {
-  background: #f96197 !important; }
-
-:host-context(.free-theme-teal) /deep/ .free-modal {
-  background: #3aa99e; }
-
-.free-modal.free-teal {
-  background: #3aa99e !important; }
-
-:host-context(.free-theme-dark) /deep/ .free-modal {
-  background: #393D49; }
-
-.free-modal.free-dark {
-  background: #393D49 !important; }
+  .free-modal.free-primary {
+    background: #177bbb !important; }
+  .free-modal.free-info {
+    background: #1ccacc !important; }
+  .free-modal.free-success {
+    background: #1aae88 !important; }
+  .free-modal.free-warning {
+    background: #fbb23e !important; }
+  .free-modal.free-danger {
+    background: #e33244 !important; }
 
 /*# sourceMappingURL=modal.component.css.map */

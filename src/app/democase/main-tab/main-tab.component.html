@@ -1,0 +1,232 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        标签页可以轻松的切换应用的不同视图或功能方面，或者浏览分类数据集。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-tab-group</h3>
+        <p>必选，表示一组Tab。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>direction</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置Tab头的位置，默认在左侧.可选值(right, center)</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-tab</h3>
+        <p>一个Tab。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>header</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>标签标题，可选</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>disabled</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>是否禁用，可选，默认false</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <h3 class="free-head-title">事件</h3>
+      <div class="free-demo-row">
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>事件名</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>当Tab切换时触发的回调函数。</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-demo-board">
+        <div class="free-card-board">
+          <h3 class="free-toolbar">Import</h3>
+          <free-tab-group direction="right" theme="line">
+            <free-tab header="CODE">
+              <free-code lang="typescript">
+                import &#123;TabGroupModule&#125; from 'freeng/freeng';
+              </free-code>
+            </free-tab>
+          </free-tab-group>
+        </div>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab [header]="'Demo'">
+            <free-tab-group>
+              <free-tab header="标题1">
+                标签1
+              </free-tab>
+              <free-tab header="标题2">
+                标签2
+              </free-tab>
+            </free-tab-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tab-group&gt;
+                &lt;free-tab header="标题1"&gt;
+                  标签1
+                &lt;/free-tab&gt;
+                &lt;free-tab header="标题2"&gt;
+                  标签2
+                &lt;/free-tab&gt;
+              &lt;/free-tab-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Direction</h3>
+        <free-tab-group direction="right">
+          <free-tab [header]="'Demo'">
+            <free-tab-group direction="right">
+              <free-tab header="标题1">
+                标签1
+              </free-tab>
+              <free-tab header="标题2">
+                标签2
+              </free-tab>
+            </free-tab-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tab-group direction="right"&gt;
+                &lt;free-tab header="标题1"&gt;
+                  标签1
+                &lt;/free-tab&gt;
+                &lt;free-tab header="标题2"&gt;
+                  标签2
+                &lt;/free-tab&gt;
+              &lt;/free-tab-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Disabled</h3>
+        <free-tab-group direction="right">
+          <free-tab [header]="'Demo'">
+            <free-tab-group direction="right">
+              <free-tab header="标题1">
+                标签1
+              </free-tab>
+              <free-tab header="标题2" [disabled]="true">
+                标签2
+              </free-tab>
+              <free-tab header="标题3">
+                标签3
+              </free-tab>
+            </free-tab-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tab-group direction="right"&gt;
+                &lt;free-tab header="标题1"&gt;
+                  标签1
+                &lt;/free-tab&gt;
+                &lt;free-tab header="标题2" [disabled]="true"&gt;
+                  标签2
+                &lt;/free-tab&gt;
+                &lt;free-tab header="标题3"&gt;
+                  标签3
+                &lt;/free-tab&gt;
+              &lt;/free-tab-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">onChange</h3>
+        <free-tab-group direction="right">
+          <free-tab [header]="'Demo'">
+            <p style="width: 100%;margin-bottom: 10px">
+              当前tab：{{activeState?.activeIndex}}
+            </p>
+            <free-tab-group (onChange)="onTabChange($event)">
+              <free-tab header="标题1">
+                标签1
+              </free-tab>
+              <free-tab header="标题2">
+                标签2
+              </free-tab>
+            </free-tab-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tab-group (onChange)="onTabChange($event)"&gt;
+                &lt;free-tab header="标题1"&gt;
+                  标签1
+                &lt;/free-tab&gt;
+                &lt;free-tab header="标题2"&gt;
+                  标签2
+                &lt;/free-tab&gt;
+              &lt;/free-tab-group&gt;
+            </free-code>
+            <h5>Javascript</h5>
+            <free-code lang="javascript">
+              onTabChange(event: any) &#123;
+                this.activeState = &#123;
+                  activeIndex: event.activeIndex
+                &#125;
+              &#125;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

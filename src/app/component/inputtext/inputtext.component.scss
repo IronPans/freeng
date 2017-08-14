@@ -1,94 +1,72 @@
-:host /deep/ {
-  .input-field {
-    position: relative;
-    min-width: 4rem;
+@import "../../../assets/sass/variables";
 
-    input {
-      background-color: transparent;
-      border: none;
-      border-radius: 0;
-      height: 35px;
-      width: 100%;
-      padding: 0;
-      box-shadow: none;
-      outline: none;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
+.input-field {
+  position: relative;
+  min-width: 4rem;
 
-      & + span {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: inline-block;
-        max-width: 100%;
-        z-index: 0;
-        width: 100%;
-        height: 1px;
-        border-bottom: 1px solid #d9d9d9;
-      }
+  input {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    height: 35px;
+    width: 100%;
+    padding: 0;
+    box-shadow: none;
+    outline: none;
+    transition: all 0.3s;
 
-      &:focus + span:after {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-
-      &:focus + span + i {
-        opacity: 1;
-      }
-    }
-
-    span:after {
-      content: "";
+    & + span {
       position: absolute;
-      bottom: 0;
+      top: 100%;
       left: 0;
+      display: inline-block;
+      max-width: 100%;
+      z-index: 0;
       width: 100%;
-      height: 2px;
-      background: #2196f3;
-      transform: scale(0);
-      transition: all .2s ease-out;
+      height: 1px;
+      border: 1px solid #d9d9d9;
     }
 
-    &.input-field-icon i {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      opacity: 0;
-      padding: 0 5px;
-      font-size: .75rem;
-      -webkit-transform: translate(0, -50%);
-      transform: translate(0, -50%);
-    }
-    &.input-field-icon input {
-      padding-right: 25px;
+    &:focus + span:after {
+      transform: scale(1);
     }
 
-    &.success input + span {
-      border-color: #b5dfb7;
+    &:focus + span + i {
+      opacity: 1;
     }
-    &.warning input + span {
-      border-color: #ffd699;
+  }
+
+  span:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2196f3;
+    transform: scale(0);
+    transition: all .2s ease-out;
+  }
+
+  &.input-field-icon i {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    opacity: 0;
+    padding: 0 5px;
+    font-size: .75rem;
+    transform: translate(0, -50%);
+  }
+  &.input-field-icon input {
+    padding-right: 25px;
+  }
+
+  @each $theme, $color in $theme {
+    &.free-#{$theme} span:after {
+      background: $color;
     }
-    &.error input + span {
-      border-color: #fccbc7;
-    }
-    &.success span:after {
-      background: #4caf50;
-    }
-    &.warning span:after {
-      background: #ffc107;
-    }
-    &.error span:after {
-      background: #f44336;
-    }
-    &.input-field-icon.success i {
-      color: #4caf50;
-    }
-    &.input-field-icon.error i {
-      color: #f44336;
-    }
-    &.input-field-icon.warning i {
-      color: #ffc107;
+    &.free-#{$theme}.input-field-icon i {
+      color: $color;
     }
   }
 }

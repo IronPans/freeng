@@ -50,7 +50,6 @@ import {LoadingModule} from '../loading/loading.component';
       </div>
     </div>
   `,
-  styleUrls: ['./modal.component.scss'],
   animations: [
     trigger('fadeInScale', [
       state('active', style({
@@ -67,16 +66,10 @@ import {LoadingModule} from '../loading/loading.component';
 })
 export class ModalComponent implements OnInit, AfterContentInit, AfterViewInit {
 
-  _visible: boolean;
-  modal: HTMLDivElement;
-  mask: HTMLDivElement;
-  modalClass: string;
-  maskClickListener: Function;
-  container: any;
   @Input() header: string;
   @Input() width: any;
   @Input() height: any;
-  @Input() modalColor: string;
+  @Input() theme: string;
   @Input() delay: number;
   @Input() closeIcon = true;
   @Input() type: string;
@@ -85,8 +78,14 @@ export class ModalComponent implements OnInit, AfterContentInit, AfterViewInit {
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('modal') modalViewChild: ElementRef;
   @ViewChild('prompt') promptInput: ElementRef;
+  _visible: boolean;
+  modal: HTMLDivElement;
+  mask: HTMLDivElement;
+  modalClass: string;
+  maskClickListener: Function;
+  container: any;
 
-  constructor(private er: ElementRef,
+  constructor(public er: ElementRef,
               public renderer2: Renderer2) { }
 
   @Input()
@@ -171,7 +170,7 @@ export class ModalComponent implements OnInit, AfterContentInit, AfterViewInit {
 
   center() {
     this.modal.style.zIndex = '10002';
-    this.modal.classList.add('free-' + this.modalColor);
+    this.modal.classList.add('free-' + this.theme);
     const win = {
       width: window.innerWidth,
       height: window.innerHeight

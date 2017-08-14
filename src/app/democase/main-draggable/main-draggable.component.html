@@ -1,0 +1,146 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6">
+      <p style="padding-left: 1rem;">
+        可拖放元素的控件。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-draggable</h3>
+        <p>拖放控件</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>dragItems</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>拖放列表数组</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>dropTarget</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>-</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>拖放目标元素</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>draggable</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>列表是否可拖放，默认为false</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>dragEffect</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>拖放效果，默认为copy。可选值(copy/move)</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <h3 class="free-head-title">事件</h3>
+      <div class="free-demo-row">
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onDragStart</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>拖放开始时触发的回调函数</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onDragEnd</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>拖放结束时触发的回调函数</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;DraggableModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-draggable [dropTarget]="drop" [dragItems]="dragItem" (onDragEnd)="onDragEnd($event)">
+                <ng-template let-item>
+                  <free-list-item>
+                    <free-avatar>
+                      <free-image [src]="item.image"></free-image>
+                    </free-avatar>
+                    {{item.title}}
+                  </free-list-item>
+                </ng-template>
+            </free-draggable>
+            <div class="drop-box" #drop>
+              <free-list-item *ngFor="let item of dropItem">
+                <free-avatar>
+                  <free-image [src]="item.image"></free-image>
+                </free-avatar>
+                {{item.title}}
+              </free-list-item>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-draggable [dropTarget]="drop"  [dragItems]="dragItem" (onDragEnd)="onDragEnd($event)"&gt;
+                &lt;ng-template let-item&gt;
+                  &lt;free-list-item&gt;
+                    &lt;free-avatar&gt;
+                      &lt;free-image [src]="item["title"]"&gt;&lt;/free-image&gt;
+                    &lt;/free-avatar&gt;
+                      &#123;&#123;item?.title&#125;&#125;
+                  &lt;/free-list-item&gt;
+                &lt;/ng-template&gt;
+              &lt;/free-draggable&gt;
+              &lt;div class="drop-box" #drop&gt;
+                &lt;free-list-item *ngFor="let item of dropItem"&gt;
+                  &lt;free-avatar&gt;
+                    &lt;free-image [src]="item.image"&gt;&lt;/free-image&gt;
+                  &lt;/free-avatar&gt;
+                  &#123;&#123;item?.title&#125;&#125;
+                &lt;/free-list-item&gt;
+              &lt;/div&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>
+

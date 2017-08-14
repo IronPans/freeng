@@ -1,6 +1,3 @@
-/**
- * Created by root on 17-5-20.
- */
 // Angular
 import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
@@ -13,6 +10,3 @@ import '@angular/animations';
 
 // RxJS
 import 'rxjs';
-
-import 'ngx-clipboard';
-import 'angular2-highlight-js';

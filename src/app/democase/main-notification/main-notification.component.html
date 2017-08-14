@@ -1,0 +1,175 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        简单的页面消息通知组件。
+        可以设置让消息在页面的四个角落出现。可以手动关闭消息，也可以设置成自动关闭。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-notification</h3>
+        <p>消息通知框。</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>messages</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>消息数组。</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>delay</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>消息通知框延迟关闭时间。默认不关闭</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>direction</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                消息通知框的位置。默认为“TopRight”。(可选值：topLeft, topRight, bottomLeft, bottomRight)
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;NotificationModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="open()">消息通知</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;button fButton (click)="open()"&gt;消息通知&lt;/button&gt;
+              &lt;free-notification [messages]="messages"&gt;&lt;/free-notification&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="javascript">
+              open() &#123;
+                this.messages.push(&#123;
+                  title: '通知',
+                  content: '你的帐号未经过邮箱验证！'
+                &#125;);
+              &#125;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="openErrorMessage()">Error</button>
+            <button fButton (click)="openWarningMessage()">Warning</button>
+            <button fButton (click)="openInfoMessage()">Info</button>
+            <button fButton (click)="openSuccessMessage()">Success</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-notification [messages]="errors" theme="error"&gt;&lt;/free-notification&gt;
+              &lt;free-notification [messages]="infos" theme="info"&gt;&lt;/free-notification&gt;
+              &lt;free-notification [messages]="successes" theme="success"&gt;&lt;/free-notification&gt;
+              &lt;free-notification [messages]="warnigs" theme="warning"&gt;&lt;/free-notification&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Avatar</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="openAvatarMessage()">消息通知</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-notification [messages]="avatarMessages"&gt;&lt;/free-notification&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="javascript">
+              openAvatarMessage() &#123;
+                this.avatarMessages.push(&#123;
+                  title: '通知',
+                  content: '你的帐号未经过邮箱验证！' + new Date(),
+                  avatar: 'assets/images/t_me.png'
+                &#125;);
+              }
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Delay</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <button fButton (click)="openDelayMessage()">消息通知</button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-notification [messages]="delayMessages" [delay]="3000"&gt;&lt;/free-notification&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Direction</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 300px;">
+              <free-select [options]="directions" [(ngModel)]="direction"></free-select>
+              <button fButton (click)="openToolMessage()">消息通知</button>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-notification [messages]="toolMessages"
+                [direction]="direction['value']" [delay]="1500"&gt;&lt;/free-notification&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <free-notification [messages]="messages"></free-notification>
+  <free-notification [messages]="toolMessages"
+                     [direction]="direction['value']" [delay]="1500"></free-notification>
+  <free-notification [messages]="avatarMessages"></free-notification>
+  <free-notification [messages]="delayMessages" [delay]="3000"></free-notification>
+  <free-notification [messages]="errors" theme="error"></free-notification>
+  <free-notification [messages]="infos" theme="info"></free-notification>
+  <free-notification [messages]="successes" theme="success"></free-notification>
+  <free-notification [messages]="warnigs" theme="warning"></free-notification>
+</div>

@@ -1,0 +1,125 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        碎片可以用来表示小块信息，它们最常用于联系人或标记。
+      </p>
+      <hr>
+      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-chip-group</h3>
+        <p>碎片组</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head>属性</free-table-head>
+              <free-table-head>类型</free-table-head>
+              <free-table-head>描述</free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>chips</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>碎片数组</free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>placeholder</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>设置input输入框的提示文本</free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div fGrid="6" class="free-demo-board">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;ChipModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chip-group [chips]="animals"></free-chip-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chip-group [chips]="animals"&gt;&lt;/free-chip-group&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="javascript">
+              this.animals = [
+              &#123;'value': 'dog'&#125;,
+              &#123;'value': 'cat'&#125;,
+              &#123;'value': 'wolf'&#125;,
+              &#123;'value': 'fish'&#125;
+              ];
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Delete</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chip-group [(chips)]="fruit"></free-chip-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chip-group [chips]="fruit"&gt;&lt;/free-chip-group&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="javascript">
+              this.fruit = [
+              &#123;'value': 'apple'&#125;,
+              &#123;'value': 'banana', 'delete': true&#125;,
+              &#123;'value': 'orange', 'delete': true&#125;
+              ];
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Input</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-chip-group [(chips)]="city" placeholder="Add a chip"></free-chip-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-chip-group [chips]="city" placeholder="Add a chip"&gt;&lt;/free-chip-group&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="javascript">
+              this.city = [
+              &#123;'value': 'beijing'&#125;,
+              &#123;'value': 'guangzhou', 'delete': true&#125;,
+              &#123;'value': 'shanghai', 'delete': true&#125;,
+              &#123;'value': 'hunan', 'delete': true&#125;
+              ];
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+
+  </div>
+
+  <blockquote>FreeNG - 用心做好每一步</blockquote>
+</div>

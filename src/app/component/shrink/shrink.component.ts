@@ -35,7 +35,6 @@ export class ShrinkItemComponent implements OnInit {
       <free-shrink-item *ngFor="let item of menus" [icon]="item.icon"></free-shrink-item>
     </div>
   `,
-  styleUrls: ['./shrink.component.scss'],
   providers: [DomRenderer]
 })
 export class ShrinkComponent implements OnInit, AfterViewInit {
@@ -65,7 +64,7 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
       this.toggle();
     }
   };
-  constructor(private domRenderer: DomRenderer, private renderer2: Renderer2) { }
+  constructor(public domRenderer: DomRenderer, public renderer2: Renderer2) { }
 
   ngOnInit() {
     this.reverse = false;
@@ -152,9 +151,9 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
         for (let i = 0; i < this._items.length; i++) {
           this._items[i].itemStyle = {'left': '0px', 'opacity': 0,
             'top': '0px', 'transform': 'translate(0,0)'};
-        };
+        }
         break;
-    };
+    }
     this.expanded = false;
     this.domRenderer.removeClass(this.btn, 'burge-open');
     this.domRenderer.removeClass(this.container, 'suspend-expanded');

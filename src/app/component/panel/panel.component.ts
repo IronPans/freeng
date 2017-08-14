@@ -15,8 +15,7 @@ import { NgModule, Component, OnInit, Input } from '@angular/core';
         </div>
       </div>
     </div>
-  `,
-  styleUrls: ['./panel.component.scss']
+  `
 })
 export class PanelComponent implements OnInit {
   @Input() header: string;

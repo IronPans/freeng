@@ -1,15 +1,13 @@
 @import "../../../assets/sass/variables";
-:host /deep/ {
 
-  .suspend {
-    position: relative;
-    font-size: 20px;
-    width: 2.8em;
-    height: 2.8em;
-    z-index:99;
-  }
+.suspend {
+  position: relative;
+  font-size: 20px;
+  width: 2.8em;
+  height: 2.8em;
+  z-index: 99;
 
-  .suspend-btn{
+  .suspend-btn {
     z-index: 99;
     width: 100%;
     height: 100%;
@@ -34,14 +32,14 @@
 
     &:after {
       content: "";
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      opacity:0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
       border-radius: 100%;
-      background: rgba(0,0,0,.2);
+      background: rgba(0, 0, 0, .2);
       transform: scale(0);
     }
   }
@@ -55,61 +53,60 @@
     transform: scale(.8);
   }
 
-  .suspend-vertical ,
+  .suspend-vertical,
   .suspend-vertical-reverse {
     .suspend-item {
-      left:0;
+      left: 0;
     }
   }
 
   .suspend-item,
   .suspend-item:after,
   .suspend-btn:after,
-  .suspend-btn span{
+  .suspend-btn span {
     transition: all .3s ease-out;
   }
 
   .suspend-item:hover:after,
-  .suspend-btn:hover:after{
+  .suspend-btn:hover:after {
     transform: scale(2);
     opacity: .6;
   }
 
-  .burge{
-    position:absolute;
-    top:0;
-    left:0;
+  .burge {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
-  .burge-line span{
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:50%;
-    height:3px;
+  .burge-line span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 3px;
     background: #fff;
     transform: translate(-50%, -50%);
   }
 
-  .burge-line span:nth-child(1){
+  .burge-line span:nth-child(1) {
     margin-top: -8px;
   }
-  .burge-line span:nth-child(3){
+  .burge-line span:nth-child(3) {
     margin-top: 8px;
   }
 
-  .burge.burge-open span:nth-child(1){
-    margin:0;
+  .burge.burge-open span:nth-child(1) {
+    margin: 0;
     transform: translate(-50%, 0) rotate(45deg);
   }
 
-  .burge.burge-open span:nth-child(2){
+  .burge.burge-open span:nth-child(2) {
     transform: translate(-50%, 0) scale(.1);
   }
 
-  .burge.burge-open span:nth-child(3){
-    margin:0;
+  .burge.burge-open span:nth-child(3) {
+    margin: 0;
     transform: translate(-50%, 0) rotate(-45deg);
   }
-
 }
