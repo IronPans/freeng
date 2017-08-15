@@ -5,12 +5,12 @@
   background-position: center;
   background-repeat: no-repeat; }
 :host /deep/ .fullpage1 {
-  background-image: url("../../../assets/images/f1.jpg"); }
+  background-image: url("../../../assets/Images/f1.jpg"); }
 :host /deep/ .fullpage2 {
-  background-image: url("../../../assets/images/f2.jpg"); }
+  background-image: url("../../../assets/Images/f2.jpg"); }
 :host /deep/ .fullpage3 {
-  background-image: url("../../../assets/images/f3.jpg"); }
+  background-image: url("../../../assets/Images/f3.jpg"); }
 :host /deep/ .fullpage4 {
-  background-image: url("../../../assets/images/f4.jpg"); }
+  background-image: url("../../../assets/Images/f4.jpg"); }
 
 /*# sourceMappingURL=main-fullpage.component.css.map */

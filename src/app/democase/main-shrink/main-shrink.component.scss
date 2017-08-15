@@ -1,0 +1,43 @@
+:host /deep/ {
+  .rb {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .tr {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .lb {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .ctr {
+    position: absolute;
+    left: 230px;
+    top: 180px;
+  }
+
+  .clb {
+    position: absolute;
+    left: 230px;
+    top: 85px;
+  }
+
+  .crb {
+    position: absolute;
+    left: 330px;
+    top: 130px;
+  }
+
+  .clt {
+    position: absolute;
+    left: 140px;
+    top: 130px;
+  }
+}

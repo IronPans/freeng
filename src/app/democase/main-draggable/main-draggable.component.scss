@@ -1,0 +1,30 @@
+:host /deep/ {
+  .draggable-test-item {
+    padding: 10px;
+    border-bottom: 1px solid #d9d9d9;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .drop-box,
+  free-draggable {
+    width: 50%;
+    min-height: 15rem;
+    padding: .5rem;
+    border: 1px solid #d9d9d9;
+    .free-draggable-item {
+      border: 1px solid #d9d9d9;
+      margin-bottom: .5rem;
+    }
+  }
+
+  .drop-box {
+    border-left: none;
+    .free-list-item {
+      border: 1px solid #d9d9d9;
+      margin-bottom: .5rem;
+    }
+  }
+}
