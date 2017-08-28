@@ -10,7 +10,7 @@ UI Components for Angular.
 
 ## Demo
 
-View all the Components in action at [HomePage](http://ghmagical.com/freeng/releases/version/0.2.0/)
+View all the Components in action at [HomePage](http://ghmagical.com/freeng/releases/version/v0.2.0/)
 
 ## Installation
 
