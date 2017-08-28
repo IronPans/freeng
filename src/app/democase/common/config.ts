@@ -1,4 +1,3 @@
-
 export const config = {
   version: '0.2.0',
   theme: [
@@ -23,4 +22,4 @@ export const config = {
     { name: 'teal', color: '#3aa99e'},
     { name: 'dark', color: '#393D49'}
   ]
-};
+}
