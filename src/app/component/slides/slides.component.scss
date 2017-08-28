@@ -99,7 +99,7 @@ free-slides {
 
   }
 
-  .free-container-horizontal > .free-pagination-bullets {
+  &.free-container-horizontal > .free-pagination-bullets {
     bottom: 10px;
     left: 0;
     width: 100%;
@@ -109,7 +109,7 @@ free-slides {
     }
   }
 
-  .free-container-vertical > .free-pagination-bullets {
+  &.free-container-vertical > .free-pagination-bullets {
     right: 10px;
     top: 50%;
     transform: translate3d(0, -50%, 0);

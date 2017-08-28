@@ -18,6 +18,7 @@ import {ButtonModule} from '../../component/button/button.directive';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {IndexRoutingModule} from './index-routing.module';
 import {PanelModule} from '../../component/panel/panel.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import {PanelModule} from '../../component/panel/panel.component';
     ShrinkModule,
     SidenavModule,
     ListModule,
-    PanelModule
+    PanelModule,
+    LanguageModule
   ],
   declarations: [
     IndexComponent

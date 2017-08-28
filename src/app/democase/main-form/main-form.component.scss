@@ -1,0 +1,14 @@
+:host /deep/ {
+  free-inputtext {
+    margin: 0 1rem .5rem 0;
+  }
+
+  .input-pattern p {
+    width: 100%;
+
+    free-inputtext {
+      width: 40%;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,229 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="12">
+      <p style="padding-left: 1rem;">
+        {{'DEMO.MEDIA.DESCRIPTION' | translate}}
+      </p>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="free-demo-board" fGrid="12">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Video</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-media [videoMedia]="media" [enableKeyboard]="true">
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+              <a href="http://videojs.com/html5-video-support/" target="_blank">
+                supports HTML5 video
+              </a>
+            </free-media>
+            <free-media [videoMedia]="media" [loop]="true" [muted]="true" [staticPosition]="true">
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+              <a href="http://videojs.com/html5-video-support/" target="_blank">
+                supports HTML5 video
+              </a>
+            </free-media>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-media [media]="media" [loop]="true" [muted]="true"&gt;
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+                &lt;a href="http://videojs.com/html5-video-support/" target="_blank"&gt;
+                supports HTML5 video
+                 &lt;a/&gt;
+              &lt;/free-media&gt;
+
+              &lt;free-media [media]="media" [loop]="true" [muted]="true" [staticPosition]="true"&gt;
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                &lt;a href="http://videojs.com/html5-video-support/" target="_blank"&gt;
+                  supports HTML5 video
+                &lt;/a&gt;
+              &lt;/free-media&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Audio</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-media [audioMedia]="audio" [loop]="true" [muted]="true"></free-media>
+            <free-media [audioMedia]="audio" [loop]="true" [muted]="true" [theme]="'dark'">
+            </free-media>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-media [media]="audio" [loop]="true" [muted]="true"&gt;&lt;/free-media&gt;
+              &lt;free-media [media]="audio" [loop]="true" [muted]="true" [dark]="true"&gt;&lt;/free-media&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+    <div class="free-demo-board" fGrid="12">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;MediaModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-media</h3>
+        <p>{{'COMPONENT.MEDIA' | translate}}</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>videoMedia</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>audioMedia</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>controls</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>autoplay</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>loop</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>muted</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.5' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>width</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.6' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>height</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.7' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>style</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Object</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.8' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>staticPosition</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.9' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>alwaysShowControls</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.10' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>enableKeyboard</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.11' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>poseter</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.12' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MEDIA.OPTION.13' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
+</div>
+

@@ -2,20 +2,20 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        Icon组件将渲染您项目中包含的任何样式表中定义的任何图标。
+        {{'DEMO.ICON.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-icon</h3>
-        <p>字体图标</p>
+        <p>{{'COMPONENT.ICON' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -27,8 +27,8 @@
               </free-table-cell>
               <free-table-cell>
                 <ng-template>
-                  必选，图标名称
-                  (当前使用<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>)
+                  {{'DEMO.ICON.OPTION.0' | translate}}
+                  <a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>)
                 </ng-template>
               </free-table-cell>
             </free-table-row>
@@ -38,7 +38,9 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                可选，改变图标的大小
+                <ng-template>
+                  {{'DEMO.ICON.OPTION.1' | translate}}
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -48,7 +50,7 @@
               </free-table-cell>
               <free-table-cell>
                 <ng-template>
-                 可选，设置图片旋转。默认为false
+                  {{'DEMO.ICON.OPTION.2' | translate}}
                 </ng-template>
               </free-table-cell>
             </free-table-row>
@@ -142,5 +144,5 @@
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

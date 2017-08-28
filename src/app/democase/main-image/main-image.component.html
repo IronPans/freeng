@@ -2,18 +2,21 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        通过为 &lt;img&gt;元素添加以下相应的类，可以让图片呈现不同的形状。
+        {{'DEMO.SHAPE.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
-        <h3 class="free-title">图片形状</h3>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>类名</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head>
+                <ng-template>
+                  {{'STYLE' | translate}}
+                </ng-template>
+              </free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -23,62 +26,80 @@
                 <ng-template><code>.img-circle</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                可选，设置圆形
+                <ng-template>
+                  {{'DEMO.SHAPE.ROUND' | translate}}
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>
                 <ng-template><code>.img-shield</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，设置盾形</free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.SHAPE.SHIELD' | translate}}
+                </ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>
                 <ng-template><code>.img-skew</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                可选，设置斜形
+                <ng-template>
+                  {{'DEMO.SHAPE.SKEW' | translate}}
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>
                 <ng-template><code>.img-skew2</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，设置斜形</free-table-cell>
-            </free-table-row>
-            <free-table-row>
               <free-table-cell>
-                <ng-template><code>.img-circle</code></ng-template>
-              </free-table-cell>
-              <free-table-cell>
-                可选，设置圆形
+                <ng-template>
+                  {{'DEMO.SHAPE.SKEW' | translate}}
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>
                 <ng-template><code>.img-ellipse</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，设置椭圆</free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.SHAPE.ELLIPSE' | translate}}
+                </ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>
                 <ng-template><code>.img-ellipse-half</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                可选，设置半椭圆
+                <ng-template>
+                  {{'DEMO.SHAPE.HALFELLIPSE' | translate}}
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>
                 <ng-template><code>.img-ellipse-quarter</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，设置四分之一圆</free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.SHAPE.QUARTERELLIPSE' | translate}}
+                </ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>
                 <ng-template><code>.img-quarter</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，设置半圆</free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.SHAPE.QUARTER' | translate}}
+                </ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -115,7 +136,7 @@
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Default</h3>
+        <h3 class="free-toolbar">Border</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
             <img class="img-circle img-thumbnail" src="assets/images/landscape1.jpg" alt=""/>
@@ -143,5 +164,5 @@
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

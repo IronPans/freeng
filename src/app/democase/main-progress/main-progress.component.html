@@ -1,25 +1,19 @@
 <div class="main-container">
   <div class="row">
     <div fGrid="6" class="free-demo-board">
-      <p>
-        线性进度条填充0％至100％以显示任务的进度。 它还将动画显示有一个任务等待完成。
-      </p>
-      <ul class="free-ul-padding">
-        <li>丰富的颜色选择</li>
-        <li>酷炫的动画效果</li>
-      </ul>
+      <div [innerHTML]="'DEMO.PROGRESS.DESCRIPTION' | translate"></div>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-progress</h3>
-        <p>代表一个进度条</p>
+        <p>{{'COMPONENT.PROGRESS' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -29,14 +23,18 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>当前加载值</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.PROGRESS.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>striped</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否增加斑马条纹，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.PROGRESS.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>theme</free-table-cell>
@@ -44,7 +42,10 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+                <ng-template>
+                  {{'DEMO.PROGRESS.OPTION.2' | translate}}
+                  (primary/info/success/warning/danger)
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -52,7 +53,9 @@
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否增加动态效果，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.PROGRESS.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -166,5 +169,5 @@
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

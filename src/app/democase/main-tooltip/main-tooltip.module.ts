@@ -8,6 +8,7 @@ import {TableModule} from '../../component/table/table.component';
 import {MainTooltipRoutingModule} from './main-tooltip-routing.module';
 import {MainTooltipComponent} from './main-tooltip.component';
 import {ButtonModule} from '../../component/button/button.directive';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {ButtonModule} from '../../component/button/button.directive';
     GridModule,
     ButtonModule,
     TooltipModule,
-    TableModule
+    TableModule,
+    LanguageModule
   ],
   declarations: [MainTooltipComponent]
 })

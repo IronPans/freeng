@@ -7,6 +7,7 @@ import {BreadcrumbModule} from '../../component/breadcrumb/breadcrumb.component'
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainBreadcrumbRoutingModule} from './main-breadcrumb-routing.module';
 import {MainBreadcrumbComponent} from './main-breadcrumb.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainBreadcrumbComponent} from './main-breadcrumb.component';
     CodeModule,
     TableModule,
     BreadcrumbModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainBreadcrumbComponent]
 })

@@ -1,23 +1,21 @@
-
 <div class="main-container">
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        Toast是一种消息提示框，可提供成功、警告和错误等反馈信息。
-        通常情况下，Toast会在短时间内显示，然后自动关闭。
+        {{'DEMO.TOAST.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-toast</h3>
-        <p>消息提示框</p>
+        <p>{{'COMPONENT.TOAST' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
           <free-table-body>
@@ -26,21 +24,27 @@
               <free-table-cell>
                 <ng-template><code>Array</code></ng-template>
               </free-table-cell>
-              <free-table-cell>消息数组</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TOAST.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>delay</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>消息延迟关闭时间，默认为1500(单位：ms)</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TOAST.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>maxMessage</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>显示最大的消息数，默认为10</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TOAST.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>theme</free-table-cell>
@@ -48,20 +52,20 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+                <ng-template>{{'DEMO.TOAST.OPTION.3' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
       </div>
       <div class="free-demo-row">
-        <h3 class="free-title">事件</h3>
+        <h3 class="free-title">{{'EVENT' | translate}}</h3>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>事件</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'EVENT' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
           <free-table-body>
@@ -70,7 +74,9 @@
               <free-table-cell>
                 <ng-template><code>Function</code></ng-template>
               </free-table-cell>
-              <free-table-cell>当消息关闭时触发的回调事件。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TOAST.EVENTS.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -95,11 +101,18 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton (click)="open()">普通提示</button>
+            <button fButton (click)="open()">Toast</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-toast [messages]="messages"&gt;&lt;/free-toast&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="typescript">
+              this.messages = [];
+              this.messages.push(&#123;
+                content: 'Tip: This is a toast!'
+              &#125;);
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -126,7 +139,7 @@
         <h3 class="free-toolbar">Delay</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton (click)="openCustomDelay()">自定义时长5000ms</button>
+            <button fButton (click)="openCustomDelay()">{{'DEMO.TOAST.INTRO.0' | translate}}</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -137,7 +150,7 @@
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 
   <free-toast [messages]="messages"></free-toast>
   <free-toast [messages]="errors" theme="danger"></free-toast>

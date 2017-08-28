@@ -17,9 +17,9 @@ export class MainBreadcrumbComponent implements OnInit {
 
   ngOnInit() {
     this.menus = [
-      {'name': '首页'},
-      {'name': '面包屑'},
-      {'name': '面包屑'}
+      {'name': 'Homepage', icon: 'home'},
+      {'name': 'item 1'},
+      {'name': 'item 2'}
     ];
   }
 

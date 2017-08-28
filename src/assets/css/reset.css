@@ -17,17 +17,13 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font: .75rem/1.5rem "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",sans-serif;
+  font: .75rem/1.5rem Roboto, Noto Sans, Noto,"Microsoft Yahei",sans-serifsans-serif;
   color: rgba(0, 0, 0, 0.87); }
 
 *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-
-a:visited, a:link, a:active {
-  color: #2979FF;
-  text-decoration: none; }
 
 :-webkit-full-screen,
 :-moz-full-screen,

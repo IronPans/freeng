@@ -9,6 +9,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {DraggableModule} from '../../component/draggable/draggable.component';
 import {ListModule} from '../../component/list/list.component';
 import {ImageModule} from '../../component/image/image.component';
+import {LanguageModule} from '../common/language';
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +20,8 @@ import {ImageModule} from '../../component/image/image.component';
     MainDraggableRoutingModule,
     DraggableModule,
     ListModule,
-    ImageModule
+    ImageModule,
+    LanguageModule
   ],
   declarations: [MainDraggableComponent]
 })

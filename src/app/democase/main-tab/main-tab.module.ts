@@ -6,6 +6,7 @@ import {TableModule} from '../../component/table/table.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainTabRoutingModule} from './main-tab-routing.module';
 import {MainTabComponent} from './main-tab.component';
+import {LanguageModule} from '../common/language';
 @NgModule({
   imports: [
     CommonModule,
@@ -13,7 +14,8 @@ import {MainTabComponent} from './main-tab.component';
     TabGroupModule,
     CodeModule,
     TableModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainTabComponent]
 })

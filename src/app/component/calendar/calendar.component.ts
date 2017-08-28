@@ -138,8 +138,22 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
   @Input() width: number;
   @Input() pholder: string;
   @Input() readonly: boolean;
-  @Input() minDate: string;
-  @Input() maxDate: string;
+  @Input()
+  set minDate(value: string) {
+    this._minDate = value;
+    this.createCalendar();
+  }
+  get minDate() {
+    return this._minDate;
+  }
+  @Input()
+  set maxDate(value: string) {
+    this._maxDate = value;
+    this.createCalendar();
+  }
+  get maxDate() {
+    return this._maxDate;
+  }
   @Input() inline: boolean;
   @Input() disabled: boolean;
   @Input() defaultDate: string;
@@ -157,6 +171,8 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
     dayNamesShort: ['日', '一', '二', '三', '四', '五', '六'],
     monthNamesShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
   };
+  _minDate: string;
+  _maxDate: string;
   _selectLocale: any;
   _week: string[];
   currentDate: any;

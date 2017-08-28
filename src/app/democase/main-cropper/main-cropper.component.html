@@ -1,0 +1,99 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="12">
+      <p style="padding-left: 1rem;">
+        {{'DEMO.CROPPER.DESCRIPTION' | translate}}
+      </p>
+      <hr>
+    </div>
+    <div class="free-demo-board" fGrid="12">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-cropper [data]="{url: 'assets/images/picture.jpg', aspectRatio: (2 / 3)}"
+                          (onCrop)="onCrop($event)"></free-cropper>
+            <p style="margin-left: 10px;">
+              <img src="{{cropImage}}" alt="">
+            </p>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-cropper [data]="&#123;url: 'assets/images/picture.jpg', aspectRatio: (2 / 3)&#125;"
+               (onCrop)="onCrop($event)"&lt;&gt;/free-cropper&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+    <div class="free-demo-board" fGrid="12">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;CropperModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-editor</h3>
+        <p>{{'COMPONENT.CROPPER' | translate}}</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>data</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Object</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.CROPPER.DATA.0' | translate}}：
+                  &#123;
+                    width: '{{'DEMO.CROPPER.DATA.1' | translate}}',
+                    height: '{{'DEMO.CROPPER.DATA.2' | translate}}',
+                    aspectRatio: '{{'DEMO.CROPPER.DATA.3' | translate}}',
+                    url: '{{'DEMO.CROPPER.DATA.4' | translate}}',
+                    cropperWidth: '{{'DEMO.CROPPER.DATA.5' | translate}}',
+                    cropperHeight: '{{'DEMO.CROPPER.DATA.6' | translate}}'
+                  &#125;
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>zoomable</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CROPPER.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>aspectRatio</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CROPPER.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
+</div>
+

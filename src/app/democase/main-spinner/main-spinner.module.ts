@@ -7,6 +7,7 @@ import {SpinnerModule} from '../../component/spinner/spinner.component';
 import {TableModule} from '../../component/table/table.component';
 import {MainSpinnerRoutingModule} from './main-spinner-routing.module';
 import {MainSpinnerComponent} from './main-spinner.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainSpinnerComponent} from './main-spinner.component';
     TableModule,
     CodeModule,
     GridModule,
-    SpinnerModule
+    SpinnerModule,
+    LanguageModule
   ],
   declarations: [MainSpinnerComponent]
 })

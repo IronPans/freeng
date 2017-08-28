@@ -7,6 +7,7 @@ import {RadioModule} from '../../component/radio/radio.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainRadioRoutingModule} from './main-radio-routing.module';
 import {MainRadioComponent} from './main-radio.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainRadioComponent} from './main-radio.component';
     CodeModule,
     TableModule,
     RadioModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainRadioComponent]
 })

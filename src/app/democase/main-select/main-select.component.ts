@@ -22,11 +22,11 @@ export class MainSelectComponent implements OnInit {
 
   ngOnInit() {
     this.options = [
-      { label: '广东', value: 'gd'},
-      { label: '北京', value: 'bj'},
-      { label: '上海', value: 'sh'},
-      { label: '南京', value: 'nj'},
-      { label: '云南', value: 'yn'}
+      { label: 'guangdong', value: 'gd'},
+      { label: 'beijing', value: 'bj'},
+      { label: 'shanghai', value: 'sh'},
+      { label: 'nanjing', value: 'nj'},
+      { label: 'yunnan', value: 'yn'}
     ];
     this.fruit = [
       { label: 'apple', value: 'apple'},

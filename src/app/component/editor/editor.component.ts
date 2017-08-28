@@ -73,16 +73,16 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
         </div>
         <div class="editor-link" [style.display]="isLinkShow ? 'block' : 'none'">
           <input type="text" #link placeholder="www.example.com" class="editor-link-input"/>
-          <button type="button" class="editor-confirm" (click)="onLinkConfirm(link.value)">确认</button>
+          <button type="button" class="editor-confirm" (click)="onLinkConfirm(link.value)">Insert</button>
         </div>
         <div class="editor-file" [style.display]="isUploadShow ? 'block' : 'none'">
           <div class="editor-link">
             <input type="text" #imageUrl placeholder="image url"
                    class="editor-link-input"/>
-            <button type="button" class="editor-confirm" (click)="uploadImage(imageUrl.value)">确认</button>
+            <button type="button" class="editor-confirm" (click)="uploadImage(imageUrl.value)">Insert</button>
           </div>
           <div class="editor-upload">
-            <i class="fa fa-plus"></i>图片上传
+            <i class="fa fa-plus"></i> Upload
             <input type="file" name="photo" accept="image/*"
                    class="editor-file-input" (change)="onUploadChange($event)"/>
           </div>
@@ -114,42 +114,42 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
           <input type="text" #linkInput [(ngModel)]="linkUrl" placeholder="www.example.com"
                  class="editor-link-input"/>
           <button type="button" class="editor-confirm"
-                  (click)="onLinkChange(linkInput.value, widthInput.value, heightInput.value)">确认
+                  (click)="onLinkChange(linkInput.value, widthInput.value, heightInput.value)">Update
           </button>
         </div>
         <div class="image-size" [style.display]="isImageLink ? 'block' : 'none'">
-          <span>宽：</span><input type="text" #widthInput><span>高：</span><input type="text" #heightInput>
+          <span>width：</span><input type="text" #widthInput><span>height：</span><input type="text" #heightInput>
         </div>
         <div class="arrow"></div>
       </div>
       <div class="free-popup" #tablePopup [style.display]="isTablePopupShow ? 'block' : 'none'">
         <div class="arrow"></div>
         <div class="free-table-button">
-          <span class="free-dropdown-menu free-editor-tooltip" [attr.data-tooltip]="'行'"
+          <span class="free-dropdown-menu free-editor-tooltip" [attr.data-tooltip]="'Row'"
                 (click)="onTableDropdown(row, col)">
             <i class="fa fa-bars"></i>
             <ul #row>
-              <li (click)="addRow(1)">在下方新增行</li>
-              <li (click)="addRow(-1)">在上方新增行</li>
-              <li (click)="deleteRow()">删除行</li>
+              <li (click)="addRow(1)">Insert row above</li>
+              <li (click)="addRow(-1)">Insert row below</li>
+              <li (click)="deleteRow()">Delete row</li>
             </ul>
           </span>
-          <span class="free-dropdown-menu free-editor-tooltip" [attr.data-tooltip]="'列'"
+          <span class="free-dropdown-menu free-editor-tooltip" [attr.data-tooltip]="'Column'"
                 (click)="onTableDropdown(col, row)">
             <i class="fa fa-bars fa-rotate-90"></i>
             <ul #col>
-              <li (click)="addColumn(-1)">在左侧新增列</li>
-              <li (click)="addColumn(1)">在右侧新增列</li>
-              <li (click)="deleteColumn()">删除列</li>
+              <li (click)="addColumn(-1)">Insert column before</li>
+              <li (click)="addColumn(1)">Insert column after</li>
+              <li (click)="deleteColumn()">Delete column</li>
             </ul>
           </span>
-          <span (click)="deleteTable()" class="free-editor-tooltip" [attr.data-tooltip]="'删除表格'">
+          <span (click)="deleteTable()" class="free-editor-tooltip" [attr.data-tooltip]="'Delete table'">
             <i class="fa fa-trash"></i>
           </span>
         </div>
       </div>
       <div class="free-editor-cache" *ngIf="cacheTip">
-        本地保存成功
+        Local save successful
       </div>
       <div class="free-editor-counter" *ngIf="counter">
         {{contentLength}}
@@ -276,49 +276,49 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
     this.selectedRow = this.selectedCol = 0;
     this.defaultButtons = {
       bold: {
-        title: '粗体',
+        title: 'Bold',
         icon: '\uf032',
         click: () => {
           this.execCommand('bold');
         }
       },
       italic: {
-        title: '斜体',
+        title: 'Italic',
         icon: '\uf033',
         click: () => {
           this.execCommand('italic');
         }
       },
       underline: {
-        title: '下划线',
+        title: 'Underline',
         icon: '\uf0cd',
         click: () => {
           this.execCommand('underline');
         }
       },
       strikethrough: {
-        title: '删除线',
+        title: 'Strikethrough',
         icon: '\uf0cc',
         click: () => {
           this.execCommand('strikethrough');
         }
       },
       subscript: {
-        title: '下标',
+        title: 'Subscript',
         icon: '\uf12c',
         click: () => {
           this.execCommand('subscript');
         }
       },
       superscript: {
-        title: '上标',
+        title: 'Superscript',
         icon: '\uf12b',
         click: () => {
           this.execCommand('superscript');
         }
       },
       heading: {
-        title: '标题',
+        title: 'Heading',
         icon: '\uf1dd',
         click: () => {
           this.openModal();
@@ -326,7 +326,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       fontSize: {
-        title: '字体大小',
+        title: 'Font size',
         icon: '\uf034',
         click: () => {
           this.isFontSizeShow = true;
@@ -334,7 +334,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       foreColor: {
-        title: '文本颜色',
+        title: 'Colors',
         icon: '\uf1fc',
         click: () => {
           this.isColorpickerShow = true;
@@ -344,7 +344,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       backColor: {
-        title: '背景颜色',
+        title: 'Background',
         icon: '\uf043',
         click: () => {
           this.isColorpickerShow = true;
@@ -354,7 +354,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       align: {
-        title: '排列',
+        title: 'Align',
         icon: '\uf036',
         click: () => {
           this.isAlignShow = true;
@@ -362,21 +362,21 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       insertOrderedList: {
-        title: '编号列表',
+        title: 'Ordered List',
         icon: '\uf0cb',
         click: () => {
           this.execCommand('insertOrderedList');
         }
       },
       insertUnorderedList: {
-        title: '项目列表',
+        title: 'Unordered List',
         icon: '\uf0ca',
         click: () => {
           this.execCommand('insertUnorderedList');
         }
       },
       blockquote: {
-        title: '引用',
+        title: 'Blockquote',
         icon: '\uf10d',
         click: () => {
           this.execCommand('formatBlock', '<BLOCKQUOTE>');
@@ -386,7 +386,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       table: {
-        title: '插入表格',
+        title: 'Insert table',
         icon: '\uf0ce',
         click: () => {
           this.isTableShow = true;
@@ -394,7 +394,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       createLink: {
-        title: '插入超链接',
+        title: 'Insert Link',
         icon: '\uf0c1',
         click: () => {
           this.isLinkShow = true;
@@ -402,7 +402,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       insertImage: {
-        title: '图像',
+        title: 'Insert Image',
         icon: '\uf03e',
         click: () => {
           this.isUploadShow = true;
@@ -410,7 +410,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       emotion: {
-        title: '插入表情',
+        title: 'Insert Emotion',
         icon: '\uf118',
         click: () => {
           this.isEmotionShow = true;
@@ -418,14 +418,14 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       fullscreen: {
-        title: '全屏',
+        title: 'Open Fullscreen',
         icon: '\uf066',
         click: (event, btn) => {
           this.toggleFullScreen(btn);
         }
       },
       undo: {
-        title: '撤消',
+        title: 'Undo',
         icon: '\uf0e2',
         click: (event, btn) => {
           if (this.undoManager) {
@@ -436,7 +436,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
         }
       },
       redo: {
-        title: '重做',
+        title: 'Redo',
         icon: '\uf01e',
         click: (event, btn) => {
           if (this.undoManager) {
@@ -450,7 +450,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
     this.alignButtons = [
       {
         name: 'justifyLeft',
-        title: '居左',
+        title: 'Align Left',
         icon: '\uf036',
         selected: true,
         click: () => {
@@ -460,7 +460,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
       },
       {
         name: 'justifyCenter',
-        title: '居中',
+        title: 'Align Center',
         icon: '\uf037',
         click: () => {
           this.execCommand('justifyCenter');
@@ -469,7 +469,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
       },
       {
         name: 'justifyRight',
-        title: '居右',
+        title: 'Align Right',
         icon: '\uf038',
         click: () => {
           this.execCommand('justifyRight');
@@ -478,7 +478,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
       },
       {
         name: 'justifyFull',
-        title: '两端对齐',
+        title: 'Align Justify',
         icon: '\uf039',
         click: () => {
           this.execCommand('justifyFull');
@@ -489,9 +489,6 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
 
   ngAfterViewInit() {
     this.container = this.containerViewChild.nativeElement;
-    if (this.gif) {
-      this.path = 'assets/images/emotion/';
-    }
     this.modal = this.modalViewChild.nativeElement;
     this.et = this.editorViewChild.nativeElement;
     this.linkPopup = this.linkPopupViewChild.nativeElement;

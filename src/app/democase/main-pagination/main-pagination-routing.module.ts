@@ -1,4 +1,3 @@
-
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {MainPaginationComponent} from './main-pagination.component';

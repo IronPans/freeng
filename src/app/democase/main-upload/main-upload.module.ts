@@ -7,6 +7,7 @@ import {TabGroupModule} from '../../component/tab/tab.component';
 import {UploadModule} from '../../component/upload/upload.component';
 import {MainUploadRoutingModule} from './main-upload-routing.module';
 import {MainUploadComponent} from './main-upload.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainUploadComponent} from './main-upload.component';
     CodeModule,
     TableModule,
     GridModule,
-    UploadModule
+    UploadModule,
+    LanguageModule
   ],
   declarations: [MainUploadComponent]
 })

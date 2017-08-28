@@ -77,9 +77,9 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
 
   ngAfterViewInit() {
     this._er = this.er.nativeElement;
-    this.itemWidth = this._er.offsetWidth;
     this._wrapper = this.wrapper.nativeElement;
     this._container = this.container.nativeElement;
+    this.itemWidth = this._container.offsetWidth;
 
     this.slidesLength = this.slides.length;
     for (let i = 0; i < this.slidesLength; i++) {

@@ -1,12 +1,25 @@
 .free-rating {
   display: flex;
-  padding: .5rem;
-  -webkit-align-items: center;
   align-items: center; }
   .free-rating .free-rating-item {
-    padding: 0 .2rem;
-    font-size: 1rem;
-    cursor: pointer; }
+    position: relative;
+    cursor: pointer;
+    line-height: 0; }
+    .free-rating .free-rating-item div {
+      display: inline-block;
+      font-size: 1rem;
+      padding: 0 .2rem; }
+    .free-rating .free-rating-item .free-rating-half {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      z-index: 10;
+      opacity: 0;
+      overflow: hidden;
+      padding-right: 0; }
+  .free-rating.free-rating-readonly .free-rating-item {
+    cursor: not-allowed; }
   .free-rating.free-primary {
     color: #177bbb; }
   .free-rating.free-info {

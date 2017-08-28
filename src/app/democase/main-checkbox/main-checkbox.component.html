@@ -2,23 +2,20 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        复选框允许用户从一组中选择多个选项。
+        {{'DEMO.CHECKBOX.DESCRIPTION' | translate}}
       </p>
-      <ul class="free-ul-padding">
-        <li>多种可选的主题样式</li>
-      </ul>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-checkbox</h3>
-        <p>单个复选框</p>
+        <p>{{'COMPONENT.CHECKBOX' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -28,28 +25,36 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>自定义文本，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CHECKBOX.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>name</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置复选框的名称，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CHECKBOX.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>checked</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否默认选中，默认为false，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CHECKBOX.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>disabled</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否禁用，默认为false，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CHECKBOX.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>theme</free-table-cell>
@@ -57,7 +62,7 @@
                 <ng-template><code>theme</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+                <ng-template>{{'DEMO.CHECKBOX.OPTION.4' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
@@ -81,13 +86,13 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-checkbox label="多选框" [checked]="true"></free-checkbox>
-            <free-checkbox label="多选框"></free-checkbox>
+            <free-checkbox label="Checkbox" [checked]="true"></free-checkbox>
+            <free-checkbox label="Checkbox"></free-checkbox>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-checkbox label="多选框" [checked]="true"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox label="多选框"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox label="Checkbox" [checked]="true"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox label="Checkbox"&gt;&lt;/free-checkbox&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -132,23 +137,23 @@
         <h3 class="free-toolbar">Group</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-checkbox value="广东" [(ngModel)]="selectedCity" label="广东"></free-checkbox>
-            <free-checkbox value="北京" [(ngModel)]="selectedCity" label="北京"></free-checkbox>
-            <free-checkbox value="上海" [(ngModel)]="selectedCity" label="上海"></free-checkbox>
+            <free-checkbox value="guangdong" [(ngModel)]="selectedCity" label="guangdong"></free-checkbox>
+            <free-checkbox value="beijing" [(ngModel)]="selectedCity" label="beijing"></free-checkbox>
+            <free-checkbox value="shanghai" [(ngModel)]="selectedCity" label="shanghai"></free-checkbox>
 
             <p style="width: 100%;margin-top: 20px">
-              选择的城市：<span *ngFor="let city of selectedCity">{{city}}</span>
+              select city：<span *ngFor="let city of selectedCity">{{city}}</span>
             </p>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-checkbox value="广东" [(ngModel)]="selectedCity" label="广东"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox value="北京" [(ngModel)]="selectedCity" label="北京"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox value="上海" [(ngModel)]="selectedCity" label="上海"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox value="guangdong" [(ngModel)]="selectedCity" label="guangdong"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox value="beijing" [(ngModel)]="selectedCity" label="beijing"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox value="shanghai" [(ngModel)]="selectedCity" label="shanghai"&gt;&lt;/free-checkbox&gt;
             </free-code>
             <h4>Javascript</h4>
             <free-code lang="javascript">
-              this.selectedCity = ['广东'];
+              this.selectedCity = ['guangdong'];
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -156,5 +161,5 @@
     </div>
   </div>
 
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

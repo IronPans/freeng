@@ -1,3 +1,6 @@
-
+:host /deep/ .timeline-header {
+  width: 30px;
+  vertical-align: middle;
+  border-radius: 50%; }
 
 /*# sourceMappingURL=main-timeline.component.css.map */

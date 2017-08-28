@@ -77,13 +77,4 @@
         display: flex;
         flex-wrap: wrap; }
 
-.free-iscroll::-webkit-scrollbar {
-  height: 6px;
-  width: 6px; }
-.free-iscroll::-webkit-scrollbar-thumb {
-  background-color: #6e6e6e;
-  outline: 1px solid #333; }
-.free-iscroll::-webkit-scrollbar-corner, .free-iscroll::-webkit-scrollbar-track {
-  background-color: #ccc; }
-
 /*# sourceMappingURL=tab.component.css.map */

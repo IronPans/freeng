@@ -1,0 +1,730 @@
+{
+  "LANG": "EN",
+  "INTRODUCTION": "简介",
+  "GET-START": "开始使用",
+  "UI-ELEMENT": "UI 元素",
+  "BASIC-COMPONENT": "基础组件",
+  "EXTENDED-COMPONENT": "拓展组件",
+  "PAGE": "页面",
+  "CHANGE-LOG": "更新日志",
+  "API-OPTION": "API 选项",
+  "PROPERTY": "属性",
+  "TYPE": "类型",
+  "DESCRIPTION": "描述",
+  "EVENT": "Events",
+  "THEME-SETTING": "主题设置",
+  "MAIN": {
+    "TITLE": "FreeNG UI框架",
+    "ABOUT": "关于作者",
+    "INTRODUCTION": "<p>FreeNG是一款基于Angular的UI框架，提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。</p><p>FreeNG还很年轻，首个版本发布于2017年5月。</p>",
+    "CURRENT-VERSION": "当前版本",
+    "DECLARATION": "<p><b>特别声明：</b> 如其名Free，FreeNG是完全开源免费的!</p>",
+    "FEATURE": {
+      "TITLE": "功能特点",
+      "INTRO": "<ol class='main-point'><li>基于最新的Angular4开发</li><li>采取Flex布局实现完全响应式布局</li><li>丰富的主题选择</li><li>易用的API，可按需组合的UI组件</li></ol>"
+    },
+    "GROUP": "交流群"
+  },
+  "START": {
+    "KNOW": "在这里假设你已经拥有HTML、CSS 和 JavaScript 中级前端知识并且对 Angular 框架有足够的了解。 如果你刚开始学习前端或者 Angular，将组件作为第一步可能并不是一个好主意，推荐先学习 <a href='https://www.angular.cn/' target='_blank'>Angular</a> 和 <a href='https://www.typescriptlang.org/' target='_blank'>TypeScript</a>。",
+    "IMPORT": "从freeng模块中导入(使用这种方式导入，会将所有的模块都导入)：",
+    "COMPONENT": "导入单个组件模块(有<span class='symbol component'></span>标注)：",
+    "DIRECTIVE": "导入单个指令模块 (有<span class='symbol directive'></span>标注)：",
+    "ANIMATION": "在Angular 4+中，动画模块已经分离成独立的模块，所以需要独立引入。"
+  },
+  "DEMO": {
+    "GRID": {
+      "DESCRIPTION": "<p>基于Flex布局的网格系统。</p><ul class='free-ul-padding'><li>响应式修饰符可以在xs、sm、md、lg四个视口宽度上指定不同的列大小，偏移量，对齐和分布。</li><li>通过“行（row）”在水平方向创建一组“列（column）”</li></ul>",
+      "NAME": "参数",
+      "OPTION": [
+        "超小屏幕<small>手机</small>",
+        "小屏幕<small>平板</small>",
+        "中屏幕<small>桌面显示器</small>",
+        "大屏幕<small>大桌面显示器</small>"
+      ],
+      "VALUE": [
+        "类前缀",
+        "最大宽度",
+        "列数",
+        "可嵌套",
+        "偏移"
+      ],
+      "DEMODESC": "简单使用",
+      "USE": "所有你需要记住的是行，列，内容。"
+    },
+    "TYPOGRAPHY": {
+      "DESCRIPTION": "良好的排版布局决定页面的美观。",
+      "TITLE": "标题",
+      "DEL": "被删除的文本",
+      "S": "无用文本",
+      "INS": "插入文本",
+      "U": "带下划线的文本",
+      "SMALL": "小号文本",
+      "STRONG": "着重",
+      "EM": "斜体",
+      "ALIGN": {
+        "NAME": "对齐方式",
+        "LEFT": "左对齐",
+        "CENTER": "居中",
+        "RIGHT": "右对齐",
+        "JUSTIFY": "两端对齐",
+        "NOWRAP": "不换行文本"
+      },
+      "LOWER": "改变大小写",
+      "ABBR": "缩略语",
+      "BLOCKQUOTE": "引用"
+    },
+    "SHAPE": {
+      "DESCRIPTION": "通过为 &lt;img&gt;元素添加以下相应的类，可以让图片呈现不同的形状。",
+      "STYLE": "样式",
+      "ROUND": "圆形",
+      "ELLIPSE": "椭圆",
+      "SHIELD": "盾形",
+      "SKEW": "斜形",
+      "HALFELLIPSE": "半椭圆",
+      "QUARTEReLLIPSE": "四分之一圆",
+      "QUARTER": "半圆"
+    },
+    "SHADOW": {
+      "DESCRIPTION": "利用阴影可以产生立体感。"
+    },
+    "RIPPLE": {
+      "DESCRIPTION": "增加水波纹效果"
+    },
+    "COLUMN": {
+      "DESCRIPTION": "多栏布局允许文本的多个列的简单定义 - 就像报纸一样排版",
+      "OPTION": [
+        "设置容器列数/列宽/列之间的规则/列间距/跨越列数等。默认为两列。",
+        "如不了解columns，可以到这里"
+      ]
+    },
+    "BUTTON": {
+      "DESCRIPTION": "<p>按钮是与应用程序交互的重要元素，它可以由文本或图标组成，并且可以通过各种属性进行增强美化。</p><ul class='free-ul-padding'><li>图标按钮</li><li>圆形按钮</li><li>按钮组</li></ul>",
+      "BUTTONGROUPDESC": "可选，按钮组",
+      "BUTTONDESC": "必选，用来定义一个按钮",
+      "SIZE": "可选，用来设置按钮的尺寸(big,middle(默认),small,mini)",
+      "THEME": "设置预设样式，可选。可选值(primary/info/success/warning/danger)",
+      "DISABLED": "可选，禁用按钮并阻止他的动作。 默认为false",
+      "ICON": "可选，用来设置图标，默认采取<a target='_blank' href='http://fontawesome.io/icons/'>Fontawesome图标</a>",
+      "BLOCK": "可选，以块元素展示",
+      "ROUND": "可选，圆角"
+    },
+    "LIST": {
+      "DESCRIPTION": " <p>列表用于显示信息行，例如联系人列表，播放列表或菜单。</p><ul class='free-ul-padding'><li>多媒体列表</li><li>滑动列表</li></ul>",
+      "LIST-GROUP": "列表组",
+      "HOVER": "可选，是否添加触摸效果",
+      "LIST-ITEM": "单个列表",
+      "AVATAR": "媒体元素（如图标，图片等）的容器. 可选元素"
+    },
+    "CARD": {
+      "DESCRIPTION": "卡片视图常用于展现一段完整独立的信息，比如一篇文章的预览图、作者信息、点赞数量等",
+      "CARD": "卡片容器",
+      "CARD-HEADER": "卡片头 主要用于显示卡片标题。可选",
+      "CARD-TITLE": "卡头标题",
+      "CARD-MEDIA": "媒体元素",
+      "CARD-CONTENT": "卡片内容的主容器",
+      "CARD-FOOTER": "卡片页脚用于某些附加信息或自定义操作/链接。可选的"
+    },
+    "PANEL": {
+      "DESCRIPTION": "面板常用作其它控件的容器。",
+      "HEADER": "面板的标题文字。"
+    },
+    "INPUTTEXT": {
+      "DESCRIPTION": "输入框允许用户输入文本，通常以表单形式出现。",
+      "OPTION": [
+        "设置预设样式，可选。可选值(success/warning/error)",
+        "设置提示信息，可选",
+        "设置正则匹配信息，可选。<br>可选值：<ul class='free-ul-padding'><li><code>tel</code>:手机号</li><li><code>email</code>:邮箱</li><li><code>card</code>:身份证号码</li><li><code>chinese</code>:中文</li></ul>注：如果值不在内置验证中，会使用该值作为验证信息",
+        "设置验证失败时的提示信息，可选",
+        "是否增加图标，可选(采用FontAwesome)"
+      ],
+      "VALIDATION": [
+        "请输入手机号码",
+        "必须是11位的手机号码",
+        "请输入邮箱",
+        "必须是正确的邮箱!",
+        "请输入身份证号码",
+        "必须是15位或18位身份证号码!",
+        "请输入至少一位中文",
+        "至少是1位中文!"
+      ]
+    },
+    "ACCORDION": {
+      "DESCRIPTION": "折叠面板能有效地节省页面的可视面积。",
+      "GROUP": "折叠面板组",
+      "OPTION": [
+        "是否开启手风琴效果，默认为false，可选",
+        "折叠面板的开关(标题)，可选"
+      ]
+    },
+    "BADGE": {
+      "DESCRIPTION": "徽章是包含数字或文字的简单组件。",
+      "OPTION": [
+        "内容",
+        "是否显示在右上角，默认为false"
+      ]
+    },
+    "BREADCRUMB": {
+      "DESCRIPTION": "面包屑结构简单，支持自定义分隔符。",
+      "OPTION": [
+        "面包屑数组",
+        "自定义分隔符",
+        "使用FontAwesome字体图标来自定义分隔符"
+      ]
+    },
+    "CALENDAR": {
+      "DESCRIPTION": "可输入或选择日期的选择器",
+      "OPTION": [
+        "设置默认值，只在初始化时生效一次，可选。",
+        "设置可选择的最小日期，可选",
+        "设置可选择的最大日期，可选",
+        "设置第一天为星期几，可选，默认为7(也就是星期天）",
+        "设置语言，可选，默认是“en”。(中文为“cn”）",
+        "设置日期格式，可选，默认为“yyyy-MM-dd”",
+        "设置小时制，可选，默认24小时",
+        "设置提示信息，可选",
+        "设置是否可输入，可选，默认为true",
+        "是否显示时间(时分秒)，可选，默认为false",
+        "是否内联显示，可选，默认为false",
+        "设置宽度(只有内联显示时才生效)，可选，默认为250"
+      ],
+      "EVENTS": [
+        "当选择值时触发的回调事件，可选。"
+      ]
+    },
+    "CASCADER": {
+      "DESCRIPTION": "级联选择器，可以从一组相关联的数据集合进行选择，例如省市区，事物分类等。",
+      "OPTION": [
+        "设置数据源，必选",
+        "设置可描述输入字段预期值的提示信息，可选",
+        "设置分隔符，可选。默认是'/'",
+        "输入框的长度是否随着选择值的长度而展开，可选。默认为false"
+      ],
+      "EVNETS": [
+        "选择完成后的回调，可选。返回值格式：<code>{{'{value: [\"第一级值\", \"第二级值\"], label: \"以字符串显示的选择值\"}'}}</code>"
+      ]
+    },
+    "CHART": {
+      "DESCRIPTION": "图表组件是基于<a href='http://www.chartjs.org/' target='_blank'>Chart.js</a>，一个基于开源的基于HTML5的图表库。",
+      "SUBTITLE": "<p>为了让图表控件生效，必须引入chart.js，有两种方式：</p><ul class='free-ul-padding'><li>通过外链</li><li>通过CLI</li></ul><h3 class='free-title'>外链chart.js</h3>",
+      "OPTION": [
+        "图表宽度，可选。",
+        "图表高度，可选。",
+        "图表类型，必选。",
+        "图表数据结构，必选。",
+        "图表配置数据，可选。"
+      ],
+      "EVENTS": [
+        "当点击图表时触发的回调事件，可选。"
+      ]
+    },
+    "CHECKBOX": {
+      "DESCRIPTION": "复选框允许用户从一组中选择多个选项。",
+      "OPTION": [
+        "自定义文本，可选",
+        "设置复选框的名称，可选",
+        "是否默认选中，默认为false，可选",
+        "是否禁用，默认为false，可选",
+        "设置预设样式，可选。可选值(primary/info/success/warning/danger)"
+      ]
+    },
+    "CHIP": {
+      "DESCRIPTION": "碎片可以用来表示小块信息，它们最常用于联系人或标记。",
+      "OPTION": [
+        "碎片数组",
+        "设置input输入框的提示文本"
+      ]
+    },
+    "COLORPICKER": {
+      "DESCRIPTION": "颜色选择器是用于选择颜色的输入组件。",
+      "OPTION": [
+        "是否显示输入框，默认为false",
+        "是否内联显示，默认为false。"
+      ],
+      "EVENTS": [
+        "当选定颜色时的回调事件。参数："
+      ]
+    },
+    "FLOW": {
+      "DESCRIPTION": "无限滚动允许在页面滚动靠近底部时加载其他内容或执行任何其他所需操作。",
+      "OPTION": [
+        "设置样式",
+        "是否开启图片栏加载，默认为false"
+      ],
+      "EVENTS": [
+        "当滚动到底部时触发。"
+      ],
+      "INTRO": [
+        "流块"
+      ]
+    },
+    "CONTEXTMENU": {
+      "DESCRIPTION": "上下文菜单在其目标上右击时，会显示一个重叠菜单。",
+      "OPTION": [
+        "需要上下文菜单的目标(一般使用模板变量)",
+        "菜单数组",
+        "设置document的上下文菜单，默认为false",
+        "是否点击返回上一个路由页面，默认为false"
+      ]
+    },
+    "CROPPER": {
+      "DESCRIPTION": "图片裁剪组件，一般用于裁剪头像。",
+      "OPTION": [
+        "是否可缩放",
+        "裁剪窗口的高宽比例,默认是1:1"
+      ],
+      "DATA": [
+        "初始化属性",
+        "容器宽度",
+        "容器高度",
+        "裁剪窗口的高宽比例",
+        "图像源",
+        "裁剪窗口宽度",
+        "裁剪窗口高度"
+      ]
+    },
+    "DATATABLE": {
+      "DESCRIPTION": " <p>数据表格可用于显示数据列表。</p><ul class='free-ul-padding'><li>分页，固定头和排序</li><li>提供了丰富的支持,复选框</li></ul>",
+      "INTRO": [
+        "必选，类似HTML的table，一个free-datatable对应一个table。",
+        "必选，类似HTML的td，表示一列数据。"
+      ],
+      "OPTION": [
+        "数据数组，必选",
+        "是否显示边框，默认为false",
+        "是否显示斑马线，默认为false",
+        "是否添加悬停效果，默认为false",
+        "是否添加复选框或单选框，可选。可选值(single/multiple)",
+        "是否显示分页器，可选，默认为false",
+        "每页数据数，可选，默认为10",
+        "是否展示可折叠内容，默认为false。需结合ng-template，可参考右侧例子。",
+        "是否固定头，默认为false。",
+        "列的名称，必须，对应free-datatable里value数据里的键",
+        "列的描述名称，必选",
+        "当前列是否可排序，默认为false"
+      ],
+      "EVENTS": [
+        "当选择发生改变时触发的回调函数。"
+      ]
+    },
+    "DRAGGABLE": {
+      "DESCRIPTION": "可拖放元素的控件。",
+      "OPTION": [
+        "拖放列表数组",
+        "拖放目标元素",
+        "列表是否可拖放，默认为false",
+        "拖放效果，默认为copy。可选值(copy/move)"
+      ],
+      "EVENTS": [
+        "拖放开始时触发的回调函数",
+        "拖放结束时触发的回调函数"
+      ]
+    },
+    "DROPDOWN": {
+      "DESCRIPTION": "下拉菜单可以帮助你节省空间，同时提供更多选择",
+      "OPTION": [
+        "菜单子项数组",
+        "设置下拉菜单展开的位置(bottom-left, bottom-right)，可选，默认为bottom-left。",
+        "设置鼠标移动上去时展开，可选，默认为false",
+        "设置预设样式，可选。可选值(primary/info/success/warning/danger)"
+      ]
+    },
+    "EDITOR": {
+      "DESCRIPTION": "一款十分强大的、所见即所得的富文本编辑器。",
+      "OPTION": [
+        "是否显示工具栏，默认为true。",
+        "工具栏显示按钮，可选。",
+        "设置最大高度",
+        "是否显示字数，可选，默认为false",
+        "设置编辑器样式，可选。"
+      ]
+    },
+    "ERROR": {
+      "WORD": "访问的页面貌似跑去外太空了！"
+    },
+    "FULLPAGE": {
+      "DESCRIPTION": "全屏切换一般用于宣传页面。",
+      "INTRO": [
+        "全屏滚动容器的子组件，需要展示的内容都填进子组件中。"
+      ],
+      "OPTION": [
+        "是否显示分页器，默认为false，可选",
+        "分页器是否可点击，默认为false，可选"
+      ]
+    },
+    "ICON": {
+      "DESCRIPTION": "字体图标将渲染您项目中包含的任何样式表中定义的任何图标。换一般用于宣传页面。",
+      "OPTION": [
+        "必选，图标名称(当前使用",
+        "可选，改变图标的大小",
+        "可选，设置图片旋转。默认为false"
+      ]
+    },
+    "LOADING": {
+      "DESCRIPTION": "加载组件是一个覆盖，可以防止用户在指示活动时进行交互，以显示任务的进度，或等待任务完成。",
+      "OPTION": [
+        "设置预设样式，可选。可选值",
+        "可选，用来设置Loading的类型"
+      ]
+    },
+    "MEDIA": {
+      "DESCRIPTION": "多个平台，同一个UI的媒体播放器。",
+      "OPTION": [
+        "视频数组，可选。(videoMedia和audioMedia二选一)",
+        "音频数组，可选。(videoMedia和audioMedia二选一)",
+        "是否显示控制条，可选，默认为true。",
+        "是否自动播放，可选，默认为false。",
+        "是否循环播放，可选，默认为false。",
+        "是否禁音，可选，默认为false。",
+        "设置播放器宽度，可选，默认为400(px).",
+        "设置播放器高度，可选。",
+        "设置播放器样式，可选。",
+        "设置控制条悬浮在视频之上(只对视频生效)，可选，默认为false。",
+        "是否固定悬浮控制条，可选，默认为false。",
+        "是否开启键盘操作，可选，默认为false。",
+        "设置预览图，可选。",
+        "设置主题，默认为白底黑字。可选值（dark)"
+      ]
+    },
+    "MODAL": {
+      "DESCRIPTION": "模态框包含专门针对特定任务的文本和UI控件。 它们向用户通知关键信息，要求用户作出决定或涉及多个任务",
+      "OPTION": [
+        "模态框标题。",
+        "是否显示模态框，默认为false",
+        "设置预设样式，可选。可选值(primary/info/success/warning/danger)",
+        "设置模态框类型(alert,confirm,prompt)，可选。",
+        "设置Loading类型，可选。",
+        "设置Loading自动隐藏时间，可选。"
+      ],
+      "EVENTS": [
+        "每次点击触发，返回参数类似"
+      ],
+      "INTRO": [
+        "当前页码"
+      ]
+    },
+    "NOTIFICATION": {
+      "DESCRIPTION": "简单的页面消息通知组件。可以设置让消息在页面的四个角落出现。可以手动关闭消息，也可以设置成自动关闭。",
+      "OPTION": [
+        "消息数组。",
+        "消息通知框延迟关闭时间。默认不关闭",
+        "消息通知框的位置。默认为“TopRight”。(可选值：topLeft, topRight, bottomLeft, bottomRight)"
+      ]
+    },
+    "PAGINATION": {
+      "DESCRIPTION": "采用分页的形式分隔长列表",
+      "OPTION": [
+        "最多显示页数，可选。默认5.",
+        "每页显示的数据数，可选，默认为10",
+        "当前页码，可选。"
+      ],
+      "EVENTS": [
+        "每次点击触发，返回参数类似"
+      ],
+      "INTRO": [
+        "当前页码"
+      ]
+    },
+    "PROGRESS": {
+      "DESCRIPTION": "<p>线性进度条填充0％至100％以显示任务的进度。 它还将动画显示有一个任务等待完成。</p><ul class='free-ul-padding'><li>丰富的颜色选择</li><li>酷炫的动画效果</li></ul>",
+      "OPTION": [
+        "当前加载值",
+        "是否增加斑马条纹，默认为false",
+        "设置预设样式，可选。可选值",
+        "是否增加动态效果，默认为false"
+      ]
+    },
+    "RADIO": {
+      "DESCRIPTION": "单选按钮允许用户从一组中选择一个选项",
+      "OPTION": [
+        "自定义文本，可选",
+        "设置单选框的名称，可选",
+        "是否默认选中，默认为false，可选",
+        "是否禁用，默认为false，可选",
+        "设置预设样式，可选。可选值"
+      ]
+    },
+    "RANGE": {
+      "DESCRIPTION": "范围控件允许用户通过沿滑杆或轨道移动滑块旋钮从一系列值中进行选择。",
+      "OPTION": [
+        "设置当前值。",
+        "设置最小值，默认为0",
+        "设置最大值，默认为100",
+        "设置预设样式，可选。可选值",
+        "滑块的大小。默认为1.可选值：(0 ~ 1)",
+        "是否启用垂直滑块。默认为false",
+        "滑动轨道的高度(一般在水平滑块时使用)。默认为2px。",
+        "滑动轨道的宽度(一般在垂直滑块时使用)。默认为2px。"
+      ]
+    },
+    "RATING": {
+      "DESCRIPTION": "星星评分",
+      "OPTION": [
+        "设置当前值。",
+        "设置预设样式，可选。可选值",
+        "是否只读，可选。"
+      ],
+      "EVENTS": [
+        "当值改变时触发的回调函数。"
+      ]
+    },
+    "SHRINK": {
+      "DESCRIPTION": "浮动按钮组件,按下时，可能会包含更多的相关操作。",
+      "OPTION": [
+        "必选，浮动按钮数组。",
+        "可选，设置浮动按钮的类型(vertical、vertical-reverse、horizontal、horizontal-reverse、circle)，默认horizontal",
+        "可选，圆形浮动按钮的位置(lt、lb、rt、rb)，默认lt"
+      ]
+    },
+    "SELECT": {
+      "DESCRIPTION": " 下拉选择框可在多个选择之间进行选择。选择显示当前状态和向下箭头。",
+      "OPTION": [
+        "设置option，必选",
+        "设置可描述输入字段预期值的提示信息，可选",
+        "设置可描述输入字段预期值的提示信息，可选",
+        "是否可选择多个选项，可选",
+        "是否显示过滤输入框，可选"
+      ],
+      "EVENTS": [
+        "当元素的值发生改变时，会发生 onChange 事件。"
+      ]
+    },
+    "SIDENAV": {
+      "DESCRIPTION": " 侧边栏以滑动方式展现菜单或导航等内容。",
+      "OPTION": [
+        "是否展开，必选。默认为false",
+        "设置侧边栏的位置。默认为left。可选(left/right)",
+        "是否显示半透明背景(可点击关闭侧边栏)，可选。默认为false",
+        "设置侧边栏的样式，可选"
+      ],
+      "EVENTS": [
+        "当侧边栏关闭或打开时触发的回调函数，可选。返回值:"
+      ]
+    },
+    "SLIDE": {
+      "DESCRIPTION": " 强大的触摸滑动幻灯片。",
+      "OPTION": [
+        "设置幻灯片样式，可选",
+        "是否显示分页器，可选",
+        "分页器是否可点击，可选",
+        "是否显示左右切换箭头，可选",
+        "是否可循环，可选",
+        "是否自动播放，可选",
+        "户操作之后，是否禁止autoplay。默认为true：停止。如果设置为false，用户操作之后自动切换不会停止，每次都会重新启动autoplay。操作包括触碰，拖动，点击pagination等。"
+      ],
+      "INTRO": [
+        "一个幻灯片列表容器。",
+        "一个切换的幻灯片，可以包含文字、图片、html元素。"
+      ],
+      "EVENTS": [
+        "当侧边栏关闭或打开时触发的回调函数，可选。返回值:"
+      ]
+    },
+    "SPINNER": {
+      "DESCRIPTION": "数字输入框控件，可直接输入数字，也可以点击“+”、“-”按钮变换当前数值。",
+      "OPTION": [
+        "设置当前值，默认为0",
+        "允许使用的最小值，默认无限制",
+        "允许使用的最大值，默认无限制",
+        "每次点击“+”、“-”按钮变化的步长，默认步长为1"
+      ]
+    },
+    "SWITCH": {
+      "DESCRIPTION": "拨动开关用作切换单个设置选项的状态。",
+      "OPTION": [
+        "自定义文本，可选",
+        "设置预设样式，可选。可选值",
+        "主题类型",
+        "是否默认选中，默认false",
+        "是否禁用，默认为false"
+      ],
+      "EVENTS": [
+        "当状态发生变化时触发的回调函数"
+      ]
+    },
+    "TAB": {
+      "DESCRIPTION": "标签页可以轻松的切换应用的不同视图或功能方面，或者浏览分类数据集。",
+      "OPTION": [
+        "设置Tab头的位置，默认在左侧.可选值(right, center)",
+        "标签标题，可选",
+        "是否禁用，可选，默认false"
+      ],
+      "INTRO": [
+        "必选，表示一组Tab。"
+      ],
+      "EVENTS": [
+        "当Tab切换时触发的回调函数。"
+      ]
+    },
+    "TABLE": {
+      "DESCRIPTION": "数据表可用于显示简单的数据列表。",
+      "OPTION": [
+        "规定单元格可横跨的列数，可选",
+        "规定单元格可横跨的行数，可选"
+      ],
+      "INTRO": [
+        "必选，类似HTML的table，一个free-table对应一个table。",
+        "必选，类似HTML的thead，一个free-table-header对应一个thead。",
+        "必选，类似HTML的tbody，一个free-table-body对应一个tbody。",
+        "必选，类似HTML的tr，一个free-table-row对应一个tr。",
+        "必选，类似HTML的td，一个free-table-cell对应一个td。"
+      ]
+    },
+    "TIMELINE": {
+      "DESCRIPTION": "垂直展示的时间流信息。",
+      "OPTION": [
+        "节点描述标题，可选。",
+        "节点图形，默认圆形，可选(square)"
+      ],
+      "INTRO": [
+        "时间轴",
+        "时间轴的每一个节点"
+      ]
+    },
+    "TOAST": {
+      "DESCRIPTION": "Toast是一种消息提示框，可提供成功、警告和错误等反馈信息。通常情况下，Toast会在短时间内显示，然后自动关闭。",
+      "OPTION": [
+        "消息数组",
+        "消息延迟关闭时间，默认为1500(单位：ms)",
+        "显示最大的消息数，默认为10",
+        "设置预设样式，可选。可选值(primary/info/success/warning/danger)"
+      ],
+      "INTRO": [
+        "定义时长5000ms"
+      ],
+      "EVENTS": [
+        "当消息关闭时触发的回调事件。"
+      ]
+    },
+    "TOOLTIP": {
+      "DESCRIPTION": "工具提示识别元素何时被激活。 它们可能包含有关其功能的简短帮助文本。",
+      "OPTION": [
+        "设置提示框的内容。",
+        "设置提示框的位置(top、right、bottom、left)，默认right。"
+      ],
+      "INTRO": [
+        "必选，表示当前元素带有提示条"
+      ]
+    },
+    "TREE": {
+      "DESCRIPTION": "文件树，简单实用",
+      "OPTION": [
+        "设置树形菜单数据",
+        "是否展开，默认false"
+      ]
+    },
+    "UPLOAD": {
+      "DESCRIPTION": "支持缩略图预览、列表显示图片大小。",
+      "OPTION": [
+        "是否可以多选，默认为false，可选",
+        "是否预览，默认为false，可选",
+        "设置上传文件类型，可选"
+      ]
+    },
+    "LOGIN": {
+      "LOGIN": "登录",
+      "REGISTER": "注册",
+      "ACCOUNT": "账号",
+      "PASSWORD": "密码",
+      "NAME": "昵称",
+      "EMAIL": "邮箱",
+      "CONFIRM": "确认密码",
+      "WELCOME": "从这里启航，进入FreeNG的世界"
+    }
+  },
+  "LIBRARY": "库",
+  "DEPENDENCE": "依赖",
+  "AUTHOR": {
+    "NAME": "作者",
+    "DESCRIPTION": "前端工程师"
+  },
+  "BLOG": "博客",
+  "MOTTO": "用心做好每一步",
+  "COMPONENT": {
+    "COLUMN": "多栏容器",
+    "ACCORDION": "折叠面板",
+    "BADGE": "小徽章",
+    "BREADCRUMB": "面包屑",
+    "BUTTON": "按钮",
+    "CALENDAR": "日期选择器",
+    "CARD": "卡片",
+    "CASCADER": "级联选择器",
+    "CHECKBOX": "复选框",
+    "CHIP": "碎片",
+    "COLORPICKER": "颜色选择器",
+    "CONTEXTMENU": "上下文菜单",
+    "DATATABLE": "数据表格",
+    "DRAGGABLE": "拖放",
+    "DROPDOWN": "下拉菜单",
+    "EDITOR": "编辑器",
+    "GRID": "栅格系统",
+    "ICON": "字体图标",
+    "IMAGE": "图像",
+    "INPUTTEXT": "输入框",
+    "LIST": "列表",
+    "LOADING": "加载条",
+    "MODAL": "模态框",
+    "NOTIFICATION": "消息通知",
+    "PAGINATION": "分页器",
+    "PANEL": "面板",
+    "PARTICLE": "粒子效果",
+    "PROGRESS": "进度条",
+    "RADIO": "单选框",
+    "RANGE": "滑动条",
+    "RATING": "星星评分",
+    "RIPPLE": "水波纹效果",
+    "SELECT": "选择器",
+    "SHRINK": "浮动按钮",
+    "SIDENAV": "侧边栏",
+    "SLIDE": "幻灯片",
+    "SPINNER": "数字输入框",
+    "SWITCH": "开关",
+    "TAB": "选项卡",
+    "TABLE": "表格",
+    "TIMELINE": "时间轴",
+    "TOAST": "消息提示",
+    "TOOLTIP": "提示框",
+    "TREE": "树形菜单",
+    "UPLOAD": "上传控件",
+    "CODE": "代码修饰器",
+    "CROPPER": "图片裁剪",
+    "MEDIA": "媒体播放器",
+    "FLOW": "流加载",
+    "CHART": "图表",
+    "TYPOGRAPHY": "辅助元素",
+    "SHADOW": "阴影",
+    "LOGIN": "登录页",
+    "PAGE404": "404页面"
+  },
+  "UPDATE": {
+    "v010": {},
+    "v011": {
+      "CHANGE": {
+        "INPUTTEXT": "新增验证",
+        "DROPDOWN": "<p>1) 新增自定义内容</p><p>2) 新增hover事件</p>",
+        "MODAL": "<p>1) 新增loading模态框</p><p>2) 新增延时隐藏模态框</p>"
+      }
+    },
+    "v012": {
+      "FIX": "<li>修复表单验证在进入其他页面时依旧存在</li><li>修复分页器点击无效果</li><li>table组件删除选择框/排序/分页三个功能，如需前面的功能，请使用datatable。</li>",
+      "UPDATE": "<li>Inputtext新增组件正则验证</li><li>上传组件(upload)<ul class='free-ul-padding' style='list-style-type: circle;'><li>优化图片预览样式</li><li>free-file标签更名为free-upload</li></ul></li><li>Chip组件的chipsChange事件修改为onChange</li><li>List的avatar新增组件circle属性</li><li>选项卡(Tab)新增组件disabled属性和onChange事件</li><li>复选框的数据绑定进行了修改，详情请看示例。</li>"
+    },
+    "v013": {
+      "BUG": "修复组件(Accordion, Colorpicker, Calendar)样式"
+    },
+    "v014": {
+      "DESCRIPTION": "优化了样式"
+    },
+    "v020": {
+      "FEATURE": "<li>星星评分(Rating)新增半星评分</li><li>时间轴(Timeline)新增自定义标题</li><li>面包屑导航(Breadcrumb)新增两个自定义类型</li><li>滑动条(Range)新增handleSize属性，用来设置滑块大小</li><li>树形菜单(Tree)新增复选框和点击事件</li><li>面板新增主题属性</li>",
+      "BUG": " <li>修复日期选择器的范围选择问题</li><li>修复富文本编辑器的table选择框高度错乱</li><li>修复星星评分(Rating)无法恢复原值的问题</li><li>调整输入框(Inputtext)验证提示的位置</li>"
+    },
+    "ADD": "新增",
+    "FIX": "修复",
+    "UPDATE": "更新"
+  },
+  "YES": "是",
+  "STYLE": "样式",
+  "PUBLISH-LIFE": "<h4 class='free-title'>发布周期</h4><div style='margin-bottom: 1rem;'><ul class='free-ul-padding' style='list-style-type: circle'><li>版本更新：每周末会进行日常 bug修复。（如果有重大 bug，则任何时候都可发布）</li><li>主版本号：每月发布一个带有新功能的版本。</li></ul></div>",
+  "MESSAGE": "很高兴的通知各位，经过四个月时间的紧密开发，FreeNG@0.2.0 终于发布了。这个版本我重构了底层代码，持续更新新组件功能和完善优化现有组件功能，并提供了完整的使用文档。欢迎各位持续关注和鞭策。在使用过程中遇到任何问题，请及时反馈给我。"
+}

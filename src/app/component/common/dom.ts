@@ -3,7 +3,8 @@ import {Injectable, Renderer2} from '@angular/core';
 @Injectable()
 export class DomRenderer {
 
-  public static zIndex: number = 9990;
+  public static REGEXP_SUFFIX = /^(width|height|left|top|marginLeft|marginTop)$/;
+  public static zIndex = 9990;
 
   constructor(public renderer2: Renderer2) {
   }
@@ -16,7 +17,11 @@ export class DomRenderer {
   }
 
   public hasClass(elem, className): boolean {
-    return elem.className.indexOf(className) !== -1;
+    if (elem.classList) {
+      return elem.classList.contains(className);
+    } else {
+      return new RegExp('(^| )' + className + '( |$)', 'gi').test(elem.className);
+    }
   }
 
   public removeClass(elem, className): void {
@@ -117,21 +122,19 @@ export class DomRenderer {
 
     let last = +new Date();
     let opacity = 0;
-    const tick = function () {
+    let fading;
+    const tick = () => {
       opacity = +element.style.opacity + (new Date().getTime() - last) / duration;
       element.style.opacity = opacity;
       last = +new Date();
 
       if (+opacity < 1) {
-        if (window.requestAnimationFrame) {
-          requestAnimationFrame(tick);
-        } else {
-          setTimeout(tick, 16);
-        }
+        fading = setTimeout(tick, 16);
       }
     };
 
     tick();
+    return fading;
   }
 
   public fadeOut(element, ms) {
@@ -150,6 +153,7 @@ export class DomRenderer {
 
       element.style.opacity = opacity;
     }, interval);
+    return fading;
   }
 
   public css(elem, style): void {
@@ -157,6 +161,22 @@ export class DomRenderer {
       if (style.hasOwnProperty(s)) {
         elem.style[s] = style[s];
       }
+    }
+  }
+
+  public addEventListener(elem, type, callback, capture: boolean = false) {
+    if (elem.addEventListener) {
+      elem.addEventListener(type, callback, capture);
+    } else if (elem.attachEvent) {
+      elem.attachEvent(type, callback);
+    }
+  }
+
+  public removeEventListener(elem, type, callback) {
+    if (elem.removeEventListener) {
+      elem.removeEventListener(type, callback);
+    } else if (elem.detachEvent) {
+      elem.detachEvent(type, callback);
     }
   }
 
@@ -258,6 +278,28 @@ export class DomRenderer {
     } else {
       parent.appendChild(newDom);
     }
+  }
+
+  public closest(elem, parent) {
+    let closestElem;
+    if (typeof parent === 'string') {
+      while (elem) {
+        if (this.hasClass(elem, parent)) {
+          closestElem = elem;
+          break;
+        }
+        elem = elem.parentNode;
+      }
+    } else {
+      while (elem) {
+        if (elem === parent) {
+          closestElem = elem;
+          break;
+        }
+        elem = elem.parentNode;
+      }
+    }
+    return closestElem;
   }
 
   public removeChild(parent: any, oldChild: any): void {
@@ -364,10 +406,23 @@ export class DomRenderer {
     }
   }
 
-  public createEvent(type: string, detail: any = {}) {
-    return new CustomEvent(type, {
-      bubbles: true,
-      cancelable: true,
+  public createEvent(eventName, target?: any) {
+
+    if (typeof eventName !== 'string') {
+      throw new Error('Event name must be a string');
+    }
+
+    const eventFrags = eventName.match(/([a-z]+\.([a-z]+))/i),
+      detail = {
+        target: target
+      };
+
+    if (eventFrags !== null) {
+      eventName = eventFrags[1];
+      detail['namespace'] = eventFrags[2];
+    }
+
+    return new window['CustomEvent'](eventName, {
       detail: detail
     });
   }
@@ -413,6 +468,75 @@ export class DomRenderer {
       event.stopPropagation();
     } else if (event.cancelBubble) {
       event.cancelBubble = false;
+    }
+  }
+
+  public initRequestAnimationframe() {
+    let lastTime = 0;
+    const vendors = ['ms', 'moz', 'webkit', 'o'];
+    for (let x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+      window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+      window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame']
+        || window[vendors[x] + 'CancelRequestAnimationFrame'];
+    }
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = function (callback) {
+        const currTime = new Date().getTime();
+        const timeToCall = Math.max(0, 16 - (currTime - lastTime));
+        const id = window.setTimeout(function () {
+          callback(currTime + timeToCall);
+        }, timeToCall);
+        lastTime = currTime + timeToCall;
+        return id;
+      };
+    }
+
+    if (!window.cancelAnimationFrame) {
+      window.cancelAnimationFrame = function (id) {
+        clearTimeout(id);
+      };
+    }
+  }
+
+  public getPointer(event) {
+    let pointer = [];
+    event = event || window.event;
+    if (this.getTouchEvent()['mobile']) {
+      pointer = event.changedTouches;
+    } else {
+      pointer.push(event);
+    }
+    return pointer;
+  }
+
+  public getPointRelativeToElement(element, event) {
+    event = event || window.event;
+    const touchEvent = this.getTouchEvent()['mobile'] ? event.changedTouches[0] : event;
+    const rect = this.getRect(element);
+    let x = (touchEvent.pageX ||
+    touchEvent.clientX + document.body.scrollLeft + document.documentElement.scrollLeft);
+    x -= rect.left;
+    let y = (touchEvent.pageY ||
+    touchEvent.clientY + document.body.scrollTop + document.documentElement.scrollTop);
+    y -= rect.top;
+    return {
+      x: x,
+      y: y
+    };
+  }
+
+  public on(elem, type, callback, capture: boolean = false) {
+    const event = type.split(/(\s|\t)+/);
+    for (const t of event) {
+      this.removeEventListener(elem, t, callback);
+      this.addEventListener(elem, t, callback, capture);
+    }
+  }
+
+  public off(elem, type, callback) {
+    const event = type.split(/(\s|\t)+/);
+    for (const t of event) {
+      this.removeEventListener(elem, t, callback);
     }
   }
 }

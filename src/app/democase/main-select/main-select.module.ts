@@ -8,6 +8,7 @@ import {SelectModule} from '../../component/select/select.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainSelectRoutingModule} from './main-select-routing.module';
 import {MainSelectComponent} from './main-select.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {MainSelectComponent} from './main-select.component';
     CodeModule,
     TableModule,
     SelectModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainSelectComponent]
 })

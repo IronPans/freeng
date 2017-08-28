@@ -44,8 +44,7 @@
     left: 0;
     bottom: 0;
     width: 1px;
-    cursor: col-resize;
-    background: red; }
+    cursor: col-resize; }
   .free-datatable .free-datatable-body {
     overflow: auto;
     min-height: 0;
@@ -96,7 +95,7 @@
     background-color: #f5f5f5; }
   .free-datatable.free-datatable-hover tbody .free-datatable-row:hover .free-datatable-cell {
     background-color: #eee; }
-  .free-datatable.free-datatable-striped tbody tr:nth-child(odd) {
+  .free-datatable.free-datatable-striped tbody tr:nth-child(even) {
     background-color: #f9f9f9; }
   .free-datatable.free-datatable-bordered table {
     border: 1px solid #e0e0e0; }
@@ -121,14 +120,5 @@
     background: #f5f5f5; }
     .free-datatable .free-datatable-scrollable .free-datatable-scrollable-head table {
       border: none; }
-
-.free-iscroll::-webkit-scrollbar {
-  height: 6px;
-  width: 6px; }
-.free-iscroll::-webkit-scrollbar-thumb {
-  background-color: #6e6e6e;
-  outline: 1px solid #333; }
-.free-iscroll::-webkit-scrollbar-corner, .free-iscroll::-webkit-scrollbar-track {
-  background-color: #ccc; }
 
 /*# sourceMappingURL=datatable.component.css.map */

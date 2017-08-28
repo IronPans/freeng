@@ -23,14 +23,6 @@
     display: flex;
     align-items: center;
     border-radius: 50%; }
-:host /deep/ .nav-item free-dropdown {
-  height: 2rem !important; }
-  :host /deep/ .nav-item free-dropdown .free-dropdown-header f-header {
-    padding: 0 .6rem !important; }
-  :host /deep/ .nav-item free-dropdown .btn:before {
-    transform: scale(0) !important; }
-:host /deep/ .nav-item a {
-  padding: 0 !important; }
 :host /deep/ .left-menu {
   position: absolute;
   top: 3rem;
@@ -207,10 +199,8 @@
       font-size: .75rem;
       position: relative;
       cursor: pointer;
-      text-align: center;
       display: flex;
-      align-items: center;
-      border-radius: 50%; }
+      align-items: center; }
       :host /deep/ .navbar-header > ul > li a i,
       :host /deep/ .navbar-header .aside-header-inner > ul > li a i,
       :host /deep/ .aside-header > ul > li a i,
@@ -335,16 +325,6 @@
   font-size: 1rem; }
 :host /deep/ h3.free-title {
   font-weight: 500; }
-:host /deep/ hr {
-  border-color: rgba(0, 0, 0, 0.12);
-  border-bottom: none;
-  margin: 1rem 0; }
-:host /deep/ code:not(.hljs) {
-  padding: 2px 4px;
-  font-size: 90%;
-  color: #c7254e;
-  background-color: #f9f2f4;
-  border-radius: 2px; }
 :host /deep/ .toggle-btn free-hamburge {
   display: inline-flex;
   width: 100%;
@@ -353,27 +333,16 @@
   align-items: center; }
   :host /deep/ .toggle-btn free-hamburge span {
     background: #fff; }
-:host /deep/ .theme-setting {
-  position: absolute;
-  right: 0;
-  top: 3rem;
-  font-size: 18px;
-  width: 2rem;
-  height: 2rem;
-  z-index: 10999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #333;
-  background: #fff;
-  border-radius: 0 0 0 50%;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: all .3s linear; }
-  :host /deep/ .theme-setting i {
-    pointer-events: none; }
-  :host /deep/ .theme-setting.open {
-    right: 12.5rem; }
+:host /deep/ .navbar-envelope .free-list-item {
+  padding: 0 .25rem; }
+:host /deep/ .navbar-envelope free-dropdown {
+  height: 2rem !important; }
+  :host /deep/ .navbar-envelope free-dropdown .free-dropdown-header f-header {
+    padding: 0 .6rem !important; }
+  :host /deep/ .navbar-envelope free-dropdown .btn:before {
+    transform: scale(0) !important; }
+:host /deep/ .navbar-envelope > a {
+  padding: 0 !important; }
 :host /deep/ free-sidenav .free-sidenav-wrapper {
   padding: 0 .5rem; }
 :host /deep/ free-sidenav .row {
@@ -417,6 +386,8 @@
     :host /deep/ free-sidenav .theme-color-list .theme-color-item:hover {
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
       transform: scale(0.8); }
+:host /deep/ free-tab h4 {
+  margin: .5rem 0; }
 :host /deep/ .search-box {
   position: absolute;
   top: 0;
@@ -487,6 +458,62 @@
       transform: scale(1); }
 :host /deep/ .color-white {
   color: #fff; }
+:host /deep/ .left-menu {
+  background: #fff !important;
+  box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
+  z-index: 100; }
+  :host /deep/ .left-menu li a em {
+    color: #666; }
+  :host /deep/ .left-menu .left-menu-item li a,
+  :host /deep/ .left-menu .accordion-toggle,
+  :host /deep/ .left-menu .accordion-inner ul li > a {
+    color: #262626; }
+:host /deep/ .top-menu .hamburge-line span,
+:host /deep/ .top-menu .navbar-header .search-form {
+  background: #fff; }
+:host /deep/ .top-menu button:not(.free-language) {
+  background: transparent;
+  color: #fff !important; }
+:host /deep/ .top-menu button.free-language {
+  margin-left: 120px;
+  box-shadow: none; }
+:host /deep/ .free-scroll-thumb {
+  background: rgba(0, 0, 0, 0.29804); }
+:host /deep/ .aside-header li a {
+  color: #fff; }
+:host /deep/ .free-theme-setting {
+  box-shadow: 0 0 .5rem #fff; }
+:host /deep/ .theme-setting {
+  position: absolute;
+  right: 0;
+  top: 3rem;
+  font-size: 18px;
+  width: 2rem;
+  height: 2rem;
+  z-index: 10999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background: #fff;
+  border-radius: 0 0 0 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all .3s linear; }
+  :host /deep/ .theme-setting.open {
+    right: 12.5rem; }
+:host /deep/ .navbar-header .navbar-header-right .free-dropdown-header.active, :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header:active, :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header:hover {
+  background: transparent !important; }
+  :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header.active:before, :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header:active:before, :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); }
+:host /deep/ .free-panel-inner h4 {
+  padding: 20px 0; }
 
 @media (max-width: 900px) {
   :host /deep/ .left-menu {

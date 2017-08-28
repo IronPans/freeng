@@ -15,13 +15,15 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   selector: 'free-range',
   template: `
-    <div #range class="free-range" (mousedown)="onTouchstart($event)">
-      <div class="range-bar"></div>
-      <div class="range-bar range-bar-active" #track></div>
+    <div #range class="free-range" (mousedown)="onTouchstart($event)"
+         [class.free-range-vertical]="vertical" [ngStyle]="{width: width, height: height}">
+      <div class="range-bar" [ngStyle]="{height: rangeHeight, width: rangeWidth}"></div>
+      <div class="range-bar range-bar-active" #track
+           [ngStyle]="{height: rangeHeight, width: rangeWidth}"></div>
       <div class="range-knob-handle" #thumb>
         <div class="range-knob"></div>
       </div>
-      <span class="range-slider-tooltip" #tooltip></span>
+      <span class="range-slider-tooltip" #tooltip [style.opacity]="tip?'1':'0'">0</span>
     </div>
   `,
   providers: [DomRenderer, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
@@ -29,13 +31,29 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
   @Input() min: number;
   @Input() max: number;
-  @Input() value: any;
-  @Input() width: number;
+  @Input() vertical: boolean;
+  @Input()
+  set value(value: any) {
+    if (isNaN(value)) {
+      this._value = this.min;
+    } else {
+      this._value = value;
+    }
+  }
+  get value() {
+    return this._value;
+  }
+  @Input() width: any;
+  @Input() height: any;
   @Input() theme: string;
+  @Input() rangeHeight: any;
+  @Input() rangeWidth: any;
+  @Input() handleSize: any;
+  @Input() tip: boolean;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('range') _range: ElementRef;
   @ViewChild('tooltip') _tooltip: ElementRef;
-  @ViewChild('thumb') _thumb: ElementRef;
+  @ViewChild('thumb') thumbViewChild: ElementRef;
   @ViewChild('track') _track: ElementRef;
   tooltip: HTMLDivElement;
   range: HTMLDivElement;
@@ -46,9 +64,11 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
   input: any;
   maxPercent: number;
   percent: any;
+  _value: any;
   isPressed: boolean;
   documentTouchmoveListener: any;
   documentTouchendListener: any;
+  thumbTop: number;
   onModelChange: Function = () => {};
   onTouchedChange: Function = () => {};
 
@@ -59,6 +79,8 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
     this.max = 100;
     this.value = 0;
     this.width = 150;
+    this.tip = true;
+    this.handleSize = 1;
   }
 
   ngOnInit() {
@@ -68,12 +90,30 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
   ngAfterViewInit() {
     this.tooltip = this._tooltip.nativeElement;
     this.range = this._range.nativeElement;
-    this.thumb = this._thumb.nativeElement;
+    this.thumb = this.thumbViewChild.nativeElement;
     this.track = this._track.nativeElement;
     if (this.theme) {
       this.renderer2.addClass(this.range, `free-${this.theme}`);
     }
+    if (this.vertical) {
+      if (this.height &&  typeof this.height === 'number') {
+        this.height = <any> (this.height + 'px');
+      } else {
+        this.height = '150px';
+      }
+    }
+    if (this.width &&  typeof this.width === 'number') {
+      this.width = <any> (this.width + 'px');
+    }
+    if (this.handleSize) {
+      this.domRenderer.setTransform(this.thumb, 'translate(-50%, -50%) scale(' + this.handleSize + ')');
+    }
     this.pageInit();
+    if (this.vertical) {
+      this.width = this.thumb.offsetWidth + 'px';
+    } else {
+      this.range.style.height = this.thumb.offsetHeight * this.handleSize + 'px';
+    }
   }
 
   writeValue(value: number) {
@@ -116,7 +156,12 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
   }
 
   setValue(value) {
-    let percent = value / this.range.offsetWidth * this.maxPercent;
+    let percent, left;
+    if (this.vertical) {
+      percent = value / this.range.offsetHeight * this.maxPercent;
+    } else {
+      percent = value / this.range.offsetWidth * this.maxPercent;
+    }
     if (percent >= this.maxPercent) {
       percent = this.maxPercent;
     } else if (percent <= 0) {
@@ -125,20 +170,41 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
     percent = parseFloat(percent.toFixed(4));
     const t = this.max - this.min;
     const cp = Math.ceil(t * percent / 100) + this.min;
-    this.thumb['style'].left = percent + '%';
-    this.track['style'].right = (this.maxPercent - percent) + '%';
+    if (this.vertical) {
+      this.thumb['style'].top = percent + '%';
+      this.track['style'].top = (100 - (this.maxPercent - percent)) + '%';
+    } else {
+      this.thumb['style'].left = percent + '%';
+      this.track['style'].right = (this.maxPercent - percent) + '%';
+    }
     this.value = cp;
     this.percent = percent;
-
-    const currentPercent = percent / this.maxPercent;
-    const left = Math.floor(this.range.offsetWidth * currentPercent - this.tooltip.offsetWidth / 2);
-    this.tooltip.textContent = this.value;
-    this.domRenderer.setTransform(this.tooltip, 'translate3d(' + left + 'px,-100%,0)');
+    if (this.tip) {
+      const currentPercent = percent / this.maxPercent;
+      if (!this.thumbTop) {
+        this.tooltip.style.opacity = '0';
+        this.thumbTop = 1;
+      }
+      if (this.vertical) {
+        this.tooltip.textContent = (this.maxPercent - this.value) + '';
+        left = Math.floor(this.range.offsetHeight * currentPercent - this.tooltip.offsetWidth / 2);
+        this.domRenderer.setTransform(this.tooltip,
+          'translate3d(' + this.thumb.offsetWidth + 'px, ' + left + 'px, 0)');
+      } else {
+        this.tooltip.textContent = this.value;
+        left = Math.floor(this.range.offsetWidth * currentPercent - this.tooltip.offsetWidth / 2);
+        this.domRenderer.setTransform(this.tooltip, 'translate3d(' + left + 'px, -100%, 0)');
+      }
+    }
   }
 
   getValue(e) {
     const v = this.getPoint(this.range, e);
-    this.setValue(v.x);
+    if (this.vertical) {
+      this.setValue(v.y);
+    } else {
+      this.setValue(v.x);
+    }
     this.onChange.emit({'value': this.value});
     this.onModelChange(this.value);
   }
@@ -147,9 +213,11 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
     if (e.button) {
       return;
     }
+    if (this.tip) {
+      this.tooltip.style.opacity = '.8';
+    }
     clearTimeout(this.timeoutID);
     this.getValue(e);
-    this.show(this.tooltip);
     this.isPressed = true;
     this.documentTouchmoveListener = this.renderer2.listen('body', this.touch.touchmove, ($event) => {
       this.onTouchmove($event);
@@ -161,7 +229,9 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
 
   onTouchmove(event: any) {
     if (this.isPressed) {
-      this.show(this.tooltip);
+      if (this.tip) {
+        this.tooltip.style.opacity = '.8';
+      }
       this.getValue(event);
     }
   }
@@ -174,12 +244,8 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
 
   hide(elem) {
     this.timeoutID = setTimeout(function () {
-      elem.style.display = 'none';
+      elem.style.opacity = '0';
     }, 200);
-  }
-
-  show(elem) {
-    elem.style.display = 'block';
   }
 
   unbindDocumentClickListener() {
@@ -196,7 +262,6 @@ export class RangeComponent implements ControlValueAccessor, OnInit, AfterViewIn
   ngOnDestroy() {
     this.unbindDocumentClickListener();
   }
-
 }
 
 @NgModule({

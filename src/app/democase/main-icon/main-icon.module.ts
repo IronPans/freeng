@@ -7,6 +7,7 @@ import {IconModule} from '../../component/icon/icon.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainIconRoutingModule} from './main-icon-routing.module';
 import {MainIconComponent} from './main-icon.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainIconComponent} from './main-icon.component';
     CodeModule,
     TableModule,
     IconModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainIconComponent]
 })

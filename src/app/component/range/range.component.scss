@@ -3,10 +3,27 @@
 
 .free-range {
   display: inline-block;
-  width:150px;
-  height: 42px;
   position: relative;
   cursor: pointer;
+
+  &.free-range-vertical {
+    .range-bar {
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      transform: translate(-50%, 0);
+    }
+    .range-bar-active {
+      height: auto;
+      top: 100%;
+    }
+
+    .range-knob-handle {
+      top: 100%;
+      left: 50%;
+    }
+  }
 
   .range-slider-tooltip {
     font-size: 18px;
@@ -16,25 +33,26 @@
     left: 0;
     padding: 5px 10px;
     text-align: center;
-    opacity: .8;
+    opacity: 0;
+    pointer-events: none;
     color: #333;
     border: 1px solid #ddd;
     border-radius: 6px;
     background-color: #fff;
     text-shadow: 0 1px 0 #f3f3f3;
-    display: none;
     transform: translate3d(0, -100%, 0);
   }
 
   .range-bar {
     position: absolute;
-    top: 21px;
+    top: 50%;
     left: 0;
     width: 100%;
     height: 2px;
     border-radius: 1px;
     background: #bdbdbd;
     pointer-events: none;
+    transform: translate(0, -50%);
   }
   .range-bar-active {
     bottom: 0;
@@ -44,13 +62,12 @@
 
   .range-knob-handle {
     position: absolute;
-    top: 21px;
-    left: 0%;
-    margin-top: -21px;
-    margin-left: -21px;
+    top: 50%;
+    left: 0;
     width: 42px;
     height: 42px;
     text-align: center;
+    transform: translate(-50%, -50%);
   }
 
   .range-knob {

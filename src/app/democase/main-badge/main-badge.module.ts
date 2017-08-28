@@ -8,6 +8,8 @@ import {BadgeModule} from '../../component/badge/badge.component';
 import {IconModule} from '../../component/icon/icon.component';
 import {MainBadgeRoutingModule} from './main-badge-routing.module';
 import {MainBadgeComponent} from './main-badge.component';
+import {ButtonModule} from '../../component/button/button.directive';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -17,8 +19,10 @@ import {MainBadgeComponent} from './main-badge.component';
     CodeModule,
     TableModule,
     GridModule,
+    ButtonModule,
     BadgeModule,
-    IconModule
+    IconModule,
+    LanguageModule
   ],
   declarations: [MainBadgeComponent]
 })

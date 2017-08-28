@@ -7,6 +7,7 @@ import {AccordionModule} from '../../component/accordion/accordion.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainAccordionComponent} from './main-accordion.component';
 import {MainAccordionRoutingModule} from './main-accordion-routing.module';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainAccordionRoutingModule} from './main-accordion-routing.module';
     CodeModule,
     TableModule,
     AccordionModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainAccordionComponent]
 })

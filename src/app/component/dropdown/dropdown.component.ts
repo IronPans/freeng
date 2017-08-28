@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
-  NgModule, Component, ElementRef,
-  ViewChild, Input, AfterViewInit, OnDestroy, Renderer2
+  NgModule, Component, ElementRef, ViewChild, Input, AfterViewInit, OnDestroy, Renderer2
 } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ButtonModule } from '../button/button.directive';

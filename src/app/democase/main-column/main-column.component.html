@@ -2,19 +2,19 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        多栏布局允许文本的多个列的简单定义 - 就像报纸一样排版
+        {{'DEMO.COLUMN.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-column</h3>
-        <p>多栏容器</p>
+        <p>{{'COMPONENT.COLUMN' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -26,9 +26,9 @@
               </free-table-cell>
               <free-table-cell>
                 <ng-template>
-                  设置容器列数/列宽/列之间的规则/列间距/跨越列数等。默认为两列。
+                  {{'DEMO.COLUMN.OPTION.0' | translate}}
                   (<code>columnCount columnWidth columnRule columnGap columnSpan</code>)
-                  如不了解columns，可以到这里：
+                  {{'DEMO.COLUMN.OPTION.1' | translate}}：
                   <a href="https://www.w3schools.com/css/css3_multiple_columns.asp" target="_blank">
                     columns
                   </a>
@@ -57,17 +57,23 @@
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <free-column>
-              FreeNG是一款完全响应式的前端UI框架，
-              它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-              同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
             </free-column>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-column&gt;
-                FreeNG是一款完全响应式的前端UI框架，
-                它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-                同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
               &lt;/free-column&gt;
             </free-code>
           </free-tab>
@@ -79,17 +85,23 @@
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <free-column [columns]="{'columnCount': 3}">
-              FreeNG是一款完全响应式的前端UI框架，
-              它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-              同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
             </free-column>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-column [columns]="&#123;'columnCount': 3&#125;"&gt;
-                FreeNG是一款完全响应式的前端UI框架，
-                它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-                同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
               &lt;/free-column&gt;
             </free-code>
           </free-tab>
@@ -101,17 +113,23 @@
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <free-column [columns]="{'columnCount': 2, 'columnGap': '40px'}">
-              FreeNG是一款完全响应式的前端UI框架，
-              它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-              同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
             </free-column>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-column [columns]="&#123;'columnCount': 2, 'columnGap': '40px'&#125;"&gt;
-              FreeNG是一款完全响应式的前端UI框架，
-              它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-              同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
               &lt;/free-column&gt;
             </free-code>
           </free-tab>
@@ -123,17 +141,23 @@
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <free-column [columns]="{'columnCount': 2, 'columnRule': '1px solid #333'}">
-              FreeNG是一款完全响应式的前端UI框架，
-              它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-              同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
             </free-column>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-column [columns]="&#123;'columnCount': 2, 'columnRule': '1px solid #333'&#125;"&gt;
-                FreeNG是一款完全响应式的前端UI框架，
-                它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-                同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
               &lt;/free-column&gt;
             </free-code>
           </free-tab>
@@ -145,21 +169,27 @@
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <free-column [columns]="{'columnCount': 2}">
-              <free-column [columns]="{'columnSpan': 'all'}">FreeNG是一款完全响应式的前端UI框架</free-column>
-              FreeNG是一款完全响应式的前端UI框架，
-              它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-              同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              <free-column [columns]="{'columnSpan': 'all'}">Daily Ping</free-column>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
             </free-column>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-column [columns]="&#123;'columnCount': 2&#125;"&gt;
                 &lt;free-column [columns]="&#123;'columnSpan': 'all'&#125;"&gt;
-                  FreeNG是一款完全响应式的前端UI框架
+                  Daily Ping
                 &lt;/free-column&gt;
-                FreeNG是一款完全响应式的前端UI框架，
-                它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-                同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum
               &lt;/free-column&gt;
             </free-code>
           </free-tab>
@@ -168,6 +198,6 @@
     </div>
 
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>
 

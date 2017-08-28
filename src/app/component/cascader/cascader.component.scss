@@ -1,0 +1,149 @@
+@import "../../../assets/sass/mixin";
+.free-cascader {
+  position: relative;
+  display: inline-block;
+  min-width: 7.5rem;
+  max-width: 10rem;
+  height: 1.75rem;
+  padding-left: .5rem;
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  transition: all .25s;
+
+  &:hover {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  }
+
+  &.free-cascader-deploy {
+    max-width: 40rem;
+  }
+  .free-cascader-menu-active {
+    .free-cascader-input {
+      i {
+        transform: translate(0, -50%) rotate(180deg);
+      }
+    }
+  }
+
+  .free-item-expand {
+    .free-cascader-item-content {
+      position: relative;
+
+      span {
+        margin-right: .4rem;
+      }
+
+      &:before {
+        font-family: FontAwesome;
+        content: "\f105";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  .free-cascader-input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    label {
+      display: flex;
+      flex: 1 0 auto;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: transparent;
+      margin-right: 1.25rem;
+    }
+
+    i {
+      position:absolute;
+      right: 0;
+      top: 50%;
+      display: inline-block;
+      padding: 0 .5rem;
+      line-height: 0;
+      transition: all .25s;
+      transform: translate(0, -50%) rotate(0);
+    }
+
+  }
+
+  .free-cascader-menus {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    z-index: 999;
+
+    .free-cascader-wrapper {
+      background: #fff;
+      white-space: nowrap;
+      @include boxShadow;
+
+      free-cascader-menu {
+        display: inline-block;
+        vertical-align: top;
+        min-width: 6rem;
+        min-height: 100%;
+        border-right: 1px solid #e9e9e9;
+
+        &:last-child {
+          border-right-color: transparent;
+        }
+      }
+    }
+
+    .free-cascader-menu {
+      max-height: 10rem;
+      overflow: hidden;
+      overflow-y: auto;
+
+      li {
+        display: block;
+        padding: .1rem .5rem;
+        font-size: .65rem;
+
+        &:hover {
+          background: #eee;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .free-cascader-item {
+    list-style: none;
+    cursor: pointer;
+
+    &.free-select-active {
+      background: #eee;
+      font-weight: 700;
+    }
+  }
+
+  .free-cascader-item-content {
+    display: flex;
+    white-space: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import {NgModule, Component, OnInit, Input, Renderer2, OnDestroy,
-  forwardRef, EventEmitter, Output} from '@angular/core';
+import {
+  NgModule, Component, OnInit, Input, Renderer2, OnDestroy,
+  forwardRef, EventEmitter, Output, ElementRef, ViewChild, AfterViewInit
+} from '@angular/core';
 import {DomRenderer} from '../common/dom';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
 
@@ -14,24 +16,42 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: 'free-inputtext',
   template: `
     <div class="input-field {{'free-' + theme}}" [ngClass]="inputClass">
+      <i *ngIf="prefix" class="fa {{'fa-' + prefix}} free-inputtext-icon"></i>
       <input type="text" #text [(ngModel)]="value"
              (blur)="onBlur(text.value)" placeholder="{{placeholder}}" (input)="onInput(text)">
-      <span></span>
-      <i *ngIf="icon" class="fa {{'fa-' + icon}}"></i>
+      <i *ngIf="icon" class="fa {{'fa-' + icon}} free-inputtext-validator"></i>
+      <div class="free-inputtext-tip" #tip [style.display]="showTip ? 'block' : 'none'">
+        {{message}}
+      </div>
     </div>
 
   `,
   providers: [DomRenderer, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class InputtextComponent  implements ControlValueAccessor, OnInit, OnDestroy {
-  @Input() theme: string;
+export class InputtextComponent  implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+  @Input()
+  set theme(value: string) {
+    this._theme = value;
+    switch (value) {
+      case 'success': this.icon = 'check-circle'; break;
+      case 'warning': this.icon = 'exclamation-circle'; break;
+      case 'error': this.icon = 'times-circle'; break;
+    }
+  }
+  get theme() {
+    return this._theme;
+  }
   @Input() icon: string;
   @Input() pattern: string;
   @Input() message: string;
   @Input() placeholder: string;
+  @Input() prefix: string;
   @Output() onChange: EventEmitter<string> = new EventEmitter();
+  @ViewChild('tip') tipViewChild: ElementRef;
   inputClass: object;
   tip: HTMLElement;
+  showTip: boolean;
+  _theme: string;
   public innerValue: any;
   public onModelChange: Function = () => {};
   public onModelTouched: Function = () => {};
@@ -43,6 +63,10 @@ export class InputtextComponent  implements ControlValueAccessor, OnInit, OnDest
     this.inputClass = {
       'input-field-icon': !!this.icon
     };
+  }
+
+  ngAfterViewInit() {
+    this.tip = this.tipViewChild.nativeElement;
   }
 
   get value(): any {
@@ -103,38 +127,25 @@ export class InputtextComponent  implements ControlValueAccessor, OnInit, OnDest
       default:
         regexp = new RegExp(this.pattern, 'i');
     }
-    if (regexp.test(value) && this.tip) {
+    if (regexp.test(value)) {
       this.remove();
-    } else if (!regexp.test(value) && !this.tip) {
-      this.tip = this.renderer2.createElement('div');
-      this.tip.className = 'free-tip';
-      this.tip.innerHTML = this.message;
-      this.domRenderer.appendChild(document.body, this.tip);
-      let top = rect.top + (rect.height - this.tip.offsetHeight) / 2;
-      let left = rect.left + rect.width + 10;
+    } else {
+      const left = rect.left + rect.width + 10;
       const winWidth = window.innerWidth;
       const tipWidth = this.tip.offsetWidth;
-      const tipHeight = this.tip.offsetHeight;
+      this.domRenderer.removeClass(this.tip, 'free-tip-top free-tip-right');
       let className = 'free-tip-right';
       if ((left + tipWidth) > winWidth) {
-        left = rect.left + (rect.width - tipWidth) / 2;
-        top = rect.top - tipHeight - 10;
         className = 'free-tip-top';
       }
       this.domRenderer.addClass(this.tip, className);
-      this.domRenderer.css(this.tip, {
-        'top': top + 'px',
-        'left': left + 'px',
-        'opacity': 1,
-        'transform': 'translate3d(0,0,0)'
-      });
+      this.showTip = true;
     }
   }
 
   remove() {
     if (this.tip) {
-      this.domRenderer.removeChild(document.body, this.tip);
-      this.tip = null;
+      this.showTip = false;
     }
   }
 

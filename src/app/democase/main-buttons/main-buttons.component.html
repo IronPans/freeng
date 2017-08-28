@@ -1,41 +1,33 @@
 <div class="group main-container">
   <div class="row">
     <div fGrid="6" class="free-demo-board">
-      <p>
-        按钮是与应用程序交互的重要元素，它可以由文本或图标组成，并且可以通过各种属性进行增强美化。
-      </p>
-      <ul class="free-ul-padding">
-        <li>图标按钮</li>
-        <li>圆形按钮</li>
-        <li>按钮组</li>
-      </ul>
+      <div [innerHTML]="'DEMO.BUTTON.DESCRIPTION' | translate"></div>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol directive"></span></h3>
-
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol directive"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-button-group</h3>
-        <p>可选，按钮组</p>
+        <p>{{'DEMO.BUTTON.BUTTONGROUPDESC' | translate}}</p>
       </div>
-
       <div class="free-demo-row">
         <h3 class="free-title">fButton</h3>
-        <p>必选，用来定义一个按钮</p>
+        <p>{{'DEMO.BUTTON.BUTTONDESC' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
-
           <free-table-body>
             <free-table-row>
               <free-table-cell>size</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，用来设置按钮的尺寸(big,middle(默认),small,mini)</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BUTTON.SIZE' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>theme</free-table-cell>
@@ -43,7 +35,7 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+               <ng-template> {{'DEMO.BUTTON.THEME' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -51,7 +43,9 @@
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，禁用按钮并阻止他的动作。 默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BUTTON.DISABLED' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>icon</free-table-cell>
@@ -59,22 +53,28 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>可选，用来设置图标，默认采取<a target="_blank" href="http://fontawesome.io/icons/">Fontawesome图标</a></ng-template>
+                <ng-template>
+                  <span [innerHTML]="'DEMO.BUTTON.ICON' | translate"></span>
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>block</free-table-cell>
               <free-table-cell>
-                <ng-template><code>无</code></ng-template>
+                <ng-template><code>-</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，以块元素展示</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BUTTON.BLOCK' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
-              <free-table-cell>circle</free-table-cell>
+              <free-table-cell>round</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，圆角</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BUTTON.ROUND' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -220,13 +220,13 @@
         <free-tab header="Demo">
           <button fButton icon="home">HOME</button>
           <button fButton icon="user"></button>
-          <button fButton circle="true" icon="user"></button>
+          <button fButton round="true" icon="user"></button>
         </free-tab>
         <free-tab header="Code">
           <free-code lang="html">
             &lt;button fButton icon="home"&gt;HOME&lt;/button&gt;
             &lt;button fButton icon="user"&gt;&lt;/button&gt;
-            &lt;button fButton circle="true" icon="user"&gt;&lt;/button&gt;
+            &lt;button fButton round="true" icon="user"&gt;&lt;/button&gt;
           </free-code>
         </free-tab>
       </free-tab-group>
@@ -264,6 +264,5 @@
     </div>
   </div>
 
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
-  <!--<free-toast [value]="msg" delay="1000"></free-toast>-->
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

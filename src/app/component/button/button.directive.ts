@@ -14,8 +14,8 @@ export class ButtonDirective implements AfterViewInit {
   @Input() icon: string;
   @Input() theme: string;
   @Input() direction: string;
-  @Input() circle: string;
-  @Input() round: number;
+  @Input() round: string;
+  @Input() roundRadius: number;
   @Input() size: string;
   @Input() loading: string;
 
@@ -49,12 +49,14 @@ export class ButtonDirective implements AfterViewInit {
          this.domRenderer.addClass(icon, 'free-btn-' + this.direction);
        }
     }
-    if (this.circle) {
-      this.domRenderer.addClass(this.button, 'btn-circle');
-    }
-
     if (this.round) {
       this.domRenderer.addClass(this.button, 'btn-round');
+    }
+
+    if (this.roundRadius) {
+      this.domRenderer.css(this.button, {
+        'borderRadius': this.roundRadius
+      })
     }
 
   }

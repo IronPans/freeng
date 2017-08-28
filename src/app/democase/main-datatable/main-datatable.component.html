@@ -1,25 +1,18 @@
 <div class="main-container">
   <div class="row">
     <div fGrid="6" class="free-demo-board">
-      <p>
-        数据表格可用于显示数据列表。
-      </p>
-      <ul class="free-ul-padding">
-        <li>分页，固定头和排序</li>
-        <li>提供了丰富的支持,复选框</li>
-      </ul>
+      <div [innerHTML]="'DEMO.DATATABLE.DESCRIPTION' | translate"></div>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
-
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-datatable</h3>
-        <p>必选，类似HTML的table，一个free-datatable对应一个table。</p>
+        <p>{{'DEMO.DATATABLE.INTRO.0' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -29,49 +22,63 @@
               <free-table-cell>
                 <ng-template><code>Array</code></ng-template>
               </free-table-cell>
-              <free-table-cell>数据数组，必选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>border</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否显示边框，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>striped</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否显示斑马线，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>hover</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否添加悬停效果，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>selectionMode</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否添加复选框或单选框，可选。可选值(single/multiple)</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>pagination</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否显示分页器，可选，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.5' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>row</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>每页数据数，可选，默认为10</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.6' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>expandableRows</free-table-cell>
@@ -79,7 +86,7 @@
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                是否展示可折叠内容，默认为false。需结合ng-template，可参考右侧例子。
+                <ng-template>{{'DEMO.DATATABLE.OPTION.7' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -88,7 +95,29 @@
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                是否固定头，默认为false。
+                <ng-template>{{'DEMO.DATATABLE.OPTION.8' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+        <h4>{{'EVENT' | translate}}</h4>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'EVENT' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onSelect</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.EVENTS.0' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
@@ -96,13 +125,13 @@
       </div>
       <div class="free-demo-row">
         <h3 class="free-title">free-datatable-column</h3>
-        <p>必选，类似HTML的td，表示一列数据。</p>
+        <p><ng-template>{{'DEMO.DATATABLE.INTRO.1' | translate}}</ng-template></p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -112,21 +141,27 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>列的名称，必须，对应free-datatable里value数据里的键</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.9' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>header</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>列的描述名称，必选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.10' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>sort</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>当前列是否可排序，默认为fasel</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.DATATABLE.OPTION.11' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -269,7 +304,7 @@
         <h3 class="free-toolbar">SelectionMode</h3>
         <free-tab-group direction="right" [theme]="'line'">
           <free-tab header="PREVIEW">
-            <free-datatable [value]="book" [selectionMode]="'multiple'">
+            <free-datatable [value]="book" [selectionMode]="'multiple'" (onSelect)="onDataSelect($event)">
               <free-datatable-column field="name" header="name"></free-datatable-column>
               <free-datatable-column field="age" header="age"></free-datatable-column>
               <free-datatable-column field="address" header="address"></free-datatable-column>
@@ -409,5 +444,5 @@
     </div>
 
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

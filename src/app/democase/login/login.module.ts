@@ -5,6 +5,7 @@ import { ButtonModule } from '../../component/button/button.directive';
 import {ParticleModule} from '../../component/particle/particle.directive';
 import {LoginComponent} from './login.component';
 import {LoginRoutingModule} from './login-routing.module';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {LoginRoutingModule} from './login-routing.module';
     ReactiveFormsModule,
     LoginRoutingModule,
     ButtonModule,
-    ParticleModule
+    ParticleModule,
+    LanguageModule
   ],
   declarations: [
     LoginComponent

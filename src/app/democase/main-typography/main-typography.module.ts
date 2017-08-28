@@ -5,6 +5,7 @@ import {TabGroupModule} from '../../component/tab/tab.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainTypographyRoutingModule} from './main-typography-routing.module';
 import {MainTypographyComponent} from './main-typography.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {MainTypographyComponent} from './main-typography.component';
     MainTypographyRoutingModule,
     TabGroupModule,
     CodeModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainTypographyComponent]
 })

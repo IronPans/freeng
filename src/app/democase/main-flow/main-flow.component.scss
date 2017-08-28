@@ -1,0 +1,19 @@
+:host /deep/ {
+  free-flow .flow-item {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 14px;
+    width: 47%;
+    margin-bottom: 10px;
+    min-height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #eee;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 120px;
+    }
+  }
+}

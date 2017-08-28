@@ -8,6 +8,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {SidenavModule} from '../../component/sidenav/sidenav.component';
 import {MainSidenavRoutingModule} from './main-sidenav-routing.module';
 import {ButtonModule} from '../../component/button/button.directive';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {ButtonModule} from '../../component/button/button.directive';
     GridModule,
     ButtonModule,
     SidenavModule,
-    MainSidenavRoutingModule
+    MainSidenavRoutingModule,
+    LanguageModule
   ],
   declarations: [MainSidenavComponent]
 })

@@ -8,6 +8,7 @@ import {TableModule} from '../../component/table/table.component';
 import {CodeModule} from '../../component/code/code.component';
 import {TabGroupModule} from '../../component/tab/tab.component';
 import {CascaderModule} from '../../component/cascader/cascader.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {CascaderModule} from '../../component/cascader/cascader.component';
     CodeModule,
     TableModule,
     GridModule,
-    CascaderModule
+    CascaderModule,
+    LanguageModule
   ],
   declarations: [MainCascaderComponent]
 })

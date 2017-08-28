@@ -8,6 +8,7 @@ import {MainToastRoutingModule} from './main-toast-routing.module';
 import {MainToastComponent} from './main-toast.component';
 import {ButtonModule} from '../../component/button/button.directive';
 import {ToastModule} from '../../component/toast/toast.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {ToastModule} from '../../component/toast/toast.component';
     TableModule,
     GridModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    LanguageModule
   ],
   declarations: [MainToastComponent]
 })

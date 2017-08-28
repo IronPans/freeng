@@ -112,12 +112,13 @@
       .free-calendar .free-calendar-wrapper .free-calendar-time input[type="number"] {
         -moz-appearance: textfield; }
     .free-calendar .free-calendar-wrapper .free-calendar-footer {
-      height: 1.8rem;
-      padding-top: .25rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-top: 1px solid #d9d9d9; }
+      border-top: 1px solid #d9d9d9;
+      height: 1.8rem;
+      padding-top: .25rem;
+      margin-top: 5px; }
       .free-calendar .free-calendar-wrapper .free-calendar-footer span {
         cursor: pointer; }
     .free-calendar .free-calendar-wrapper table tr th {

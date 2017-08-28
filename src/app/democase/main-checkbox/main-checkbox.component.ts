@@ -16,7 +16,7 @@ export class MainCheckboxComponent implements OnInit {
   pageTitle = 'Components-Checkbox';
   selectedCity: any[];
   constructor() {
-    this.selectedCity = ['广东'];
+    this.selectedCity = ['guangdong'];
   }
 
   ngOnInit() {

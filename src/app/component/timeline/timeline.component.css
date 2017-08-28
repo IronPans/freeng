@@ -20,7 +20,7 @@
   .free-timeline .free-timeline-item:after {
     content: "";
     position: absolute;
-    top: .25rem;
+    top: 0;
     left: .25rem;
     width: .6rem;
     height: .6rem;

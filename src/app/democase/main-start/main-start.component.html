@@ -1,13 +1,13 @@
 <div class="main-container">
   <div class="row">
     <div class="free-demo-board" fGrid="12">
-      <p style="padding-right: 1rem;">
-        FreeNG是一款完全响应式的前端UI框架， 它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-        同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
-      </p>
-      <p>FreeNG还很年轻，首个版本发布于2017年5月。</p>
-      <p><b>当前版本</b>： v{{version}}</p>
+      <div style="padding-right: 1rem;">
+        <div [innerHTML]="'MAIN.INTRODUCTION' | translate"></div>
+      </div>
+      <p><b>{{'MAIN.CURRENT-VERSION' | translate}}：</b> v{{version}}</p>
       <hr>
+      <blockquote [innerHTML]="'START.KNOW' | translate"></blockquote>
+      <h4 style="margin: 20px 0;font-weight: bold;">{{'GET-START' | translate}}</h4>
       <div class="free-card-board">
         <free-panel header="Download">
           <free-code lang="javascript">
@@ -17,7 +17,7 @@
       </div>
       <div class="free-card-board">
         <free-panel header="Usage">
-          <h4>从freeng模块中导入(使用这种方式导入，会将所有的模块都导入)：</h4>
+          <h4 [innerHTML]="'START.IMPORT' | translate"></h4>
           <free-code lang="javascript">
             import &#123;AccordionModule&#125; from 'freeng/freeng'; //accordion
 
@@ -28,13 +28,13 @@
             &#125;)
             export class AppModule &#123;&#125;
           </free-code>
-          <h4>导入单个组件模块(有<span class="symbol component"></span>标注)</h4>
+          <h4 [innerHTML]="'START.COMPONENT' | translate"></h4>
           <free-code lang="javascript">
             //import &#123;ComponentModule&#125; from 'freeng/component/componentname/componentname.component';
 
             import &#123;AccordionModule&#125; from 'freeng/component/accordion/accordion.component';
           </free-code>
-          <h4>导入单个指令模块(有<span class="symbol directive"></span>标注)</h4>
+          <h4 [innerHTML]="'START.DIRECTIVE' | translate"></h4>
           <free-code lang="javascript">
             //import &#123;ComponentModule&#125; from 'freeng/component/directivename/directivename.directive';
 
@@ -48,6 +48,28 @@
             &lt;link rel="stylesheet" href="&lt;YOUR_PATH&gt;/font-awesome.min.css" /&gt;
             &lt;link rel="stylesheet" href="/node_modules/freeng/resources/freeng.min.css" /&gt;
             &lt;link rel="stylesheet" href="/node_modules/freeng/resources/themes/blue.css"/&gt;
+          </free-code>
+        </free-panel>
+      </div>
+
+      <div class="free-card-board">
+        <free-panel header="Animations">
+          <p>{{'START.ANIMATION' | translate}}</p>
+          <h4>Install</h4>
+          <free-code lang="javascript">
+            npm install @angular/animations --save
+          </free-code>
+          <h4>Usage</h4>
+          <free-code lang="typescript">
+            import &#123;BrowserModule&#125; from '@angular/platform-browser';
+            import &#123;BrowserAnimationsModule&#125; from '@angular/platform-browser/animations';
+
+            @NgModule(&#123;
+              imports: [
+                BrowserModule,
+                BrowserAnimationsModule,...]
+              &#125;)
+            export class AppModule &#123; &#125;
           </free-code>
         </free-panel>
       </div>
@@ -75,6 +97,7 @@
           </free-code>
         </free-panel>
       </div>
+
     </div>
   </div>
 </div>

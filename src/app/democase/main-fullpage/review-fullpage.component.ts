@@ -5,16 +5,16 @@ import {Component} from '@angular/core';
   template: `
     <free-fullpage [pagination]="true" [paginationClickable]="true">
       <free-fullpage-slide>
-        <div class="fullpage fullpage1"></div>
+        <div class="fullpage"><img src="assets/images/f1.jpg" alt=""></div>
       </free-fullpage-slide>
       <free-fullpage-slide>
-        <div class="fullpage fullpage2"></div>
+        <div class="fullpage"><img src="assets/images/f2.jpg" alt=""></div>
       </free-fullpage-slide>
       <free-fullpage-slide>
-        <div class="fullpage fullpage3"></div>
+        <div class="fullpage"><img src="assets/images/f3.jpg" alt=""></div>
       </free-fullpage-slide>
       <free-fullpage-slide>
-        <div class="fullpage fullpage4"></div>
+        <div class="fullpage"><img src="assets/images/f4.jpg" alt=""></div>
       </free-fullpage-slide>
     </free-fullpage>
   `,

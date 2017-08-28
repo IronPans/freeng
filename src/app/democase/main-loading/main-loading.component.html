@@ -2,23 +2,20 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        加载组件是一个覆盖，可以防止用户在指示活动时进行交互，以显示任务的进度，或等待任务完成。
+        {{'DEMO.LOADING.DESCRIPTION' | translate}}
       </p>
-      <ul class="free-ul-padding">
-        <li>丰富的类型选择</li>
-      </ul>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-loading</h3>
-        <p>一个loading。</p>
+        <p>Loading</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -29,7 +26,9 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+                <ng-template>
+                  {{'DEMO.LOADING.OPTION.0' | translate}}(primary/info/success/warning/danger)
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -37,8 +36,12 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，用来设置Loading的类型(circleLine、circleLineSpin、circleRoundFade、
-                lineSquare、lineRound、lineBounce、circleSpin)</free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.LOADING.OPTION.1' | translate}}(circleLine、circleLineSpin、circleRoundFade、
+                  lineSquare、lineRound、lineBounce、circleSpin)
+                </ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -108,5 +111,5 @@
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

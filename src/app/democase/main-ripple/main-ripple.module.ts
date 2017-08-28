@@ -6,6 +6,7 @@ import {TabGroupModule} from '../../component/tab/tab.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainRippleComponent} from './main-ripple.component';
 import {RippleModule} from '../../component/ripple/ripple.directive';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {RippleModule} from '../../component/ripple/ripple.directive';
     TabGroupModule,
     CodeModule,
     GridModule,
-    RippleModule
+    RippleModule,
+    LanguageModule
   ],
   declarations: [MainRippleComponent]
 })

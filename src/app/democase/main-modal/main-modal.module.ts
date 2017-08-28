@@ -8,6 +8,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {ButtonModule} from '../../component/button/button.directive';
 import {MainModalRoutingModule} from './main-modal-routing.module';
 import {MainModalComponent} from './main-modal.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {MainModalComponent} from './main-modal.component';
     TableModule,
     ModalModule,
     GridModule,
-    ButtonModule
+    ButtonModule,
+    LanguageModule
   ],
   declarations: [MainModalComponent]
 })

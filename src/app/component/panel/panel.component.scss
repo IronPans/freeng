@@ -1,4 +1,5 @@
 @import "../../../assets/sass/mixin";
+@import "../../../assets/sass/variables";
 
 .free-panel {
   background: #fff;
@@ -10,9 +11,12 @@
 
   .free-panel-header {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: .85rem;
     padding: .35rem .75rem;
-    border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
     f-header, & > span {
       font-weight: bold;
@@ -23,7 +27,10 @@
     padding: .75rem;
   }
 
-  &.theme-black .free-panel-header {
-    border-top-color: #313b3f;
+  @each $theme, $color in $theme {
+    &.free-panel-#{$theme} {
+      background: $color !important;
+      color: #fff;
+    }
   }
 }

@@ -2,19 +2,19 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        标签页可以轻松的切换应用的不同视图或功能方面，或者浏览分类数据集。
+        {{'DEMO.TAB.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-tab-group</h3>
-        <p>必选，表示一组Tab。</p>
+        <p>{{'DEMO.TAB.INTRO.0' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -24,20 +24,22 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置Tab头的位置，默认在左侧.可选值(right, center)</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TAB.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
       </div>
       <div class="free-demo-row">
         <h3 class="free-title">free-tab</h3>
-        <p>一个Tab。</p>
+        <p>{{'COMPONENT.TAB' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -47,26 +49,30 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>标签标题，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TAB.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>disabled</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否禁用，可选，默认false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TAB.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
       </div>
-      <h3 class="free-head-title">事件</h3>
+      <h3 class="free-head-title">{{'EVENT' | translate}}</h3>
       <div class="free-demo-row">
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>事件名</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'EVENT' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -76,7 +82,9 @@
               <free-table-cell>
                 <ng-template><code>Function</code></ng-template>
               </free-table-cell>
-              <free-table-cell>当Tab切换时触发的回调函数。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TAB.EVENTS.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -102,22 +110,22 @@
         <free-tab-group direction="right">
           <free-tab [header]="'Demo'">
             <free-tab-group>
-              <free-tab header="标题1">
-                标签1
+              <free-tab header="Tab 1">
+                Tab 2 content
               </free-tab>
-              <free-tab header="标题2">
-                标签2
+              <free-tab header="Tab 2">
+                Tab 2 content
               </free-tab>
             </free-tab-group>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-tab-group&gt;
-                &lt;free-tab header="标题1"&gt;
-                  标签1
+                &lt;free-tab header="Tab 1"&gt;
+                  Tab 2 content
                 &lt;/free-tab&gt;
-                &lt;free-tab header="标题2"&gt;
-                  标签2
+                &lt;free-tab header="Tab 2"&gt;
+                  Tab 2 content
                 &lt;/free-tab&gt;
               &lt;/free-tab-group&gt;
             </free-code>
@@ -130,22 +138,22 @@
         <free-tab-group direction="right">
           <free-tab [header]="'Demo'">
             <free-tab-group direction="right">
-              <free-tab header="标题1">
-                标签1
+              <free-tab header="Tab 1">
+                Tab 1 content
               </free-tab>
-              <free-tab header="标题2">
-                标签2
+              <free-tab header="Tab 2">
+                Tab 2 content
               </free-tab>
             </free-tab-group>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-tab-group direction="right"&gt;
-                &lt;free-tab header="标题1"&gt;
-                  标签1
+                &lt;free-tab header="Tab 1"&gt;
+                  Tab 2 content
                 &lt;/free-tab&gt;
-                &lt;free-tab header="标题2"&gt;
-                  标签2
+                &lt;free-tab header="Tab 2"&gt;
+                  Tab 2 content
                 &lt;/free-tab&gt;
               &lt;/free-tab-group&gt;
             </free-code>
@@ -158,28 +166,28 @@
         <free-tab-group direction="right">
           <free-tab [header]="'Demo'">
             <free-tab-group direction="right">
-              <free-tab header="标题1">
-                标签1
+              <free-tab header="Tab 1">
+                Tab 2 content
               </free-tab>
-              <free-tab header="标题2" [disabled]="true">
-                标签2
+              <free-tab header="Tab 2" [disabled]="true">
+                Tab 2 content
               </free-tab>
-              <free-tab header="标题3">
-                标签3
+              <free-tab header="Tab 3">
+                Tab 3 content
               </free-tab>
             </free-tab-group>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-tab-group direction="right"&gt;
-                &lt;free-tab header="标题1"&gt;
-                  标签1
+                &lt;free-tab header="Tab 1"&gt;
+                  Tab 2 content
                 &lt;/free-tab&gt;
-                &lt;free-tab header="标题2" [disabled]="true"&gt;
-                  标签2
+                &lt;free-tab header="Tab 2" [disabled]="true"&gt;
+                  Tab 2 content
                 &lt;/free-tab&gt;
-                &lt;free-tab header="标题3"&gt;
-                  标签3
+                &lt;free-tab header="Tab 3"&gt;
+                  Tab 3 content
                 &lt;/free-tab&gt;
               &lt;/free-tab-group&gt;
             </free-code>
@@ -195,22 +203,22 @@
               当前tab：{{activeState?.activeIndex}}
             </p>
             <free-tab-group (onChange)="onTabChange($event)">
-              <free-tab header="标题1">
-                标签1
+              <free-tab header="Tab 1">
+                Tab 2 content
               </free-tab>
-              <free-tab header="标题2">
-                标签2
+              <free-tab header="Tab 2">
+                Tab 2 content
               </free-tab>
             </free-tab-group>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-tab-group (onChange)="onTabChange($event)"&gt;
-                &lt;free-tab header="标题1"&gt;
-                  标签1
+                &lt;free-tab header="Tab 1"&gt;
+                  Tab 2 content
                 &lt;/free-tab&gt;
-                &lt;free-tab header="标题2"&gt;
-                  标签2
+                &lt;free-tab header="Tab 2"&gt;
+                  Tab 2 content
                 &lt;/free-tab&gt;
               &lt;/free-tab-group&gt;
             </free-code>
@@ -228,5 +236,5 @@
     </div>
 
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

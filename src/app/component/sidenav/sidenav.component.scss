@@ -1,0 +1,47 @@
+
+.free-sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 10000;
+
+  .free-sidenav-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0,0,0,.54);
+    transition: all .3s linear;
+  }
+
+  .free-sidenav-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 12.5rem;
+    background: #fff;
+  }
+
+  &.free-sidenav-active {
+    .free-sidenav-overlay {
+      opacity: 1;
+    }
+  }
+
+  &.free-sidenav-left {
+    .free-sidenav-wrapper {
+      left: 0;
+    }
+  }
+
+  &.free-sidenav-right {
+    .free-sidenav-wrapper {
+      right: 0;
+    }
+  }
+}

@@ -1,9 +1,9 @@
 import {CommonModule} from '@angular/common';
-import highlight from 'highlight.js/lib/highlight.js';
-import highlightJavascript from 'highlight.js/lib/languages/javascript';
-import highlightCSS from 'highlight.js/lib/languages/css';
-import highlightBash from 'highlight.js/lib/languages/bash';
-import highlightXML from 'highlight.js/lib/languages/xml';
+import * as highlight from 'highlight.js/lib/highlight.js';
+import * as highlightJavascript from 'highlight.js/lib/languages/javascript';
+import * as highlightCSS from 'highlight.js/lib/languages/css';
+import * as highlightBash from 'highlight.js/lib/languages/bash';
+import * as highlightXML from 'highlight.js/lib/languages/xml';
 import {
   NgModule, Component, Input, ViewChild, AfterViewInit, ElementRef, Renderer2
 } from '@angular/core';

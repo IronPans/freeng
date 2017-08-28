@@ -10,6 +10,7 @@ import {MainNotificationRoutingModule} from './main-notification-routing.module'
 import {MainNotificationComponent} from './main-notification.component';
 import {NotificationModule} from '../../component/notification/notification.component';
 import {SelectModule} from '../../component/select/select.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {SelectModule} from '../../component/select/select.component';
     GridModule,
     ButtonModule,
     SelectModule,
-    NotificationModule
+    NotificationModule,
+    LanguageModule
   ],
   declarations: [MainNotificationComponent]
 })

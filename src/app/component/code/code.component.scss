@@ -1,0 +1,51 @@
+free-code {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.free-code-clone {
+  position: absolute;
+  right: 1rem;
+  top: .2rem;
+  opacity: 0;
+  z-index: 100;
+  border: none;
+  padding: 0 .25rem;
+  border-radius: 3px;
+  transition: opacity .3s;
+}
+.free-code {
+  position: relative;
+  code {
+    max-height: 22.5rem;
+    overflow-y: auto;
+  }
+
+  &:hover .free-code-clone {
+    opacity: .7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &[lang]:after {
+    position: absolute;
+    top: .25rem;
+    right: .5rem;
+    color: rgba(255, 255, 255, .5);
+    opacity: .7;
+    font-size: .65rem;
+  }
+
+  &[lang="html"]:after {
+    content: "HTML";
+  }
+
+  &[lang="Javascript"]:after {
+    content: "Javascript";
+  }
+
+  &[lang="CSS"]:after {
+    content: "CSS";
+  }
+}

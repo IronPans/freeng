@@ -8,6 +8,7 @@ import {NgModule} from '@angular/core';
 import {MainFormComponent} from './main-form.component';
 import {MainFormRoutingModule} from './main-form-routing.module';
 import {FormsModule} from '@angular/forms';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {FormsModule} from '@angular/forms';
     CodeModule,
     TableModule,
     InputtextModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainFormComponent]
 })

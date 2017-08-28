@@ -8,6 +8,7 @@ import {ContextmenuModule} from '../../component/contextmenu/contextmenu.compone
 import {MainContextRoutingModule} from './main-contextmenu-routing.module';
 import {ButtonModule} from '../../component/button/button.directive';
 import {MainContextmenuComponent} from './main-contextmenu.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {MainContextmenuComponent} from './main-contextmenu.component';
     GridModule,
     ButtonModule,
     ContextmenuModule,
-    MainContextRoutingModule
+    MainContextRoutingModule,
+    LanguageModule
   ],
   declarations: [MainContextmenuComponent]
 })

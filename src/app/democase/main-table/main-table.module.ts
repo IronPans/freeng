@@ -7,6 +7,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {MainTableRoutingModule} from './main-table-routing.module';
 import {MainTableComponent} from './main-table.component';
 import {DatatableModule} from '../../component/datatable/datatable.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {DatatableModule} from '../../component/datatable/datatable.component';
     CodeModule,
     TableModule,
     GridModule,
-    DatatableModule
+    DatatableModule,
+    LanguageModule
   ],
   declarations: [MainTableComponent]
 })

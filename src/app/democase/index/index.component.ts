@@ -1,12 +1,12 @@
 import {
-  Component, OnInit, AfterViewInit,
-  HostListener, Renderer2, OnDestroy, ViewChild
+  Component, OnInit, AfterViewInit, HostListener, Renderer2, OnDestroy, ViewChild
 } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
 import { config } from '../common/config';
 import { DomRenderer } from '../../component/common/dom';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'free-root',
@@ -15,7 +15,6 @@ import { DomRenderer } from '../../component/common/dom';
   providers: [DomRenderer]
 })
 export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
-  title: string;
   icon: string;
   menuItem: any;
   dropdownItem: any;
@@ -26,6 +25,7 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
   isOpen: boolean;
   searchState: boolean;
   sidebarActive: boolean;
+  lang: string;
   @ViewChild('setting') settingBtn; ElementRef;
   @ViewChild('main') main;
   @HostListener('window:resize') onResize() {
@@ -33,18 +33,20 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   constructor(public renderer2: Renderer2,
               public fb: FormBuilder,
+             public router: Router,
              public route: ActivatedRoute,
+              private translate: TranslateService,
              public domRenderer: DomRenderer,
              public pageTitle: Title) {
     this.resize();
+    this.lang = translate.currentLang;
   }
 
   ngOnInit() {
-    this.title = '首页';
     this.icon = 'laptop';
-    this.menuItem = [{'name': '首页'}, {'name': ''}];
+    this.menuItem = [{'name': 'Homepage'}, {'name': ''}];
     this.dropdownItem = [{
-      'name': 'TGCode',
+      'name': 'TG',
       'icon': 'user'
     }, {
       'name': 'GitHub',
@@ -52,15 +54,15 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
       'url': 'https://github.com/IronPans/freeng',
       'target': '_target'
     }, {
-      'name': '帮助',
+      'name': 'Help',
       'icon': 'question-circle',
       'routerLink': '/main/getting-started'
     }, {
-      'name': '系统消息',
+      'name': 'Message',
       'icon': 'bell-o',
       'routerLink': '/main/changelog'
     }, {
-      'name': '登出',
+      'name': 'Logout',
       'icon': 'sign-out',
       'routerLink': '/login'
     }];
@@ -149,5 +151,17 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
     link.setAttribute('href', 'assets/themes/' + value + '.css');
   }
 
+  toSearch(router: string) {
+    this.router.navigate(['/main/' + router]);
+  }
+
+  changeLanguage() {
+    if (this.lang === 'en') {
+      this.lang = 'zh-CN';
+    } else {
+      this.lang = 'en';
+    }
+    this.translate.use(this.lang);
+  }
 }
 

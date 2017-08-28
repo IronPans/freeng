@@ -6,6 +6,7 @@ import {CodeModule} from '../../component/code/code.component';
 import {TreeModule} from '../../component/tree/tree.component';
 import {MainStartRoutingModule} from './main-start-routing.module';
 import {MainStartComponent} from './main-start.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {MainStartComponent} from './main-start.component';
     PanelModule,
     GridModule,
     CodeModule,
-    TreeModule
+    TreeModule,
+    LanguageModule
   ],
   declarations: [MainStartComponent]
 })

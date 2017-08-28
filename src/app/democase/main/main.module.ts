@@ -9,6 +9,7 @@ import {ButtonModule} from '../../component/button/button.directive';
 import {TabGroupModule} from '../../component/tab/tab.component';
 import {MainComponent} from './main.component';
 import {MainRoutingModule} from './main-routing.module';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {MainRoutingModule} from './main-routing.module';
     PanelModule,
     GridModule,
     TabGroupModule,
-    ButtonModule
+    ButtonModule,
+    LanguageModule
   ],
   declarations: [MainComponent]
 })

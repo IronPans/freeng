@@ -6,6 +6,8 @@ import {TableModule} from '../../component/table/table.component';
 import {MainChangelogRoutingModule} from './main-changelog-routing.module';
 import {MainChangelogComponent} from './main-changelog.component';
 import {TimelineModule} from '../../component/timeline/timeline.component';
+import {ShareModule} from '../../component/common/share';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import {TimelineModule} from '../../component/timeline/timeline.component';
     PanelModule,
     GridModule,
     TableModule,
-    TimelineModule
+    TimelineModule,
+    ShareModule,
+    LanguageModule
   ],
   declarations: [MainChangelogComponent]
 })

@@ -32,37 +32,37 @@ export class MainToastComponent implements OnInit {
 
   open() {
     this.messages.push({
-      content: '温馨提示：这是FreeNG框架'
+      content: 'Tip: This is a toast!'
     });
   }
 
   openErrorMessage() {
     this.errors.push({
-      content: '温馨提示：这是错误提示框！'
+      content: 'Tip: This is a error toast!'
     })
   }
 
   openWarningMessage() {
     this.warnigs.push({
-      content: '温馨提示：这是警告提示框！'
+      content: 'Tip: This is a warning toast!'
     })
   }
 
   openInfoMessage() {
     this.infos.push({
-      content: '温馨提示：这是信息提示框！'
+      content: 'Tip: This is a info toast!'
     })
   }
 
   openSuccessMessage() {
     this.successes.push({
-      content: '温馨提示：这是成功提示框！'
+      content: 'Tip: This is a error toast!'
     })
   }
 
   openCustomDelay() {
     this.delayMessages.push({
-      content: '温馨提示：当前提示框在5000ms后隐藏！'
+      content: 'Tip: This will hide after 5s!'
     })
   }
 }

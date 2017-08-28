@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Component, Input } from '@angular/core';
+import {NgModule, Component, Input, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
+import {DomRenderer} from '../common/dom';
 
 @Component({
   selector: 'free-breadcrumb',
@@ -7,24 +8,38 @@ import { NgModule, Component, Input } from '@angular/core';
       <ol class="free-breadcrumb" #container>
         <ng-template ngFor let-item let-end="last" let-i="index" [ngForOf]="menus">
           <li>
-            <span *ngIf="i != 0 && !icon" class="free-breadcrumb-separator">
-              {{this.separator}}
+            <span *ngIf="!type && i != 0 && !icon" class="free-breadcrumb-separator">
+              {{separator}}
             </span>
             <span *ngIf="i != 0 && icon" class="fa fa-{{icon}} free-breadcrumb-separator"></span>
-            <a>{{item.name}}</a>
+            <a [style.background]="backgroundColor" [style.border-color]="backgroundColor">
+              <i class="fa fa-{{item.icon}}" *ngIf="item.icon"></i>
+              {{item.name}}
+            </a>
           </li>
         </ng-template>
       </ol>
-  `
+  `,
+  providers: [DomRenderer]
 })
-export class BreadcrumbComponent {
+export class BreadcrumbComponent implements AfterViewInit{
   @Input() menus: any;
   @Input() separator: string;
   @Input() icon: string;
-  constructor() {
+  @Input() type: number;
+  @Input() backgroundColor: string;
+  @ViewChild('container') containerViewChild: ElementRef;
+  _container: HTMLOListElement;
+  constructor(public domRenderer: DomRenderer) {
     this.separator = '/';
   }
 
+  ngAfterViewInit() {
+    this._container = this.containerViewChild.nativeElement;
+    if (this.type) {
+      this.domRenderer.addClass(this._container, `free-custom-${this.type}`);
+    }
+  }
 }
 
 @NgModule({

@@ -2,21 +2,20 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        简单的页面消息通知组件。
-        可以设置让消息在页面的四个角落出现。可以手动关闭消息，也可以设置成自动关闭。
+        {{'DEMO.NOTIFICATION.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-notification</h3>
-        <p>消息通知框。</p>
+        <p>{{'COMPONENT.NOTIFICATION' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -26,14 +25,18 @@
               <free-table-cell>
                 <ng-template><code>Array</code></ng-template>
               </free-table-cell>
-              <free-table-cell>消息数组。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.NOTIFICATION.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>delay</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>消息通知框延迟关闭时间。默认不关闭</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.NOTIFICATION.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>direction</free-table-cell>
@@ -41,7 +44,7 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                消息通知框的位置。默认为“TopRight”。(可选值：topLeft, topRight, bottomLeft, bottomRight)
+                <ng-template>{{'DEMO.NOTIFICATION.OPTION.2' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
@@ -65,19 +68,19 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton (click)="open()">消息通知</button>
+            <button fButton (click)="open()">Notification</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;button fButton (click)="open()"&gt;消息通知&lt;/button&gt;
+              &lt;button fButton (click)="open()"&gt;Notification&lt;/button&gt;
               &lt;free-notification [messages]="messages"&gt;&lt;/free-notification&gt;
             </free-code>
             <h4>Javascript</h4>
             <free-code lang="javascript">
               open() &#123;
                 this.messages.push(&#123;
-                  title: '通知',
-                  content: '你的帐号未经过邮箱验证！'
+                  title: 'Notification',
+                  content: 'Your account has not been verified by email!'
                 &#125;);
               &#125;
             </free-code>
@@ -109,7 +112,7 @@
         <h3 class="free-toolbar">Avatar</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton (click)="openAvatarMessage()">消息通知</button>
+            <button fButton (click)="openAvatarMessage()">Notification</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -119,8 +122,8 @@
             <free-code lang="javascript">
               openAvatarMessage() &#123;
                 this.avatarMessages.push(&#123;
-                  title: '通知',
-                  content: '你的帐号未经过邮箱验证！' + new Date(),
+                  title: 'Notification',
+                  content: 'Your account has not been verified by email!' + new Date(),
                   avatar: 'assets/images/t_me.png'
                 &#125;);
               }
@@ -133,7 +136,7 @@
         <h3 class="free-toolbar">Delay</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton (click)="openDelayMessage()">消息通知</button>
+            <button fButton (click)="openDelayMessage()">Notification</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -149,7 +152,7 @@
           <free-tab header="PREVIEW">
             <div style="height: 300px;">
               <free-select [options]="directions" [(ngModel)]="direction"></free-select>
-              <button fButton (click)="openToolMessage()">消息通知</button>
+              <button fButton (click)="openToolMessage()">Notification</button>
             </div>
           </free-tab>
           <free-tab header="CODE">
@@ -162,7 +165,7 @@
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
   <free-notification [messages]="messages"></free-notification>
   <free-notification [messages]="toolMessages"
                      [direction]="direction['value']" [delay]="1500"></free-notification>

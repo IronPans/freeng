@@ -7,6 +7,7 @@ import {SlideModule} from '../../component/slides/slides.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainSlideRoutingModule} from './main-slide-routing.module';
 import {MainSlideComponent} from './main-slide.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainSlideComponent} from './main-slide.component';
     CodeModule,
     TableModule,
     SlideModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainSlideComponent]
 })

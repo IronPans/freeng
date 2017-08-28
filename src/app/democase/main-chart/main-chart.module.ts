@@ -7,6 +7,7 @@ import {TableModule} from '../../component/table/table.component';
 import {CodeModule} from '../../component/code/code.component';
 import {TabGroupModule} from '../../component/tab/tab.component';
 import {ChartModule} from '../../component/chart/chart.component';
+import {LanguageModule} from '../common/language';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +16,8 @@ import {ChartModule} from '../../component/chart/chart.component';
     TableModule,
     GridModule,
     ChartModule,
-    MainChartRoutingModule
+    MainChartRoutingModule,
+    LanguageModule
   ],
   declarations: [MainChartComponent]
 })

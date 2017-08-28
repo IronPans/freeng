@@ -1,10 +1,16 @@
+<p align="center">
+  <a href="http://ghmagical.com/freeng">
+    <img width="320" src="http://oumfrpm5j.bkt.clouddn.com/freeng_logo.png">
+  </a>
+</p>
+
 # FreeNG
 
 UI Components for Angular.
 
 ## Demo
 
-View all the Components in action at [http://ghmagical.com/freeng](http://ghmagical.com/freeng)
+View all the Components in action at [HomePage](http://ghmagical.com/freeng/releases/version/0.2.0/)
 
 ## Installation
 
@@ -12,11 +18,24 @@ View all the Components in action at [http://ghmagical.com/freeng](http://ghmagi
 npm install freeng --save
 ```
 
-## Usage
+## Usage？
 
 UI components are configured as modules, once FreeNG is downloaded and configured, modules and apis can be imported from 'freeng/freeng' shorthand in your application code.
 
-```js
+Load both components in 'AppModule':
+```typescript
+import {FreengModule} from 'freeng/freeng'; //accordion
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [FreengModule.forRoot()],  
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+Load one components:
+```typescript
 import {AccordionModule} from 'freeng/freeng'; //accordion
 
 @NgModule({
@@ -93,4 +112,4 @@ See the [Changelog](CHANGELOG.md).
 
 ## Licence
 
-MIT License
+MIT

@@ -7,6 +7,7 @@ import {ShrinkModule} from '../../component/shrink/shrink.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainShrinkRoutingModule} from './main-shrink-routing.module';
 import {MainShrinkComponent} from './main-shrink.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainShrinkComponent} from './main-shrink.component';
     CodeModule,
     TableModule,
     ShrinkModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainShrinkComponent]
 })

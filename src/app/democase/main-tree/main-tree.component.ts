@@ -19,23 +19,23 @@ export class MainTreeComponent implements OnInit {
   ngOnInit() {
     this.menus = [
       {
-        title: '菜单',
+        title: 'Message',
         folder: [
           {
-            title: '子菜单',
+            title: 'Javascript',
             file: [
               {
-                title: '孙菜单'
+                title: 'canvas'
               }
             ]
           }
         ]
       },
       {
-        title: '菜单',
+        title: 'Css',
         file: [
           {
-            title: '子菜单'
+            title: 'background'
           }
         ]
       }

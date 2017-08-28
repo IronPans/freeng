@@ -51,65 +51,65 @@ export class MainNotificationComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.delayMessages = [{
-      title: '通知',
-      content: '你的帐号未经过邮箱验证！' + new Date()
+      title: 'Notification',
+      content: 'Your account has not been verified by email!' + new Date()
     }];
   }
 
   open() {
     this.messages.push({
-      title: '通知',
-      content: '你的帐号未经过邮箱验证！'
+      title: 'Notification',
+      content: 'Your account has not been verified by email!'
     });
   }
 
   openToolMessage() {
     this.toolMessages.push({
-      title: '通知',
-      content: '你的帐号未经过邮箱验证！'
+      title: 'Notification',
+      content: 'Your account has not been verified by email!'
     });
   }
 
   openAvatarMessage() {
     this.avatarMessages.push({
-      title: '通知',
-      content: '你的帐号未经过邮箱验证！' + new Date(),
+      title: 'Notification',
+      content: 'Your account has not been verified by email!' + new Date(),
       avatar: 'assets/images/t_me.png'
     });
   }
 
   openDelayMessage() {
     this.delayMessages.push({
-      title: '通知',
-      content: '你的帐号未经过邮箱验证！' + new Date()
+      title: 'Notification',
+      content: 'Your account has not been verified by email!' + new Date()
     })
   }
 
   openErrorMessage() {
     this.errors.push({
-      title: '通知',
-      content: '温馨提示：这是错误消息通知框！'
+      title: 'Notification',
+      content: 'Tip: This is error notification'
     })
   }
 
   openWarningMessage() {
     this.warnigs.push({
-      title: '通知',
-      content: '温馨提示：这是警告消息通知框！'
+      title: 'Notification',
+      content: 'Tip: This is warning notification'
     })
   }
 
   openInfoMessage() {
     this.infos.push({
-      title: '通知',
-      content: '温馨提示：这是信息消息通知框！'
+      title: 'Notification',
+      content: 'Tip: This is info notification'
     })
   }
 
   openSuccessMessage() {
     this.successes.push({
-      title: '通知',
-      content: '温馨提示：这是成功消息通知框！'
+      title: 'Notification',
+      content: 'Tip: This is success notification'
     })
   }
 

@@ -1,4 +1,9 @@
 :host /deep/ free-inputtext {
-  margin: 0 1rem 1rem 0; }
+  margin: 0 1rem .5rem 0; }
+:host /deep/ .input-pattern p {
+  width: 100%; }
+  :host /deep/ .input-pattern p free-inputtext {
+    width: 40%;
+    display: block; }
 
 /*# sourceMappingURL=main-form.component.css.map */

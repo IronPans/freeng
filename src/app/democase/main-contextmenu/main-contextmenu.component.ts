@@ -20,15 +20,15 @@ export class MainContextmenuComponent implements OnInit {
 
   ngOnInit() {
     this.menu = [
-      {label: '子菜单', icon: 'user', item: [{label: '子菜单'}]},
+      {label: 'Child', icon: 'user', item: [{label: 'Child'}]},
       {separator: true},
-      {label: '子菜单', icon: 'user', disabled: true},
-      {label: '子菜单', icon: 'user', item: [{label: '子菜单'}]}
+      {label: 'Child', icon: 'user', disabled: true},
+      {label: 'Child', icon: 'user', item: [{label: 'Child'}]}
     ];
 
     this.globalMenu = [
-      {label: '根菜单', icon: 'user', item: [{label: '子菜单',
-        item: [{label: '子菜单', icon: 'user', back: true}]}]}
+      {label: 'Root', icon: 'user', item: [{label: 'Child',
+        item: [{label: 'Child', icon: 'user', back: true}]}]}
     ];
   }
 

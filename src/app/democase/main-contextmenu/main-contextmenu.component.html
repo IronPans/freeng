@@ -2,19 +2,19 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        上下文菜单(ContextMenu)在其目标上右击时，会显示一个重叠菜单。
+        {{'DEMO.CONTEXTMENU.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-contextmenu</h3>
-        <p>上下文菜单</p>
+        <p>{{'COMPONENT.CONTEXTMENU' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -24,28 +24,36 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>需要上下文菜单的目标(一般使用模板变量)</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CONTEXTMENU.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>menu</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Array</code></ng-template>
               </free-table-cell>
-              <free-table-cell>一个菜单数组</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CONTEXTMENU.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>global</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置document的上下文菜单，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CONTEXTMENU.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>back</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否点击返回上一个路由页面，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CONTEXTMENU.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -68,7 +76,7 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <button fButton #cm>上下文菜单</button>
+            <button fButton #cm>{{'COMPONENT.CONTEXTMENU' | translate}}</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -77,10 +85,10 @@
             <h4>Javascript</h4>
             <free-code lang="javascript">
               this.menu = [
-                &#123;label: '子菜单', icon: 'user', item: [&#123;label: '子菜单'&#125;]&#125;,
+                &#123;label: 'Child', icon: 'user', item: [&#123;label: 'Child'&#125;]&#125;,
                 &#123;separator: true&#125;,
-                &#123;label: '子菜单', icon: 'user', disabled: true&#125;,
-                &#123;label: '子菜单', icon: 'user', item: [&#123;label: '子菜单'&#125;]&#125;
+                &#123;label: 'Child', icon: 'user', disabled: true&#125;,
+                &#123;label: 'Child', icon: 'user', item: [&#123;label: 'Child'&#125;]&#125;
               ];
             </free-code>
           </free-tab>
@@ -89,7 +97,7 @@
     </div>
 
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>
 
 <free-contextmenu [target]="cm" [menu]="menu"></free-contextmenu>

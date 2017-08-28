@@ -51,6 +51,9 @@ tslint.json
 gulpfile.js
 .github
 
+# release
+build.sh
+
 # System Files
 .DS_Store
 Thumbs.db

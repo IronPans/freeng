@@ -2,18 +2,18 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        范围控件允许用户通过沿滑杆或轨道移动滑块旋钮从一系列值中进行选择。
+        {{'DEMO.RANGE.DESCRIPTION' | translate}}
       </p>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-range</h3>
-        <p>单个范围控件</p>
+        <p>{{'COMPONENT.RANGE' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -23,29 +23,73 @@
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置当前值。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RANGE.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>min</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置最小值，默认为0</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RANGE.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>max</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置最大值，默认为100</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RANGE.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
-              <free-table-cell>theme</free-table-cell>
+            <free-table-cell>theme</free-table-cell>
+            <free-table-cell>
+              <ng-template><code>String</code></ng-template>
+            </free-table-cell>
+            <free-table-cell>
+              <ng-template>
+                {{'DEMO.RANGE.OPTION.3' | translate}}(primary/info/success/warning/danger)
+              </ng-template>
+            </free-table-cell>
+          </free-table-row>
+            <free-table-row>
+              <free-table-cell>handleSize</free-table-cell>
               <free-table-cell>
-                <ng-template><code>String</code></ng-template>
+                <ng-template><code>Number</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+                <ng-template>{{'DEMO.RANGE.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>Vertical</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RANGE.OPTION.5' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>rangeHeight</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RANGE.OPTION.6' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>rangeWidth</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Number</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RANGE.OPTION.7' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
@@ -96,22 +140,42 @@
       </div>
 
       <div class="free-card-board">
+        <h3 class="free-toolbar">HandleSize</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-range [handleSize]="0.5"></free-range>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-range [handleSize]="0.5"&gt;&lt;/free-range&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Vertical</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-range [vertical]="true"></free-range>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-range [vertical]="true"&gt;&lt;/free-range&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
         <h3 class="free-toolbar">Theme</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <free-range [value]="20" theme="primary"></free-range>
-            <free-range [value]="20" theme="info"></free-range>
-            <free-range [value]="20" theme="success"></free-range>
-            <free-range [value]="20" theme="warning"></free-range>
-            <free-range [value]="20" theme="danger"></free-range>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-range [value]="20" theme="primary"&gt;&lt;/free-range&gt;
-              &lt;free-range [value]="20" theme="info"&gt;&lt;/free-range&gt;
-              &lt;free-range [value]="20" theme="success"&gt;&lt;/free-range&gt;
-              &lt;free-range [value]="20" theme="warning"&gt;&lt;/free-range&gt;
-              &lt;free-range [value]="20" theme="danger"&gt;&lt;/free-range&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -120,5 +184,5 @@
     </div>
 
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

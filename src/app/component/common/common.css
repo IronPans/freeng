@@ -53,7 +53,7 @@ free-upload {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font: .75rem/1.5rem "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",sans-serif; }
+  font-family: Roboto, Noto Sans, Noto,"Microsoft Yahei",sans-serifsans-serif; }
   button *, a *,
   free-accordion *,
   free-badge *,
@@ -106,7 +106,7 @@ free-upload {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font: .75rem/1.5rem "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",sans-serif; }
+    font-family: Roboto, Noto Sans, Noto,"Microsoft Yahei",sans-serifsans-serif; }
 
 *:before, *:after {
   box-sizing: border-box; }
@@ -346,44 +346,9 @@ free-upload {
 .pull-center {
   align-items: center; }
 
-free-code,
 free-tab-group {
   flex: 1 0 auto;
   width: 100%; }
-
-.free-code-clone {
-  position: absolute;
-  right: 1rem;
-  top: .2rem;
-  opacity: 0;
-  z-index: 100;
-  border: none;
-  padding: 0 .25rem;
-  border-radius: 3px;
-  transition: opacity .3s; }
-
-.free-code {
-  position: relative; }
-  .free-code code {
-    max-height: 22.5rem;
-    overflow-y: auto; }
-  .free-code:hover .free-code-clone {
-    opacity: .7; }
-    .free-code:hover .free-code-clone:hover {
-      opacity: 1; }
-  .free-code[lang]:after {
-    position: absolute;
-    top: .25rem;
-    right: .5rem;
-    color: rgba(255, 255, 255, 0.5);
-    opacity: .7;
-    font-size: .65rem; }
-  .free-code[lang="html"]:after {
-    content: "HTML"; }
-  .free-code[lang="Javascript"]:after {
-    content: "Javascript"; }
-  .free-code[lang="CSS"]:after {
-    content: "CSS"; }
 
 .container {
   margin-right: auto;
@@ -984,6 +949,10 @@ input::-webkit-input-placeholder {
 .btn-primary, .btn-primary:hover, .btn-primary:focus {
   color: white; }
 
+a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
+  color: #2979FF;
+  text-decoration: none; }
+
 .btn {
   position: relative;
   display: inline-flex;
@@ -1002,7 +971,8 @@ input::-webkit-input-placeholder {
   border-radius: 2px;
   line-height: 1;
   text-transform: uppercase;
-  user-select: none; }
+  user-select: none;
+  text-decoration: none; }
 
 .btn.btn-round {
   border-radius: 1rem; }
@@ -1545,5 +1515,24 @@ blockquote {
 
 .free-iscroll::-webkit-scrollbar-corner, .free-iscroll::-webkit-scrollbar-track {
   background-color: #ccc; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+hr {
+  border-color: rgba(0, 0, 0, 0.12);
+  border-bottom: none;
+  margin: 1rem 0; }
+
+code:not(.hljs) {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 2px; }
 
 /*# sourceMappingURL=common.css.map */

@@ -98,4 +98,7 @@ export class MainDatatableComponent implements OnInit {
     ];
   }
 
+  onDataSelect(event: any) {
+    console.log(event);
+  }
 }

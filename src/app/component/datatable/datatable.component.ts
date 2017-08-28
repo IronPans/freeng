@@ -300,7 +300,7 @@ export class DatatableScrollableComponent implements AfterViewInit {
   `,
   providers: [DomRenderer]
 })
-export class DatatableComponent implements OnInit, AfterViewInit, OnDestroy {
+export class DatatableComponent implements AfterViewInit, OnDestroy {
 
   @Input() pagination: boolean;
   @Input() selectionMode: string;
@@ -365,9 +365,6 @@ export class DatatableComponent implements OnInit, AfterViewInit, OnDestroy {
     this.first = 0;
     this.checkboxs = [];
     this.radios = [];
-  }
-
-  ngOnInit() {
   }
 
   ngAfterViewInit() {

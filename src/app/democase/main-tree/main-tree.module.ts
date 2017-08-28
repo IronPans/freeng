@@ -7,6 +7,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {TreeModule} from '../../component/tree/tree.component';
 import {MainTreeRoutingModule} from './main-tree-routing.module';
 import {MainTreeComponent} from './main-tree.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainTreeComponent} from './main-tree.component';
     CodeModule,
     TableModule,
     GridModule,
-    TreeModule
+    TreeModule,
+    LanguageModule
   ],
   declarations: [MainTreeComponent]
 })

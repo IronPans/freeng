@@ -1,8 +1,4 @@
-/**
- * Created by tg on 17-4-3.
- */
-import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CommonModule} from '@angular/common';
 import {
   NgModule, Component, ViewContainerRef, EmbeddedViewRef, Input, OnInit, Directive,
   ComponentFactoryResolver, OnDestroy, TemplateRef
@@ -13,14 +9,16 @@ import {
   template: '<ng-content></ng-content>'
 })
 
-export class HeaderComponent {}
+export class HeaderComponent {
+}
 
 @Component({
   selector: 'f-footer',
   template: '<ng-content></ng-content>'
 })
 
-export class FooterComponent {}
+export class FooterComponent {
+}
 
 @Component({
   selector: 'free-template',
@@ -62,7 +60,8 @@ export class TemplateColumnComponent implements OnInit, OnDestroy {
   @Input() column: any;
   view: EmbeddedViewRef<any>;
 
-  constructor(public _viewContainerRef: ViewContainerRef) {}
+  constructor(public _viewContainerRef: ViewContainerRef) {
+  }
 
   ngOnInit() {
     this.view = this._viewContainerRef.createEmbeddedView(this.template, {
@@ -85,6 +84,7 @@ export class FHostDirective implements OnInit {
 
   @Input() item: any;
   @Input() data: any;
+
   constructor(public _viewContainerRef: ViewContainerRef,
               public _componentFactoryResolver: ComponentFactoryResolver) {
   }
@@ -107,7 +107,9 @@ export class FreeTemplateDirective {
   @Input() type: string;
   @Input('fTemplate') name: string;
 
-  constructor(public template: TemplateRef<any>) {}
+  constructor(public template: TemplateRef<any>) {
+  }
+
   getType(): string {
     return this.name;
   }
@@ -115,8 +117,13 @@ export class FreeTemplateDirective {
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [ HeaderComponent, FooterComponent, TemplateComponent, TemplateColumnComponent, FHostDirective, FreeTemplateDirective ],
-  exports: [HeaderComponent, FooterComponent, TemplateComponent, TemplateColumnComponent, FHostDirective, FreeTemplateDirective]
+  declarations: [
+    HeaderComponent, FooterComponent, TemplateComponent,
+    TemplateColumnComponent, FHostDirective, FreeTemplateDirective],
+  exports: [
+    HeaderComponent, FooterComponent, TemplateComponent,
+    TemplateColumnComponent, FHostDirective, FreeTemplateDirective]
 })
 
-export class ShareModule {}
+export class ShareModule {
+}

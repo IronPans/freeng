@@ -1,0 +1,184 @@
+.free-cropper {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC"); }
+  .free-cropper .free-cropper-wrapper, .free-cropper .free-cropper-canvas, .free-cropper .free-cropper-box, .free-cropper .free-cropper-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+  .free-cropper .free-cropper-box {
+    width: 50%;
+    height: 50%;
+    user-select: none; }
+  .free-cropper .free-cropper-canvas img {
+    display: block;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    width: 100%;
+    height: 100%;
+    image-orientation: 0deg; }
+  .free-cropper .free-cropper-dashed {
+    position: absolute;
+    display: block;
+    opacity: .5;
+    border: 0 dashed #eee; }
+    .free-cropper .free-cropper-dashed.free-dashed-h {
+      top: 33.33333%;
+      left: 0;
+      width: 100%;
+      height: 33.33333%;
+      border-top-width: 1px;
+      border-bottom-width: 1px; }
+    .free-cropper .free-cropper-dashed.free-dashed-v {
+      top: 0;
+      left: 33.33333%;
+      width: 33.33333%;
+      height: 100%;
+      border-right-width: 1px;
+      border-left-width: 1px; }
+  .free-cropper .free-cropper-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    opacity: .75; }
+    .free-cropper .free-cropper-center:before, .free-cropper .free-cropper-center:after {
+      position: absolute;
+      display: block;
+      content: ' ';
+      background-color: #eee; }
+    .free-cropper .free-cropper-center:before {
+      top: 0;
+      left: -3px;
+      width: 7px;
+      height: 1px; }
+    .free-cropper .free-cropper-center:after {
+      top: -3px;
+      left: 0;
+      width: 1px;
+      height: 7px; }
+  .free-cropper .free-cropper-face,
+  .free-cropper .free-cropper-line,
+  .free-cropper .free-cropper-point {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: .1; }
+  .free-cropper .free-cropper-face {
+    top: 0;
+    left: 0;
+    background-color: #fff; }
+  .free-cropper .free-cropper-line {
+    background-color: #39f; }
+    .free-cropper .free-cropper-line.free-line-e {
+      top: 0;
+      right: -3px;
+      width: 5px;
+      cursor: e-resize; }
+    .free-cropper .free-cropper-line.free-line-n {
+      top: -3px;
+      left: 0;
+      height: 5px;
+      cursor: n-resize; }
+    .free-cropper .free-cropper-line.free-line-w {
+      top: 0;
+      left: -3px;
+      width: 5px;
+      cursor: w-resize; }
+    .free-cropper .free-cropper-line.free-line-s {
+      bottom: -3px;
+      left: 0;
+      height: 5px;
+      cursor: s-resize; }
+  .free-cropper .free-cropper-point {
+    width: 5px;
+    height: 5px;
+    opacity: .75;
+    background-color: #39f; }
+    .free-cropper .free-cropper-point.free-point-e {
+      top: 50%;
+      right: -3px;
+      margin-top: -3px;
+      cursor: e-resize; }
+    .free-cropper .free-cropper-point.free-point-n {
+      top: -3px;
+      left: 50%;
+      margin-left: -3px;
+      cursor: n-resize; }
+    .free-cropper .free-cropper-point.free-point-w {
+      top: 50%;
+      left: -3px;
+      margin-top: -3px;
+      cursor: w-resize; }
+    .free-cropper .free-cropper-point.free-point-s {
+      bottom: -3px;
+      left: 50%;
+      margin-left: -3px;
+      cursor: s-resize; }
+    .free-cropper .free-cropper-point.free-point-ne {
+      top: -3px;
+      right: -3px;
+      cursor: ne-resize; }
+    .free-cropper .free-cropper-point.free-point-nw {
+      top: -3px;
+      left: -3px;
+      cursor: nw-resize; }
+    .free-cropper .free-cropper-point.free-point-sw {
+      bottom: -3px;
+      left: -3px;
+      cursor: sw-resize; }
+    .free-cropper .free-cropper-point.free-point-se {
+      right: -3px;
+      bottom: -3px;
+      width: 20px;
+      height: 20px;
+      cursor: se-resize;
+      opacity: 1; }
+      .free-cropper .free-cropper-point.free-point-se:before {
+        position: absolute;
+        right: -50%;
+        bottom: -50%;
+        display: block;
+        width: 200%;
+        height: 200%;
+        content: ' ';
+        opacity: 0;
+        background-color: #39f; }
+  .free-cropper .free-cropper-move {
+    cursor: move; }
+  .free-cropper .free-cropper-crop {
+    cursor: crosshair; }
+  .free-cropper .free-cropper-view-box {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid #39f;
+    outline-color: rgba(51, 153, 255, 0.75); }
+  .free-cropper .free-cropper-modal {
+    opacity: .5;
+    background-color: #000; }
+
+@media (min-width: 768px) {
+  .free-cropper .free-cropper-point.free-point-se {
+    width: 15px;
+    height: 15px; } }
+@media (min-width: 992px) {
+  .free-cropper .free-cropper-point.free-point-se {
+    width: 10px;
+    height: 10px; } }
+@media (min-width: 1200px) {
+  .free-cropper .free-cropper-point.free-point-se {
+    width: 5px;
+    height: 5px;
+    opacity: 0.75; } }
+
+/*# sourceMappingURL=cropper.component.css.map */

@@ -7,6 +7,7 @@ import {TabGroupModule} from '../../component/tab/tab.component';
 import {MainColumnComponent} from './main-column.component';
 import {MainColumnRoutingModule} from './main-column-routing.module';
 import {ColumnModule} from '../../component/column/column.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {ColumnModule} from '../../component/column/column.component';
     TableModule,
     GridModule,
     ColumnModule,
-    MainColumnRoutingModule
+    MainColumnRoutingModule,
+    LanguageModule
   ],
   declarations: [MainColumnComponent]
 })

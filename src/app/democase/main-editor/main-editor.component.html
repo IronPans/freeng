@@ -2,7 +2,7 @@
   <div class="row">
     <div fGrid="12">
       <p style="padding-left: 1rem;">
-        一款十分强大的、所见即所得的富文本编辑器。
+        {{'DEMO.EDITOR.DESCRIPTION' | translate}}
       </p>
       <hr>
     </div>
@@ -21,7 +21,7 @@
         </free-tab-group>
       </div>
     </div>
-    <div class="free-demo-board">
+    <div class="free-demo-board" fGrid="12">
       <div class="free-card-board">
         <h3 class="free-toolbar">Import</h3>
         <free-tab-group direction="right" theme="line">
@@ -33,16 +33,16 @@
         </free-tab-group>
       </div>
 
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-editor</h3>
-        <p>富文本编辑器</p>
+        <p>{{'COMPONENT.EDITOR' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -52,7 +52,9 @@
               <free-table-cell>
                 <ng-template><code>boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否显示工具栏，默认为true。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.EDITOR.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>buttons</free-table-cell>
@@ -60,11 +62,13 @@
                 <ng-template><code>Array</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                工具栏显示按钮，可选。
-                (bold/italic/underline/strikethrough/subscript/superscript/
-                heading/fontSize/foreColor/backColor/align/insertOrderedList/
-                insertUnorderedList/blockquote/table/createLink/insertImage/emotion/
-                fullscreen/undo/redo)
+                <ng-template>
+                  {{'DEMO.EDITOR.OPTION.1' | translate}}
+                  (bold/italic/underline/strikethrough/subscript/superscript/
+                  heading/fontSize/foreColor/backColor/align/insertOrderedList/
+                  insertUnorderedList/blockquote/table/createLink/insertImage/emotion/
+                  fullscreen/undo/redo)
+                </ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -72,27 +76,32 @@
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置最大高度</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.EDITOR.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>counter</free-table-cell>
               <free-table-cell>
                 <ng-template><code>boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否显示字数，可选，默认为false</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.EDITOR.OPTION.3' | translate}}</ng-template></free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>style</free-table-cell>
               <free-table-cell>
                 <ng-template><code>object</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置编辑器样式，可选。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.EDITOR.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>
 

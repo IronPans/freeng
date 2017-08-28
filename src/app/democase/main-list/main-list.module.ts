@@ -10,6 +10,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {MainListRoutingModule} from './main-list-routing.module';
 import {MainListComponent} from './main-list.component';
 import {ButtonModule} from '../../component/button/button.directive';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {ButtonModule} from '../../component/button/button.directive';
     ListModule,
     ButtonModule,
     ImageModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainListComponent]
 })

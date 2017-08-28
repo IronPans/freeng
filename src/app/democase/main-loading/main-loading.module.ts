@@ -7,6 +7,7 @@ import {LoadingModule} from '../../component/loading/loading.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainLoadingRoutingModule} from './main-loading-routing.module';
 import {MainLoadingComponent} from './main-loading.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainLoadingComponent} from './main-loading.component';
     CodeModule,
     TableModule,
     LoadingModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainLoadingComponent]
 })

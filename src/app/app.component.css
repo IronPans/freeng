@@ -1,41 +1,6 @@
 .free-main {
   height: 100%; }
 
-:host /deep/ .left-menu {
-  background: #fff !important;
-  box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
-  z-index: 100; }
-  :host /deep/ .left-menu li a em {
-    color: #666; }
-  :host /deep/ .left-menu .left-menu-item li a,
-  :host /deep/ .left-menu .accordion-toggle,
-  :host /deep/ .left-menu .accordion-inner ul li > a {
-    color: #262626; }
-:host /deep/ .top-menu .hamburge-line span,
-:host /deep/ .top-menu .navbar-header .search-form {
-  background: #fff; }
-:host /deep/ .top-menu button {
-  background: transparent;
-  color: #fff !important; }
-:host /deep/ .free-scroll-thumb {
-  background: rgba(0, 0, 0, 0.29804); }
-:host /deep/ .aside-header li a {
-  color: #fff; }
-:host /deep/ .free-theme-setting {
-  box-shadow: 0 0 .5rem #fff; }
-:host /deep/ .navbar-header .navbar-header-right .free-dropdown-header.active, :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header:active, :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header:hover {
-  background: transparent !important; }
-  :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header.active:before, :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header:active:before, :host /deep/ .navbar-header .navbar-header-right .free-dropdown-header:hover:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1); }
-:host /deep/ .free-panel-inner h4 {
-  padding: 10px 0; }
-
 :host-context(.free-mini) /deep/ .main-layout-container {
   left: 2.5rem; }
 :host-context(.free-mini) /deep/ .left-menu .accordion-item .accordion-toggle i {

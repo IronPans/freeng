@@ -2,15 +2,19 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        利用阴影可以产生立体感。
+        {{'DEMO.SHADOW.DESCRIPTION' | translate}}
       </p>
-      <h3 class="free-head-title">API 选项</h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}</h3>
       <div class="free-demo-row">
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>Class类名</free-table-head>
-              <free-table-head>值</free-table-head>
+              <free-table-head>
+                <ng-template>
+                  {{'STYLE' | translate}}
+                </ng-template>
+              </free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -18,7 +22,7 @@
             <free-table-row>
               <free-table-cell>free-shadow-*dp</free-table-cell>
               <free-table-cell>
-                *表示1~24
+                *(1~24)
               </free-table-cell>
             </free-table-row>
 
@@ -88,5 +92,5 @@
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

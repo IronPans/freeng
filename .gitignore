@@ -29,7 +29,6 @@
 
 # misc
 /.sass-cache
-src/**/*.scss
 src/**/*.js
 /connect.lock
 /coverage
@@ -45,6 +44,10 @@ testem.log
 # e2e
 /e2e/*.js
 /e2e/*.map
+
+#release
+src/app/component/tsconfig.json
+build.sh
 
 # System Files
 .DS_Store

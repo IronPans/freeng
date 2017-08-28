@@ -2,44 +2,40 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        数据表可用于显示数据列表。
+        {{'DEMO.TABLE.DESCRIPTION' | translate}}
       </p>
-      <ul class="free-ul-padding">
-        <li>分页，即时搜索和排序</li>
-        <li>提供了丰富的支持,复选框</li>
-      </ul>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-table</h3>
-        <p>必选，类似HTML的table，一个free-table对应一个table。</p>
+        <p>{{'DEMO.TABLE.INTRO.0' | translate}}</p>
       </div>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-table-header</h3>
-        <p>必选，类似HTML的thead，一个free-table-header对应一个thead。</p>
+        <p>{{'DEMO.TABLE.INTRO.1' | translate}}</p>
       </div>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-table-body</h3>
-        <p>必选，类似HTML的tbody，一个free-table-body对应一个tbody。</p>
+        <p>{{'DEMO.TABLE.INTRO.2' | translate}}</p>
       </div>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-table-row</h3>
-        <p>必选，类似HTML的tr，一个free-table-row对应一个tr。</p>
+        <p>{{'DEMO.TABLE.INTRO.3' | translate}}</p>
       </div>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-table-cell</h3>
-        <p>必选，类似HTML的td，一个free-table-cell对应一个td。</p>
+        <p>{{'DEMO.TABLE.INTRO.4' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -49,14 +45,18 @@
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>规定单元格可横跨的列数，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TABLE.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>rowspan</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
-              <free-table-cell>规定单元格可横跨的行数，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TABLE.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -248,5 +248,5 @@
     </div>
 
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

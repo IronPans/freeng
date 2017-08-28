@@ -7,6 +7,7 @@ import {DomRenderer} from '../common/dom';
   selector: 'free-timeline-item',
   template: `
     <div class="free-timeline-item" #item>
+      <ng-content select="f-header"></ng-content>
       <h4 *ngIf="header"><span>{{header}}</span></h4>
       <ng-content></ng-content>
     </div>

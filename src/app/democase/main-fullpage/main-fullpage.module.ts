@@ -10,6 +10,7 @@ import {MainFullpageComponent} from './main-fullpage.component';
 import {MainFullpageRoutingModule} from './main-fullpage-routing.module';
 import {ButtonModule} from '../../component/button/button.directive';
 import {RouterModule} from '@angular/router';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import {RouterModule} from '@angular/router';
     InputtextModule,
     GridModule,
     ButtonModule,
-    MainFullpageRoutingModule
+    MainFullpageRoutingModule,
+    LanguageModule
   ],
   declarations: [MainFullpageComponent]
 })

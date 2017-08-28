@@ -8,6 +8,7 @@ import {CodeModule} from '../../component/code/code.component';
 import {TabGroupModule} from '../../component/tab/tab.component';
 import {EditorModule} from '../../component/editor/editor.component';
 import {FormsModule} from '@angular/forms';
+import {LanguageModule} from '../common/language';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +18,8 @@ import {FormsModule} from '@angular/forms';
     CodeModule,
     TableModule,
     GridModule,
-    EditorModule
+    EditorModule,
+    LanguageModule
   ],
   declarations: [MainEditorComponent]
 })

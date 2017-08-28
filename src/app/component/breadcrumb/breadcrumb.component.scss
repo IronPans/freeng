@@ -1,3 +1,5 @@
+$defaultColor: #177bbb;
+
 .free-breadcrumb {
   list-style: none;
   &>li {
@@ -18,5 +20,123 @@
     }
   }
 
+  &.free-custom-1 {
+    & > li {
+      margin: 2px 7px;
+
+      &:first-child {
+        margin-left: 0;
+        a:before {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        a {
+          opacity: .6;
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      a {
+        background: $defaultColor;
+        border-color: $defaultColor;
+        color: #fff;
+        display: inline-block;
+        height: 36px;
+        padding: 5px 1.5rem;
+        position: relative;
+        transition: background .2s ease-in-out,color .2s ease-in-out;
+        vertical-align: top;
+
+        &:after,
+        &:before {
+          border-style: solid;
+          border-color: transparent;
+          content: "";
+          display: block;
+          height: 0;
+          position: absolute;
+          top: 0;
+          transition: border-color .2s ease-in-out;
+          width: 0;
+        }
+
+        &:after {
+          border-width: 0 0 36px 10px;
+          border-left-color: inherit;
+          right: -10px;
+        }
+
+        &:before {
+          border-width: 36px 10px 0 0;
+          border-right-color: inherit;
+          left: -10px;
+        }
+      }
+    }
+  }
+
+  &.free-custom-2 {
+    & > li {
+      margin: 2px 7px;
+
+      &:first-child {
+        margin-left: 0;
+        a:before {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        a {
+          opacity: .6;
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      a {
+        background: $defaultColor;
+        border-color: $defaultColor;
+        color: #fff;
+        display: inline-block;
+        height: 36px;
+        padding: 5px 1.5rem;
+        position: relative;
+        transition: background .2s ease-in-out,color .2s ease-in-out;
+        vertical-align: top;
+
+        &:after,
+        &:before {
+          border-style: solid;
+          border-color: transparent;
+          content: "";
+          display: block;
+          height: 0;
+          position: absolute;
+          top: 0;
+          transition: border-color .2s ease-in-out;
+          width: 0;
+        }
+
+        &:after {
+          border-width: 18px 0 18px 10px;
+          border-left-color: inherit;
+          right: -10px;
+        }
+
+        &:before {
+          border-width: 18px 0 18px 10px;
+          border-top-color: inherit;
+          border-bottom-color: inherit;
+          left: -10px;
+        }
+      }
+    }
+  }
 }
 

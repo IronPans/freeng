@@ -38,7 +38,7 @@
       top: 100%;
       left: 50%;
       font-size: .6rem;
-      padding: 2px .4rem;
+      padding: 4px .4rem;
       opacity: 0;
       pointer-events: none;
       color: #fff;
@@ -347,13 +347,18 @@
       line-height: .5rem;
       text-align: center; }
       .free-editor-container .free-modal-portal .editor-table > p {
-        padding-bottom: .5rem; }
+        padding-bottom: .5rem;
+        line-height: 22px; }
       .free-editor-container .free-modal-portal .editor-table .editor-table-wrapper {
         overflow: hidden;
         border-top: 1px solid #dddddd;
-        border-left: 1px solid #dddddd; }
+        border-left: 1px solid #dddddd;
+        line-height: 1px; }
+        .free-editor-container .free-modal-portal .editor-table .editor-table-wrapper br {
+          line-height: 1px; }
         .free-editor-container .free-modal-portal .editor-table .editor-table-wrapper .editor-table-td {
           display: block;
+          line-height: 1px;
           border-right: 1px solid #dddddd;
           border-bottom: 1px solid #dddddd;
           float: left; }
@@ -400,21 +405,5 @@
       opacity: 0;
       width: 100%;
       cursor: pointer; }
-
-.free-iscroll::-webkit-scrollbar {
-  height: 6px;
-  width: 6px; }
-.free-iscroll::-webkit-scrollbar-thumb {
-  background-color: #6e6e6e;
-  outline: 1px solid #333; }
-.free-iscroll::-webkit-scrollbar-corner, .free-iscroll::-webkit-scrollbar-track {
-  background-color: #ccc; }
-
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; }
 
 /*# sourceMappingURL=editor.component.css.map */

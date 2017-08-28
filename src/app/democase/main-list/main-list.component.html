@@ -1,25 +1,19 @@
 <div class="main-container">
   <div class="row">
     <div fGrid="6" class="free-demo-board">
-      <p>
-        列表用于显示信息行，例如联系人列表，播放列表或菜单。
-      </p>
-      <ul class="free-ul-padding">
-        <li>多媒体列表</li>
-        <li>滑动列表</li>
-      </ul>
+     <div [innerHTML]="'DEMO.LIST.DESCRIPTION' | translate"></div>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-list</h3>
-        <p>列表组</p>
+        <p>{{'DEMO.LIST.LIST-GROUP' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -29,7 +23,9 @@
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>可选，是否添加触摸效果</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.LIST.HOVER' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -37,12 +33,12 @@
 
       <div class="free-demo-row">
         <h3 class="free-title">free-list-item</h3>
-        <p>单个列表</p>
+        <p>{{'DEMO.LIST.LIST-ITEM' | translate}}</p>
       </div>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-avatar</h3>
-        <p>媒体元素（如图标，图片等）的容器. 可选元素.</p>
+        <p>{{'DEMO.LIST.AVATAR' | translate}}</p>
       </div>
     </div>
 
@@ -341,5 +337,5 @@
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

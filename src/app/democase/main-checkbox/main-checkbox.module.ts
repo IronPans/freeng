@@ -9,6 +9,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {ButtonModule} from '../../component/button/button.directive';
 import {MainCheckboxRoutingModule} from './main-checkbox-routing.module';
 import {MainCheckboxComponent} from './main-checkbox.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {MainCheckboxComponent} from './main-checkbox.component';
     TableModule,
     CheckboxModule,
     GridModule,
-    ButtonModule
+    ButtonModule,
+    LanguageModule
   ],
   declarations: [MainCheckboxComponent]
 })

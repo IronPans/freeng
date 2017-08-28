@@ -2,20 +2,20 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        工具提示识别元素何时被激活。 它们可能包含有关其功能的简短帮助文本。 例如，它们可能包含有关可操作图标的文本信息。
+        {{'DEMO.TOOLTIP.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol directive"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol directive"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">fTooltip</h3>
-        <p>必选，表示当前元素带有提示条</p>
+        <p>{{'DEMO.TOOLTIP.INTRO.0' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -25,14 +25,18 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置提示框的内容。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TOOLTIP.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>tooltipPosition</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置提示框的位置(top、right、bottom、left)，默认right。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TOOLTIP.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -57,11 +61,15 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton fTooltip="提示文字，提示文字，提示文字，哈哈哈">默认(右侧)提示框</button>
+            <button fButton fTooltip="TOOLTIP">
+              {{'COMPONENT.TOOLTIP' | translate}}
+            </button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;button fButton fTooltip="提示文字，提示文字，提示文字，哈哈哈"&gt;默认(右侧)提示框&lt;/button&gt;
+              &lt;button fButton fTooltip="TOOLTIP"&gt;
+              {{'COMPONENT.TOOLTIP' | translate}}
+              &lt;/button&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -71,20 +79,20 @@
         <h3 class="free-toolbar">Position</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton fTooltip="提示文字，提示文字，提示文字，哈哈哈" tooltipPosition="left">左侧提示框</button>
-            <button fButton fTooltip="提示文字，提示文字，提示文字，哈哈哈" tooltipPosition="top">顶部提示框</button>
-            <button fButton fTooltip="提示文字，提示文字，提示文字，哈哈哈" tooltipPosition="bottom">底部提示框</button>
+            <button fButton fTooltip="TOOLTIP" tooltipPosition="left">Left</button>
+            <button fButton fTooltip="TOOLTIP" tooltipPosition="top">Top</button>
+            <button fButton fTooltip="TOOLTIP" tooltipPosition="bottom">Bottom</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;button fButton fTooltip="提示文字，提示文字，提示文字，哈哈哈" tooltipPosition="left"&gt;左侧提示框&lt;/button&gt;
-              &lt;button fButton fTooltip="提示文字，提示文字，提示文字，哈哈哈" tooltipPosition="top"&gt;顶部提示框&lt;/button&gt;
-              &lt;button fButton fTooltip="提示文字，提示文字，提示文字，哈哈哈" tooltipPosition="bottom"&gt;底部提示框&lt;/button&gt;
+              &lt;button fButton fTooltip="TOOLTIP" tooltipPosition="left"&gt;Left&lt;/button&gt;
+              &lt;button fButton fTooltip="TOOLTIP" tooltipPosition="top"&gt;Top&lt;/button&gt;
+              &lt;button fButton fTooltip="TOOLTIP" tooltipPosition="bottom"&gt;Bottom&lt;/button&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

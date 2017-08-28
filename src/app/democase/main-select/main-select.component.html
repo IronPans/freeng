@@ -2,19 +2,19 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        下拉选择框可在多个选择之间进行选择。选择显示当前状态和向下箭头。
+        {{'DEMO.SELECT.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-select</h3>
-        <p>下拉选择框。</p>
+        <p>{{'COMPONENT.SELECT' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -24,45 +24,55 @@
               <free-table-cell>
                 <ng-template><code>Array</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置option，必选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SELECT.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>pholder</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置可描述输入字段预期值的提示信息，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SELECT.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>ngModel</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置可描述输入字段预期值的提示信息，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SELECT.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>multiple</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否可选择多个选项，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SELECT.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>filter</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否显示过滤输入框，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SELECT.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
-
+        <h3>{{'EVENT' | translate}}</h3>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>事件</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'EVENT' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -72,7 +82,9 @@
               <free-table-cell>
                 <ng-template><code>Function</code></ng-template>
               </free-table-cell>
-              <free-table-cell>当元素的值发生改变时，会发生 onChange 事件。</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SELECT.EVENTS.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -106,6 +118,16 @@
             <free-code lang="html">
               &lt;free-select [(ngModel)]="selectedOption" (onChange)="onChange($event)"
                            [options]="options" pholder="select"&gt;&lt;/free-select&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="typescript">
+              this.options = [
+                &#123; label: 'guangdong', value: 'gd'&#125;,
+                &#123; label: 'beijing', value: 'bj'&#125;,
+                &#123; label: 'shanghai', value: 'sh'&#125;,
+                &#123; label: 'nanjing', value: 'nj'&#125;,
+                &#123; label: 'yunnan', value: 'yn'&#125;
+              ];
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -167,5 +189,5 @@
 
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

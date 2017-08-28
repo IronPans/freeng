@@ -12,14 +12,30 @@
     visibility: hidden; }
   .free-panel .free-panel-header {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: .85rem;
     padding: .35rem .75rem;
-    border-bottom: 1px solid rgba(120, 130, 140, 0.13); }
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
     .free-panel .free-panel-header f-header, .free-panel .free-panel-header > span {
       font-weight: bold; }
   .free-panel .free-panel-inner {
     padding: .75rem; }
-  .free-panel.theme-black .free-panel-header {
-    border-top-color: #313b3f; }
+  .free-panel.free-panel-primary {
+    background: #177bbb !important;
+    color: #fff; }
+  .free-panel.free-panel-info {
+    background: #1ccacc !important;
+    color: #fff; }
+  .free-panel.free-panel-success {
+    background: #1aae88 !important;
+    color: #fff; }
+  .free-panel.free-panel-warning {
+    background: #fbb23e !important;
+    color: #fff; }
+  .free-panel.free-panel-danger {
+    background: #e33244 !important;
+    color: #fff; }
 
 /*# sourceMappingURL=panel.component.css.map */

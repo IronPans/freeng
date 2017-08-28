@@ -7,6 +7,7 @@ import {ButtonModule} from '../../component/button/button.directive';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainButtonsComponent} from './main-buttons.component';
 import {MainButtonsRoutingModule} from './main-buttons-routing.module';
+import {LanguageModule} from '../common/language';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +16,8 @@ import {MainButtonsRoutingModule} from './main-buttons-routing.module';
     CodeModule,
     TableModule,
     ButtonModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainButtonsComponent]
 })

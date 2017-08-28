@@ -9,6 +9,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {MainCardRoutingModule} from './main-card-routing.module';
 import {MainCardComponent} from './main-card.component';
 import {ButtonModule} from '../../component/button/button.directive';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {ButtonModule} from '../../component/button/button.directive';
     CardModule,
     ImageModule,
     ButtonModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainCardComponent]
 })

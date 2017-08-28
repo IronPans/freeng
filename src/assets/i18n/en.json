@@ -1,0 +1,729 @@
+{
+  "LANG": "中文",
+  "INTRODUCTION": "Introduction",
+  "GET-START": "Getting Started",
+  "UI-ELEMENT": "UI Element",
+  "BASIC-COMPONENT": "Basic Components",
+  "EXTENDED-COMPONENT": "Extended Components",
+  "PAGE": "Page",
+  "CHANGE-LOG": "Change Log",
+  "API-OPTION": "API Option",
+  "PROPERTY": "Properties",
+  "TYPE": "Type",
+  "DESCRIPTION": "Description",
+  "EVENT": "Events",
+  "THEME-SETTING": "Theme Setting",
+  "MAIN": {
+    "TITLE": "FreeNG UI framework",
+    "ABOUT": "About",
+    "INTRODUCTION": "<p>FreeNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.</p><p>FreeNG is still very young, the first version was released in May 2017.</p>",
+    "CURRENT-VERSION": "Current Version",
+    "DECLARATION": "<p><b>Special statement:</b> Free name Free, FreeNG is completely open source free! </p>",
+    "FEATURE": {
+      "TITLE": "Feature",
+      "INTRO": "<ol class='main-point'><li>Based on the latest Angular4</li><li>Take the Flex layout to achieve a fully responsive layout</li><li>Rich theme selection</li><li>Easy-to-use API, UI components that can be combined on demand</li></ol>"
+    },
+    "GROUP": "Group"
+  },
+  "START": {
+    "KNOW": "Here assume that you already have HTML, CSS and JavaScript intermediate front-end knowledge and have enough understanding of the Angular framework. If you are just starting to learn front or Angular, it might not be a good idea to use the component as a first step, and recommend learning <a href='https://www.angular.cn/' target='_blank'>Angular</a> and <a href='https://www.typescriptlang.org/' target='_blank'>TypeScript</a> first.",
+    "IMPORT": "Import from freeng module (use this way to import all modules into):",
+    "COMPONENT": "Import a single component module (with label<span class='symbol component'></span>):",
+    "DIRECTIVE": "Import a single directive module (with label<span class='symbol directive'></span>):",
+    "ANIMATION": "In Angular 4+, the animation module has been separated into separate modules, so it needs to be installed and imported."
+  },
+  "DEMO": {
+    "GRID": {
+      "DESCRIPTION": "<p>Grid System Based on Flex Layout.</p><ul class='free-ul-padding'><li>The response modifier can specify different column sizes, offsets, alignments, and distributions on the four viewport widths of xs, sm, md, and lg.</li><li>Create a set of 'columns' in the horizontal direction by 'row'</li></ul>",
+      "NAME": "Parameter",
+      "OPTION": [
+        "Small screen <small> phone </ small>",
+        "small screen <small> tablet </ small>",
+        "screen <small> desktop display </ small>",
+        "big screen <small> large desktop display </ Small> "
+      ],
+      "VALUE": [
+        "Prefix",
+        "Max Width",
+        "Column Count",
+        "Nestable",
+        "Offset"
+      ],
+      "DEMODESC": "Simple Usage",
+      "USE": "All you need to remember is the row, column, content."
+    },
+    "TYPOGRAPHY": {
+      "DESCRIPTION": "A good layout layout determines the beauty of the page.",
+      "TITLE": "Headings",
+      "DEL": "Delete",
+      "S": "Strike",
+      "INS": "Insert",
+      "U": "Underline",
+      "SMALL": "Small",
+      "STRONG": "Strong",
+      "EM": "Italics",
+      "ALIGN": {
+        "NAME": "Alignment classes",
+        "LEFT": "Left aligned",
+        "CENTER": "Center aligned",
+        "RIGHT": "Right aligned",
+        "JUSTIFY": "Justify",
+        "NOWRAP": "Nowrap"
+      },
+      "LOWER": "Lowercase",
+      "ABBR": "Abbreviations",
+      "BLOCKQUOTE": "Blockquotes"
+    },
+    "SHAPE": {
+      "DESCRIPTION": "By adding the following corresponding classes for the &lt;img&gt; element, you can make the picture look different.",
+      "ROUND": "Round",
+      "ELLIPSE": "Ellipse",
+      "SHIELD": "Shield",
+      "SKEW": "Skew",
+      "HALFELLIPSE": "Half Ellipse",
+      "QUARTERELLIPSE": "Quarter Ellipse",
+      "QUARTER": "Quarter"
+    },
+    "SHADOW": {
+      "DESCRIPTION": "Use the shadow can produce three-dimensional sense."
+    },
+    "RIPPLE": {
+      "DESCRIPTION": "Increase the water ripple effect"
+    },
+    "COLUMN": {
+      "DESCRIPTION": "The CSS3 multi-column layout allows easy definition of multiple columns of text - just like in newspapers",
+      "OPTION": [
+        "Set the number of container columns/column width/column between the rules/column spacing/across the number of columns and so on. Defaults to two columns.",
+        "If you do not understand columns, you can get here"
+      ]
+    },
+    "BUTTON": {
+      "DESCRIPTION": "<p>A button is an important element of interaction with an application that can be made up of text or icons and can be enhanced by various attributes.</p><ul class='free-ul-padding'><li>Icon button</li><li>Round button</li><li>Button group</li></ul>",
+      "BUTTONGROUPDESC": "Optional, button group",
+      "BUTTONDESC": "required, Used to define a button",
+      "SIZE": "Optional, used to set the size of the button (big, middle (default), small, mini)",
+      "THEME": "Set the default style, optional. Optional (primary / info / success / warning / danger)",
+      "DISABLED": "Optional, disable the button and block his actions. The default is false",
+      "ICON": "Optional, used to set the icon.<a target='_blank' href='http://fontawesome.io/icons/'>Fontawesome</a>",
+      "BLOCK": "Optional, displayed as a block element",
+      "ROUND": "Optional, fillet"
+    },
+    "LIST": {
+      "DESCRIPTION": " <p>The list is used to display information lines, such as contact lists, playlists, or menus.</p><ul class='free-ul-padding'><li>Multimedia list</li></ul>",
+      "LIST-GROUP": "List Group",
+      "HOVER": "Optional, whether to add a touch effect",
+      "LIST-ITEM": "Single list",
+      "AVATAR": "A container for media elements (such as icons, pictures, etc.)"
+    },
+    "CARD": {
+      "DESCRIPTION": "This is a simple card with plain text. But the card can contain its own page header, footer, list view, image, and any element inside it.",
+      "CARD": "Card container",
+      "CARD-HEADER": "The card header is mainly used to display the card title. Optional",
+      "CARD-TITLE": "Card Title",
+      "CARD-MEDIA": "Media elements",
+      "CARD-CONTENT": "The main contents of the card contents",
+      "CARD-FOOTER": "The card footer is used for some additional information or custom actions / links. Optional"
+    },
+    "PANEL": {
+      "DESCRIPTION": "A panel is often used as a container for other components.",
+      "HEADER": "Header text of the panel."
+    },
+    "INPUTTEXT": {
+      "DESCRIPTION": "The input box allows the user to enter text, usually in the form of a form.",
+      "OPTION": [
+        "Set the default style, optional. Optional (success / warning / error)",
+        "Set the prompt message, optional",
+        "Set the regular match information, optional. <br> optional values：<ul class='free-ul-padding'><li><code>tel</code>:phone number</li><li><code>email</code>:email</li><li><code>card</code>:identification number</li><li><code>chinese</code>:Chinese</li></ul>Note: If the value is not in the built-in authentication, the value is used as the authentication information",
+        "Set the authentication message when the authentication fails, select",
+        "Whether to add an icon, optional (using FontAwesome)"
+      ],
+      "VALIDATION": [
+        "Please enter the phone number",
+        "Must be 11 phone number",
+        "please input your email",
+        "Must be the correct email!",
+        "Please enter the ID number",
+        "Must be 15 or 18 ID card number!",
+        "Please enter at least one Chinese",
+        "At least one Chinese!"
+      ]
+    },
+    "ACCORDION": {
+      "DESCRIPTION": "Accordion can effectively save the page's visible area.",
+      "GROUP": "Accordion Group",
+      "OPTION": [
+        "whether to activate the accordion effect, default is false, optional",
+        "set accordion header title, optional"
+      ]
+    },
+    "BADGE": {
+      "DESCRIPTION": "A badge is a simple component that contains numbers or words.",
+      "OPTION": [
+        "content",
+        "whether it is displayed in the upper right corner.Default is false"
+      ]
+    },
+    "BREADCRUMB": {
+      "DESCRIPTION": "Breadcrumbs are simple and support custom delimiters.",
+      "OPTION": [
+        "Breadcrumbs Array",
+        "Custom Delimiter",
+        "Using the FontAwesome Font Icon to Define Separators"
+      ]
+    },
+    "CALENDAR": {
+      "DESCRIPTION": "can enter or select a date selector",
+      "OPTION": [
+        "Set the default value, only effective in the initialization time, optional.",
+        "Set optional minimum date, optional",
+        "Set the maximum date that can be selected, optional",
+        "Set the first day for the day of the week, optional, the default is 7 (that is Sunday)",
+        "Set the language, optional, the default is 'en'. (Chinese is 'cn')",
+        "Set the date format, optional, the default is 'yyyy-MM-dd'",
+        "Set the hour system, optional, default 24 hours",
+        "Set the prompt message, optional",
+        "Set whether to enter. default is true",
+        "Whether to display the time (hours and seconds), optional, the default is false",
+        "Whether inline display, optional, default is false",
+        "Set the width (only inline display when the effective), optional, the default is 250"
+      ],
+      "EVENTS": [
+        "Callback event triggered when the value is change, optional."
+      ]
+    },
+    "CASCADER": {
+      "DESCRIPTION": "cascade selector, you can choose from a set of associated data sets, such as provinces, things, etc.",
+      "OPTION": [
+        "Set the data source, must be selected",
+        "Set the prompt that describes the expected value of the input field, select",
+        "Set the delimiter, optional. The default is '/'",
+        "Whether the length of the input box with the length of the selected value to expand, optional. Default is false"
+      ],
+      "EVENTS": [
+        "Select the callback after completion, optional. The return value format: <code>{ value: ['the first level value ',' second label: 'value'], to display a string selection value'} </code>"
+      ]
+    },
+    "CHART": {
+      "DESCRIPTION": "the chart component is based on <a href='http://www.chartjs.org/'target='_blank'>Chart.js</a>, an open source HTML5 based chart library. ",
+      "SUBTITLE": "<p> in order to make the chart control effect, must be introduced into the chart.js, there are two ways: </p><ul class='free-ul-padding'><li> </li><li> CLI</li></ul><h3 class='free-title'> through the chain through the chain chart.js</h3>",
+      "OPTION": [
+        "Chart width, optional. ",
+        "Chart height, optional. ",
+        "The chart type required. ",
+        "The chart data structure required. ",
+        "The chart configuration data is optional. "
+      ],
+      "EVENTS": [
+        "The callback event triggered when clicking on the chart is optional. "
+      ]
+    },
+    "CHECKBOX": {
+      "DESCRIPTION": "checkbox allows the user to select multiple options from a group.",
+      "OPTION": [
+        "Custom text, optional",
+        "Set the name of the check box, select",
+        "Whether the default is selected, the default is false, optional",
+        "Is disabled, the default is false, optional",
+        "Set the default style, optional. Optional (primary / info / success / warning / danger)"
+      ]
+    },
+    "CHIP": {
+      "DESCRIPTION": "Fragments can be used to represent small pieces of information, which are most commonly used for contacts or tags.",
+      "OPTION": [
+        "Fragment array",
+        "Set the input text of the input box"
+      ]
+    },
+    "COLORPICKER": {
+      "DESCRIPTION": "The color selector is the input component used to select the color.",
+      "OPTION": [
+        "Whether to display the input box, the default is false",
+        "Whether the inline display, the default is false."
+      ],
+      "EVENTS": [
+        "Callback event when color is selected. Parameters:"
+      ]
+    },
+    "FLOW": {
+      "DESCRIPTION": "Infinite scrolling allows you to load additional content or perform any other required actions while the page scrolls near the bottom.",
+      "OPTION": [
+        "Set style",
+        "Whether to open the picture bar to load, the default is false"
+      ],
+      "EVENTS": [
+        "Triggered when scrolling to the bottom."
+      ],
+      "INTRO": [
+        "Flow block"
+      ]
+    },
+    "CONTEXTMENU": {
+      "DESCRIPTION": "When the context menu right-clicks on its target, an overlay menu is displayed.",
+      "OPTION": [
+        "Need the context menu of the target (generally use the template variable)",
+        "Menu array",
+        "Set the document context menu, the default is false",
+        "Whether to click to return to the previous routing page, the default is false"
+      ]
+    },
+    "CROPPER": {
+      "DESCRIPTION": "Image cropping component, generally used for cutting head.",
+      "OPTION": [
+        "Whether it can be scaled",
+        "Cut the aspect ratio of the window, the default is 1: 1"
+      ],
+      "DATA": [
+        "Initialize attribute",
+        "Container width",
+        "Container height",
+        "Cut the window of the aspect ratio",
+        "Image source",
+        "Cut window width",
+        "Crop window height"
+      ]
+    },
+    "DATATABLE": {
+      "DESCRIPTION": "<p> The data table can be used to display the data list. </p> <ul class = 'free-ul-padding'> <li> paging, fixed headers and sorting </li> <li> provided Rich support, checkbox </li> </ul>",
+      "INTRO": [
+        "Must be similar to the HTML table, a free-datatable corresponds to a table.",
+        "Required, similar to HTML td, that a column of data."
+      ],
+      "OPTION": [
+        "Data array, must choose",
+        "Whether to display the border, the default is false",
+        "Whether to show the zebra crossing, the default is false",
+        "Whether to add hover effect, the default is false",
+        "Whether to add a check box or a radio button, select an optional value (single / multiple)",
+        "Whether to display the pager, optional, default is false",
+        "The number of data per page, optional, the default is 10",
+        "Whether to show the contents of the foldable, the default is false. Need to combine ng-template, you can refer to the example on the right.",
+        "Whether the fixed head, the default is false.",
+        "The name of the column must be, corresponding to the free-datatable value in the data key",
+        "Column description of the name, must be selected",
+        "Whether the current column can be sorted, the default is false"
+      ],
+      "EVENTS": [
+        "When choosing a callback function that triggers a change."
+      ]
+    },
+    "DRAGGABLE": {
+      "DESCRIPTION": "Drag and drop elements of the control.",
+      "OPTION": [
+        "Drag and drop list array",
+        "Drag and drop target elements",
+        "Whether the list can be drag and drop, the default is false",
+        "Drag and drop effect, the default is copy. Optional value (copy / move)"
+      ],
+      "EVENTS": [
+        "Drag and drop the trigger function at the beginning of the trigger",
+        "Callback function triggered at the end of drag and drop"
+      ]
+    },
+    "DROPDOWN": {
+      "DESCRIPTION": "drop-down menu can help you save space while providing more options",
+      "OPTION": [
+        "Menu item array",
+        "Set the drop-down menu to expand the position (bottom-left, bottom-right), optional, default is bottom-left.",
+        "Set the mouse to move up when the expansion, optional, the default is false",
+        "Set the default style, optional. Optional (primary / info / success / warning / danger)"
+      ]
+    },
+    "EDITOR": {
+      "DESCRIPTION": "A very powerful, WYSIWYG rich text editor.",
+      "OPTION": [
+        "Whether to display the toolbar, the default is true.",
+        "Toolbar display button, optional.",
+        "Set maximum height",
+        "Whether to display the number of words, optional, the default is false",
+        "Set the editor style, optional."
+      ]
+    },
+    "ERROR": {
+      "WORD": "The pages of the visit seem to run out of outer space!"
+    },
+    "FULLPAGE": {
+      "DESCRIPTION": "Full-screen switching is generally used for promotional pages.",
+      "INTRO": [
+        "Sub - components of full - screen scroll containers are required to be filled into subcomponents."
+      ],
+      "OPTION": [
+        "Whether to show the pager, the default is false, optional",
+        "Whether the pager can click, the default is false, optional"
+      ]
+    },
+    "ICON": {
+      "DESCRIPTION": "The font icon will render any of the icons defined in any of the stylesheets included in your project. For general promotion pages.",
+      "OPTION": [
+        "Required, icon name (current use",
+        "Optional, change the size of the icon",
+        "Optional, set the picture rotation. The default is false"
+      ]
+    },
+    "LOADING": {
+      "DESCRIPTION": "The load component is an override that prevents the user from interacting when instructing the activity to show the progress of the task, or wait for the task to complete.",
+      "OPTION": [
+        "Set the default style, optional. Optional value",
+        "Optional, used to set the type of Loading"
+      ]
+    },
+    "MEDIA": {
+      "DESCRIPTION": "multiple platforms, media player with the same UI.",
+      "OPTION": [
+        "Video array, optional. (VideoMedia and audioMedia two choose one)",
+        "Audio array, optional. (VideoMedia and audioMedia two choose one)",
+        "Whether to display the control bar, optional, default is true.",
+        "Whether to play automatically, optional, default is false.",
+        "Whether to loop, optional, default is false.",
+        "Whether the ban sound, optional, default is false.",
+        "Set the player width, optional, default to 400 (px).",
+        "Set the player height, optional.",
+        "Set the player style, optional.",
+        "Set the control bar to hang over the video (only for the video to take effect), optional, default to false.",
+        "Whether the fixed suspension control bar, optional, default is false.",
+        "Whether to open the keyboard operation, optional, the default is false.",
+        "Set the preview, optional.",
+        "Set the theme, the default is black and white. Optional (dark)"
+      ]
+    },
+    "MODAL": {
+      "DESCRIPTION": "The modal box contains text and UI controls that are specific to a particular task, informing the user of critical information, requiring the user to make a decision or involve multiple tasks",
+      "OPTION": [
+        "Modal box title.",
+        "Whether to display the modal box, the default is false",
+        "Set the default style, optional. Optional (primary / info / success / warning / danger)",
+        "Set the modal box type (alert, confirm, prompt), optional.",
+        "Set the Loading type, optional.",
+        "Set Loading automatically hide time, optional."
+      ],
+      "EVENTS": [
+        "Each click trigger, return parameter similar to"
+      ],
+      "INTRO": [
+        "Current page number"
+      ]
+    },
+    "NOTIFICATION": {
+      "DESCRIPTION": "Simple page message notification component. You can set the message to appear in the four corners of the page. You can close the message manually or set it to auto off.",
+      "OPTION": [
+        "Message array.",
+        "Message notification box delay off time. Default does not close",
+        "The location of the message notification box. The default is TopRight . (Optional values: topLeft, topRight, bottomLeft, bottomRight)"
+      ]
+    },
+    "PAGINATION": {
+      "DESCRIPTION": "Separate long list in pagination",
+      "OPTION": [
+        "Maximum number of pages, optional. Default 5.",
+        "The number of data displayed per page, optional, defaults to 10",
+        "The current page number, optional."
+      ],
+      "EVENTS": [
+        "Each click trigger, return parameter similar to"
+      ],
+      "INTRO": [
+        "Current page number"
+      ]
+    },
+    "PROGRESS": {
+      "DESCRIPTION": "<p> The linear progress bar fills 0% to 100% to show the progress of the task. It also shows that there is a task waiting to be completed. </ P> <ul class = 'free-ul-padding'> <Li> rich color options </ li> <li> cool animations </ li> </ ul> ",
+      "OPTION": [
+        "Current load value",
+        "Whether to increase the zebra stripes, the default is false",
+        "Set the default style, optional. Optional value",
+        "Whether to increase the dynamic effect, the default is false"
+      ]
+    },
+    "RADIO": {
+      "DESCRIPTION": "radio button allows the user to select an option from a group",
+      "OPTION": [
+        "Custom text, optional",
+        "Set the name of the radio box, select",
+        "Whether the default is selected, the default is false, optional",
+        "Is disabled, the default is false, optional",
+        "Set the default style, optional. Optional value"
+      ]
+    },
+    "RANGE": {
+      "DESCRIPTION": "The range control allows the user to select from a series of values ​​by moving the slider knob along the slider or track.",
+      "OPTION": [
+        "Set the current value.",
+        "Set the minimum, the default is 0",
+        "Set the maximum value, the default is 100",
+        "Set the default style, optional. Optional value",
+        "The size of the slider. The default is 1. Optional value: (0 ~ 1)",
+        "Whether to enable vertical slider. Default is false",
+        "The height of the sliding track (usually used when the horizontal slider is.) The default is 2px.",
+        "The width of the sliding track (usually used in the vertical slider). The default is 2px."
+      ]
+    },
+    "RATING": {
+      "DESCRIPTION": "Star rating",
+      "OPTION": [
+        "Set the current value.",
+        "Set the default style, optional. Optional value",
+        "Whether it is read-only, optional."
+      ],
+      "EVENTS": [
+        "Callback function when the value changes."
+      ]
+    },
+    "SHRINK": {
+      "DESCRIPTION": "Floating button component, when pressed, may contain more related operations.",
+      "OPTION": [
+        "Required, floating button array.",
+        "Optional, set the type of floating button (vertical, vertical-reverse, horizontal, horizontal-reverse, circle), the default horizontal",
+        "Optional, circular floating button position (lt, lb, rt, rb), default lt"
+      ]
+    },
+    "SELECT": {
+      "DESCRIPTION": "drop-down selection box to select between multiple selections. Select to display the current status and the down arrow.",
+      "OPTION": [
+        "Set option, must choose",
+        "Set the prompt that describes the expected value of the input field, select",
+        "Set the prompt that describes the expected value of the input field, select",
+        "Can choose a number of options, optional",
+        "Whether to display the filter input box, optional"
+      ],
+      "EVENTS": [
+        "The onChange event occurs when the value of the element changes."
+      ]
+    },
+    "SIDENAV": {
+      "DESCRIPTION": "The sidebar displays the menu or navigation in a sliding manner.",
+      "OPTION": [
+        "Whether to expand, must be selected. Default is false",
+        "Set the position of the sidebar. The default is left. Optional (left / right)",
+        "Whether to display a translucent background (click to close the sidebar), optional. Default is false",
+        "Set the style of the sidebar, optional"
+      ],
+      "EVENTS": [
+        "Callback function that is triggered when the sidebar is closed or open, return."
+      ]
+    },
+    "SLIDE": {
+      "DESCRIPTION": "powerful touch sliding slides.",
+      "OPTION": [
+        "Set Slideshow Style, Optional",
+        "Whether to show pager, optional",
+        "Whether the pager can click, select",
+        "Whether to show left and right to switch the arrow, optional",
+        "Whether it can be recycled, optional",
+        "Whether to play automatically, select",
+        "If the timer is set to false, the user does not stop automatically after the operation, each time it will restart autoplay. The operation includes touch, drag, click pagination, etc. "
+      ],
+      "INTRO": [
+        "A slide list container.",
+        "A switch of slides that can contain text, pictures, html elements."
+      ],
+      "EVENTS": [
+        "Callback function that is triggered when the sidebar is closed or open, return."
+      ]
+    },
+    "SPINNER": {
+      "DESCRIPTION": "digital input box control, you can directly enter the number, you can click the'+ ',' - 'button to change the current value.",
+      "OPTION": [
+        "Set the current value, the default is 0",
+        "Allowed minimum value, default unrestricted",
+        "Allowed maximum value, default unrestricted",
+        "Each click of '+','-'button changes the step size, the default step is 1"
+      ]
+    },
+    "SWITCH": {
+      "DESCRIPTION": "Toggle switch is used to switch the status of individual setting options.",
+      "OPTION": [
+        "Custom text, optional",
+        "Set the default style, optional. Optional value",
+        "Subject type",
+        "Is the default selected, the default false",
+        "Is disabled, the default is false"
+      ],
+      "EVENTS": [
+        "Callback function triggered when the state changes"
+      ]
+    },
+    "TAB": {
+      "DESCRIPTION": "tab allows you to easily switch between different views or functional aspects of your application, or browse classified data sets.",
+      "OPTION": [
+        "Set the location of the tab, the default on the left. Optional value (right, center)",
+        "Label title, optional",
+        "Is disabled, optional, default false"
+      ],
+      "INTRO": [
+        "Required, a set of Tab."
+      ],
+      "EVENTS": [
+        "The callback function that fires when the tab is switched."
+      ]
+    },
+    "TABLE": {
+      "DESCRIPTION": "The data table can be used to display a simple data list.",
+      "OPTION": [
+        "Specify the number of columns that can be traversed by the cell",
+        "Specifies the number of rows the cell can span, optionally"
+      ],
+      "INTRO": [
+        "Required, similar to the HTML table, a free-table corresponding to a table.",
+        "Required, similar to the HTML of thead, a free-table-header corresponds to aad.",
+        "Required choose, like HTML tbody, a free-table-body corresponds to a tbody.",
+        "Must be similar to the HTML tr, a free-table-row corresponds to a tr.",
+        "Required, similar to HTML td, a free-table-cell corresponds to a td."
+      ]
+    },
+    "TIMELINE": {
+      "DESCRIPTION": "Vertical flow of time information.",
+      "OPTION": [
+        "Node description title, optional.",
+        "Node graph, default circle, optional(square)"
+      ],
+      "INTRO": [
+        "Timeline",
+        "Every node of the timeline"
+      ]
+    },
+    "TOAST": {
+      "DESCRIPTION": "Toast is a message alert box that provides feedback such as success, warnings and errors. Normally, Toast will be displayed in a short time and then automatically closed.",
+      "OPTION": [
+        "Message array",
+        "Message delay off time, default is 1500 (unit: ms)",
+        "Shows the maximum number of messages, the default is 10",
+        "Set the default style, optional. Optional (primary / info / success / warning / danger)"
+      ],
+      "INTRO": [
+        "Definition length 5000ms"
+      ],
+      "EVENTS": [
+        "The callback event triggered when the message closes."
+      ]
+    },
+    "TOOLTIP": {
+      "DESCRIPTION": "The tooltip identifies when the elements are activated, and they may contain short help text about their functionality.",
+      "OPTION": [
+        "Set the contents of the prompt box.",
+        "Set the location of the prompt box (top, right, bottom, left), the default right."
+      ],
+      "INTRO": [
+        "Required, indicating that the current element has a hint"
+      ]
+    },
+    "TREE": {
+      "DESCRIPTION": "file tree, simple and practical",
+      "OPTION": [
+        "Set tree menu data",
+        "Whether to expand, the default false"
+      ]
+    },
+    "UPLOAD": {
+      "DESCRIPTION": "Supports thumbnail preview, list shows picture size.",
+      "OPTION": [
+        "Can you choose more, default is false, optional",
+        "Whether to preview, the default is false, optional",
+        "Set the upload file type, optional"
+      ]
+    },
+    "LOGIN": {
+      "LOGIN": "Sign In",
+      "REGISTER": "Sign Up",
+      "ACCOUNT": "Account",
+      "PASSWORD": "Password",
+      "NAME": "Nickname",
+      "EMAIL": "Email",
+      "CONFIRM": "Confirm Password",
+      "WELCOME": "From here sail into the FreeNG world"
+    }
+  },
+  "LIBRARY": "Library",
+  "DEPENDENCE": "Dependecies",
+  "AUTHOR": {
+    "NAME": "Author",
+    "DESCRIPTION": "Front End Engineer."
+  },
+  "BLOG": "Blog",
+  "MOTTO": "Make every step of your heart",
+  "COMPONENT": {
+    "COLUMN": "Column",
+    "ACCORDION": "Accordion",
+    "BADGE": "Badge",
+    "BREADCRUMB": "Breadcrumb",
+    "BUTTON": "Button",
+    "CALENDAR": "Calendar",
+    "CARD": "Card",
+    "CASCADER": "Cascader",
+    "CHECKBOX": "Checkbox",
+    "CHIP": "Chip",
+    "COLORPICKER": "Colorpicker",
+    "CONTEXTMENU": "Contextmenu",
+    "DATATABLE": "Datatable",
+    "DRAGGABLE": "Draggable",
+    "DROPDOWN": "Dropdown",
+    "EDITOR": "Editor",
+    "GRID": "Grid",
+    "ICON": "Icon",
+    "IMAGE": "Image",
+    "INPUTTEXT": "Inputtext",
+    "LIST": "List",
+    "LOADING": "Loading",
+    "MODAL": "Modal",
+    "NOTIFICATION": "Notification",
+    "PAGINATION": "Pagination",
+    "PANEL": "Panel",
+    "PARTICLE": "Particle",
+    "PROGRESS": "Progress",
+    "RADIO": "Radio",
+    "RANGE": "Range",
+    "RATING": "Rating",
+    "RIPPLE": "Ripple",
+    "SELECT": "Selector",
+    "SHRINK": "Shrink",
+    "SIDENAV": "Sidenav",
+    "SLIDE": "Slide",
+    "SPINNER": "Spinner",
+    "SWITCH": "Switch",
+    "TAB": "Tab",
+    "TABLE": "Table",
+    "TIMELINE": "Timeline",
+    "TOAST": "Toast",
+    "TOOLTIP": "Tooltip",
+    "TREE": "Tree",
+    "UPLOAD": "Upload",
+    "CODE": "Code",
+    "CROPPER": "Cropper",
+    "MEDIA": "Media",
+    "FLOW": "Flow",
+    "CHART": "Chart",
+    "TYPOGRAPHY": "Typography",
+    "SHADOW": "Shadow",
+    "LOGIN": "Login",
+    "PAGE404": "404 page"
+  },
+  "UPDATE": {
+    "v010": {},
+    "v011": {
+      "CHANGE": {
+        "INPUTTEXT": "add validation",
+        "DROPDOWN": "<p>1) add custom content</p><p>2) add hover events</p>",
+        "MODAL": "<p>1) add loading modal</p><p>2) Add a delay mask modal</p>"
+      }
+    },
+    "v012": {
+      "FIX": "<li> Fix the form validation still exists when entering another page </li> <li> Fix the pager click no effect </li> <li> The table component removes the selection box / sort / pagination three functions , Please use datatable for previous features. </li> ",
+      "UPDATE": "<li> Inputtext new component validation </li> <li> upload the component <ul class = 'free-ul-padding' style = 'list-style-type: circle; <li> Optimize picture preview style </li> <li> The free-file tag is renamed to free-upload </li> </ul> <li> <li> The chipsChange event of the Chip component is modified to onChange </li> <li> List avatar new component circle attribute </li> <li> Tab (Tab) Added component disabled attribute and onChange event </li> <li> The data binding of the checkbox has been modified. See example. </li> "
+    },
+    "v013": {
+      "BUG": "Fix the component (Accordion, Colorpicker, Calendar) style"
+    },
+    "v014": {
+      "DESCRIPTION": "Optimize the style"
+    },
+    "v020": {
+      "FEATURE": "<li> Added ratings for new stars </li> <li> Timeline new custom title </li> <li> Breadcrumb new Two custom types </li> <li> Range add the handleSize property to set the slider size </li> <li> Tree menu (Tree) Add checkbox and click event </li> <li> Add topic properties </li>",
+      "BUG": "<li> Fix the scope of the date selector problem when select </li> <li> Repair the rich text editor table selection box height disorder </li> <li> Fix the star rating (Rating) can not restore the original value of the problem </li> <li> adjust the input box (Inputtext) verify the location of the prompt </li> "
+    },
+    "ADD": "Add",
+    "FIX": "Fix",
+    "UPDATE": "Update"
+  },
+  "YES": "Yes",
+  "STYLE": "Styling",
+  "PUBLISH-LIFE": "<div style = 'margin-bottom: 1rem;'> <ul class = 'free-ul-padding' style = ' List-style-type: circle '> <li> Version update: Daily bug fixes every weekend. (If any major bugs are available at any time) </ li> <li> Major version number: Monthly release A version with a new feature. </ Li> </ ul> </ div>",
+  "MESSAGE": "Very pleased to inform you, after four months of close development, FreeNG @ 0.2.0 finally released. This version I refactored the underlying code, continue to update the new component features and improve the optimization of existing components And provide a complete use of the document. Welcome to continue to focus and spur. In the use of any problems encountered, please give me feedback."
+}

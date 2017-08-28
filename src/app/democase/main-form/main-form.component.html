@@ -2,20 +2,20 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        输入允许用户输入文本，通常以表单形式出现。用户可以输入文字，数字或混合格式类型的输入。
+        {{'DEMO.RADIO.DESCRIPTION' | translate}}
       </p>
       <hr>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
 
       <div class="free-demo-row">
         <h3 class="free-title">free-inputtext</h3>
-        <p>单个输入表单</p>
+        <p>{{'COMPONENT.INPUTTEXT' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -26,7 +26,7 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                设置预设样式，可选。可选值(primary/info/success/warning/danger)
+                <ng-template>{{'DEMO.RADIO.OPTION.0' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -34,7 +34,9 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置提示信息，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RADIO.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>pattern</free-table-cell>
@@ -42,17 +44,7 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>
-                  设置正则匹配信息，可选。<br>
-                  可选值：
-                  <ul class="free-ul-padding">
-                    <li><code>tel</code>:手机号</li>
-                    <li><code>email</code>:邮箱</li>
-                    <li><code>card</code>:身份证号码</li>
-                    <li><code>chinese</code>:中文</li>
-                  </ul>
-                  注：如果值不在内置验证中，会使用该值作为验证信息
-                </ng-template>
+                <ng-template>{{'DEMO.RADIO.OPTION.2' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -60,14 +52,18 @@
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>设置验证失败时的提示信息，可选</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RADIO.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>icon</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>是否增加图标，可选(采用FontAwesome)</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.RADIO.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -93,17 +89,45 @@
             <p style="width: 100%;">{{value}}</p>
             <p>
               <free-inputtext [(ngModel)]="value"></free-inputtext>
-              <free-inputtext theme="success"></free-inputtext>
-              <free-inputtext theme="danger"></free-inputtext>
-              <free-inputtext theme="warning"></free-inputtext>
             </p>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-inputtext&gt;&lt;/free-inputtext&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Validator</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <p>
+              <free-inputtext theme="success"></free-inputtext>
+              <free-inputtext theme="error"></free-inputtext>
+              <free-inputtext theme="warning"></free-inputtext>
+            </p>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
               &lt;free-inputtext theme="success"&gt;&lt;/free-inputtext&gt;
-              &lt;free-inputtext theme="danger"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext theme="error"&gt;&lt;/free-inputtext&gt;
               &lt;free-inputtext theme="warning"&gt;&lt;/free-inputtext&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Prefix</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-inputtext prefix="user"></free-inputtext>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-inputtext prefix="user"&gt;&lt;/free-inputtext&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -113,15 +137,11 @@
         <h3 class="free-toolbar">Icon</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-inputtext theme="success" icon="check"></free-inputtext>
-            <free-inputtext theme="danger" icon="close"></free-inputtext>
-            <free-inputtext theme="warning" icon="exclamation"></free-inputtext>
+            <free-inputtext icon="search"></free-inputtext>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-inputtext theme="success" icon="check"&gt;&lt;/free-inputtext&gt;
-              &lt;free-inputtext theme="danger" icon="close"&gt;&lt;/free-inputtext&gt;
-              &lt;free-inputtext theme="warning" icon="exclamation"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext icon="search"&gt;&lt;/free-inputtext&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -130,32 +150,40 @@
       <div class="free-card-board">
         <h3 class="free-toolbar">Pattern</h3>
         <free-tab-group direction="right">
-          <free-tab header="PREVIEW">
-            <free-inputtext placeholder="请输入手机号码" pattern="tel"
-                            message="必须是11位的手机号码!"></free-inputtext>
-            <free-inputtext placeholder="请输入邮箱" pattern="email"
-                            message="必须是正确的邮箱!"></free-inputtext>
-            <free-inputtext placeholder="请输入身份证号码" pattern="card"
-                            message="必须是15位或18位身份证号码!"></free-inputtext>
-            <free-inputtext placeholder="请输入至少一位中文" pattern="chinese"
-                            message="至少是1位中文!"></free-inputtext>
+          <free-tab header="PREVIEW" class="input-pattern">
+            <p>
+              <free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.0' | translate}}" pattern="tel"
+                              message="{{'DEMO.INPUTTEXT.VALIDATION.1' | translate}}"></free-inputtext>
+            </p>
+            <p>
+              <free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.2' | translate}}" pattern="email"
+                              message="{{'DEMO.INPUTTEXT.VALIDATION.3' | translate}}"></free-inputtext>
+            </p>
+            <p>
+              <free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.4' | translate}}" pattern="card"
+                              message="{{'DEMO.INPUTTEXT.VALIDATION.5' | translate}}"></free-inputtext>
+            </p>
+            <p>
+              <free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.6' | translate}}" pattern="chinese"
+                              message="{{'DEMO.INPUTTEXT.VALIDATION.7' | translate}}"></free-inputtext>
+            </p>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-inputtext placeholder="请输入手机号码" pattern="tel"
-                                   message="必须是11位的手机号码!"&gt;&lt;/free-inputtext&gt;
-              &lt;free-inputtext placeholder="请输入邮箱" pattern="email"
-                              message="必须是正确的邮箱!"&gt;&lt;/free-inputtext&gt;
-              &lt;free-inputtext placeholder="请输入身份证号码" pattern="card"
-                              message="必须是15位或18位身份证号码!"&gt;&lt;/free-inputtext&gt;
-              &lt;free-inputtext placeholder="请输入至少一位中文" pattern="chinese"
-                              message="至少是1位中文!"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.0' | translate}}" pattern="tel"
+                                   message="{{'DEMO.INPUTTEXT.VALIDATION.1' | translate}}"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.2' | translate}}" pattern="email"
+                              message="{{'DEMO.INPUTTEXT.VALIDATION.3' | translate}}"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.4' | translate}}" pattern="card"
+                              message="{{'DEMO.INPUTTEXT.VALIDATION.5' | translate}}"&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.6' | translate}}" pattern="chinese"
+                              message="{{'DEMO.INPUTTEXT.VALIDATION.7' | translate}}"&gt;&lt;/free-inputtext&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
       </div>
     </div>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>
 

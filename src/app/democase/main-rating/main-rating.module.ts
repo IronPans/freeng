@@ -7,6 +7,7 @@ import {RatingModule} from '../../component/rating/rating.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainRatingRoutingModule} from './main-rating-routing.module';
 import {MainRatingComponent} from './main-rating.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainRatingComponent} from './main-rating.component';
     CodeModule,
     TableModule,
     RatingModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainRatingComponent]
 })

@@ -70,17 +70,17 @@ free-slides {
       .free-slides .free-slides-pagination .free-pagination-bullet.free-pagination-bullet-active {
         background: #115d8e;
         transform: scale(1.4); }
-  .free-slides .free-container-horizontal > .free-pagination-bullets {
+  .free-slides.free-container-horizontal > .free-pagination-bullets {
     bottom: 10px;
     left: 0;
     width: 100%; }
-    .free-slides .free-container-horizontal > .free-pagination-bullets .free-pagination-bullet {
+    .free-slides.free-container-horizontal > .free-pagination-bullets .free-pagination-bullet {
       margin: 0 5px; }
-  .free-slides .free-container-vertical > .free-pagination-bullets {
+  .free-slides.free-container-vertical > .free-pagination-bullets {
     right: 10px;
     top: 50%;
     transform: translate3d(0, -50%, 0); }
-    .free-slides .free-container-vertical > .free-pagination-bullets .free-pagination-bullet {
+    .free-slides.free-container-vertical > .free-pagination-bullets .free-pagination-bullet {
       margin: 5px 0;
       display: block; }
   .free-slides .free-pagination-clickable .free-pagination-bullet {

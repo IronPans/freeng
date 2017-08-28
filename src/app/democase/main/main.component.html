@@ -1,166 +1,123 @@
 <section class="main-container">
   <div class="row">
     <free-panel fGrid="8">
-      <f-header>FreeNG 前端UI框架</f-header>
-      <p>
-        FreeNG是一款完全响应式的前端UI框架，
-        它采用了主流的左右两栏式布局，使用了Html5+CSS3+Angular2(+4)等流行的前端技术，
-        同时提供了诸多强大的可以重新组合的UI组件，门槛极低，拿来即用。
-      </p>
-      <p>FreeNG还很年轻，首个版本发布于2017年5月。</p>
-      <p>
-        <b>当前版本：</b> v{{version}}
-      </p>
-      <p>
-        <b>特别声明：</b> 如其名Free，FreeNG是完全开源免费的!
-      </p>
+      <f-header>{{'MAIN.TITLE' | translate}}</f-header>
+      <div [innerHTML]="'MAIN.INTRODUCTION' | translate"></div>
+      <p><b>{{'MAIN.CURRENT-VERSION' | translate}}：</b> v{{version}}</p>
+      <div [innerHTML]="'MAIN.DECLARATION' | translate"></div>
       <p style="padding-top: 10px;">
         <iframe src="https://ghbtns.com/github-btn.html?user=IronPans&repo=freeng&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
       </p>
     </free-panel>
 
-    <free-tab-group fGrid="4" direction="right" theme="line">
-      <free-tab header="关于作者">
-        <p>
-          <span><i class="fa fa-user"></i> 作者：</span>
-          <a href="" target="_blank">TG</a>，90后未进化完全的地球人，也是一名传说中会很早秃顶的程序猿，
-          从事前端开发，平时爱瞎折腾，每天主要的工作就是对着电脑撸码。
-        </p>
-        <p>
-          <span><i class="fa fa-flag"></i> 博客：</span>
-          <a href="http://ghmagical.com" target="_blank">http://ghmagical.com</a>
-        </p>
-        <p>
-          <span><i class="fa fa-qq"></i> QQ(交流群)：</span> 540629196
-        </p>
-      </free-tab>
-      <free-tab header="捐赠">
-       <div class="donate">
-         <div>
-           <h4>支付宝</h4>
-           <p><img src="//7s1r1c.com1.z0.glb.clouddn.com/15003900933851.png" alt=""></p>
-         </div>
-         <div>
-           <h4>微信</h4>
-           <p><img src="//7s1r1c.com1.z0.glb.clouddn.com/mm_facetoface_collect_qrcode_15003900663061.png" alt=""></p>
-         </div>
-       </div>
-      </free-tab>
-    </free-tab-group>
-
-    <free-panel fGrid="4">
-      <f-header>功能特点</f-header>
-      <ol class="main-point">
-        <li>基于最新的Angular4开发</li>
-        <li>采取Flex布局实现完全响应式布局</li>
-        <li>丰富的主题选择</li>
-        <li>易用的API，可按需组合的UI组件</li>
-      </ol>
-    </free-panel>
-
-    <free-panel fGrid="4">
-      <f-header>Git仓库</f-header>
-      <p>Github：<a href="https://github.com/IronPans/freeng" target="_blank">
-        https://github.com/IronPans/freeng
-      </a>
+    <free-panel fGrid="4" [header]="'MAIN.ABOUT' | translate">
+      <p>
+        <span><i class="fa fa-user"></i> {{'AUTHOR.NAME' | translate}}：</span>
+        <a href="http://ghmagical.com" target="_blank">TG</a>，{{'AUTHOR.DESCRIPTION' | translate}}
       </p>
       <p>
-        码云：<a href="http://git.oschina.net/crazyTG/freeng" target="_blank">
-        http://git.oschina.net/crazyTG/freeng
-      </a>
+        <span><i class="fa fa-flag"></i> {{'BLOG' | translate}}：</span>
+        <a href="http://ghmagical.com" target="_blank">http://ghmagical.com</a>
       </p>
-      <blockquote>没加星的，记得加个星星哦，提升下人气神马的</blockquote>
+      <p>
+        <span><i class="fa fa-qq"></i> QQ({{'MAIN.GROUP' | translate}})：</span> 540629196
+      </p>
+      <p>
+        <a href="https://github.com/IronPans/freeng" fButton target="_blank">
+          Github
+        </a>
+        <a href="http://git.oschina.net/crazyTG/freeng" fButton target="_blank">
+          Gitee
+        </a>
+      </p>
     </free-panel>
 
     <free-panel fGrid="4">
-      <f-header>更新日志</f-header>
+      <f-header>{{'MAIN.FEATURE.TITLE' | translate}}</f-header>
+     <div [innerHTML]="'MAIN.FEATURE.INTRO' | translate"></div>
+    </free-panel>
+
+    <free-panel fGrid="4" [header]="'DEPENDENCE' | translate">
+      <img src="assets/images/angular.svg" alt="" width="80">
+    </free-panel>
+
+    <free-panel fGrid="4">
+      <f-header>{{'CHANGE-LOG' | translate}}</f-header>
       <free-accordion-group [closeOthers]="true">
+        <free-accordion class="let-menu-item" header="v0.2.0">
+          <h5 class="subtitle">Components</h5>
+          <ul class="free-ul-padding">
+            <li>{{'COMPONENT.MEDIA' | translate}}</li>
+            <li>{{'COMPONENT.CROPPER' | translate}}</li>
+            <li>{{'COMPONENT.FLOW' | translate}}</li>
+          </ul>
+          <h5 class="subtitle">Features</h5>
+          <ul class="free-ul-padding" [innerHTML]="'UPDATE.v020.FEATURE' | translate"></ul>
+          <h5 class="subtitle">Bug Fixes</h5>
+          <ul class="free-ul-padding" [innerHTML]="'UPDATE.v020.BUG' | translate"></ul>
+        </free-accordion>
         <free-accordion class="let-menu-item" header="v0.1.4">
-          优化了样式
+          {{'UPDATE.v014.DESCRIPTION' | translate}}
         </free-accordion>
         <free-accordion class="let-menu-item" header="v0.1.3">
-          修复组件(Accordion, Colorpicker, Calendar)样式
+          <h4>Bug Fixes</h4>
+          <ul class="free-ul-padding">
+            <li>{{'UPDATE.v013.BUG' | translate}}</li>
+          </ul>
         </free-accordion>
         <free-accordion class="let-menu-item" header="v0.1.2">
-          <h4>新增组件</h4>
+          <h4>Features</h4>
           <ul class="free-ul-padding">
-            <li><a [routerLink]="['/main/colorpicker']">颜色选择器</a></li>
-            <li><a [routerLink]="['/main/cascader']">级联选择器</a></li>
-            <li><a [routerLink]="['/main/calendar']">日期选择器</a></li>
-            <li><a [routerLink]="['/main/datatable']">数据表格(Datatable)</a></li>
-            <li><a [routerLink]="['/main/notification']">消息通知</a></li>
-            <li><a [routerLink]="['/main/toast']">消息提示</a></li>
-            <li><a [routerLink]="['/main/editor']">富文本编辑器(Editor)</a></li>
-            <li><a [routerLink]="['/main/timeline']">时间轴</a></li>
-            <li><a [routerLink]="['/main/columns']">多栏布局</a></li>
-            <li><a [routerLink]="['/main/sidenav']">侧边栏</a></li>
-            <li><a [routerLink]="['/main/draggable']">拖放控件</a></li>
-            <li><a [routerLink]="['/main/charts']">图表</a></li>
+            <li><a [routerLink]="['/main/colorpicker']">{{'COMPONENT.COLORPICKER' | translate}}</a></li>
+            <li><a [routerLink]="['/main/cascader']">{{'COMPONENT.CASCADER' | translate}}</a></li>
+            <li><a [routerLink]="['/main/calendar']">{{'COMPONENT.CALENDAR' | translate}}</a></li>
+            <li><a [routerLink]="['/main/datatable']">{{'COMPONENT.DATATABLE' | translate}}</a></li>
+            <li><a [routerLink]="['/main/notification']">{{'COMPONENT.NOTIFICATION' | translate}}</a></li>
+            <li><a [routerLink]="['/main/toast']">{{'COMPONENT.TOAST' | translate}}</a></li>
+            <li><a [routerLink]="['/main/editor']">{{'COMPONENT.EDITOR' | translate}}</a></li>
+            <li><a [routerLink]="['/main/timeline']">{{'COMPONENT.TIMELINE' | translate}}</a></li>
+            <li><a [routerLink]="['/main/columns']">{{'COMPONENT.COLUMN' | translate}}</a></li>
+            <li><a [routerLink]="['/main/sidenav']">{{'COMPONENT.SIDENAV' | translate}}</a></li>
+            <li><a [routerLink]="['/main/draggable']">{{'COMPONENT.DRAGGABLE' | translate}}</a></li>
+            <li><a [routerLink]="['/main/charts']">{{'COMPONENT.CHART' | translate}}</a></li>
           </ul>
         </free-accordion>
         <free-accordion class="let-menu-item" header="v0.1.1">
-          <h4>新增</h4>
+          <h4>Features</h4>
           <ul class="free-ul-padding">
-            <li>
-              <a [routerLink]="['/main/slide']">幻灯片(Slide)</a>
-            </li>
-            <li>
-              <a [routerLink]="['/main/chip']">碎片(Chip)</a>
-            </li>
-            <li>
-              <a [routerLink]="['/main/shrink']">浮动按钮(Shrink)</a>
-            </li>
-            <li>
-              <a [routerLink]="['/main/select']">选择框(select)</a>
-            </li>
-            <li>
-              <a [routerLink]="['/main/pagination']">分页器(pagination)</a>
-            </li>
-            <li>
-              <a [routerLink]="['/main/contextmenu']">上下文菜单(contextmenu)</a>
-            </li>
-            <li>
-              粒子效果(particle)
-            </li>
+            <li><a [routerLink]="['/main/slide']">{{'COMPONENT.SLIDE' | translate}}</a></li>
+            <li><a [routerLink]="['/main/chip']">{{'COMPONENT.CHIP' | translate}}</a></li>
+            <li><a [routerLink]="['/main/shrink']">{{'COMPONENT.SHRINK' | translate}}</a></li>
+            <li><a [routerLink]="['/main/select']">{{'COMPONENT.SELECT' | translate}}</a></li>
+            <li><a [routerLink]="['/main/pagination']">{{'COMPONENT.PAGINATION' | translate}}</a></li>
+            <li><a [routerLink]="['/main/contextmenu']">{{'COMPONENT.CONTEXTMENU' | translate}}</a></li>
+            <li>{{'COMPONENT.PARTICLE' | translate}}</li>
           </ul>
-          <h4>更新</h4>
+          <h4>Break Changes</h4>
           <ul class="free-ul-padding">
-            <li><a [routerLink]="['/main/input']">输入框(inputtext)</a>新增正则验证</li>
             <li>
-              <p>
-                <a [routerLink]="['/main/dropdown']">下拉菜单(Dropdown)</a>
-              </p>
-              <p>1) 新增自定义内容</p>
-              <p>2) 新增hover事件</p>
+              <a [routerLink]="['/main/input']">{{'COMPONENT.INPUTTEXT' | translate}}</a>
+              {{'UPDATE.v011.CHANGE.INPUTTEXT' | translate}}
             </li>
             <li>
-              <p>
-                <a [routerLink]="['/main/modals']">模态框(modal)</a>
-              </p>
-              <p>1) 新增loading模态框</p>
-              <p>2) 新增延时隐藏模态框</p>
+              <p><a [routerLink]="['/main/dropdown']">{{'COMPONENT.DROPDOWN' | translate}}</a></p>
+              <div [innerHTML]="'UPDATE.v011.CHANGE.DROPDOWN' | translate"></div>
             </li>
-          </ul>
-          <h4>修改</h4>
-          <ul class="free-ul-padding">
-            <li>使用默认滚动条(可自定义)</li>
-            <li>登录界面新增粒子效果/注册与登录模块之间的切换</li>
-            <li>将主题设置调整到右上角按钮</li>
-          </ul>
-          <h4>结构更新</h4>
-          <ul class="free-ul-padding">
-            <li>统一采用异步路由</li>
+            <li>
+              <p><a [routerLink]="['/main/modals']">{{'COMPONENT.MODAL' | translate}}</a></p>
+              <div [innerHTML]="'UPDATE.v011.CHANGE.MODAL' | translate"></div>
+            </li>
           </ul>
         </free-accordion>
         <free-accordion class="let-menu-item" header="v0.1.0">
           <ul class="free-ul-padding">
-            <li>UI 元素</li>
-            <li>基础组件</li>
-            <li>拓展组件</li>
+            <li>{{'UI-ELEMENT' | translate}}</li>
+            <li>{{'BASIC-COMPONENT' | translate}}</li>
+            <li>{{'EXTENDED-COMPONENT' | translate}}</li>
           </ul>
         </free-accordion>
       </free-accordion-group>
     </free-panel>
   </div>
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </section>

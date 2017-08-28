@@ -1,4 +1,3 @@
-
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {GridModule} from '../../component/grid/grid.directive';
@@ -7,6 +6,7 @@ import {TabGroupModule} from '../../component/tab/tab.component';
 import {CodeModule} from '../../component/code/code.component';
 import {MainGridRoutingModule} from './main-grid-routing.module';
 import {MainGridComponent} from './main-grid.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -15,7 +15,8 @@ import {MainGridComponent} from './main-grid.component';
     GridModule,
     TableModule,
     TabGroupModule,
-    CodeModule
+    CodeModule,
+    LanguageModule
   ],
   declarations: [MainGridComponent]
 })

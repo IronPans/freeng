@@ -53,6 +53,10 @@ const childRoutes: Routes = [
   {path: 'draggable', loadChildren: '../main-draggable/main-draggable.module#MainDraggableModule'},
   {path: 'charts', loadChildren: '../main-chart/main-chart.module#MainChartModule'},
   {path: 'sidenav', loadChildren: '../main-sidenav/main-sidenav.module#MainSidenavModule'},
+  {path: 'flow', loadChildren: '../main-flow/main-flow.module#MainFlowModule'},
+  {path: 'media', loadChildren: '../main-media/main-media.module#MainMediaModule'},
+  {path: 'cropper', loadChildren: '../main-cropper/main-cropper.module#MainCropperModule'},
+  {path: 'panel', loadChildren: '../main-panel/main-panel.module#MainPanelModule'},
   {path: '', redirectTo: '/main/introduction', pathMatch: 'full'},
   {path: '**', redirectTo: '/error'}
 ];

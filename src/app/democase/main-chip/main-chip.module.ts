@@ -7,6 +7,7 @@ import {ChipModule} from '../../component/chip/chip.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainChipRoutingModule} from './main-chip-routing.module';
 import {MainChipComponent} from './main-chip.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainChipComponent} from './main-chip.component';
     CodeModule,
     TableModule,
     ChipModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainChipComponent]
 })

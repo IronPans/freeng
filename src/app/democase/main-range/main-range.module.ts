@@ -7,6 +7,7 @@ import {RangeModule} from '../../component/range/range.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainRangeRoutingModule} from './main-range-routing.module';
 import {MainRangeComponent} from './main-range.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainRangeComponent} from './main-range.component';
     CodeModule,
     TableModule,
     RangeModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainRangeComponent]
 })

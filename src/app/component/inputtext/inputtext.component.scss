@@ -6,13 +6,14 @@
 
   input {
     background-color: transparent;
-    border: none;
-    border-radius: 0;
     height: 35px;
     width: 100%;
-    padding: 0;
     box-shadow: none;
     outline: none;
+    padding: 0 .2em;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
     transition: all 0.3s;
 
     & + span {
@@ -31,8 +32,9 @@
       transform: scale(1);
     }
 
-    &:focus + span + i {
-      opacity: 1;
+    &:focus {
+      background-color: #fff;
+      border-color: #108ee9;
     }
   }
 
@@ -48,69 +50,124 @@
     transition: all .2s ease-out;
   }
 
-  &.input-field-icon i {
+  .free-inputtext-validator,
+  .free-inputtext-icon {
     position: absolute;
-    right: 0;
+    width: 25px;
     top: 50%;
-    opacity: 0;
+    text-align: center;
+    opacity: 1;
     padding: 0 5px;
     font-size: .75rem;
     transform: translate(0, -50%);
+  }
+
+  .free-inputtext-validator {
+    right: 0;
+  }
+
+  .free-inputtext-icon {
+    left: 0;
+    & + input {
+      padding-left: 25px;
+    }
   }
   &.input-field-icon input {
     padding-right: 25px;
   }
 
-  @each $theme, $color in $theme {
-    &.free-#{$theme} span:after {
-      background: $color;
+  &.free-success {
+    span:after {
+      background: #1aae88;
     }
-    &.free-#{$theme}.input-field-icon i {
-      color: $color;
+
+    input,
+    input:focus {
+      border-color: #1aae88;
     }
-  }
-}
 
-.free-tip {
-  position: fixed;
-  max-width: 20rem;
-  min-width: 12rem;
-  padding: .5rem;
-  border-radius: 3px;
-  line-height: 1.1rem;
-  z-index: 998;
-  color: #fff;
-  background: rgba(33, 150, 243, .8);
-  opacity: 0;
-  transition: all .3s;
-  backface-visibility: hidden;
-
-  &.free-tip-top {
-    transform: translate3d(0, -4rem, 0);
-
-    &:before {
-      bottom: -1rem;
-      left: 50%;
-      border-top: .5rem solid rgba(33, 150, 243, .8);
-      transform: translate3d(-50%, 0, 0);
+    .free-inputtext-validator {
+      color: #1aae88;
     }
   }
 
-  &.free-tip-right {
-    transform: translate3d(4rem, 0, 0);
+  &.free-warning {
+    span:after {
+      background: #fbb23e;
+    }
 
-    &:before {
-      top: 50%;
-      left: -1rem;
-      border-right: .5rem solid rgba(33, 150, 243, .8);
-      transform: translate3d(0, -50%, 0);
+    input,
+    input:focus {
+      border-color: #fbb23e;
+    }
+
+    .free-inputtext-validator {
+      color: #fbb23e;
     }
   }
 
-  &:before {
-    content: "";
+  &.free-error {
+    span:after {
+      background: #e33244;
+    }
+
+    input,
+    input:focus {
+      border-color: #e33244;
+    }
+
+    .free-inputtext-validator {
+      color: #e33244;
+    }
+  }
+
+
+  .free-inputtext-tip {
     position: absolute;
-    border: .5rem solid transparent;
-  }
-}
+    max-width: 20rem;
+    min-width: 12rem;
+    padding: .5rem;
+    border-radius: 3px;
+    line-height: 1.1rem;
+    z-index: 998;
+    color: #fff;
+    background: #e33244;
+    opacity: 1;
+    display: none;
+    transition: all .3s;
+    backface-visibility: hidden;
 
+    &.free-tip-top {
+      top: -100%;
+      left: 50%;
+      transform: translate3d(-50%, 1rem, 0);
+
+      &:before {
+        bottom: -1rem;
+        left: 50%;
+        border-top: .5rem solid #e33244;
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    &.free-tip-right {
+      left: 100%;
+      top: 50%;
+      transform: translate3d(.5rem, -50%, 0);
+
+      &:before {
+        top: 50%;
+        left: -1rem;
+        border-right: .5rem solid #e33244;
+        transform: translate3d(0, -50%, 0);
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      border: .5rem solid transparent;
+    }
+  }
+
+}

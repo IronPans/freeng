@@ -21,16 +21,16 @@ export class MainDropdownComponent implements OnInit {
       'name': 'TGCode',
       'icon': 'user'
     }, {
-      'name': '邮件',
+      'name': 'Email',
       'icon': 'envelope'
     }, {
-      'name': '帮助',
+      'name': 'Help',
       'icon': 'question-circle'
     }, {
-      'name': '设置',
+      'name': 'Setting',
       'icon': 'cog'
     }, {
-      'name': '登出',
+      'name': 'Logout',
       'icon': 'sign-out'
     }];
   }

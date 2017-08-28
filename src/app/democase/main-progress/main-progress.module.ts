@@ -7,6 +7,7 @@ import {ProgressModule} from '../../component/progress/progress.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainProgressRoutingModule} from './main-progress-routing.module';
 import {MainProgressComponent} from './main-progress.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MainProgressComponent} from './main-progress.component';
     CodeModule,
     TableModule,
     ProgressModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainProgressComponent]
 })

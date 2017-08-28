@@ -1,0 +1,69 @@
+
+.free-accordion-group .accordion-toggle {
+  background: $color;
+}
+
+.free-tab-group .free-tab-nav.active span {
+  color: $color;
+}
+
+.free-tab-group .free-tab-nav.active span:after {
+  background: $color;
+}
+
+.search-box {
+  background: $color;
+}
+
+.top-menu,
+.aside-header,
+.ripple {
+  background: $color;
+}
+
+.free-tree ul li.free-tree-item > span:hover:after, .free-tree ul li.free-tree-item > span:after {
+  color: $color;
+}
+
+.free-tree ul li.last > span:before {
+  color: $color;
+}
+
+.free-tab-group .free-tab-nav.active span {
+  color: $color;
+}
+
+blockquote {
+  border-color: $color;
+}
+
+.free-timeline {
+
+  .free-timeline-item {
+    &:after {
+      border: 1px solid $color;
+    }
+  }
+}
+
+h3.free-head-title {
+  color: $color;
+}
+
+
+.left-menu,
+.search-box {
+  background: $color;
+}
+
+.left-menu {
+  .left-menu-item li a,
+  .accordion-toggle,
+  .accordion-inner ul li > a {
+    &:not(.active):hover,
+    &.active {
+      color: $color !important;
+      background-color: #eee;
+    }
+  }
+}

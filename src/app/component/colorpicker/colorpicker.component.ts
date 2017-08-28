@@ -333,7 +333,6 @@ export class ColorpickerComponent implements ControlValueAccessor, AfterViewInit
           rgb: this.color.getRGBA(),
           hsl: this.color.getHSLA()
         });
-        console.log(123);
         this.unbindDocumentTouchmoveListener();
         this.unbindDocumentTouchendListener();
       })

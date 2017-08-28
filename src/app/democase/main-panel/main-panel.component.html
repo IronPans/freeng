@@ -1,0 +1,130 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="12">
+      <p style="padding-left: 1rem;">
+        {{'DEMO.PANEL.DESCRIPTION' | translate}}
+      </p>
+      <hr>
+    </div>
+    <div class="free-demo-board" fGrid="12">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-panel fGrid="4" [header]="'Panel Title'">
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+            </free-panel>
+            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'primary'">
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+            </free-panel>
+            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'info'">
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+            </free-panel>
+            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'success'">
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+            </free-panel>
+            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'warning'">
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+            </free-panel>
+            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'danger'">
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+            </free-panel>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-panel fGrid="4" [header]="'Panel Title'"&gt;
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              &lt;/free-panel&gt;
+              &lt;free-panel fGrid="4" [header]="'Panel Title'" [theme]="'primary'"&gt;
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              &lt;/free-panel&gt;
+              &lt;free-panel fGrid="4" [header]="'Panel Title'" [theme]="'info'"&gt;
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              &lt;/free-panel&gt;
+              &lt;free-panel fGrid="4" [header]="'Panel Title'" [theme]="'success'"&gt;
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              &lt;/free-panel&gt;
+              &lt;free-panel fGrid="4" [header]="'Panel Title'" [theme]="'warning'"&gt;
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              &lt;/free-panel&gt;
+              &lt;free-panel fGrid="4" [header]="'Panel Title'" [theme]="'danger'"&gt;
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              &lt;/free-panel&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Custom Header</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-panel fGrid="4">
+              <f-header><i class="fa fa-home"></i> Custom</f-header>
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+            </free-panel>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-panel fGrid="4"&gt;
+                &lt;f-header&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; Custom&lt;/f-header&gt;
+              {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              &lt;/free-panel&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+    <div class="free-demo-board" fGrid="12">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Import</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="CODE">
+            <free-code lang="typescript">
+              import &#123;PanelModule&#125; from 'freeng/freeng';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-panel</h3>
+        <p>{{'COMPONENT.PANEL' | translate}}</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>header</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.PANEL.HEADER' | translate}}
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BUTTON.THEME' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
+</div>
+

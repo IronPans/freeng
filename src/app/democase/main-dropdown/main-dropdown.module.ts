@@ -8,6 +8,7 @@ import {ShareModule} from '../../component/common/share';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainDropdownRoutingModule} from './main-dropdown-routing.module';
 import {MainDropdownComponent} from './main-dropdown.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {MainDropdownComponent} from './main-dropdown.component';
     TableModule,
     DropdownModule,
     ShareModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainDropdownComponent]
 })

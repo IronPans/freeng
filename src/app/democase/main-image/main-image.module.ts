@@ -6,6 +6,7 @@ import {TabGroupModule} from '../../component/tab/tab.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {MainImageRoutingModule} from './main-image-routing.module';
 import {MainImageComponent} from './main-image.component';
+import {LanguageModule} from '../common/language';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {MainImageComponent} from './main-image.component';
     TabGroupModule,
     CodeModule,
     TableModule,
-    GridModule
+    GridModule,
+    LanguageModule
   ],
   declarations: [MainImageComponent]
 })

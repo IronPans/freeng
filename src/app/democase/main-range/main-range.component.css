@@ -2,5 +2,8 @@
   margin: 10px 20px; }
 :host /deep/ .free-tab.active {
   padding-top: 2rem !important; }
+:host /deep/ free-range {
+  display: inline-flex;
+  margin: 40px 10px 10px 10px; }
 
 /*# sourceMappingURL=main-range.component.css.map */

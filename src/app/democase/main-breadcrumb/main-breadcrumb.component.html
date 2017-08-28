@@ -2,18 +2,18 @@
   <div class="row">
     <div fGrid="6" class="free-demo-board">
       <p>
-        面包屑结构简单，支持自定义分隔符。
+        {{'DEMO.BREADCRUMB.DESCRIPTION' | translate}}
       </p>
-      <h3 class="free-head-title">API 选项<span class="symbol component"></span></h3>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-breadcrumb</h3>
-        <p>面包屑组。</p>
+        <p>{{'COMPONENT.BREADCRUMB' | translate}}</p>
         <free-table>
           <free-table-header>
             <free-table-row>
-              <free-table-head>属性</free-table-head>
-              <free-table-head>类型</free-table-head>
-              <free-table-head>描述</free-table-head>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
 
@@ -23,21 +23,27 @@
               <free-table-cell>
                 <ng-template><code>Array</code></ng-template>
               </free-table-cell>
-              <free-table-cell>面包屑数组</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BREADCRUMB.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>separator</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>自定义分隔符</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BREADCRUMB.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
             <free-table-row>
               <free-table-cell>icon</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
-              <free-table-cell>使用FontAwesome字体图标来自定义分隔符</free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BREADCRUMB.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
             </free-table-row>
           </free-table-body>
         </free-table>
@@ -45,7 +51,6 @@
     </div>
 
     <div fGrid="6" class="free-demo-board">
-
       <div class="free-card-board">
         <h3 class="free-toolbar">Import</h3>
         <free-tab-group direction="right" theme="line">
@@ -67,6 +72,15 @@
             <free-code lang="html">
               &lt;free-breadcrumb [menus]="menus"&gt;&lt;/free-breadcrumb&gt;
             </free-code>
+
+            <h4>Javascript</h4>
+            <free-code lang="typescript">
+              this.menus = [
+                &#123;'name': 'Homepage', icon: 'home'&#125;,
+                &#123;'name': 'item 1'&#125;,
+                &#123;'name': 'item 2'&#125;
+              ];
+            </free-code>
           </free-tab>
         </free-tab-group>
       </div>
@@ -86,10 +100,41 @@
       </div>
 
       <div class="free-card-board">
+        <h3 class="free-toolbar">Type</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-breadcrumb [type]="1" [menus]="menus"></free-breadcrumb>
+            <free-breadcrumb [type]="2" [menus]="menus"></free-breadcrumb>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-breadcrumb [type]="1" [menus]="menus"&gt;&lt;/free-breadcrumb&gt;
+              &lt;free-breadcrumb [type]="2" [menus]="menus"&gt;&lt;/free-breadcrumb&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">BackgroundColor</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-breadcrumb [type]="2" [menus]="menus" [backgroundColor]="'#1aae88'"></free-breadcrumb>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-breadcrumb [type]="2" [menus]="menus" [backgroundColor]="'#1aae88'"&gt;&lt;/free-breadcrumb&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
         <h3 class="free-toolbar">Icon</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <free-breadcrumb icon="tag" [menus]="menus"></free-breadcrumb>
+            <free-breadcrumb [type]="2" [menus]="menus"></free-breadcrumb>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -102,5 +147,5 @@
 
   </div>
 
-  <blockquote>FreeNG - 用心做好每一步</blockquote>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>
