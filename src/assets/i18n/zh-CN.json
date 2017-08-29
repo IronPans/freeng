@@ -719,6 +719,9 @@
       "FEATURE": "<li>星星评分(Rating)新增半星评分</li><li>时间轴(Timeline)新增自定义标题</li><li>面包屑导航(Breadcrumb)新增两个自定义类型</li><li>滑动条(Range)新增handleSize属性，用来设置滑块大小</li><li>树形菜单(Tree)新增复选框和点击事件</li><li>面板新增主题属性</li>",
       "BUG": " <li>修复日期选择器的范围选择问题</li><li>修复富文本编辑器的table选择框高度错乱</li><li>修复星星评分(Rating)无法恢复原值的问题</li><li>调整输入框(Inputtext)验证提示的位置</li>"
     },
+    "v021": {
+      "BUG": "<li>修复需要手动安装highlight.js依赖</li></li><li>修复需要手动安装chart.js依赖问题</li>"
+    },
     "ADD": "新增",
     "FIX": "修复",
     "UPDATE": "更新"

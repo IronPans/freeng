@@ -706,7 +706,7 @@
     },
     "v012": {
       "FIX": "<li> Fix the form validation still exists when entering another page </li> <li> Fix the pager click no effect </li> <li> The table component removes the selection box / sort / pagination three functions , Please use datatable for previous features. </li> ",
-      "UPDATE": "<li> Inputtext new component validation </li> <li> upload the component <ul class = 'free-ul-padding' style = 'list-style-type: circle; <li> Optimize picture preview style </li> <li> The free-file tag is renamed to free-upload </li> </ul> <li> <li> The chipsChange event of the Chip component is modified to onChange </li> <li> List avatar new component circle attribute </li> <li> Tab (Tab) Added component disabled attribute and onChange event </li> <li> The data binding of the checkbox has been modified. See example. </li> "
+      "UPDATE": "<li> Inputtext new component validation </li> <li> upload the component <ul class = 'free-ul-padding' style = 'list-style-type: circle;'> <li> Optimize picture preview style </li> <li> The free-file tag is renamed to free-upload </li> </ul> </li> <li> The chipsChange event of the Chip component is modified to onChange </li> <li> List avatar new component circle attribute </li> <li> Tab (Tab) Added component disabled attribute and onChange event </li> <li> The data binding of the checkbox has been modified. See example. </li> "
     },
     "v013": {
       "BUG": "Fix the component (Accordion, Colorpicker, Calendar) style"
@@ -717,6 +717,10 @@
     "v020": {
       "FEATURE": "<li> Added ratings for new stars </li> <li> Timeline new custom title </li> <li> Breadcrumb new Two custom types </li> <li> Range add the handleSize property to set the slider size </li> <li> Tree menu (Tree) Add checkbox and click event </li> <li> Add topic properties </li>",
       "BUG": "<li> Fix the scope of the date selector problem when select </li> <li> Repair the rich text editor table selection box height disorder </li> <li> Fix the star rating (Rating) can not restore the original value of the problem </li> <li> adjust the input box (Inputtext) verify the location of the prompt </li> "
+    },
+
+    "v021": {
+      "BUG": "<li>Fixes need to manually install highlight.js dependencies </li> </ li> <li> Fixes need to manually install chart.js dependency issues </li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

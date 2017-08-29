@@ -1,40 +1,95 @@
 # Change Log
 
+## 0.2.1(2017-08-30)
+
+**Bug Fixes**
+  
+- Fixes need to manually install highlight.js dependencies
+- Fixes need to manually install chart.js dependency issues
+
+## 0.2.0(2017-08-29)
+
+**Components**
+
+- Media
+- Cropper
+- Flow
+
+**Features**
+
+- Added ratings for new stars
+- Timeline new custom title
+- Breadcrumb new Two custom types
+- Range add the handleSize property to set the slider size
+- Tree menu (Tree) Add checkbox and click event
+- Add topic properties
+
+**Bug Fixes**
+
+- Fix the scope of the date selector problem when select
+- Repair the rich text editor table selection box height disorder
+- Fix the star rating (Rating) can not restore the original value of the problem
+- adjust the input box (Inputtext) verify the location of the prompt
+
 ## 0.1.4(2017-08-14)
 
-* 优化了样式
+* Optimize the style
 
 ## 0.1.3(2017-08-13)
 
-* 更新到npm包
-* 修复组件(Accordion, Colorpicker, Calendar)样式
+* Fix the component (Accordion, Colorpicker, Calendar) style
 
 ## 0.1.2(2017-08-12)
 
-* 新增组件: 颜色选择器/级联选择器/日期选择器/数据表格/消息通知/消息提示/富文本编辑器/时间轴/多栏布局/侧边栏/拖放控件/图表
-* 组件更新: 
-  * 输入框新增组件正则验证(中文/日期/网址)
-  * 碎片组件的chipsChange事件修改为onChange
-  * List的avatar新增组件circle属性
-  * 选项卡(Tab)新增组件disabled属性和onChange事件
-  * 复选框的数据绑定进行了修改，详情请看示例。
-  * 上传组件(upload): 1) free-file标签更名为free-upload  2) 优化图片预览样式
+**Add Components**
+ Colorpicker/Cascader/Calendar/Datatable/Notification/Toast/Editor/Timeline/Column/Sidenav/Draggable/Chart
+ 
+**Update**
+
+  * Inputtext new component validation
+  * upload the component
+  * Optimize picture preview style
+  * The free-file tag is renamed to free-upload
+  * The chipsChange event of the Chip component is modified to onChange
+  * List avatar new component circle attribute
+  * Tab (Tab) Added component disabled attribute and onChange event
+  * The data binding of the checkbox has been modified. See example.
+  
+**Bug Fixes**
+  * Fix the pager click no effect
+  * Fix the form validation still exists when entering another page
+  * The table component removes the selection box / sort / pagination three functions , Please use datatable for previous features.
 
 ## 0.1.1(2017-07-08)
 
-* 新增组件: 幻灯片/碎片/浮动按钮/选择框/分页器/上下文菜单/粒子效果/全屏滚动
-* 组件更新: 
-  * 输入框新增组件正则验证
-  * 下拉菜单: 1) 新增组件自定义内容  2) 新增组件hover事件
-  * 模态框: 1) 新增组件loading模态框  2) 新增组件延时隐藏模态框
-* 修改
-  * 使用默认滚动条(可自定义)
-  * 登录界面新增组件粒子效果/注册与登录模块之间的切换
-  * 将主题设置调整到右上角按钮
+**Add Components**
+
+Slide/Chip/Shrink/Select/Pagination/Contextmenu/Particle/Fullpage
+
+**Update**
+ 
+  * Inputtext add validation
+  * Dropdown
+    1) add custom content
+    2) add hover events
+  * Modal
+    1) add loading modal
+    2) Add a delay mask modal
 
 ## 0.1.0(2017-05-21)
 
-* UI 元素: 栅格系统/图片/辅助元素/阴影
-* 基础组件: 按钮/列表/卡片/进度条/加载条/输入框/复选框/单选框/开关/面包屑/图标/小徽章/阴影/辅助元素
-* 扩展组件: 面板/选项卡/模态框/提示框/数字输入框/滚动条/星星评分/下拉菜单/表格/树形菜单
-* 页面: 登录页/404页面
+**UI Element**
+
+ * Grid/Image/Typography/Shadow
+
+**Basic Components**
+
+ * Button/List/Card/Progress/Loading/Inputtext/Checkbox/Radio/Switch/Breadcrumb/Icon/Badge
+
+**Extended Components**
+
+ * Accordion/Tab/Modal/Tooltip/Spinner/Rating/Dropdown/Table/Tree
+
+**Page**
+ 
+ * Login/404 page

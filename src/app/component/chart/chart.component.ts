@@ -1,8 +1,7 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter,
   Input, Output, NgModule, OnDestroy, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-declare const Chart: any;
+import * as Chart from 'chart.js';
 
 @Component({
   selector: 'free-chart',
