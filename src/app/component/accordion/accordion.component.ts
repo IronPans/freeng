@@ -129,9 +129,9 @@ export class AccordionComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule, ShareModule],
+  imports: [CommonModule],
   declarations: [AccordionComponent, AccordionGroupComponent],
-  exports: [AccordionComponent, AccordionGroupComponent]
+  exports: [AccordionComponent, AccordionGroupComponent, ShareModule]
 })
 
 export class AccordionModule {}
