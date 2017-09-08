@@ -1,5 +1,25 @@
 # Change Log
 
+[中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
+
+## 0.2.2(2017-09-09)
+
+**Features**
+
+- Add the share button.
+- Calendar add timeOnly property to show only time selection
+- Sidenav
+  - add outside / navStyle / overlayBackground properties
+  - direction property new top / bottom
+  - Add flattening mode, the content follows the menu translation
+- Modal add draggable.
+
+**Bug Fixes**
+  
+- Fix the problem which the f-header component could not be found
+- Export the FlowModule module globally[#3](https://github.com/IronPans/freeng/issues/3)
+- Fix the problem which the button have to double-click to open Sidenav when you click the translucent background to close Sidenav.[#3](https://github.com/IronPans/freeng/issues/3)
+
 ## 0.2.1(2017-08-30)
 
 **Bug Fixes**
@@ -9,14 +29,11 @@
 
 ## 0.2.0(2017-08-29)
 
-**Components**
-
-- Media
-- Cropper
-- Flow
-
 **Features**
 
+- add component Media
+- add component Cropper
+- add component Flow
 - Added ratings for new stars
 - Timeline new custom title
 - Breadcrumb new Two custom types

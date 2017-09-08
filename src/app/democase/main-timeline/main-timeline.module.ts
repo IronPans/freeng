@@ -8,7 +8,6 @@ import {TabGroupModule} from '../../component/tab/tab.component';
 import {GridModule} from '../../component/grid/grid.directive';
 import {TimelineModule} from '../../component/timeline/timeline.component';
 import {ImageModule} from '../../component/image/image.component';
-import {ShareModule} from '../../component/common/share';
 import {LanguageModule} from '../common/language';
 @NgModule({
   imports: [
@@ -20,7 +19,6 @@ import {LanguageModule} from '../common/language';
     GridModule,
     TimelineModule,
     ImageModule,
-    ShareModule,
     LanguageModule
   ],
   declarations: [MainTimelineComponent]

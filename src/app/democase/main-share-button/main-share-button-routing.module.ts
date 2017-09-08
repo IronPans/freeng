@@ -1,13 +1,12 @@
-
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {MainShrinkComponent} from './main-shrink.component';
+import {MainShareButtonComponent} from './main-share-button.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
-    {path: '', component: MainShrinkComponent}
+    {path: '', component: MainShareButtonComponent}
   ])],
   exports: [RouterModule]
 })
 
-export class MainShrinkRoutingModule {}
+export class MainShareButtonRoutingModule {}

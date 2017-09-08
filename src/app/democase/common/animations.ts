@@ -1,6 +1,3 @@
-/**
- * Created by root on 17-4-24.
- */
 import { trigger, style, state, animate, transition } from '@angular/animations';
 
 export const fadeInUp = trigger('fadeInUpState', [

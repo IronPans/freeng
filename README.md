@@ -8,9 +8,11 @@
 
 UI Components for Angular.
 
+[中文 README](https://github.com/IronPans/freeng/blob/master/README-zh_CN.md)
+
 ## Demo
 
-View all the Components in action at [HomePage](http://ghmagical.com/freeng/releases/version/v0.2.1/)
+View all the Components in action at [HomePage](https://ironpans.github.io/freeng/)
 
 ## Installation
 

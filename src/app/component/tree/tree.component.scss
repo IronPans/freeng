@@ -1,6 +1,21 @@
-@import "../../../assets/sass/variables";
+$default:#222;
 
 .free-tree {
+
+  .free-checkbox {
+    display: inline;
+
+    .free-checkbox-ins {
+      transform: scale(.8);
+    }
+
+    .free-checkbox-inner {
+      padding: 0;
+      & > input:checked + .free-checkbox-ins:before {
+        background: $default;
+      }
+    }
+  }
 
   ul {
     list-style: none;
@@ -28,21 +43,17 @@
       & > span {
         display: inline-flex;
         align-items: center;
+        line-height: 0;
 
-        &:before {
-          content: "\f105";
+        free-echeckbox + .free-tree-item-inner {
+          padding-left: .3rem;
+        }
+
+        & > i {
           order: -2;
-        }
-
-        &:after {
-          content: "\f07b";
-          order: -1;
+          display: block;
+          line-height: 0;
           padding: 0 .3rem;
-          color: $default;
-        }
-
-        &:before,
-        &:after {
           transition: all .25s;
         }
 
@@ -54,28 +65,25 @@
       &.open {
         height: auto;
 
-        & > span:after {
-          content: "\f07c";
-        }
-        & > span:before {
-          transform: rotate(90deg);
+        & > span > i {
+          transform: rotate(-90deg);
         }
       }
     }
 
     li.last span {
       position: relative;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       padding-left: 15px;
 
-      &:before {
-        content: "\f15c";
-        padding-right: .3rem;
+      i {
+        padding: 0 .3rem 0 0;
         color: $default;
       }
 
-      &.image:before {
-        content: "\f1c5";
+      free-echeckbox + i {
+        padding: 0 .3rem;
       }
     }
   }

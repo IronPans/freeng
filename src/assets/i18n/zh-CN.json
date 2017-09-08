@@ -3,6 +3,19 @@
   "INTRODUCTION": "简介",
   "GET-START": "开始使用",
   "UI-ELEMENT": "UI 元素",
+  "Forms": "表单",
+  "Selector": "选择器",
+  "Table": "表格",
+  "Modal": "模态框",
+  "Layout": "面板",
+  "List": " 列表",
+  "Menu": "菜单",
+  "Editors": "编辑器",
+  "Progress": "进度条",
+  "Charts": "图表",
+  "Media": "媒体元素",
+  "Misc": "其他",
+  "Buttons": "按钮",
   "BASIC-COMPONENT": "基础组件",
   "EXTENDED-COMPONENT": "拓展组件",
   "PAGE": "页面",
@@ -186,7 +199,8 @@
         "设置是否可输入，可选，默认为true",
         "是否显示时间(时分秒)，可选，默认为false",
         "是否内联显示，可选，默认为false",
-        "设置宽度(只有内联显示时才生效)，可选，默认为250"
+        "设置宽度(只有内联显示时才生效)，可选，默认为250",
+        "是否只显示时间选择，可选，默认为false"
       ],
       "EVENTS": [
         "当选择值时触发的回调事件，可选。"
@@ -491,11 +505,15 @@
     },
     "SIDENAV": {
       "DESCRIPTION": " 侧边栏以滑动方式展现菜单或导航等内容。",
+      "ITEMDESCRIPTION": ["开启平推方式时，用来放置主内容"],
       "OPTION": [
         "是否展开，必选。默认为false",
-        "设置侧边栏的位置。默认为left。可选(left/right)",
+        "设置侧边栏的位置。默认为left。可选(left/right/top/bottom)",
         "是否显示半透明背景(可点击关闭侧边栏)，可选。默认为false",
-        "设置侧边栏的样式，可选"
+        "设置侧边栏的样式，可选",
+        "点击其他地方是否关闭侧边栏，默认为false",
+        "设置侧边栏菜单样式，可选",
+        "设置遮罩的背景色，可选"
       ],
       "EVENTS": [
         "当侧边栏关闭或打开时触发的回调函数，可选。返回值:"
@@ -630,6 +648,15 @@
       "EMAIL": "邮箱",
       "CONFIRM": "确认密码",
       "WELCOME": "从这里启航，进入FreeNG的世界"
+    },
+    "SHAREBUTTON": {
+      "DESCRIPTION": "一键分享",
+      "OPTION": [
+        "分享按钮数组，默认全部",
+        "<p>分享数据</p><p>&#123;<br><code>url</code>: '分享地址,默认使用 window.location.href', <br><code>title</code>: '分享标题默认读取 document.title 或者 &lt;meta name='title' content='' /&gt;', <br><code>description</code>: '分享内容,默认读取head标签：&lt;meta name='description' content='' /&gt;', <br><code>image</code>: '分享图片, 默认取网页中第一个img标签', <br><code>source</code>: 'QQ空间会用到,默认读取head标签：&lt;meta name='site' content='' /&gt;'<br>&#125;</p>",
+        "禁用分享按钮，默认为[]",
+        "弹出窗口属性,默认&#123;width: 500, height: 400&#125;"
+      ]
     }
   },
   "LIBRARY": "库",
@@ -694,7 +721,8 @@
     "TYPOGRAPHY": "辅助元素",
     "SHADOW": "阴影",
     "LOGIN": "登录页",
-    "PAGE404": "404页面"
+    "PAGE404": "404页面",
+    "SHAREBUTTON": "分享按钮"
   },
   "UPDATE": {
     "v010": {},
@@ -720,7 +748,11 @@
       "BUG": " <li>修复日期选择器的范围选择问题</li><li>修复富文本编辑器的table选择框高度错乱</li><li>修复星星评分(Rating)无法恢复原值的问题</li><li>调整输入框(Inputtext)验证提示的位置</li>"
     },
     "v021": {
-      "BUG": "<li>修复需要手动安装highlight.js依赖</li></li><li>修复需要手动安装chart.js依赖问题</li>"
+      "BUG": "<li>修复需要手动安装highlight.js依赖</li><li>修复需要手动安装chart.js依赖问题</li>"
+    },
+    "v022": {
+      "ADD": "<li>新增分享按钮</li><li>Calendar新增timeOnly属性，只显示时间选择</li><li><span>Sidenav</span><ul class='free-padding-ul'><li>新增outside/navStyle/overlayBackground属性</li><li>direction属性新增top/bottom</li><li>新增平推模式，内容跟随菜单平移</li></ul></li><li>Modal新增可拖动</li>",
+      "BUG": "<li>修复找不到f-header组件的问题</li><li>全局导出FlowModule模块<a href='https://github.com/IronPans/freeng/issues/3'>#3</a></li><li>修复Sidenav当点击半透明背景关闭时，打开的按钮要双击才能打开<a href='https://github.com/IronPans/freeng/issues/3'>#3</a></li>"
     },
     "ADD": "新增",
     "FIX": "修复",

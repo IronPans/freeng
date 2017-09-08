@@ -539,4 +539,8 @@ export class DomRenderer {
       this.removeEventListener(elem, t, callback);
     }
   }
+
+  public isMobileScreen () {
+    return window.innerWidth <= 768;
+  }
 }

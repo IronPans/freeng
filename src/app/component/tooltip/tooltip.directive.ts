@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Directive, OnInit, AfterViewInit,
-  Input, HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { NgModule, Directive, Input, HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { DomRenderer } from '../common/dom';
 
 @Directive({
   selector: '[fTooltip]',
   providers: [DomRenderer]
 })
-export class TooltipDirective implements OnInit, AfterViewInit {
+export class TooltipDirective {
 
   @Input('fTooltip') text: string;
   @Input() tooltipPosition = 'right';
@@ -25,12 +24,6 @@ export class TooltipDirective implements OnInit, AfterViewInit {
   @HostListener('mouseleave', ['$event'])
   onMouseLeave(e: Event) {
     this.destroy();
-  }
-
-  ngOnInit() {}
-
-  ngAfterViewInit() {
-
   }
 
   destroy() {

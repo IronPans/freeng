@@ -48,8 +48,8 @@ export class TimelineComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule, ShareModule],
+  imports: [CommonModule],
   declarations: [TimelineItemComponent, TimelineComponent],
-  exports: [[TimelineItemComponent, TimelineComponent]]
+  exports: [TimelineItemComponent, TimelineComponent, ShareModule]
 })
 export class TimelineModule {}

@@ -1,5 +1,26 @@
 # Change Log
 
+[EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
+
+## 0.2.2(2017-09-09)
+
+**Features**
+
+- 新增分享按钮
+- Calendar新增timeOnly属性，只显示时间选择
+- Sidenav
+  - 新增outside/navStyle/overlayBackground属性
+  - direction属性新增top/bottom
+  - 新增平推模式，内容跟随菜单平移
+- Modal新增可拖动
+
+**Bug Fixes**
+  
+- 修复找不到f-header组件的问题
+- 全局导出FlowModule模块[#3](https://github.com/IronPans/freeng/issues/3)
+- 修复Sidenav当点击半透明背景关闭时，打开的按钮要双击才能打开[#3](https://github.com/IronPans/freeng/issues/3)
+
+
 ## 0.2.1(2017-08-30)
 
 **Bug Fixes**
@@ -9,14 +30,11 @@
 
 ## 0.2.0(2017-08-29)
 
-**Components**
-
-- 媒体播放器
-- 图片裁剪
-- 流加载
-
 **Features**
 
+- 新增媒体播放器
+- 新增图片裁剪
+- 新增流加载
 - 星星评分(Rating)新增半星评分
 - 时间轴(Timeline)新增自定义标题
 - 面包屑导航(Breadcrumb)新增两个自定义类型

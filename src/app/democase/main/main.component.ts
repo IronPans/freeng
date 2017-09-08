@@ -8,16 +8,13 @@ import {config} from '../common/config';
   styleUrls: ['./main.component.css'],
   animations: [fadeInUp]
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
   @HostBinding('@fadeInUpState') fadeInUpState;
   @HostBinding('style.display') display = 'block';
   version: string;
   pageTitle = 'HomePage';
   constructor() {
     this.version = config.version;
-  }
-
-  ngOnInit() {
   }
 }
 

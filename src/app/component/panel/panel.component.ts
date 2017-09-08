@@ -1,6 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule, Component, Input, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
 import {DomRenderer} from '../common/dom';
+import {ShareModule} from '../common/share';
 
 @Component({
   selector: 'free-panel',
@@ -37,7 +38,7 @@ export class PanelComponent implements AfterViewInit {
 @NgModule({
   imports: [CommonModule],
   declarations: [PanelComponent],
-  exports: [PanelComponent]
+  exports: [PanelComponent, ShareModule]
 })
 
 export class PanelModule {}

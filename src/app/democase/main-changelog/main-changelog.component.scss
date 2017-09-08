@@ -10,6 +10,7 @@
 
   h5 {
     color: #333;
+
     &.subtitle {
       margin: 15px 0;
     }
@@ -23,5 +24,11 @@
     font-size: .65rem;
     color: rgba(0,0,0,.65);
     border: 1px solid #eee;
+  }
+
+  ul li {
+    ul {
+      margin-left: 1rem;
+    }
   }
 }

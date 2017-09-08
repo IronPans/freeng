@@ -51,6 +51,8 @@ import {ShareModule} from './common/share';
 import {CropperModule} from './cropper/cropper.component';
 import {MediaModule} from './media/media.component';
 import {ChartModule} from './chart/chart.component';
+import {FlowModule} from './flow/flow.component';
+import { ShareButtonModule } from './share-button/share-button.component';
 
 export {AccordionModule} from './accordion/accordion.component';
 export {BadgeModule} from './badge/badge.component';
@@ -104,6 +106,8 @@ export {ShareModule} from './common/share';
 export {CropperModule} from './cropper/cropper.component';
 export {MediaModule} from './media/media.component';
 export {ChartModule} from './chart/chart.component';
+export {FlowModule} from './flow/flow.component';
+export {ShareButtonModule} from './share-button/share-button.component';
 export * from './common/dom';
 
 @NgModule({
@@ -159,7 +163,9 @@ export * from './common/dom';
     CodeModule,
     ShareModule,
     CropperModule,
-    MediaModule
+    MediaModule,
+    FlowModule,
+    ShareButtonModule
   ]
 })
 export class FreengModule {

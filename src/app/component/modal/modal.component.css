@@ -13,6 +13,8 @@
     box-shadow: none; }
     .free-modal.free-modal-spinner .free-modal-content {
       padding: 0; }
+  .free-modal .free-modal-header {
+    cursor: pointer; }
   .free-modal .free-modal-content {
     padding: .75rem;
     color: #fff; }

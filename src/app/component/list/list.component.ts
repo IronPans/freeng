@@ -47,7 +47,7 @@ export class ListItemComponent {
 @Component({
   selector: 'free-avatar',
   template:  `<div class="free-avatar" #avatar [class.free-avatar-circle]="circle">
-    <ng-content select="free-image"></ng-content>
+    <ng-content></ng-content>
   </div>`
 })
 

@@ -6,6 +6,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { ButtonModule } from '../button/button.directive';
 import { DomRenderer } from '../common/dom';
 import {RouterModule} from '@angular/router';
+import {ShareModule} from '../common/share';
 
 @Component({
   selector: 'free-dropdown',
@@ -143,7 +144,7 @@ export class DropdownComponent implements AfterViewInit, OnDestroy {
 @NgModule({
   imports: [CommonModule, ButtonModule, RouterModule],
   declarations: [DropdownComponent],
-  exports: [DropdownComponent]
+  exports: [DropdownComponent, ShareModule]
 })
 
 export class DropdownModule {}

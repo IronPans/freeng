@@ -28,11 +28,22 @@ export class MainTreeComponent implements OnInit {
                 title: 'canvas'
               }
             ]
+          },
+          {
+            title: 'Javascript',
+            file: [
+              {
+                title: 'canvas'
+              },
+              {
+                title: 'canvas'
+              }
+            ]
           }
         ]
       },
       {
-        title: 'Css',
+        title: 'CSS',
         file: [
           {
             title: 'background'

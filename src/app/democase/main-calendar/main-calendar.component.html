@@ -128,6 +128,15 @@
                 <ng-template>{{'DEMO.CALENDAR.OPTION.11' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>timeOnly</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CALENDAR.OPTION.12' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -290,6 +299,24 @@
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-calendar [inline]="true"&gt;&lt;/free-calendar&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">ShowTime</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px;">
+              <free-calendar [timeOnly]="true"></free-calendar>
+              <free-calendar [timeOnly]="true" [defaultDate]="'20:10:10'"></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-calendar [timeOnly]="true"&gt;&lt;/free-calendar&gt;
+              &lt;free-calendar [timeOnly]="true" [defaultDate]="'20:10:10'"&gt;&lt;/free-calendar&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

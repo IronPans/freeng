@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {ShareModule} from '../../component/common/share';
 import {AccordionModule} from '../../component/accordion/accordion.component';
 import {PanelModule} from '../../component/panel/panel.component';
 import {GridModule} from '../../component/grid/grid.directive';
@@ -16,7 +15,6 @@ import {LanguageModule} from '../common/language';
     CommonModule,
     RouterModule,
     MainRoutingModule,
-    ShareModule,
     AccordionModule,
     PanelModule,
     GridModule,

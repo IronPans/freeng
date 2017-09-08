@@ -3,24 +3,24 @@ import {CommonModule} from '@angular/common';
 import {TableModule} from '../../component/table/table.component';
 import {CodeModule} from '../../component/code/code.component';
 import {TabGroupModule} from '../../component/tab/tab.component';
-import {DropdownModule} from '../../component/dropdown/dropdown.component';
 import {GridModule} from '../../component/grid/grid.directive';
-import {MainDropdownRoutingModule} from './main-dropdown-routing.module';
-import {MainDropdownComponent} from './main-dropdown.component';
 import {LanguageModule} from '../common/language';
+import {MainShareButtonRoutingModule} from './main-share-button-routing.module';
+import {MainShareButtonComponent} from './main-share-button.component';
+import {ShareButtonModule} from '../../component/share-button/share-button.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    MainDropdownRoutingModule,
+    MainShareButtonRoutingModule,
     TabGroupModule,
     CodeModule,
     TableModule,
-    DropdownModule,
     GridModule,
+    ShareButtonModule,
     LanguageModule
   ],
-  declarations: [MainDropdownComponent]
+  declarations: [MainShareButtonComponent]
 })
 
-export class MainDropdownModule {}
+export class MainShareButtonModule {}

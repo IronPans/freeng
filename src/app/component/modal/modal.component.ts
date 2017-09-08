@@ -1,7 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {
   NgModule, Component, OnInit, Input, Output, EventEmitter,
-  Renderer2, ElementRef, ViewChild, AfterContentInit, AfterViewInit
+  Renderer2, ElementRef, ViewChild, AfterContentInit, AfterViewInit, OnDestroy
 } from '@angular/core';
 import { trigger, style, state, animate, transition} from '@angular/animations';
 import { ShareModule } from '../common/share';
@@ -13,8 +13,8 @@ import {LoadingModule} from '../loading/loading.component';
   template: `
     <div #modal class="free-modal" [style.width.px]="width" [style.height.px]="height"
          [@fadeInScale]="modalClass" (@fadeInScale.start)="animationEnd($event)"
-         [style.display]="visible ? 'block' : 'none'">
-      <div class="free-modal-header" *ngIf="!spinner">
+         [style.display]="visible ? 'block' : 'none'" [ngStyle]="{'left.px': left, 'top.px': top}">
+      <div class="free-modal-header" *ngIf="!spinner" (mousedown)="onMouseDown($event)">
         <span *ngIf="header">{{header}}</span>
         <span><ng-content select="f-header"></ng-content></span>
         <span *ngIf="closeIcon" class="free-modal-close" (click)="close()">
@@ -64,7 +64,7 @@ import {LoadingModule} from '../loading/loading.component';
     ])
   ]
 })
-export class ModalComponent implements OnInit, AfterContentInit, AfterViewInit {
+export class ModalComponent implements AfterContentInit, AfterViewInit, OnDestroy {
 
   @Input() header: string;
   @Input() width: any;
@@ -84,6 +84,12 @@ export class ModalComponent implements OnInit, AfterContentInit, AfterViewInit {
   modalClass: string;
   maskClickListener: Function;
   container: any;
+  isDown: boolean;
+  point: any;
+  left: number;
+  top: number;
+  documentMousemoveListener: any;
+  documentMouseupListener: any;
 
   constructor(public er: ElementRef,
               public renderer2: Renderer2) { }
@@ -102,8 +108,6 @@ export class ModalComponent implements OnInit, AfterContentInit, AfterViewInit {
       this.close();
     }
   }
-
-  ngOnInit() {}
 
   ngAfterViewInit() {
     this.modal = this.modalViewChild.nativeElement;
@@ -192,10 +196,45 @@ export class ModalComponent implements OnInit, AfterContentInit, AfterViewInit {
       this.modal.style.display = 'none';
     }
 
-    this.modal.style.left = (win.width - mw.width) / 2 + 'px';
-    this.modal.style.top = (win.height - mw.height) / 2 + 'px';
+    this.left = (win.width - mw.width) / 2;
+    this.top = (win.height - mw.height) / 2;
   }
 
+  onMouseDown(event: any) {
+    this.isDown = true;
+    this.point = {
+      pageX: event.pageX,
+      pageY: event.pageY
+    };
+    this.documentMousemoveListener = this.renderer2.listen('document', 'mousemove', (e) => {
+      if (this.isDown) {
+        this.left += e.pageX - this.point.pageX;
+        this.top += e.pageY - this.point.pageY;
+      }
+      this.point = {
+        pageX: e.pageX,
+        pageY: e.pageY
+      };
+    });
+    this.documentMousemoveListener = this.renderer2.listen('document', 'mouseup', (e) => {
+      this.isDown = false;
+    });
+  }
+
+  unbindDocumentMouseListener() {
+    if (this.documentMousemoveListener) {
+      this.documentMousemoveListener();
+      this.documentMousemoveListener = null;
+    }
+    if (this.documentMouseupListener) {
+      this.documentMouseupListener();
+      this.documentMouseupListener = null;
+    }
+  }
+
+  ngOnDestroy() {
+    this.unbindDocumentMouseListener();
+  }
 }
 
 @NgModule({

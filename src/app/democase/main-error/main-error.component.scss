@@ -1,3 +1,4 @@
+
 :host /deep/ {
   .free-error-page {
     position: absolute;
@@ -76,3 +77,11 @@
     }
   }
 }
+
+//@each $theme, $color in $theme {
+//  :host-context(.free-theme-#{$theme}) /deep/ {
+//    .free-error-page .free-error-board {
+//      background: $color;
+//    }
+//  }
+//}

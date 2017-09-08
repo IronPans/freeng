@@ -2,7 +2,6 @@ import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {IndexComponent} from './index.component';
-import {ShareModule} from '../../component/common/share';
 import {ListModule} from '../../component/list/list.component';
 import {SidenavModule} from '../../component/sidenav/sidenav.component';
 import {ShrinkModule} from '../../component/shrink/shrink.component';
@@ -19,6 +18,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {IndexRoutingModule} from './index-routing.module';
 import {PanelModule} from '../../component/panel/panel.component';
 import {LanguageModule} from '../common/language';
+import {ImageModule} from '../../component/image/image.component';
 
 @NgModule({
   imports: [
@@ -33,7 +33,6 @@ import {LanguageModule} from '../common/language';
     AccordionModule,
     DropdownModule,
     HamburgeModule,
-    ShareModule,
     GridModule,
     RippleModule,
     BadgeModule,
@@ -41,6 +40,7 @@ import {LanguageModule} from '../common/language';
     SidenavModule,
     ListModule,
     PanelModule,
+    ImageModule,
     LanguageModule
   ],
   declarations: [

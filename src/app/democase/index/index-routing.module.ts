@@ -57,6 +57,7 @@ const childRoutes: Routes = [
   {path: 'media', loadChildren: '../main-media/main-media.module#MainMediaModule'},
   {path: 'cropper', loadChildren: '../main-cropper/main-cropper.module#MainCropperModule'},
   {path: 'panel', loadChildren: '../main-panel/main-panel.module#MainPanelModule'},
+  {path: 'share-button', loadChildren: '../main-share-button/main-share-button.module#MainShareButtonModule'},
   {path: '', redirectTo: '/main/introduction', pathMatch: 'full'},
   {path: '**', redirectTo: '/error'}
 ];

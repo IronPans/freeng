@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {NgModule, Component, OnInit, Input, ElementRef, AfterViewInit, HostListener, HostBinding} from '@angular/core';
+import {NgModule, Component, Input, ElementRef, HostBinding} from '@angular/core';
 
 @Component({
   selector: 'free-image',
@@ -9,7 +9,7 @@ import {NgModule, Component, OnInit, Input, ElementRef, AfterViewInit, HostListe
     </div>
   `
 })
-export class ImageComponent implements OnInit, AfterViewInit {
+export class ImageComponent {
   @Input() src: string;
   @Input() alt: string;
   @Input() highlight: boolean;
@@ -22,27 +22,21 @@ export class ImageComponent implements OnInit, AfterViewInit {
   }
   @HostBinding('style.width') width: any;
   constructor(public er: ElementRef) { }
-  ngOnInit() {
-  }
-  ngAfterViewInit() {
-  }
 }
 
 @Component({
   selector: 'free-image-group',
   template: `
     <div class="free-image-group">
-      <free-image *ngFor="let image of images"
-                  [src]="image.src" [alt]="image.alt"
+      <free-image *ngFor="let image of images" [src]="image.src" [alt]="image.alt"
                   [highlight]="image.highlight"></free-image>
     </div>
   `
 })
 
-export class ImageGroupComponent implements OnInit {
+export class ImageGroupComponent {
   @Input() images = [];
   constructor() {}
-  ngOnInit() {}
 }
 
 @NgModule({

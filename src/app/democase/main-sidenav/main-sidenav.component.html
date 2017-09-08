@@ -55,6 +55,33 @@
                 <ng-template>{{'DEMO.SIDENAV.OPTION.3' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>outside</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SIDENAV.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>navStyle</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>object</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SIDENAV.OPTION.5' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>overlayBackground</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SIDENAV.OPTION.6' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -84,6 +111,10 @@
           </free-table-body>
         </free-table>
       </div>
+      <div class="free-demo-row">
+        <h3 class="free-title">free-sidenav-content</h3>
+        <p>{{'DEMO.SIDENAV.ITEMDESCRIPTION.0' | translate}}</p>
+      </div>
     </div>
 
     <div fGrid="6" class="free-demo-board">
@@ -107,6 +138,8 @@
              <div class="simulation-browser">
                <button fButton (click)="leftSidenav = !leftSidenav">Open Left</button>
                <button fButton (click)="rightSidenav = !rightSidenav">Open Right</button>
+               <button fButton (click)="topSidenav = !topSidenav">Open Top</button>
+               <button fButton (click)="bottomSidenav = !bottomSidenav">Open Bottom</button>
                <free-sidenav [visible]="leftSidenav">
                  <h3>Left Sidenav</h3>
                  <button fButton (click)="leftSidenav = !leftSidenav">close</button>
@@ -114,6 +147,14 @@
                <free-sidenav [visible]="rightSidenav" [direction]="'right'">
                  <h3>Right Sidenav</h3>
                  <button fButton (click)="rightSidenav = !rightSidenav">close</button>
+               </free-sidenav>
+               <free-sidenav [visible]="topSidenav" [direction]="'top'">
+                 <h3>Right Sidenav</h3>
+                 <button fButton (click)="topSidenav = !topSidenav">close</button>
+               </free-sidenav>
+               <free-sidenav [visible]="bottomSidenav" [direction]="'bottom'">
+                 <h3>Right Sidenav</h3>
+                 <button fButton (click)="bottomSidenav = !bottomSidenav">close</button>
                </free-sidenav>
              </div>
           </free-tab>
@@ -140,7 +181,7 @@
           <free-tab header="PREVIEW">
             <div class="simulation-browser">
               <button fButton (click)="overlay = !overlay">Open</button>
-              <free-sidenav [visible]="overlay" [overlay]="true">
+              <free-sidenav [(visible)]="overlay" [overlay]="true">
                 <h3>Sidenav</h3>
               </free-sidenav>
             </div>
@@ -150,6 +191,62 @@
               &lt;button fButton (click)="overlay = !overlay"&gt;Open&lt;/button&gt;
               &lt;free-sidenav [visible]="overlay" [overlay]="true"&gt;
                 &lt;h3&gt;Sidenav&lt;/h3&gt;
+              &lt;/free-sidenav&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board free-four">
+        <h3 class="free-toolbar">Content</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <div class="simulation-browser">
+              <free-sidenav [(visible)]="contentVisible" [outside]="true">
+                <h3>Sidenav</h3>
+                <free-sidenav-content>
+                  <button fButton (click)="contentVisible = !contentVisible">Open</button>
+                </free-sidenav-content>
+              </free-sidenav>
+            </div>
+            <div class="simulation-browser">
+              <free-sidenav [(visible)]="contentRightVisible"
+                            [outside]="true" [direction]="'right'">
+                <h3>Sidenav</h3>
+                <free-sidenav-content>
+                  <button style="float:right" fButton
+                          (click)="contentRightVisible = !contentRightVisible">Open</button>
+                </free-sidenav-content>
+              </free-sidenav>
+            </div>
+            <div class="simulation-browser">
+              <free-sidenav [(visible)]="contentTopVisible"
+                            [outside]="true" [direction]="'top'">
+                <h3>Sidenav</h3>
+                <free-sidenav-content>
+                  <button fButton
+                          (click)="contentTopVisible = !contentTopVisible">Open</button>
+                </free-sidenav-content>
+              </free-sidenav>
+            </div>
+            <div class="simulation-browser">
+              <free-sidenav [(visible)]="contentBottomVisible"
+                            [outside]="true" [direction]="'bottom'">
+                <h3>Sidenav</h3>
+                <free-sidenav-content>
+                  <button fButton
+                          (click)="contentBottomVisible = !contentBottomVisible">Open</button>
+                </free-sidenav-content>
+              </free-sidenav>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-sidenav [(visible)]="contentVisible" [outside]="true"&gt;
+                &lt;h3&gt;Sidenav&lt;/h3&gt;
+                &lt;free-sidenav-content&gt;
+                  &lt;button fButton (click)="overlay = !overlay"&gt;Open&lt;/button&gt;>
+                &lt;/free-sidenav-content&gt;
               &lt;/free-sidenav&gt;
             </free-code>
           </free-tab>

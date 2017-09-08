@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Component, OnInit, AfterViewInit, Renderer2,
+import { NgModule, Component, AfterViewInit, Renderer2,
   Input, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
@@ -12,7 +12,7 @@ import { NgModule, Component, OnInit, AfterViewInit, Renderer2,
     </div>
   `
 })
-export class ProgressComponent implements OnInit, AfterViewInit {
+export class ProgressComponent implements AfterViewInit {
 
   @Input() value: string;
   @Input() theme: string;
@@ -24,8 +24,6 @@ export class ProgressComponent implements OnInit, AfterViewInit {
   _bar: HTMLElement;
   _container: HTMLElement;
   constructor(public renderer2: Renderer2) { }
-
-  ngOnInit() {}
 
   ngAfterViewInit() {
     this._container = this.container.nativeElement;

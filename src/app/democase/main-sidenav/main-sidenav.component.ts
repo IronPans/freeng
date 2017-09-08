@@ -13,6 +13,12 @@ export class MainSidenavComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   leftSidenav: boolean;
   rightSidenav: boolean;
+  topSidenav: boolean;
+  bottomSidenav: boolean;
+  contentVisible: boolean;
+  contentRightVisible: boolean;
+  contentTopVisible: boolean;
+  contentBottomVisible: boolean;
   overlay: boolean;
   constructor() { }
 

@@ -6,7 +6,21 @@
   width: 100%;
   height: 100%;
   display: none;
-  z-index: 10000;
+  z-index: 9950;
+
+  &.free-sidenav-push {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+
+    .free-sidenav-content {
+      transform: translate(0, 0);
+      transition: all .3s linear;
+    }
+  }
 
   .free-sidenav-overlay {
     position: absolute;
@@ -17,12 +31,14 @@
     opacity: 0;
     background: rgba(0,0,0,.54);
     transition: all .3s linear;
+
+    &.free-sidenav-outside {
+      background: transparent !important;
+    }
   }
 
   .free-sidenav-wrapper {
     position: absolute;
-    top: 0;
-    bottom: 0;
     width: 12.5rem;
     background: #fff;
   }
@@ -35,12 +51,40 @@
 
   &.free-sidenav-left {
     .free-sidenav-wrapper {
+      top: 0;
+      bottom: 0;
       left: 0;
     }
   }
 
   &.free-sidenav-right {
     .free-sidenav-wrapper {
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &.free-sidenav-top,
+  &.free-sidenav-bottom {
+    .free-sidenav-wrapper {
+      width: 100%;
+      height: 10rem;
+    }
+  }
+
+  &.free-sidenav-top {
+    .free-sidenav-wrapper {
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &.free-sidenav-bottom {
+    .free-sidenav-wrapper {
+      bottom: 0;
+      left: 0;
       right: 0;
     }
   }

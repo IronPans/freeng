@@ -7,7 +7,6 @@ import {TabGroupModule} from '../../component/tab/tab.component';
 import {MainPanelComponent} from './main-panel.component';
 import {MainPanelRoutingModule} from './main-panel-routing.module';
 import {PanelModule} from '../../component/panel/panel.component';
-import {ShareModule} from '../../component/common/share';
 import {LanguageModule} from '../common/language';
 
 @NgModule({
@@ -16,7 +15,6 @@ import {LanguageModule} from '../common/language';
     TabGroupModule,
     CodeModule,
     TableModule,
-    ShareModule,
     GridModule,
     PanelModule,
     MainPanelRoutingModule,

@@ -1,0 +1,139 @@
+<div class="main-container">
+  <div class="row">
+    <div fGrid="6" class="free-demo-board">
+      <p>
+        {{'DEMO.SHAREBUTTON.DESCRIPTION' | translate}}
+      </p>
+      <hr>
+      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">free-share-button (fShareButton)</h3>
+        <p>{{'COMPONENT.SHAREBUTTON' | translate}}</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>shareButtons</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SHAREBUTTON.OPTION.0' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>shareData</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Object</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  <div [innerHTML]="'DEMO.SHAREBUTTON.OPTION.1' | translate"></div>
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>shareDisabled</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Array</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SHAREBUTTON.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>windowAttr</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Object</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  <div [innerHTML]="'DEMO.SHAREBUTTON.OPTION.3' | translate"></div>
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+    </div>
+
+    <div class="free-demo-board" fGrid="6">
+      <div class="free-demo-board">
+        <div class="free-card-board">
+          <h3 class="free-toolbar">Import</h3>
+          <free-tab-group direction="right" theme="line">
+            <free-tab header="CODE">
+              <free-code lang="typescript">
+                import &#123;ShareButtonModule&#125; from 'freeng/freeng';
+              </free-code>
+            </free-tab>
+          </free-tab-group>
+        </div>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+             <free-share-button [shareData]="shareData"></free-share-button>
+
+            <div fShareButton [shareData]="shareData"></div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-share-button [shareData]="shareData"&gt;&lt;/free-share-button&gt;
+
+              &lt;div fShareButton [shareData]="shareData"&gt;&lt;/div&gt;
+            </free-code>
+            <h4>Javascript</h4>
+            <free-code lang="typescript">
+              this.shareData = &#123;
+                title: 'FreeNG: UI Components for Angular4',
+                description: 'FreeNG - 一键分享到微博，QQ空间，腾讯微博，豆瓣，facebook，twitter，google，linkedIn',
+                image: 'http://oumfrpm5j.bkt.clouddn.com/freeng_logo.png'
+              &#125;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Single</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-share-button [shareData]="shareData"
+                               [shareButtons]="[{'type': 'facebook'}]"></free-share-button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-share-button [shareData]="shareData" [shareButtons]="[&#123;'type': 'facebook'&#125;]"&gt;&lt;/free-share-button&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Disabled</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-share-button [shareDisabled]="['facebook']" [shareData]="shareData"></free-share-button>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-share-button [shareData]="shareData" [shareDisabled]="['facebook']"&gt;&lt;/free-share-button&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
+</div>

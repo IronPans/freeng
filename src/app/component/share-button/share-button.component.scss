@@ -1,0 +1,76 @@
+
+.free-share-button {
+  button {
+    position: relative;
+    color: #fff;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: all .25s;
+    }
+
+    .fa-douban:before {
+      content: '豆';
+    }
+
+    .fa-diandian:before {
+      content: '点';
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      color: #fff;
+
+      &:after {
+        background: rgba(0,0,0,.2);
+      }
+    }
+
+    &.free-share-qq {
+      background: #56b6e7;
+    }
+
+    &.free-share-qzone {
+      background: #FDBE3D;
+    }
+
+    &.free-share-tencent {
+      background: #56b6e7;
+    }
+
+    &.free-share-weibo {
+      background: #ff763b;
+    }
+
+    &.free-share-douban {
+      background: #33b045;
+    }
+
+    &.free-share-diandian {
+      background: #307DCA;
+    }
+
+    &.free-share-facebook {
+      background: #4267b2;
+    }
+
+    &.free-share-twitter {
+      background: #00acee;
+    }
+
+    &.free-share-linkedIn {
+      background: #006fa6;
+    }
+
+    &.free-share-google {
+      background: #db4437;
+    }
+  }
+
+}

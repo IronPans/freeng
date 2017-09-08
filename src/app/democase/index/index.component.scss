@@ -305,7 +305,7 @@
 
     .accordion-content {
       color: $link-color;
-      background: rgba(0, 0, 0, 0.03);
+      background: rgba(0, 0, 0, 0.07);
 
       .accordion-inner {
         padding: 0 !important;
@@ -648,7 +648,7 @@
     font-size: 18px;
     width: 2rem;
     height: 2rem;
-    z-index: 10999;
+    z-index: 9980;
     display: flex;
     align-items: center;
     justify-content: center;

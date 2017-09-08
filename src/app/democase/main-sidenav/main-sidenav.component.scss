@@ -5,7 +5,12 @@
     overflow: hidden;
     position: relative;
     background: #eee;
+    margin: 10px;
     border: 1px solid #d9d9d9;
     transform: translate(0, 0);
+  }
+
+  .free-four .simulation-browser {
+    width: 45%;
   }
 }

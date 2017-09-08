@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Component, OnInit,
-  AfterViewInit, ElementRef, ViewChild, Input, Renderer2 } from '@angular/core';
+  AfterViewInit, ElementRef, ViewChild, Input } from '@angular/core';
 import { DomRenderer } from '../common/dom';
 
 @Component({
   selector: 'free-scroll',
   template: `
-     <div class="free-scroll" #scroll (wheel)="onWheel($event)" 
+     <div class="free-scroll" #scroll (wheel)="onWheel($event)"
          (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
       <div class="free-scroll-wrapper">
         <div class="free-scroll-inner">

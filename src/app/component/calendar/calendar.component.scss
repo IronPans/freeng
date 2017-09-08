@@ -107,6 +107,9 @@
       transform: translate(0, -50%);
     }
 
+    &.free-select-timeonly:before {
+      content: "\f017";
+    }
   }
 
   .free-calendar-wrapper {
@@ -257,6 +260,36 @@
 
       .calendar-today {
         font-size: .75rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .free-calendar-time {
+    display: flex;
+    justify-content: center;
+    padding-top: .25rem;
+
+    .free-calendar-selector {
+      width: 22px;
+      margin: 0 5px;
+      display: flex;
+      font-size: 13px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .free-calendar-selector-wrapper {
+        line-height: 22px;
+      }
+
+      & > span {
+        margin: 0;
+      }
+
+      span:first-child,
+      span:last-child {
+        padding: 0 5px;
         cursor: pointer;
       }
     }

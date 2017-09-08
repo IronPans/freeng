@@ -10,7 +10,6 @@ import {DomRenderer} from '../common/dom';
 })
 
 export class ButtonDirective implements AfterViewInit {
-  button: HTMLButtonElement;
   @Input() icon: string;
   @Input() theme: string;
   @Input() direction: string;
@@ -18,6 +17,7 @@ export class ButtonDirective implements AfterViewInit {
   @Input() roundRadius: number;
   @Input() size: string;
   @Input() loading: string;
+  button: HTMLButtonElement;
 
   constructor(public er: ElementRef,
               public domRenderer: DomRenderer) {
@@ -84,7 +84,6 @@ export class BlockDirective implements AfterViewInit {
 })
 
 export class ButtonGroupComponent {
-
 }
 
 @NgModule({
