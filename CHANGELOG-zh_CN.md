@@ -2,7 +2,13 @@
 
 [EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
 
-## 0.2.2(2017-09-09)
+## 0.2.3(2017-09-09)
+
+**Bug Fixes**
+  
+- 修复TreeComponent无法选择的错误
+
+## 0.2.2(2017-09-08)
 
 **Features**
 
@@ -19,7 +25,6 @@
 - 修复找不到f-header组件的问题
 - 全局导出FlowModule模块[#3](https://github.com/IronPans/freeng/issues/3)
 - 修复Sidenav当点击半透明背景关闭时，打开的按钮要双击才能打开[#3](https://github.com/IronPans/freeng/issues/3)
-
 
 ## 0.2.1(2017-08-30)
 

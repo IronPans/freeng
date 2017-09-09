@@ -2,7 +2,13 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
-## 0.2.2(2017-09-09)
+## 0.2.3(2017-09-09)
+
+**Bug Fixes**
+  
+- Fix the bug which TreeComponent could not be select
+
+## 0.2.2(2017-09-08)
 
 **Features**
 

@@ -16,15 +16,15 @@ export class MainFlowComponent implements OnInit {
   constructor() {
     this.lis = [1, 2, 3, 4, 5, 6, 7, 8];
     this.images = [
-      {'src': 'assets/images/landscape1.jpg', 'alt': 'image'},
-      {'src': 'assets/images/landscape2.jpg', 'alt': 'image'},
-      {'src': 'assets/images/landscape3.jpg', 'alt': 'image'},
-      {'src': 'assets/images/landscape7.jpg', 'alt': 'image'},
-      {'src': 'assets/images/landscape8.jpg', 'alt': 'image'},
-      {'src': 'assets/images/landscape11.jpg', 'alt': 'image'},
-      {'src': 'assets/images/landscape16.jpg', 'alt': 'image'},
-      {'src': 'assets/images/landscape17.jpg', 'alt': 'image'},
-      {'src': 'assets/images/landscape18.jpg', 'alt': 'image'}
+      {'src': 'freeng/assets/images/landscape1.jpg', 'alt': 'image'},
+      {'src': 'freeng/assets/images/landscape2.jpg', 'alt': 'image'},
+      {'src': 'freeng/assets/images/landscape3.jpg', 'alt': 'image'},
+      {'src': 'freeng/assets/images/landscape7.jpg', 'alt': 'image'},
+      {'src': 'freeng/assets/images/landscape8.jpg', 'alt': 'image'},
+      {'src': 'freeng/assets/images/landscape11.jpg', 'alt': 'image'},
+      {'src': 'freeng/assets/images/landscape16.jpg', 'alt': 'image'},
+      {'src': 'freeng/assets/images/landscape17.jpg', 'alt': 'image'},
+      {'src': 'freeng/assets/images/landscape18.jpg', 'alt': 'image'}
     ];
   }
 
@@ -49,7 +49,7 @@ export class MainFlowComponent implements OnInit {
       if (page < 5) {
         for (let i = 0; i < 4; i++) {
           this.images.push({
-            src: 'assets/images/f2.jpg',
+            src: 'freeng/assets/images/f2.jpg',
             alt: ''
           });
         }

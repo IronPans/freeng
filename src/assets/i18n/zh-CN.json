@@ -505,7 +505,9 @@
     },
     "SIDENAV": {
       "DESCRIPTION": " 侧边栏以滑动方式展现菜单或导航等内容。",
-      "ITEMDESCRIPTION": ["开启平推方式时，用来放置主内容"],
+      "ITEMDESCRIPTION": [
+        "开启平推方式时，用来放置主内容"
+      ],
       "OPTION": [
         "是否展开，必选。默认为false",
         "设置侧边栏的位置。默认为left。可选(left/right/top/bottom)",
@@ -724,42 +726,46 @@
     "PAGE404": "404页面",
     "SHAREBUTTON": "分享按钮"
   },
-  "UPDATE": {
-    "v010": {},
-    "v011": {
-      "CHANGE": {
-        "INPUTTEXT": "新增验证",
-        "DROPDOWN": "<p>1) 新增自定义内容</p><p>2) 新增hover事件</p>",
-        "MODAL": "<p>1) 新增loading模态框</p><p>2) 新增延时隐藏模态框</p>"
-      }
+    "UPDATE": {
+      "v010": {},
+      "v011": {
+        "CHANGE": {
+          "INPUTTEXT": "新增验证",
+          "DROPDOWN": "<p>1) 新增自定义内容</p><p>2) 新增hover事件</p>",
+          "MODAL": "<p>1) 新增loading模态框</p><p>2) 新增延时隐藏模态框</p>"
+        }
+      },
+      "v012": {
+        "FIX": "<li>修复表单验证在进入其他页面时依旧存在</li><li>修复分页器点击无效果</li><li>table组件删除选择框/排序/分页三个功能，如需前面的功能，请使用datatable。</li>",
+        "UPDATE": "<li>Inputtext新增组件正则验证</li><li>上传组件(upload)<ul class='free-ul-padding' style='list-style-type: circle;'><li>优化图片预览样式</li><li>free-file标签更名为free-upload</li></ul></li><li>Chip组件的chipsChange事件修改为onChange</li><li>List的avatar新增组件circle属性</li><li>选项卡(Tab)新增组件disabled属性和onChange事件</li><li>复选框的数据绑定进行了修改，详情请看示例。</li>"
+      },
+      "v013": {
+        "BUG": "修复组件(Accordion, Colorpicker, Calendar)样式"
+      },
+      "v014": {
+        "DESCRIPTION": "优化了样式"
+      },
+      "v020": {
+        "FEATURE": "<li>星星评分(Rating)新增半星评分</li><li>时间轴(Timeline)新增自定义标题</li><li>面包屑导航(Breadcrumb)新增两个自定义类型</li><li>滑动条(Range)新增handleSize属性，用来设置滑块大小</li><li>树形菜单(Tree)新增复选框和点击事件</li><li>面板新增主题属性</li>",
+        "BUG": " <li>修复日期选择器的范围选择问题</li><li>修复富文本编辑器的table选择框高度错乱</li><li>修复星星评分(Rating)无法恢复原值的问题</li><li>调整输入框(Inputtext)验证提示的位置</li>"
+      },
+      "v021": {
+        "BUG": "<li>修复需要手动安装highlight.js依赖</li><li>修复需要手动安装chart.js依赖问题</li>"
+      },
+      "v022": {
+        "ADD": "<li>新增分享按钮</li><li>Calendar新增timeOnly属性，只显示时间选择</li><li><span>Sidenav</span><ul class='free-padding-ul'><li>新增outside/navStyle/overlayBackground属性</li><li>direction属性新增top/bottom</li><li>新增平推模式，内容跟随菜单平移</li></ul></li><li>Modal新增可拖动</li>",
+        "BUG": "<li>修复找不到f-header组件的问题</li><li>全局导出FlowModule模块<a href='https://github.com/IronPans/freeng/issues/3'>#3</a></li><li>修复Sidenav当点击半透明背景关闭时，打开的按钮要双击才能打开<a href='https://github.com/IronPans/freeng/issues/3'>#3</a></li>"
+      },
+      "v023": {
+        "BUG": "<li>修复TreeComponent无法选择的错误</li>"
+      },
+      "ADD": "新增",
+      "FIX": "修复",
+      "UPDATE": "更新"
     },
-    "v012": {
-      "FIX": "<li>修复表单验证在进入其他页面时依旧存在</li><li>修复分页器点击无效果</li><li>table组件删除选择框/排序/分页三个功能，如需前面的功能，请使用datatable。</li>",
-      "UPDATE": "<li>Inputtext新增组件正则验证</li><li>上传组件(upload)<ul class='free-ul-padding' style='list-style-type: circle;'><li>优化图片预览样式</li><li>free-file标签更名为free-upload</li></ul></li><li>Chip组件的chipsChange事件修改为onChange</li><li>List的avatar新增组件circle属性</li><li>选项卡(Tab)新增组件disabled属性和onChange事件</li><li>复选框的数据绑定进行了修改，详情请看示例。</li>"
-    },
-    "v013": {
-      "BUG": "修复组件(Accordion, Colorpicker, Calendar)样式"
-    },
-    "v014": {
-      "DESCRIPTION": "优化了样式"
-    },
-    "v020": {
-      "FEATURE": "<li>星星评分(Rating)新增半星评分</li><li>时间轴(Timeline)新增自定义标题</li><li>面包屑导航(Breadcrumb)新增两个自定义类型</li><li>滑动条(Range)新增handleSize属性，用来设置滑块大小</li><li>树形菜单(Tree)新增复选框和点击事件</li><li>面板新增主题属性</li>",
-      "BUG": " <li>修复日期选择器的范围选择问题</li><li>修复富文本编辑器的table选择框高度错乱</li><li>修复星星评分(Rating)无法恢复原值的问题</li><li>调整输入框(Inputtext)验证提示的位置</li>"
-    },
-    "v021": {
-      "BUG": "<li>修复需要手动安装highlight.js依赖</li><li>修复需要手动安装chart.js依赖问题</li>"
-    },
-    "v022": {
-      "ADD": "<li>新增分享按钮</li><li>Calendar新增timeOnly属性，只显示时间选择</li><li><span>Sidenav</span><ul class='free-padding-ul'><li>新增outside/navStyle/overlayBackground属性</li><li>direction属性新增top/bottom</li><li>新增平推模式，内容跟随菜单平移</li></ul></li><li>Modal新增可拖动</li>",
-      "BUG": "<li>修复找不到f-header组件的问题</li><li>全局导出FlowModule模块<a href='https://github.com/IronPans/freeng/issues/3'>#3</a></li><li>修复Sidenav当点击半透明背景关闭时，打开的按钮要双击才能打开<a href='https://github.com/IronPans/freeng/issues/3'>#3</a></li>"
-    },
-    "ADD": "新增",
-    "FIX": "修复",
-    "UPDATE": "更新"
-  },
-  "YES": "是",
-  "STYLE": "样式",
-  "PUBLISH-LIFE": "<h4 class='free-title'>发布周期</h4><div style='margin-bottom: 1rem;'><ul class='free-ul-padding' style='list-style-type: circle'><li>版本更新：每周末会进行日常 bug修复。（如果有重大 bug，则任何时候都可发布）</li><li>主版本号：每月发布一个带有新功能的版本。</li></ul></div>",
-  "MESSAGE": "很高兴的通知各位，经过四个月时间的紧密开发，FreeNG@0.2.0 终于发布了。这个版本我重构了底层代码，持续更新新组件功能和完善优化现有组件功能，并提供了完整的使用文档。欢迎各位持续关注和鞭策。在使用过程中遇到任何问题，请及时反馈给我。"
-}
+    "YES": "是",
+    "STYLE": "样式",
+    "PUBLISH-LIFE": "<h4 class='free-title'>发布周期</h4><div style='margin-bottom: 1rem;'><ul class='free-ul-padding' style='list-style-type: circle'><li>版本更新：每周末会进行日常 bug修复。（如果有重大 bug，则任何时候都可发布）</li><li>主版本号：每月发布一个带有新功能的版本。</li></ul></div>",
+    "MESSAGE": "很高兴的通知各位，经过四个月时间的紧密开发，FreeNG@0.2.0 终于发布了。这个版本我重构了底层代码，持续更新新组件功能和完善优化现有组件功能，并提供了完整的使用文档。欢迎各位持续关注和鞭策。在使用过程中遇到任何问题，请及时反馈给我。"
+  }
+

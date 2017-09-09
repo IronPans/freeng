@@ -1,4 +1,4 @@
-
+@charset "utf-8";
 .free-share-button {
   button {
     position: relative;
@@ -14,11 +14,11 @@
     }
 
     .fa-douban:before {
-      content: '豆';
+      content: "豆";
     }
 
     .fa-diandian:before {
-      content: '点';
+      content: "点";
     }
 
     &:hover,

@@ -148,7 +148,7 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
 
   selectTheme(value: string) {
     const link = document.getElementById('theme-css');
-    link.setAttribute('href', 'assets/themes/' + value + '.css');
+    link.setAttribute('href', 'freeng/assets/themes/' + value + '.css');
   }
 
   toSearch(router: string) {

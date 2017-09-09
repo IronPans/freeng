@@ -18,10 +18,10 @@ export class MainDraggableComponent implements OnInit {
   item = {title: '{{item.title}}'};
   constructor() {
     this.dragItem = [
-      {image: 'assets/images/landscape1.jpg', title: 'picture 1'},
-      {image: 'assets/images/landscape2.jpg', title: 'picture 2'},
-      {image: 'assets/images/landscape3.jpg', title: 'picture 3'},
-      {image: 'assets/images/landscape7.jpg', title: 'picture 4'}
+      {image: 'freeng/assets/images/landscape1.jpg', title: 'picture 1'},
+      {image: 'freeng/assets/images/landscape2.jpg', title: 'picture 2'},
+      {image: 'freeng/assets/images/landscape3.jpg', title: 'picture 3'},
+      {image: 'freeng/assets/images/landscape7.jpg', title: 'picture 4'}
     ];
     this.dropItem = [];
   }

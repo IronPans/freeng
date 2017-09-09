@@ -80,8 +80,7 @@ export class TreeItemComponent implements AfterViewInit, OnChanges {
   @Input() title: string;
   @Input() folder: any;
   @Input() file: any;
-  // @Input() selectable: boolean;
-  selectable: boolean;
+  @Input() selectable: boolean;
   @Input() expanded: boolean;
   @Input() expandedIcon: string;
   @Input() collapsedIcon: string;

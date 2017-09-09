@@ -504,7 +504,9 @@
     },
     "SIDENAV": {
       "DESCRIPTION": "The sidebar displays the menu or navigation in a sliding manner.",
-      "ITEMDESCRIPTION": ["When use the ping mode to turned on, it is used to place the main content"],
+      "ITEMDESCRIPTION": [
+        "When use the ping mode to turned on, it is used to place the main content"
+      ],
       "OPTION": [
         "Whether to expand, must be selected. Default is false",
         "Set the position of the sidebar. The default is left. Optional (left/right/top/bottom)",
@@ -752,6 +754,9 @@
     "v022": {
       "ADD": "<li>ADD the share button.</li><li>Calendar add timeOnly property to show only time selection</li><li> <span>Sidenav</span> <ul class='free-padding-ul'> <li> add outside / navStyle / overlayBackground properties</li> <li> direction property new top / bottom </li> <li> Add flattening mode, the content follows the menu translation </li> </ul> </li><li>Modal add draggable.</li>",
       "BUG": "<li>Fix the problem which the f-header component could not be found</li><li>Export the FlowModule module globally<a href='https://github.com/IronPans/freeng/issues/3'>#3</a></li><li>Fix the problem which the button have to double-click to open Sidenav when you click the translucent background to close Sidenav.<a href='https://github.com/IronPans/freeng/issues/3'>#3</a></li>"
+    },
+    "v023": {
+      "BUG": "<li>fix the bug which TreeComponent could not be select</li>"
     },
     "ADD": "Add",
     "FIX": "Fix",
