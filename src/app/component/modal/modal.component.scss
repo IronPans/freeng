@@ -5,9 +5,13 @@
   overflow: hidden;
   min-width: 10rem;
   border-radius: 2px;
+  top: 50%;
+  left: 50%;
   color: #fff;
   z-index: 9999;
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  transform: translate(-50%, -50%);
+  transition: all .3s;
 
   &.free-modal-spinner {
     min-width: 1rem;
@@ -70,11 +74,11 @@
     color: #333;
     padding: 0 .5rem;
   }
+}
 
-  @each $theme, $color in $theme {
-    &.free-#{$theme} {
-      background: $color !important;
-    }
+@each $theme, $color in $theme {
+  .free-#{$theme} .free-modal{
+    background: $color !important;
   }
 }
 

@@ -544,8 +544,15 @@ export class DatatableComponent implements AfterViewInit, OnDestroy {
     if (this.selectionMode) {
       if (event.checked && !this.totalChecked) {
         this.checkboxSelection.push(rowData);
-      } else if (!event.checked) {
-        this.checkboxSelection.splice(i, 1);
+      }
+      let length = this.checkboxSelection.length;
+      if (!event.checked) {
+        while (length) {
+          length--;
+          if (this.checkboxSelection[length] === rowData) {
+            this.checkboxSelection.splice(length, 1);
+          }
+        }
       }
       this.totalChecked = this.checkOfSelect();
       this.onSelectChange();

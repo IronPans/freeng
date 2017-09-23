@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, NgModule, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, NgModule, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 @Component({
@@ -10,15 +10,11 @@ import {CommonModule} from '@angular/common';
   `
 })
 
-export class ColumnComponent implements OnInit, AfterViewInit {
+export class ColumnComponent implements AfterViewInit {
 
   @Input() columns: any;
   @ViewChild('container') containerViewChild: ElementRef;
   container: HTMLDivElement;
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   ngAfterViewInit() {
     this.container = this.containerViewChild.nativeElement;

@@ -40,12 +40,29 @@
     </free-panel>
 
     <free-panel fGrid="4" [header]="'DEPENDENCE' | translate">
-      <img src="freeng/assets/images/angular.svg" alt="" width="80">
+      <img src="assets/images/angular.svg" alt="" width="80">
     </free-panel>
 
     <free-panel fGrid="4">
-      <f-header>{{'CHANGE-LOG' | translate}}</f-header>
+      <f-header>
+        {{'CHANGE-LOG' | translate}}
+        <a routerLink="/main/changelog" style="padding-left: 20px;text-decoration: underline">more</a>
+      </f-header>
       <free-accordion-group [closeOthers]="true">
+        <free-accordion class="let-menu-item" header="v0.2.5">
+          <h5 class="subtitle">Features</h5>
+          <ul class="free-ul-padding" [innerHTML]="'UPDATE.v025.FEATURE' | translate"></ul>
+          <h5 class="subtitle">Bug Fixes</h5>
+          <ul class="free-ul-padding" [innerHTML]="'UPDATE.v025.BUG' | translate"></ul>
+          <h5 class="subtitle">Web</h5>
+          <ul class="free-ul-padding" [innerHTML]="'UPDATE.v025.WEB' | translate"></ul>
+        </free-accordion>
+        <free-accordion class="let-menu-item" header="v0.2.4">
+          <h5 class="subtitle">Features</h5>
+          <ul class="free-ul-padding" [innerHTML]="'UPDATE.v024.FEATURE' | translate"></ul>
+          <h5 class="subtitle">Bug Fixes</h5>
+          <ul class="free-ul-padding" [innerHTML]="'UPDATE.v024.BUG' | translate"></ul>
+        </free-accordion>
         <free-accordion class="let-menu-item" header="v0.2.3">
           <h5 class="subtitle">Bug Fixes</h5>
           <ul class="free-ul-padding" [innerHTML]="'UPDATE.v023.BUG' | translate"></ul>
@@ -71,66 +88,6 @@
           <ul class="free-ul-padding" [innerHTML]="'UPDATE.v020.FEATURE' | translate"></ul>
           <h5 class="subtitle">Bug Fixes</h5>
           <ul class="free-ul-padding" [innerHTML]="'UPDATE.v020.BUG' | translate"></ul>
-        </free-accordion>
-        <free-accordion class="let-menu-item" header="v0.1.4">
-          {{'UPDATE.v014.DESCRIPTION' | translate}}
-        </free-accordion>
-        <free-accordion class="let-menu-item" header="v0.1.3">
-          <h4>Bug Fixes</h4>
-          <ul class="free-ul-padding">
-            <li>{{'UPDATE.v013.BUG' | translate}}</li>
-          </ul>
-        </free-accordion>
-        <free-accordion class="let-menu-item" header="v0.1.2">
-          <h4>Features</h4>
-          <ul class="free-ul-padding">
-            <li><a [routerLink]="['/main/colorpicker']">{{'COMPONENT.COLORPICKER' | translate}}</a></li>
-            <li><a [routerLink]="['/main/cascader']">{{'COMPONENT.CASCADER' | translate}}</a></li>
-            <li><a [routerLink]="['/main/calendar']">{{'COMPONENT.CALENDAR' | translate}}</a></li>
-            <li><a [routerLink]="['/main/datatable']">{{'COMPONENT.DATATABLE' | translate}}</a></li>
-            <li><a [routerLink]="['/main/notification']">{{'COMPONENT.NOTIFICATION' | translate}}</a></li>
-            <li><a [routerLink]="['/main/toast']">{{'COMPONENT.TOAST' | translate}}</a></li>
-            <li><a [routerLink]="['/main/editor']">{{'COMPONENT.EDITOR' | translate}}</a></li>
-            <li><a [routerLink]="['/main/timeline']">{{'COMPONENT.TIMELINE' | translate}}</a></li>
-            <li><a [routerLink]="['/main/columns']">{{'COMPONENT.COLUMN' | translate}}</a></li>
-            <li><a [routerLink]="['/main/sidenav']">{{'COMPONENT.SIDENAV' | translate}}</a></li>
-            <li><a [routerLink]="['/main/draggable']">{{'COMPONENT.DRAGGABLE' | translate}}</a></li>
-            <li><a [routerLink]="['/main/charts']">{{'COMPONENT.CHART' | translate}}</a></li>
-          </ul>
-        </free-accordion>
-        <free-accordion class="let-menu-item" header="v0.1.1">
-          <h4>Features</h4>
-          <ul class="free-ul-padding">
-            <li><a [routerLink]="['/main/slide']">{{'COMPONENT.SLIDE' | translate}}</a></li>
-            <li><a [routerLink]="['/main/chip']">{{'COMPONENT.CHIP' | translate}}</a></li>
-            <li><a [routerLink]="['/main/shrink']">{{'COMPONENT.SHRINK' | translate}}</a></li>
-            <li><a [routerLink]="['/main/select']">{{'COMPONENT.SELECT' | translate}}</a></li>
-            <li><a [routerLink]="['/main/pagination']">{{'COMPONENT.PAGINATION' | translate}}</a></li>
-            <li><a [routerLink]="['/main/contextmenu']">{{'COMPONENT.CONTEXTMENU' | translate}}</a></li>
-            <li>{{'COMPONENT.PARTICLE' | translate}}</li>
-          </ul>
-          <h4>Break Changes</h4>
-          <ul class="free-ul-padding">
-            <li>
-              <a [routerLink]="['/main/input']">{{'COMPONENT.INPUTTEXT' | translate}}</a>
-              {{'UPDATE.v011.CHANGE.INPUTTEXT' | translate}}
-            </li>
-            <li>
-              <p><a [routerLink]="['/main/dropdown']">{{'COMPONENT.DROPDOWN' | translate}}</a></p>
-              <div [innerHTML]="'UPDATE.v011.CHANGE.DROPDOWN' | translate"></div>
-            </li>
-            <li>
-              <p><a [routerLink]="['/main/modals']">{{'COMPONENT.MODAL' | translate}}</a></p>
-              <div [innerHTML]="'UPDATE.v011.CHANGE.MODAL' | translate"></div>
-            </li>
-          </ul>
-        </free-accordion>
-        <free-accordion class="let-menu-item" header="v0.1.0">
-          <ul class="free-ul-padding">
-            <li>{{'UI-ELEMENT' | translate}}</li>
-            <li>{{'BASIC-COMPONENT' | translate}}</li>
-            <li>{{'EXTENDED-COMPONENT' | translate}}</li>
-          </ul>
         </free-accordion>
       </free-accordion-group>
     </free-panel>

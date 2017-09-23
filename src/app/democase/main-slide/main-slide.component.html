@@ -82,6 +82,26 @@
                 <ng-template>{{'DEMO.SLIDE.OPTION.6' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>touch</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.SLIDE.OPTION.7' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>direction</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  <span [innerHTML]="'DEMO.SLIDE.OPTION.8' | translate"></span>
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -112,13 +132,13 @@
           <free-tab header="PREVIEW">
              <free-slides [styles]="{width: '300px'}">
                <free-slide>
-                 <img src="freeng/assets/images/landscape1.jpg" alt="">
+                 <img src="assets/images/landscape1.jpg" alt="">
                </free-slide>
                <free-slide>
-                 <img src="freeng/assets/images/landscape2.jpg" alt="">
+                 <img src="assets/images/landscape2.jpg" alt="">
                </free-slide>
                <free-slide>
-                 <img src="freeng/assets/images/landscape3.jpg" alt="">
+                 <img src="assets/images/landscape3.jpg" alt="">
                </free-slide>
              </free-slides>
           </free-tab>
@@ -126,13 +146,13 @@
             <free-code lang="html" >
             &lt;free-slides&gt;
               &lt;free-slide&gt;
-                &lt;img src="freeng/assets/images/landscape1.jpg" alt=""&gt;
+                &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
               &lt;/free-slide&gt;
               &lt;free-slide&gt;
-                &lt;img src="freeng/assets/images/landscape2.jpg" alt=""&gt;
+                &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
               &lt;/free-slide&gt;
               &lt;free-slide&gt;
-                &lt;img src="freeng/assets/images/landscape3.jpg" alt=""&gt;
+                &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
               &lt;/free-slide&gt;
             &lt;/free-slides&gt;
             </free-code>
@@ -144,15 +164,15 @@
         <h3 class="free-toolbar">Pagination</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-slides [styles]="{width: '300px'}" [pagination]="true" >
+            <free-slides [styles]="{width: '300px'}" [pagination]="true">
               <free-slide>
-                <img src="freeng/assets/images/landscape1.jpg" alt="">
+                <img src="assets/images/landscape1.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape2.jpg" alt="">
+                <img src="assets/images/landscape2.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape3.jpg" alt="">
+                <img src="assets/images/landscape3.jpg" alt="">
               </free-slide>
             </free-slides>
           </free-tab>
@@ -160,13 +180,13 @@
             <free-code lang="html" >
               &lt;free-slides [pagination]="true"&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape1.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape2.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape3.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
               &lt;/free-slides&gt;
             </free-code>
@@ -180,13 +200,13 @@
           <free-tab header="PREVIEW">
             <free-slides [styles]="{width: '300px'}" [pagination]="true" [paginationClickable]="true" >
               <free-slide>
-                <img src="freeng/assets/images/landscape1.jpg" alt="">
+                <img src="assets/images/landscape1.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape2.jpg" alt="">
+                <img src="assets/images/landscape2.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape3.jpg" alt="">
+                <img src="assets/images/landscape3.jpg" alt="">
               </free-slide>
             </free-slides>
           </free-tab>
@@ -194,13 +214,13 @@
             <free-code lang="html" >
               &lt;free-slides [pagination]="true" [paginationClickable]="true"&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape1.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape2.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape3.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
               &lt;/free-slides&gt;
             </free-code>
@@ -212,29 +232,30 @@
         <h3 class="free-toolbar">Arrow</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-slides [styles]="{width: '300px'}" [arrow]="true">
+            <free-slides [styles]="{width: '300px'}" [arrow]="false"
+                         [pagination]="true" [paginationClickable]="true">
               <free-slide>
-                <img src="freeng/assets/images/landscape1.jpg" alt="">
+                <img src="assets/images/landscape1.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape2.jpg" alt="">
+                <img src="assets/images/landscape2.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape3.jpg" alt="">
+                <img src="assets/images/landscape3.jpg" alt="">
               </free-slide>
             </free-slides>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html" >
-              &lt;free-slides [arrow]="true"&gt;
+              &lt;free-slides [styles]="&#123;width: '300px'&#125;" [arrow]="false" [pagination]="true" [paginationClickable]="true"&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape1.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape2.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape3.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
               &lt;/free-slides&gt;
             </free-code>
@@ -246,29 +267,30 @@
         <h3 class="free-toolbar">Loop</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-slides [styles]="{width: '300px'}" [pagination]="true" [arrow]="true" [loop]="true" [paginationClickable]="true">
+            <free-slides [styles]="{width: '300px'}" [pagination]="true"
+                         [loop]="true" [paginationClickable]="true">
               <free-slide>
-                <img src="freeng/assets/images/landscape1.jpg" alt="">
+                <img src="assets/images/landscape1.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape2.jpg" alt="">
+                <img src="assets/images/landscape2.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape3.jpg" alt="">
+                <img src="assets/images/landscape3.jpg" alt="">
               </free-slide>
             </free-slides>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html" >
-              &lt;free-slides [pagination]="true" [arrow]="true" [loop]="true" [paginationClickable]="true"&gt;
+              &lt;free-slides [pagination]="true" [loop]="true" [paginationClickable]="true"&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape1.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape2.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape3.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
               &lt;/free-slides&gt;
             </free-code>
@@ -277,34 +299,33 @@
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Loop</h3>
+        <h3 class="free-toolbar">Autoplay</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-slides [styles]="{width: '300px'}" [pagination]="true" [arrow]="true"
+            <free-slides [styles]="{width: '300px'}" [pagination]="true"
                          [loop]="true" [paginationClickable]="true" [autoplay]="3000">
               <free-slide>
-                <img src="freeng/assets/images/landscape1.jpg" alt="">
+                <img src="assets/images/landscape1.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape2.jpg" alt="">
+                <img src="assets/images/landscape2.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape3.jpg" alt="">
+                <img src="assets/images/landscape3.jpg" alt="">
               </free-slide>
             </free-slides>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html" >
-              &lt;free-slides [pagination]="true" [arrow]="true"
-                [loop]="true" [paginationClickable]="true" [autoplay]="3000"&gt;
+              &lt;free-slides [pagination]="true" [loop]="true" [paginationClickable]="true" [autoplay]="3000"&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape1.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape2.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape3.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
               &lt;/free-slides&gt;
             </free-code>
@@ -316,32 +337,104 @@
         <h3 class="free-toolbar">AutoplayDisableOnInteraction</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-slides [styles]="{width: '300px'}" [pagination]="true" [arrow]="true" [autoplayDisableOnInteraction]="false"
+            <free-slides [styles]="{width: '300px'}" [pagination]="true" [autoplayDisableOnInteraction]="false"
                          [loop]="true" [paginationClickable]="true" [autoplay]="3000">
               <free-slide>
-                <img src="freeng/assets/images/landscape1.jpg" alt="">
+                <img src="assets/images/landscape1.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape2.jpg" alt="">
+                <img src="assets/images/landscape2.jpg" alt="">
               </free-slide>
               <free-slide>
-                <img src="freeng/assets/images/landscape3.jpg" alt="">
+                <img src="assets/images/landscape3.jpg" alt="">
               </free-slide>
             </free-slides>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html" >
-              &lt;free-slides [pagination]="true" [arrow]="true" [autoplayDisableOnInteraction]="false"
+              &lt;free-slides [pagination]="true" [autoplayDisableOnInteraction]="false"
                 [loop]="true" [paginationClickable]="true" [autoplay]="3000"&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape1.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape2.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
                 &lt;free-slide&gt;
-                  &lt;img src="freeng/assets/images/landscape3.jpg" alt=""&gt;
+                  &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
                 &lt;/free-slide&gt;
+              &lt;/free-slides&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Touch</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-slides [styles]="{width: '300px'}" [pagination]="true" [loop]="true"
+                         [touch]="true" [paginationClickable]="true">
+              <free-slide>
+                <img src="assets/images/landscape1.jpg" alt="">
+              </free-slide>
+              <free-slide>
+                <img src="assets/images/landscape2.jpg" alt="">
+              </free-slide>
+              <free-slide>
+                <img src="assets/images/landscape3.jpg" alt="">
+              </free-slide>
+            </free-slides>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html" >
+              &lt;free-slides [pagination]="true"
+              [loop]="true" [paginationClickable]="true" [touch]="true"&gt;
+                &lt;free-slide&gt;
+                  &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
+                &lt;/free-slide&gt;
+                &lt;free-slide&gt;
+                  &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
+                &lt;/free-slide&gt;
+                &lt;free-slide&gt;
+                  &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
+                &lt;/free-slide&gt;
+              &lt;/free-slides&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Direction</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-slides [styles]="{width: '300px', height: '200px'}"
+                         [pagination]="true" [direction]="'vertical'" [paginationClickable]="true">
+              <free-slide>
+                <img src="assets/images/landscape1.jpg" alt="">
+              </free-slide>
+              <free-slide>
+                <img src="assets/images/landscape2.jpg" alt="">
+              </free-slide>
+              <free-slide>
+                <img src="assets/images/landscape3.jpg" alt="">
+              </free-slide>
+            </free-slides>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html" >
+              &lt;free-slides [pagination]="true"
+              [loop]="true" [paginationClickable]="true" [touch]="true"&gt;
+              &lt;free-slide&gt;
+              &lt;img src="assets/images/landscape1.jpg" alt=""&gt;
+              &lt;/free-slide&gt;
+              &lt;free-slide&gt;
+              &lt;img src="assets/images/landscape2.jpg" alt=""&gt;
+              &lt;/free-slide&gt;
+              &lt;free-slide&gt;
+              &lt;img src="assets/images/landscape3.jpg" alt=""&gt;
+              &lt;/free-slide&gt;
               &lt;/free-slides&gt;
             </free-code>
           </free-tab>

@@ -689,6 +689,139 @@
     padding: 20px 0;
   }
 
+  .deviceswitcher-menu {
+    flex: 1;
+    li {
+      display: inline-block;
+      width: 33.3333%;
+      margin-left: 2%;
+      height: 50px;
+      font-size: 30px;
+      border: 1px solid #DDD;
+      border-radius: 2px;
+      text-align: center;
+      line-height: 50px;
+      vertical-align: top;
+      cursor: pointer;
+
+      &:nth-child(2) {
+        font-size: 50px;
+      }
+
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+
+//  mobile
+
+  .free-demo-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11000;
+    background: rgba(0,0,0,.5);
+
+    & > span {
+      position: absolute;
+      right: 50px;
+      top: 50px;
+      width: 30px;
+      height: 30px;
+      color: #333;
+      background: #fff;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 30px;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+  .review-phone {
+    width: 326px;
+    height: 614px;
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    background: #fff;
+    padding: 0 3px;
+    border-radius: 30px;
+    transition: all 1s;
+    box-shadow: -4px 4px 0 3px #999;
+    transform: translate(-50%, 0);
+  }
+
+  .phone-nav-line {
+    width: 30px;
+    height: 8px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    top: 5px;
+    background: #5B5B5B
+  }
+
+  .phone-header {
+    margin-top: 30px;
+    height: 50px
+  }
+
+  .phone-nav {
+    height: 50px;
+    background: #333;
+    position: relative;
+    color: #fff
+  }
+
+  .phone-nav-dian {
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    line-height: 0;
+    left: 5px
+  }
+
+  .phone-battery {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    color: #fff;
+    font-size: 10px
+  }
+
+  .phone-container {
+    width: 320px;
+    height: 504px;
+    background: #ccc;
+    position: relative;
+    border: 1px solid #d9d9d9
+  }
+
+  .phone-footer {
+    height: 30px
+  }
+
+  .page-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat
+  }
 }
 
 @media (min-width: 768px) {
@@ -713,6 +846,10 @@
     }
     .aside-header {
       width: auto;
+    }
+
+    .top-menu button.free-language {
+      margin-left: 0;
     }
 
     .search-box .search-input input {

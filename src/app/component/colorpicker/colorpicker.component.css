@@ -8,6 +8,7 @@
   .free-picker .slider-picker {
     cursor: pointer; }
   .free-picker .free-color-input {
+    width: 10rem;
     position: relative; }
     .free-picker .free-color-input input {
       border: 1px solid #d9d9d9;

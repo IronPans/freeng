@@ -13,10 +13,14 @@
       width: 97%;
       margin-right: 3%; }
 
-:host /deep/ .main-container .accordion-content .accordion-inner {
-  padding: .5rem !important; }
-
 :host /deep/ .main-point {
   padding: 0 10px; }
+
+:host /deep/ ul li ul {
+  margin-left: 1rem; }
+:host /deep/ .main-point {
+  padding: 0 10px; }
+:host /deep/ .main-container .accordion-content .accordion-inner {
+  padding: .5rem !important; }
 
 /*# sourceMappingURL=main.component.css.map */

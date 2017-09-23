@@ -77,6 +77,33 @@
           </free-table-body>
         </free-table>
       </div>
+
+      <h3 class="free-head-title">{{'EVENT' | translate}}</h3>
+      <div class="free-demo-row">
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'EVENT' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  <span [innerHTML]="'DEMO.MODAL.EVENTS.0' | translate"></span>
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
     </div>
 
     <div class="free-demo-board" fGrid="6">
@@ -114,7 +141,7 @@
         <h3 class="free-toolbar">Theme</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton theme="blue" (click)="blueVisible = !blueVisible">Modal</button>
+            <button fButton theme="primary" (click)="blueVisible = !blueVisible">Modal</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -209,7 +236,7 @@
   </div>
 
   <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
-  <free-modal header="Modal" [(visible)]="visible">
+  <free-modal header="Modal" [(visible)]="visible" (onChange)="onChange($event)">
     <p>Some contents...</p><p>Some contents...</p><p>Some contents...</p>
     <f-footer>
       <button fButton class="cancel">cancel</button>
@@ -231,7 +258,7 @@
     <p>Some contents...</p><p>Some contents...</p><p>Some contents...</p>
   </free-modal>
 
-  <free-modal header="Prompt" type="prompt" [(visible)]="promptVisible">
+  <free-modal header="Prompt" type="prompt" [(visible)]="promptVisible" (onChange)="onChange($event)">
     <p>Some contents...</p><p>Some contents...</p><p>Some contents...</p>
   </free-modal>
 

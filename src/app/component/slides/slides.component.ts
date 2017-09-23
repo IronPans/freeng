@@ -1,5 +1,4 @@
 import {
-  AfterContentInit,
   AfterViewInit, Component, ElementRef, EventEmitter, Input, NgModule, OnInit, Output,
   ViewChild
 } from '@angular/core';
@@ -11,7 +10,7 @@ import {DomRenderer} from '../common/dom';
   template: `
     <div class="free-slides" [ngStyle]="styles" #container>
       <div class="free-slides-wrapper" #wrapper (mousedown)="onMousedown($event)"
-           (mousemove)="onMousemove($event)" (mouseup)="onMouseup($event)">
+           (mousemove)="onMousemove($event)" (mouseup)="onMouseup()">
         <ng-content></ng-content>
       </div>
       <div class="free-slides-pagination free-pagination-bullets"
@@ -34,7 +33,7 @@ import {DomRenderer} from '../common/dom';
   `,
   providers: [DomRenderer]
 })
-export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit {
+export class SlidesComponent implements AfterViewInit {
 
   @Input() speed = 300;
   @Input() styles: any;
@@ -44,7 +43,8 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
   @Input() arrow: boolean;
   @Input() prev: boolean;
   @Input() next: boolean;
-  @Input() direction = 'horizontal';
+  @Input() direction: string;
+  @Input() touch: boolean;
   @Input() autoplay: number;
   @Input() autoplayDisableOnInteraction = true;
   @Output() slideChange: EventEmitter<any> = new EventEmitter();
@@ -58,6 +58,7 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
   startXY: any;
   moveXY: any;
   itemWidth: number;
+  itemHeight: number;
   isMobile: boolean;
   isDowned: boolean;
   _autoplaying: boolean;
@@ -67,11 +68,11 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
   loopActiveIndex = 0;
   loopAdditionalSlides = 2;
   autoplayTimeoutId: any;
-  constructor(public er: ElementRef, public domRender: DomRenderer) { }
-
-  ngOnInit() {
+  constructor(public er: ElementRef, public domRender: DomRenderer) {
     this.bullets = [];
+    this.pagination = true;
     this.reset();
+    this.direction = 'horizontal';
     this.isMobile = 'ontouchstart' in document;
   }
 
@@ -80,6 +81,7 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
     this._wrapper = this.wrapper.nativeElement;
     this._container = this.container.nativeElement;
     this.itemWidth = this._container.offsetWidth;
+    this.itemHeight = this._container.offsetHeight;
 
     this.slidesLength = this.slides.length;
     for (let i = 0; i < this.slidesLength; i++) {
@@ -118,9 +120,6 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
     if (this.autoplay) {
       this.startAutoplay();
     }
-  }
-
-  ngAfterContentInit() {
   }
 
   reset() {
@@ -189,17 +188,19 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
   }
 
   onMousedown(event: any) {
-    this.reset();
-    this.startXY = this.getPoint(event);
-    this.isDowned = true;
+    if (this.touch) {
+      this.reset();
+      this.startXY = this.getPoint(event);
+      this.isDowned = true;
 
-    if (this.autoplay && this.autoplayTimeoutId) {
-      this.stopAutoplay();
+      if (this.autoplay && this.autoplayTimeoutId) {
+        this.stopAutoplay();
+      }
     }
   }
 
   onMousemove(event: any) {
-    if (this.isDowned) {
+    if (this.isDowned && this.touch) {
       const {x, y} = this.getPoint(event);
       this.moveXY = { x: x - this.startXY.x, y: y - this.startXY.y};
       const tx = 'translate3d(' + (-this.itemWidth * this.loopActiveIndex + this.moveXY.x)  + 'px, 0, 0)';
@@ -207,26 +208,28 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
     }
   }
 
-  onMouseup(event: any) {
-    this.isDowned = false;
-    const halfWidth = this.itemWidth / 2;
-    if (this.moveXY.x < 0 && (this.loopActiveIndex !== this.slides.length - 1)
-      && -this.moveXY.x > halfWidth) {
-      this.loopActiveIndex++;
-    } else if (this.moveXY.x > 0 && this.loopActiveIndex !== 0 && this.moveXY.x > halfWidth) {
-      this.loopActiveIndex--;
-    }
-    this.slideTo(this.loopActiveIndex);
+  onMouseup() {
+    if (this.touch) {
+      this.isDowned = false;
+      const halfWidth = this.itemWidth / 2;
+      if (this.moveXY.x < 0 && (this.loopActiveIndex !== this.slides.length - 1)
+        && -this.moveXY.x > halfWidth) {
+        this.loopActiveIndex++;
+      } else if (this.moveXY.x > 0 && this.loopActiveIndex !== 0 && this.moveXY.x > halfWidth) {
+        this.loopActiveIndex--;
+      }
+      this.slideTo(this.loopActiveIndex);
 
-    if (this.loop) {
-      this.activeIndex = this.loopActiveIndex - 1;
-    } else {
-      this.activeIndex = this.loopActiveIndex;
-    }
-    this._autoplaying = false;
+      if (this.loop) {
+        this.activeIndex = this.loopActiveIndex - 1;
+      } else {
+        this.activeIndex = this.loopActiveIndex;
+      }
+      this._autoplaying = false;
 
-    if (!this.autoplayDisableOnInteraction) {
-      this.startAutoplay();
+      if (!this.autoplayDisableOnInteraction) {
+        this.startAutoplay();
+      }
     }
   }
 
@@ -244,7 +247,11 @@ export class SlidesComponent implements OnInit, AfterViewInit, AfterContentInit 
 
   slideTo(index: number, speed: number = this.speed) {
     this.domRender.setTransitionDuration(this._wrapper, speed);
-    this.domRender.setTransform(this._wrapper, 'translate3d(-' + this.itemWidth * index + 'px, 0, 0)');
+    if (this.direction === 'horizontal') {
+      this.domRender.setTransform(this._wrapper, 'translate3d(-' + this.itemWidth * index + 'px, 0, 0)');
+    } else {
+      this.domRender.setTransform(this._wrapper, 'translate3d(0,-' + this.itemHeight * index + 'px, 0)');
+    }
   }
 
 }

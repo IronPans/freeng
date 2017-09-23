@@ -58,8 +58,7 @@
       opacity: .7; }
   .free-tab-group .free-tab-box {
     position: relative;
-    overflow: hidden;
-    overflow-y: auto; }
+    overflow: hidden; }
     .free-tab-group .free-tab-box:after {
       display: table;
       content: '';
@@ -69,12 +68,15 @@
       flex-shrink: 0;
       border-top: 0; }
     .free-tab-group .free-tab-box .free-tab {
-      width: 100%;
-      background: #fff;
-      display: none;
-      padding: .75rem; }
+      display: none; }
+      .free-tab-group .free-tab-box .free-tab .free-tab-wrapper {
+        width: 100%;
+        background: #fff;
+        padding: .75rem; }
+      .free-tab-group .free-tab-box .free-tab.free-iscroll {
+        overflow: hidden;
+        overflow-y: auto; }
       .free-tab-group .free-tab-box .free-tab.active {
-        display: flex;
-        flex-wrap: wrap; }
+        display: block; }
 
 /*# sourceMappingURL=tab.component.css.map */

@@ -93,7 +93,6 @@ $theme: theme-line, theme-block;
   .free-tab-box {
     position: relative;
     overflow: hidden;
-    overflow-y: auto;
     &:after {
       display: table;
       content: '';
@@ -107,13 +106,20 @@ $theme: theme-line, theme-block;
     }
 
     .free-tab {
-      width: 100%;
-      background: #fff;
       display: none;
-      padding: .75rem;
+      .free-tab-wrapper {
+        width: 100%;
+        background: #fff;
+        padding: .75rem;
+      }
+      &.free-iscroll {
+        overflow: hidden;
+        overflow-y: auto;
+      }
+
       &.active {
-        display: flex;
-        flex-wrap: wrap;
+        display: block;
+        //flex-wrap: wrap;
       }
     }
   }

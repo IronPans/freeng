@@ -2,6 +2,26 @@
 
 [EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
 
+## 0.2.5(2017-09-23)
+
+**Features**
+
+- Modal新增onChange事件
+- Slide
+  - 新增touch属性，用于控制是否开启触摸事件
+  - 新增direction属性
+  - 优化Slide的样式
+
+**Bug Fixes**
+  
+- 修复Datatable反向选择时全选错误问题
+
+## 0.2.4(2017-09-21)
+
+**Bug Fixes**
+  
+- 修复依赖模块版本冲突问题
+
 ## 0.2.3(2017-09-09)
 
 **Bug Fixes**

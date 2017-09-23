@@ -22,8 +22,6 @@ export class TabNavComponent {
   @Input() direction: string;
   @Output() onTabClick = new EventEmitter();
 
-  constructor() {}
-
   tabClick(index: number, disabled: boolean) {
     if (!disabled) {
       this.onTabClick.emit(index);
@@ -34,8 +32,11 @@ export class TabNavComponent {
 @Component({
   selector: 'free-tab',
   template: `
-    <div [ngClass]="tabClass" [@tabState]="selected ? 'active' : 'inactive'">
-      <ng-content></ng-content>
+    <div [ngClass]="tabClass" [@tabState]="selected ? 'active' : 'inactive'"
+         [style.max-height.px]="maxHeight" [class.free-iscroll]="maxHeight">
+      <div class="free-tab-wrapper">
+        <ng-content></ng-content>
+      </div>
     </div>`,
   animations: [
     trigger('tabState', [
@@ -55,6 +56,7 @@ export class TabNavComponent {
 export class TabComponent implements OnInit {
   @Input() header: string;
   @Input() disabled: boolean;
+  @Input() maxHeight: number;
   @Input()
   get selected(): boolean {
     return this._selected;
@@ -67,8 +69,6 @@ export class TabComponent implements OnInit {
 
   tabClass: any;
   _selected: boolean;
-
-  constructor() {}
 
   toggleClass() {
     this.tabClass = {
@@ -91,26 +91,26 @@ export class TabComponent implements OnInit {
   template: `
     <div class="free-tab-group" #group>
       <free-tab-nav [tabs]="tabs" (onTabClick)="tabClick($event)"></free-tab-nav>
-      <div class="free-tab-box free-iscroll">
+      <div class="free-tab-box">
         <ng-content></ng-content>
       </div>
     </div>
   `
 })
 
-export class TabGroupComponent implements OnInit, AfterContentInit {
+export class TabGroupComponent implements AfterContentInit {
   @Input() theme: string;
   @Input() direction: string;
   @Input() activeIndex: number;
   @ViewChild('group') groups: ElementRef;
   @ViewChild('nav') nav: ElementRef;
+  @Input() maxHeight: number;
   @ContentChildren(TabComponent) tabGroup: QueryList<TabComponent>;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   tabs: TabComponent[];
   constructor(public renderer2: Renderer2) {
     this.activeIndex = 0;
   }
-  ngOnInit() {}
 
   ngAfterContentInit() {
     this.tabInit();
@@ -124,6 +124,11 @@ export class TabGroupComponent implements OnInit, AfterContentInit {
 
   tabInit() {
     this.tabs = this.tabGroup.toArray();
+    if (this.maxHeight) {
+      for (const tab of this.tabs) {
+        tab.maxHeight = this.maxHeight;
+      }
+    }
     this.open(this.activeIndex);
   }
 

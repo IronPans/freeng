@@ -28,6 +28,10 @@ export class MainModalComponent implements OnInit {
   open() {
     this.visible = !this.visible;
   }
+
+  onChange(event) {
+    console.log(event);
+  }
 }
 
 

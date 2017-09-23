@@ -53,6 +53,7 @@ import {MediaModule} from './media/media.component';
 import {ChartModule} from './chart/chart.component';
 import {FlowModule} from './flow/flow.component';
 import { ShareButtonModule } from './share-button/share-button.component';
+import {DomRenderer} from './common/dom';
 
 export {AccordionModule} from './accordion/accordion.component';
 export {BadgeModule} from './badge/badge.component';
@@ -108,7 +109,7 @@ export {MediaModule} from './media/media.component';
 export {ChartModule} from './chart/chart.component';
 export {FlowModule} from './flow/flow.component';
 export {ShareButtonModule} from './share-button/share-button.component';
-export * from './common/dom';
+export {DomRenderer} from './common/dom';
 
 @NgModule({
   exports: [
@@ -173,6 +174,7 @@ export class FreengModule {
     return {
       ngModule: FreengModule,
       providers: [
+        DomRenderer
       ]
     };
   }

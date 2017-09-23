@@ -2,6 +2,26 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
+## 0.2.5(2017-09-23)
+
+**Features**
+
+- Modal add onChange event.
+- Slide
+  - add touch property，used to control whether to turn on touch events
+  - add direction property
+  - Optimize Slide style
+
+**Bug Fixes**
+  
+- fix Datatable bug when select all item.
+
+## 0.2.4(2017-09-21)
+
+**Bug Fixes**
+  
+- Fix the dependent module version conflict issues
+
 ## 0.2.3(2017-09-09)
 
 **Bug Fixes**

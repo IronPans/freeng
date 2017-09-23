@@ -26,6 +26,7 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
   searchState: boolean;
   sidebarActive: boolean;
   lang: string;
+  type: string;
   @ViewChild('setting') settingBtn; ElementRef;
   @ViewChild('main') main;
   @HostListener('window:resize') onResize() {
@@ -148,7 +149,7 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
 
   selectTheme(value: string) {
     const link = document.getElementById('theme-css');
-    link.setAttribute('href', 'freeng/assets/themes/' + value + '.css');
+    link.setAttribute('href', 'assets/themes/' + value + '.css');
   }
 
   toSearch(router: string) {
@@ -162,6 +163,10 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
       this.lang = 'en';
     }
     this.translate.use(this.lang);
+  }
+
+  reviewMobile() {
+    this.type = 'mobile';
   }
 }
 

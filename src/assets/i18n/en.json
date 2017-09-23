@@ -26,6 +26,7 @@
   "DESCRIPTION": "Description",
   "EVENT": "Events",
   "THEME-SETTING": "Theme Setting",
+  "DEVICE-SETTING": "DEVICE SWITCHER",
   "MAIN": {
     "TITLE": "FreeNG UI framework",
     "ABOUT": "About",
@@ -410,7 +411,7 @@
         "Set Loading automatically hide time, optional."
       ],
       "EVENTS": [
-        "Each click trigger, return parameter similar to"
+        "Each click trigger, return parameter similar to &#123;done: true&#125;"
       ],
       "INTRO": [
         "Current page number"
@@ -523,13 +524,15 @@
     "SLIDE": {
       "DESCRIPTION": "powerful touch sliding slides.",
       "OPTION": [
-        "Set Slideshow Style, Optional",
-        "Whether to show pager, optional",
-        "Whether the pager can click, select",
-        "Whether to show left and right to switch the arrow, optional",
+        "Set Slideshow Style, optional",
+        "Whether to show pager, optional.The default is true.",
+        "Whether the pager can click, optional",
+        "Whether to show left and right to switch the arrow, optional.The default is true",
         "Whether it can be recycled, optional",
         "Whether to play automatically, select",
-        "If the timer is set to false, the user does not stop automatically after the operation, each time it will restart autoplay. The operation includes touch, drag, click pagination, etc. "
+        "If the timer is set to false, the user does not stop automatically after the operation, each time it will restart autoplay. The operation includes touch, drag, click pagination, etc. ",
+        "Whether to add the touch event,optional.The default is false.",
+        "Display direction (horizontal / vertical), the default is horizontal"
       ],
       "INTRO": [
         "A slide list container.",
@@ -757,6 +760,14 @@
     },
     "v023": {
       "BUG": "<li>fix the bug which TreeComponent could not be select</li>"
+    },
+    "v024": {
+      "BUG": "<li>Fix the dependent module version conflict issues</li>"
+    },
+    "v025": {
+      "FEATURE": "<li>Modal add onChange event.</li><li><span>Slide</span><ul class='free-padding-ul'><li>add touch property，used to control whether to turn on touch events</li><li>add direction property</li><li>Optimize Slide style</li></ul></li>",
+      "BUG": "<li>fix Datatable bug when select all item.</li>",
+      "WEB": "<li>Add a mobile preview</li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

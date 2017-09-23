@@ -74,7 +74,7 @@ export class MainNotificationComponent implements OnInit, AfterViewInit {
     this.avatarMessages.push({
       title: 'Notification',
       content: 'Your account has not been verified by email!' + new Date(),
-      avatar: 'freeng/assets/images/t_me.png'
+      avatar: 'assets/images/t_me.png'
     });
   }
 

@@ -4,9 +4,13 @@
   overflow: hidden;
   min-width: 10rem;
   border-radius: 2px;
+  top: 50%;
+  left: 50%;
   color: #fff;
   z-index: 9999;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  transition: all .3s; }
   .free-modal.free-modal-spinner {
     min-width: 1rem;
     background: transparent;
@@ -49,15 +53,20 @@
     border-radius: 3px;
     color: #333;
     padding: 0 .5rem; }
-  .free-modal.free-primary {
-    background: #177bbb !important; }
-  .free-modal.free-info {
-    background: #1ccacc !important; }
-  .free-modal.free-success {
-    background: #1aae88 !important; }
-  .free-modal.free-warning {
-    background: #fbb23e !important; }
-  .free-modal.free-danger {
-    background: #e33244 !important; }
+
+.free-primary .free-modal {
+  background: #177bbb !important; }
+
+.free-info .free-modal {
+  background: #1ccacc !important; }
+
+.free-success .free-modal {
+  background: #1aae88 !important; }
+
+.free-warning .free-modal {
+  background: #fbb23e !important; }
+
+.free-danger .free-modal {
+  background: #e33244 !important; }
 
 /*# sourceMappingURL=modal.component.css.map */

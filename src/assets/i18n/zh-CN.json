@@ -26,6 +26,7 @@
   "DESCRIPTION": "描述",
   "EVENT": "Events",
   "THEME-SETTING": "主题设置",
+  "DEVICE-SETTING": "设备切换器",
   "MAIN": {
     "TITLE": "FreeNG UI框架",
     "ABOUT": "关于作者",
@@ -411,7 +412,7 @@
         "设置Loading自动隐藏时间，可选。"
       ],
       "EVENTS": [
-        "每次点击触发，返回参数类似"
+        "每次点击触发，返回参数类似&#123;done: true&#125;"
       ],
       "INTRO": [
         "当前页码"
@@ -525,12 +526,14 @@
       "DESCRIPTION": " 强大的触摸滑动幻灯片。",
       "OPTION": [
         "设置幻灯片样式，可选",
-        "是否显示分页器，可选",
+        "是否显示分页器，可选。默认为true",
         "分页器是否可点击，可选",
-        "是否显示左右切换箭头，可选",
+        "是否显示左右切换箭头，可选。",
         "是否可循环，可选",
         "是否自动播放，可选",
-        "户操作之后，是否禁止autoplay。默认为true：停止。如果设置为false，用户操作之后自动切换不会停止，每次都会重新启动autoplay。操作包括触碰，拖动，点击pagination等。"
+        "用户操作之后，是否禁止autoplay。默认为true：停止。如果设置为false，用户操作之后自动切换不会停止，每次都会重新启动autoplay。操作包括触碰，拖动，点击pagination等。",
+        "是否开启触摸事件，可选。默认为false",
+        "显示方向(horizontal/vertical)，默认为horizontal"
       ],
       "INTRO": [
         "一个幻灯片列表容器。",
@@ -758,6 +761,14 @@
       },
       "v023": {
         "BUG": "<li>修复TreeComponent无法选择的错误</li>"
+      },
+      "v024": {
+        "BUG": "<li>修复依赖模块版本冲突问题</li>"
+      },
+      "v025": {
+        "FEATURE": "<li>Modal新增onChange事件</li><li><span>Slide</span><ul class='free-padding-ul'><li>新增touch属性，用于控制是否开启触摸事件</li><li>新增direction属性</li><li>优化Slide的样式</li></ul></li>",
+        "BUG": "<li>修复Datatable反向选择时全选错误问题</li>",
+        "WEB": "<li>新增移动预览</li>"
       },
       "ADD": "新增",
       "FIX": "修复",

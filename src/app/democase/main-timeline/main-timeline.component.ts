@@ -16,15 +16,15 @@ export class MainTimelineComponent implements OnInit {
 
   ngOnInit() {
     this.images = [
-      {'src': 'freeng/assets/images/landscape1.jpg', 'alt': 'image', 'highlight': true},
-      {'src': 'freeng/assets/images/landscape2.jpg', 'alt': 'image', 'highlight': true},
-      {'src': 'freeng/assets/images/landscape3.jpg', 'alt': 'image', 'highlight': true},
-      {'src': 'freeng/assets/images/landscape7.jpg', 'alt': 'image', 'highlight': true},
-      {'src': 'freeng/assets/images/landscape8.jpg', 'alt': 'image', 'highlight': true},
-      {'src': 'freeng/assets/images/landscape11.jpg', 'alt': 'image', 'highlight': true},
-      {'src': 'freeng/assets/images/landscape16.jpg', 'alt': 'image', 'highlight': true},
-      {'src': 'freeng/assets/images/landscape17.jpg', 'alt': 'image', 'highlight': true},
-      {'src': 'freeng/assets/images/landscape18.jpg', 'alt': 'image', 'highlight': true}
+      {'src': 'assets/images/landscape1.jpg', 'alt': 'image', 'highlight': true},
+      {'src': 'assets/images/landscape2.jpg', 'alt': 'image', 'highlight': true},
+      {'src': 'assets/images/landscape3.jpg', 'alt': 'image', 'highlight': true},
+      {'src': 'assets/images/landscape7.jpg', 'alt': 'image', 'highlight': true},
+      {'src': 'assets/images/landscape8.jpg', 'alt': 'image', 'highlight': true},
+      {'src': 'assets/images/landscape11.jpg', 'alt': 'image', 'highlight': true},
+      {'src': 'assets/images/landscape16.jpg', 'alt': 'image', 'highlight': true},
+      {'src': 'assets/images/landscape17.jpg', 'alt': 'image', 'highlight': true},
+      {'src': 'assets/images/landscape18.jpg', 'alt': 'image', 'highlight': true}
     ];
   }
 
