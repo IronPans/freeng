@@ -51,7 +51,9 @@ export class DomRenderer {
   }
 
   public getHiddenElementClient(parent: any, elem: any, property: any) {
-    if (parent.style.display !== 'none') { return parseFloat(elem[property]); }
+    if (parent.style.display !== 'none') {
+      return parseFloat(elem[property]);
+    }
     parent.style.display = 'block';
     parent.style.visibility = 'hidden';
     const p = elem[property];
@@ -540,7 +542,31 @@ export class DomRenderer {
     }
   }
 
-  public isMobileScreen () {
+  public isMobileScreen() {
     return window.innerWidth <= 768;
+  }
+
+  public clickOutside(elem, source, inside?: Function, outside?: Function) {
+    let isIn = false;
+    while (elem) {
+      if (typeof source === 'string') {
+        if (this.hasClass(elem, source)) {
+          isIn = true;
+          if (inside) {
+            inside(elem);
+          }
+        }
+      } else if (elem === source) {
+        isIn = true;
+        if (inside) {
+          inside(elem);
+        }
+      }
+      elem = elem.parentNode;
+    }
+    if (!isIn && outside) {
+      outside();
+    }
+    return isIn;
   }
 }

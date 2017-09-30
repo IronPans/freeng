@@ -2,6 +2,26 @@
 
 [EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
 
+## 0.3.0(2017-09-30)
+
+**Features**
+
+- 新增Knob组件
+- 新增Steps组件
+- 优化了Modal样式
+- Panel
+    - 优化了Panel的样式
+    - 新增tool属性，用于工具
+- 优化了Range的样式
+- 优化了Calendar的样式
+- 优化了Button的样式
+- Progress新增barColor和trackColor属性
+- 关闭了Accordion切换动画
+
+**Bug Fixes**
+  
+- Fix Spinner Set the maximum and minimum values that can not be clicked
+
 ## 0.2.5(2017-09-23)
 
 **Features**

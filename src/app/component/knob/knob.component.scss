@@ -1,0 +1,11 @@
+.free-knob {
+  position: relative;
+  display: inline-block;
+
+  & > div.free-knob-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

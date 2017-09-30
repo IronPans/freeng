@@ -1,13 +1,21 @@
 .free-calendar {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  line-height: 30px; }
   .free-calendar.free-calendar-inline {
-    box-shadow: 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1), 0 0.5em 0 -0.25em #f2f2f2, 0 0.5em 0.1875em -0.25em rgba(0, 0, 0, 0.1), 0 1em 0 -0.5em #e5e5e5, 0 1em 0.1875em -0.5em rgba(0, 0, 0, 0.1); }
+    position: relative; }
+    .free-calendar.free-calendar-inline .free-calendar-wrapper {
+      position: relative; }
     .free-calendar.free-calendar-inline .calendar {
       position: relative;
       top: 0; }
   .free-calendar .free-calendar-header {
     border-bottom: 1px solid #d9d9d9; }
+  .free-calendar tr td,
+  .free-calendar tr th {
+    width: 14.8%; }
+  .free-calendar table {
+    width: 100%; }
   .free-calendar .free-calendar-year,
   .free-calendar .free-calendar-month {
     position: absolute;

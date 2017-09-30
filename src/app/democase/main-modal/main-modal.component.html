@@ -236,7 +236,7 @@
   </div>
 
   <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
-  <free-modal header="Modal" [(visible)]="visible" (onChange)="onChange($event)">
+  <free-modal header="Modal" [(visible)]="visible" (onChange)="onChange($event)" [size]="'sm'">
     <p>Some contents...</p><p>Some contents...</p><p>Some contents...</p>
     <f-footer>
       <button fButton class="cancel">cancel</button>

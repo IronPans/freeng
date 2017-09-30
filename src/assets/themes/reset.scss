@@ -67,3 +67,10 @@ h3.free-head-title {
     }
   }
 }
+
+.free-steps {
+  & > ul li.active .free-step {
+    border-color: $color;
+    color: $color;
+  }
+}

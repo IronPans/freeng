@@ -140,7 +140,10 @@
     },
     "PANEL": {
       "DESCRIPTION": "A panel is often used as a container for other components.",
-      "HEADER": "Header text of the panel."
+      "HEADER": "Header text of the panel.",
+      "OPTION": [
+        "whether to show the tool."
+      ]
     },
     "INPUTTEXT": {
       "DESCRIPTION": "The input box allows the user to enter text, usually in the form of a form.",
@@ -445,7 +448,9 @@
         "Current load value",
         "Whether to increase the zebra stripes, the default is false",
         "Set the default style, optional. Optional value",
-        "Whether to increase the dynamic effect, the default is false"
+        "Whether to increase the dynamic effect, the default is false",
+        "Set the loaded background color",
+        "Set the background color of the track"
       ]
     },
     "RADIO": {
@@ -661,6 +666,33 @@
         "Disable sharing button，the default is []",
         "Pop-up window properties, the default is &#123;width: 500, height: 400&#125;"
       ]
+    },
+    "STEPS": {
+      "DESCRIPTION": "Steps components is an indicator for the steps in a workflow. ",
+      "OPTION": [
+        "A set of steps array",
+        "Whether read-only, default is true",
+        "The current activation of the step, the default is 0",
+        "Using a circular type of step"
+      ],
+      "CHILD": [
+        "Step content."
+      ],
+      "EVENTS": [
+        "The callback event triggered when the step change."
+      ]
+    },
+    "KNOB": {
+      "DESCRIPTION": "Steps components is an indicator for the steps in a workflow. ",
+      "OPTION": [
+        "A set of steps array",
+        "Whether read-only, default is true",
+        "The current activation of the step, the default is 0",
+        "Using a circular type of step"
+      ],
+      "EVENTS": [
+        "The callback event triggered when the step change."
+      ]
     }
   },
   "LIBRARY": "Library",
@@ -726,7 +758,9 @@
     "SHADOW": "Shadow",
     "LOGIN": "Login",
     "PAGE404": "404 page",
-    "SHAREBUTTON": "Share-button"
+    "SHAREBUTTON": "Share-button",
+    "STEPS": "Steps",
+    "KNOB": "Knob"
   },
   "UPDATE": {
     "v010": {},
@@ -768,6 +802,10 @@
       "FEATURE": "<li>Modal add onChange event.</li><li><span>Slide</span><ul class='free-padding-ul'><li>add touch property，used to control whether to turn on touch events</li><li>add direction property</li><li>Optimize Slide style</li></ul></li>",
       "BUG": "<li>fix Datatable bug when select all item.</li>",
       "WEB": "<li>Add a mobile preview</li>"
+    },
+    "v030": {
+      "BUG": "<li>Fix Spinner Set the maximum and minimum values that can not be clicked</li>",
+      "FEATURE": "<li> Add Knob component </li> <li> Add the Steps component </li> <li> Optimize the Modal style </li> <li> <span> Panel </span> <ul class='free-panel-ul'> <li> Optimize the style of the Panel </li> <li> Add the tool property for the tool </li> </ul> </li> <li> Optimize the style of the Range </li> <li> Optimize the style of Calendar </li> <li> Optimize the style of the Button </li> <li> Progress Add the barColor and trackColor properties </li><li>Turn off the Accordion switch animation</li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

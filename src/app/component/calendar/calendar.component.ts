@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {
-  NgModule, Component, OnInit, Input, Output, EventEmitter, OnDestroy, forwardRef, Inject
+  NgModule, Component, OnInit, Input, Output, EventEmitter, OnDestroy, forwardRef, Inject, ElementRef
 } from '@angular/core';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -94,7 +94,7 @@ export class CalendarSelectorComponent {
                value="{{value}}" [readonly]="readonly">
       </div>
       <div class="free-calendar-wrapper" *ngIf="inline || opened"
-           [style.width.px]="width" [@selectState]="'in'">
+           [@selectState]="'in'" [style.width]="width">
         <div *ngIf="!timeOnly; else times" class="free-calendar-panel">
           <div class="free-calendar-header">
             <div class="calendar-select">
@@ -125,12 +125,12 @@ export class CalendarSelectorComponent {
             <table>
               <thead>
               <tr>
-                <th class="item" [style.width.px]="itemWidth" *ngFor="let w of _week">{{w}}</th>
+                <th class="item" *ngFor="let w of _week">{{w}}</th>
               </tr>
               </thead>
               <tbody class="calendar-body">
                 <tr *ngFor="let week of dates">
-                  <td class="item {{day.type}}" [style.width.px]="itemWidth" title="{{day.value}}"
+                  <td class="item {{day.type}}" title="{{day.value}}"
                       *ngFor="let day of week;index as i"
                       [ngClass]="{selected: day.selected, today: day.today}"
                       (click)="onDateSelect($event, day, i)">
@@ -218,7 +218,7 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
   @Input() lang: string;
   @Input() format: string;
   @Input() hourFormat: string;
-  @Input() width: number;
+  @Input() width: any;
   @Input() pholder: string;
   @Input() readonly: boolean;
   @Input() timeOnly: boolean;
@@ -290,18 +290,21 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
   onTouchedChange: Function = () => {
   };
 
-  constructor(public domRenderer: DomRenderer) {
+  constructor(public domRenderer: DomRenderer, public er: ElementRef) {
     this.lang = 'en';
     this.rows = 6;
     this.cols = 7;
-    this.width = 250;
     this.firstDayOfWeek = 7;
     this.format = 'yyyy-MM-dd';
     this.years = [];
+    this.width = 250;
   }
 
   ngOnInit() {
     this.isSet = true;
+    if (typeof this.width === 'number') {
+      this.width = this.width + 'px';
+    }
     if (!this.timeOnly) {
       if (this.showTime) {
         this.format = 'yyyy-MM-dd hh:mm:ss';
@@ -320,10 +323,7 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
       }
       this.dates = [];
       this.pholder = 'Select Time';
-      if (!this.inline) {
-        this.width = 250;
-      }
-      this.itemWidth = parseFloat(((this.width - 10) / 7).toFixed(3));
+      // this.itemWidth = parseFloat(((this.width - 10) / 7).toFixed(3));
       this.firstYear = this.todayDate.getFullYear();
       this.createCalendar();
       this.createMonth();

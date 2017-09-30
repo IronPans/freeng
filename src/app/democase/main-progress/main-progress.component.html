@@ -57,6 +57,24 @@
                 <ng-template>{{'DEMO.PROGRESS.OPTION.3' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>barColor</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.PROGRESS.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>trackColor</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.PROGRESS.OPTION.5' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -163,6 +181,20 @@
               &lt;free-progress [striped]="true" [move]="true" theme="success" value="70%"&gt;&lt;/free-progress&gt;
               &lt;free-progress [striped]="true" [move]="true" theme="warning" value="70%"&gt;&lt;/free-progress&gt;
               &lt;free-progress [striped]="true" [move]="true" theme="danger" value="70%"&gt;&lt;/free-progress&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Custom Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-progress value="70%" [barColor]="'#D0C2FB'" [trackColor]="'#eee'"></free-progress>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-progress value="70%" [barColor]="'#D0C2FB'" [trackColor]="'#eee'"&gt;&lt;/free-progress&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

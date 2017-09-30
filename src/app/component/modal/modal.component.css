@@ -1,32 +1,38 @@
 .free-modal {
   position: fixed;
-  background: #222733;
+  background: #fff;
   overflow: hidden;
   min-width: 10rem;
   border-radius: 2px;
-  top: 50%;
+  top: 0;
   left: 50%;
-  color: #fff;
+  color: #222;
   z-index: 9999;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+  margin: 30px auto;
   transition: all .3s; }
   .free-modal.free-modal-spinner {
     min-width: 1rem;
     background: transparent;
-    box-shadow: none; }
+    box-shadow: none;
+    top: 50%;
+    left: 50% !important;
+    width: auto;
+    transform: translate(-50%, -50%) !important; }
     .free-modal.free-modal-spinner .free-modal-content {
       padding: 0; }
+    .free-modal.free-modal-spinner .free-loading span {
+      background: #fff; }
   .free-modal .free-modal-header {
     cursor: pointer; }
   .free-modal .free-modal-content {
-    padding: .75rem;
-    color: #fff; }
+    padding: .75rem; }
   .free-modal .free-modal-header,
   .free-modal .free-modal-footer {
     position: relative;
     padding: .5rem .75rem;
-    background: rgba(0, 0, 0, 0.1); }
+    background: #f5f5f5; }
   .free-modal .free-modal-footer {
     text-align: right; }
     .free-modal .free-modal-footer button {
@@ -41,10 +47,10 @@
     line-height: 1rem;
     text-align: center;
     border-radius: 50%;
+    color: #000;
     cursor: pointer;
     transform: translate(-50%, -50%); }
     .free-modal .free-modal-close:hover {
-      background: #1c1d24;
       opacity: 0.5; }
   .free-modal .free-prompt-input input {
     width: 100%;
@@ -55,18 +61,57 @@
     padding: 0 .5rem; }
 
 .free-primary .free-modal {
-  background: #177bbb !important; }
+  background: #177bbb !important;
+  color: #fff; }
+  .free-primary .free-modal .free-modal-header,
+  .free-primary .free-modal .free-modal-footer {
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff; }
 
 .free-info .free-modal {
-  background: #1ccacc !important; }
+  background: #1ccacc !important;
+  color: #fff; }
+  .free-info .free-modal .free-modal-header,
+  .free-info .free-modal .free-modal-footer {
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff; }
 
 .free-success .free-modal {
-  background: #1aae88 !important; }
+  background: #1aae88 !important;
+  color: #fff; }
+  .free-success .free-modal .free-modal-header,
+  .free-success .free-modal .free-modal-footer {
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff; }
 
 .free-warning .free-modal {
-  background: #fbb23e !important; }
+  background: #fbb23e !important;
+  color: #fff; }
+  .free-warning .free-modal .free-modal-header,
+  .free-warning .free-modal .free-modal-footer {
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff; }
 
 .free-danger .free-modal {
-  background: #e33244 !important; }
+  background: #e33244 !important;
+  color: #fff; }
+  .free-danger .free-modal .free-modal-header,
+  .free-danger .free-modal .free-modal-footer {
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff; }
+
+@media (max-width: 768px) {
+  .free-modal {
+    width: 95% !important; } }
+@media (min-width: 768px) {
+  .free-modal {
+    width: 600px;
+    margin: 30px auto; }
+
+  .free-modal-sm {
+    width: 300px; } }
+@media (min-width: 992px) {
+  .free-modal-lg {
+    width: 900px; } }
 
 /*# sourceMappingURL=modal.component.css.map */

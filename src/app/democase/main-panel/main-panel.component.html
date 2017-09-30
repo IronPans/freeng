@@ -11,24 +11,29 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <free-panel fGrid="4" [header]="'Panel Title'">
-              {{'DEMO.PANEL.DESCRIPTION' | translate}}
-            </free-panel>
-            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'primary'">
-              {{'DEMO.PANEL.DESCRIPTION' | translate}}
-            </free-panel>
-            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'info'">
-              {{'DEMO.PANEL.DESCRIPTION' | translate}}
-            </free-panel>
-            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'success'">
-              {{'DEMO.PANEL.DESCRIPTION' | translate}}
-            </free-panel>
-            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'warning'">
-              {{'DEMO.PANEL.DESCRIPTION' | translate}}
-            </free-panel>
-            <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'danger'">
-              {{'DEMO.PANEL.DESCRIPTION' | translate}}
-            </free-panel>
+            <div class="row">
+              <free-panel fGrid="4" [header]="'Panel Title'">
+                {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              </free-panel>
+              <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'primary'">
+                {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              </free-panel>
+              <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'info'">
+                {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              </free-panel>
+              <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'success'">
+                {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              </free-panel>
+              <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'warning'">
+                {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              </free-panel>
+              <free-panel fGrid="4" [header]="'Panel Title'" [theme]="'danger'">
+                {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              </free-panel>
+              <free-panel fGrid="4" [header]="'Panel Title'" [tool]="true">
+                {{'DEMO.PANEL.DESCRIPTION' | translate}}
+              </free-panel>
+            </div>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -118,6 +123,15 @@
               </free-table-cell>
               <free-table-cell>
                 <ng-template>{{'DEMO.BUTTON.THEME' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>tool</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.PANEL.OPTION.0' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>

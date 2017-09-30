@@ -67,7 +67,9 @@ export class DropdownComponent implements AfterViewInit, OnDestroy {
   itemClick: boolean;
   documentClickListener: any;
   modal: any;
-  constructor(public domRenderer: DomRenderer, public renderer2: Renderer2) { }
+  constructor(public domRenderer: DomRenderer, public renderer2: Renderer2) {
+    this.theme = 'default';
+  }
 
   clickDisabled(event: any, item: any) {
     if (!item.url) {

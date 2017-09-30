@@ -1,10 +1,9 @@
 {
   "name": "freeng",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve ",
     "build": "ng build"
   },
   "repository": {

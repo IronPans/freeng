@@ -78,5 +78,56 @@
         overflow-y: auto; }
       .free-tab-group .free-tab-box .free-tab.active {
         display: block; }
+  .free-tab-group.free-tab-vertical {
+    display: flex;
+    box-shadow: none; }
+    .free-tab-group.free-tab-vertical.free-tab-right free-tab-nav {
+      order: 2; }
+      .free-tab-group.free-tab-vertical.free-tab-right free-tab-nav ul {
+        border: 1px solid #d9d9d9;
+        border-left: none; }
+        .free-tab-group.free-tab-vertical.free-tab-right free-tab-nav ul > li.active span:after {
+          background: #fff;
+          bottom: 0;
+          top: 0;
+          left: -2px;
+          right: auto;
+          width: 4px;
+          height: 100%;
+          z-index: 1; }
+    .free-tab-group.free-tab-vertical free-tab-nav ul {
+      flex-direction: column;
+      border: 1px solid #d9d9d9;
+      border-right: none;
+      border-radius: 0px;
+      padding: 0 !important; }
+      .free-tab-group.free-tab-vertical free-tab-nav ul > li {
+        line-height: 30px;
+        min-width: 60px;
+        border-bottom: 1px solid #d9d9d9; }
+        .free-tab-group.free-tab-vertical free-tab-nav ul > li:last-child {
+          border-bottom: none; }
+        .free-tab-group.free-tab-vertical free-tab-nav ul > li.active span {
+          color: #222;
+          margin: 0 -1px 0 0;
+          background: #fff; }
+          .free-tab-group.free-tab-vertical free-tab-nav ul > li.active span:after {
+            background: #fff;
+            bottom: 0;
+            top: 0;
+            left: auto;
+            right: -2px;
+            width: 4px;
+            height: 100%;
+            z-index: 1; }
+        .free-tab-group.free-tab-vertical free-tab-nav ul > li > span {
+          width: 100%;
+          color: #777;
+          white-space: nowrap;
+          padding: .25rem .75rem !important; }
+          .free-tab-group.free-tab-vertical free-tab-nav ul > li > span:after {
+            transition: none; }
+    .free-tab-group.free-tab-vertical .free-tab-box {
+      border: 1px solid #d9d9d9; }
 
 /*# sourceMappingURL=tab.component.css.map */

@@ -24,6 +24,8 @@ free-accordion-group {
     transition: all .2s linear; }
   .free-accordion-group .accordion-toggle.accordion-item-expand:after {
     transform: translate(0, -50%) rotate(90deg); }
+  .free-accordion-group .accordion-toggle.accordion-item-expand + .accordion-content {
+    border-bottom: 1px solid rgba(120, 130, 140, 0.13); }
   .free-accordion-group .accordion-toggle .accordion-toggle-title {
     transition: all .2s linear; }
 .free-accordion-group .accordion-toggle-inner {
@@ -38,7 +40,8 @@ free-accordion-group {
   overflow: hidden;
   font-size: .7rem;
   border: 1px solid rgba(120, 130, 140, 0.13);
-  border-top: none; }
+  border-top: none;
+  border-bottom: none; }
   .free-accordion-group .accordion-content .accordion-inner, .free-accordion-group .accordion-content > div {
     padding: .5rem; }
 

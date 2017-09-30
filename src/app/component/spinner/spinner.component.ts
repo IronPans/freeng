@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
-  NgModule, Component, AfterViewInit, Input, ViewChild,
-  ElementRef, Renderer2, Output, EventEmitter, forwardRef
+  NgModule, Component, Input, ViewChild, ElementRef, Renderer2, Output, EventEmitter, forwardRef, OnInit
 } from '@angular/core';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
 
@@ -15,21 +14,33 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: 'free-spinner',
   template: `
     <div class="free-spinner">
-      <button class="free-spinner-minus" #minus (click)="onMinus()"></button>
+      <button class="free-spinner-minus" #minus (click)="onMinus()" [class.disabled]="min <= value"></button>
       <input type="text" [(ngModel)]="value">
-      <button class="free-spinner-add" #add (click)="onAdd()"></button>
+      <button class="free-spinner-add" #add (click)="onAdd()" [class.disabled]="max >= value"></button>
     </div>
   `,
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class SpinnerComponent implements ControlValueAccessor, AfterViewInit {
+export class SpinnerComponent implements ControlValueAccessor, OnInit {
 
-  @Input() value: number;
+  @Input() get value() {
+    return this._value;
+  }
+  set value(value: number) {
+    if (value < this.min) {
+      value = this.min;
+    } else if (value > this.max) {
+      value = this.max;
+    }
+    this._value = value;
+  }
   @Input() step: number;
   @Input() min: number;
   @Input() max: number;
   @ViewChild('minus') minus: ElementRef;
+  @ViewChild('add') add: ElementRef;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
+  _value: number;
   onModelChange: Function = () => {};
   onTouchedChange: Function = () => {};
   constructor(public renderer2: Renderer2) {
@@ -37,9 +48,11 @@ export class SpinnerComponent implements ControlValueAccessor, AfterViewInit {
     this.step = 1;
   }
 
-  ngAfterViewInit() {
-    if ((this.min && this.value <= this.min) || (this.max && this.max <= this.value)) {
-      this.renderer2.setAttribute(this.minus.nativeElement, 'disabled', 'true');
+  ngOnInit() {
+    if (this.value < this.min) {
+      this.value = this.min;
+    } else if (this.value > this.max) {
+      this.value = this.max;
     }
   }
 
@@ -60,10 +73,8 @@ export class SpinnerComponent implements ControlValueAccessor, AfterViewInit {
   onAdd() {
     if (this.max && this.max <= this.value) {
       this.value = this.max;
-      this.renderer2.setAttribute(this.minus.nativeElement, 'disabled', 'true');
     } else {
       this.value += this.step;
-      this.renderer2.removeAttribute(this.minus.nativeElement, 'disabled');
     }
     this.onModelChange(this.value);
     this.onChange.emit(this.value);
@@ -72,9 +83,7 @@ export class SpinnerComponent implements ControlValueAccessor, AfterViewInit {
   onMinus() {
     if (this.min && this.value <= this.min) {
       this.value = this.min;
-      this.renderer2.setAttribute(this.minus.nativeElement, 'disabled', 'true');
     } else {
-      this.renderer2.removeAttribute(this.minus.nativeElement, 'disabled');
       this.value -= this.step;
     }
     this.onModelChange(this.value);

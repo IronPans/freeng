@@ -24,14 +24,17 @@ export class MainEditorComponent implements OnInit {
         icon: '\uf10d'
       }
     };
-    this.text = `<p>这是一个富文本编辑器，简单高效！</p>
+    this.text = `<p>
+Editor is a lightweight WYSIWYG HTML Editor written in Javascript
+that enables rich text editing capabilities for your applications.</p>
     <p>
     <ul>
-    <li>123</li>
-    <li>43 <span>work</span></li>
+    <li>Simple</li>
+    <li>Effective</li>
 </ul>
 </p>
-		<p>你可以<a href="http://123">123</a>内容，也可以通过getText()获取纯文本内容</p>`;
+		<p>It has complete documentation.
+		<img width="100" src="https://cdn0.froala.com/assets/editor/pages/B/editor-photo-9fb6e5149212f06a0a54df52ccc30934.jpg"></p>`;
   }
 
   ngOnInit() {

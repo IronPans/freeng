@@ -1,0 +1,232 @@
+@charset "UTF-8";
+.free-steps .free-steps-nav {
+  -webkit-border-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 2px;
+  -moz-background-clip: padding;
+  border-radius: 2px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  position: relative;
+  overflow: hidden; }
+  .free-steps .free-steps-nav > ul {
+    overflow: hidden; }
+    .free-steps .free-steps-nav > ul li {
+      float: left;
+      margin: 0;
+      list-style: none;
+      padding: 0 20px 0 30px;
+      line-height: 46px;
+      position: relative;
+      background: #f5f5f5;
+      color: #d0d0d0;
+      font-size: 16px;
+      cursor: default;
+      -webkit-transition: all .218s ease;
+      -moz-transition: all .218s ease;
+      -o-transition: all .218s ease;
+      transition: all .218s ease; }
+      .free-steps .free-steps-nav > ul li.free-step-actived {
+        cursor: pointer;
+        color: #666; }
+        .free-steps .free-steps-nav > ul li.free-step-actived:before {
+          background-color: #666; }
+        .free-steps .free-steps-nav > ul li.free-step-actived .free-step {
+          border-color: #666;
+          color: #666; }
+      .free-steps .free-steps-nav > ul li.active {
+        background: #fff;
+        color: #262626; }
+        .free-steps .free-steps-nav > ul li.active:before {
+          display: block;
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: -1px;
+          height: 2px;
+          max-height: 2px;
+          overflow: hidden;
+          background-color: #1976d2;
+          z-index: 10000; }
+        .free-steps .free-steps-nav > ul li.active .free-step {
+          border-color: #1976d2;
+          color: #1976d2; }
+        .free-steps .free-steps-nav > ul li.active .free-step-chevron:before {
+          border-left: 14px solid #fff; }
+      .free-steps .free-steps-nav > ul li .free-step-chevron {
+        border: 24px solid transparent;
+        border-left: 14px solid #d4d4d4;
+        border-right: 0;
+        display: block;
+        position: absolute;
+        right: -14px;
+        top: 0;
+        z-index: 1; }
+        .free-steps .free-steps-nav > ul li .free-step-chevron:before {
+          border: 24px solid transparent;
+          border-left: 14px solid #f5f5f5;
+          border-right: 0;
+          content: "";
+          display: block;
+          position: absolute;
+          right: 1px;
+          top: -24px;
+          -webkit-transition: all .218s ease;
+          -moz-transition: all .218s ease;
+          -o-transition: all .218s ease;
+          transition: all .218s ease; }
+      .free-steps .free-steps-nav > ul li:first-child {
+        -webkit-border-radius: 2px 0 0 0;
+        -webkit-background-clip: padding-box;
+        -moz-border-radius: 2px 0 0 0;
+        -moz-background-clip: padding;
+        border-radius: 2px 0 0 0;
+        background-clip: padding-box;
+        padding-left: 20px; }
+      .free-steps .free-steps-nav > ul li .free-step {
+        border: 2px solid #e5e5e5;
+        color: #ccc;
+        font-size: 13px;
+        border-radius: 100%;
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 20px;
+        text-align: center;
+        margin-right: 10px; }
+      .free-steps .free-steps-nav > ul li.free-step-complete {
+        background: #f5f5f5;
+        color: #444; }
+        .free-steps .free-steps-nav > ul li.free-step-complete .free-chevron:before {
+          border-left: 14px solid #f5f5f5; }
+        .free-steps .free-steps-nav > ul li.free-step-complete:hover .free-chevron:before {
+          border-left: 14px solid #eee; }
+        .free-steps .free-steps-nav > ul li.free-step-complete:before {
+          display: block;
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: -1px;
+          height: 2px;
+          max-height: 2px;
+          overflow: hidden;
+          background-color: #a0d468 !important;
+          z-index: 10000; }
+        .free-steps .free-steps-nav > ul li.free-step-complete .free-step {
+          color: #a0d468;
+          border-color: #a0d468; }
+          .free-steps .free-steps-nav > ul li.free-step-complete .free-step:before {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 100%;
+            content: "";
+            background-color: #fff;
+            z-index: 3;
+            font-family: FontAwesome;
+            font-size: 12px;
+            color: #a0d468; }
+.free-steps.free-steps-wired .free-steps-nav > ul {
+  display: table;
+  width: 100%;
+  position: relative; }
+  .free-steps.free-steps-wired .free-steps-nav > ul li {
+    display: table-cell;
+    text-align: center;
+    background-color: #fff;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; }
+    .free-steps.free-steps-wired .free-steps-nav > ul li.free-step-complete .free-step:before {
+      font-size: 22px;
+      line-height: 36px; }
+    .free-steps.free-steps-wired .free-steps-nav > ul li:first-child:before {
+      max-width: 51%;
+      left: 50%; }
+    .free-steps.free-steps-wired .free-steps-nav > ul li:last-child:before {
+      max-width: 50%;
+      width: 50%; }
+    .free-steps.free-steps-wired .free-steps-nav > ul li:before {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 2px !important;
+      font-size: 0;
+      overflow: hidden;
+      background-color: #e5e5e5;
+      position: relative !important;
+      top: 25px;
+      z-index: 1 !important; }
+    .free-steps.free-steps-wired .free-steps-nav > ul li.active {
+      background-color: #fff; }
+      .free-steps.free-steps-wired .free-steps-nav > ul li.active:before {
+        background-color: #1976d2; }
+    .free-steps.free-steps-wired .free-steps-nav > ul li .free-step {
+      border-width: 2px;
+      width: 40px;
+      height: 40px;
+      line-height: 34px;
+      font-size: 15px;
+      z-index: 2;
+      background-color: #fff; }
+    .free-steps.free-steps-wired .free-steps-nav > ul li .free-step-title {
+      display: block;
+      margin-top: 4px;
+      margin-bottom: 6px;
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 20px;
+      z-index: 104;
+      text-align: center;
+      table-layout: fixed;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word; }
+    .free-steps.free-steps-wired .free-steps-nav > ul li .free-step-chevron {
+      display: none; }
+.free-steps .free-steps-content {
+  z-index: 1000;
+  line-height: 42px;
+  vertical-align: middle;
+  border-top: 0;
+  -webkit-border-radius: 0 0 2px 2px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0 0 2px 2px;
+  -moz-background-clip: padding;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 1px 0 10px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 0 10px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 0 10px 1px rgba(0, 0, 0, 0.3);
+  background-color: #fbfbfb; }
+.free-steps .free-steps-footer {
+  margin-top: -10px;
+  position: relative;
+  float: none;
+  text-align: right;
+  border: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); }
+  .free-steps .free-steps-footer button {
+    margin: 8px 5px; }
+
+/*# sourceMappingURL=steps.component.css.map */

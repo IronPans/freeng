@@ -109,6 +109,20 @@
       </div>
 
       <div class="free-card-board">
+        <h3 class="free-toolbar">round</h3>
+        <free-tab-group direction="right">
+          <free-tab header="Demo">
+            <button fButton [round]="true">Round Button</button>
+          </free-tab>
+          <free-tab header="Code">
+            <free-code lang="html">
+              &lt;a fButton&gt;default&lt;/a&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
         <h3 class="free-toolbar">theme</h3>
         <free-tab-group direction="right">
           <free-tab header="Demo">
@@ -220,7 +234,7 @@
         <free-tab header="Demo">
           <button fButton icon="home">HOME</button>
           <button fButton icon="user"></button>
-          <button fButton round="true" icon="user"></button>
+          <button fButton circle="true" icon="user"></button>
         </free-tab>
         <free-tab header="Code">
           <free-code lang="html">
@@ -257,6 +271,29 @@
             <free-code lang="html">
               &lt;button fButton block&gt;default&lt;/button&gt;
               &lt;button fButton block theme="danger"&gt;danger&lt;/button&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Flat Buttons</h3>
+        <free-tab-group direction="right">
+          <free-tab header="Demo">
+            <button fButton [flat]="true">Default</button>
+            <button fButton [theme]="'primary'" [flat]="true">Primary</button>
+            <button fButton [theme]="'info'" [flat]="true">Info</button>
+            <button fButton [theme]="'warning'" [flat]="true">Warning</button>
+            <button fButton [theme]="'success'" [flat]="true">Success</button>
+            <button fButton [theme]="'danger'" [flat]="true">Danger</button>
+          </free-tab>
+          <free-tab header="Code">
+            <free-code lang="html">
+              &lt;free-button-group&gt;
+              &lt;button fButton&gt;default&lt;/button&gt;
+              &lt;button fButton&gt;default&lt;/button&gt;
+              &lt;button fButton&gt;default&lt;/button&gt;
+              &lt;/free-button-group&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

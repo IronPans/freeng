@@ -15,6 +15,7 @@ import {DomRenderer} from '../common/dom';
     <div *ngIf="_visible" class="free-modal"
          [ngStyle]="{'z-index': zIndex, width: width + 'px',
          height: height + 'px','left.px': left, 'top.px': top}"
+         [ngClass]="modalClass"
          [@fadeInScale]="modalState" [class.free-modal-spinner]="spinner">
       <div class="free-modal-header" *ngIf="!spinner" (mousedown)="onMouseDown($event)">
         <span *ngIf="header">{{header}}</span>
@@ -56,11 +57,15 @@ import {DomRenderer} from '../common/dom';
     trigger('fadeInScale', [
       state('in', style({
         opacity: 1,
-        transform: 'translate(-50%, -50%) scale(1)'
+        transform: 'translate(-50%, 0)'
       })),
       transition('void => *', [
-        style({opacity: 0.7, transform: 'translate(-50%, -50%) scale(0)'}),
-        animate(300, style({opacity: 1, transform: 'translate(-50%, -50%) scale(1)'}))
+        style({opacity: 0, transform: 'translate(-50%, -25%)'}),
+        animate('300ms ease-out', style({opacity: 1, transform: 'translate(-50%, 0)'}))
+      ]),
+      transition('* => void', [
+        style({opacity: 1, transform: 'translate(-50%, 0)'}),
+        animate('300ms ease-out', style({opacity: 0, transform: 'translate(-50%, -25%)'}))
       ])
     ])
   ],
@@ -75,6 +80,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   @Input() delay: number;
   @Input() closeIcon = true;
   @Input() type: string;
+  @Input() size: string;
   @Input() spinner: string;
   @Output() visibleChange: EventEmitter<any> = new EventEmitter();
   @Output() onChange: EventEmitter<any> = new EventEmitter();
@@ -90,6 +96,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   left: number;
   top: number;
   data: any;
+  modalClass: any;
   initialized: boolean;
   visibleChangeState: boolean;
   documentClickListener: any;
@@ -128,6 +135,10 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.modalClass = {
+      'free-modal-lg': this.size === 'lg',
+      'free-modal-sm': this.size === 'sm'
+    };
     const modal = this.er.nativeElement;
     this.documentClickListener = this.renderer2.listen(modal, 'click', (e) => {
       if (this.initialized && this.visible) {
@@ -202,7 +213,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
 
   center() {
     this.left = window.innerWidth / 2;
-    this.top = window.innerHeight / 2;
+    // this.top = window.innerHeight / 2;
   }
 
   onMouseDown(event: any) {

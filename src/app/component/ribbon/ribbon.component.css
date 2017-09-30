@@ -1,0 +1,60 @@
+.free-ribbon {
+  position: absolute;
+  overflow: hidden;
+  width: 85px;
+  height: 88px;
+  top: -3px;
+  right: -3px; }
+  .free-ribbon .free-ribbon-wrapper {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    line-height: 20px;
+    background-color: #555;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
+    .free-ribbon .free-ribbon-wrapper:before, .free-ribbon .free-ribbon-wrapper:after {
+      position: absolute;
+      content: " ";
+      line-height: 0;
+      border-top: 2px solid #555;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
+      bottom: -2px; }
+    .free-ribbon .free-ribbon-wrapper:before {
+      left: 0;
+      bottom: -1px; }
+    .free-ribbon .free-ribbon-wrapper:after {
+      right: 0; }
+    .free-ribbon .free-ribbon-wrapper:before, .free-ribbon .free-ribbon-wrapper:after {
+      border-top: 2px solid #2EC1CC; }
+  .free-ribbon.free-ribbon-primary .free-ribbon-wrapper {
+    background-color: #177bbb; }
+    .free-ribbon.free-ribbon-primary .free-ribbon-wrapper:before, .free-ribbon.free-ribbon-primary .free-ribbon-wrapper:after {
+      border-top: 2px solid #177bbb; }
+  .free-ribbon.free-ribbon-info .free-ribbon-wrapper {
+    background-color: #1ccacc; }
+    .free-ribbon.free-ribbon-info .free-ribbon-wrapper:before, .free-ribbon.free-ribbon-info .free-ribbon-wrapper:after {
+      border-top: 2px solid #1ccacc; }
+  .free-ribbon.free-ribbon-success .free-ribbon-wrapper {
+    background-color: #1aae88; }
+    .free-ribbon.free-ribbon-success .free-ribbon-wrapper:before, .free-ribbon.free-ribbon-success .free-ribbon-wrapper:after {
+      border-top: 2px solid #1aae88; }
+  .free-ribbon.free-ribbon-warning .free-ribbon-wrapper {
+    background-color: #fbb23e; }
+    .free-ribbon.free-ribbon-warning .free-ribbon-wrapper:before, .free-ribbon.free-ribbon-warning .free-ribbon-wrapper:after {
+      border-top: 2px solid #fbb23e; }
+  .free-ribbon.free-ribbon-danger .free-ribbon-wrapper {
+    background-color: #e33244; }
+    .free-ribbon.free-ribbon-danger .free-ribbon-wrapper:before, .free-ribbon.free-ribbon-danger .free-ribbon-wrapper:after {
+      border-top: 2px solid #e33244; }
+
+/*# sourceMappingURL=ribbon.component.css.map */

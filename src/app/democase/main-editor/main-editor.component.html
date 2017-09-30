@@ -11,7 +11,9 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <free-editor [style]="{width: 900}" [(ngModel)]="text" [counter]="true"></free-editor>
+            <div style="height: 400px">
+              <free-editor [style]="{width: 900}" [(ngModel)]="text" [counter]="true"></free-editor>
+            </div>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">

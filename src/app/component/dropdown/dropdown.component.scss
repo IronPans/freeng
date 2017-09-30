@@ -29,6 +29,11 @@
     z-index: 999;
     transition: all .25s cubic-bezier(0.23, 1, 0.32, 1);
 
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
     ul li {
       list-style: none;
       padding: .4rem 2rem .4rem 1rem;

@@ -10,6 +10,7 @@ import { ShareModule } from '../common/share';
 
 export class AccordionGroupComponent {
   @Input() closeOthers: boolean;
+  @Input() style: any;
   groups: AccordionComponent[] = [];
   constructor() {}
 
@@ -33,7 +34,8 @@ export class AccordionGroupComponent {
   selector: 'free-accordion',
   template: `
     <div class="accordion-item">
-      <div (click)="toggle()" class="accordion-toggle" [ngClass]="itemClass">
+      <div (click)="toggle()" class="accordion-toggle" [ngStyle]="style || accordionGroup.style"
+           [ngClass]="itemClass">
         <span class="accordion-toggle-inner">
           <ng-container *ngIf="header">
             <i class="fa {{'fa-' + _icon}}" *ngIf="!!_icon"></i>
@@ -63,6 +65,7 @@ export class AccordionComponent implements OnInit {
   @Input() header: string;
   @Input() disabled: boolean;
   @Input() toggleable: boolean;
+  @Input() style: any;
   @Input()
   get iconName(): string {
     return this._icon;

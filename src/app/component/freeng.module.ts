@@ -53,6 +53,9 @@ import {MediaModule} from './media/media.component';
 import {ChartModule} from './chart/chart.component';
 import {FlowModule} from './flow/flow.component';
 import { ShareButtonModule } from './share-button/share-button.component';
+import {RibbonModule} from './ribbon/ribbon.component';
+import {StepsModule} from './steps/steps.component';
+import {KnobModule} from './knob/knob.component';
 import {DomRenderer} from './common/dom';
 
 export {AccordionModule} from './accordion/accordion.component';
@@ -109,6 +112,9 @@ export {MediaModule} from './media/media.component';
 export {ChartModule} from './chart/chart.component';
 export {FlowModule} from './flow/flow.component';
 export {ShareButtonModule} from './share-button/share-button.component';
+export {RibbonModule} from './ribbon/ribbon.component';
+export {StepsModule} from './steps/steps.component';
+export {KnobModule} from './knob/knob.component';
 export {DomRenderer} from './common/dom';
 
 @NgModule({
@@ -166,8 +172,12 @@ export {DomRenderer} from './common/dom';
     CropperModule,
     MediaModule,
     FlowModule,
-    ShareButtonModule
-  ]
+    ShareButtonModule,
+    RibbonModule,
+    StepsModule,
+    KnobModule
+  ],
+  declarations: []
 })
 export class FreengModule {
   static forRoot(): ModuleWithProviders {

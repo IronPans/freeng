@@ -5,32 +5,73 @@
   background: #fff;
   color: rgba(0,0,0, 0.87);
   border-radius: 2px;
-  @include boxShadow;
   @include clearfix;
   @include borderRadius(2px);
+
+  &.free-panel-maximized {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    margin: 0;
+  }
+
+  .free-panel-tool {
+    color: #555;
+
+    i.fa {
+      padding: 0 6px;
+      font-weight: normal;
+      font-size: 13px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
 
   .free-panel-header {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: .85rem;
-    padding: .35rem .75rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    min-height: 35px;
+    font-size: .75rem;
+    padding: .25rem .75rem;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+  }
 
-    f-header, & > span {
-      font-weight: bold;
-    }
+  .free-panel-content {
+    overflow: hidden;
+    box-shadow: 1px 0 10px 1px rgba(0,0,0,.3);
   }
 
   .free-panel-inner {
-    padding: .75rem;
+    padding: .5rem;
+  }
+
+  .free-panel-footer {
+    border-top: 1px solid #e9e9e9;
+    padding: .5rem .75rem;
+    background-color: #fafafa;
   }
 
   @each $theme, $color in $theme {
     &.free-panel-#{$theme} {
       background: $color !important;
       color: #fff;
+
+      .free-panel-header {
+        background-color: $color !important;
+      }
+
+      .free-panel-tool {
+        color: #fff;
+      }
     }
   }
 }

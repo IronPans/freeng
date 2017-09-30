@@ -102,6 +102,20 @@
           </free-tab>
         </free-tab-group>
       </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Min and Max</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-spinner [min]="3" [max]="10"></free-spinner>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-spinner [step]="5"&gt;&lt;/free-spinner&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
     </div>
   </div>
   <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>

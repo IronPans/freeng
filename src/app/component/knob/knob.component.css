@@ -1,0 +1,10 @@
+.free-knob {
+  position: relative;
+  display: inline-block; }
+  .free-knob > div.free-knob-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+/*# sourceMappingURL=knob.component.css.map */

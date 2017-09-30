@@ -54,59 +54,6 @@ free-upload {
   margin: 0;
   box-sizing: border-box;
   font-family: Roboto, Noto Sans, Noto,"Microsoft Yahei",sans-serifsans-serif; }
-  button *, a *,
-  free-accordion *,
-  free-badge *,
-  free-breadcrumb *,
-  free-calendar *,
-  free-card *,
-  free-cascader *,
-  free-chart *,
-  free-chart *,
-  free-checkbox *,
-  free-chip *,
-  free-code *,
-  free-color-picker *,
-  free-column *,
-  free-contextmenu *,
-  free-datatable *,
-  free-draggable *,
-  free-dropdown *,
-  free-editor *,
-  free-fullpage *,
-  free-hamburge *,
-  free-icon *,
-  free-image *,
-  free-inputtext *,
-  free-list *,
-  free-loading *,
-  free-mask *,
-  free-modal *,
-  free-notification *,
-  free-pagination *,
-  free-panel *,
-  free-particle *,
-  free-progress *,
-  free-radio *,
-  free-range *,
-  free-rating *,
-  free-scroll *,
-  free-select *,
-  free-shrink *,
-  free-sidebar *,
-  free-slides *,
-  free-spinner *,
-  free-switch *,
-  free-tab *,
-  free-table *,
-  free-timeline *,
-  free-toast *,
-  free-tree *,
-  free-upload * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Roboto, Noto Sans, Noto,"Microsoft Yahei",sans-serifsans-serif; }
 
 *:before, *:after {
   box-sizing: border-box; }
@@ -965,17 +912,33 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   background-image: none;
   white-space: nowrap;
   padding: 0 .75rem;
-  margin: .5rem;
   font-size: .75rem;
   height: 1.7rem;
-  border-radius: 2px;
+  border-radius: 3px;
+  border: 1px solid #f0f0f0;
   line-height: 1;
-  text-transform: uppercase;
   user-select: none;
   text-decoration: none; }
 
+.btn:hover, .btn:focus, .btn:active, .btn.active {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color; }
+
+.btn:hover, .btn:focus, .btn.focus {
+  color: #333;
+  text-decoration: none; }
+
+.btn:active, .btn.active {
+  outline: 0;
+  background-image: none;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+
 .btn.btn-round {
   border-radius: 1rem; }
+
+.btn.btn-flat,
+.btn-group.btn-group-flat {
+  box-shadow: none !important; }
 
 .btn,
 .btn-group {
@@ -989,23 +952,35 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   height: 2.2rem;
   padding: 0 1.25rem;
   font-size: .8rem; }
+  .btn.btn-big .btn-circle {
+    width: 70px;
+    height: 70px;
+    line-height: 70px; }
 
 .btn.btn-small {
   height: 1.5rem;
   padding: 0 .5rem;
   font-size: .6rem; }
+  .btn.btn-small .btn-circle {
+    width: 60px;
+    height: 60px;
+    line-height: 60px; }
 
 .btn.btn-mini {
   height: 1.1rem;
   padding: 0 5px;
   font-size: .6rem; }
+  .btn.btn-mini .btn-circle {
+    width: 40px;
+    height: 40px;
+    line-height: 40px; }
 
 .btn-circle {
   border-radius: 50%;
   padding: 0;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   text-align: center; }
 
 .btn-default {

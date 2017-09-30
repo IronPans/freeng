@@ -2,6 +2,26 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
+## 0.3.0(2017-09-30)
+
+**Features**
+
+- Add Knob component
+- Add the Steps component
+- Optimize the Modal style
+- Panel
+    - Optimize the style of the Panel
+    - Add the tool property for the tool
+- Optimize the style of the Range
+- Optimize the style of Calendar
+- Optimize the style of the Button
+- Progress Add the barColor and trackColor properties
+- Turn off the Accordion switch animation
+
+**Bug Fixes**
+  
+- Fix Spinner Set the maximum and minimum values that can not be clicked
+
 ## 0.2.5(2017-09-23)
 
 **Features**

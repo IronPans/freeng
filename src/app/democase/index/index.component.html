@@ -121,6 +121,12 @@
           </a>
         </li>
         <li fRipple>
+          <a routerLink="knob" routerLinkActive="active">
+            <cite>Knob</cite>
+            <em class="chinese" *ngIf="lang === 'zh-CN'">环形进度条</em>
+          </a>
+        </li>
+        <li fRipple>
           <a routerLink="rating" routerLinkActive="active">
             <cite>Rating</cite>
             <em class="chinese" *ngIf="lang === 'zh-CN'">星星评分</em>
@@ -262,6 +268,12 @@
           <a routerLink="tree" routerLinkActive="active">
             <cite>Tree</cite>
             <em class="chinese" *ngIf="lang === 'zh-CN'">树形菜单</em>
+          </a>
+        </li>
+        <li fRipple>
+          <a routerLink="steps" routerLinkActive="active">
+            <cite>Steps</cite>
+            <em class="chinese" *ngIf="lang === 'zh-CN'">步骤菜单</em>
           </a>
         </li>
       </ul>
@@ -532,7 +544,7 @@
       </div>
     </div>
     <div class="phone-container">
-      <!--<iframe [src]="url" frameborder="0" width="318" height="502"></iframe>-->
+      <iframe src="http://localhost:8081" frameborder="0" width="318" height="502"></iframe>
     </div>
     <div class="phone-footer">
 

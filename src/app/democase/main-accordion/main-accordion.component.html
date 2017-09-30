@@ -136,6 +136,40 @@
           </free-tab>
         </free-tab-group>
       </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">closeOthers</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-accordion-group [closeOthers]="true" [style]="{background: 'red'}">
+              <free-accordion header="Item 1">
+                Item 1 content.
+              </free-accordion>
+              <free-accordion header="Item 2">
+                Item 2 content.
+              </free-accordion>
+              <free-accordion header="Item 3">
+                Item 3 content.
+              </free-accordion>
+            </free-accordion-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-accordion-group [closeOthers]="true"&gt;
+              &lt;free-accordion header="Item 1"&gt;
+              Item 1 content.
+              &lt;/free-accordion&gt;
+              &lt;free-accordion header="Item 2"&gt;
+              Item 2 content.
+              &lt;/free-accordion&gt;
+              &lt;free-accordion header="Item 3"&gt;
+              Item 3 content.
+              &lt;/free-accordion&gt;
+              &lt;/free-accordion-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
     </div>
 
   </div>

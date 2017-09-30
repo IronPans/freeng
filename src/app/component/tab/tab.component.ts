@@ -32,7 +32,7 @@ export class TabNavComponent {
 @Component({
   selector: 'free-tab',
   template: `
-    <div [ngClass]="tabClass" [@tabState]="selected ? 'active' : 'inactive'"
+    <div [ngClass]="tabClass" [class.free-tab-active]="selected ? 'active' : 'inactive'"
          [style.max-height.px]="maxHeight" [class.free-iscroll]="maxHeight">
       <div class="free-tab-wrapper">
         <ng-content></ng-content>
@@ -89,7 +89,7 @@ export class TabComponent implements OnInit {
 @Component({
   selector: 'free-tab-group',
   template: `
-    <div class="free-tab-group" #group>
+    <div class="free-tab-group" #group [class.free-tab-vertical]="vertical">
       <free-tab-nav [tabs]="tabs" (onTabClick)="tabClick($event)"></free-tab-nav>
       <div class="free-tab-box">
         <ng-content></ng-content>
@@ -105,6 +105,7 @@ export class TabGroupComponent implements AfterContentInit {
   @ViewChild('group') groups: ElementRef;
   @ViewChild('nav') nav: ElementRef;
   @Input() maxHeight: number;
+  @Input() vertical: boolean;
   @ContentChildren(TabComponent) tabGroup: QueryList<TabComponent>;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   tabs: TabComponent[];

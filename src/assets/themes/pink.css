@@ -45,4 +45,8 @@ h3.free-head-title {
   color: #f96197 !important;
   background-color: #eee; }
 
+.free-steps > ul li.active .free-step {
+  border-color: #f96197;
+  color: #f96197; }
+
 /*# sourceMappingURL=pink.css.map */

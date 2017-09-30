@@ -17,6 +17,8 @@ export class ButtonDirective implements AfterViewInit {
   @Input() roundRadius: number;
   @Input() size: string;
   @Input() loading: string;
+  @Input() flat: boolean;
+  @Input() circle: boolean;
   button: HTMLButtonElement;
 
   constructor(public er: ElementRef,
@@ -58,7 +60,12 @@ export class ButtonDirective implements AfterViewInit {
         'borderRadius': this.roundRadius
       })
     }
-
+    if (this.flat) {
+      this.domRenderer.addClass(this.button, 'btn-flat');
+    }
+    if (this.circle) {
+      this.domRenderer.addClass(this.button, 'btn-circle');
+    }
   }
 }
 
@@ -80,10 +87,11 @@ export class BlockDirective implements AfterViewInit {
 
 @Component({
   selector: 'free-button-group',
-  template: '<div class="btn-group"><ng-content></ng-content></div>'
+  template: '<div class="btn-group" [class.btn-group-flat]="flat"><ng-content></ng-content></div>'
 })
 
 export class ButtonGroupComponent {
+  @Input() flat: boolean;
 }
 
 @NgModule({

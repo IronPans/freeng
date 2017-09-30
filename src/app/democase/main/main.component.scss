@@ -20,21 +20,21 @@
    }
 }
 
-:host /deep/ .main-point {
-  padding: 0 10px;
-}
-
 :host /deep/ {
   ul li ul {
     margin-left: 1rem;
   }
 
   .main-point {
-    padding: 0 10px;
+    padding: 0 10px 0 30px;
   }
 
   .main-container .accordion-content .accordion-inner {
     padding: .5rem !important;
   }
 
+  .free-panel-header {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 }

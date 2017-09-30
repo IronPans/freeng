@@ -119,6 +119,51 @@
           </free-tab>
         </free-tab-group>
       </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Default</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-timeline>
+              <free-timeline-node>
+                <a class="btn btn-primary">NOW</a>
+              </free-timeline-node>
+              <free-timeline-list>
+                <free-timeline-datetime [time]="'8:19'" [date]="'Today'"></free-timeline-datetime>
+                <free-timeline-badge>
+                  <i class="fa fa-tags"></i>
+                </free-timeline-badge>
+                <free-timeline-body>
+                  <h4>New Items Arrived</h4>
+                  <p>Purchased new stationary items for head office</p>
+                </free-timeline-body>
+              </free-timeline-list>
+              <free-timeline-list [inverted]="true">
+                <free-timeline-datetime [time]="'8:19'" [date]="'Today'"></free-timeline-datetime>
+                <free-timeline-badge>
+                  <i class="fa fa-tags"></i>
+                </free-timeline-badge>
+                <free-timeline-body>
+                  <h4>New Items Arrived</h4>
+                  <p>Purchased new stationary items for head office</p>
+                </free-timeline-body>
+              </free-timeline-list>
+            </free-timeline>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-timeline&gt;
+              &lt;free-timeline-item header="2017/08/31"&gt;
+              {{'MESSAGE' | translate}}
+              &lt;/free-timeline-item&gt;
+              &lt;free-timeline-item header="2017/07/30"&gt;
+              &lt;free-image-group [images]="images"&gt;&lt;/free-image-group&gt;
+              &lt;/free-timeline-item&gt;
+              &lt;/free-timeline&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
     </div>
   </div>
   <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
