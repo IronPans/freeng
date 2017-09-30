@@ -3,8 +3,9 @@
   "version": "0.3.0",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve ",
-    "build": "ng build"
+    "start": "ng serve -o -w",
+    "build": "ng build -d freeng/ --prod",
+    "release": "./build.sh && npm run build"
   },
   "repository": {
     "type": "git",
