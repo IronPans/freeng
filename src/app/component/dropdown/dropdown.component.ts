@@ -7,6 +7,7 @@ import { ButtonModule } from '../button/button.directive';
 import { DomRenderer } from '../common/dom';
 import {RouterModule} from '@angular/router';
 import {ShareModule} from '../common/share';
+import {BadgeModule} from '../badge/badge.component';
 
 @Component({
   selector: 'free-dropdown',
@@ -23,10 +24,12 @@ import {ShareModule} from '../common/share';
           <li *ngFor="let menu of menus" (click)="onItemClick()">
             <a *ngIf="menu.routerLink" [routerLink]="menu.routerLink" [attr.target]="menu.target">
               <i *ngIf="menu.icon" class="fa {{'fa-' + menu.icon}}"></i> {{menu.name}}
+              <span class="free-dropdown-badge" *ngIf="menu.badge">{{menu.badge}}</span>
             </a>
             <a *ngIf="!menu.routerLink" [href]="menu.url || '#'" (click)="clickDisabled($event, menu)"
                [attr.target]="menu.target">
               <i *ngIf="menu.icon" class="fa {{'fa-' + menu.icon}}"></i> {{menu.name}}
+              <span class="free-dropdown-badge" *ngIf="menu.badge">{{menu.badge}}</span>
             </a>
           </li>
         </ul>
@@ -39,14 +42,16 @@ import {ShareModule} from '../common/share';
   animations: [
     trigger('dropdownState', [
       state('active', style({
-        transform: 'scale(1)',
-        opacity: 1
+        transform: 'translateY(0px)',
+        opacity: 1,
+        visibility: 'visible'
       })),
       state('inactive', style({
-        transform: 'scale(0)',
-        opacity: 0
+        transform: 'translateY(30px)',
+        opacity: 0,
+        visibility: 'hidden'
       })),
-      transition('inactive <=> active', animate('300ms ease'))
+      transition('inactive <=> active', animate('300ms linear'))
     ])
   ],
   providers: [DomRenderer]

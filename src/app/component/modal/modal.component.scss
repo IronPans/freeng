@@ -76,11 +76,12 @@
 
   .free-prompt-input input {
     width: 100%;
-    border: none;
     background: #fff;
     border-radius: 3px;
     color: #333;
     padding: 0 .5rem;
+    border: 1px solid #d9d9d9;
+    line-height: 30px;
   }
 }
 

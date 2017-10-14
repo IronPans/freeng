@@ -6,6 +6,12 @@
   height: 88px;
   top: -3px;
   right: -3px;
+  &.free-ribbon-left {
+    left: -3px;
+    right: auto;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
 
   .free-ribbon-wrapper {
     position: relative;
@@ -46,7 +52,54 @@
 
     &:before,
     &:after {
-        border-top: 2px solid #2EC1CC;
+        border-top: 2px solid #555;
+    }
+  }
+
+  &.free-ribbon-type-2 {
+    width: auto;
+    height: 30px;
+    clear: left;
+    position: absolute;
+    top: 12px;
+    right: -2px;
+    overflow: visible;
+    color: #ffffff;
+    &.free-ribbon-left {
+      left: -2px;
+      right: auto;
+      .free-ribbon-wrapper {
+        &:before {
+          left: 100%;
+          right: auto;
+          border: 15px solid #555;
+          border-right: 10px solid transparent;
+        }
+      }
+    }
+    .free-ribbon-wrapper {
+      transform: none;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: 100%;
+      line-height: 30px;
+      padding: 0 20px;
+      &:after {
+        border-color: transparent;
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        right: 100%;
+        left: auto;
+        display: block;
+        width: 0;
+        height: 0;
+        content: '';
+        border: 15px solid #555;
+        border-left: 10px solid transparent;
+      }
     }
   }
 
@@ -58,6 +111,24 @@
         &:before,
         &:after {
           border-top: 2px solid $color;
+        }
+      }
+
+      &.free-ribbon-type-2 {
+        .free-ribbon-wrapper {
+          &:before {
+            border: 15px solid $color;
+            border-left: 10px solid transparent;
+          }
+        }
+
+        &.free-ribbon-type-2.free-ribbon-left {
+          .free-ribbon-wrapper {
+            &:before {
+              border: 15px solid $color;
+              border-right: 10px solid transparent;
+            }
+          }
         }
       }
     }

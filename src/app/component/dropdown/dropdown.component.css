@@ -1,7 +1,6 @@
 .free-dropdown {
   position: relative;
-  display: inline-flex;
-  width: 100%; }
+  display: inline-flex; }
   .free-dropdown .btn {
     margin: 0;
     width: 100%; }
@@ -25,8 +24,6 @@
       padding: 0; }
     .free-dropdown .free-dropdown-menu ul li {
       list-style: none;
-      padding: .4rem 2rem .4rem 1rem;
-      width: 100%;
       cursor: pointer;
       white-space: nowrap;
       transition: all .3s; }
@@ -35,8 +32,23 @@
       .free-dropdown .free-dropdown-menu ul li:hover {
         background: #f3f3f3; }
       .free-dropdown .free-dropdown-menu ul li a {
+        position: relative;
+        display: block;
         color: #333;
-        font-size: .75rem; }
+        padding: .25rem .6rem;
+        width: 100%; }
+        .free-dropdown .free-dropdown-menu ul li a .free-dropdown-badge {
+          position: absolute;
+          right: 6px;
+          top: 50%;
+          transform: translate(0, -50%);
+          padding: 3px 4px;
+          font-size: .5rem;
+          line-height: 12px;
+          border-radius: 3px;
+          background-color: #f44336;
+          color: #fff;
+          margin-left: 3px; }
     .free-dropdown .free-dropdown-menu.free-dropdown-bottom-left, .free-dropdown .free-dropdown-menu.free-dropdown-bottom-right {
       top: 100%; }
     .free-dropdown .free-dropdown-menu.free-dropdown-bottom-left {

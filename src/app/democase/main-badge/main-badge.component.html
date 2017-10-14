@@ -38,6 +38,33 @@
                 <ng-template>{{'DEMO.BADGE.OPTION.1' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>outline</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BADGE.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>circle</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BADGE.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.BADGE.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -59,17 +86,18 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton>
-              {{'COMPONENT.BADGE' | translate}}
-              <free-badge content="9"></free-badge>
-            </button>
+            <free-badge content="9"></free-badge>
+            <free-badge content="9" [outline]="true"></free-badge>
+
+            <free-badge content="9" [circle]="false"></free-badge>
+            <free-badge content="9" [circle]="false" [outline]="true"></free-badge>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;button fButton&gt;
-              {{'COMPONENT.BADGE' | translate}}
-                &lt;free-badge content="9"&gt;&lt;/free-badge&gt;
-              &lt;/button&gt;
+              &lt;free-badge content="9"&gt;&lt;/free-badge&gt;
+              &lt;free-badge content="9" [outline]="true"&gt;&lt;/free-badge&gt;
+              &lt;free-badge content="9" [circle]="false"&gt;&lt;/free-badge&gt;
+              &lt;free-badge content="9" [circle]="false" [outline]="true"&gt;&lt;/free-badge&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -83,6 +111,10 @@
               <free-icon icon="bell"></free-icon>
               <free-badge content="1" [up]="true"></free-badge>
             </a>
+            <button fButton>
+              {{'COMPONENT.BADGE' | translate}}
+              <free-badge content="9"></free-badge>
+            </button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -90,6 +122,46 @@
                 &lt;free-icon icon="bell"&gt;&lt;/free-icon&gt;
                 &lt;free-badge content="1" [up]="true"&gt;&lt;/free-badge&gt;
               &lt;/a&gt;
+              &lt;button fButton&gt;
+              {{'COMPONENT.BADGE' | translate}}
+              &lt;free-badge content="9"&gt;&lt;/free-badge&gt;
+              &lt;/button&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Outline</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-badge content="1" [outline]="true"></free-badge>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-badge content="1" [outline]="true"&gt;&lt;/free-badge&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Theme</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-badge content="1" [theme]="'primary'"></free-badge>
+            <free-badge content="1" [theme]="'info'"></free-badge>
+            <free-badge content="1" [theme]="'warning'"></free-badge>
+            <free-badge content="1" [theme]="'danger'"></free-badge>
+            <free-badge content="1" [theme]="'success'"></free-badge>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-badge content="1" [theme]="'primary'"&gt;&lt;/free-badge&gt;
+              &lt;free-badge content="1" [theme]="'info'"&gt;&lt;/free-badge&gt;
+              &lt;free-badge content="1" [theme]="'warning'"&gt;&lt;/free-badge&gt;
+              &lt;free-badge content="1" [theme]="'danger'"&gt;&lt;/free-badge&gt;
+              &lt;free-badge content="1" [theme]="'success'"&gt;&lt;/free-badge&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

@@ -49,11 +49,7 @@ export class KnobComponent implements ControlValueAccessor, OnInit, AfterViewIni
   }
 
   ngOnInit() {
-    let value = this.value;
-    if (typeof value === 'string') {
-      value = value.split('%')[0];
-    }
-    this.percent = value;
+    this.getPercent();
   }
 
   ngAfterViewInit() {
@@ -65,9 +61,20 @@ export class KnobComponent implements ControlValueAccessor, OnInit, AfterViewIni
     this.initialed = true;
   }
 
+  getPercent() {
+    let value = this.value;
+    if (typeof value === 'string') {
+      value = value.split('%')[0];
+    }
+    this.percent = value;
+  }
+
   writeValue(value: any) {
     if (this.initialed) {
       this.value = value;
+      this.currentValue = 0;
+      this.getPercent();
+      this.draw();
     }
   }
 

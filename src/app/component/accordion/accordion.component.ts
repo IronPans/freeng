@@ -20,7 +20,7 @@ export class AccordionGroupComponent {
     }
     this.groups.forEach((item: AccordionComponent) => {
       if (item !== activeItem) {
-        item.isExpand = false;
+        item.selected = false;
       }
     });
   }
@@ -33,7 +33,7 @@ export class AccordionGroupComponent {
 @Component({
   selector: 'free-accordion',
   template: `
-    <div class="accordion-item">
+    <div class="accordion-item" [class.free-accordion-disabled]="disabled">
       <div (click)="toggle()" class="accordion-toggle" [ngStyle]="style || accordionGroup.style"
            [ngClass]="itemClass">
         <span class="accordion-toggle-inner">
@@ -76,19 +76,19 @@ export class AccordionComponent implements OnInit {
   }
 
   @Input()
-  get isExpand() {
-    return this._isExpanded;
+  get selected() {
+    return this._selected;
   }
 
-  set isExpand(value: boolean) {
-    this._isExpanded = value;
-    if (this._isExpanded) {
+  set selected(value: boolean) {
+    this._selected = value;
+    if (this._selected) {
       this.accordionGroup.closeOther(this);
     }
     this.toggleClass();
   }
 
-  _isExpanded: boolean;
+  _selected: boolean;
   _icon: string;
   isActive: string;
   itemClass: any;
@@ -107,17 +107,17 @@ export class AccordionComponent implements OnInit {
   }
 
   toggleClass() {
-    if (!this.isAnimating) {
-      this.isActive = this.isExpand ? 'active' : 'inactive';
+    if (!this.isAnimating && !this.disabled) {
+      this.isActive = this.selected ? 'active' : 'inactive';
       this.itemClass = {
-        'accordion-item-expand': this.isExpand
+        'accordion-item-expand': this.selected
       };
     }
   }
 
   toggle() {
     if (!this.disabled) {
-      this.isExpand = !this.isExpand;
+      this.selected = !this.selected;
     }
   }
 

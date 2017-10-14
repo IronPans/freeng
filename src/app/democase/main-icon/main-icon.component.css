@@ -1,5 +1,5 @@
 :host /deep/ free-icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;

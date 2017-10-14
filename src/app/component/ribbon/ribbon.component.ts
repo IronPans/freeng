@@ -4,7 +4,7 @@ import {CommonModule} from '@angular/common';
 @Component({
   selector: 'free-ribbon',
   template: `
-    <div class="free-ribbon" #ribbon>
+    <div class="free-ribbon free-ribbon-type-{{type}} free-ribbon-{{direction}}" #ribbon>
       <div class="free-ribbon-wrapper">
         <ng-content></ng-content>
       </div>
@@ -14,9 +14,14 @@ import {CommonModule} from '@angular/common';
 export class RibbonComponent implements AfterViewInit {
 
   @Input() theme: string;
+  @Input() type: number;
+  @Input() direction: string;
   @ViewChild('ribbon') ribbonViewChild: ElementRef;
   ribbon: HTMLDivElement;
-  constructor(public renderer2: Renderer2) { }
+  constructor(public renderer2: Renderer2) {
+    this.type = 1;
+    this.direction = 'right';
+  }
 
   ngAfterViewInit() {
     this.ribbon = this.ribbonViewChild.nativeElement;

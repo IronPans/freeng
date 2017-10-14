@@ -14,9 +14,6 @@ free-slides {
   width: 100%;
   height: 100%;
   background: #eee; }
-  .free-slides:hover .free-slides-next:not(.free-slides-disabled),
-  .free-slides:hover .free-slides-prev:not(.free-slides-disabled) {
-    opacity: 1; }
   .free-slides:hover .free-slides-disabled {
     opacity: .35 !important; }
   .free-slides .free-slides-wrapper {
@@ -91,30 +88,33 @@ free-slides {
     cursor: pointer; }
   .free-slides .free-slides-next, .free-slides .free-slides-prev {
     position: absolute;
-    top: 50%;
+    top: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2rem;
-    height: 2rem;
-    z-index: 10;
-    border-radius: 100%;
-    cursor: pointer;
-    font-size: 1.25rem;
+    width: 15%;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    font-size: 20px;
     color: #fff;
-    opacity: 0;
-    transform: translate(0, -50%);
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    background-color: transparent;
+    z-index: 10;
+    cursor: pointer;
     transition: all .3s; }
     .free-slides .free-slides-next.free-slides-disabled, .free-slides .free-slides-prev.free-slides-disabled {
       cursor: auto;
       pointer-events: none; }
     .free-slides .free-slides-next:not(.free-slides-disabled):hover, .free-slides .free-slides-prev:not(.free-slides-disabled):hover {
-      background: rgba(0, 0, 0, 0.5); }
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.3); }
   .free-slides .free-slides-prev {
-    left: 10px;
+    left: 0;
     right: auto; }
   .free-slides .free-slides-next {
-    right: 10px;
+    right: 0;
     left: auto; }
 
 /*# sourceMappingURL=slides.component.css.map */

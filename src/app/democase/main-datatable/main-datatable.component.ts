@@ -13,10 +13,12 @@ export class MainDatatableComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   book: any;
   persons: any;
+  users: any;
   b = {job: '{{b.job}}'};
   pageTitle = 'Components-Datatable';
   constructor() {
     this.book = [];
+    this.users = [];
     this.persons = [];
   }
 
@@ -78,6 +80,26 @@ export class MainDatatableComponent implements OnInit {
         'address': 'guangdong',
         'job': 'nurse'
       }, {
+        'name': 'Tom Black',
+        'age': 20,
+        'address': 'beijing',
+        'job': 'engineer'
+      },
+      {
+        'name': 'Tom Green',
+        'age': 25,
+        'address': 'shanghai',
+        'job': 'police'
+      },
+      {
+        'name': 'Tom Brown',
+        'age': 30,
+        'address': 'guangdong',
+        'job': 'nurse'
+      }
+    ];
+    this.users = [
+      {
         'name': 'Tom Black',
         'age': 20,
         'address': 'beijing',

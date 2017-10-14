@@ -35,26 +35,20 @@ import {DomRenderer} from '../common/dom';
   animations: [
     trigger('moveInState', [
       state('topRightIn, topLeftIn, bottomRightIn, bottomLeftIn', style({
-        opacity: 1,
         transform: 'translate3d(0, 0, 0)'
       })),
       transition('void => topRightIn, void => bottomRightIn', [
         style({
-          opacity: 0,
           transform: 'translate3d(100%, 0, 0)'
         }),
         animate('.25s cubic-bezier(.25,.8,.25,1)')
       ]),
       transition('void => topLeftIn, void => bottomLeftIn', [
         style({
-          opacity: 0,
           transform: 'translate3d(-100%, 0, 0)'
         }),
         animate('.25s cubic-bezier(.25,.8,.25,1)')
-      ]),
-      transition(':leave', animate('.1s', style({
-        opacity: 0
-      })))
+      ])
     ])
   ],
   providers: [DomRenderer]
@@ -100,6 +94,7 @@ export class NotificationComponent implements OnInit, DoCheck, AfterViewInit {
               public differs: IterableDiffers) {
     this.direction = 'topRight';
     this.maxMessage = 10;
+    this.delay = 3000;
     this.progress = true;
     this.theme = 'default';
     this.differ = differs.find([]).create(null);

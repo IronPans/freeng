@@ -1074,8 +1074,8 @@ input::-webkit-input-placeholder {
   border: none;
 }
 
-.btn-primary, .btn-primary:hover, .btn-primary:focus {
-  color: white;
+a, a:visited, a:link, a:active, a:hover {
+  outline: none;
 }
 
 a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
@@ -1097,7 +1097,6 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   font-size: .75rem;
   height: 1.7rem;
   border-radius: 3px;
-  border: 1px solid #f0f0f0;
   line-height: 1;
   user-select: none;
   text-decoration: none;
@@ -1123,14 +1122,14 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   border-radius: 1rem;
 }
 
+.btn,
+.btn-group {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+
 .btn.btn-flat,
 .btn-group.btn-group-flat{
   box-shadow: none !important;
-}
-
-.btn,
-.btn-group {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
 .btn.btn-block {
@@ -1143,7 +1142,7 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   padding: 0 1.25rem;
   font-size: .8rem;
 
-  .btn-circle {
+  &.btn-circle {
     width: 70px;
     height: 70px;
     line-height: 70px;
@@ -1155,10 +1154,10 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   padding: 0 .5rem;
   font-size: .6rem;
 
-  .btn-circle {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+  &.btn-circle {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
   }
 }
 
@@ -1167,7 +1166,7 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   padding: 0 5px;
   font-size: .6rem;
 
-  .btn-circle {
+  &.btn-circle {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -1177,9 +1176,9 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
 .btn-circle {
   border-radius: 50%;
   padding: 0;
-  width:50px;
-  height: 50px;
-  line-height: 50px;
+  width:60px;
+  height: 60px;
+  line-height: 60px;
   text-align: center;
 }
 
@@ -1560,10 +1559,9 @@ blockquote {
 .free-tooltip {
   position: fixed;
   max-width: 12.5rem;
-  padding: .5rem;
+  padding: .25rem .5rem;
   background: rgba(18, 19, 26, 0.9);
   color: #fff;
-  line-height: 1.5;
   border-radius: 3px;
   white-space: normal;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -1664,24 +1662,6 @@ blockquote {
   background: #eee;
   border: 1px solid #d9d9d9;
   padding: .25rem;
-}
-
-.free-badge {
-  display: inline-block;
-  padding: 3px 4px;
-  font-size: .5rem;
-  line-height: 12px;
-  border-radius: 3px;
-  background-color: #f44336;
-  color: #fff;
-  margin-left: 3px;
-}
-
-.free-badge.free-badge-up {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  margin-left: 0;
 }
 
 .free-depth {
@@ -1835,6 +1815,15 @@ blockquote {
   background-color: #ccc;
 }
 
+.free-iscroll.free-iscroll-hover {
+  overflow: hidden !important;
+  &:hover,
+  &:active,
+  &:focus {
+    overflow-y: auto !important;
+  }
+}
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -1855,4 +1844,8 @@ code:not(.hljs) {
   color: #c7254e;
   background-color: #f9f2f4;
   border-radius: 2px;
+}
+.text-muted {
+  color: inherit!important;
+  opacity: .6;
 }

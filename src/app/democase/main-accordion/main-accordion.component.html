@@ -52,6 +52,24 @@
                 <ng-template>{{'DEMO.ACCORDION.OPTION.1' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>selected</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.ACCORDION.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>disabled</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.ACCORDION.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -138,14 +156,14 @@
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">closeOthers</h3>
+        <h3 class="free-toolbar">selected</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <free-accordion-group [closeOthers]="true" [style]="{background: 'red'}">
+            <free-accordion-group [closeOthers]="true">
               <free-accordion header="Item 1">
                 Item 1 content.
               </free-accordion>
-              <free-accordion header="Item 2">
+              <free-accordion header="Item 2" [selected]="true">
                 Item 2 content.
               </free-accordion>
               <free-accordion header="Item 3">
@@ -159,7 +177,41 @@
               &lt;free-accordion header="Item 1"&gt;
               Item 1 content.
               &lt;/free-accordion&gt;
-              &lt;free-accordion header="Item 2"&gt;
+              &lt;free-accordion header="Item 2" [selected]="true"&gt;
+              Item 2 content.
+              &lt;/free-accordion&gt;
+              &lt;free-accordion header="Item 3"&gt;
+              Item 3 content.
+              &lt;/free-accordion&gt;
+              &lt;/free-accordion-group&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">disabled</h3>
+        <free-tab-group direction="right" theme="line">
+          <free-tab header="PREVIEW">
+            <free-accordion-group [closeOthers]="true">
+              <free-accordion header="Item 1">
+                Item 1 content.
+              </free-accordion>
+              <free-accordion header="Item 2" [disabled]="true">
+                Item 2 content.
+              </free-accordion>
+              <free-accordion header="Item 3">
+                Item 3 content.
+              </free-accordion>
+            </free-accordion-group>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-accordion-group [closeOthers]="true"&gt;
+              &lt;free-accordion header="Item 1"&gt;
+              Item 1 content.
+              &lt;/free-accordion&gt;
+              &lt;free-accordion header="Item 2" [disabled]="true"&gt;
               Item 2 content.
               &lt;/free-accordion&gt;
               &lt;free-accordion header="Item 3"&gt;

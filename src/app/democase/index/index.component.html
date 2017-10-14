@@ -121,12 +121,6 @@
           </a>
         </li>
         <li fRipple>
-          <a routerLink="knob" routerLinkActive="active">
-            <cite>Knob</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">环形进度条</em>
-          </a>
-        </li>
-        <li fRipple>
           <a routerLink="rating" routerLinkActive="active">
             <cite>Rating</cite>
             <em class="chinese" *ngIf="lang === 'zh-CN'">星星评分</em>
@@ -196,6 +190,12 @@
           <a routerLink="tooltips" routerLinkActive="active">
             <cite>Tooltip</cite>
             <em class="chinese" *ngIf="lang === 'zh-CN'">提示框</em>
+          </a>
+        </li>
+        <li fRipple>
+          <a routerLink="popovers" routerLinkActive="active">
+            <cite>Popover</cite>
+            <em class="chinese" *ngIf="lang === 'zh-CN'">弹出框</em>
           </a>
         </li>
         <li fRipple>
@@ -339,6 +339,12 @@
           <a routerLink="loading" routerLinkActive="active">
             <cite>Loading</cite>
             <em class="chinese" *ngIf="lang === 'zh-CN'">加载条</em>
+          </a>
+        </li>
+        <li fRipple>
+          <a routerLink="knob" routerLinkActive="active">
+            <cite>Knob</cite>
+            <em class="chinese" *ngIf="lang === 'zh-CN'">环形进度条</em>
           </a>
         </li>
       </ul>
@@ -526,8 +532,10 @@
   <h4>{{'THEME-SETTING' | translate}}</h4>
   <div class="row">
     <ul class="deviceswitcher-menu">
-      <li (click)="reviewMobile()">
-        <i class="fa fa-mobile"></i>
+      <li>
+        <a href="https://ironpans.github.io/mobile/" target="_blank" style="display: block;">
+          <i class="fa fa-mobile"></i>
+        </a>
       </li>
     </ul>
   </div>

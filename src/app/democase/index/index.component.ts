@@ -40,13 +40,15 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
              public domRenderer: DomRenderer,
              public pageTitle: Title) {
     this.resize();
-    this.lang = translate.currentLang;
   }
 
   ngOnInit() {
+    // this.lang = this.translate.currentLang;
+    this.lang = navigator.language || navigator['browserLanguage'];
     this.icon = 'laptop';
     this.menuItem = [{'name': 'Homepage'}, {'name': ''}];
-    this.dropdownItem = [{
+    this.dropdownItem = [
+      {
       'name': 'TG',
       'icon': 'user'
     }, {
@@ -67,6 +69,8 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
       'icon': 'sign-out',
       'routerLink': '/login'
     }];
+
+    this.translate.use(this.lang);
 
     this.searchForm = this.fb.group({
       'keyword': ['']

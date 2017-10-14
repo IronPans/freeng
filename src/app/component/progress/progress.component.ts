@@ -29,7 +29,7 @@ export class ProgressComponent implements AfterViewInit {
   _bar: HTMLElement;
   _container: HTMLElement;
   constructor(public renderer2: Renderer2, public er: ElementRef) {
-    this.width = '200px';
+    this.width = '100%';
     this.height = '20px';
   }
 

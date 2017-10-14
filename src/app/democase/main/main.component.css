@@ -20,7 +20,6 @@
 :host /deep/ .main-container .accordion-content .accordion-inner {
   padding: .5rem !important; }
 :host /deep/ .free-panel-header {
-  text-transform: uppercase;
   font-weight: bold; }
 
 /*# sourceMappingURL=main.component.css.map */

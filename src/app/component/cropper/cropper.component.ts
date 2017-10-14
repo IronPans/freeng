@@ -330,10 +330,11 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onCropperChange() {
     this.onCrop.emit({
-      top: this.y,
-      left: this.x,
-      width: this.width,
-      height: this.height,
+      top: parseInt(this.y + '', 10),
+      left: parseInt(this.x + '', 10),
+      width: this.cropperWidth,
+      height: this.cropperHeight,
+      scale: this.zoomRatio,
       canvasData: this.getCanvasData()
     });
   }

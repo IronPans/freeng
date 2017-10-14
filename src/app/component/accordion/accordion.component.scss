@@ -3,12 +3,28 @@
 
 free-accordion-group {
   flex: 1 0 auto;
+
+  free-accordion {
+    &:first-child .accordion-toggle {
+      border-top: none;
+    }
+  }
 }
 
 .free-accordion-group {
-
+  border: 1px solid rgba(120, 130, 140, 0.13);
   .accordion-item {
     background: #fff;
+
+    &.free-accordion-disabled {
+      .accordion-toggle {
+        cursor: not-allowed;
+        &:hover {
+          color: #737373;
+          text-decoration: none;
+        }
+      }
+    }
   }
 
   .accordion-toggle {
@@ -17,10 +33,25 @@ free-accordion-group {
     position: relative;
     min-height: 2rem;
     padding: .25rem .75rem;
-    color: #fff;
+    color: #737373;
     cursor: pointer;
-    border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+    border-top: 1px solid rgba(120, 130, 140, 0.13);
     user-select: none;
+
+    &.accordion-item-expand {
+      font-weight: 600;
+      color: #262626;
+
+      + .accordion-content  {
+        background: rgba(0, 0, 0, 0.07);
+        border-top: 1px solid rgba(120, 130, 140, 0.13);
+      }
+    }
+
+    &:hover {
+      color: #262626;
+      text-decoration: none;
+    }
 
     &:after {
       font: normal normal normal .8rem/1 FontAwesome;
@@ -37,12 +68,6 @@ free-accordion-group {
       transform: translate(0, -50%) rotate(90deg);
     }
 
-    &.accordion-item-expand {
-      & + .accordion-content {
-        border-bottom: 1px solid rgba(120, 130, 140, 0.13);
-      }
-    }
-
     .accordion-toggle-title {
       transition: all .2s linear;
     }
@@ -57,9 +82,6 @@ free-accordion-group {
     position: relative;
     overflow: hidden;
     font-size: .7rem;
-    border: 1px solid rgba(120, 130, 140, 0.13);
-    border-top: none;
-    border-bottom: none;
 
     .accordion-inner,
     & > div {

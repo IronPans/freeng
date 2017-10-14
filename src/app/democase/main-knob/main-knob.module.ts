@@ -8,10 +8,12 @@ import {MainKnobRoutingModule} from './main-knob-routing.module';
 import {MainKnobComponent} from './main-knob.component';
 import {LanguageModule} from '../common/language';
 import {KnobModule} from '../../component/knob/knob.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MainKnobRoutingModule,
     TabGroupModule,
     CodeModule,

@@ -1,0 +1,45 @@
+@import "../../../assets/sass/variables";
+.free-badge {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  background: #f44336;
+  border-radius: .25rem;
+  padding: .1rem .2rem;
+  line-height: 14px;
+
+  &.free-badge-circle {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  &.free-badge-outline {
+    border: 1px solid #f44336;
+    background: transparent;
+    color: #f44336;
+  }
+
+  &.free-badge-up {
+    position: absolute;
+    top: 0;
+    right: 3px;
+  }
+
+  @each $theme, $color in $theme {
+    &.free-badge-#{$theme}{
+      background: $color !important;
+      color: #fff;
+
+      &.free-badge-outline {
+        border-color: $color;
+        color: $color;
+      }
+    }
+  }
+}

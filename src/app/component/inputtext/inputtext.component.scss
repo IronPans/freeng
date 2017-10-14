@@ -1,173 +1,200 @@
 @import "../../../assets/sass/variables";
 
-.input-field {
-  position: relative;
-  min-width: 4rem;
+.free-inputtext {
 
-  input {
-    background-color: transparent;
-    height: 35px;
-    width: 100%;
-    box-shadow: none;
-    outline: none;
-    padding: 0 .5rem;
-    border-radius: 3px;
-    border: 1px solid #d9d9d9;
-    box-sizing: border-box;
-    transition: all 0.3s;
+  .input-label {
+    font-weight: normal;
+    font-size: 13px;
+    vertical-align: middle;
+    display: block;
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+  .input-field {
+    position: relative;
 
-    & + span {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      display: inline-block;
-      max-width: 100%;
-      z-index: 0;
+    input {
+      background-color: transparent;
+      height: 35px;
       width: 100%;
-      height: 1px;
+      box-shadow: none;
+      outline: none;
+      padding: 0 .5rem;
+      color: #222;
       border: 1px solid #d9d9d9;
-    }
+      box-sizing: border-box;
+      border-radius: 4px !important;
+      transition: all 0.3s;
 
-    &:focus + span:after {
-      transform: scale(1);
-    }
+      & + span {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: inline-block;
+        max-width: 100%;
+        z-index: 0;
+        width: 100%;
+        height: 1px;
+        border: 1px solid #d9d9d9;
+      }
 
-    &:focus {
-      background-color: #fff;
-      border-color: #108ee9;
-    }
-  }
+      &:focus + span:after {
+        transform: scale(1);
+      }
 
-  span:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #2196f3;
-    transform: scale(0);
-    transition: all .2s ease-out;
-  }
-
-  .free-inputtext-validator,
-  .free-inputtext-icon {
-    position: absolute;
-    width: 25px;
-    top: 50%;
-    text-align: center;
-    opacity: 1;
-    padding: 0 5px;
-    font-size: .75rem;
-    transform: translate(0, -50%);
-  }
-
-  .free-inputtext-validator {
-    right: 0;
-  }
-
-  .free-inputtext-icon {
-    left: 0;
-    & + input {
-      padding-left: 25px;
-    }
-  }
-  &.input-field-icon input {
-    padding-right: 25px;
-  }
-
-  &.free-success {
-    span:after {
-      background: #1aae88;
-    }
-
-    input,
-    input:focus {
-      border-color: #1aae88;
-    }
-
-    .free-inputtext-validator {
-      color: #1aae88;
-    }
-  }
-
-  &.free-warning {
-    span:after {
-      background: #fbb23e;
-    }
-
-    input,
-    input:focus {
-      border-color: #fbb23e;
-    }
-
-    .free-inputtext-validator {
-      color: #fbb23e;
-    }
-  }
-
-  &.free-error {
-    span:after {
-      background: #e33244;
-    }
-
-    input,
-    input:focus {
-      border-color: #e33244;
-    }
-
-    .free-inputtext-validator {
-      color: #e33244;
-    }
-  }
-
-
-  .free-inputtext-tip {
-    position: absolute;
-    max-width: 20rem;
-    min-width: 12rem;
-    padding: .5rem;
-    border-radius: 3px;
-    line-height: 1.1rem;
-    z-index: 998;
-    color: #fff;
-    background: #e33244;
-    opacity: 1;
-    display: none;
-    transition: all .3s;
-    backface-visibility: hidden;
-
-    &.free-tip-top {
-      top: -100%;
-      left: 50%;
-      transform: translate3d(-50%, 1rem, 0);
-
-      &:before {
-        bottom: -1rem;
-        left: 50%;
-        border-top: .5rem solid #e33244;
-        transform: translate3d(-50%, 0, 0);
+      &:focus {
+        background-color: #fff;
+        border-color: #108ee9;
       }
     }
 
-    &.free-tip-right {
-      left: 100%;
-      top: 50%;
-      transform: translate3d(.5rem, -50%, 0);
-
-      &:before {
-        top: 50%;
-        left: -1rem;
-        border-right: .5rem solid #e33244;
-        transform: translate3d(0, -50%, 0);
-      }
-    }
-
-    &:before {
+    span:after {
       content: "";
       position: absolute;
-      border: .5rem solid transparent;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #2196f3;
+      transform: scale(0);
+      transition: all .2s ease-out;
+    }
+
+    .free-inputtext-validator,
+    .free-inputtext-addon {
+      position: absolute;
+      top: 50%;
+      text-align: center;
+      opacity: 1;
+      padding: 0 5px;
+      font-size: .75rem;
+      transform: translate(0, -50%);
+    }
+
+    .free-inputtext-validator {
+      right: 0;
+    }
+
+    .free-inputtext-addon {
+      left: 0;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 400;
+      height: 100%;
+      color: #555;
+      text-align: center;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      & + input {
+        padding-left: 36px;
+      }
+    }
+    &.input-field-addon input {
+      padding-right: 36px;
+    }
+
+    &.free-success {
+      span:after {
+        background: #1aae88;
+      }
+
+      input,
+      input:focus {
+        border-color: #1aae88;
+      }
+
+      .free-inputtext-validator {
+        color: #1aae88;
+      }
+    }
+
+    &.free-warning {
+      span:after {
+        background: #fbb23e;
+      }
+
+      input,
+      input:focus {
+        border-color: #fbb23e;
+      }
+
+      .free-inputtext-validator {
+        color: #fbb23e;
+      }
+    }
+
+    &.free-error {
+      span:after {
+        background: #e33244;
+      }
+
+      input,
+      input:focus {
+        border-color: #e33244;
+      }
+
+      .free-inputtext-validator {
+        color: #e33244;
+      }
+    }
+
+
+    .free-inputtext-tip {
+      position: absolute;
+      max-width: 20rem;
+      min-width: 12rem;
+      padding: .5rem;
+      border-radius: 3px;
+      line-height: 1.1rem;
+      z-index: 998;
+      color: #fff;
+      background: #e33244;
+      opacity: 1;
+      display: none;
+      transition: all .3s;
+      backface-visibility: hidden;
+
+      &.free-tip-top {
+        top: -100%;
+        left: 50%;
+        transform: translate3d(-50%, 1rem, 0);
+
+        &:before {
+          bottom: -1rem;
+          left: 50%;
+          border-top: .5rem solid #e33244;
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      &.free-tip-right {
+        left: 100%;
+        top: 50%;
+        transform: translate3d(.5rem, -50%, 0);
+
+        &:before {
+          top: 50%;
+          left: -1rem;
+          border-right: .5rem solid #e33244;
+          transform: translate3d(0, -50%, 0);
+        }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        border: .5rem solid transparent;
+      }
     }
   }
 
+  &.free-inputtext-inline {
+    display: inline-block;
+    .input-field {
+      input {
+        width: auto;
+      }
+    }
+  }
 }
+

@@ -51,12 +51,21 @@
     @include transition(.25s);
   }
 
+  .aside-header-inner,
+  .navbar-header {
+    > ul > li > a {
+      padding: 0 10px;
+    }
+  }
+
   .aside-header-inner {
     display: flex;
     height: $topMenuHeight;
     align-items: center;
     @include transition(.25s);
     width: 100%;
+
+
     & > span {
       font-size: 1.2rem;
       color: #fff;
@@ -228,7 +237,6 @@
       padding: 0 .25rem;
 
       a {
-        padding: 0 .6rem;
         font-size: .75rem;
         position: relative;
         cursor: pointer;

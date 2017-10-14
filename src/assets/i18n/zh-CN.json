@@ -153,7 +153,8 @@
         "设置提示信息，可选",
         "设置正则匹配信息，可选。<br>可选值：<ul class='free-ul-padding'><li><code>tel</code>:手机号</li><li><code>email</code>:邮箱</li><li><code>card</code>:身份证号码</li><li><code>chinese</code>:中文</li></ul>注：如果值不在内置验证中，会使用该值作为验证信息",
         "设置验证失败时的提示信息，可选",
-        "是否增加图标，可选(采用FontAwesome)"
+        "是否增加图标，可选(采用FontAwesome)",
+        "输入框类型，包括所有Input支持的类型(text/password等)，默认为text"
       ],
       "VALIDATION": [
         "请输入手机号码",
@@ -178,7 +179,10 @@
       "DESCRIPTION": "徽章是包含数字或文字的简单组件。",
       "OPTION": [
         "内容",
-        "是否显示在右上角，默认为false"
+        "是否显示在右上角，默认为false",
+        "设置透明背景，默认为false",
+        "是否圆形，默认为true",
+        "设置预设样式，可选。可选值(primary/info/success/warning/danger)"
       ]
     },
     "BREADCRUMB": {
@@ -425,7 +429,7 @@
       "DESCRIPTION": "简单的页面消息通知组件。可以设置让消息在页面的四个角落出现。可以手动关闭消息，也可以设置成自动关闭。",
       "OPTION": [
         "消息数组。",
-        "消息通知框延迟关闭时间。默认不关闭",
+        "消息通知框延迟关闭时间。默认为3000ms",
         "消息通知框的位置。默认为“TopRight”。(可选值：topLeft, topRight, bottomLeft, bottomRight)"
       ]
     },
@@ -684,12 +688,31 @@
       ]
     },
     "KNOB": {
-      "DESCRIPTION": "步骤组件是工作流程中的步骤的指示器。",
+      "DESCRIPTION": "环形进度条",
       "OPTION": [
-        "一组步骤数组",
-      "是否只读,默认为真",
-      "目前激活的步骤,默认为0",
-      "使用圆形的步骤"
+        "设置尺寸，默认为100",
+      "当前值",
+      "滑道的颜色",
+      "已加载的进度颜色",
+        "线条宽度，默认为5",
+        "是否设置圆角，默认为true"
+      ]
+    },
+    "POPOVER": {
+      "DESCRIPTION": "弹出框（Popover）与工具提示（Tooltip）类似，提供了一个扩展的视图",
+      "OPTION": [
+        "设置提示框的位置(top、right、bottom、left)，默认top。",
+        "点击外层是否关闭弹出框，默认为true。"
+      ],
+      "EVENTS": [
+        "当步骤更改时触发回调事件。"
+      ]
+    },
+    "ECHART": {
+      "DESCRIPTION": "弹出框（Popover）与工具提示（Tooltip）类似，提供了一个扩展的视图",
+      "OPTION": [
+        "设置提示框的位置(top、right、bottom、left)，默认top。",
+        "点击外层是否关闭弹出框，默认为true。"
       ],
       "EVENTS": [
         "当步骤更改时触发回调事件。"
@@ -807,6 +830,15 @@
       "v030": {
         "BUG": "<li>修复Spinner设置最大值和最小值无法点击的问题</li>",
         "FEATURE": "<li>新增Knob组件</li><li>新增Steps组件</li><li>优化了Modal样式</li><li><span>Panel</span><ul class='free-panel-ul'><li>优化了Panel的样式</li><li>新增tool属性，用于工具</li></ul></li><li>优化了Range的样式</li><li>优化了Calendar的样式</li><li>优化了Button的样式</li><li>Progress新增barColor和trackColor属性</li><li>关闭了Accordion切换动画</li>"
+      },
+      "v031": {
+        "BUG": "<li>修复Knob动态设值的问题</li>",
+        "FEATURE": "<li>优化了Panel的样式</li><li>优化了Datatable的样式</li><li>优化了Button的样式</li>"
+      },
+      "v032": {
+        "DOCS": "<li>修改文档根据系统选择语言。</li>",
+        "BUG": "<li>修复Calendar的pholder设置无效</li>",
+        "FEATURE": "<li>新增Popover组件</li><li>优化List的样式</li><li><span>Badge</span><ul class='free-panel-ul'><li>优化了Badge的样式</li><li>新增outline、theme、circle属性</li></ul></li><li>Inputtext新增type属性</li><li>优化Dropdown的动画</li><li>优化Progress的样式</li><li>优化Loading的样式</li><li>优化Slide的样式</li>"
       },
       "ADD": "新增",
       "FIX": "修复",

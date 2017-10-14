@@ -42,7 +42,7 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>{{'DEMO.KNOB.OPTION.1' | translate}}</ng-template>
+                <ng-template>{{'DEMO.KNOB.OPTION.2' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -51,7 +51,7 @@
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>{{'DEMO.KNOB.OPTION.1' | translate}}</ng-template>
+                <ng-template>{{'DEMO.KNOB.OPTION.3' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -60,7 +60,7 @@
                 <ng-template><code>Number</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>{{'DEMO.KNOB.OPTION.1' | translate}}</ng-template>
+                <ng-template>{{'DEMO.KNOB.OPTION.4' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -69,7 +69,7 @@
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>{{'DEMO.KNOB.OPTION.1' | translate}}</ng-template>
+                <ng-template>{{'DEMO.KNOB.OPTION.5' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
@@ -93,7 +93,7 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <free-knob [value]="80">
+            <free-knob [value]="percent" [(ngModel)]="percent">
               {{'80%'}}
             </free-knob>
           </free-tab>

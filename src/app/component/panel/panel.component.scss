@@ -3,7 +3,6 @@
 
 .free-panel {
   background: #fff;
-  color: rgba(0,0,0, 0.87);
   border-radius: 2px;
   @include clearfix;
   @include borderRadius(2px);
@@ -46,7 +45,6 @@
   }
 
   .free-panel-content {
-    overflow: hidden;
     box-shadow: 1px 0 10px 1px rgba(0,0,0,.3);
   }
 
@@ -62,11 +60,10 @@
 
   @each $theme, $color in $theme {
     &.free-panel-#{$theme} {
-      background: $color !important;
-      color: #fff;
 
       .free-panel-header {
         background-color: $color !important;
+        color: #fff;
       }
 
       .free-panel-tool {

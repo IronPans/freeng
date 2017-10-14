@@ -4,6 +4,7 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  width: 100%;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
   position: relative;
@@ -29,20 +30,19 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  min-height: 2.4rem;
   margin: 0;
-  padding: 0 .5rem;
+  padding: .3rem .5rem;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   flex: 1;
   position: relative;
-  font-size: .8rem;
-  font-weight: 400;
   text-align: left;
   text-transform: none;
   -webkit-transition: all .3s;
   transition: all .3s; }
+  .free-list-item > free-avatar {
+    align-self: flex-start; }
   .free-list-item .free-avatar {
     width: 1.6rem;
     min-width: 1.6rem;
@@ -70,8 +70,7 @@
     flex: 1;
     overflow: hidden;
     line-height: 1.25em;
-    white-space: normal;
-    padding: .5rem 0; }
+    white-space: normal; }
   .free-list-item .free-list-content > * {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -94,6 +93,8 @@
     border: none;
     box-shadow: none;
     margin-right: -.6rem; }
+    .free-list-item .btn .free-icon {
+      margin-right: 0; }
   .free-list-item .free-image {
     display: flex;
     max-height: 100%; }

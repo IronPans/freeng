@@ -2,6 +2,37 @@
 
 [EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
 
+## 0.3.2(2017-10-15)
+
+**Features**
+
+- 新增Popover组件
+- 优化List的样式
+- Badge
+  - 优化了Badge的样式
+  - 新增outline、theme、circle属性
+- Inputtext新增type属性
+- 优化Dropdown的动画
+- 优化Progress的样式
+- 优化Loading的样式
+- 优化Slide的样式
+
+**Bug Fixes**
+  
+- 修复Calendar的pholder设置无效
+
+## 0.3.1(2017-10-08)
+
+**Features**
+
+- 优化了Panel的样式
+- 优化了Datatable的样式
+- 优化了Button的样式
+
+**Bug Fixes**
+  
+- 修复Knob动态设值的问题
+
 ## 0.3.0(2017-09-30)
 
 **Features**

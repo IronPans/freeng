@@ -205,30 +205,6 @@
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Border</h3>
-        <free-tab-group direction="right" [theme]="'line'">
-          <free-tab header="PREVIEW">
-            <free-datatable [value]="book" [border]="true">
-              <free-datatable-column field="name" header="name"></free-datatable-column>
-              <free-datatable-column field="age" header="age"></free-datatable-column>
-              <free-datatable-column field="address" header="address"></free-datatable-column>
-              <free-datatable-column field="job" header="job"></free-datatable-column>
-            </free-datatable>
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-datatable [value]="book" [border]="true"&gt;
-                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
-              &lt;/free-datatable&gt;
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
-
-      <div class="free-card-board">
         <h3 class="free-toolbar">Resize</h3>
         <free-tab-group direction="right" [theme]="'line'">
           <free-tab header="PREVIEW">
@@ -242,54 +218,6 @@
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-datatable [value]="book" [border]="true" [resizable]="true"&gt;
-                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
-              &lt;/free-datatable&gt;
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
-
-      <div class="free-card-board">
-        <h3 class="free-toolbar">Striped</h3>
-        <free-tab-group direction="right" [theme]="'line'">
-          <free-tab header="PREVIEW">
-            <free-datatable [value]="book" [striped]="true">
-              <free-datatable-column field="name" header="name"></free-datatable-column>
-              <free-datatable-column field="age" header="age"></free-datatable-column>
-              <free-datatable-column field="address" header="address"></free-datatable-column>
-              <free-datatable-column field="job" header="job"></free-datatable-column>
-            </free-datatable>
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-datatable [value]="book" [striped]="true"&gt;
-                &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="job" header="job"&gt;&lt;/free-datatable-column&gt;
-              &lt;/free-datatable&gt;
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
-
-      <div class="free-card-board">
-        <h3 class="free-toolbar">Hover</h3>
-        <free-tab-group direction="right" [theme]="'line'">
-          <free-tab header="PREVIEW">
-            <free-datatable [value]="book" [hover]="true">
-              <free-datatable-column field="name" header="name"></free-datatable-column>
-              <free-datatable-column field="age" header="age"></free-datatable-column>
-              <free-datatable-column field="address" header="address"></free-datatable-column>
-              <free-datatable-column field="job" header="job"></free-datatable-column>
-            </free-datatable>
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-datatable [value]="book" [hover]="true"&gt;
                 &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
                 &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
                 &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
@@ -368,17 +296,17 @@
         <h3 class="free-toolbar">Sort</h3>
         <free-tab-group direction="right" [theme]="'line'">
           <free-tab header="PREVIEW">
-            <free-datatable [value]="book" [row]="2">
+            <free-datatable [value]="users" [row]="2" [sort]="true">
               <free-datatable-column field="name" header="name"></free-datatable-column>
-              <free-datatable-column field="age" header="age" [sort]="true"></free-datatable-column>
+              <free-datatable-column field="age" header="age"></free-datatable-column>
               <free-datatable-column field="address" header="address"></free-datatable-column>
             </free-datatable>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-datatable [value]="book" [row]="2"&gt;
+              &lt;free-datatable [value]="users" [row]="2" [sort]="true"&gt;
                 &lt;free-datatable-column field="name" header="name"&gt;&lt;/free-datatable-column&gt;
-                &lt;free-datatable-column field="age" header="age" [sort]="true"&gt;&lt;/free-datatable-column&gt;
+                &lt;free-datatable-column field="age" header="age"&gt;&lt;/free-datatable-column&gt;
                 &lt;free-datatable-column field="address" header="address"&gt;&lt;/free-datatable-column&gt;
               &lt;/free-datatable&gt;
             </free-code>

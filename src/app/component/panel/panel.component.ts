@@ -19,7 +19,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
           <i class="fa fa-close" (click)="closed = !closed"></i>
         </div>
       </div>
-      <div class="free-panel-content" [@expandState]="state">
+      <div class="free-panel-content" #content [@expandState]="state"
+           (@expandState.start)="transitionStart($event, content)" (@expandState.done)="transitionEnd($event, content)">
         <div class="free-panel-inner">
           <ng-content></ng-content>
         </div>
@@ -70,6 +71,20 @@ export class PanelComponent implements AfterViewInit {
     this.container = this.containerViewChild.nativeElement;
     if (this.theme) {
       this.domRenderer.addClass(this.container, `free-panel-${this.theme}`);
+    }
+  }
+
+  transitionStart(event: any, content: any) {
+    this.domRenderer.css(content, {
+      'overflow': 'hidden'
+    });
+  }
+
+  transitionEnd(event: any, content: any) {
+    if (this.state === 'expand') {
+      this.domRenderer.css(content, {
+        'overflow': 'visible'
+      });
     }
   }
 

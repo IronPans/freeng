@@ -2,6 +2,38 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
+
+## 0.3.2(2017-10-15)
+
+**Features**
+
+- Add Popover component
+- Optimize the style of the List
+- Badge
+  - Optimized the style of the Badge
+  - Add outline, theme, circle attribute
+- Inputtext add type attribute
+- Optimize Dropdown animation
+- Optimize Progress style
+- Optimize the style of loading
+- Optimize the style of Slide
+
+**Bug Fixes**
+  
+- Fixed Calendar's pholder settings are invalid
+
+## 0.3.1(2017-10-08)
+
+**Features**
+
+- Optimized the style of the Panel
+- Optimized the style of the Datatable
+- Optimized the style of the Panel
+
+**Bug Fixes**
+  
+- Fix Knob dynamic settings
+
 ## 0.3.0(2017-09-30)
 
 **Features**

@@ -16,6 +16,8 @@ export class ImageComponent {
   @Input()
   set imageWidth(value: any) {
     this.width = value;
+    this.src = '';
+    this.alt = '';
   };
   get imageWidth() {
     return this.width;

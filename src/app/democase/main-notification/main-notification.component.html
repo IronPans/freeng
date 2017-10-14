@@ -92,10 +92,10 @@
         <h3 class="free-toolbar">Theme</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <button fButton (click)="openErrorMessage()">Error</button>
-            <button fButton (click)="openWarningMessage()">Warning</button>
-            <button fButton (click)="openInfoMessage()">Info</button>
-            <button fButton (click)="openSuccessMessage()">Success</button>
+            <button fButton [theme]="'danger'" (click)="openErrorMessage()">Error</button>
+            <button fButton [theme]="'warning'" (click)="openWarningMessage()">Warning</button>
+            <button fButton [theme]="'info'" (click)="openInfoMessage()">Info</button>
+            <button fButton [theme]="'success'" (click)="openSuccessMessage()">Success</button>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -133,7 +133,7 @@
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Delay</h3>
+        <h3 class="free-toolbar">Sticky</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
             <button fButton (click)="openDelayMessage()">Notification</button>
@@ -166,11 +166,11 @@
     </div>
   </div>
   <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
-  <free-notification [messages]="messages"></free-notification>
+  <free-notification [messages]="messages" [delay]="0"></free-notification>
   <free-notification [messages]="toolMessages"
                      [direction]="direction['value']" [delay]="1500"></free-notification>
   <free-notification [messages]="avatarMessages"></free-notification>
-  <free-notification [messages]="delayMessages" [delay]="3000"></free-notification>
+  <free-notification [messages]="delayMessages" [delay]="0"></free-notification>
   <free-notification [messages]="errors" theme="error"></free-notification>
   <free-notification [messages]="infos" theme="info"></free-notification>
   <free-notification [messages]="successes" theme="success"></free-notification>

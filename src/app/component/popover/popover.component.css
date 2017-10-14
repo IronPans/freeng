@@ -1,0 +1,73 @@
+.free-popover {
+  position: fixed;
+  max-width: 12.5rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #b1b0b0;
+  border-radius: 5px;
+  white-space: normal;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+  .free-popover img {
+    max-width: 100%; }
+  .free-popover .free-popover-body {
+    padding: 10px; }
+  .free-popover:before {
+    content: '';
+    position: absolute; }
+  .free-popover.right:before {
+    top: 50%;
+    left: -.85rem;
+    border: .4rem solid transparent;
+    border-right-color: #b1adad; }
+  .free-popover.left:before {
+    top: 50%;
+    right: -.85rem;
+    border: .4rem solid transparent;
+    border-left-color: #b1adad; }
+  .free-popover.top:before {
+    left: 50%;
+    bottom: -.85rem;
+    border: .4rem solid transparent;
+    border-top-color: #b1adad; }
+  .free-popover.bottom:before {
+    left: 50%;
+    top: -.85rem;
+    border: .4rem solid transparent;
+    border-bottom-color: #b1adad; }
+  .free-popover:after {
+    content: '';
+    position: absolute; }
+  .free-popover.right {
+    margin-left: .4rem; }
+  .free-popover.right:after {
+    top: 50%;
+    left: -.8rem;
+    border: .4rem solid transparent;
+    border-right-color: #fff; }
+  .free-popover.right:after, .free-popover.left:after, .free-popover.right:before, .free-popover.left:before {
+    transform: translate(0, -50%); }
+  .free-popover.left {
+    margin-left: -.4rem; }
+  .free-popover.left:after {
+    top: 50%;
+    right: -.8rem;
+    border: .4rem solid transparent;
+    border-left-color: #fff; }
+  .free-popover.top {
+    margin-top: -.4rem; }
+  .free-popover.top:after {
+    left: 50%;
+    bottom: -.8rem;
+    border: .4rem solid transparent;
+    border-top-color: #fff; }
+  .free-popover.top:after, .free-popover.bottom:after, .free-popover.top:before, .free-popover.bottom:before {
+    transform: translate(-50%, 0); }
+  .free-popover.bottom {
+    margin-top: .4rem; }
+  .free-popover.bottom:after {
+    left: 50%;
+    top: -.8rem;
+    border: .4rem solid transparent;
+    border-bottom-color: #fff; }
+
+/*# sourceMappingURL=popover.component.css.map */

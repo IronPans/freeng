@@ -48,4 +48,10 @@ p,
 li {
   line-height: 28px; }
 
+aside .free-accordion-group {
+  border: none; }
+  aside .free-accordion-group .accordion-toggle.accordion-item-expand {
+    font-weight: normal;
+    color: #262626; }
+
 /*# sourceMappingURL=symbol.css.map */

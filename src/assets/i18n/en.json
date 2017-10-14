@@ -152,7 +152,8 @@
         "Set the prompt message, optional",
         "Set the regular match information, optional. <br> optional values：<ul class='free-ul-padding'><li><code>tel</code>:phone number</li><li><code>email</code>:email</li><li><code>card</code>:identification number</li><li><code>chinese</code>:Chinese</li></ul>Note: If the value is not in the built-in authentication, the value is used as the authentication information",
         "Set the authentication message when the authentication fails, select",
-        "Whether to add an icon, optional (using FontAwesome)"
+        "Whether to add an icon, optional (using FontAwesome)",
+        "The input type, including all Input supported types (text / password, etc.), defaults is text"
       ],
       "VALIDATION": [
         "Please enter the phone number",
@@ -177,7 +178,10 @@
       "DESCRIPTION": "A badge is a simple component that contains numbers or words.",
       "OPTION": [
         "content",
-        "whether it is displayed in the upper right corner.Default is false"
+        "whether it is displayed in the upper right corner.Default is false",
+        "Set transparent background, default is false",
+        "Whether round, default is true",
+        "Set the default style, optional. Optional (primary / info / success / warning / danger)"
       ]
     },
     "BREADCRUMB": {
@@ -424,7 +428,7 @@
       "DESCRIPTION": "Simple page message notification component. You can set the message to appear in the four corners of the page. You can close the message manually or set it to auto off.",
       "OPTION": [
         "Message array.",
-        "Message notification box delay off time. Default does not close",
+        "Message notification box delay off time. The default is 3000ms.",
         "The location of the message notification box. The default is TopRight . (Optional values: topLeft, topRight, bottomLeft, bottomRight)"
       ]
     },
@@ -683,15 +687,34 @@
       ]
     },
     "KNOB": {
-      "DESCRIPTION": "Steps components is an indicator for the steps in a workflow. ",
+      "DESCRIPTION": "Knob. ",
       "OPTION": [
-        "A set of steps array",
-        "Whether read-only, default is true",
-        "The current activation of the step, the default is 0",
-        "Using a circular type of step"
+        "Set the size, the default is 100",
+        "The current value",
+        "The color of the chute",
+        "Loaded progress color",
+        "Line width, default is 5",
+        "Whether to set the fillet, the default is true"
+      ]
+    },
+    "POPOVER": {
+      "DESCRIPTION": "Popover and Tooltip  similar to provide an extended view",
+      "OPTION": [
+        "Set the prompt box location (top, right, bottom, left), the default is top.",
+        "Click on the outer layer to close the popover, the default is true."
       ],
       "EVENTS": [
-        "The callback event triggered when the step change."
+        "当步骤更改时触发回调事件。"
+      ]
+    },
+    "ECHART": {
+      "DESCRIPTION": "弹出框（Popover）与工具提示（Tooltip）类似，提供了一个扩展的视图",
+      "OPTION": [
+        "设置提示框的位置(top、right、bottom、left)，默认top。",
+        "点击外层是否关闭弹出框，默认为true。"
+      ],
+      "EVENTS": [
+        "当步骤更改时触发回调事件。"
       ]
     }
   },
@@ -806,6 +829,14 @@
     "v030": {
       "BUG": "<li>Fix Spinner Set the maximum and minimum values that can not be clicked</li>",
       "FEATURE": "<li> Add Knob component </li> <li> Add the Steps component </li> <li> Optimize the Modal style </li> <li> <span> Panel </span> <ul class='free-panel-ul'> <li> Optimize the style of the Panel </li> <li> Add the tool property for the tool </li> </ul> </li> <li> Optimize the style of the Range </li> <li> Optimize the style of Calendar </li> <li> Optimize the style of the Button </li> <li> Progress Add the barColor and trackColor properties </li><li>Turn off the Accordion switch animation</li>"
+    },
+    "v031": {
+      "BUG": "<li>Fix Knob dynamic settings</li>",
+      "FEATURE": "<li>Optimized the style of the Panel</li><li>Optimized the style of the Datatable</li><li>Optimized the style of the Panel</li>"
+    },
+    "v032": {
+      "BUG": "<li>Fixed Calendar's pholder settings are invalid</li>",
+      "FEATURE": "<li> Add Popover component </li><li> Optimize List style </li> <li><span>Badge</span><ul class='free-padding-ul'> <li> Optimized the style of the Badge </li> <li> Add outline, theme, circle attribute </li> </ul> </li> <li> </li> <li> Inputtext add type attribute </li> <li> Optimize Dropdown animation </li> <li> Optimize Progress style </li> <li> Optimize the style of loading </li><li> Optimize the style of Slide </li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

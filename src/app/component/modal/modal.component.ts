@@ -38,15 +38,15 @@ import {DomRenderer} from '../common/dom';
       <div class="free-modal-footer" *ngIf="!spinner">
         <ng-container [ngSwitch]="type">
           <ng-template ngSwitchCase="alert">
-            <button fButton (click)="confirm()">确认</button>
+            <button fButton (click)="confirm()">OK</button>
           </ng-template>
           <ng-template ngSwitchCase="confirm">
-            <button fButton (click)="close()">关闭</button>
-            <button fButton (click)="confirm()">确认</button>
+            <button fButton (click)="close()">Cancel</button>
+            <button fButton (click)="confirm()">OK</button>
           </ng-template>
           <ng-template ngSwitchCase="prompt">
-            <button fButton (click)="close()">关闭</button>
-            <button fButton (click)="confirm()">确认</button>
+            <button fButton (click)="close()">Cancel</button>
+            <button fButton (click)="confirm()">OK</button>
           </ng-template>
         </ng-container>
         <ng-content select="f-footer"></ng-content>

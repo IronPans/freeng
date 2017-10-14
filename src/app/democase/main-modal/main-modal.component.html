@@ -251,16 +251,14 @@
   </free-modal>
 
   <free-modal header="Alert" type="alert" [(visible)]="alertVisible">
-    <p>Some contents...</p><p>Some contents...</p><p>Some contents...</p>
+    Are you sure?
   </free-modal>
 
   <free-modal header="Confirm" type="confirm" [(visible)]="confirmVisible">
-    <p>Some contents...</p><p>Some contents...</p><p>Some contents...</p>
+    Are you sure?
   </free-modal>
 
-  <free-modal header="Prompt" type="prompt" [(visible)]="promptVisible" (onChange)="onChange($event)">
-    <p>Some contents...</p><p>Some contents...</p><p>Some contents...</p>
-  </free-modal>
+  <free-modal header="Prompt" type="prompt" [(visible)]="promptVisible" (onChange)="onChange($event)"></free-modal>
 
   <free-modal spinner="circleLineSpin" [(visible)]="Loading"></free-modal>
 

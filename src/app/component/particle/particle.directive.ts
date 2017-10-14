@@ -10,11 +10,12 @@ import {DomRenderer} from '../common/dom';
 
 export class ParticleDirective implements OnInit, AfterViewInit {
 
-  @Input() size = 8;
-  @Input() distance = 100;
+  @Input() size: any;
+  @Input() distance: any;
   @Input() color: string[] | string;
-  @Input() total = 100;
-  @Input() backgroundColor = 'linear-gradient(to bottom,#115d8e 0, #347eff 100%)';
+  @Input() total: any;
+  @Input() fillColor: string;
+  @Input() backgroundColor: string[];
   container: HTMLCanvasElement;
   particles: Particle[];
   ctx: any;
@@ -29,6 +30,10 @@ export class ParticleDirective implements OnInit, AfterViewInit {
   constructor(public er: ElementRef,
       public domRenderer: DomRenderer,
       public renderer2: Renderer2) {
+    this.backgroundColor = [];
+    this.size = 8;
+    this.distance = 100;
+    this.total = 20;
   }
 
   ngOnInit() {
@@ -55,14 +60,16 @@ export class ParticleDirective implements OnInit, AfterViewInit {
   }
 
   drawBackground() {
-    this.ctx.save();
-    const [width, height] = [this.container.width, this.container.height];
-    const linearGradient = this.ctx.createLinearGradient(0, 0, width, height);
-    linearGradient.addColorStop(0, '#115d8e');
-    linearGradient.addColorStop(1, '#347eff');
-    this.ctx.fillStyle = linearGradient;
-    this.ctx.fillRect(0, 0, width, height);
-    this.ctx.restore();
+    if (this.backgroundColor.length > 0) {
+      this.ctx.save();
+      const [width, height] = [this.container.width, this.container.height];
+      const linearGradient = this.ctx.createLinearGradient(0, 0, width, height);
+      linearGradient.addColorStop(0, this.backgroundColor[0]);
+      linearGradient.addColorStop(1, this.backgroundColor[this.backgroundColor.length - 1]);
+      this.ctx.fillStyle = linearGradient;
+      this.ctx.fillRect(0, 0, width, height);
+      this.ctx.restore();
+    }
   }
 
   addParticle() {
@@ -94,10 +101,14 @@ export class ParticleDirective implements OnInit, AfterViewInit {
   }
 
   setParticleData(): any {
+    let size = this.size;
+    if (size.length >= 2) {
+      size = this.getRandom(size[1], size[0]);
+    }
     return {
       x: Math.floor(Math.random() * this.width),
       y: Math.floor(Math.random() * this.height),
-      r: Math.floor(this.size / 2)
+      r: Math.floor(size / 2)
     };
   }
 
@@ -147,9 +158,14 @@ export class ParticleDirective implements OnInit, AfterViewInit {
   }
 
   lineColor(p1, p2) {
-    const linear = this.ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
-    linear.addColorStop(0, p1.color);
-    linear.addColorStop(1, p2.color);
+    let linear;
+    if (this.fillColor) {
+      linear = this.fillColor;
+    } else {
+      linear = this.ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
+      linear.addColorStop(0, p1.color);
+      linear.addColorStop(1, p2.color);
+    }
     return linear;
   }
 

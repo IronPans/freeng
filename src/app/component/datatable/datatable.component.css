@@ -10,12 +10,15 @@
     overflow: hidden;
     table-layout: fixed; }
     .free-datatable table thead tr th {
-      background: #f5f5f5; }
+      border-bottom: 2px solid #ccc; }
+    .free-datatable table thead tr {
+      border-bottom: 1px solid #d9d9d9; }
   .free-datatable .free-datatable-head {
     position: relative;
-    font-size: .7rem;
-    font-weight: 500;
+    font-weight: 600;
     text-align: left; }
+    .free-datatable .free-datatable-head.free-datatable-head-order {
+      width: 45px; }
   .free-datatable .free-expand-arrow {
     width: 1rem;
     height: 1rem;
@@ -77,15 +80,14 @@
         line-height: 4px;
         height: .3rem;
         overflow: hidden; }
-        .free-datatable .free-datatable-head .free-datatable-head-text .free-datatable-sort i:hover, .free-datatable .free-datatable-head .free-datatable-head-text .free-datatable-sort i.free-sort-active {
+        .free-datatable .free-datatable-head .free-datatable-head-text .free-datatable-sort i:hover, .free-datatable .free-datatable-head .free-datatable-head-text .free-datatable-sort i.active {
           color: #333; }
   .free-datatable .free-datatable-row {
-    border-top: 1px solid #e0e0e0; }
+    border-top: 1px solid #e9ecef; }
     .free-datatable .free-datatable-row:first-child {
       border-top: none; }
   .free-datatable .free-datatable-cell-inner {
     display: flex;
-    flex-direction: column;
     padding: .5rem .75rem; }
   .free-datatable .free-datatable-cell {
     position: relative;
@@ -98,10 +100,10 @@
   .free-datatable.free-datatable-striped tbody tr:nth-child(even) {
     background-color: #f9f9f9; }
   .free-datatable.free-datatable-bordered table {
-    border: 1px solid #e0e0e0; }
+    border: 1px solid #e9ecef; }
     .free-datatable.free-datatable-bordered table tr td,
     .free-datatable.free-datatable-bordered table tr th {
-      border-left: 1px solid #e0e0e0; }
+      border-left: 1px solid #e9ecef; }
       .free-datatable.free-datatable-bordered table tr td:first-child,
       .free-datatable.free-datatable-bordered table tr th:first-child {
         border-left: none; }
@@ -115,10 +117,17 @@
     flex: 1 0 auto;
     padding: .5rem 0; }
   .free-datatable .free-datatable-scrollable .free-datatable-scrollable-head {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e9ecef;
     border-bottom: none;
     background: #f5f5f5; }
     .free-datatable .free-datatable-scrollable .free-datatable-scrollable-head table {
       border: none; }
+  .free-datatable.free-datatable-sort .free-datatable-head-inner,
+  .free-datatable .free-datatable-head-sort .free-datatable-head-inner {
+    cursor: pointer;
+    transition: all .25s; }
+    .free-datatable.free-datatable-sort .free-datatable-head-inner:hover,
+    .free-datatable .free-datatable-head-sort .free-datatable-head-inner:hover {
+      background: #eee; }
 
 /*# sourceMappingURL=datatable.component.css.map */

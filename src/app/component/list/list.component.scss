@@ -2,6 +2,7 @@
 
 .free-list {
   @include flexbox;
+  width: 100%;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
   position: relative;
@@ -30,20 +31,21 @@
 
 .free-list-item {
   @include flexbox;
-  min-height: 2.4rem;
   margin: 0;
-  padding: 0 .5rem;
+  padding: .3rem .5rem;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   flex: 1;
   position: relative;
-  font-size: .8rem;
-  font-weight: 400;
   text-align: left;
   text-transform: none;
   -webkit-transition: all .3s;
   transition: all .3s;
+
+  > free-avatar {
+    align-self: flex-start;
+  }
 
   .free-avatar {
     width: 1.6rem;
@@ -78,7 +80,6 @@
     overflow: hidden;
     line-height: 1.25em;
     white-space: normal;
-    padding: .5rem 0;
   }
 
   .free-list-content>* {
@@ -109,6 +110,10 @@
     border: none;
     box-shadow: none;
     margin-right: -.6rem;
+
+    .free-icon {
+      margin-right: 0;
+    }
   }
 
   .free-image {

@@ -44,11 +44,11 @@
   .free-table .free-table-cell {
     position: relative;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-size: .75rem; }
+    font-size: .7rem; }
   .free-table tbody .free-table-row.free-selected .free-table-cell {
     background-color: #f5f5f5; }
   .free-table.free-table-hover tbody .free-table-row:hover .free-table-cell {
-    background-color: #eee; }
+    background-color: #f5f5f5; }
   .free-table.free-table-striped tbody tr:nth-child(odd) {
     background-color: #f9f9f9; }
   .free-table.free-table-bordered {

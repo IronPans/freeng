@@ -1,18 +1,25 @@
-.input-field {
-  position: relative;
-  min-width: 4rem; }
-  .input-field input {
+.free-inputtext .input-label {
+  font-weight: normal;
+  font-size: 13px;
+  vertical-align: middle;
+  display: block;
+  max-width: 100%;
+  margin-bottom: 5px; }
+.free-inputtext .input-field {
+  position: relative; }
+  .free-inputtext .input-field input {
     background-color: transparent;
     height: 35px;
     width: 100%;
     box-shadow: none;
     outline: none;
     padding: 0 .5rem;
-    border-radius: 3px;
+    color: #222;
     border: 1px solid #d9d9d9;
     box-sizing: border-box;
+    border-radius: 4px !important;
     transition: all 0.3s; }
-    .input-field input + span {
+    .free-inputtext .input-field input + span {
       position: absolute;
       top: 100%;
       left: 0;
@@ -22,12 +29,12 @@
       width: 100%;
       height: 1px;
       border: 1px solid #d9d9d9; }
-    .input-field input:focus + span:after {
+    .free-inputtext .input-field input:focus + span:after {
       transform: scale(1); }
-    .input-field input:focus {
+    .free-inputtext .input-field input:focus {
       background-color: #fff;
       border-color: #108ee9; }
-  .input-field span:after {
+  .free-inputtext .input-field span:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -37,46 +44,53 @@
     background: #2196f3;
     transform: scale(0);
     transition: all .2s ease-out; }
-  .input-field .free-inputtext-validator,
-  .input-field .free-inputtext-icon {
+  .free-inputtext .input-field .free-inputtext-validator,
+  .free-inputtext .input-field .free-inputtext-addon {
     position: absolute;
-    width: 25px;
     top: 50%;
     text-align: center;
     opacity: 1;
     padding: 0 5px;
     font-size: .75rem;
     transform: translate(0, -50%); }
-  .input-field .free-inputtext-validator {
+  .free-inputtext .input-field .free-inputtext-validator {
     right: 0; }
-  .input-field .free-inputtext-icon {
-    left: 0; }
-    .input-field .free-inputtext-icon + input {
-      padding-left: 25px; }
-  .input-field.input-field-icon input {
-    padding-right: 25px; }
-  .input-field.free-success span:after {
+  .free-inputtext .input-field .free-inputtext-addon {
+    left: 0;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    height: 100%;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc; }
+    .free-inputtext .input-field .free-inputtext-addon + input {
+      padding-left: 36px; }
+  .free-inputtext .input-field.input-field-addon input {
+    padding-right: 36px; }
+  .free-inputtext .input-field.free-success span:after {
     background: #1aae88; }
-  .input-field.free-success input,
-  .input-field.free-success input:focus {
+  .free-inputtext .input-field.free-success input,
+  .free-inputtext .input-field.free-success input:focus {
     border-color: #1aae88; }
-  .input-field.free-success .free-inputtext-validator {
+  .free-inputtext .input-field.free-success .free-inputtext-validator {
     color: #1aae88; }
-  .input-field.free-warning span:after {
+  .free-inputtext .input-field.free-warning span:after {
     background: #fbb23e; }
-  .input-field.free-warning input,
-  .input-field.free-warning input:focus {
+  .free-inputtext .input-field.free-warning input,
+  .free-inputtext .input-field.free-warning input:focus {
     border-color: #fbb23e; }
-  .input-field.free-warning .free-inputtext-validator {
+  .free-inputtext .input-field.free-warning .free-inputtext-validator {
     color: #fbb23e; }
-  .input-field.free-error span:after {
+  .free-inputtext .input-field.free-error span:after {
     background: #e33244; }
-  .input-field.free-error input,
-  .input-field.free-error input:focus {
+  .free-inputtext .input-field.free-error input,
+  .free-inputtext .input-field.free-error input:focus {
     border-color: #e33244; }
-  .input-field.free-error .free-inputtext-validator {
+  .free-inputtext .input-field.free-error .free-inputtext-validator {
     color: #e33244; }
-  .input-field .free-inputtext-tip {
+  .free-inputtext .input-field .free-inputtext-tip {
     position: absolute;
     max-width: 20rem;
     min-width: 12rem;
@@ -90,27 +104,31 @@
     display: none;
     transition: all .3s;
     backface-visibility: hidden; }
-    .input-field .free-inputtext-tip.free-tip-top {
+    .free-inputtext .input-field .free-inputtext-tip.free-tip-top {
       top: -100%;
       left: 50%;
       transform: translate3d(-50%, 1rem, 0); }
-      .input-field .free-inputtext-tip.free-tip-top:before {
+      .free-inputtext .input-field .free-inputtext-tip.free-tip-top:before {
         bottom: -1rem;
         left: 50%;
         border-top: .5rem solid #e33244;
         transform: translate3d(-50%, 0, 0); }
-    .input-field .free-inputtext-tip.free-tip-right {
+    .free-inputtext .input-field .free-inputtext-tip.free-tip-right {
       left: 100%;
       top: 50%;
       transform: translate3d(0.5rem, -50%, 0); }
-      .input-field .free-inputtext-tip.free-tip-right:before {
+      .free-inputtext .input-field .free-inputtext-tip.free-tip-right:before {
         top: 50%;
         left: -1rem;
         border-right: .5rem solid #e33244;
         transform: translate3d(0, -50%, 0); }
-    .input-field .free-inputtext-tip:before {
+    .free-inputtext .input-field .free-inputtext-tip:before {
       content: "";
       position: absolute;
       border: .5rem solid transparent; }
+.free-inputtext.free-inputtext-inline {
+  display: inline-block; }
+  .free-inputtext.free-inputtext-inline .input-field input {
+    width: auto; }
 
 /*# sourceMappingURL=inputtext.component.css.map */

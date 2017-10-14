@@ -15,16 +15,21 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   selector: 'free-inputtext',
   template: `
-    <div class="input-field {{'free-' + theme}}" [ngClass]="inputClass">
-      <i *ngIf="prefix" class="fa {{'fa-' + prefix}} free-inputtext-icon"></i>
-      <input type="text" #text [(ngModel)]="value"
-             (blur)="onBlur(text.value)" placeholder="{{placeholder}}" (input)="onInput(text)">
-      <i *ngIf="icon" class="fa {{'fa-' + icon}} free-inputtext-validator"></i>
-      <div class="free-inputtext-tip" #tip [style.display]="showTip ? 'block' : 'none'">
-        {{message}}
-      </div>
+    <div class="free-inputtext" [class.free-inputtext-inline]="inline">
+      <label>
+        <div class="input-label">
+          <ng-content></ng-content>
+        </div>
+        <div class="input-field {{'free-' + theme}}" [ngClass]="inputClass">
+          <span class="free-inputtext-addon" *ngIf="prefix"><i class="fa {{'fa-' + prefix}}"></i></span>
+          <input type="{{type}}" #text [(ngModel)]="value"
+                 (blur)="onBlur(text.value)" placeholder="{{placeholder}}" (input)="onInput(text)">
+          <i *ngIf="icon" class="fa {{'fa-' + icon}} free-inputtext-validator"></i>
+          <div class="free-inputtext-tip" #tip [style.display]="showTip ? 'block' : 'none'">
+            {{message}}
+          </div>
+        </div></label>
     </div>
-
   `,
   providers: [DomRenderer, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
@@ -46,6 +51,8 @@ export class InputtextComponent  implements ControlValueAccessor, OnInit, AfterV
   @Input() message: string;
   @Input() placeholder: string;
   @Input() prefix: string;
+  @Input() inline: boolean;
+  @Input() type: string;
   @Output() onChange: EventEmitter<string> = new EventEmitter();
   @ViewChild('tip') tipViewChild: ElementRef;
   inputClass: object;
@@ -57,6 +64,7 @@ export class InputtextComponent  implements ControlValueAccessor, OnInit, AfterV
   public onModelTouched: Function = () => {};
   constructor(public renderer2: Renderer2, public domRenderer: DomRenderer) {
     this.message = '验证错误!';
+    this.type = 'text';
   }
 
   ngOnInit() {

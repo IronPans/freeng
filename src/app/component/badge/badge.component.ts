@@ -4,15 +4,24 @@ import { DomRenderer } from '../common/dom';
 
 @Component({
   selector: 'free-badge',
-  template: `<span class="free-badge" [class.free-badge-up]="up">{{content}}</span>`,
+  template: `<span class="free-badge free-badge-{{theme}}" [ngStyle]="style"
+                   [ngClass]="{'free-badge-outline': outline, 'free-badge-circle': circle}"
+                   [class.free-badge-up]="up">{{content}}</span>`,
   providers: [DomRenderer]
 })
 export class BadgeComponent implements AfterViewInit {
 
   @Input() content: string;
   @Input() up: boolean;
+  @Input() circle: boolean;
+  @Input() outline: boolean;
+  @Input() theme: string;
+  @Input() style: any;
   constructor(public domRenderer: DomRenderer,
-              public er: ElementRef) { }
+              public er: ElementRef) {
+    this.circle = true;
+    this.theme = 'default';
+  }
 
   ngAfterViewInit() {
     const container = this.er.nativeElement;

@@ -8,11 +8,13 @@ import { fadeInUp } from '../common/animations';
   animations: [fadeInUp]
 })
 export class MainKnobComponent implements OnInit {
-
   @HostBinding('@fadeInUpState') fadeInUpState;
   @HostBinding('style.display') display = 'block';
+  percent: number;
   pageTitle = 'Components-Knob';
-  constructor() { }
+  constructor() {
+    this.percent = 80;
+  }
 
   ngOnInit() {
   }

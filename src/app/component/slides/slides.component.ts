@@ -22,12 +22,12 @@ import {DomRenderer} from '../common/dom';
       </div>
       <div class="free-slides-prev" [ngClass]="{'free-slides-disabled': (!loop && activeIndex == 0)}"
            *ngIf="prev || arrow" (click)="slidePrev(!loop && activeIndex == 0)">
-        <i class="fa fa-angle-left"></i>
+        <i class="fa fa-chevron-left"></i>
       </div>
       <div class="free-slides-next"
            [ngClass]="{'free-slides-disabled': (!loop &&  activeIndex == slides.length - 1)}"
            *ngIf="next || arrow" (click)="slideNext(!loop &&  activeIndex == slides.length - 1)">
-        <i class="fa fa-angle-right"></i>
+        <i class="fa fa-chevron-right"></i>
       </div>
     </div>
   `,
@@ -71,6 +71,7 @@ export class SlidesComponent implements AfterViewInit {
   constructor(public er: ElementRef, public domRender: DomRenderer) {
     this.bullets = [];
     this.pagination = true;
+    this.arrow = true;
     this.reset();
     this.direction = 'horizontal';
     this.isMobile = 'ontouchstart' in document;

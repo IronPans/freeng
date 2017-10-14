@@ -8,6 +8,7 @@ const childRoutes: Routes = [
   {path: 'buttons', loadChildren: '../main-buttons/main-buttons.module#MainButtonsModule'},
   {path: 'tabs', loadChildren: '../main-tab/main-tab.module#MainTabModule'},
   {path: 'modals', loadChildren: '../main-modal/main-modal.module#MainModalModule'},
+  {path: 'popovers', loadChildren: '../main-popover/main-popover.module#MainPopoverModule'},
   {path: 'tooltips', loadChildren: '../main-tooltip/main-tooltip.module#MainTooltipModule'},
   {path: 'notification', loadChildren: '../main-notification/main-notification.module#MainNotificationModule'},
   {path: 'typography', loadChildren: '../main-typography/main-typography.module#MainTypographyModule'},

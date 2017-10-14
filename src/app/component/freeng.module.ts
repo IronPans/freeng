@@ -56,6 +56,8 @@ import { ShareButtonModule } from './share-button/share-button.component';
 import {RibbonModule} from './ribbon/ribbon.component';
 import {StepsModule} from './steps/steps.component';
 import {KnobModule} from './knob/knob.component';
+import {BackTopModule} from './back-top/back-top.component';
+import {PopoverModule} from './popover/popover.component';
 import {DomRenderer} from './common/dom';
 
 export {AccordionModule} from './accordion/accordion.component';
@@ -115,6 +117,8 @@ export {ShareButtonModule} from './share-button/share-button.component';
 export {RibbonModule} from './ribbon/ribbon.component';
 export {StepsModule} from './steps/steps.component';
 export {KnobModule} from './knob/knob.component';
+export {BackTopModule} from './back-top/back-top.component';
+export {PopoverModule} from './popover/popover.component';
 export {DomRenderer} from './common/dom';
 
 @NgModule({
@@ -175,7 +179,9 @@ export {DomRenderer} from './common/dom';
     ShareButtonModule,
     RibbonModule,
     StepsModule,
-    KnobModule
+    KnobModule,
+    BackTopModule,
+    PopoverModule
   ],
   declarations: []
 })

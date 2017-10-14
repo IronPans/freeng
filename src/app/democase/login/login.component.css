@@ -73,7 +73,8 @@
   background-image: linear-gradient(90deg, #115d8e 0, #347eff 100%); }
 
 .subtitle {
-  padding: .5rem 0 1rem; }
+  padding: .5rem 0 1rem;
+  font-size: 16px; }
 
 @media (max-width: 900px) {
   .panel {

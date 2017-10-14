@@ -50,10 +50,7 @@ export class MainNotificationComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.delayMessages = [{
-      title: 'Notification',
-      content: 'Your account has not been verified by email!' + new Date()
-    }];
+    this.delayMessages = [];
   }
 
   open() {

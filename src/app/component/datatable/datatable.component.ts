@@ -132,7 +132,7 @@ export class ExpansionRowComponent implements OnInit, OnDestroy {
         </div>
       </div>
     </th>
-    <th class="free-datatable-head" *ngIf="dt.order">
+    <th class="free-datatable-head free-datatable-head-order" *ngIf="dt.order">
       <div class="free-datatable-head-inner">
         <div class="free-datatable-head-text">
         </div>
@@ -149,15 +149,15 @@ export class ExpansionRowComponent implements OnInit, OnDestroy {
       </div>
     </th>
     <ng-template ngFor [ngForOf]="columns" let-col let-lastCol="last">
-      <th class="free-datatable-head" [ngStyle]="col.style">
-        <div class="free-datatable-head-inner">
+      <th class="free-datatable-head" [ngStyle]="col.style" [class.free-datatable-head-sort]="col.sort">
+        <div class="free-datatable-head-inner" (click)="dt.onColumnSort(col, $event)">
           <div class="free-datatable-head-text">
             <span *ngIf="!col.headerTemplate">{{col.header}}</span>
             <free-template *ngIf="col.headerTemplate" [template]="col.headerTemplate">
             </free-template>
             <span *ngIf="dt.sort || col.sort" class="free-datatable-sort">
-              <i class="fa fa-caret-up" (click)="dt.onColumnSort(col, -1, $event)"></i>
-              <i class="fa fa-caret-down" (click)="dt.onColumnSort(col, 1, $event)"></i>
+              <i class="fa fa-caret-up" [class.active]="!dt.sortState && (dt.currentCol === col)"></i>
+              <i class="fa fa-caret-down" [class.active]="dt.sortState && (dt.currentCol === col)"></i>
             </span>
           </div>
           <span class="free-column-resizer" *ngIf="dt.resizable && !lastCol && dt.border"
@@ -281,7 +281,7 @@ export class DatatableScrollableComponent implements AfterViewInit {
 @Component({
   selector: 'free-datatable',
   template: `
-    <div class="free-datatable" #container>
+    <div class="free-datatable" #container [class.free-datatable-sort]="sort">
       <div class="free-datatable-table" *ngIf="!scrollable">
         <table>
           <thead>
@@ -336,6 +336,7 @@ export class DatatableComponent implements AfterViewInit, OnDestroy {
   @Output() onSelect: EventEmitter<any> = new EventEmitter();
   @ContentChildren(DatatableColumnComponent) cols: QueryList<DatatableColumnComponent>;
   columns: any[];
+  currentCol: any;
   checkboxSelection: any;
   radioSelection: any;
   checkboxs: TCheckboxComponent[];
@@ -352,6 +353,7 @@ export class DatatableComponent implements AfterViewInit, OnDestroy {
   currentResizeCell: any;
   columnResizeMoveX: number;
   resizeDown: boolean;
+  sortState: boolean;
   rowExpansionTemplate: TemplateRef<any>;
   documentMousemoveListener: any;
   documentMouseupListener: any;
@@ -442,14 +444,11 @@ export class DatatableComponent implements AfterViewInit, OnDestroy {
     return length;
   }
 
-  onColumnSort(column: DatatableColumnComponent, desc: number, event: any) {
-    const target = event.target;
-    const sort = target.parentNode.children;
-    for (let i = 0; i < sort.length; i++) {
-      this.renderer2.removeClass(sort[i], 'free-sort-active');
-    }
-    this.renderer2.addClass(target, 'free-sort-active');
-    column.desc = (desc === 1);
+  onColumnSort(column: DatatableColumnComponent, event: any) {
+    this.sortState = !this.sortState;
+    this.currentCol = column;
+    const desc = this.sortState ? -1 : 1;
+    column.desc = this.sortState;
     const field = column.field;
     const vx = desc;
     this.data.sort((a, b) => {

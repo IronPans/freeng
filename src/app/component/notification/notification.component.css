@@ -4,12 +4,17 @@
     max-width: 15rem;
     padding: .8rem 1.5rem .8rem .8rem;
     border-radius: 4px;
+    opacity: .8;
+    cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     line-height: 1.5;
     position: relative;
     margin-bottom: .5rem;
     display: flex;
-    overflow: hidden; }
+    overflow: hidden;
+    transition: all .25s; }
+    .free-notification .free-notification-item:hover {
+      opacity: 1; }
     .free-notification .free-notification-item.free-notification-default {
       background: #fff; }
     .free-notification .free-notification-item.free-notification-error {

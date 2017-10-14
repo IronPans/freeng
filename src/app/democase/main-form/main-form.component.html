@@ -67,6 +67,15 @@
                 <ng-template>{{'DEMO.INPUTTEXT.OPTION.4' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>type</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.INPUTTEXT.OPTION.5' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -90,7 +99,9 @@
           <free-tab header="PREVIEW">
             <p style="width: 100%;">{{value}}</p>
             <p>
-              <free-inputtext [(ngModel)]="value"></free-inputtext>
+              <free-inputtext [(ngModel)]="value">
+                Email address
+              </free-inputtext>
             </p>
           </free-tab>
           <free-tab header="CODE">
@@ -106,7 +117,7 @@
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
             <p>
-              <free-inputtext theme="success"></free-inputtext>
+              <free-inputtext theme="success" [inline]="true"></free-inputtext>
               <free-inputtext theme="error"></free-inputtext>
               <free-inputtext theme="warning"></free-inputtext>
             </p>
@@ -180,6 +191,20 @@
                               message="{{'DEMO.INPUTTEXT.VALIDATION.5' | translate}}"&gt;&lt;/free-inputtext&gt;
               &lt;free-inputtext placeholder="{{'DEMO.INPUTTEXT.VALIDATION.6' | translate}}" pattern="chinese"
                               message="{{'DEMO.INPUTTEXT.VALIDATION.7' | translate}}"&gt;&lt;/free-inputtext&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Type</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-inputtext type="password"></free-inputtext>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-inputtext type="password"&gt;&lt;/free-inputtext&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

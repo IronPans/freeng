@@ -893,8 +893,8 @@ input::-webkit-input-placeholder {
   outline: none;
   border: none; }
 
-.btn-primary, .btn-primary:hover, .btn-primary:focus {
-  color: white; }
+a, a:visited, a:link, a:active, a:hover {
+  outline: none; }
 
 a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   color: #2979FF;
@@ -915,7 +915,6 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   font-size: .75rem;
   height: 1.7rem;
   border-radius: 3px;
-  border: 1px solid #f0f0f0;
   line-height: 1;
   user-select: none;
   text-decoration: none; }
@@ -936,13 +935,13 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
 .btn.btn-round {
   border-radius: 1rem; }
 
+.btn,
+.btn-group {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; }
+
 .btn.btn-flat,
 .btn-group.btn-group-flat {
   box-shadow: none !important; }
-
-.btn,
-.btn-group {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12); }
 
 .btn.btn-block {
   display: block;
@@ -952,7 +951,7 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   height: 2.2rem;
   padding: 0 1.25rem;
   font-size: .8rem; }
-  .btn.btn-big .btn-circle {
+  .btn.btn-big.btn-circle {
     width: 70px;
     height: 70px;
     line-height: 70px; }
@@ -961,16 +960,16 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   height: 1.5rem;
   padding: 0 .5rem;
   font-size: .6rem; }
-  .btn.btn-small .btn-circle {
-    width: 60px;
-    height: 60px;
-    line-height: 60px; }
+  .btn.btn-small.btn-circle {
+    width: 50px;
+    height: 50px;
+    line-height: 50px; }
 
 .btn.btn-mini {
   height: 1.1rem;
   padding: 0 5px;
   font-size: .6rem; }
-  .btn.btn-mini .btn-circle {
+  .btn.btn-mini.btn-circle {
     width: 40px;
     height: 40px;
     line-height: 40px; }
@@ -978,9 +977,9 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
 .btn-circle {
   border-radius: 50%;
   padding: 0;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   text-align: center; }
 
 .btn-default {
@@ -1276,10 +1275,9 @@ blockquote {
 .free-tooltip {
   position: fixed;
   max-width: 12.5rem;
-  padding: .5rem;
+  padding: .25rem .5rem;
   background: rgba(18, 19, 26, 0.9);
   color: #fff;
-  line-height: 1.5;
   border-radius: 3px;
   white-space: normal;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
@@ -1360,22 +1358,6 @@ blockquote {
   background: #eee;
   border: 1px solid #d9d9d9;
   padding: .25rem; }
-
-.free-badge {
-  display: inline-block;
-  padding: 3px 4px;
-  font-size: .5rem;
-  line-height: 12px;
-  border-radius: 3px;
-  background-color: #f44336;
-  color: #fff;
-  margin-left: 3px; }
-
-.free-badge.free-badge-up {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  margin-left: 0; }
 
 .free-depth {
   box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.22); }
@@ -1491,6 +1473,11 @@ blockquote {
 .free-iscroll::-webkit-scrollbar-corner, .free-iscroll::-webkit-scrollbar-track {
   background-color: #ccc; }
 
+.free-iscroll.free-iscroll-hover {
+  overflow: hidden !important; }
+  .free-iscroll.free-iscroll-hover:hover, .free-iscroll.free-iscroll-hover:active, .free-iscroll.free-iscroll-hover:focus {
+    overflow-y: auto !important; }
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -1509,5 +1496,9 @@ code:not(.hljs) {
   color: #c7254e;
   background-color: #f9f2f4;
   border-radius: 2px; }
+
+.text-muted {
+  color: inherit !important;
+  opacity: .6; }
 
 /*# sourceMappingURL=common.css.map */
