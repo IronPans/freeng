@@ -22,7 +22,9 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
   @ViewChild('canvas') canvasViewChild: ElementRef;
   canvas: HTMLCanvasElement;
   @Output() onDataSelect: EventEmitter<any> = new EventEmitter();
-  constructor() {}
+  constructor() {
+    this.data = {};
+  }
 
   @Input() get data(): any {
     return this._data;

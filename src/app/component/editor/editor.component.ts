@@ -1,5 +1,6 @@
 import {
-  AfterViewInit, Component, ElementRef, forwardRef, Input, NgModule, OnDestroy, Renderer2, ViewChild
+  AfterViewInit, Component, ElementRef, EventEmitter, forwardRef, Input, NgModule, OnDestroy, Output, Renderer2,
+  ViewChild
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {DomRenderer} from '../common/dom';
@@ -170,6 +171,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
   @Input() maxHeight: any;
   @Input() counter: boolean;
   @Input() undoManager: boolean;
+  @Output() onUploadCompleted: EventEmitter<any> = new EventEmitter();
   @ViewChild('container') containerViewChild: ElementRef;
   @ViewChild('toolbar') toolbarViewChild: ElementRef;
   @ViewChild('editor') editorViewChild: ElementRef;
@@ -757,6 +759,10 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit, OnD
           url = event.target.result;
           const img = '<img src="' + url + '"/>';
           this.execCommand('insertHTML', img);
+          this.onUploadCompleted.emit({
+            files: files,
+            base64: url
+          });
         };
         fileReader.readAsDataURL(file);
       } catch (e) {

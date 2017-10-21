@@ -359,6 +359,9 @@
         "设置最大高度",
         "是否显示字数，可选，默认为false",
         "设置编辑器样式，可选。"
+      ],
+      "EVENTS": [
+        "图片上传成功时触发的回调函数"
       ]
     },
     "ERROR": {
@@ -416,7 +419,8 @@
         "设置预设样式，可选。可选值(primary/info/success/warning/danger)",
         "设置模态框类型(alert,confirm,prompt)，可选。",
         "设置Loading类型，可选。",
-        "设置Loading自动隐藏时间，可选。"
+        "设置Loading自动隐藏时间，可选。",
+        "点击遮罩是否关闭模态框，可选。"
       ],
       "EVENTS": [
         "每次点击触发，返回参数类似&#123;done: true&#125;"
@@ -709,13 +713,21 @@
       ]
     },
     "ECHART": {
-      "DESCRIPTION": "弹出框（Popover）与工具提示（Tooltip）类似，提供了一个扩展的视图",
+      "DESCRIPTION": "",
       "OPTION": [
-        "设置提示框的位置(top、right、bottom、left)，默认top。",
-        "点击外层是否关闭弹出框，默认为true。"
+        ""
       ],
       "EVENTS": [
-        "当步骤更改时触发回调事件。"
+        ""
+      ]
+    },
+    "SCROLL": {
+      "DESCRIPTION": "free-scroll可以在不需要全页滚动条的地方使用，但可以使用高度自定义的滚动条，例如滚动条粗细颜色或隐藏滚动条。",
+      "OPTION": [
+        "设置滚动条属性。"
+      ],
+      "EVENTS": [
+        "当滚动时触发回调事件。"
       ]
     }
   },
@@ -784,7 +796,8 @@
     "PAGE404": "404页面",
     "SHAREBUTTON": "分享按钮",
     "STEPS": "步骤组件",
-    "KNOB": "环形进度条"
+    "KNOB": "环形进度条",
+    "SCROLL": "滚动条"
   },
     "UPDATE": {
       "v010": {},
@@ -839,6 +852,10 @@
         "DOCS": "<li>修改文档根据系统选择语言。</li>",
         "BUG": "<li>修复Calendar的pholder设置无效</li>",
         "FEATURE": "<li>新增Popover组件</li><li>优化List的样式</li><li><span>Badge</span><ul class='free-panel-ul'><li>优化了Badge的样式</li><li>新增outline、theme、circle属性</li></ul></li><li>Inputtext新增type属性</li><li>优化Dropdown的动画</li><li>优化Progress的样式</li><li>优化Loading的样式</li><li>优化Slide的样式</li>"
+      },
+      "v040": {
+        "BUG": "<li>修复移动Cropper裁剪框到边界时，图片位置错乱。<a href='https://github.com/IronPans/freeng/issues/4'>#4</a></li><li>修复Modal关闭时遮罩没有关闭。</li>",
+        "FEATURE": "<li>新增Scroll组件</li><li>Editor新增onUploadCompleted属性，用于图片上传成功时触发</li><li>Modal新增dismissMask属性，用于控制点击遮罩是否可关闭模态框。</li>"
       },
       "ADD": "新增",
       "FIX": "修复",

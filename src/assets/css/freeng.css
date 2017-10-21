@@ -51,8 +51,9 @@
 @import url(../../app/component/ribbon/ribbon.component.css);
 @import url(../../app/component/steps/steps.component.css);
 @import url(../../app/component/knob/knob.component.css);
-@import url(../../app/component/back-top/back-top.component.css);
 @import url(../../app/component/popover/popover.component.css);
 @import url(../../app/component/badge/badge.component.css);
+@import url(../../app/component/echart/echart.component.css);
+@import url(../../app/component/tour/tour.component.css);
 
 /*# sourceMappingURL=freeng.css.map */

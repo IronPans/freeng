@@ -1,12 +1,12 @@
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {MainTooltipComponent} from './main-tooltip.component';
+import {MainTourComponent} from './main-tour.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
-    {path: '', component: MainTooltipComponent}
+    {path: '', component: MainTourComponent}
   ])],
   exports: [RouterModule]
 })
 
-export class MainTooltipRoutingModule {}
+export class MainTourRoutingModule {}

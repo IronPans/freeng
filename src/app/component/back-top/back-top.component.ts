@@ -6,7 +6,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 @Component({
   selector: 'free-back-top',
   template: `
-    <div class="free-back-top" (click)="onScrollTop($event)" [@enterLeave] *ngIf="visible">
+    <div [ngClass]="styleClass" (click)="onScrollTop()" [@enterLeave] *ngIf="visible">
       <ng-content></ng-content>
     </div>
   `,
@@ -34,48 +34,52 @@ export class BackTopComponent implements OnInit, OnDestroy {
     }
   }
   @Input() visibleHeight: number;
+  @Input() styleClass: any;
   _target: any;
   visible: boolean;
   scrollTop: number;
-  duration: number;
   elementScrollListener: any;
-  constructor(public renderer2: Renderer2, @Inject(DOCUMENT) private doc: Document) {
+  destination: number;
+  duration: number;
+  easing: string;
+  constructor(public renderer2: Renderer2,
+              @Inject(DOCUMENT) private doc: Document) {
     this.visibleHeight = 10;
-    this.duration = 300;
+    this.duration = 200;
+    this.destination = 0;
+    this.easing = 'linear';
+    this.styleClass = {};
   }
 
   ngOnInit() {
     if (this._target) {
-      this.elementScrollListener = this.renderer2.listen(this._target, 'scroll', (event) => {
-        if (this._target.scrollTop >= this.visibleHeight) {
-          this.visible = true;
-        } else {
-          this.visible = false;
-        }
+      this.elementScrollListener = this.renderer2.listen(this._target, 'scroll', () => {
+        this.visible = this._target.scrollTop >= this.visibleHeight;
       });
+      this.styleClass['free-back-top'] = true;
     }
   }
 
-  onScrollTop(event: any) {
+  onScrollTop() {
     if (this._target) {
       this.scrollToTop(this._target, this.duration);
     }
   }
 
   scrollToTop(element, duration) {
-    let last = +new Date();
-    let top = 0;
+    const last = +new Date();
     let fading;
+    let top = this.getScroll(element);
     const tick = () => {
-      top = this.getScroll(element) - (new Date().getTime() - last) / duration;
+      const now = Date.now();
+      const time = Math.min(1, (now - last) / duration);
+      const timeFunction = this.getEasing()[this.easing](time);
+      top = timeFunction * (this.destination - top) + top;
       this.setScrollTop(element, top);
-      last = +new Date();
-
       if (+top > 0) {
         fading = setTimeout(tick, 16);
       }
     };
-
     tick();
   }
 
@@ -101,6 +105,50 @@ export class BackTopComponent implements OnInit, OnDestroy {
     }
 
     return ret;
+  }
+
+  getEasing() {
+    return {
+      linear(t) {
+        return t;
+      },
+      easeInQuad(t) {
+        return t * t;
+      },
+      easeOutQuad(t) {
+        return t * (2 - t);
+      },
+      easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      },
+      easeInCubic(t) {
+        return t * t * t;
+      },
+      easeOutCubic(t) {
+        return --t * t * t + 1;
+      },
+      easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      },
+      easeInQuart(t) {
+        return t * t * t * t;
+      },
+      easeOutQuart(t) {
+        return 1 - --t * t * t * t;
+      },
+      easeInOutQuart(t) {
+        return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
+      },
+      easeInQuint(t) {
+        return t * t * t * t * t;
+      },
+      easeOutQuint(t) {
+        return 1 + --t * t * t * t * t;
+      },
+      easeInOutQuint(t) {
+        return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
+      }
+    };
   }
 
   ngOnDestroy() {

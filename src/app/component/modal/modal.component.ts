@@ -82,6 +82,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   @Input() type: string;
   @Input() size: string;
   @Input() spinner: string;
+  @Input() dismissMask: boolean;
   @Output() visibleChange: EventEmitter<any> = new EventEmitter();
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('prompt') promptInput: ElementRef;
@@ -98,7 +99,6 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   data: any;
   modalClass: any;
   initialized: boolean;
-  visibleChangeState: boolean;
   documentClickListener: any;
   documentMousemoveListener: any;
   documentMouseupListener: any;
@@ -125,11 +125,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
       if (this._visible) {
         this.show();
       } else {
-        if (this.visibleChangeState) {
-          this.visibleChangeState = false;
-        } else {
           this.close();
-        }
       }
     }
   }
@@ -160,6 +156,26 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
     this.initialized = true;
   }
 
+  addOverlay() {
+    if (!this.mask) {
+      this.mask = document.createElement('div');
+      this.mask.className = 'free-modal-mask';
+      this.mask.style.cssText = 'position: fixed;top:0;left:0;width:100%;height:100%;' +
+        'opacity:.5;background:#000;';
+      this.mask.style.zIndex = (this.zIndex - 1) + '';
+      if (this.dismissMask) {
+        this.maskClickListener = this.renderer2.listen(this.mask, 'click', () => {
+          this.close();
+        });
+      }
+      document.body.appendChild(this.mask);
+    }
+  }
+
+  center() {
+    this.left = window.innerWidth / 2;
+  }
+
   show() {
     this._visible = true;
     this.center();
@@ -186,34 +202,15 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
     this.onChange.emit(this.data);
     if (this.mask) {
       this.renderer2.removeChild(document.body, this.mask);
+      this.mask = null;
     }
   }
 
   close() {
-    this.visibleChangeState = true;
     this.hide();
+    this._visible = false;
     this.visibleChange.emit(false);
-    this.mask = null;
     this.data = {done: true};
-  }
-
-  addOverlay() {
-    if (!this.mask) {
-      this.mask = document.createElement('div');
-      this.mask.className = 'free-modal-mask';
-      this.mask.style.cssText = 'position: fixed;top:0;left:0;width:100%;height:100%;' +
-             'opacity:.5;background:#000;';
-      this.mask.style.zIndex = (this.zIndex - 1) + '';
-      this.maskClickListener = this.renderer2.listen(this.mask, 'click', (event: any) => {
-        this.close();
-      });
-      document.body.appendChild(this.mask);
-    }
-  }
-
-  center() {
-    this.left = window.innerWidth / 2;
-    // this.top = window.innerHeight / 2;
   }
 
   onMouseDown(event: any) {
@@ -252,7 +249,6 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.visibleChangeState = false;
     this.unbindDocumentMouseListener();
     if (this.documentClickListener) {
       this.documentClickListener();

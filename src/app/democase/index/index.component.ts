@@ -1,11 +1,11 @@
 import {
-  Component, OnInit, AfterViewInit, HostListener, Renderer2, OnDestroy, ViewChild
+  Component, OnInit, AfterViewInit, HostListener, Renderer2, OnDestroy, ViewChild, ElementRef
 } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
-import { config } from '../common/config';
-import { DomRenderer } from '../../component/common/dom';
+import {config} from '../common/config';
+import {DomRenderer} from '../../component/common/dom';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -27,18 +27,20 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
   sidebarActive: boolean;
   lang: string;
   type: string;
-  @ViewChild('setting') settingBtn; ElementRef;
-  @ViewChild('main') main;
+  @ViewChild('setting') settingBtn: ElementRef;
+  @ViewChild('main') main: ElementRef;
+
   @HostListener('window:resize') onResize() {
     this.resize();
   }
+
   constructor(public renderer2: Renderer2,
               public fb: FormBuilder,
-             public router: Router,
-             public route: ActivatedRoute,
+              public router: Router,
+              public route: ActivatedRoute,
               private translate: TranslateService,
-             public domRenderer: DomRenderer,
-             public pageTitle: Title) {
+              public domRenderer: DomRenderer,
+              public pageTitle: Title) {
     this.resize();
   }
 
@@ -49,26 +51,26 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
     this.menuItem = [{'name': 'Homepage'}, {'name': ''}];
     this.dropdownItem = [
       {
-      'name': 'TG',
-      'icon': 'user'
-    }, {
-      'name': 'GitHub',
-      'icon': 'github',
-      'url': 'https://github.com/IronPans/freeng',
-      'target': '_target'
-    }, {
-      'name': 'Help',
-      'icon': 'question-circle',
-      'routerLink': '/main/getting-started'
-    }, {
-      'name': 'Message',
-      'icon': 'bell-o',
-      'routerLink': '/main/changelog'
-    }, {
-      'name': 'Logout',
-      'icon': 'sign-out',
-      'routerLink': '/login'
-    }];
+        'name': 'TG',
+        'icon': 'user'
+      }, {
+        'name': 'GitHub',
+        'icon': 'github',
+        'url': 'https://github.com/IronPans/freeng',
+        'target': '_target'
+      }, {
+        'name': 'Help',
+        'icon': 'question-circle',
+        'routerLink': '/main/getting-started'
+      }, {
+        'name': 'Message',
+        'icon': 'bell-o',
+        'routerLink': '/main/changelog'
+      }, {
+        'name': 'Logout',
+        'icon': 'sign-out',
+        'routerLink': '/login'
+      }];
 
     this.translate.use(this.lang);
 
@@ -77,9 +79,9 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     this.menus = [
-      { 'icon': 'user'},
-      { 'icon': 'user'},
-      { 'icon': 'user'}
+      {'icon': 'user'},
+      {'icon': 'user'},
+      {'icon': 'user'}
     ];
 
     this.theme = config.color;
@@ -93,8 +95,8 @@ export class IndexComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.renderer2.listen('document', 'fullscreenchange', function() {
-     this.isOpen = !this.isOpen;
+    this.renderer2.listen('document', 'fullscreenchange', function () {
+      this.isOpen = !this.isOpen;
     });
   }
 

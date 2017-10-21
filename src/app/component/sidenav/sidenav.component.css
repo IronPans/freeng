@@ -30,7 +30,8 @@
   .free-sidenav .free-sidenav-wrapper {
     position: absolute;
     width: 12.5rem;
-    background: #fff; }
+    background: #fff;
+    box-shadow: 5px 1px 40px rgba(0, 0, 0, 0.1); }
   .free-sidenav.free-sidenav-active .free-sidenav-overlay {
     opacity: 1; }
   .free-sidenav.free-sidenav-left .free-sidenav-wrapper {

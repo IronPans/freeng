@@ -952,34 +952,34 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   padding: 0 1.25rem;
   font-size: .8rem; }
   .btn.btn-big.btn-circle {
-    width: 70px;
-    height: 70px;
-    line-height: 70px; }
+    width: 50px;
+    height: 50px;
+    line-height: 50px; }
 
 .btn.btn-small {
   height: 1.5rem;
   padding: 0 .5rem;
   font-size: .6rem; }
   .btn.btn-small.btn-circle {
-    width: 50px;
-    height: 50px;
-    line-height: 50px; }
+    width: 30px;
+    height: 30px;
+    line-height: 30px; }
 
 .btn.btn-mini {
   height: 1.1rem;
   padding: 0 5px;
   font-size: .6rem; }
   .btn.btn-mini.btn-circle {
-    width: 40px;
-    height: 40px;
-    line-height: 40px; }
+    width: 25px;
+    height: 25px;
+    line-height: 25px; }
 
 .btn-circle {
   border-radius: 50%;
   padding: 0;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center; }
 
 .btn-default {
@@ -1089,7 +1089,8 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
 .btn.btn-block {
   display: block; }
 
-.btn[disabled] {
+.btn[disabled],
+.btn.btn-disabled {
   cursor: not-allowed;
   pointer-events: none;
   opacity: .65;

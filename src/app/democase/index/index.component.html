@@ -1,433 +1,453 @@
-<aside class="left-menu free-iscroll">
-  <ul class="left-menu-item">
-    <li fRipple>
-      <a routerLink="introduction" routerLinkActive="active">
-        <free-icon [icon]="'desktop'"></free-icon>
-        <span class="accordion-toggle-title">{{'INTRODUCTION' | translate}}</span>
-      </a>
-    </li>
-    <li fRipple>
-      <a routerLink="getting-started" routerLinkActive="active">
-        <free-icon [icon]="'download'"></free-icon>
-        <span class="accordion-toggle-title">{{'GET-START' | translate}}</span>
-      </a>
-    </li>
-  </ul>
-  <free-accordion-group [closeOthers]="true">
-    <free-accordion class="let-menu-item" [header]="'UI-ELEMENT' | translate" [iconName]="'dashboard'">
-      <ul>
-        <li fRipple>
-          <a routerLink="grid" routerLinkActive="active">
-            <cite>Grid</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">栅格系统</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="icon" routerLinkActive="active">
-            <cite>Icon</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">字体图标</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="typography" routerLinkActive="active">
-            <cite>Typography</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">辅助元素</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="shadow" routerLinkActive="active">
-            <cite>BoxShadow</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">阴影</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="ripple" routerLinkActive="active">
-            <cite>Ripple</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">水波纹</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="columns" routerLinkActive="active">
-            <cite>Column</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">多栏布局</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Buttons' | translate" [iconName]="'youtube-play'">
-      <ul>
-        <li fRipple>
-          <a routerLink="buttons" routerLinkActive="active">
-            <cite>Button</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">按钮</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="share-button" routerLinkActive="active">
-            <cite>ShareButton</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">分享按钮</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="shrink" routerLinkActive="active">
-            <cite>Shrink</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">浮动按钮</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Forms' | translate" [iconName]="'pencil-square-o'">
-      <ul>
-        <li fRipple>
-          <a routerLink="input" routerLinkActive="active">
-            <cite>Input</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">输入框</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="checkbox" routerLinkActive="active">
-            <cite>Checkbox</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">复选框</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="radio" routerLinkActive="active">
-            <cite>Radio</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">单选框</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="switch" routerLinkActive="active">
-            <cite>Switch</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">开关</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="upload" routerLinkActive="active">
-            <cite>Upload</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">上传控件</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="spinner" routerLinkActive="active">
-            <cite>Spinner</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">数字输入框</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="range" routerLinkActive="active">
-            <cite>Range</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">滑动条</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="rating" routerLinkActive="active">
-            <cite>Rating</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">星星评分</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Selector' | translate" [iconName]="'check-square-o'">
-      <ul>
-        <li fRipple>
-          <a routerLink="select" routerLinkActive="active">
-            <cite>Select</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">选择器</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="calendar" routerLinkActive="active">
-            <cite>Calendar</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">日期选择器</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="cascader" routerLinkActive="active">
-            <cite>Cascader</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">级联选择器</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="colorpicker" routerLinkActive="active">
-            <cite>Colorpicker</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">颜色选择器</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Table' | translate" [iconName]="'table'">
-      <ul>
-        <li fRipple>
-          <a routerLink="table" routerLinkActive="active">
-            <cite>Table</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">表格</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="datatable" routerLinkActive="active">
-            <cite>Datatable</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">数据表格</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="pagination" routerLinkActive="active">
-            <cite>Pagination</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">分页器</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Modal' | translate" [iconName]="'window-maximize'">
-      <ul>
-        <li fRipple>
-          <a routerLink="modals" routerLinkActive="active">
-            <cite>Modal</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">模态框</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="tooltips" routerLinkActive="active">
-            <cite>Tooltip</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">提示框</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="popovers" routerLinkActive="active">
-            <cite>Popover</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">弹出框</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="notification" routerLinkActive="active">
-            <cite>Notification</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">消息通知</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="toast" routerLinkActive="active">
-            <cite>Toast</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">消息提示</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Layout' | translate" [iconName]="'square'">
-      <ul>
-        <li fRipple>
-          <a routerLink="panel" routerLinkActive="active">
-            <cite>Panel</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">面板</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="accordion" routerLinkActive="active">
-            <cite>Accordion</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">折叠面板</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="tabs" routerLinkActive="active">
-            <cite>Tab</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">选项卡</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'List' | translate" [iconName]="'list'">
-      <ul>
-        <li fRipple>
-          <a routerLink="list" routerLinkActive="active">
-            <cite>List</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">列表</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="card" routerLinkActive="active">
-            <cite>Card</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">卡片</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Menu' | translate" [iconName]="'microchip'">
-      <ul>
-        <li fRipple>
-          <a routerLink="dropdown" routerLinkActive="active">
-            <cite>Dropdown</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">下拉菜单</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="contextmenu" routerLinkActive="active">
-            <cite>Contextmenu</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">上下文菜单</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="tree" routerLinkActive="active">
-            <cite>Tree</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">树形菜单</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="steps" routerLinkActive="active">
-            <cite>Steps</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">步骤菜单</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Editors' | translate" [iconName]="'pencil'">
-      <ul>
-        <li fRipple>
-          <a routerLink="editor" routerLinkActive="active">
-            <cite>Editor</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">编辑器</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Charts' | translate" [iconName]="'bar-chart-o'">
-      <ul>
-        <li fRipple>
-          <a routerLink="charts" routerLinkActive="active">
-            <cite>Chart</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">图表</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-    <free-accordion class="let-menu-item" [header]="'Media' | translate" [iconName]="'television'">
-      <ul>
-        <li fRipple>
-          <a routerLink="image" routerLinkActive="active">
-            <cite>Shape</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">图片</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="slide" routerLinkActive="active">
-            <cite>Slide</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">幻灯片</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="media" routerLinkActive="active">
-            <cite>Media</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">媒体播放器</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="cropper" routerLinkActive="active">
-            <cite>Cropper</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">图片裁剪</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
+<aside class="left-menu">
+  <free-scroll [options]="{height: '100%'}">
+    <ul class="left-menu-item">
+      <li fRipple>
+        <a routerLink="introduction" routerLinkActive="active">
+          <free-icon [icon]="'desktop'"></free-icon>
+          <span class="accordion-toggle-title">{{'INTRODUCTION' | translate}}</span>
+        </a>
+      </li>
+      <li fRipple>
+        <a routerLink="getting-started" routerLinkActive="active">
+          <free-icon [icon]="'download'"></free-icon>
+          <span class="accordion-toggle-title">{{'GET-START' | translate}}</span>
+        </a>
+      </li>
+    </ul>
+    <free-accordion-group [closeOthers]="true">
+      <free-accordion class="let-menu-item" [header]="'UI-ELEMENT' | translate" [iconName]="'dashboard'">
+        <ul>
+          <li fRipple>
+            <a routerLink="grid" routerLinkActive="active">
+              <cite>Grid</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">栅格系统</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="icon" routerLinkActive="active">
+              <cite>Icon</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">字体图标</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="typography" routerLinkActive="active">
+              <cite>Typography</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">辅助元素</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="shadow" routerLinkActive="active">
+              <cite>BoxShadow</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">阴影</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="ripple" routerLinkActive="active">
+              <cite>Ripple</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">水波纹</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="columns" routerLinkActive="active">
+              <cite>Column</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">多栏布局</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Buttons' | translate" [iconName]="'youtube-play'">
+        <ul>
+          <li fRipple>
+            <a routerLink="buttons" routerLinkActive="active">
+              <cite>Button</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">按钮</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="share-button" routerLinkActive="active">
+              <cite>ShareButton</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">分享按钮</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="shrink" routerLinkActive="active">
+              <cite>Shrink</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">浮动按钮</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Forms' | translate" [iconName]="'pencil-square-o'">
+        <ul>
+          <li fRipple>
+            <a routerLink="input" routerLinkActive="active">
+              <cite>Input</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">输入框</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="checkbox" routerLinkActive="active">
+              <cite>Checkbox</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">复选框</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="radio" routerLinkActive="active">
+              <cite>Radio</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">单选框</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="switch" routerLinkActive="active">
+              <cite>Switch</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">开关</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="upload" routerLinkActive="active">
+              <cite>Upload</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">上传控件</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="spinner" routerLinkActive="active">
+              <cite>Spinner</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">数字输入框</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="range" routerLinkActive="active">
+              <cite>Range</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">滑动条</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="rating" routerLinkActive="active">
+              <cite>Rating</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">星星评分</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Selector' | translate" [iconName]="'check-square-o'">
+        <ul>
+          <li fRipple>
+            <a routerLink="select" routerLinkActive="active">
+              <cite>Select</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">选择器</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="calendar" routerLinkActive="active">
+              <cite>Calendar</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">日期选择器</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="cascader" routerLinkActive="active">
+              <cite>Cascader</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">级联选择器</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="colorpicker" routerLinkActive="active">
+              <cite>Colorpicker</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">颜色选择器</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Table' | translate" [iconName]="'table'">
+        <ul>
+          <li fRipple>
+            <a routerLink="table" routerLinkActive="active">
+              <cite>Table</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">表格</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="datatable" routerLinkActive="active">
+              <cite>Datatable</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">数据表格</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="pagination" routerLinkActive="active">
+              <cite>Pagination</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">分页器</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Modal' | translate" [iconName]="'window-maximize'">
+        <ul>
+          <li fRipple>
+            <a routerLink="modals" routerLinkActive="active">
+              <cite>Modal</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">模态框</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="tooltips" routerLinkActive="active">
+              <cite>Tooltip</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">提示框</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="popovers" routerLinkActive="active">
+              <cite>Popover</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">弹出框</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="notification" routerLinkActive="active">
+              <cite>Notification</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">消息通知</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="toast" routerLinkActive="active">
+              <cite>Toast</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">消息提示</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Layout' | translate" [iconName]="'square'">
+        <ul>
+          <li fRipple>
+            <a routerLink="panel" routerLinkActive="active">
+              <cite>Panel</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">面板</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="accordion" routerLinkActive="active">
+              <cite>Accordion</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">折叠面板</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="tabs" routerLinkActive="active">
+              <cite>Tab</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">选项卡</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'List' | translate" [iconName]="'list'">
+        <ul>
+          <li fRipple>
+            <a routerLink="list" routerLinkActive="active">
+              <cite>List</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">列表</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="card" routerLinkActive="active">
+              <cite>Card</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">卡片</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Menu' | translate" [iconName]="'microchip'">
+        <ul>
+          <li fRipple>
+            <a routerLink="dropdown" routerLinkActive="active">
+              <cite>Dropdown</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">下拉菜单</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="contextmenu" routerLinkActive="active">
+              <cite>Contextmenu</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">上下文菜单</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="tree" routerLinkActive="active">
+              <cite>Tree</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">树形菜单</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="steps" routerLinkActive="active">
+              <cite>Steps</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">步骤菜单</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="tours" routerLinkActive="active">
+              <cite>Tour</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">引导菜单</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Editors' | translate" [iconName]="'pencil'">
+        <ul>
+          <li fRipple>
+            <a routerLink="editor" routerLinkActive="active">
+              <cite>Editor</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">编辑器</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Charts' | translate" [iconName]="'bar-chart-o'">
+        <ul>
+          <li fRipple>
+            <a routerLink="charts" routerLinkActive="active">
+              <cite>Chart</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">图表</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="echarts" routerLinkActive="active">
+              <cite>Echarts</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">图表</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Media' | translate" [iconName]="'television'">
+        <ul>
+          <li fRipple>
+            <a routerLink="image" routerLinkActive="active">
+              <cite>Shape</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">图片</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="slide" routerLinkActive="active">
+              <cite>Slide</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">幻灯片</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="media" routerLinkActive="active">
+              <cite>Media</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">媒体播放器</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="cropper" routerLinkActive="active">
+              <cite>Cropper</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">图片裁剪</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
 
-    <free-accordion class="let-menu-item" [header]="'Progress' | translate" [iconName]="'spinner'">
-      <ul>
-        <li fRipple>
-          <a routerLink="progress" routerLinkActive="active">
-            <cite>Progress</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">进度条</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="loading" routerLinkActive="active">
-            <cite>Loading</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">加载条</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="knob" routerLinkActive="active">
-            <cite>Knob</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">环形进度条</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Progress' | translate" [iconName]="'spinner'">
+        <ul>
+          <li fRipple>
+            <a routerLink="progress" routerLinkActive="active">
+              <cite>Progress</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">进度条</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="loading" routerLinkActive="active">
+              <cite>Loading</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">加载条</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="knob" routerLinkActive="active">
+              <cite>Knob</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">环形进度条</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
 
-    <free-accordion class="let-menu-item" [header]="'Misc' | translate" [iconName]="'support'">
-      <ul>
-        <li fRipple>
-          <a routerLink="breadcrumb" routerLinkActive="active">
-            <cite>Breadcrumb</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">面包屑</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="badge" routerLinkActive="active">
-            <cite>Badge</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">小徽章</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="chip" routerLinkActive="active">
-            <cite>Chip</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">碎片</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="draggable" routerLinkActive="active">
-            <cite>Draggable</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">拖放</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="sidenav" routerLinkActive="active">
-            <cite>Sidenav</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">侧边栏</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="flow" routerLinkActive="active">
-            <cite>Flow</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">流加载</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="fullpage" routerLinkActive="active">
-            <cite>Fullpage</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">全屏滚动</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="timeline" routerLinkActive="active">
-            <cite>Timeline</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">时间轴</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
+      <free-accordion class="let-menu-item" [header]="'Misc' | translate" [iconName]="'support'">
+        <ul>
+          <li fRipple>
+            <a routerLink="breadcrumb" routerLinkActive="active">
+              <cite>Breadcrumb</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">面包屑</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="badge" routerLinkActive="active">
+              <cite>Badge</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">小徽章</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="chip" routerLinkActive="active">
+              <cite>Chip</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">碎片</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="draggable" routerLinkActive="active">
+              <cite>Draggable</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">拖放</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="sidenav" routerLinkActive="active">
+              <cite>Sidenav</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">侧边栏</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="flow" routerLinkActive="active">
+              <cite>Flow</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">流加载</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="fullpage" routerLinkActive="active">
+              <cite>Fullpage</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">全屏滚动</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="timeline" routerLinkActive="active">
+              <cite>Timeline</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">时间轴</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="scrollbar" routerLinkActive="active">
+              <cite>Scrollbar</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">滚动条</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
 
-    <free-accordion class="let-menu-item" [header]="'PAGE' | translate" [iconName]="'clone'">
-      <ul>
-        <li fRipple>
-          <a routerLink="/login" routerLinkActive="active">
-            <cite>Login</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">登录页</em>
-          </a>
-        </li>
-        <li fRipple>
-          <a routerLink="error" routerLinkActive="active">
-            <cite>404 Page</cite>
-            <em class="chinese" *ngIf="lang === 'zh-CN'">404页面</em>
-          </a>
-        </li>
-      </ul>
-    </free-accordion>
-  </free-accordion-group>
-  <ul class="left-menu-item">
-    <li fRipple>
-      <a routerLink="changelog" routerLinkActive="active">
-        <free-icon [icon]="'history'"></free-icon>
-        <span class="accordion-toggle-title">{{'CHANGE-LOG' | translate}}</span>
-      </a>
-    </li>
-  </ul>
+      <free-accordion class="let-menu-item" [header]="'PAGE' | translate" [iconName]="'clone'">
+        <ul>
+          <li fRipple>
+            <a routerLink="/login" routerLinkActive="active">
+              <cite>Login</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">登录页</em>
+            </a>
+          </li>
+          <li fRipple>
+            <a routerLink="error" routerLinkActive="active">
+              <cite>404 Page</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">404页面</em>
+            </a>
+          </li>
+        </ul>
+      </free-accordion>
+    </free-accordion-group>
+    <ul class="left-menu-item">
+      <li fRipple>
+        <a routerLink="changelog" routerLinkActive="active">
+          <free-icon [icon]="'history'"></free-icon>
+          <span class="accordion-toggle-title">{{'CHANGE-LOG' | translate}}</span>
+        </a>
+      </li>
+    </ul>
+  </free-scroll>
 </aside>
 <div class="top-menu">
   <div class="aside-header">
@@ -518,6 +538,10 @@
 <main class="main-layout-container free-iscroll" #main>
   <router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
 </main>
+
+<free-back-top [styleClass]="{'back-top': true}" [target]="main">
+  <i class="fa fa-angle-up"></i>
+</free-back-top>
 
 <free-sidenav [visible]="sidebarActive" direction="right" (onChange)="sidenavChange($event)"
               [style]="{top: '60px'}" [overlay]="true">

@@ -1,0 +1,14 @@
+free-echart {
+  display: block; }
+  free-echart .free-echart {
+    position: relative; }
+  free-echart .free-echart-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  free-echart.free-echart-inline {
+    display: inline-block; }
+
+/*# sourceMappingURL=echart.component.css.map */

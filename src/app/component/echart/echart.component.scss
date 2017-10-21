@@ -1,0 +1,19 @@
+free-echart {
+  display: block;
+
+  .free-echart {
+    position: relative;
+  }
+
+  .free-echart-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &.free-echart-inline {
+    display: inline-block;
+  }
+}

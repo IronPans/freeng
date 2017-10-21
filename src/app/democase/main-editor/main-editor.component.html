@@ -12,7 +12,7 @@
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <div style="height: 400px">
-              <free-editor [style]="{width: 900}" [(ngModel)]="text" [counter]="true"></free-editor>
+              <free-editor (onUploadCompleted)="onUploadCompleted($event)" [style]="{width: 900}" [(ngModel)]="text" [counter]="true"></free-editor>
             </div>
           </free-tab>
           <free-tab header="CODE">
@@ -47,7 +47,6 @@
               <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
-
           <free-table-body>
             <free-table-row>
               <free-table-cell>toolbar</free-table-cell>
@@ -97,6 +96,36 @@
               </free-table-cell>
               <free-table-cell>
                 <ng-template>{{'DEMO.EDITOR.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+
+      <div class="free-demo-row">
+        <h3 class="free-title">{{'EVENT' | translate}}</h3>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'EVENT' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onUploadCompleted</free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  <code>Function</code>
+                </ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.EDITOR.EVENTS.0' | translate}}
+                  <code>&#123;files: FileList, url: String&#125;</code>
+                </ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>

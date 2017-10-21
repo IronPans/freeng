@@ -2,6 +2,15 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
+## 0.4.0(2017-10-21)
+
+**Features**
+
+- Add Scroll Component
+
+**Bug Fixes**
+  
+- Fix Cropper's cropping frame when moving to the border, the picture is in a messy position.[#4](https://github.com/IronPans/freeng/issues/4)
 
 ## 0.3.2(2017-10-15)
 

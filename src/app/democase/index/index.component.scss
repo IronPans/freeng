@@ -31,8 +31,6 @@
   .left-menu {
     @include position(absolute, $topMenuHeight, '', 0, 0);
     width: $leftMenuWidth;
-    overflow: hidden;
-    overflow-y: auto;
 
     .ripple {
       background: rgba(0,0,0,.3);
@@ -722,8 +720,27 @@
     }
   }
 
-//  mobile
+  .back-top {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 1px 0 10px 1px rgba(0,0,0,0.3);
+    transition: all .2s;
+    &:hover {
+      background: #eee;
+    }
+  }
 
+//  mobile
   .free-demo-mobile {
     display: none;
     position: fixed;

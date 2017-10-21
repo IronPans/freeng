@@ -2,6 +2,16 @@
 
 [EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
 
+## 0.4.0(2017-10-21)
+
+**Features**
+
+- 新增Scroll组件
+
+**Bug Fixes**
+  
+- 修复Cropper的裁剪框移到边界时，图片位置错乱。[#4](https://github.com/IronPans/freeng/issues/4)
+
 ## 0.3.2(2017-10-15)
 
 **Features**

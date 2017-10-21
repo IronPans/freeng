@@ -53,6 +53,7 @@ const childRoutes: Routes = [
   {path: 'timeline', loadChildren: '../main-timeline/main-timeline.module#MainTimelineModule'},
   {path: 'draggable', loadChildren: '../main-draggable/main-draggable.module#MainDraggableModule'},
   {path: 'charts', loadChildren: '../main-chart/main-chart.module#MainChartModule'},
+  {path: 'echarts', loadChildren: '../main-echarts/main-echarts.module#MainEchartsModule'},
   {path: 'sidenav', loadChildren: '../main-sidenav/main-sidenav.module#MainSidenavModule'},
   {path: 'flow', loadChildren: '../main-flow/main-flow.module#MainFlowModule'},
   {path: 'media', loadChildren: '../main-media/main-media.module#MainMediaModule'},
@@ -61,6 +62,8 @@ const childRoutes: Routes = [
   {path: 'share-button', loadChildren: '../main-share-button/main-share-button.module#MainShareButtonModule'},
   {path: 'steps', loadChildren: '../main-steps/main-steps.module#MainStepsModule'},
   {path: 'knob', loadChildren: '../main-knob/main-knob.module#MainKnobModule'},
+  {path: 'scrollbar', loadChildren: '../main-scroll/main-scroll.module#MainScrollModule'},
+  {path: 'tours', loadChildren: '../main-tour/main-tour.module#MainTourModule'},
   {path: '', redirectTo: '/main/introduction', pathMatch: 'full'},
   {path: '**', redirectTo: '/error'}
 ];

@@ -74,6 +74,15 @@
                 <ng-template>{{'DEMO.MODAL.OPTION.5' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>dismissMask</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.MODAL.OPTION.6' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -239,7 +248,7 @@
   <free-modal header="Modal" [(visible)]="visible" (onChange)="onChange($event)" [size]="'sm'">
     <p>Some contents...</p><p>Some contents...</p><p>Some contents...</p>
     <f-footer>
-      <button fButton class="cancel">cancel</button>
+      <button fButton (click)="visible = !visible">cancel</button>
     </f-footer>
   </free-modal>
 

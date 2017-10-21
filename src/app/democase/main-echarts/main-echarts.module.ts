@@ -1,26 +1,24 @@
-import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {GridModule} from '../../component/grid/grid.directive';
 import {TableModule} from '../../component/table/table.component';
 import {CodeModule} from '../../component/code/code.component';
 import {TabGroupModule} from '../../component/tab/tab.component';
-import {ScrollModule} from '../../component/scroll/scroll.component';
-import {GridModule} from '../../component/grid/grid.directive';
-import {MainScrollRoutingModule} from './main-scroll-routing.module';
-import {MainScrollComponent} from './main-scroll.component';
 import {LanguageModule} from '../common/language';
-
+import {MainEchartsRoutingModule} from './main-echarts-routing.module';
+import {MainEchartsComponent} from './main-echarts.component';
+import {EchartModule} from '../../component/echart/echart.component';
 @NgModule({
   imports: [
     CommonModule,
-    MainScrollRoutingModule,
     TabGroupModule,
     CodeModule,
     TableModule,
-    ScrollModule,
     GridModule,
+    EchartModule,
+    MainEchartsRoutingModule,
     LanguageModule
   ],
-  declarations: [MainScrollComponent]
+  declarations: [MainEchartsComponent]
 })
-
-export class MainScrollModule {}
+export class MainEchartsModule {}

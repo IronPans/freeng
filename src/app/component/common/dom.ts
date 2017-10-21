@@ -569,4 +569,35 @@ export class DomRenderer {
     }
     return isIn;
   }
+
+  getRequestAnimationFrame() {
+    const _win = window;
+    let setAnimationFrame = _win.requestAnimationFrame ||
+      _win.webkitRequestAnimationFrame || _win['mozRequestAnimationFrame'] || false;
+    let clearAnimationFrame = _win.cancelAnimationFrame ||
+      _win.webkitCancelAnimationFrame || _win['mozCancelAnimationFrame'] || false;
+
+    if (!setAnimationFrame) {
+      let anilasttime = 0;
+      setAnimationFrame = (callback, element) => {
+        const currTime = new Date().getTime();
+        const timeToCall = Math.max(0, 16 - (currTime - anilasttime));
+        const id = _win.setTimeout(() => { callback(currTime + timeToCall); },
+          timeToCall);
+        anilasttime = currTime + timeToCall;
+        return id;
+      };
+      clearAnimationFrame = (id) => {
+        _win.clearTimeout(id);
+      };
+    } else {
+      if (!_win.cancelAnimationFrame) {
+        clearAnimationFrame = (id) => { };
+      }
+    }
+    return {
+      setAnimationFrame: setAnimationFrame,
+      clearAnimationFrame: clearAnimationFrame
+    };
+  }
 }

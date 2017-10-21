@@ -47,7 +47,6 @@
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: .75rem;
     line-height: 22px; }
   .free-card free-card-content + free-card-footer .free-card-footer {
     padding-top: 0; }

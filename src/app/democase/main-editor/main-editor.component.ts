@@ -40,4 +40,7 @@ that enables rich text editing capabilities for your applications.</p>
   ngOnInit() {
   }
 
+  onUploadCompleted(event: any) {
+    console.log(event);
+  }
 }

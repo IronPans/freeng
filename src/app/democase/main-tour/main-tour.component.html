@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-lg-12">
+    <free-panel [header]="'SECTION 1'">
+      Use code inside div element data-intro="This is Card Header" data-step="1" to create tour.
+        <div data-step="1">data-intro="This is Card Header" data-step="1" </div>
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    </free-panel>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <free-panel [header]="'SECTION 1'">
+      Use code inside div element data-intro="This is Card Header" data-step="1" to create tour.
+      <div data-step="2">data-intro="This is Card Header" data-step="1" </div>
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    </free-panel>
+  </div>
+  <div class="col-lg-6">
+    <free-panel [header]="'SECTION 1'">
+      Use code inside div element data-intro="This is Card Header" data-step="1" to create tour.
+      <div data-step="3">data-intro="This is Card Header" data-step="1" </div>
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+    </free-panel>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="free-card-board">
+      <h3 class="free-toolbar">theme</h3>
+      <free-tab-group direction="right">
+        <free-tab header="Demo">
+          <button fButton data-step="4">default</button>
+          <button fButton theme="primary">primary</button>
+          <button fButton theme="info">info</button>
+          <button fButton theme="success">success</button>
+          <button fButton theme="warning">warning</button>
+          <button fButton theme="danger">danger</button>
+        </free-tab>
+        <free-tab header="Code">
+          <free-code lang="html">
+            &lt;button fButton&gt;default&lt;/button&gt;
+            &lt;button fButton theme="primary"&gt;primary&lt;/button&gt;
+            &lt;button fButton theme="info"&gt;info&lt;/button&gt;
+            &lt;button fButton theme="success"&gt;success&lt;/button&gt;
+            &lt;button fButton theme="warning"&gt;warning&lt;/button&gt;
+            &lt;button fButton theme="danger"&gt;danger&lt;/button&gt;
+          </free-code>
+        </free-tab>
+      </free-tab-group>
+    </div>
+  </div>
+</div>
+
+<free-tour [visible]="tourVisible" [data]="tourData"
+           [skipLabel]="'skip'" [prevLabel]="'prev'" [nextLabel]="'next'"></free-tour>

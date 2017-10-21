@@ -11,16 +11,24 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <free-cropper [data]="{url: 'assets/images/picture.jpg', aspectRatio: (2 / 3)}"
-                          (onCrop)="onCrop($event)"></free-cropper>
-            <p style="margin-left: 10px;">
-              <img src="{{cropImage}}" alt="">
-            </p>
+          <div class="row">
+            <div class="col-md-8">
+                <free-cropper [data]="{url: 'assets/images/picture.jpg', aspectRatio: (2 / 3)}"
+                              (onCrop)="onCrop($event)"></free-cropper>
+            </div>
+            <div class="col-md-4">
+              <p style="margin-left: 10px;">
+                <img src="{{cropImage}}" alt="">
+              </p>
+            </div>
+          </div>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-cropper [data]="&#123;url: 'assets/images/picture.jpg', aspectRatio: (2 / 3)&#125;"
                (onCrop)="onCrop($event)"&lt;&gt;/free-cropper&gt;
+
+              &lt;img src="&#123;&#123;cropImage&#125;&#125;" alt=""&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

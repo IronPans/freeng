@@ -12,6 +12,7 @@ free-progress {
   display: flex;
   align-items: center;
   border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
 
   &.free-progress-striped .free-progress-bar {
     background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);

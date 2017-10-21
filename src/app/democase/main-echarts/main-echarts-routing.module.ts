@@ -1,12 +1,13 @@
+
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {MainTooltipComponent} from './main-tooltip.component';
+import {MainEchartsComponent} from './main-echarts.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
-    {path: '', component: MainTooltipComponent}
+    {path: '', component: MainEchartsComponent}
   ])],
   exports: [RouterModule]
 })
 
-export class MainTooltipRoutingModule {}
+export class MainEchartsRoutingModule {}

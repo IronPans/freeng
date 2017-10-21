@@ -1,161 +1,402 @@
-import { CommonModule } from '@angular/common';
-import { NgModule, Component, OnInit,
-  AfterViewInit, ElementRef, ViewChild, Input } from '@angular/core';
-import { DomRenderer } from '../common/dom';
+import {CommonModule} from '@angular/common';
+import {
+  NgModule, Component, OnInit, AfterViewInit, ElementRef, ViewChild,
+  Input, Renderer2, OnDestroy, HostListener, EventEmitter, Output
+} from '@angular/core';
+import {DomRenderer} from '../common/dom';
 
 @Component({
-  selector: 'free-scroll',
+  selector: 'free-scroll, [fScroll]',
   template: `
-     <div class="free-scroll" #scroll (wheel)="onWheel($event)"
-         (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <div class="free-scroll" #scroll (wheel)="onWheel($event)" [ngStyle]="userSelectStyle"
+         (mouseover)="onMouseEnter()" (mouseleave)="onMouseLeave()">
       <div class="free-scroll-wrapper">
-        <div class="free-scroll-inner">
-          <ng-content></ng-content>
-        </div>
+        <div class="free-scroll-inner"><ng-content></ng-content></div>
       </div>
-      <div class="free-scroll-scrollbar" #scrollbar>
-        <div class="free-scroll-thumb" #thumb (mousedown)="onMousedown()"></div>
+      <div class="free-scroll-scrollbar" #bar (mouseover)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+        <div class="free-scroll-track" #track></div>
+        <div class="free-scroll-thumb" #thumb></div>
       </div>
     </div>
   `,
   providers: [DomRenderer]
 })
-export class ScrollComponent implements OnInit, AfterViewInit {
-
-  @ViewChild('scroll') _container: ElementRef;
-  @ViewChild('thumb') _thumb: ElementRef;
-  @ViewChild('scrollbar') _scrollbar: ElementRef;
-  @Input() scrollClass: string;
-  thumb;
-  scrollbar;
+export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
+  @Input() options: any;
+  @Output() onContentScroll: EventEmitter<any> = new EventEmitter();
+  @Output() onInfiniteScroll: EventEmitter<any> = new EventEmitter();
+  @ViewChild('scroll') scrollViewChild: ElementRef;
+  @ViewChild('thumb') thumbViewChild: ElementRef;
+  @ViewChild('track') trackViewChild: ElementRef;
+  @ViewChild('bar') barViewChild: ElementRef;
+  defaults: any;
+  thumb: HTMLDivElement;
+  bar: HTMLDivElement;
+  track: HTMLDivElement;
   scrollHeight: number;
-  offsetHeight: number;
-  offsetTop: number;
-  scrollBarHeight: number;
-  scrollTop: number;
+  outerHeight: number;
+  barHeight: number;
+  maxScrollTop: number;
   isLoading: boolean;
   isRunning: boolean;
-  container;
+  isDragg: boolean;
+  scrollElem: any;
   wrapper;
-  moveY: number;
-  intervalId;
-  isTouch: boolean;
-
+  scrollTop: number;
+  isMobile: boolean;
   isMoz: boolean;
-  WHEEL_EV;
+  WHEEL_EV: any;
+  TOUCH_EV: any;
+  minBarHeight: number;
+  originOptions: any;
+  isOverBar: boolean;
+  isOverContent: boolean;
+  documentTouchmoveListener: any;
+  thumbTouchstartListener: any;
+  documentTouchendListener: any;
+  documentTouchListener: any;
+  initial: boolean;
+  userSelectStyle: any;
+  animationFrame: any;
+  requestAnimationId: any;
+  queueHide: any;
+
+  @HostListener('window:resize') onResize() {
+    this.refresh();
+  };
+
+  @HostListener('window:orientationchange') onorientationchagne() {
+    this.refresh();
+  };
 
   constructor(public domRenderer: DomRenderer,
-      public er: ElementRef) { }
+              public renderer2: Renderer2,
+              public er: ElementRef) {
+    this.scrollTop = 0;
+    this.minBarHeight = 30;
+    this.options = {};
+    this.defaults = {
+      width: 'auto',
+      height: '250px',
+      size: '7px',
+      position: 'right',
+      alwaysVisible: false,
+      wheelStep: 20,
+      distance: '2px',
+      thumbDraggable: true,
+      touchScrollStep: 200,
+      thumbBorderRadius: '2px',
+      trackBorderRadius: '2px',
+      thumbColor: 'rgba(0, 0, 0, 0.29804)',
+      trackColor: '#e0e0e0',
+      showBar: true
+    };
+    this.animationFrame = this.domRenderer.getRequestAnimationFrame();
+  }
 
   ngOnInit() {
     this.isMoz = 'MoztTransform' in document.createElement('div').style;
     this.WHEEL_EV = this.isMoz ? 'DOMMouseScroll' : 'mousewheel';
+    this.originOptions = this.options;
+    const options = {};
+    Object.assign(options, this.defaults, this.options);
+    this.options = options;
+    this.TOUCH_EV = this.domRenderer.getTouchEvent();
+    this.isMobile = this.TOUCH_EV.mobile;
   }
 
   ngAfterViewInit() {
-    this.container = this._container.nativeElement;
-    this.thumb = this._thumb.nativeElement;
-    this.scrollbar = this._scrollbar.nativeElement;
-    this.wrapper = this.container.querySelector('.free-scroll-wrapper');
-    if (this.scrollClass) {
-      this.domRenderer.addClass(this.container, this.scrollClass);
+    this.scrollElem = this.scrollViewChild.nativeElement;
+    this.thumb = this.thumbViewChild.nativeElement;
+    this.bar = this.barViewChild.nativeElement;
+    this.track = this.trackViewChild.nativeElement;
+    this.wrapper = this.scrollElem.querySelector('.free-scroll-wrapper');
+    this.setBarStyle();
+    if (this.isMobile) {
+      this.documentTouchListener = this.renderer2.listen(this.scrollElem,
+        this.TOUCH_EV.touchstart, (e) => {
+          this.onTouch(e);
+          this.isOverContent = true;
+        });
     }
-    this.scrollInit();
+    this.thumbTouchstartListener = this.renderer2.listen(this.thumb,
+      this.TOUCH_EV.touchstart, (e) => {
+        if (e.preventDefault) {
+          e.preventDefault();
+        }
+        this.setUserSelect();
+        this.onTouch(e);
+        this.isOverContent = false;
+      });
+    this.refresh();
+    let offset = this.scrollTop;
+    if ('scrollTo' in this.options) {
+      offset = parseInt(this.options['scrollTo'], 10);
+    }
+    this.domRenderer.css(this.bar, {
+      opacity: .9
+    });
+    this.scrollContent(offset, false, true);
+    this.initial = true;
+    if (!this.options['alwaysVisible']) {
+      this.hideBar();
+    }
   }
 
-  onMouseEnter() {
-    if (this.scrollTop > 0) {
-      this.scrollbar.style.opacity = 1;
+  setBarStyle() {
+    this.domRenderer.css(this.scrollElem, {
+      overflow: 'hidden',
+      position: 'relative',
+      width: this.options.width,
+      height: this.options.height
+    });
+    this.domRenderer.css(this.bar, {
+      position: 'absolute',
+      opacity: .01,
+      width: this.options.size,
+      top: 0,
+      bottom: 0,
+      overflow: 'hidden',
+      zIndex: 101,
+      transition: 'all .2s'
+    });
+    this.domRenderer.css(this.track, {
+      position: 'absolute',
+      width: this.options.size,
+      top: 0,
+      bottom: 0,
+      MozBorderRadius: this.options.trackBorderRadius,
+      WebkitBorderRadius: this.options.trackBorderRadius,
+      borderRadius: this.options.trackBorderRadius,
+      background: this.options['trackColor']
+    });
+    if (this.options['trackClass']) {
+      this.domRenderer.addClass(this.track, this.options['trackClass']);
     }
-    this.isTouch = true;
+    const dist = this.options.position === 'left' ?
+      {left: this.options.distance} : {right: this.options.distance};
+    this.domRenderer.css(this.bar, dist);
+    this.domRenderer.css(this.wrapper, {
+      position: 'relative',
+      zIndex: '10'
+    });
+    this.domRenderer.css(this.thumb, {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      zIndex: 100,
+      MozBorderRadius: this.options.thumbBorderRadius,
+      WebkitBorderRadius: this.options.thumbBorderRadius,
+      borderRadius: this.options.thumbBorderRadius,
+      background: this.options['thumbColor']
+    });
+    if (this.options['thumbClass']) {
+      this.domRenderer.addClass(this.thumb, this.options['thumbClass']);
+    }
   }
 
-  onMouseLeave() {
-    this.scrollbar.style.opacity = 0;
-    this.isTouch = false;
+  setUserSelect() {
+    this.isOverBar = !this.isOverBar;
+    this.userSelectStyle = {
+      'user-select': this.isOverBar ? 'none' : 'auto',
+      '-webkit-user-select': this.isOverBar ? 'none' : 'auto',
+      '-moz-user-select': this.isOverBar ? 'none' : 'auto',
+      '-ms-user-select': this.isOverBar ? 'none' : 'auto',
+      'cursor': this.isOverBar ? 'default' : 'auto'
+    };
+  }
+
+  scrollContent(y, isWheel?, isTo?, event?) {
+    let delta = y;
+    if (this.maxScrollTop > 0) {
+      if (isWheel) {
+        delta = this.scrollTop + y * this.defaults.wheelStep / 100 * this.barHeight;
+        delta = Math.min(Math.max(delta, 0), this.maxScrollTop);
+        delta = (y > 0) ? Math.ceil(delta) : Math.floor(delta);
+        this.domRenderer.setTransform(this.thumb, 'translate(0, ' + delta + 'px');
+        this.scrollTop = delta;
+      }
+      const percentScroll = this.scrollTop / (this.outerHeight - this.barHeight);
+      delta = percentScroll * (this.scrollHeight - this.outerHeight);
+      if (isTo) {
+        delta = y;
+        let offsetTop = y / this.scrollHeight * this.outerHeight;
+        offsetTop = Math.min(Math.max(offsetTop, 0), this.maxScrollTop);
+        this.domRenderer.setTransform(this.thumb, 'translate(0, ' + offsetTop + 'px');
+      }
+      this.domRenderer.setTransform(this.wrapper, 'translate(0, -' + delta + 'px');
+    }
+    if (this.initial) {
+      this.onContentScroll.emit({
+        event: event,
+        scrollTop: this.scrollTop,
+        end: this.maxScrollTop <= this.scrollTop
+      });
+    }
+    this.showBar();
+    this.hideBar();
   }
 
   refresh() {
-    this.scrollHeight = this.wrapper.offsetHeight;
-    this.offsetHeight = this.container.offsetHeight;
-    this.offsetTop = 0;
-    this.scrollTop = this.scrollHeight - this.offsetHeight;
-    this.scrollBarHeight = this.scrollbar.offsetHeight;
-    this.scrollBarHeight = Math.max(Math.round(this.scrollBarHeight *
-         this.scrollBarHeight / this.wrapper.offsetHeight), 8);
-    this.thumb.style.height = (this.scrollBarHeight) + 'px';
-    if (this.scrollTop > 0 && this.isTouch) {
-      this.scrollbar.style.opacity = 1;
-    } else if (this.scrollTop <= 0) {
-      this.scrollbar.style.opacity = 0;
-      this.reset();
+    if (this.requestAnimationId) {
+      this.animationFrame.clearAnimationFrame(this.requestAnimationId);
+    }
+    const sHeight = this.scrollHeight;
+    if (this.scrollViewChild) {
+      this.scrollHeight = this.scrollElem.scrollHeight;
+      this.outerHeight = this.scrollElem.offsetHeight;
+      this.barHeight = Math.max((this.outerHeight / this.scrollHeight)
+        * this.outerHeight, this.minBarHeight);
+      this.maxScrollTop = this.outerHeight - this.barHeight;
+      this.thumb.style.height = (this.barHeight) + 'px';
+    }
+    if (this.scrollHeight !== sHeight) {
+      this.updatePosition();
+    }
+    this.requestAnimationId = this.animationFrame.setAnimationFrame(() => {
+      this.refresh();
+    });
+  }
+
+  updatePosition() {
+    let top = this.scrollTop;
+    top = Math.min(Math.max(top, 0), this.maxScrollTop);
+    this.scrollTop = top;
+    this.scrollTo(top, 0, true);
+  }
+
+  scrollTo(y, x?, isTo?) {
+    const percentScroll = y / (this.outerHeight - this.barHeight);
+    const delta = percentScroll * (this.scrollHeight - this.outerHeight);
+    this.domRenderer.setTransform(this.thumb, 'translate(0, ' + y + 'px');
+    if (isTo) {
+      this.domRenderer.setTransform(this.wrapper, 'translate(0, -' + delta + 'px');
     }
   }
 
   reset() {
-    this.moveY = 0;
-    this.domRenderer.setTransform(this.thumb, 'translate3d(0, 0px, 0');
-    this.domRenderer.setTransform(this.wrapper, 'translate3d(0, ' + this.moveY + 'px, 0');
-  }
-
-  move(y) {
-    if (this.scrollTop > 0) {
-      this.moveY += y;
-      // 计算滚动条滚动的高度
-      if (this.moveY >= 0) {
-        this.moveY = 0;
-      } else if (Math.abs(this.moveY) >= this.scrollTop) {
-        this.moveY = -this.scrollTop;
-      } else {
-        this.moveY = this.moveY;
-      };
-      let sv = this.moveY / this.scrollTop * (this.scrollbar.offsetHeight - this.scrollBarHeight);
-      sv = -Math.floor(sv);
-      this.domRenderer.setTransform(this.thumb, 'translate3d(0, ' + sv + 'px, 0');
-      this.domRenderer.setTransform(this.wrapper, 'translate3d(0, ' + this.moveY + 'px, 0');
-    }
+    this.scrollTop = 0;
+    this.domRenderer.setTransform(this.thumb, 'translate(0, 0px');
+    this.domRenderer.setTransform(this.wrapper, 'translate(0, ' + this.scrollTop + 'px');
   }
 
   onWheel(e) {
-    let wheelDeltaX;
     let wheelDeltaY;
-    if ('wheelDeltaX' in e) { // 向下滚动是负数-120，向上滚动是正数120
-      wheelDeltaX = e.wheelDeltaX / 12;
-      wheelDeltaY = e.wheelDeltaY / 12;
-    } else if ('wheelDelta' in e) {
-      wheelDeltaX = wheelDeltaY = e.wheelDelta / 12;
-    } else if ('detail' in e) { // 向下滚动是正数3，向上滚动是负数-3
-      wheelDeltaX = wheelDeltaY = -e.detail * 3;
+    if ('wheelDelta' in e) {// down -120，up 120
+      wheelDeltaY = -e.wheelDelta / 120;
+    } else if ('detail' in e) { // down 3，up -3
+      wheelDeltaY = e.detail * 3;
     } else {
       return;
-    };
+    }
     if (!this.isLoading) {
       this.isRunning = true;
-      this.move(wheelDeltaY);
+      this.scrollContent(wheelDeltaY, true, false, e);
+    }
+    if (e.preventDefault) {
+      e.preventDefault();
     }
   }
 
-  scrollInit() {
-    this.moveY = 0;
-    // this.domHandler.css(this.thumb, {
-    //   background: 'rgba(102,128,153,.2)',
-    // });
-    this.domRenderer.setTransitionDuration(this.thumb, 300);
-    this.domRenderer.addPrefix(this.thumb, 'transition', 'transform 400ms cubic-bezier(0.33, 0.66, 0.66, 1)');
-    this.domRenderer.addPrefix(this.scrollbar, 'transition', 'all 350ms cubic-bezier(0.33, 0.66, 0.66, 1)');
+  showBar() {
+    clearTimeout(this.queueHide);
+    if (!this.options['alwaysVisible'] && this.maxScrollTop > 0) {
+      this.domRenderer.css(this.bar, {
+        opacity: .9
+      });
+    }
+  }
+
+  hideBar() {
+    if (!this.options['alwaysVisible'] && this.maxScrollTop > 0) {
+      this.queueHide = setTimeout(() => {
+        if (!this.isDragg) {
+          this.domRenderer.css(this.bar, {
+            opacity: .01
+          });
+        }
+      }, 500);
+    }
+  }
+
+  onMouseEnter() {
+    this.showBar();
+  }
+
+  onMouseLeave() {
+    this.hideBar();
+  }
+
+  onTouch(event: any) {
     this.refresh();
-    this.intervalId = setInterval(function($this) {
-      $this.refresh();
-    }, 10, this);
+    this.isDragg = true;
+    let ev = event || window['event'];
+    if (this.isMobile) {
+      ev = ev.changedTouches[0];
+      this.showBar();
+    }
+    let target = 'document';
+    if (this.isOverContent) {
+      target = this.scrollElem;
+    }
+    let pageY = ev.pageY;
+    let pageX = ev.pageX;
+    this.documentTouchmoveListener = this.renderer2.listen(target, this.TOUCH_EV.touchmove, (e) => {
+      let vm = e || window['event'];
+      if (this.isMobile) {
+        vm = vm.changedTouches[0];
+      }
+      if (this.isDragg) {
+        if (this.isMobile) {
+          const diff = (pageY - vm.pageY) / this.options.touchScrollStep;
+          this.scrollContent(diff, true, false, event);
+        } else {
+          const t = this.scrollTop + vm.pageY - pageY;
+          this.scrollTop = t;
+          this.domRenderer.setTransform(this.thumb, 'translate(0, ' + t + 'px');
+          this.scrollContent(0, this.scrollTop, false, event);
+        }
+        pageY = vm.pageY;
+        pageX = vm.pageX;
+      }
+    });
+    this.documentTouchendListener = this.renderer2.listen('document', this.TOUCH_EV.touchend, () => {
+      this.isDragg = false;
+      this.setUserSelect();
+      if (this.isMobile) {
+        this.hideBar();
+      }
+      this.unbinDocumentTouchListener();
+    });
   }
 
-  onMousedown() {
-
+  unbinDocumentTouchListener() {
+    if (this.documentTouchmoveListener) {
+      this.documentTouchmoveListener();
+      this.documentTouchmoveListener = null;
+    }
+    if (this.documentTouchendListener) {
+      this.documentTouchendListener();
+      this.documentTouchendListener = null;
+    }
   }
 
-  onMousemove() {}
-
-  onMouseup() {}
+  ngOnDestroy() {
+    if (this.documentTouchListener) {
+      this.documentTouchListener();
+      this.documentTouchListener = null;
+    }
+    if (this.thumbTouchstartListener) {
+      this.thumbTouchstartListener();
+      this.thumbTouchstartListener = null;
+    }
+    if (this.requestAnimationId) {
+      this.animationFrame.clearAnimationFrame(this.requestAnimationId);
+    }
+    this.unbinDocumentTouchListener();
+    this.queueHide = null;
+  }
 }
 @NgModule({
   imports: [CommonModule],
@@ -163,4 +404,5 @@ export class ScrollComponent implements OnInit, AfterViewInit {
   exports: [ScrollComponent]
 })
 
-export class ScrollModule {}
+export class ScrollModule {
+}

@@ -358,6 +358,9 @@
         "Set maximum height",
         "Whether to display the number of words, optional, the default is false",
         "Set the editor style, optional."
+      ],
+      "EVENTS": [
+        "The callback function triggered when the image was uploaded successfully."
       ]
     },
     "ERROR": {
@@ -415,7 +418,8 @@
         "Set the default style, optional. Optional (primary / info / success / warning / danger)",
         "Set the modal box type (alert, confirm, prompt), optional.",
         "Set the Loading type, optional.",
-        "Set Loading automatically hide time, optional."
+        "Set Loading automatically hide time, optional.",
+        "Click the mask layer to turn off the modal box, optional."
       ],
       "EVENTS": [
         "Each click trigger, return parameter similar to &#123;done: true&#125;"
@@ -702,19 +706,24 @@
       "OPTION": [
         "Set the prompt box location (top, right, bottom, left), the default is top.",
         "Click on the outer layer to close the popover, the default is true."
-      ],
-      "EVENTS": [
-        "当步骤更改时触发回调事件。"
       ]
     },
     "ECHART": {
-      "DESCRIPTION": "弹出框（Popover）与工具提示（Tooltip）类似，提供了一个扩展的视图",
+      "DESCRIPTION": "",
       "OPTION": [
-        "设置提示框的位置(top、right、bottom、left)，默认top。",
-        "点击外层是否关闭弹出框，默认为true。"
+        ""
       ],
       "EVENTS": [
-        "当步骤更改时触发回调事件。"
+        ""
+      ]
+    },
+    "SCROLL": {
+      "DESCRIPTION": "You can use free-scroll without a full-page scroll bar, but you can use highly customizable scroll bars, such as scroll bar thicknesses or hidden scroll bars.",
+      "OPTION": [
+        "Set the scroll bar properties."
+      ],
+      "EVENTS": [
+        "Triggers a callback event when scrolling."
       ]
     }
   },
@@ -783,7 +792,8 @@
     "PAGE404": "404 page",
     "SHAREBUTTON": "Share-button",
     "STEPS": "Steps",
-    "KNOB": "Knob"
+    "KNOB": "Knob",
+    "SCROLL": "Scroll"
   },
   "UPDATE": {
     "v010": {},
@@ -837,6 +847,10 @@
     "v032": {
       "BUG": "<li>Fixed Calendar's pholder settings are invalid</li>",
       "FEATURE": "<li> Add Popover component </li><li> Optimize List style </li> <li><span>Badge</span><ul class='free-padding-ul'> <li> Optimized the style of the Badge </li> <li> Add outline, theme, circle attribute </li> </ul> </li> <li> </li> <li> Inputtext add type attribute </li> <li> Optimize Dropdown animation </li> <li> Optimize Progress style </li> <li> Optimize the style of loading </li><li> Optimize the style of Slide </li>"
+    },
+    "v040": {
+      "BUG": "<li>Fix the Cropper's cropping frame to the border, the image is in a messy position.<a href='https://github.com/IronPans/freeng/issues/4'>#4</a></li><li>Fix Modal off when the mask is not closed.</li>",
+      "FEATURE": "<li>Add Scroll Component</li><li>Editor Added onUploadCompleted property to trigger when image upload is successful.</li><li>Modal adds the dismissMask property to control whether the click mask can close the modal box.</li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

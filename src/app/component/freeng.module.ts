@@ -58,6 +58,7 @@ import {StepsModule} from './steps/steps.component';
 import {KnobModule} from './knob/knob.component';
 import {BackTopModule} from './back-top/back-top.component';
 import {PopoverModule} from './popover/popover.component';
+import {EchartModule} from './echart/echart.component';
 import {DomRenderer} from './common/dom';
 
 export {AccordionModule} from './accordion/accordion.component';
@@ -119,6 +120,7 @@ export {StepsModule} from './steps/steps.component';
 export {KnobModule} from './knob/knob.component';
 export {BackTopModule} from './back-top/back-top.component';
 export {PopoverModule} from './popover/popover.component';
+export {EchartModule} from './echart/echart.component';
 export {DomRenderer} from './common/dom';
 
 @NgModule({
@@ -181,7 +183,8 @@ export {DomRenderer} from './common/dom';
     StepsModule,
     KnobModule,
     BackTopModule,
-    PopoverModule
+    PopoverModule,
+    EchartModule
   ],
   declarations: []
 })

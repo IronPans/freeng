@@ -1,6 +1,6 @@
 import {
-  AfterViewInit, Component, ElementRef, EventEmitter, Input, NgModule, OnDestroy, OnInit, Output,
-  Renderer2, ViewChild
+  AfterViewInit, Component, ElementRef, EventEmitter, Input,
+  NgModule, OnDestroy, OnInit, Output, Renderer2, ViewChild
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {DomRenderer} from '../common/dom';
@@ -22,7 +22,7 @@ import {DomRenderer} from '../common/dom';
            (touchstart)="onTouchstart($event, {cropper: true})"
            (mousedown)="onTouchstart($event, {cropper: true})">
         <span class="free-cropper-view-box">
-          <img src="{{defaultOption.url}}" [ngStyle]="transformStyle">
+          <img [src]="defaultOption.url" [ngStyle]="transformStyle">
         </span>
         <span class="free-cropper-dashed free-dashed-h"></span>
         <span class="free-cropper-dashed free-dashed-v"></span>
@@ -46,45 +46,49 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
   @Output() onCrop: EventEmitter<any> = new EventEmitter();
   @ViewChild('cropper') cropperViewChild: ElementRef;
   @ViewChild('container') containerViewChild: ElementRef;
-  public cropper: HTMLDivElement;
-  public container: HTMLDivElement;
-  public canvas: HTMLCanvasElement;
-  public touchEvent: any;
-  public points: any[];
-  public autoCropArea: number;
-  public x: number;
-  public y: number;
-  public left: number;
-  public top: number;
-  public ctx: any;
-  public lines: any[];
-  public transformStyle: any;
-  public sourceStyle: any;
-  public cropperStyle: any;
-  public defaultOption: any;
-  public startPoint: any;
-  public cropperPressed: boolean;
-  public pointPressed: boolean;
-  public overlayPressed: boolean;
-  public direction: string;
-  public cropperWidth: number;
-  public cropperHeight: number;
-  public width: number;
-  public height: number;
-  public naturalWidth: number;
-  public naturalHeight: number;
-  public zoomRatioStep: number;
-  public zoomRatio: number;
-  public minCropperWidth: number;
-  public minCropperHeight: number;
-  public scaleX: number;
-  public scaleY: number;
-  public naturalLeft: number;
-  public naturalTop: number;
-  public rotate: number;
-  public canvasTouchstartListener: any;
-  public documentTouchmoveListener: any;
-  public documentTouchendListener: any;
+  cropper: HTMLDivElement;
+  container: HTMLDivElement;
+  canvas: HTMLCanvasElement;
+  touchEvent: any;
+  points: any[];
+  autoCropArea: number;
+  x: number;
+  y: number;
+  left: number;
+  top: number;
+  ctx: any;
+  lines: any[];
+  transformStyle: any;
+  sourceStyle: any;
+  cropperStyle: any;
+  defaultOption: any;
+  startPoint: any;
+  cropperPressed: boolean;
+  pointPressed: boolean;
+  overlayPressed: boolean;
+  direction: string;
+  cropperWidth: number;
+  cropperHeight: number;
+  width: number;
+  height: number;
+  naturalWidth: number;
+  naturalHeight: number;
+  zoomRatioStep: number;
+  zoomRatio: number;
+  minCropperWidth: number;
+  minCropperHeight: number;
+  scaleX: number;
+  scaleY: number;
+  naturalLeft: number;
+  naturalTop: number;
+  rotate: number;
+  maxTop: number;
+  maxLeft: number;
+  oldTop: number;
+  oldLeft: number;
+  canvasTouchstartListener: any;
+  documentTouchmoveListener: any;
+  documentTouchendListener: any;
 
   constructor(public domRenderer: DomRenderer, public renderer2: Renderer2) {
     this.aspectRatio = 1;
@@ -135,29 +139,6 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  setCropperCanvas() {
-    this.cropperStyle = {
-      width: this.cropperWidth + 'px',
-      height: this.cropperHeight + 'px',
-      transform: this.getTransform({translateX: this.x, translateY: this.y})
-    };
-    this.transformStyle = {
-      width: this.width + 'px',
-      height: this.height + 'px',
-      transform: this.getTransform({translateX: -this.left,
-        translateY: -this.top, rotate: this.rotate, scaleX: this.scaleX, scaleY: this.scaleY})
-    };
-    if (!this.cropperPressed && !this.pointPressed) {
-      this.sourceStyle = {
-        width: this.width + 'px',
-        height: this.height + 'px',
-        transform:  this.getTransform({translateX: Math.round(this.x - this.left),
-          translateY: Math.round(this.y - this.top), rotate: this.rotate,
-          scaleX: this.scaleX, scaleY: this.scaleY})
-      };
-    }
-  }
-
   zoomTo(ratio: number, event?: any) {
     const width = this.width;
     const height = this.height;
@@ -170,10 +151,6 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
     const newHeight = naturalHeight * ratio;
     if (event) {
       const offset = this.domRenderer.getRect(this.container);
-      console.log(event.pageX - offset.left);
-      console.log(this.x - this.left);
-      console.log(((event.pageX - offset.left - (this.x - this.left)) / width));
-      // mouse pointer relative to image
       this.left += (newWidth - width) * ((event.pageX - offset.left - (this.x - this.left)) / width);
       this.top += (newHeight - height) * ((event.pageY - offset.top - (this.y - this.top)) / height);
     } else {
@@ -217,6 +194,73 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
     return transforms.length ? transforms.join(' ') : 'none';
   }
 
+  setPosition(mx, my) {
+    const width = this.cropperWidth + this.x;
+    const height = this.cropperHeight + this.y;
+    const moveTo = {
+      n: () => {
+        this.cropperHeight -= my;
+        this.y += my;
+        this.cropperHeight = Math.min(height, this.cropperHeight);
+        this.y = Math.max(0, this.y);
+        if ((!this.y && my > 0) || this.y) {
+          this.top += my;
+        } else if (!this.y) {
+          this.top = this.oldTop - this.maxTop;
+        }
+      },
+      e: () => {
+        this.cropperWidth += mx;
+        this.cropperWidth = Math.min(this.cropperWidth, this.naturalWidth - this.x);
+      },
+      s: () => {
+        this.cropperHeight += my;
+        this.cropperHeight = Math.min(this.cropperHeight, this.naturalHeight - this.y);
+      },
+      w: () => {
+        this.cropperWidth -= mx;
+        this.x += mx;
+        this.cropperWidth = Math.min(width, this.cropperWidth);
+        this.x = Math.max(0, this.x);
+        if ((!this.x && mx > 0) || this.x) {
+          this.left += mx;
+        } else if (!this.x) {
+          this.left = this.oldLeft - this.maxLeft;
+        }
+      }
+    };
+    switch (this.direction) {
+      case 'e':
+        moveTo.e();
+        break;
+      case 'w':
+        moveTo.w();
+        break;
+      case 's':
+        moveTo.s();
+        break;
+      case 'n':
+        moveTo.n();
+        break;
+      case 'ne':
+        moveTo.n();
+        moveTo.e();
+        break;
+      case 'nw':
+       moveTo.n();
+       moveTo.w();
+        break;
+      case 'sw':
+        moveTo.s();
+        moveTo.w();
+        break;
+      case 'se':
+        moveTo.e();
+        moveTo.s();
+        break;
+    }
+  }
+
   onTouchstart(event: any, args: any = {}) {
     event = this.domRenderer.getPointer(event)[0];
     this.startPoint = {
@@ -233,10 +277,14 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
     if (args.overlay) {
       this.overlayPressed = true;
     }
+    this.maxLeft = this.x;
+    this.maxTop = this.y;
+    this.oldLeft = this.left;
+    this.oldTop = this.top;
     this.documentTouchmoveListener = this.renderer2.listen('body', this.touchEvent.touchmove,
       (e) => this.onTouchmove(e));
     this.documentTouchendListener = this.renderer2.listen('body', this.touchEvent.touchend,
-      (e) => this.onTouchend(e));
+      () => this.onTouchend());
     event.preventDefault();
     event.stopPropagation();
   }
@@ -245,69 +293,38 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
     event = this.domRenderer.getPointer(event)[0];
     const mx = event.pageX - this.startPoint.pageX;
     const my = event.pageY - this.startPoint.pageY;
-    if (this.pointPressed) {
-      switch (this.direction) {
-        case 'e':
-          this.cropperWidth += mx;
-          break;
-        case 'w':
-          this.cropperWidth -= mx;
-          this.x += mx;
-          this.left += mx;
-          break;
-        case 's':
-          this.cropperHeight += my;
-          break;
-        case 'n':
-          this.cropperHeight -= my;
-          this.y += my;
-          this.top += my;
-          break;
-        case 'ne':
-          this.cropperHeight -= my;
-          this.y += my;
-          this.top += my;
-          this.cropperWidth += mx;
-          break;
-        case 'nw':
-          this.cropperHeight -= my;
-          this.y += my;
-          this.top += my;
-          this.cropperWidth -= mx;
-          this.x += mx;
-          this.left += mx;
-          break;
-        case 'sw':
-          this.cropperHeight += my;
-          this.cropperWidth -= mx;
-          this.x += mx;
-          this.left += mx;
-          break;
-        case 'se':
-          this.cropperHeight += my;
-          this.cropperWidth += mx;
-          break;
-      }
-    }
     const left = this.naturalWidth - this.cropperWidth;
     const top = this.naturalHeight - this.cropperHeight;
+    if (this.pointPressed) {
+      this.setPosition(mx, my);
+    }
     if (this.cropperPressed) {
       this.x += mx;
       this.y += my;
+      this.x = Math.max(0, Math.min(left, this.x));
+      this.y = Math.max(0, Math.min(top, this.y));
       if (this.x > 0 && this.x < left) {
         this.left += mx;
       }
       if (this.y > 0 && this.y < top) {
         this.top += my;
       }
+      if (!this.x) {
+        this.left = this.oldLeft - this.maxLeft;
+      } else if (this.x >= left) {
+        this.left = this.oldLeft + (this.naturalWidth - this.maxLeft - this.cropperWidth);
+      }
+      if (!this.y) {
+        this.top = this.oldTop - this.maxTop;
+      } else if (this.y >= left) {
+        this.top = this.oldTop + (this.naturalHeight - this.maxTop - this.cropperHeight);
+      }
     }
-    if (this.overlayPressed) {
+    if (this.overlayPressed && !this.pointPressed) {
       this.left -= mx;
       this.top -= my;
     }
     if (this.pointPressed || this.cropperPressed) {
-      this.x = Math.max(0, Math.min(left, this.x));
-      this.y = Math.max(0, Math.min(top, this.y));
       this.cropperHeight = Math.max(this.minCropperWidth, Math.min(this.naturalHeight, this.cropperHeight));
       this.cropperWidth = Math.max(this.minCropperHeight, Math.min(this.naturalWidth, this.cropperWidth));
     }
@@ -321,10 +338,12 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  onTouchend(event: any) {
+  onTouchend() {
     this.cropperPressed = false;
     this.pointPressed = false;
     this.overlayPressed = false;
+    this.maxLeft = this.x;
+    this.maxTop = this.y;
     this.unbindCanvasTouchListener();
   }
 
@@ -379,6 +398,29 @@ export class CropperComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.ctx.restore();
     return this.canvas.toDataURL('image/png');
+  }
+
+  setCropperCanvas() {
+    this.cropperStyle = {
+      width: this.cropperWidth + 'px',
+      height: this.cropperHeight + 'px',
+      transform: this.getTransform({translateX: this.x, translateY: this.y})
+    };
+    this.transformStyle = {
+      width: this.width + 'px',
+      height: this.height + 'px',
+      transform: this.getTransform({translateX: -this.left,
+        translateY: -this.top, rotate: this.rotate, scaleX: this.scaleX, scaleY: this.scaleY})
+    };
+    if (!this.cropperPressed && !this.pointPressed) {
+      this.sourceStyle = {
+        width: this.width + 'px',
+        height: this.height + 'px',
+        transform:  this.getTransform({translateX: Math.round(this.x - this.left),
+          translateY: Math.round(this.y - this.top), rotate: this.rotate,
+          scaleX: this.scaleX, scaleY: this.scaleY})
+      };
+    }
   }
 
   isNumber(n) {

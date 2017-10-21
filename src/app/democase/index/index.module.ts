@@ -19,6 +19,7 @@ import {IndexRoutingModule} from './index-routing.module';
 import {PanelModule} from '../../component/panel/panel.component';
 import {LanguageModule} from '../common/language';
 import {ImageModule} from '../../component/image/image.component';
+import {BackTopModule} from '../../component/back-top/back-top.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import {ImageModule} from '../../component/image/image.component';
     ListModule,
     PanelModule,
     ImageModule,
+    BackTopModule,
     LanguageModule
   ],
   declarations: [
