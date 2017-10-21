@@ -81,7 +81,7 @@ Angular CLI is the official CLI tool for Angular. We strongly suggest using Angu
 Add FreeNG and FontAwesome as a dependency
 ```js
 "dependencies": {
-    "freeng": "^0.1.2",
+    "freeng": "^0.4.0",
     "font-awesome": "^4.7.0"
 }
 ```

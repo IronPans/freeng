@@ -78,7 +78,7 @@ Angular CLI是Angular的官方CLI工具。 我们强烈建议在启动Angular项
 添加FreeNG和FontAwesome作为依赖:
 ```js
 "dependencies": {
-    "freeng": "^0.1.2",
+    "freeng": "^0.4.0",
     "font-awesome": "^4.7.0"
 }
 ```
