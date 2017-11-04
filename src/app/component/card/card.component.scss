@@ -2,7 +2,8 @@
 
 .free-card {
   position: relative;
-  @include flexbox;
+  width: 100%;
+  display: flex;
   background-color: #fff;
   @include boxShadow;
   @include borderRadius;

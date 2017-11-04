@@ -8,7 +8,7 @@ import {DomRenderer} from '../common/dom';
 @Component({
   selector: 'free-scroll, [fScroll]',
   template: `
-    <div class="free-scroll" #scroll (wheel)="onWheel($event)" [ngStyle]="userSelectStyle"
+    <div class="free-scroll" #scroll [ngStyle]="userSelectStyle"
          (mouseover)="onMouseEnter()" (mouseleave)="onMouseLeave()">
       <div class="free-scroll-wrapper">
         <div class="free-scroll-inner"><ng-content></ng-content></div>
@@ -55,6 +55,7 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
   thumbTouchstartListener: any;
   documentTouchendListener: any;
   documentTouchListener: any;
+  wheelListener: any;
   initial: boolean;
   userSelectStyle: any;
   animationFrame: any;
@@ -95,7 +96,7 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.isMoz = 'MoztTransform' in document.createElement('div').style;
+    this.isMoz = this.domRenderer.getBrowser() === 'FF';
     this.WHEEL_EV = this.isMoz ? 'DOMMouseScroll' : 'mousewheel';
     this.originOptions = this.options;
     const options = {};
@@ -119,6 +120,7 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
           this.isOverContent = true;
         });
     }
+    this.wheelListener = this.renderer2.listen(this.scrollElem, this.WHEEL_EV, (e) => this.onWheel(e));
     this.thumbTouchstartListener = this.renderer2.listen(this.thumb,
       this.TOUCH_EV.touchstart, (e) => {
         if (e.preventDefault) {
@@ -214,7 +216,7 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
         delta = this.scrollTop + y * this.defaults.wheelStep / 100 * this.barHeight;
         delta = Math.min(Math.max(delta, 0), this.maxScrollTop);
         delta = (y > 0) ? Math.ceil(delta) : Math.floor(delta);
-        this.domRenderer.setTransform(this.thumb, 'translate(0, ' + delta + 'px');
+        this.domRenderer.setTransform(this.thumb, 'translate3d(0, ' + delta + 'px, 0');
         this.scrollTop = delta;
       }
       const percentScroll = this.scrollTop / (this.outerHeight - this.barHeight);
@@ -223,9 +225,9 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
         delta = y;
         let offsetTop = y / this.scrollHeight * this.outerHeight;
         offsetTop = Math.min(Math.max(offsetTop, 0), this.maxScrollTop);
-        this.domRenderer.setTransform(this.thumb, 'translate(0, ' + offsetTop + 'px');
+        this.domRenderer.setTransform(this.thumb, 'translate3d(0, ' + offsetTop + 'px, 0');
       }
-      this.domRenderer.setTransform(this.wrapper, 'translate(0, -' + delta + 'px');
+      this.domRenderer.setTransform(this.wrapper, 'translate3d(0, -' + Math.ceil(delta) + 'px, 0');
     }
     if (this.initial) {
       this.onContentScroll.emit({
@@ -242,7 +244,6 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.requestAnimationId) {
       this.animationFrame.clearAnimationFrame(this.requestAnimationId);
     }
-    const sHeight = this.scrollHeight;
     if (this.scrollViewChild) {
       this.scrollHeight = this.scrollElem.scrollHeight;
       this.outerHeight = this.scrollElem.offsetHeight;
@@ -251,8 +252,9 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
       this.maxScrollTop = this.outerHeight - this.barHeight;
       this.thumb.style.height = (this.barHeight) + 'px';
     }
-    if (this.scrollHeight !== sHeight) {
-      this.updatePosition();
+    this.updatePosition();
+    if (this.barHeight === this.outerHeight) {
+      this.hideBar();
     }
     this.requestAnimationId = this.animationFrame.setAnimationFrame(() => {
       this.refresh();
@@ -269,16 +271,16 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
   scrollTo(y, x?, isTo?) {
     const percentScroll = y / (this.outerHeight - this.barHeight);
     const delta = percentScroll * (this.scrollHeight - this.outerHeight);
-    this.domRenderer.setTransform(this.thumb, 'translate(0, ' + y + 'px');
+    this.domRenderer.setTransform(this.thumb, 'translate3d(0, ' + y + 'px, 0');
     if (isTo) {
-      this.domRenderer.setTransform(this.wrapper, 'translate(0, -' + delta + 'px');
+      this.domRenderer.setTransform(this.wrapper, 'translate3d(0, -' + Math.ceil(delta) + 'px, 0');
     }
   }
 
   reset() {
     this.scrollTop = 0;
-    this.domRenderer.setTransform(this.thumb, 'translate(0, 0px');
-    this.domRenderer.setTransform(this.wrapper, 'translate(0, ' + this.scrollTop + 'px');
+    this.domRenderer.setTransform(this.thumb, 'translate3d(0, 0px, 0');
+    this.domRenderer.setTransform(this.wrapper, 'translate3d(0, ' + this.scrollTop + 'px, 0');
   }
 
   onWheel(e) {
@@ -309,7 +311,7 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   hideBar() {
-    if (!this.options['alwaysVisible'] && this.maxScrollTop > 0) {
+    if (!this.options['alwaysVisible'] && this.maxScrollTop >= 0) {
       this.queueHide = setTimeout(() => {
         if (!this.isDragg) {
           this.domRenderer.css(this.bar, {
@@ -354,7 +356,7 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
         } else {
           const t = this.scrollTop + vm.pageY - pageY;
           this.scrollTop = t;
-          this.domRenderer.setTransform(this.thumb, 'translate(0, ' + t + 'px');
+          this.domRenderer.setTransform(this.thumb, 'translate3d(0, ' + t + 'px, 0');
           this.scrollContent(0, this.scrollTop, false, event);
         }
         pageY = vm.pageY;
@@ -393,6 +395,10 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     if (this.requestAnimationId) {
       this.animationFrame.clearAnimationFrame(this.requestAnimationId);
+    }
+    if (this.wheelListener) {
+      this.wheelListener();
+      this.wheelListener = null;
     }
     this.unbinDocumentTouchListener();
     this.queueHide = null;

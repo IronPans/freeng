@@ -2,6 +2,27 @@
 
 [EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
 
+## 0.4.0(2017-11-04)
+
+**Features**
+
+- Accordion新增styleClass属性，用于自定义样式
+- 新增常用的表单验证器(date, email, url, cn, range, number, phone)
+- Upload
+  - 新增maxFileSize、name属性
+  - 新增method、url、withCredentials属性
+  - 新增showProgress、autoUpload属性
+  - 新增invalidFileSizeMessage、invalidFileTypeMessage属性
+  - 新增styleClass
+  - 新增onChange、onBeforeUpload、onProgress、onUpload、onError、onRemove、onBeforeSend事件
+
+**Bug Fixes**
+  
+- 修复下拉菜单Dropdown在关闭后依旧存在的问题
+- 修复当选择Switch类型2时，会有白色背景的问题
+- 修复Scroll组件在火狐下无法滚动
+- 修复Progress无法设置动态值
+
 ## 0.4.0(2017-10-21)
 
 **Features**

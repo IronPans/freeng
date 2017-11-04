@@ -17,7 +17,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font: 15px/1.5 Roboto, Noto Sans, Noto,"Microsoft Yahei",sans-serifsans-serif;
+  font: 15px/1.5 Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
   color: rgba(0, 0, 0, 0.87); }
 
 *:before, *:after {

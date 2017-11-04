@@ -47,11 +47,11 @@ import {BadgeModule} from '../badge/badge.component';
         visibility: 'visible'
       })),
       state('inactive', style({
-        transform: 'translateY(30px)',
+        transform: 'translateY(20px)',
         opacity: 0,
         visibility: 'hidden'
       })),
-      transition('inactive <=> active', animate('300ms linear'))
+      transition('inactive <=> active', animate('350ms ease'))
     ])
   ],
   providers: [DomRenderer]

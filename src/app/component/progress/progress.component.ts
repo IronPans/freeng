@@ -6,19 +6,29 @@ import { NgModule, Component, AfterViewInit, Renderer2,
   selector: 'free-progress',
   template: `
     <div class="free-progress" #container [ngStyle]="style" [style.background]="trackColor">
-      <div class="free-progress-bar" #bar [style.background]="barColor">
-        <ng-container *ngIf="percent">{{value}}</ng-container>
+      <div class="free-progress-bar" [style.width.%]="value" #bar [style.background]="barColor">
+        <ng-container *ngIf="showValue">{{value + '%'}}</ng-container>
       </div>
     </div>
   `
 })
 export class ProgressComponent implements AfterViewInit {
 
-  @Input() value: string;
+  @Input()
+  set value(v: any) {
+    if (!v) {
+      v = 0;
+    }
+    this._value = typeof v !== 'number' ? parseInt(v, 10) : v;
+    this._value = Math.min(this._value, 100);
+  }
+  get value() {
+    return this._value;
+  }
   @Input() theme: string;
   @Input() move: boolean;
   @Input() striped: boolean;
-  @Input() percent: boolean;
+  @Input() showValue: boolean;
   @Input() width: any;
   @Input() height: any;
   @Input() barColor: string;
@@ -28,6 +38,7 @@ export class ProgressComponent implements AfterViewInit {
   @ViewChild('bar') bar: ElementRef;
   _bar: HTMLElement;
   _container: HTMLElement;
+  _value: any;
   constructor(public renderer2: Renderer2, public er: ElementRef) {
     this.width = '100%';
     this.height = '20px';
@@ -45,10 +56,6 @@ export class ProgressComponent implements AfterViewInit {
 
     if (this.striped) {
       this.renderer2.addClass(this._container, 'free-progress-striped');
-    }
-
-    if (this.value) {
-      this.renderer2.setStyle(this._bar, 'width', this.value);
     }
 
     if (this.theme) {

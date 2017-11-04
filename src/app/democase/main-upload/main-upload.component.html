@@ -1,12 +1,9 @@
 <div class="main-container">
   <div class="row">
     <div fGrid="6" class="free-demo-board">
-      <p>
-        {{'DEMO.UPLOAD.DESCRIPTION' | translate}}
-      </p>
+      <p>{{'DEMO.UPLOAD.DESCRIPTION' | translate}}</p>
       <hr>
       <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
-
       <div class="free-demo-row">
         <h3 class="free-title">free-upload</h3>
         <p>{{'COMPONENT.UPLOAD' | translate}}</p>
@@ -18,7 +15,6 @@
               <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
-
           <free-table-body>
             <free-table-row>
               <free-table-cell>multiple</free-table-cell>
@@ -39,7 +35,7 @@
               </free-table-cell>
             </free-table-row>
             <free-table-row>
-              <free-table-cell>media</free-table-cell>
+              <free-table-cell>accept</free-table-cell>
               <free-table-cell>
                 <ng-template><code>String</code></ng-template>
               </free-table-cell>
@@ -50,11 +46,197 @@
                 </ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>method</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.3' | translate}}
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>name</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.10' | translate}}
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>url</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.4' | translate}}
+                  </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>maxFileSize</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.5' | translate}}
+                  </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>invalidFileSizeMessage</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.6' | translate}}
+                  </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>invalidFileTypeMessage</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.7' | translate}}
+                   </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>withCredentials</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.8' | translate}}
+                  </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>styleClass</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.9' | translate}}
+                   </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>autoUpload</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.11' | translate}}
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>mode</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>
+                  {{'DEMO.UPLOAD.OPTION.12' | translate}}
+                </ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+      </div>
+      <h3 class="free-head-title">{{'EVENT' | translate}}</h3>
+      <div class="free-demo-row">
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'EVENT' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>onChange</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.UPLOAD.EVENTS.0' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onBeforeUpload</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.UPLOAD.EVENTS.1' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onProgress</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.UPLOAD.EVENTS.2' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onUpload</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.UPLOAD.EVENTS.3' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onError</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.UPLOAD.EVENTS.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onBeforeSend</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.UPLOAD.EVENTS.5' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>onRemove</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Function</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.UPLOAD.EVENTS.6' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
     </div>
-
     <div fGrid="6" class="free-demo-board">
       <div class="free-demo-board">
         <div class="free-card-board">
@@ -68,9 +250,8 @@
           </free-tab-group>
         </div>
       </div>
-
       <div class="free-card-board">
-        <h3 class="free-toolbar">DEFAULT</h3>
+        <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
             <free-upload></free-upload>
@@ -84,38 +265,46 @@
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Multiple</h3>
+        <h3 class="free-toolbar">Basic</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <free-upload [review]="true" [multiple]="true"></free-upload>
+            <free-upload [mode]="'basic'" [multiple]="true"></free-upload>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-upload [multiple]="true"&gt;&lt;/free-upload&gt;
+              &lt;free-upload [mode]="'basic'" [multiple]="true"&gt;&lt;/free-upload&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Review</h3>
+        <h3 class="free-toolbar">Accept</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <free-upload [review]="true" [multiple]="true"></free-upload>
+            <free-upload [review]="true" accept="image/*" [multiple]="true"
+                         [url]="'/api/upload/multiple'"></free-upload>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-upload [review]="true" [multiple]="true"&gt;&lt;/free-upload&gt;
+              &lt;free-upload [review]="true" media="image/*" [multiple]="true"&gt;&lt;/free-upload&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Media</h3>
+        <h3 class="free-toolbar">Custom</h3>
         <free-tab-group direction="right" theme="line">
           <free-tab header="PREVIEW">
-            <free-upload [review]="true" media="image/*" [multiple]="true"></free-upload>
+            <free-upload [review]="true" [multiple]="true"
+                         [url]="'/api/upload/multiple'">
+              <f-header>
+                <div class="upload-custom-btn">
+                          <i class="fa fa-plus"></i>
+                </div>
+              </f-header>
+            </free-upload>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
@@ -125,7 +314,6 @@
         </free-tab-group>
       </div>
     </div>
-
   </div>
   <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
 </div>

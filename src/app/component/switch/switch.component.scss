@@ -85,7 +85,7 @@
   &.free-switch-2 {
     .switch-label {
       width: 2rem;
-      background: #fff;
+      background: transparent !important;
 
       &:before {
         background: rgb(189, 189, 189);

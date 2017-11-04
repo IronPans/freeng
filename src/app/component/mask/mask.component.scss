@@ -1,15 +1,11 @@
-@import "../../../assets/sass/mixin";
-
 .free-mask {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  @include flexbox;
-  -webkit-align-items: center;
+  display: flex;
   align-items: center;
-  -webkit-justify-content: center;
   justify-content: center;
   z-index: 9999;
   background: rgba(0, 0, 0, .7);

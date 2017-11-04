@@ -6,7 +6,6 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Roboto, Noto Sans, Noto,"Microsoft Yahei",sans-serifsans-serif;
 }
 
 button, a,
@@ -342,6 +341,78 @@ free-upload{
 
 .pull-center {
   align-items: center;
+}
+
+
+.align-content-start {
+  -ms-flex-line-pack: start!important;
+  align-content: flex-start!important
+}
+
+.align-content-end {
+  -ms-flex-line-pack: end!important;
+  align-content: flex-end!important
+}
+
+.align-content-center {
+  -ms-flex-line-pack: center!important;
+  align-content: center!important
+}
+
+.align-content-between {
+  -ms-flex-line-pack: justify!important;
+  align-content: space-between!important
+}
+
+.align-content-around {
+  -ms-flex-line-pack: distribute!important;
+  align-content: space-around!important
+}
+
+.align-content-stretch {
+  -ms-flex-line-pack: stretch!important;
+  align-content: stretch!important
+}
+
+.align-self-auto {
+  -ms-flex-item-align: auto!important;
+  -ms-grid-row-align: auto!important;
+  align-self: auto!important
+}
+
+.align-self-start {
+  -ms-flex-item-align: start!important;
+  align-self: flex-start!important
+}
+
+.align-self-end {
+  -ms-flex-item-align: end!important;
+  align-self: flex-end!important
+}
+
+.align-self-center {
+  -ms-flex-item-align: center!important;
+  -ms-grid-row-align: center!important;
+  align-self: center!important;
+}
+
+.align-self-baseline {
+  -ms-flex-item-align: baseline!important;
+  align-self: baseline!important
+}
+
+.align-self-stretch {
+  -ms-flex-item-align: stretch!important;
+  -ms-grid-row-align: stretch!important;
+  align-self: stretch!important
+}
+
+.no-flex-wrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 free-tab-group {
@@ -1102,14 +1173,13 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   text-decoration: none;
 }
 
-.btn:hover, .btn:focus, .btn:active, .btn.active {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
-.btn:hover,.btn:focus,.btn.focus {
-  color: #333;
-  text-decoration: none
+.btn:not([disabled]) {
+  &:hover, &:focus, &:active, &.active {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    color: #333;
+    text-decoration: none
+  }
 }
 
 .btn:active,.btn.active {
@@ -1186,9 +1256,11 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   background: #fff;
 }
 
-.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
-  color: #43494d;
-  background-color: #eee;
+.btn-default:not([disabled]) {
+  &:hover, &:focus, &:active, &.active {
+    color: #43494d;
+    background-color: #eee;
+  }
 }
 
 .btn-primary {
@@ -1197,14 +1269,12 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   border-color: #177bbb;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
-  color: white;
-  background-color: #115d8e;
-  border-color: #105785;
-}
-
-.btn-success, .btn-success:hover, .btn-success:focus {
-  color: white;
+.btn-primary:not([disabled]) {
+  &:hover, &:focus, &:active, &.active {
+    color: white;
+    background-color: #115d8e;
+    border-color: #105785;
+  }
 }
 
 .btn-success {
@@ -1217,22 +1287,23 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   background: #1aae88;
 }
 
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
-  color: white;
-  background-color: #138265;
-  border-color: #12795e;
-}
-
-.btn-dark, .btn-dark:hover, .btn-dark:focus {
-  color: white;
+.btn-success:not([disabled]) {
+  &:hover, &:focus, &:active, &.active {
+    color: white;
+    background-color: #138265;
+    border-color: #12795e;
+  }
 }
 
 .btn-dark {
+  color: white;
   background: #222733;
 }
 
-.btn-info, .btn-info:hover, .btn-info:focus {
-  color: white;
+.btn-dark:not([disabled]) {
+  &:hover, &:focus, &:active, &.active {
+    color: white;
+  }
 }
 
 .btn-info {
@@ -1245,14 +1316,12 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   border-color: #1ccacc;
 }
 
-.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
-  color: white;
-  background-color: #169e9f;
-  border-color: #159596;
-}
-
-.btn-warning, .btn-warning:hover, .btn-warning:focus {
-  color: white;
+.btn-info:not([disabled]) {
+  &:hover, &:focus, &:active, &.active {
+    color: white;
+    background-color: #169e9f;
+    border-color: #159596;
+  }
 }
 
 .btn-warning {
@@ -1261,18 +1330,12 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   border-color: #fbb23e;
 }
 
-.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active {
-  color: white;
-  background-color: #fa9e0c;
-  border-color: #f79905;
-}
-
-.btn-danger, .btn-danger:hover, .btn-danger:focus {
-  color: white;
-}
-
-.btn-danger {
-  background: #e33244;
+.btn-warning:not([disabled]) {
+  &:hover, &:focus, &:active, &.active {
+    color: white;
+    background-color: #fa9e0c;
+    border-color: #f79905;
+  }
 }
 
 .btn-danger {
@@ -1281,10 +1344,12 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   border-color: #e33244;
 }
 
-.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
-  color: white;
-  background-color: #c71b2d;
-  border-color: #be1a2b;
+.btn-danger:not([disabled]) {
+  &:hover, &:focus, &:active, &.active {
+    color: white;
+    background-color: #c71b2d;
+    border-color: #be1a2b;
+  }
 }
 
 .btn-group {
@@ -1316,8 +1381,8 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
 
 .btn[disabled],
 .btn.btn-disabled{
+  border: 1px solid #d9d9d9;
   cursor: not-allowed;
-  pointer-events: none;
   opacity: .65;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
@@ -1546,6 +1611,363 @@ input.input {
     transform: translate(400px, 0);
     opacity: 0;
   }
+}
+
+
+.no-padding {
+  padding: 0 !important
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important
+}
+
+.no-padding-top {
+  padding-top: 0 !important
+}
+
+.no-padding-left {
+  padding-left: 0 !important
+}
+
+.no-padding-right {
+  padding-right: 0 !important
+}
+
+.padding-5 {
+  padding: 5px !important
+}
+
+.padding-10 {
+  padding: 10px !important
+}
+
+.padding-20 {
+  padding: 20px !important
+}
+
+.padding-30 {
+  padding: 30px !important
+}
+
+.padding-40 {
+  padding: 40px !important
+}
+
+.padding-50 {
+  padding: 50px !important
+}
+
+.padding-left-5 {
+  padding-left: 5px !important
+}
+
+.padding-left-10 {
+  padding-left: 10px !important
+}
+
+.padding-left-20 {
+  padding-left: 20px !important
+}
+
+.padding-left-30 {
+  padding-left: 30px !important
+}
+
+.padding-left-40 {
+  padding-left: 40px !important
+}
+
+.padding-left-50 {
+  padding-left: 50px !important
+}
+
+.padding-top-5 {
+  padding-top: 5px !important
+}
+
+.padding-top-10 {
+  padding-top: 10px !important
+}
+
+.padding-top-20 {
+  padding-top: 20px !important
+}
+
+.padding-top-30 {
+  padding-top: 30px !important
+}
+
+.padding-top-40 {
+  padding-top: 40px !important
+}
+
+.padding-top-50 {
+  padding-top: 50px !important
+}
+
+.padding-right-5 {
+  padding-right: 5px !important
+}
+
+.padding-right-10 {
+  padding-right: 10px !important
+}
+
+.padding-right-20 {
+  padding-right: 20px !important
+}
+
+.padding-right-30 {
+  padding-right: 30px !important
+}
+
+.padding-right-40 {
+  padding-right: 40px !important
+}
+
+.padding-right-50 {
+  padding-right: 50px !important
+}
+
+.padding-bottom-5 {
+  padding-bottom: 5px !important
+}
+
+.padding-bottom-10 {
+  padding-bottom: 10px !important
+}
+
+.padding-bottom-20 {
+  padding-bottom: 20px !important
+}
+
+.padding-bottom-30 {
+  padding-bottom: 30px !important
+}
+
+.padding-bottom-40 {
+  padding-bottom: 40px !important
+}
+
+.padding-bottom-50 {
+  padding-bottom: 50px !important
+}
+
+.no-margin {
+  margin: 0 !important
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important
+}
+
+.no-margin-top {
+  margin-top: 0 !important
+}
+
+.no-margin-left {
+  margin-left: 0 !important
+}
+
+.no-margin-right {
+  margin-right: 0 !important
+}
+
+.margin-5 {
+  margin: 5px !important
+}
+
+.margin-10 {
+  margin: 10px !important
+}
+
+.margin-20 {
+  margin: 20px !important
+}
+
+.margin-30 {
+  margin: 30px !important
+}
+
+.margin-40 {
+  margin: 40px !important
+}
+
+.margin-50 {
+  margin: 50px !important
+}
+
+.margin-left-5 {
+  margin-left: 5px !important
+}
+
+.margin-left-10 {
+  margin-left: 10px !important
+}
+
+.margin-left-20 {
+  margin-left: 20px !important
+}
+
+.margin-left-30 {
+  margin-left: 30px !important
+}
+
+.margin-left-40 {
+  margin-left: 40px !important
+}
+
+.margin-left-50 {
+  margin-left: 50px !important
+}
+
+.margin-top-5 {
+  margin-top: 5px !important
+}
+
+.margin-top-10 {
+  margin-top: 10px !important
+}
+
+.margin-top-20 {
+  margin-top: 20px !important
+}
+
+.margin-top-30 {
+  margin-top: 30px !important
+}
+
+.margin-top-40 {
+  margin-top: 40px !important
+}
+
+.margin-top-50 {
+  margin-top: 50px !important
+}
+
+.margin-right-5 {
+  margin-right: 5px !important
+}
+
+.margin-right-10 {
+  margin-right: 10px !important
+}
+
+.margin-right-20 {
+  margin-right: 20px !important
+}
+
+.margin-right-30 {
+  margin-right: 30px !important
+}
+
+.margin-right-40 {
+  margin-right: 40px !important
+}
+
+.margin-right-50 {
+  margin-right: 50px !important
+}
+
+.margin-bottom-5 {
+  margin-bottom: 5px !important
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px !important
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px !important
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px !important
+}
+
+.margin-bottom-40 {
+  margin-bottom: 40px !important
+}
+
+.margin-bottom-50 {
+  margin-bottom: 50px !important
+}
+
+.font-10 {
+  font-size: 10%
+}
+
+.font-20 {
+  font-size: 20%
+}
+
+.font-30 {
+  font-size: 30%
+}
+
+.font-40 {
+  font-size: 40%
+}
+
+.font-50 {
+  font-size: 50%
+}
+
+.font-60 {
+  font-size: 60%
+}
+
+.font-70 {
+  font-size: 70%
+}
+
+.font-80 {
+  font-size: 80%
+}
+
+.font-90 {
+  font-size: 90%
+}
+
+.font-110 {
+  font-size: 110%
+}
+
+.font-120 {
+  font-size: 120%
+}
+
+.font-130 {
+  font-size: 130%
+}
+
+.font-140 {
+  font-size: 140%
+}
+
+.font-150 {
+  font-size: 150%
+}
+
+.font-160 {
+  font-size: 160%
+}
+
+.font-170 {
+  font-size: 170%
+}
+
+.font-180 {
+  font-size: 180%
+}
+
+.font-190 {
+  font-size: 190%
+}
+
+.font-200 {
+  font-size: 200%
 }
 
 blockquote {

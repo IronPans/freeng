@@ -10,9 +10,7 @@
     overflow: hidden;
     table-layout: fixed; }
     .free-datatable table thead tr th {
-      border-bottom: 2px solid #ccc; }
-    .free-datatable table thead tr {
-      border-bottom: 1px solid #d9d9d9; }
+      border-bottom: 1px solid #ccc; }
   .free-datatable .free-datatable-head {
     position: relative;
     font-weight: 600;

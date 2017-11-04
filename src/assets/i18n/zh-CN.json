@@ -172,7 +172,10 @@
       "GROUP": "折叠面板组",
       "OPTION": [
         "是否开启手风琴效果，默认为false，可选",
-        "折叠面板的开关(标题)，可选"
+        "自定义样式",
+        "标题",
+        "是否被选中，可选，默认为false",
+        "是否禁用，可选，默认为false"
       ]
     },
     "BADGE": {
@@ -459,7 +462,8 @@
         "设置预设样式，可选。可选值",
         "是否增加动态效果，默认为false",
         "设置已加载的背景色",
-        "设置轨道的背景色"
+        "设置轨道的背景色",
+        "是否显示百分比"
       ]
     },
     "RADIO": {
@@ -654,7 +658,26 @@
       "OPTION": [
         "是否可以多选，默认为false，可选",
         "是否预览，默认为false，可选",
-        "设置上传文件类型，可选"
+        "设置上传文件类型，可选",
+        "上传方式，可选。默认为'POST'",
+        "上传地址，可选。",
+        "允许最大的文件大小(以字节为单位)",
+        "无效的File Size的提示信息",
+        "无效的File Type的提示信息",
+        "是否可以使用Cookie，授权标头等凭据进行跨站点访问请求",
+        "组件的样式类",
+        "用于在后端识别文件的请求参数的名称",
+        "是否开启自动上传",
+        "控件类型，默认为advanced.可选值：basic/advanced"
+      ],
+      "EVENTS": [
+        "当选择文件时触发的回调事件。",
+        "当上传开始前触发的回调事件。",
+        "上传进度事件。",
+        "当上传成功时触发的回调事件。",
+        "当上传失败时触发的回调事件。",
+        "当删除文件时触发的回调事件。",
+        "当文件发送开始时触发的回调事件。"
       ]
     },
     "LOGIN": {
@@ -856,6 +879,10 @@
       "v040": {
         "BUG": "<li>修复移动Cropper裁剪框到边界时，图片位置错乱。<a href='https://github.com/IronPans/freeng/issues/4'>#4</a></li><li>修复Modal关闭时遮罩没有关闭。</li>",
         "FEATURE": "<li>新增Scroll组件</li><li>Editor新增onUploadCompleted属性，用于图片上传成功时触发</li><li>Modal新增dismissMask属性，用于控制点击遮罩是否可关闭模态框。</li>"
+      },
+      "v041": {
+        "BUG": "<li>修复下拉菜单Dropdown在关闭后依旧存在的问题</li><li>修复当选择Switch类型2时，会有白色背景的问题</li><li>修复Scroll组件在火狐下无法滚动</li><li>修复Progress无法设置动态值。</li>",
+        "FEATURE": "<li>Accordion新增styleClass属性，用于自定义样式</li><li>新增常用的表单验证器(date, email, url, cn, range, number, phone)</li><li><span>Upload</span><ul class='free-padding-ul'><li>新增maxFileSize、name属性</li><li>新增method、url、withCredentials属性</li><li>新增showProgress、autoUpload属性</li><li>新增invalidFileSizeMessage、invalidFileTypeMessage属性</li><li>新增styleClass</li><li>新增onChange、onBeforeUpload、onProgress、onUpload、onError、onRemove、onBeforeSend事件</li></ul></li>"
       },
       "ADD": "新增",
       "FIX": "修复",

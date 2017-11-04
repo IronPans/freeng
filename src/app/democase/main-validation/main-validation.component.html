@@ -1,0 +1,121 @@
+<div class="main-container">
+  <div class="row">
+    <div class="free-demo-board" fGrid="12">
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Validation</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <form novalidate [formGroup]="testForm" (ngSubmit)="onSubmit()">
+              <free-inputtext formControlName="name" [placeholder]="'Required'"></free-inputtext>
+              <div *ngIf="!testForm.get('name').valid && testForm.get('name').dirty">
+                <span *ngIf="testForm.get('name').hasError('required')">必填项</span>
+              </div>
+              <free-inputtext formControlName="phone" [placeholder]="'Phone Number'"></free-inputtext>
+              <div *ngIf="!testForm.get('phone').valid && testForm.get('phone').dirty">
+                <span *ngIf="testForm.get('phone').hasError('required')">必填项</span>
+                <span *ngIf="testForm.get('phone').hasError('phone')">必须为11位手机号码</span>
+              </div>
+              <free-inputtext formControlName="password"
+                              [placeholder]="'Required-MinLength(6)-MaxLength(10)'"></free-inputtext>
+              <div *ngIf="!testForm.get('password').valid && testForm.get('password').dirty">
+                <span *ngIf="testForm.get('password').hasError('required')">必填项</span>
+                <span *ngIf="testForm.get('password').hasError('minlength') || testForm.get('password').hasError('maxlength')">至少6位，最大10位</span>
+              </div>
+              <free-inputtext formControlName="age"
+                              [placeholder]="'Required - Min(6) - Max(10)'"></free-inputtext>
+              <div *ngIf="!testForm.get('age').valid && testForm.get('age').dirty">
+                <span *ngIf="testForm.get('age').hasError('required')">必填项</span>
+                <span *ngIf="testForm.get('age').hasError('min') || testForm.get('age').hasError('max')">大于6小于10</span>
+              </div>
+              <free-inputtext formControlName="email"
+                              [placeholder]="'Required - Email'"></free-inputtext>
+              <div *ngIf="!testForm.get('email').valid && testForm.get('email').dirty">
+                <span *ngIf="testForm.get('email').hasError('required')">必填项</span>
+                <span *ngIf="testForm.get('email').hasError('email')">且为有效的邮箱</span>
+              </div>
+              <free-inputtext formControlName="url"
+                              [placeholder]="'Required - url'"></free-inputtext>
+              <div *ngIf="!testForm.get('url').valid && testForm.get('url').dirty">
+                <span *ngIf="testForm.get('url').hasError('required')">必填项</span>
+                <span *ngIf="testForm.get('url').hasError('url')">且为有效的地址</span>
+              </div>
+              <p style="margin-top: 20px">
+                <button fButton type="submit" [theme]="'primary'" [disabled]="!testForm.valid">Submit</button>
+              </p>
+            </form>
+          </free-tab>
+          <free-tab header="HTML">
+            <free-code lang="html">
+              &lt;form novalidate [formGroup]="testForm" (ngSubmit)="onSubmit()"&gt;
+                &lt;free-inputtext formControlName="name" [placeholder]="'Required'"&gt;&lt;/free-inputtext&gt;
+                &lt;div *ngIf="!testForm.get('name').valid && testForm.get('name').dirty"&gt;
+                  &lt;span *ngIf="testForm.get('name').hasError('required')"&gt;必填项&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;free-inputtext formControlName="phone" [placeholder]="'Phone Number'"&gt;&lt;/free-inputtext&gt;
+                &lt;div *ngIf="!testForm.get('phone').valid && testForm.get('phone').dirty"&gt;
+                  &lt;span *ngIf="testForm.get('phone').hasError('required')"&gt;必填项&lt;/span&gt;
+                  &lt;span *ngIf="testForm.get('phone').hasError('phone')"&gt;必须为11位手机号码&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;free-inputtext formControlName="password"
+                                [placeholder]="'Required-MinLength(6)-MaxLength(10)'"&gt;&lt;/free-inputtext&gt;
+                &lt;div *ngIf="!testForm.get('password').valid && testForm.get('password').dirty"&gt;
+                  &lt;span *ngIf="testForm.get('password').hasError('required')"&gt;必填项&lt;/span&gt;
+                  &lt;span *ngIf="testForm.get('password').hasError('minlength') || testForm.get('password').hasError('maxlength')"&gt;至少6位，最大10位&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;free-inputtext formControlName="age"
+                                [placeholder]="'Required - Min(6) - Max(10)'"&gt;&lt;/free-inputtext&gt;
+                &lt;div *ngIf="!testForm.get('age').valid && testForm.get('age').dirty"&gt;
+                  &lt;span *ngIf="testForm.get('age').hasError('required')"&gt;必填项&lt;/span&gt;
+                  &lt;span *ngIf="testForm.get('age').hasError('min') || testForm.get('age').hasError('max')"&gt;大于6小于10&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;free-inputtext formControlName="email"
+                                [placeholder]="'Required - Email'"&gt;&lt;/free-inputtext&gt;
+                &lt;div *ngIf="!testForm.get('email').valid && testForm.get('email').dirty"&gt;
+                  &lt;span *ngIf="testForm.get('email').hasError('required')"&gt;必填项&lt;/span&gt;
+                  &lt;span *ngIf="testForm.get('email').hasError('email')"&gt;且为有效的邮箱&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;free-inputtext formControlName="url"
+                                [placeholder]="'Required - url'"&gt;&lt;/free-inputtext&gt;
+                &lt;div *ngIf="!testForm.get('url').valid && testForm.get('url').dirty"&gt;
+                  &lt;span *ngIf="testForm.get('url').hasError('required')"&gt;必填项&lt;/span&gt;
+                  &lt;span *ngIf="testForm.get('url').hasError('url')"&gt;且为有效的地址&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p style="margin-top: 20px"&gt;
+                  &lt;button fButton type="submit" [theme]="'primary'" [disabled]="!testForm.valid"&gt;Submit&lt;/button&gt;
+                &lt;/p&gt;
+              &lt;/form&gt;
+            </free-code>
+          </free-tab>
+          <free-tab header="TS">
+            <free-code lang="typescript">
+              import &#123;Component&#125; from '@angular/core';
+              import &#123;FormBuilder, FormGroup, Validators&#125; from '@angular/forms';
+              import &#123;CustomFormValidator&#125; from '../../component/validation/custom-form-validator.modeule';
+
+              @Component(&#123;
+                selector: 'free-main-validation',
+                templateUrl: './main-validation.component.html',
+                styleUrls: ['./main-validation.component.scss']
+              &#125;)
+              export class MainValidationComponent &#123;
+                testForm: FormGroup;
+                constructor(public fb: FormBuilder) &#123;
+                  this.testForm = this.fb.group(&#123;
+                    name: ['', Validators.required],
+                    phone: ['', [Validators.required, CustomFormValidator.phone('CN')]],
+                    password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
+                    age: ['', [Validators.required, Validators.min(18), Validators.max(25)]],
+                    email: ['', [Validators.required, Validators.email]],
+                    url: ['', [Validators.required, CustomFormValidator.url]]
+                  &#125;)
+                &#125;
+                onSubmit() &#123;&#125;
+              &#125;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+    </div>
+  </div>
+  <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
+</div>

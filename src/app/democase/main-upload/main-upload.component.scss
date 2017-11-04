@@ -1,0 +1,15 @@
+.upload-custom-btn {
+  width: 200px;
+  height: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: normal;
+  border: 1px solid #d9d9d9;
+  background: #eee;
+
+  i {
+    opacity: .6;
+  }
+}

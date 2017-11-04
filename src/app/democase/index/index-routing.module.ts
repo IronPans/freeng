@@ -64,6 +64,7 @@ const childRoutes: Routes = [
   {path: 'knob', loadChildren: '../main-knob/main-knob.module#MainKnobModule'},
   {path: 'scrollbar', loadChildren: '../main-scroll/main-scroll.module#MainScrollModule'},
   {path: 'tours', loadChildren: '../main-tour/main-tour.module#MainTourModule'},
+  {path: 'validations', loadChildren: '../main-validation/main-validation.module#MainValidationModule'},
   {path: '', redirectTo: '/main/introduction', pathMatch: 'full'},
   {path: '**', redirectTo: '/error'}
 ];

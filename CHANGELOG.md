@@ -2,6 +2,27 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
+## 0.4.0(2017-11-04)
+
+**Features**
+
+- Added styleClass property to Accordion for custom styling
+- Added common form validators (date, email, url, cn, range, number, phone)
+- Upload
+  - Added maxFileSize attribute
+  - Added method, url, withCredentials attribute
+  - Added showProgress attribute
+  - Added invalidFileSizeMessage, invalidFileTypeMessage attribute
+  - Added styleClass
+  - Added onChange, onBeforeUpload, onProgress, onUpload, onError, onRemove, onBeforeSend event
+
+**Bug Fixes**
+  
+- Fix dropdown menu Dropdown problems that still persist after shutdown
+- Fix white background issues when selecting Switch type 2
+- Fix Scroll components Can not scroll under Firefox 
+- Fix Progress can not set dynamic value.
+
 ## 0.4.0(2017-10-21)
 
 **Features**

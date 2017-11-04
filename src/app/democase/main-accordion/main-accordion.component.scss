@@ -1,4 +1,19 @@
 
-:host /deep/ .main-container .accordion-content {
+:host ::ng-deep .main-container .accordion-content {
   border-top: none;
+}
+
+
+::ng-deep .blueHeader {
+  .accordion-toggle {
+    background: #1976d2;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+  .accordion-item-expand.accordion-toggle {
+    color: #fff !important;
+  }
 }

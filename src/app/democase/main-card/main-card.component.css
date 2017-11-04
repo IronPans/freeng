@@ -1,4 +1,6 @@
 :host /deep/ .free-card {
   margin-bottom: 20px; }
+:host /deep/ .free-card .free-card-content {
+  padding: 10px; }
 
 /*# sourceMappingURL=main-card.component.css.map */

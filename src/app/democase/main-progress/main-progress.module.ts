@@ -8,6 +8,7 @@ import {GridModule} from '../../component/grid/grid.directive';
 import {MainProgressRoutingModule} from './main-progress-routing.module';
 import {MainProgressComponent} from './main-progress.component';
 import {LanguageModule} from '../common/language';
+import {ButtonModule} from '../../component/button/button.directive';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {LanguageModule} from '../common/language';
     TableModule,
     ProgressModule,
     GridModule,
+    ButtonModule,
     LanguageModule
   ],
   declarations: [MainProgressComponent]

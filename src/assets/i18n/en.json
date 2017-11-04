@@ -170,8 +170,11 @@
       "DESCRIPTION": "Accordion can effectively save the page's visible area.",
       "GROUP": "Accordion Group",
       "OPTION": [
-        "whether to activate the accordion effect, default is false, optional",
-        "set accordion header title, optional"
+        "Whether to open the accordion effect, the default is false, optional",
+        "set custom style",
+        "title",
+        "Defines if the accordion is active., the default is false",
+        "Defines whether the accordion can be selected., the default is false"
       ]
     },
     "BADGE": {
@@ -458,7 +461,8 @@
         "Set the default style, optional. Optional value",
         "Whether to increase the dynamic effect, the default is false",
         "Set the loaded background color",
-        "Set the background color of the track"
+        "Set the background color of the track",
+        "Whether to display the percentage"
       ]
     },
     "RADIO": {
@@ -651,9 +655,28 @@
     "UPLOAD": {
       "DESCRIPTION": "Supports thumbnail preview, list shows picture size.",
       "OPTION": [
-        "Can you choose more, default is false, optional",
+        "Can you choose more, the default is false, optional",
         "Whether to preview, the default is false, optional",
-        "Set the upload file type, optional"
+        "Set the upload file type, optional",
+        "Upload method, optional. the default is 'POST'",
+        "Upload address, optional.",
+        "Allow the largest file size (in bytes)",
+        "Invalid File Size Tip Message",
+        "Invalid File Type Tips Message",
+        "Is it possible to use cross-site access requests like cookies, authorization headers and other credentials",
+        "Component Style Classes",
+        "Name of the request parameter used to identify the file on the backend",
+        "Whether to turn on automatic upload",
+        "Control type, the default is advanced. Optional values: basic / advanced"
+      ],
+      "EVENTS": [
+        "Callback event triggered when file is selected.",
+        "Callback event triggered when the upload started.",
+        "Upload Progress Event.",
+        "Callback event triggered when the upload is successful.",
+        "Callback event triggered when the upload fails.",
+        "Callback event that is fired when the file is deleted.",
+        "Callback event fired when the file was sent."
       ]
     },
     "LOGIN": {
@@ -838,7 +861,7 @@
     },
     "v030": {
       "BUG": "<li>Fix Spinner Set the maximum and minimum values that can not be clicked</li>",
-      "FEATURE": "<li> Add Knob component </li> <li> Add the Steps component </li> <li> Optimize the Modal style </li> <li> <span> Panel </span> <ul class='free-panel-ul'> <li> Optimize the style of the Panel </li> <li> Add the tool property for the tool </li> </ul> </li> <li> Optimize the style of the Range </li> <li> Optimize the style of Calendar </li> <li> Optimize the style of the Button </li> <li> Progress Add the barColor and trackColor properties </li><li>Turn off the Accordion switch animation</li>"
+      "FEATURE": "<li> Add Knob component </li> <li> Add the Steps component </li> <li> Optimize the Modal style </li> <li> <span> Panel </span> <ul class='free-padding-ul'> <li> Optimize the style of the Panel </li> <li> Add the tool property for the tool </li> </ul> </li> <li> Optimize the style of the Range </li> <li> Optimize the style of Calendar </li> <li> Optimize the style of the Button </li> <li> Progress Add the barColor and trackColor properties </li><li>Turn off the Accordion switch animation</li>"
     },
     "v031": {
       "BUG": "<li>Fix Knob dynamic settings</li>",
@@ -851,6 +874,10 @@
     "v040": {
       "BUG": "<li>Fix the Cropper's cropping frame to the border, the image is in a messy position.<a href='https://github.com/IronPans/freeng/issues/4'>#4</a></li><li>Fix Modal off when the mask is not closed.</li>",
       "FEATURE": "<li>Add Scroll Component</li><li>Editor Added onUploadCompleted property to trigger when image upload is successful.</li><li>Modal adds the dismissMask property to control whether the click mask can close the modal box.</li>"
+    },
+    "v041": {
+      "BUG": "<li> Fix dropdown menu Dropdown problems that still persist after shutdown </li> <li> Fix white background issues when selecting Switch type 2 </li> <li> Fix Scroll components Can not scroll under Firefox </li> <li> Fix Progress can not set dynamic value. </li> ",
+      "FEATURE": "<li> Added styleClass property to Accordion for custom styling </li> <li> Added common form validators (date, email, url, cn, range, number, phone) </li> <li> <span> Upload </span> <ul class='free-padding-ul'> <li> Added maxFileSize attribute </li> <li> Added method, url, withCredentials attribute </li > <li> Added showProgress attribute </li> <li> Added invalidFileSizeMessage, invalidFileTypeMessage attribute </li> <li> Added styleClass </li> <li> Added onChange, onBeforeUpload, onProgress, onUpload, onError, onRemove, onBeforeSend event </li> </ul> </li> "
     },
     "ADD": "Add",
     "FIX": "Fix",

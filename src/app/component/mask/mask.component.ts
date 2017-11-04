@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgModule, Component, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, style, state, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'free-mask',
   template: `
-    <div class="free-mask" *ngIf="visible" [@fadeInState]
-         (@fadeInState.done)="transitionEnd()">
+    <div class="free-mask" [ngStyle]="style" *ngIf="visible" [@fadeInState]
+         (@fadeInState.done)="transitionEnd()" (click)="onClose()">
       <ng-content></ng-content>
       <span *ngIf="close" class="fa fa-close"></span>
     </div>`,
@@ -18,13 +18,14 @@ import { trigger, style, state, animate, transition } from '@angular/animations'
     ])
   ])]
 })
-export class MaskComponent implements OnInit {
-
+export class MaskComponent {
   _visible: boolean;
   timeoutId: any;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter();
   @Input() close: boolean;
   @Input() delay: number;
+  @Input() style: any;
+  @Input() dismissMask: boolean;
   @Input()
   get visible(): boolean {
     return this._visible;
@@ -33,13 +34,14 @@ export class MaskComponent implements OnInit {
     this._visible = value;
     this.visibleChange.emit(this._visible);
   }
-  constructor() { }
 
-  ngOnInit() {}
+  constructor() {
+    this.style = {};
+  }
 
   transitionEnd() {
     if (!!this.delay && !this.timeoutId) {
-      this.timeoutId = setTimeout(() => {  // 注意: 必须使用箭头函数,不然函数里面的this指向的是window
+      this.timeoutId = setTimeout(() => {
         this.visible = false;
       }, this.delay);
     } else if (this.timeoutId) {
@@ -47,6 +49,11 @@ export class MaskComponent implements OnInit {
     }
   }
 
+  onClose() {
+    if (this.dismissMask) {
+      this.visible = false;
+    }
+  }
 }
 
 @NgModule({

@@ -23,7 +23,7 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
         <div class="input-field {{'free-' + theme}}" [ngClass]="inputClass">
           <span class="free-inputtext-addon" *ngIf="prefix"><i class="fa {{'fa-' + prefix}}"></i></span>
           <input type="{{type}}" #text [(ngModel)]="value"
-                 (blur)="onBlur(text.value)" placeholder="{{placeholder}}" (input)="onInput(text)">
+                 (blur)="onBlur(text.value)" placeholder="{{placeholder}}" (input)="onInput(text, $event)">
           <i *ngIf="icon" class="fa {{'fa-' + icon}} free-inputtext-validator"></i>
           <div class="free-inputtext-tip" #tip [style.display]="showTip ? 'block' : 'none'">
             {{message}}
@@ -33,7 +33,7 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   `,
   providers: [DomRenderer, CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class InputtextComponent  implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+export class InputtextComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
   @Input()
   set theme(value: string) {
     this._theme = value;
@@ -53,7 +53,7 @@ export class InputtextComponent  implements ControlValueAccessor, OnInit, AfterV
   @Input() prefix: string;
   @Input() inline: boolean;
   @Input() type: string;
-  @Output() onChange: EventEmitter<string> = new EventEmitter();
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('tip') tipViewChild: ElementRef;
   inputClass: object;
   tip: HTMLElement;
@@ -106,49 +106,55 @@ export class InputtextComponent  implements ControlValueAccessor, OnInit, AfterV
     this.onModelTouched = fn;
   }
 
-  onInput(target: any) {
-    let regexp: any;
-    const value = target.value;
-    const rect = this.domRenderer.getRect(target);
-    switch (this.pattern) {
-      case 'tel':
-        regexp = /^1[3,5,8]\d{9}/;
-        break;
-      case 'email':
-        regexp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        break;
-      case 'card':
-        regexp = /(^\d{15}$)|(^\d{17}(x|X|\d)$)/;
-            break;
-      case 'chinese':
-        regexp = /^[\u4e00-\u9fa5]+$/;
-           break;
-      case 'url':
-        regexp = /(^#)|(^http(s*):\/\/[^\s]+\.[^\s]+)/;
-        break;
-      case 'number':
-        regexp = /^\d+$/;
-        break;
-      case 'date':
-        regexp = /^(\d{4})[-\/](\d{1}|0\d{1}|1[0-2])([-\/](\d{1}|0\d{1}|[1-2][0-9]|3[0-1]))*$/;
-        break;
-      default:
-        regexp = new RegExp(this.pattern, 'i');
-    }
-    if (regexp.test(value)) {
-      this.remove();
-    } else {
-      const left = rect.left + rect.width + 10;
-      const winWidth = window.innerWidth;
-      const tipWidth = this.tip.offsetWidth;
-      this.domRenderer.removeClass(this.tip, 'free-tip-top free-tip-right');
-      let className = 'free-tip-right';
-      if ((left + tipWidth) > winWidth) {
-        className = 'free-tip-top';
+  onInput(target: any, event: any) {
+    if (this.pattern) {
+      let regexp: any;
+      const value = target.value;
+      const rect = this.domRenderer.getRect(target);
+      switch (this.pattern) {
+        case 'tel':
+          regexp = /^1[3,5,8]\d{9}/;
+          break;
+        case 'email':
+          regexp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          break;
+        case 'card':
+          regexp = /(^\d{15}$)|(^\d{17}(x|X|\d)$)/;
+          break;
+        case 'chinese':
+          regexp = /^[\u4e00-\u9fa5]+$/;
+          break;
+        case 'url':
+          regexp = /(^#)|(^http(s*):\/\/[^\s]+\.[^\s]+)/;
+          break;
+        case 'number':
+          regexp = /^\d+$/;
+          break;
+        case 'date':
+          regexp = /^(\d{4})[-\/](\d{1}|0\d{1}|1[0-2])([-\/](\d{1}|0\d{1}|[1-2][0-9]|3[0-1]))*$/;
+          break;
+        default:
+          regexp = new RegExp(this.pattern, 'i');
       }
-      this.domRenderer.addClass(this.tip, className);
-      this.showTip = true;
+      if (regexp.test(value)) {
+        this.remove();
+      } else {
+        const left = rect.left + rect.width + 10;
+        const winWidth = window.innerWidth;
+        const tipWidth = this.tip.offsetWidth;
+        this.domRenderer.removeClass(this.tip, 'free-tip-top free-tip-right');
+        let className = 'free-tip-right';
+        if ((left + tipWidth) > winWidth) {
+          className = 'free-tip-top';
+        }
+        this.domRenderer.addClass(this.tip, className);
+        this.showTip = true;
+      }
     }
+    this.onChange.emit({
+      value: target.value,
+      event: event
+    });
   }
 
   remove() {

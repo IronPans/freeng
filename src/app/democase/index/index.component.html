@@ -127,6 +127,12 @@
               <em class="chinese" *ngIf="lang === 'zh-CN'">星星评分</em>
             </a>
           </li>
+          <li fRipple>
+            <a routerLink="validations" routerLinkActive="active">
+              <cite>Validation</cite>
+              <em class="chinese" *ngIf="lang === 'zh-CN'">验证器</em>
+            </a>
+          </li>
         </ul>
       </free-accordion>
       <free-accordion class="let-menu-item" [header]="'Selector' | translate" [iconName]="'check-square-o'">

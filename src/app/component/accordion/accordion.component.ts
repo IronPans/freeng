@@ -1,18 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Component, OnInit, Input} from '@angular/core';
+import {NgModule, Component, OnInit, Input} from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ShareModule } from '../common/share';
 
 @Component({
   selector: 'free-accordion-group',
-  template: '<div class="free-accordion-group"><ng-content></ng-content></div>'
+  template: '<div class="free-accordion-group {{styleClass}}"><ng-content></ng-content></div>'
 })
 
 export class AccordionGroupComponent {
   @Input() closeOthers: boolean;
-  @Input() style: any;
+  @Input() styleClass: any;
   groups: AccordionComponent[] = [];
-  constructor() {}
 
   closeOther(activeItem: AccordionComponent) {
     if (!this.closeOthers) {
@@ -33,9 +32,8 @@ export class AccordionGroupComponent {
 @Component({
   selector: 'free-accordion',
   template: `
-    <div class="accordion-item" [class.free-accordion-disabled]="disabled">
-      <div (click)="toggle()" class="accordion-toggle" [ngStyle]="style || accordionGroup.style"
-           [ngClass]="itemClass">
+    <div class="accordion-item {{styleClass}}" [class.free-accordion-disabled]="disabled">
+      <div (click)="toggle()" class="accordion-toggle" [ngClass]="itemClass">
         <span class="accordion-toggle-inner">
           <ng-container *ngIf="header">
             <i class="fa {{'fa-' + _icon}}" *ngIf="!!_icon"></i>
@@ -65,7 +63,7 @@ export class AccordionComponent implements OnInit {
   @Input() header: string;
   @Input() disabled: boolean;
   @Input() toggleable: boolean;
-  @Input() style: any;
+  @Input() styleClass: any;
   @Input()
   get iconName(): string {
     return this._icon;
@@ -87,11 +85,11 @@ export class AccordionComponent implements OnInit {
     }
     this.toggleClass();
   }
-
   _selected: boolean;
   _icon: string;
   isActive: string;
   itemClass: any;
+  activeIndex: number;
   isAnimating: boolean;
   accordionGroup: AccordionGroupComponent;
   constructor(accordionGroup: AccordionGroupComponent) {
@@ -99,6 +97,7 @@ export class AccordionComponent implements OnInit {
     this.toggleable = true;
     this.isActive = 'inactive';
     this.itemClass = {};
+    this.styleClass = '';
   }
 
   ngOnInit() {

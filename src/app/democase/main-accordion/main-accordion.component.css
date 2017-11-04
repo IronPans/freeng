@@ -1,4 +1,12 @@
-:host /deep/ .main-container .accordion-content {
+:host ::ng-deep .main-container .accordion-content {
   border-top: none; }
+
+::ng-deep .blueHeader .accordion-toggle {
+  background: #1976d2;
+  color: #fff; }
+  ::ng-deep .blueHeader .accordion-toggle:hover {
+    color: #fff; }
+::ng-deep .blueHeader .accordion-item-expand.accordion-toggle {
+  color: #fff !important; }
 
 /*# sourceMappingURL=main-accordion.component.css.map */

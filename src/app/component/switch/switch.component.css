@@ -62,7 +62,7 @@
     margin-left: 3px; }
   .free-switch.free-switch-2 .switch-label {
     width: 2rem;
-    background: #fff; }
+    background: transparent !important; }
     .free-switch.free-switch-2 .switch-label:before {
       background: #bdbdbd;
       top: 0.45rem;
