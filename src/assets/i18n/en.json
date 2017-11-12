@@ -249,7 +249,8 @@
         "Set the name of the check box, select",
         "Whether the default is selected, the default is false, optional",
         "Is disabled, the default is false, optional",
-        "Set the default style, optional. Optional (primary / info / success / warning / danger)"
+        "Custom style",
+        "Only returns a boolean value"
       ]
     },
     "CHIP": {
@@ -511,7 +512,6 @@
       "DESCRIPTION": "drop-down selection box to select between multiple selections. Select to display the current status and the down arrow.",
       "OPTION": [
         "Set option, must choose",
-        "Set the prompt that describes the expected value of the input field, select",
         "Set the prompt that describes the expected value of the input field, select",
         "Can choose a number of options, optional",
         "Whether to display the filter input box, optional"
@@ -878,6 +878,10 @@
     "v041": {
       "BUG": "<li> Fix dropdown menu Dropdown problems that still persist after shutdown </li> <li> Fix white background issues when selecting Switch type 2 </li> <li> Fix Scroll components Can not scroll under Firefox </li> <li> Fix Progress can not set dynamic value. </li> ",
       "FEATURE": "<li> Added styleClass property to Accordion for custom styling </li> <li> Added common form validators (date, email, url, cn, range, number, phone) </li> <li> <span> Upload </span> <ul class='free-padding-ul'> <li> Added maxFileSize attribute </li> <li> Added method, url, withCredentials attribute </li > <li> Added showProgress attribute </li> <li> Added invalidFileSizeMessage, invalidFileTypeMessage attribute </li> <li> Added styleClass </li> <li> Added onChange, onBeforeUpload, onProgress, onUpload, onError, onRemove, onBeforeSend event </li> </ul> </li> "
+    },
+    "v042": {
+      "BUG": "<li> Multi-select repair invalid selector.</li>",
+      "FEATURE": "<li> checkbox added binary to return only one boolean </li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

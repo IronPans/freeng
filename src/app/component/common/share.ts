@@ -36,14 +36,18 @@ export class TemplateComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.view = this._viewContainerRef.createEmbeddedView(this.template, {
-      '\$implicit': this.data,
-      'index': this.index
-    });
+    if (this.template) {
+      this.view = this._viewContainerRef.createEmbeddedView(this.template, {
+        '\$implicit': this.data,
+        'index': this.index
+      });
+    }
   }
 
   ngOnDestroy() {
-    this.view.destroy();
+    if (this.view) {
+      this.view.destroy();
+    }
   }
 }
 
@@ -64,15 +68,19 @@ export class TemplateColumnComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.view = this._viewContainerRef.createEmbeddedView(this.template, {
-      '\$implicit': this.column,
-      'rowData': this.rowData,
-      'rowIndex': this.rowIndex
-    });
+    if (this.template) {
+      this.view = this._viewContainerRef.createEmbeddedView(this.template, {
+        '\$implicit': this.column,
+        'rowData': this.rowData,
+        'rowIndex': this.rowIndex
+      });
+    }
   }
 
   ngOnDestroy() {
-    this.view.destroy();
+    if (this.view) {
+      this.view.destroy();
+    }
   }
 }
 

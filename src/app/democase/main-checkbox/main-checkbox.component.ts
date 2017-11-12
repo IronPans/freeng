@@ -15,8 +15,11 @@ export class MainCheckboxComponent implements OnInit {
   theme = [];
   pageTitle = 'Components-Checkbox';
   selectedCity: any[];
+  checked: any;
+  binaryChecked: boolean;
   constructor() {
     this.selectedCity = ['guangdong'];
+    this.binaryChecked = false;
   }
 
   ngOnInit() {

@@ -57,12 +57,21 @@
               </free-table-cell>
             </free-table-row>
             <free-table-row>
-              <free-table-cell>theme</free-table-cell>
+              <free-table-cell>styleClass</free-table-cell>
               <free-table-cell>
-                <ng-template><code>theme</code></ng-template>
+                <ng-template><code>String</code></ng-template>
               </free-table-cell>
               <free-table-cell>
                 <ng-template>{{'DEMO.CHECKBOX.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>binary</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CHECKBOX.OPTION.5' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
@@ -86,32 +95,27 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-checkbox label="Checkbox" [checked]="true"></free-checkbox>
-            <free-checkbox label="Checkbox"></free-checkbox>
+            Selected value: {{checked}}
+            <free-checkbox label="Checkbox" [value]="'Item1'" [(ngModel)]="checked"></free-checkbox>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-checkbox label="Checkbox" [checked]="true"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox label="Checkbox"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox label="Checkbox" [value]="'Item1'" [(ngModel)]="checked"&gt;&lt;/free-checkbox&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Theme</h3>
+        <h3 class="free-toolbar">Boolean</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-checkbox *ngFor="let t of theme" theme="{{t.name}}" label="Theme: {{t.name}}"
-                           name="theme" [checked]="true"></free-checkbox>
+            {{binaryChecked}}
+            <free-checkbox [(ngModel)]="binaryChecked" label="Remember Password" [binary]="true"></free-checkbox>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-checkbox theme="primary" label="primary" name="theme" [checked]="true"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox theme="info" label="info" name="theme"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox theme="success" label="success" name="theme"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox theme="warning" label="warning" name="theme"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox theme="danger" label="danger" name="theme"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox [(ngModel)]="binaryChecked" label="Remember Password" [binary]="true"&gt;&lt;/free-checkbox&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -121,13 +125,11 @@
         <h3 class="free-toolbar">Disabled</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-checkbox [disabled]="true" label="disabled checkbox"></free-checkbox>
-            <free-checkbox [disabled]="true" label="disabled checkbox" [checked]="true"></free-checkbox>
+            <free-checkbox [disabled]="true" [checked]="true" label="Disabled"></free-checkbox>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-checkbox [disabled]="true" label="disabled checkbox"&gt;&lt;/free-checkbox&gt;
-              &lt;free-checkbox [disabled]="true" label="disabled checkbox" [checked]="true"&gt;&lt;/free-checkbox&gt;
+              &lt;free-checkbox [disabled]="true" [checked]="true" label="disabled checkbox"&gt;&lt;/free-checkbox&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -142,7 +144,7 @@
             <free-checkbox value="shanghai" [(ngModel)]="selectedCity" label="shanghai"></free-checkbox>
 
             <p style="width: 100%;margin-top: 20px">
-              select city：<span *ngFor="let city of selectedCity">{{city}}</span>
+              select city：<span *ngFor="let city of selectedCity" style="margin-right:10px">{{city}}</span>
             </p>
           </free-tab>
           <free-tab header="CODE">

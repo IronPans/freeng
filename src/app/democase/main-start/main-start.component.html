@@ -4,7 +4,7 @@
       <div style="padding-right: 1rem;">
         <div [innerHTML]="'MAIN.INTRODUCTION' | translate"></div>
       </div>
-      <p><b>{{'MAIN.CURRENT-VERSION' | translate}}：</b> v{{version}}</p>
+      <p><b>{{'MAIN.CURRENT-VERSION' | translate}}：</b> <img src="https://img.shields.io/npm/v/freeng.svg"></p>
       <hr>
       <blockquote [innerHTML]="'START.KNOW' | translate"></blockquote>
       <h4 style="margin: 20px 0;font-weight: bold;">{{'GET-START' | translate}}</h4>
@@ -42,12 +42,22 @@
           </free-code>
         </free-panel>
       </div>
+      <h4 style="margin: 20px 0;font-weight: bold;">Resources</h4>
+      <div class="free-card-board">
+        <free-panel header="Copy resources">
+          <free-code lang="javascript">
+            cp -r node_modules/freeng/resources/ src/assets/resources
+          </free-code>
+        </free-panel>
+      </div>
+
       <div class="free-card-board">
         <free-panel header="Dependencies">
+          <p>YOUR_PATH: assets/resources</p>
           <free-code lang="javascript">
             &lt;link rel="stylesheet" href="&lt;YOUR_PATH&gt;/font-awesome.min.css" /&gt;
-            &lt;link rel="stylesheet" href="/node_modules/freeng/resources/freeng.min.css" /&gt;
-            &lt;link rel="stylesheet" href="/node_modules/freeng/resources/themes/blue.css"/&gt;
+            &lt;link rel="stylesheet" href="&lt;YOUR_PATH&gt;/freeng.min.css" /&gt;
+            &lt;link rel="stylesheet" href="&lt;YOUR_PATH&gt;/themes/blue.css"/&gt;
           </free-code>
         </free-panel>
       </div>

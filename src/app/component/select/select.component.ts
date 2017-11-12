@@ -2,11 +2,12 @@ import {CommonModule} from '@angular/common';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {
   NgModule, Component, OnInit, Input, EventEmitter,
-  Output, AfterViewInit, ViewChild, ElementRef, Renderer2, forwardRef, OnDestroy,
+  Output, ViewChild, ElementRef, Renderer2, forwardRef, OnDestroy, ContentChildren, QueryList, AfterContentInit,
 } from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {CheckboxModule} from '../checkbox/checkbox.component';
 import {ObjectUtils} from '../common/util';
+import {FreeTemplateDirective, ShareModule} from '../common/share';
 
 const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -24,7 +25,8 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
       </div>
       <div class="free-select-menu" *ngIf="opened" [@selectState]="'in'" (click)="onMenuClick()">
         <div class="free-select-filter" *ngIf="filter">
-          <free-checkbox *ngIf="multiple" [checked]="multipleTotal" (onChange)="onMultipleTotal($event)">
+          <free-checkbox *ngIf="multiple" [binary]="true"
+                         [checked]="multipleTotal" (onChange)="onMultipleTotal($event)">
           </free-checkbox>
           <div class="free-select-inner">
             <i class="fa fa-search"></i>
@@ -35,11 +37,12 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
           <ul *ngIf="!multiple">
             <free-select-item
               *ngFor="let option of filterValue(options, 'label'); index as i"
-              (onClick)="onItemClick($event)" [option]="option"></free-select-item>
+              (onClick)="onItemClick($event)" [option]="option" [index]="i"></free-select-item>
           </ul>
           <ul *ngIf="multiple">
             <li *ngFor="let option of filterValue(options, 'label')">
-              <free-checkbox (onChange)="onCheckboxSelect($event, option)" [checked]="option.checked"
+              <free-checkbox [binary]="true" (onChange)="onCheckboxSelect($event, option)"
+                             [checked]="option.checked"
                              [label]="option.label" [value]="option.value"></free-checkbox>
             </li>
           </ul>
@@ -66,7 +69,7 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   ],
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR, ObjectUtils]
 })
-export class SelectComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnDestroy {
+export class SelectComponent implements ControlValueAccessor, OnInit, AfterContentInit, OnDestroy {
   @Input() pholder: string;
   @Input() multipleTotal: boolean;
   @Input() editable: boolean;
@@ -93,6 +96,9 @@ export class SelectComponent implements ControlValueAccessor, OnInit, AfterViewI
   items: SelectItemComponent[] = [];
   selfClick: boolean;
   bindDocumentClickListener: Function;
+  itemTemplate: any;
+  @ContentChildren(FreeTemplateDirective) tempalateDirective: QueryList<FreeTemplateDirective>;
+  templates: any;
   onModelChange: Function = () => {
   };
   onTouchedChange: Function = () => {
@@ -106,11 +112,19 @@ export class SelectComponent implements ControlValueAccessor, OnInit, AfterViewI
     if (this.multiple) {
       this.selected = [];
     }
-  }
-
-  ngAfterViewInit() {
     if (this.pholder) {
       this.value = this.pholder;
+    }
+  }
+
+  ngAfterContentInit() {
+    this.templates = this.tempalateDirective.toArray();
+    for (const temp of this.templates) {
+      switch (temp.getType()) {
+        case 'item':
+          this.itemTemplate = temp.template;
+          break;
+      }
     }
   }
 
@@ -129,29 +143,32 @@ export class SelectComponent implements ControlValueAccessor, OnInit, AfterViewI
     this.onTouchedChange = fn;
   }
 
-  onMultipleTotal(event: any) {
-    this.multipleTotal = event.checked;
+  onMultipleTotal(checked: any) {
+    this.multipleTotal = checked;
     if (this.multipleTotal) {
       this.selected = Array.from(this.options);
     } else {
       this.selected = [];
     }
     for (const option of this.options) {
-      option['checked'] = event.checked;
+      option['checked'] = checked;
     }
     this.getSelectedValue();
   }
 
-  onCheckboxSelect(event: any, option: any) {
-    this.multipleTotal = false;
-    if (event.checked) {
+  onCheckboxSelect(checked: any, option: any) {
+    if (checked) {
       option.checked = true;
       this.selected.push(option);
+      if (this.filterValue(this.options, 'label').length === this.selected.length) {
+        this.multipleTotal = true;
+      }
     } else {
+      this.multipleTotal = false;
       const selected = this.selected;
       let i = selected.length;
       while (i) {
-        if (selected[i - 1].value === event.value) {
+        if (selected[i - 1].value === option['value']) {
           this.selected.splice(i - 1, 1);
           this.options[i - 1].checked = false;
         }
@@ -277,15 +294,17 @@ export class SelectComponent implements ControlValueAccessor, OnInit, AfterViewI
     <li class="free-select-item" [class.free-select-active]="selector.compareWith(option.value)"
         (click)="itemClick()">
       <div class="free-select-item-content">
-        <span>{{option.label}}</span>
+        <span *ngIf="option.label">{{option.label}}</span>
+        <free-template *ngIf="selector.itemTemplate" [data]="option" [index]="index"
+                       [template]="selector.itemTemplate"></free-template>
       </div>
     </li>
   `
 })
 
 export class SelectItemComponent implements OnInit {
-
   @Input() option: any;
+  @Input() index: number;
   @Output() onClick: EventEmitter<any> = new EventEmitter();
   selector: SelectComponent;
 
@@ -303,9 +322,9 @@ export class SelectItemComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [CommonModule, FormsModule, CheckboxModule],
+  imports: [CommonModule, FormsModule, CheckboxModule, ShareModule],
   declarations: [SelectComponent, SelectItemComponent],
-  exports: [SelectComponent, SelectItemComponent]
+  exports: [SelectComponent, SelectItemComponent, ShareModule]
 })
 
 export class SelectModule {

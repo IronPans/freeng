@@ -2,10 +2,13 @@
   display: inline-flex;
   cursor: pointer;
   align-items: center; }
+  .free-checkbox.free-checkbox-disabled {
+    cursor: not-allowed; }
+    .free-checkbox.free-checkbox-disabled input {
+      cursor: not-allowed; }
   .free-checkbox .free-checkbox-inner,
   .free-checkbox .free-checkbox-ins {
     display: flex;
-    cursor: pointer;
     align-items: center; }
   .free-checkbox .free-checkbox-title {
     max-width: 10rem;
@@ -52,21 +55,9 @@
     transform: scale(1); }
   .free-checkbox .free-checkbox-inner > input:disabled + .free-checkbox-ins {
     opacity: .8; }
-  .free-checkbox .free-checkbox-inner > input:disabled + .free-checkbox-ins:before {
-    background: transparent !important; }
   .free-checkbox .free-checkbox-inner {
     padding-right: .3rem; }
-  .free-checkbox.free-default .free-checkbox-inner > input:checked + .free-checkbox-ins:before {
+  .free-checkbox .free-checkbox-inner > input:checked + .free-checkbox-ins:before {
     background: #333; }
-  .free-checkbox.free-primary .free-checkbox-inner > input:checked + .free-checkbox-ins:before {
-    background: #177bbb; }
-  .free-checkbox.warning .free-checkbox-inner > input:checked + .free-checkbox-ins:before {
-    background: #1ccacc; }
-  .free-checkbox.success .free-checkbox-inner > input:checked + .free-checkbox-ins:before {
-    background: #1aae88; }
-  .free-checkbox.free-info .free-checkbox-inner > input:checked + .free-checkbox-ins:before {
-    background: #fbb23e; }
-  .free-checkbox.free-danger .free-checkbox-inner > input:checked + .free-checkbox-ins:before {
-    background: #e33244; }
 
 /*# sourceMappingURL=checkbox.component.css.map */

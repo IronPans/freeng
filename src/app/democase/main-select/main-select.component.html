@@ -38,21 +38,12 @@
               </free-table-cell>
             </free-table-row>
             <free-table-row>
-              <free-table-cell>ngModel</free-table-cell>
-              <free-table-cell>
-                <ng-template><code>String</code></ng-template>
-              </free-table-cell>
-              <free-table-cell>
-                <ng-template>{{'DEMO.SELECT.OPTION.2' | translate}}</ng-template>
-              </free-table-cell>
-            </free-table-row>
-            <free-table-row>
               <free-table-cell>multiple</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>{{'DEMO.SELECT.OPTION.3' | translate}}</ng-template>
+                <ng-template>{{'DEMO.SELECT.OPTION.2' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
             <free-table-row>
@@ -61,7 +52,7 @@
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>{{'DEMO.SELECT.OPTION.4' | translate}}</ng-template>
+                <ng-template>{{'DEMO.SELECT.OPTION.3' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
@@ -128,24 +119,6 @@
                 &#123; label: 'nanjing', value: 'nj'&#125;,
                 &#123; label: 'yunnan', value: 'yn'&#125;
               ];
-            </free-code>
-          </free-tab>
-        </free-tab-group>
-      </div>
-
-      <div class="free-card-board">
-        <h3 class="free-toolbar">NgModel</h3>
-        <free-tab-group direction="right" theme="line">
-          <free-tab header="PREVIEW">
-            <div style="height:250px">
-              <free-select [(ngModel)]="selectedFruit" (onChange)="onChange($event)"
-                           [options]="fruit" pholder="select"></free-select>
-            </div>
-          </free-tab>
-          <free-tab header="CODE">
-            <free-code lang="html">
-              &lt;free-select [(ngModel)]="selectedFruit" (onChange)="onChange($event)"
-              [options]="fruit" pholder="select"&gt;&lt;/free-select&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
-  NgModule, Component, AfterViewInit, Input, Output, Renderer2,
+  NgModule, Component, Input, Output, Renderer2,
   EventEmitter, ElementRef, ViewChild, forwardRef
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
@@ -14,7 +14,8 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
   selector: 'free-checkbox',
   template: `
-    <label class="free-checkbox" #container>
+    <label [ngClass]="'free-checkbox'" [class]="styleClass"
+           [class.free-checkbox-disabled]="disabled" #container>
       <div class="free-checkbox-inner">
         <input type="checkbox" value="{{value}}"  [disabled]="disabled"
             [checked]="checked" name="{{name}}" (change)="onCheckboxChange($event, label)">
@@ -25,27 +26,36 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
     `,
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
-export class CheckboxComponent implements ControlValueAccessor, AfterViewInit {
-
+export class CheckboxComponent implements ControlValueAccessor {
   @Input() name: string;
   @Input() label: string;
-  @Input() checked: boolean;
+  @Input()
+  set checked(value: boolean) {
+    this._checked = value;
+    if (!this.binary) {
+      if (value) {
+        this.addValue();
+      } else {
+        this.removeValue();
+      }
+    }
+  }
+  get checked() {
+    return this._checked;
+  }
   @Input() disabled: boolean;
   @Input() value: any;
-  @Input() theme: string;
+  @Input() styleClass: string;
+  @Input() binary: boolean;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('container') container: ElementRef;
   checkedValue: any[];
+  _checked: boolean;
   onModelChange: Function = () => {};
   onTouchedChange: Function = () => {};
 
   constructor(public renderer2: Renderer2) {
     this.checkedValue = [];
-    this.theme = 'default';
-  }
-
-  ngAfterViewInit() {
-    this.renderer2.addClass(this.container.nativeElement, `free-${this.theme}`);
   }
 
   writeValue(value: any) {
@@ -55,16 +65,21 @@ export class CheckboxComponent implements ControlValueAccessor, AfterViewInit {
     }
   }
 
+  isChecked() {
+    return this.checkedValue.indexOf(this.value) !== -1;
+  }
+
+  removeValue() {
+    this.checkedValue = this.checkedValue.filter(val => val !== this.value);
+  }
+
   addValue() {
+    if (this.isChecked()) { return; }
     if (this.checkedValue) {
       this.checkedValue = [...this.checkedValue, this.value];
     } else {
       this.checkedValue = [this.value];
     }
-  }
-
-  isChecked() {
-    return this.checkedValue.indexOf(this.value) !== -1;
   }
 
   registerOnChange(fn: Function) {
@@ -77,15 +92,18 @@ export class CheckboxComponent implements ControlValueAccessor, AfterViewInit {
 
   onCheckboxChange(e: any, label: string) {
     if (!this.disabled) {
-      e = e.target;
-      this.checked = e.checked;
-      if (this.checked) {
-        this.addValue();
+      this.checked = e.target.checked;
+      if (!this.binary) {
+        if (this.checked) {
+          this.addValue();
+        } else {
+          this.removeValue();
+        }
+        this.onModelChange(this.checkedValue);
       } else {
-        this.checkedValue.splice(this.checkedValue.indexOf(this.value), 1);
+        this.onModelChange(this.checked);
       }
-      this.onChange.emit(this.checkedValue);
-      this.onModelChange(this.checkedValue);
+      this.onChange.emit(this.checked);
     }
   }
 }
