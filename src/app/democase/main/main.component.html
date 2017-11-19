@@ -61,7 +61,11 @@
           <a routerLink="/main/changelog" style="padding-left: 20px;text-decoration: underline">more</a></h4>
       </f-header>
       <free-accordion-group [closeOthers]="true">
-        <free-accordion class="let-menu-item" header="v0.4.2" [selected]="true">
+        <free-accordion class="let-menu-item" header="v0.4.3" [selected]="true">
+          <h5 class="subtitle">Bug Fixes</h5>
+          <ul class="free-ul-padding" [innerHTML]="'UPDATE.v043.BUG' | translate"></ul>
+        </free-accordion>
+        <free-accordion class="let-menu-item" header="v0.4.2">
           <h5 class="subtitle">Features</h5>
           <ul class="free-ul-padding" [innerHTML]="'UPDATE.v042.FEATURE' | translate"></ul>
           <h5 class="subtitle">Bug Fixes</h5>

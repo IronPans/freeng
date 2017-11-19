@@ -12,7 +12,7 @@ import {NgModule, Component, Input, Output, EventEmitter, AfterViewInit} from '@
         <free-pagination-item [disabled]="isFirstPage" (click)="changePageToPrev()">
           <i class="fa fa-angle-left"></i>
         </free-pagination-item>
-        <free-pagination-item *ngIf="startEllipsis">
+        <free-pagination-item *ngIf="startEllipsis" (click)="changePageToFirst()">
           1
         </free-pagination-item>
         <free-pagination-item [disabled]="true" *ngIf="startEllipsis">

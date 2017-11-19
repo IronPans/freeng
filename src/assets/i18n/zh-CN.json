@@ -888,6 +888,9 @@
         "BUG": "<li>修复选择器Select多选无效</li>",
         "FEATURE": "<li>复选框新增binary，用于只返回一个布尔值</li>"
       },
+      "v043": {
+        "BUG": "<li>修复分页器Pagination点击第一页无效</li>"
+      },
       "ADD": "新增",
       "FIX": "修复",
       "UPDATE": "更新"

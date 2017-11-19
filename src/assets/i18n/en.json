@@ -883,6 +883,9 @@
       "BUG": "<li> Multi-select repair invalid selector.</li>",
       "FEATURE": "<li> checkbox added binary to return only one boolean </li>"
     },
+    "v043": {
+      "BUG": "<li>Pagination fix pager invalid click on the first page.</li>"
+    },
     "ADD": "Add",
     "FIX": "Fix",
     "UPDATE": "Update"
