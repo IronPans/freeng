@@ -16,9 +16,9 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   template: `
     <label [ngClass]="'free-checkbox'" [class]="styleClass"
            [class.free-checkbox-disabled]="disabled" #container>
+      <input type="checkbox" value="{{value}}"  [disabled]="disabled"
+             [checked]="checked" name="{{name}}" (change)="onCheckboxChange($event, label)">
       <div class="free-checkbox-inner">
-        <input type="checkbox" value="{{value}}"  [disabled]="disabled"
-            [checked]="checked" name="{{name}}" (change)="onCheckboxChange($event, label)">
         <div class="free-checkbox-ins"></div>
       </div>
       <div class="free-checkbox-title">{{label}}</div>
@@ -49,7 +49,7 @@ export class CheckboxComponent implements ControlValueAccessor {
   @Input() binary: boolean;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('container') container: ElementRef;
-  checkedValue: any[];
+  checkedValue: any;
   _checked: boolean;
   onModelChange: Function = () => {};
   onTouchedChange: Function = () => {};
@@ -61,15 +61,25 @@ export class CheckboxComponent implements ControlValueAccessor {
   writeValue(value: any) {
     if (value) {
       this.checkedValue = value;
+      if (!this.binary && !Array.isArray(this.checkedValue)) {
+        this.checkedValue = [value];
+      }
       this.checked = this.isChecked();
     }
   }
 
   isChecked() {
+    if (this.binary) {
+      return this.checkedValue;
+    }
     return this.checkedValue.indexOf(this.value) !== -1;
   }
 
   removeValue() {
+    if (this.binary) {
+      this.checkedValue = this.checked;
+      return;
+    }
     this.checkedValue = this.checkedValue.filter(val => val !== this.value);
   }
 

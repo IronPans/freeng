@@ -24,7 +24,7 @@ export class SidenavContentComponent {
     <div class="free-sidenav" #container [ngStyle]="style">
       <div class="free-sidenav-overlay" [style.background]="overlayBackground"
            *ngIf="overlay || outside" [class.free-sidenav-outside]="outside" (click)="toggle(false)"></div>
-      <div class="free-sidenav-wrapper" [ngStyle]="navStyle" *ngIf="_visible" [@slideState]="direction + 'In'"
+      <div class="free-sidenav-wrapper" [ngStyle]="navStyle" [@slideState]="stateName"
            (@slideState.start)="transitionStart()" (@slideState.done)="transitionEnd()">
         <ng-content></ng-content>
       </div>
@@ -36,46 +36,46 @@ export class SidenavContentComponent {
       state('leftIn rightIn topIn bottomIn', style({
         transform: 'translate3d(0, 0, 0)'
       })),
-      transition('void => leftIn', [
+      transition('inactive => leftIn', [
         style({transform: 'translate3d(-100%, 0, 0)'}),
         animate('300ms linear', style({
           transform: 'translate3d(0, 0, 0)'
         }))
       ]),
-      transition('void => rightIn', [
+      transition('inactive => rightIn', [
         style({transform: 'translate3d(100%, 0, 0)'}),
         animate('300ms linear', style({
           transform: 'translate3d(0, 0, 0)'
         }))
       ]),
-      transition('void => topIn', [
+      transition('inactive => topIn', [
         style({transform: 'translate3d(0, -100%, 0)'}),
         animate('300ms linear', style({
           transform: 'translate3d(0, 0, 0)'
         }))
       ]),
-      transition('void => bottomIn', [
+      transition('inactive => bottomIn', [
         style({transform: 'translate3d(0, 100%, 0)'}),
         animate('300ms linear', style({
           transform: 'translate3d(0, 0, 0)'
         }))
       ]),
-      transition('leftIn => void', [
+      transition('leftIn => inactive', [
         animate('300ms linear', style({
           transform: 'translate3d(-100%, 0, 0)'
         }))
       ]),
-      transition('rightIn => void', [
+      transition('rightIn => inactive', [
         animate('300ms linear', style({
           transform: 'translate3d(100%, 0, 0)'
         }))
       ]),
-      transition('topIn => void', [
+      transition('topIn => inactive', [
         animate('300ms linear', style({
           transform: 'translate3d(0, -100%, 0)'
         }))
       ]),
-      transition('bottomIn => void', [
+      transition('bottomIn => inactive', [
         animate('300ms linear', style({
           transform: 'translate3d(0, 100%, 0)'
         }))
@@ -98,6 +98,7 @@ export class SidenavComponent implements AfterViewInit, AfterContentInit {
   container: HTMLDivElement;
   width: string;
   height: string;
+  stateName: string;
   @Output() visibleChange: EventEmitter<any> = new EventEmitter();
   @Input()
   set visible(value: boolean) {
@@ -112,6 +113,7 @@ export class SidenavComponent implements AfterViewInit, AfterContentInit {
     this.direction = 'left';
     this.width = '250px';
     this.height = '200px';
+    this.stateName = 'inactive';
   }
 
   ngAfterViewInit() {
@@ -141,11 +143,13 @@ export class SidenavComponent implements AfterViewInit, AfterContentInit {
           this.renderer2.setStyle(this.content, 'transform', this.getTransform(this.direction));
         }
         this.renderer2.addClass(this.container, 'free-sidenav-active');
+        this.stateName = this.direction + 'In';
       } else {
         if (this.content) {
           this.renderer2.setStyle(this.content, 'transform', this.getTransform(''));
         }
         this.renderer2.removeClass(this.container, 'free-sidenav-active');
+        this.stateName = 'inactive';
       }
     }
     this.visibleChange.emit(this._visible);

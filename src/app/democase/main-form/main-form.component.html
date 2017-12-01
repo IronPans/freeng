@@ -76,6 +76,15 @@
                 <ng-template>{{'DEMO.INPUTTEXT.OPTION.5' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>disabled</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.INPUTTEXT.OPTION.6' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -103,10 +112,14 @@
                 Email address
               </free-inputtext>
             </p>
+            <p>
+              <free-inputtext [disabled]="true" [placeholder]="'Disabled'"></free-inputtext>
+            </p>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
               &lt;free-inputtext&gt;&lt;/free-inputtext&gt;
+              &lt;free-inputtext [disabled]="true" [placeholder]="'Disabled'"&gt;&lt;/free-inputtext&gt;
             </free-code>
           </free-tab>
         </free-tab-group>

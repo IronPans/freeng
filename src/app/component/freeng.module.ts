@@ -60,7 +60,7 @@ import {BackTopModule} from './back-top/back-top.component';
 import {PopoverModule} from './popover/popover.component';
 import {EchartModule} from './echart/echart.component';
 import {DomRenderer} from './common/dom';
-import {CustomFormModule} from './validation/custom-form-validator.modeule';
+import {CustomFormModule} from './validation/custom-form-validator.module';
 import {PipesModule} from './pipes/index';
 
 export {AccordionModule} from './accordion/accordion.component';
@@ -124,7 +124,7 @@ export {BackTopModule} from './back-top/back-top.component';
 export {PopoverModule} from './popover/popover.component';
 export {EchartModule} from './echart/echart.component';
 export {DomRenderer} from './common/dom';
-export {CustomFormModule, CustomFormValidator} from './validation/custom-form-validator.modeule';
+export {CustomFormModule, CustomFormValidator} from './validation/custom-form-validator.module';
 export * from './pipes/index';
 
 @NgModule({

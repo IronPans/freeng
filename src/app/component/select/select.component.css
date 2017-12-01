@@ -50,6 +50,9 @@
       max-height: 10rem;
       overflow: hidden;
       overflow-y: auto; }
+      .free-select .free-select-menu .free-select-wrapper ul {
+        padding: 0;
+        margin: 0; }
       .free-select .free-select-menu .free-select-wrapper li {
         display: block;
         padding: 5px 10px; }

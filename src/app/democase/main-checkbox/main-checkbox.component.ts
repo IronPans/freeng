@@ -20,6 +20,7 @@ export class MainCheckboxComponent implements OnInit {
   constructor() {
     this.selectedCity = ['guangdong'];
     this.binaryChecked = false;
+    this.checked = ['Item1'];
   }
 
   ngOnInit() {

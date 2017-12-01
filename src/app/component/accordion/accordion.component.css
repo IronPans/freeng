@@ -12,6 +12,8 @@ free-accordion-group {
       .free-accordion-group .accordion-item.free-accordion-disabled .accordion-toggle:hover {
         color: #737373;
         text-decoration: none; }
+    .free-accordion-group .accordion-item.free-accordion-open .accordion-content {
+      overflow: visible; }
   .free-accordion-group .accordion-toggle {
     display: flex;
     align-items: center;

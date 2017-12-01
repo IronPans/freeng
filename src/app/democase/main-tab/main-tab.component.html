@@ -110,8 +110,11 @@
         <free-tab-group direction="right">
           <free-tab [header]="'Demo'">
             <free-tab-group>
+              <!--<free-tab *ngFor="let tab of tabs" [header]="tab.title">-->
+                <!--{{tab.content}}-->
+              <!--</free-tab>-->
               <free-tab header="Tab 1">
-                Tab 2 content
+                Tab 1 content
               </free-tab>
               <free-tab header="Tab 2">
                 Tab 2 content
@@ -305,11 +308,14 @@
       </div>
 
       <div class="free-card-board">
-        <h3 class="free-toolbar">Direction</h3>
+        <h3 class="free-toolbar">Template</h3>
         <free-tab-group [direction]="'right'">
           <free-tab [header]="'Demo'">
-            <free-tab-group [vertical]="true" [direction]="'right'">
-              <free-tab header="Tab 1">
+            <free-tab-group>
+              <free-tab>
+                <ng-template [fTemplate]="'header'">
+                  123
+                </ng-template>
                 FreeNG is a UI framework based on Angular, provides a lot of powerful re-combination of UI components. The threshold is very low, used to use.
                 FreeNG is still very young, the first version was released in May 2017.
                 Current Version： v0.2.3

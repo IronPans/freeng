@@ -154,7 +154,8 @@
         "设置正则匹配信息，可选。<br>可选值：<ul class='free-ul-padding'><li><code>tel</code>:手机号</li><li><code>email</code>:邮箱</li><li><code>card</code>:身份证号码</li><li><code>chinese</code>:中文</li></ul>注：如果值不在内置验证中，会使用该值作为验证信息",
         "设置验证失败时的提示信息，可选",
         "是否增加图标，可选(采用FontAwesome)",
-        "输入框类型，包括所有Input支持的类型(text/password等)，默认为text"
+        "输入框类型，包括所有Input支持的类型(text/password等)，默认为text",
+        "是否禁用，默认为false"
       ],
       "VALIDATION": [
         "请输入手机号码",
@@ -248,10 +249,10 @@
       "OPTION": [
         "自定义文本，可选",
         "设置复选框的名称，可选",
-        "是否默认选中，默认为false，可选",
+        "是否默认选中，默认为false，可选，只用于初始化",
         "是否禁用，默认为false，可选",
-        "自定义样式",
-        "是否只返回一个布尔值"
+        "设置样式类，可选",
+        "是否返回布尔值而不是一组值，可选"
       ]
     },
     "CHIP": {
@@ -513,6 +514,7 @@
       "DESCRIPTION": " 下拉选择框可在多个选择之间进行选择。选择显示当前状态和向下箭头。",
       "OPTION": [
         "设置option，必选",
+        "设置可描述输入字段预期值的提示信息，可选",
         "设置可描述输入字段预期值的提示信息，可选",
         "是否可选择多个选项，可选",
         "是否显示过滤输入框，可选"
@@ -885,11 +887,15 @@
         "FEATURE": "<li>Accordion新增styleClass属性，用于自定义样式</li><li>新增常用的表单验证器(date, email, url, cn, range, number, phone)</li><li><span>Upload</span><ul class='free-padding-ul'><li>新增maxFileSize、name属性</li><li>新增method、url、withCredentials属性</li><li>新增showProgress、autoUpload属性</li><li>新增invalidFileSizeMessage、invalidFileTypeMessage属性</li><li>新增styleClass</li><li>新增onChange、onBeforeUpload、onProgress、onUpload、onError、onRemove、onBeforeSend事件</li></ul></li>"
       },
       "v042": {
-        "BUG": "<li>修复选择器Select多选无效</li>",
-        "FEATURE": "<li>复选框新增binary，用于只返回一个布尔值</li>"
+        "BUG": "<li>修复Selector选择器多选时选择无效的问题</li>",
+        "FEATURE": "<li>Checkbox移除theme属性，新增styleClass/binary属性</li><li>官网新增Grid栅格系统实例说明</li>"
       },
       "v043": {
-        "BUG": "<li>修复分页器Pagination点击第一页无效</li>"
+        "BUG": "<li>修复Paginator分页器的按钮点击无效</li>"
+      },
+      "v044": {
+        "BUG": "<li>修复无法动态创建tab</li><li>修复Accordion在Sidenav中使用时，动画无效</li><li>修复Switch位置错乱的问题</li><li>修复Checkbox设置默认值的问题</li>",
+        "FEATURE": "<li>Inputtext新增disabled属性</li>"
       },
       "ADD": "新增",
       "FIX": "修复",

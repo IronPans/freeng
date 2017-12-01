@@ -22,7 +22,7 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
         </div>
         <div class="input-field {{'free-' + theme}}" [ngClass]="inputClass">
           <span class="free-inputtext-addon" *ngIf="prefix"><i class="fa {{'fa-' + prefix}}"></i></span>
-          <input type="{{type}}" #text [(ngModel)]="value"
+          <input type="{{type}}" #text [(ngModel)]="value" [disabled]="disabled"
                  (blur)="onBlur(text.value)" placeholder="{{placeholder}}" (input)="onInput(text, $event)">
           <i *ngIf="icon" class="fa {{'fa-' + icon}} free-inputtext-validator"></i>
           <div class="free-inputtext-tip" #tip [style.display]="showTip ? 'block' : 'none'">
@@ -46,6 +46,7 @@ export class InputtextComponent implements ControlValueAccessor, OnInit, AfterVi
   get theme() {
     return this._theme;
   }
+  @Input() disabled: boolean;
   @Input() icon: string;
   @Input() pattern: string;
   @Input() message: string;

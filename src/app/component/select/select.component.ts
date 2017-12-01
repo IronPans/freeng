@@ -2,7 +2,8 @@ import {CommonModule} from '@angular/common';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {
   NgModule, Component, OnInit, Input, EventEmitter,
-  Output, ViewChild, ElementRef, Renderer2, forwardRef, OnDestroy, ContentChildren, QueryList, AfterContentInit,
+  Output, ViewChild, ElementRef, Renderer2, forwardRef, OnDestroy,
+  ContentChildren, QueryList, AfterContentInit,
 } from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {CheckboxModule} from '../checkbox/checkbox.component';
@@ -59,7 +60,7 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
       transition(':enter', [
         style({
           opacity: 0,
-          transform: 'translate3d(0, 80px, 0)'
+          transform: 'translate3d(0, 30px, 0)'
         }), animate('.4s cubic-bezier(.25,.8,.25,1)')
       ]),
       transition(':leave', animate('.1s', style({
@@ -97,8 +98,8 @@ export class SelectComponent implements ControlValueAccessor, OnInit, AfterConte
   selfClick: boolean;
   bindDocumentClickListener: Function;
   itemTemplate: any;
-  @ContentChildren(FreeTemplateDirective) tempalateDirective: QueryList<FreeTemplateDirective>;
   templates: any;
+  @ContentChildren(FreeTemplateDirective) tempalateDirective: QueryList<FreeTemplateDirective>;
   onModelChange: Function = () => {
   };
   onTouchedChange: Function = () => {

@@ -153,7 +153,8 @@
         "Set the regular match information, optional. <br> optional values：<ul class='free-ul-padding'><li><code>tel</code>:phone number</li><li><code>email</code>:email</li><li><code>card</code>:identification number</li><li><code>chinese</code>:Chinese</li></ul>Note: If the value is not in the built-in authentication, the value is used as the authentication information",
         "Set the authentication message when the authentication fails, select",
         "Whether to add an icon, optional (using FontAwesome)",
-        "The input type, including all Input supported types (text / password, etc.), defaults is text"
+        "The input type, including all Input supported types (text / password, etc.), defaults is text",
+        "Whether to disable, the default is false"
       ],
       "VALIDATION": [
         "Please enter the phone number",
@@ -885,6 +886,10 @@
     },
     "v043": {
       "BUG": "<li>Pagination fix pager invalid click on the first page.</li>"
+    },
+    "v044": {
+      "BUG": "<li>Fix can not create tab dynamically</li><li>Fix Accordion Animation is not valid when used in Sidenav</li><li>Repair Switch the location of the problem</li><li>Repair Checkbox set the default value of the problem</li>",
+      "FEATURE": "<li>Inputtext add disabled attribute</li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

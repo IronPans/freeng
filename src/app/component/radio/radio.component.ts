@@ -15,9 +15,9 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: 'free-radio',
     template: `
     <label class="free-radio" #container>
+      <input type="radio" value="{{label}}" [disabled]="disabled"
+             [checked]="checked" name="{{name}}" (change)="onChange($event)">
       <div class="free-radio-inner">
-        <input type="radio" value="{{label}}" [disabled]="disabled"
-            [checked]="checked" name="{{name}}" (change)="onChange($event)">
         <div class="free-radio-ins"></div>
       </div>
       <div class="free-radio-label">{{label}}</div>

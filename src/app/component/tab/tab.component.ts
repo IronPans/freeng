@@ -1,8 +1,10 @@
 import {CommonModule} from '@angular/common';
-import { NgModule, Component, ContentChildren, ViewChild, OnInit,
-  Input, Output, AfterContentInit, QueryList, EventEmitter, ElementRef, Renderer2
+import {
+  NgModule, Component, ContentChildren, ViewChild, OnInit,
+  Input, Output, AfterContentInit, QueryList, EventEmitter, ElementRef, Renderer2, AfterViewInit, forwardRef, Inject
 } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import {FreeTemplateDirective, ShareModule} from '../common/share';
 
 @Component({
   selector: 'free-tab-nav',
@@ -10,7 +12,12 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
        <ul class="free-tab-navs">
          <li class="free-tab-nav" *ngFor="let tab of tabs; let i = index;"
              [class.active]="tab.selected" [class.free-tab-disabled]="tab.disabled">
-           <span (click)="tabClick(i, tab.disabled)">{{tab.header}}</span>
+           <span (click)="tabClick(i, tab.disabled)">
+             <ng-container *ngIf="tab.headerTemplate;else h">
+               <free-template [template]="tab.headerTemplate"></free-template>
+             </ng-container>
+           <ng-template #h>{{tab.header}}</ng-template>
+           </span>
          </li>
        </ul>
     `
@@ -53,7 +60,7 @@ export class TabNavComponent {
   ]
 })
 
-export class TabComponent implements OnInit {
+export class TabComponent implements OnInit, AfterViewInit {
   @Input() header: string;
   @Input() disabled: boolean;
   @Input() maxHeight: number;
@@ -69,6 +76,23 @@ export class TabComponent implements OnInit {
 
   tabClass: any;
   _selected: boolean;
+  @ContentChildren(FreeTemplateDirective) templates: QueryList<FreeTemplateDirective>;
+  headerTemplate: any;
+  tabGroupComponent: any;
+
+  constructor(@Inject(forwardRef(() => TabGroupComponent)) tabGroupComponent) {
+    this.tabGroupComponent = tabGroupComponent;
+  }
+
+  ngAfterViewInit() {
+    const temp = this.templates.toArray();
+    temp.forEach((t) => {
+      if (t.getType() === 'header') {
+        this.headerTemplate = t.template;
+      }
+    });
+    this.tabGroupComponent.addGroup(this);
+  }
 
   toggleClass() {
     this.tabClass = {
@@ -106,15 +130,14 @@ export class TabGroupComponent implements AfterContentInit {
   @ViewChild('nav') nav: ElementRef;
   @Input() maxHeight: number;
   @Input() vertical: boolean;
-  @ContentChildren(TabComponent) tabGroup: QueryList<TabComponent>;
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   tabs: TabComponent[];
   constructor(public renderer2: Renderer2) {
     this.activeIndex = 0;
+    this.tabs = [];
   }
 
   ngAfterContentInit() {
-    this.tabInit();
     if (this.theme) {
       this.renderer2.addClass(this.groups.nativeElement, 'theme-' + this.theme);
     }
@@ -124,12 +147,6 @@ export class TabGroupComponent implements AfterContentInit {
   }
 
   tabInit() {
-    this.tabs = this.tabGroup.toArray();
-    if (this.maxHeight) {
-      for (const tab of this.tabs) {
-        tab.maxHeight = this.maxHeight;
-      }
-    }
     this.open(this.activeIndex);
   }
 
@@ -152,12 +169,20 @@ export class TabGroupComponent implements AfterContentInit {
       activeIndex: this.activeIndex
     });
   }
+
+  addGroup(tab: TabComponent) {
+    if (this.maxHeight) {
+        tab.maxHeight = this.maxHeight;
+    }
+    this.tabs.push(tab);
+    this.tabInit();
+  }
 }
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, ShareModule],
   declarations: [TabNavComponent, TabComponent, TabGroupComponent],
-  exports: [TabNavComponent, TabComponent, TabGroupComponent]
+  exports: [TabComponent, TabGroupComponent, FreeTemplateDirective]
 })
 
 export class TabGroupModule {}
