@@ -12,11 +12,10 @@ import {DomRenderer} from '../common/dom';
 @Component({
   selector: 'free-modal',
   template: `
-    <div *ngIf="_visible" class="free-modal"
-         [ngStyle]="{'z-index': zIndex, width: width + 'px',
+    <div class="free-modal" [ngStyle]="{'z-index': zIndex, width: width + 'px',
          height: height + 'px','left.px': left, 'top.px': top}"
-         [ngClass]="modalClass"
-         [@fadeInScale]="modalState" [class.free-modal-spinner]="spinner">
+         [ngClass]="modalClass" [@fadeInScale]="modalState" [class.free-modal-spinner]="spinner"
+         (@fadeInScale.start)="transitionStart()" (@fadeInScale.done)="transitionEnd()">
       <div class="free-modal-header" *ngIf="!spinner" (mousedown)="onMouseDown($event)">
         <span *ngIf="header">{{header}}</span>
         <span><ng-content select="f-header"></ng-content></span>
@@ -55,15 +54,19 @@ import {DomRenderer} from '../common/dom';
   `,
   animations: [
     trigger('fadeInScale', [
-      state('in', style({
+      state('active', style({
         opacity: 1,
         transform: 'translate(-50%, 0)'
       })),
-      transition('void => *', [
+      state('inactive', style({
+        opacity: 0,
+        transform: 'translate(-50%, -25%)'
+      })),
+      transition('inactive => active', [
         style({opacity: 0, transform: 'translate(-50%, -25%)'}),
         animate('300ms ease-out', style({opacity: 1, transform: 'translate(-50%, 0)'}))
       ]),
-      transition('* => void', [
+      transition('active => inactive', [
         style({opacity: 1, transform: 'translate(-50%, 0)'}),
         animate('300ms ease-out', style({opacity: 0, transform: 'translate(-50%, -25%)'}))
       ])
@@ -110,7 +113,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
               public domRenderer: DomRenderer,
               public renderer2: Renderer2) {
     this.data = {done: true};
-    this.modalState = 'in';
+    this.modalState = 'inactive';
     this.theme = 'default';
   }
 
@@ -174,10 +177,12 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
 
   center() {
     this.left = window.innerWidth / 2;
+    this.top = 0;
   }
 
   show() {
     this._visible = true;
+    this.modalState = 'active';
     this.center();
     this.addOverlay();
     if (this.delay) {
@@ -209,6 +214,7 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
   close() {
     this.hide();
     this._visible = false;
+    this.modalState = 'inactive';
     this.visibleChange.emit(false);
     this.data = {done: true};
   }
@@ -235,6 +241,18 @@ export class ModalComponent implements AfterViewInit, OnDestroy {
       this.isDown = false;
       this.modal.style.transitionDuration = '300ms';
     });
+  }
+
+  transitionStart() {
+    if (this._visible) {
+      this.er.nativeElement.firstElementChild.style.display = 'block';
+    }
+  }
+
+  transitionEnd() {
+    if (!this._visible) {
+      this.er.nativeElement.firstElementChild.style.display = 'none';
+    }
   }
 
   unbindDocumentMouseListener() {

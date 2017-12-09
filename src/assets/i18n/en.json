@@ -891,6 +891,9 @@
       "BUG": "<li>Fix can not create tab dynamically</li><li>Fix Accordion Animation is not valid when used in Sidenav</li><li>Repair Switch the location of the problem</li><li>Repair Checkbox set the default value of the problem</li>",
       "FEATURE": "<li>Inputtext add disabled attribute</li>"
     },
+    "v045": {
+      "BUG": "<li>Fix Modal can not move.</li>"
+    },
     "ADD": "Add",
     "FIX": "Fix",
     "UPDATE": "Update"

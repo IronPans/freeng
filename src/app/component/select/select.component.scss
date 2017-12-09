@@ -57,6 +57,9 @@
       max-height: 10rem;
       overflow: hidden;
       overflow-y: auto;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
 
       ul {
         padding: 0;

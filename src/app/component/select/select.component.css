@@ -49,7 +49,10 @@
       min-width: 100%;
       max-height: 10rem;
       overflow: hidden;
-      overflow-y: auto; }
+      overflow-y: auto;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
       .free-select .free-select-menu .free-select-wrapper ul {
         padding: 0;
         margin: 0; }

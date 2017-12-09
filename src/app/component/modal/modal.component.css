@@ -1,7 +1,7 @@
 .free-modal {
+  display: none;
   position: fixed;
   background: #fff;
-  overflow: hidden;
   min-width: 10rem;
   border-radius: 2px;
   top: 0;
@@ -9,8 +9,9 @@
   color: #222;
   z-index: 9999;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  transform: translate(-50%, 0);
+  overflow: hidden;
   margin: 30px auto;
+  transform: translate(-50%, 0);
   transition: all .3s; }
   .free-modal.free-modal-spinner {
     min-width: 1rem;
@@ -25,7 +26,7 @@
     .free-modal.free-modal-spinner .free-loading span {
       background: #fff; }
   .free-modal .free-modal-header {
-    cursor: pointer; }
+    cursor: move; }
   .free-modal .free-modal-content {
     padding: .75rem; }
   .free-modal .free-modal-header,
