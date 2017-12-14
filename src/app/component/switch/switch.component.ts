@@ -25,7 +25,6 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 })
 export class SwitchComponent implements ControlValueAccessor, AfterViewInit {
-
   @Input() label: string;
   @Input() checked: boolean;
   @Input() value: any;

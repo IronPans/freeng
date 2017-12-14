@@ -25,6 +25,12 @@ free-accordion-group {
         }
       }
     }
+
+    &.free-accordion-open {
+      .accordion-content {
+        overflow: visible;
+      }
+    }
   }
 
   .accordion-toggle {

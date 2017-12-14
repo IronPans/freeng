@@ -182,7 +182,17 @@
             <div class="simulation-browser">
               <button fButton (click)="overlay = !overlay">Open</button>
               <free-sidenav [(visible)]="overlay" [overlay]="true">
-                <h3>Sidenav</h3>
+                <free-accordion-group>
+                  <free-accordion header="Item 1">
+                    Item 1 content.
+                  </free-accordion>
+                  <free-accordion header="Item 2">
+                    Item 2 content.
+                  </free-accordion>
+                  <free-accordion header="Item 3">
+                    Item 3 content.
+                  </free-accordion>
+                </free-accordion-group>
               </free-sidenav>
             </div>
           </free-tab>

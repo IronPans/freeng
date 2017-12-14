@@ -1,5 +1,6 @@
 .free-radio {
-  display: flex;
+  position: relative;
+  display: inline-flex;
   cursor: pointer;
   align-items: center;
   margin-bottom: .5rem; }
@@ -10,9 +11,14 @@
     align-items: center; }
   .free-radio .free-radio-inner {
     padding-right: 6px; }
-  .free-radio .free-radio-inner input {
-    -webkit-appearance: none;
-    opacity: 0; }
+  .free-radio > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10; }
   .free-radio .free-radio-ins,
   .free-radio .free-radio-ins::after {
     position: relative;
@@ -36,32 +42,32 @@
   .free-radio .free-radio-ins::after {
     width: .35rem;
     height: .35rem;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform .25s; }
-  .free-radio .free-radio-ins::after,
-  .free-radio .free-radio-inner > input:checked + .free-radio-ins {
+    transition: transform .25s;
+    transform: translate(-50%, -50%) scale(0); }
+  .free-radio > input:checked + .free-radio-inner .free-radio-ins::after,
+  .free-radio > input:checked + .free-radio-inner .free-radio-ins {
     background: #138265; }
-  .free-radio .free-radio-inner > input:checked + .free-radio-ins::after {
+  .free-radio > input:checked + .free-radio-inner .free-radio-ins::after {
     transform: translate(-50%, -50%) scale(1); }
   .free-radio .free-radio-title {
     padding-left: .3rem; }
-  .free-radio .free-radio-inner > input:disabled + .free-radio-ins,
-  .free-radio .free-radio-inner > input:disabled + .free-radio-ins:after {
+  .free-radio > input:disabled + .free-radio-ins,
+  .free-radio > input:disabled + .free-radio-ins:after {
     background: rgba(0, 0, 0, 0.15) !important; }
   .free-radio.free-primary .free-radio-ins::after,
-  .free-radio.free-primary .free-radio-inner > input:checked + .free-radio-ins {
+  .free-radio.free-primary > input:checked + .free-radio-ins {
     background: #177bbb; }
   .free-radio.free-info .free-radio-ins::after,
-  .free-radio.free-info .free-radio-inner > input:checked + .free-radio-ins {
+  .free-radio.free-info > input:checked + .free-radio-ins {
     background: #1ccacc; }
   .free-radio.free-success .free-radio-ins::after,
-  .free-radio.free-success .free-radio-inner > input:checked + .free-radio-ins {
+  .free-radio.free-success > input:checked + .free-radio-ins {
     background: #1aae88; }
   .free-radio.free-warning .free-radio-ins::after,
-  .free-radio.free-warning .free-radio-inner > input:checked + .free-radio-ins {
+  .free-radio.free-warning > input:checked + .free-radio-ins {
     background: #fbb23e; }
   .free-radio.free-danger .free-radio-ins::after,
-  .free-radio.free-danger .free-radio-inner > input:checked + .free-radio-ins {
+  .free-radio.free-danger > input:checked + .free-radio-ins {
     background: #e33244; }
 
 /*# sourceMappingURL=radio.component.css.map */

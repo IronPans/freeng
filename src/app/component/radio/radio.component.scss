@@ -1,7 +1,8 @@
 @import "../../../assets/sass/variables";
 
 .free-radio {
-  display: flex;
+  position: relative;
+  display: inline-flex;
   cursor: pointer;
   align-items: center;
   margin-bottom: .5rem;
@@ -17,9 +18,14 @@
     padding-right: 6px;
   }
 
-  .free-radio-inner input {
-    -webkit-appearance: none;
+  >input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
+    z-index: 10;
   }
 
   .free-radio-ins,
@@ -51,32 +57,36 @@
   .free-radio-ins::after {
     width: .35rem;
     height: .35rem;
-    transform: translate(-50%, -50%) scale(0);
     transition: transform .25s;
+    transform: translate(-50%, -50%) scale(0);
   }
 
-  .free-radio-ins::after,
-  .free-radio-inner>input:checked+.free-radio-ins {
-    background: $theme-green;
-  }
+  >input:checked+.free-radio-inner {
+    .free-radio-ins::after,
+    .free-radio-ins {
+      background: $theme-green;
+    }
 
-  .free-radio-inner>input:checked+.free-radio-ins::after {
-    transform: translate(-50%, -50%) scale(1);
+    .free-radio-ins::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
   }
 
   .free-radio-title {
     padding-left: .3rem;
   }
 
-  .free-radio-inner>input:disabled+.free-radio-ins,
-  .free-radio-inner>input:disabled+.free-radio-ins:after {
-    background: rgba(0, 0, 0, 0.15) !important;
+  >input:disabled {
+    +.free-radio-ins,
+    +.free-radio-ins:after {
+      background: rgba(0, 0, 0, 0.15) !important;
+    }
   }
 
   @each $theme, $color in $theme {
     &.free-#{$theme} {
       .free-radio-ins::after,
-      .free-radio-inner>input:checked+.free-radio-ins {
+      >input:checked+.free-radio-ins {
         background: $color;
       }
     }

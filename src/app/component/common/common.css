@@ -971,11 +971,12 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
   font-size: .75rem;
   height: 1.7rem;
   border-radius: 3px;
+  outline: none;
   line-height: 1;
   user-select: none;
   text-decoration: none; }
 
-.btn:not([disabled]):hover, .btn:not([disabled]):focus, .btn:not([disabled]):active, .btn:not([disabled]).active {
+.btn:not([disabled]):active, .btn:not([disabled]).active {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   color: #333;
@@ -1143,6 +1144,9 @@ a:not(.btn):visited, a:not(.btn):link, a:not(.btn):active {
 
 .btn i.free-btn-right {
   padding-left: 5px; }
+
+button {
+  outline: none; }
 
 button.btn i {
   font-size: .8rem; }

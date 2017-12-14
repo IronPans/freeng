@@ -9,6 +9,7 @@ import {SidenavModule} from '../../component/sidenav/sidenav.component';
 import {MainSidenavRoutingModule} from './main-sidenav-routing.module';
 import {ButtonModule} from '../../component/button/button.directive';
 import {LanguageModule} from '../common/language';
+import {AccordionModule} from '../../component/accordion/accordion.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {LanguageModule} from '../common/language';
     ButtonModule,
     SidenavModule,
     MainSidenavRoutingModule,
-    LanguageModule
+    LanguageModule,
+    AccordionModule
   ],
   declarations: [MainSidenavComponent]
 })

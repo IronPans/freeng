@@ -32,8 +32,11 @@ export class AccordionGroupComponent {
 @Component({
   selector: 'free-accordion',
   template: `
-    <div class="accordion-item {{styleClass}}" [class.free-accordion-disabled]="disabled">
-      <div (click)="toggle()" class="accordion-toggle" [ngClass]="itemClass">
+    <div class="accordion-item {{styleClass}}"
+         [class.free-accordion-open]="open"
+         [class.free-accordion-disabled]="disabled">
+      <div (click)="toggle()"
+           class="accordion-toggle" [ngClass]="itemClass">
         <span class="accordion-toggle-inner">
           <ng-container *ngIf="header">
             <i class="fa {{'fa-' + _icon}}" *ngIf="!!_icon"></i>
@@ -42,8 +45,8 @@ export class AccordionGroupComponent {
           <ng-content select="f-header"></ng-content>
         </span>
       </div>
-      <div class="accordion-content" [@accordionState]="isActive" (@accordionState.done)="transitionDone()"
-          (@accordionState.start)="transitionStart()">
+      <div class="accordion-content" [@accordionState]="activeName"
+           (@accordionState.done)="transitionDone()" (@accordionState.start)="transitionStart()">
         <div class="accordion-inner">
           <ng-content></ng-content>
         </div>
@@ -56,7 +59,7 @@ export class AccordionGroupComponent {
     state('inactive', style({
       height: 0
     })),
-    transition('inactive <=> active', animate('300ms ease'))
+    transition('active <=> inactive', animate('300ms ease'))
   ])]
 })
 export class AccordionComponent implements OnInit {
@@ -86,31 +89,31 @@ export class AccordionComponent implements OnInit {
     this.toggleClass();
   }
   _selected: boolean;
+  open: boolean;
   _icon: string;
-  isActive: string;
   itemClass: any;
   activeIndex: number;
   isAnimating: boolean;
+  activeName = 'inactive';
   accordionGroup: AccordionGroupComponent;
   constructor(accordionGroup: AccordionGroupComponent) {
     this.accordionGroup = accordionGroup;
     this.toggleable = true;
-    this.isActive = 'inactive';
     this.itemClass = {};
     this.styleClass = '';
+    this.selected = false;
+    this.accordionGroup.addGroup(this);
   }
 
   ngOnInit() {
-    this.accordionGroup.addGroup(this);
-    this.toggleClass();
   }
 
   toggleClass() {
     if (!this.isAnimating && !this.disabled) {
-      this.isActive = this.selected ? 'active' : 'inactive';
       this.itemClass = {
         'accordion-item-expand': this.selected
       };
+      this.activeName = this.selected ? 'active' : 'inactive';
     }
   }
 
@@ -121,11 +124,13 @@ export class AccordionComponent implements OnInit {
   }
 
   transitionStart() {
+    this.open = false;
     this.isAnimating = true;
   }
 
   transitionDone() {
     this.isAnimating = false;
+    this.open = this.selected;
   }
 
 }

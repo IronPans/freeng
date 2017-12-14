@@ -26,6 +26,11 @@
       border-radius: 4px !important;
       transition: all 0.3s;
 
+      &:disabled {
+        background: #eee;
+        cursor: not-allowed;
+      }
+
       & + span {
         position: absolute;
         top: 100%;

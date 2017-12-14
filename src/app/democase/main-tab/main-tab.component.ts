@@ -13,7 +13,18 @@ export class MainTabComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   pageTitle = 'Components-Tab';
   activeState: any;
-  constructor() { }
+  tabs: any;
+  interval: any;
+  constructor() {
+    this.tabs = [];
+    // this.interval = setInterval(() => {
+    //   if (this.tabs.length < 5) {
+    //     this.tabs.push({title: this.tabs.length, content: '123' + this.tabs.length});
+    //   } else {
+    //     clearInterval(this.interval);
+    //   }
+    // }, 1000)
+  }
 
   ngOnInit() {
   }

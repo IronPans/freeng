@@ -1,12 +1,16 @@
 .free-switch {
   position: relative;
-  overflow: hidden;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: space-between; }
-  .free-switch input {
-    display: none; }
+  .free-switch > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; }
   .free-switch input[type='checkbox']:checked + .free-switch-media .switch-label {
     background: #1ABC9C; }
     .free-switch input[type='checkbox']:checked + .free-switch-media .switch-label:after {

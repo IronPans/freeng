@@ -1,6 +1,6 @@
 import {Component, HostBinding} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CustomFormValidator} from '../../component/validation/custom-form-validator.modeule';
+import {CustomFormValidator} from '../../component/validation/custom-form-validator.module';
 import {fadeInUp} from '../common/animations';
 
 @Component({

@@ -19,6 +19,9 @@
     box-sizing: border-box;
     border-radius: 4px !important;
     transition: all 0.3s; }
+    .free-inputtext .input-field input:disabled {
+      background: #eee;
+      cursor: not-allowed; }
     .free-inputtext .input-field input + span {
       position: absolute;
       top: 100%;
