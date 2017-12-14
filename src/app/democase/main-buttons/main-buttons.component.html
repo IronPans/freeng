@@ -102,7 +102,8 @@
           </free-tab>
           <free-tab header="Code">
             <free-code lang="html">
-              &lt;a fButton&gt;default&lt;/a&gt;
+              &lt;a fButton&gt;Link&lt;/a&gt;
+              &lt;button fButton&gt;Button&lt;/a&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -116,7 +117,7 @@
           </free-tab>
           <free-tab header="Code">
             <free-code lang="html">
-              &lt;a fButton&gt;default&lt;/a&gt;
+              &lt;button fButton [round]="true"&gt;Round Button&lt;/button&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
@@ -289,11 +290,12 @@
           </free-tab>
           <free-tab header="Code">
             <free-code lang="html">
-              &lt;free-button-group&gt;
-              &lt;button fButton&gt;default&lt;/button&gt;
-              &lt;button fButton&gt;default&lt;/button&gt;
-              &lt;button fButton&gt;default&lt;/button&gt;
-              &lt;/free-button-group&gt;
+              &lt;button fButton [flat]="true"&gt;Default&lt;/button&gt;
+              &lt;button fButton [theme]="'primary'" [flat]="true"&gt;default&lt;/button&gt;
+              &lt;button fButton [theme]="'info'" [flat]="true"&gt;default&lt;/button&gt;
+              &lt;button fButton [theme]="'warning'" [flat]="true"&gt;default&lt;/button&gt;
+              &lt;button fButton [theme]="'success'" [flat]="true"&gt;default&lt;/button&gt;
+              &lt;button fButton [theme]="'danger'" [flat]="true"&gt;default&lt;/button&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
