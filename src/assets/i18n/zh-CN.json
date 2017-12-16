@@ -507,7 +507,8 @@
       "OPTION": [
         "必选，浮动按钮数组。",
         "可选，设置浮动按钮的类型(vertical、vertical-reverse、horizontal、horizontal-reverse、circle)，默认horizontal",
-        "可选，圆形浮动按钮的位置(lt、lb、rt、rb)，默认lt"
+        "可选，圆形浮动按钮的位置(lt、lb、rt、rb)，默认lt",
+        "可选，鼠标划过显示按钮，默认不显示"
       ]
     },
     "SELECT": {
