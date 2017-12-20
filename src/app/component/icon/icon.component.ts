@@ -1,24 +1,22 @@
 import { CommonModule } from '@angular/common';
-import {NgModule, Component, OnInit, AfterViewInit, Input,
-  ViewChild, ElementRef, Renderer2} from '@angular/core';
+import {
+  NgModule, Component, OnInit, AfterViewInit, Input,
+  ViewChild, ElementRef, Renderer2
+} from '@angular/core';
 
 @Component({
   selector: 'free-icon',
-  template: `<i #container class="free-icon fa fa-{{icon}}" [ngClass]="iconClass"></i>`
+  template: `<i #container class="free-icon fa fa-{{icon}}"></i>`
 })
 export class IconComponent implements OnInit, AfterViewInit {
 
   @Input() icon: string;
   @Input() spin: boolean;
   @Input() size: string;
-  iconClass: any;
   @ViewChild('container') container: ElementRef;
   constructor(public renderer2: Renderer2) { }
 
   ngOnInit() {
-    this.iconClass = {
-      'fa-spin': this.spin
-    };
   }
 
   ngAfterViewInit() {
@@ -40,4 +38,4 @@ export class IconComponent implements OnInit, AfterViewInit {
   exports: [IconComponent]
 })
 
-export class IconModule {}
+export class IconModule { }

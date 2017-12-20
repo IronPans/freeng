@@ -506,7 +506,8 @@
       "OPTION": [
         "Required, floating button array.",
         "Optional, set the type of floating button (vertical, vertical-reverse, horizontal, horizontal-reverse, circle), the default horizontal",
-        "Optional, circular floating button position (lt, lb, rt, rb), default lt"
+        "Optional, circular floating button position (lt, lb, rt, rb), default lt",
+        "Optional, display sub buttons when mouse over，default false"
       ]
     },
     "SELECT": {

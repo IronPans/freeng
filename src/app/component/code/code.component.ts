@@ -1,4 +1,4 @@
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import * as highlight from 'highlight.js/lib/highlight.js';
 import * as highlightJavascript from 'highlight.js/lib/languages/javascript';
 import * as highlightCSS from 'highlight.js/lib/languages/css';
@@ -55,7 +55,7 @@ export class CodeComponent implements AfterViewInit {
         line = line.replace(indentation, '');
         return line.replace(/\t/g, '  ');
       });
-      const text = lines.join('\n').trim();
+      const text = lines.join('\n').replace(/(\s*$)/g, '') + ('\n') + (' ');
       this.code.textContent = text;
       return text;
     }

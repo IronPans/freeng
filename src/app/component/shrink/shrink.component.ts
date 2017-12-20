@@ -68,7 +68,7 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.reverse = false;
-    this.distance = 10;
+    this.distance = 60;
     this.angle = 60;
   }
 

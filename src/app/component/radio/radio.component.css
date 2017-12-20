@@ -3,71 +3,105 @@
   display: inline-flex;
   cursor: pointer;
   align-items: center;
-  margin-bottom: .5rem; }
-  .free-radio .free-radio-inner,
-  .free-radio .free-radio-ins {
-    display: flex;
-    cursor: pointer;
-    align-items: center; }
-  .free-radio .free-radio-inner {
-    padding-right: 6px; }
-  .free-radio > input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    z-index: 10; }
-  .free-radio .free-radio-ins,
-  .free-radio .free-radio-ins::after {
-    position: relative;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.26);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
-  .free-radio .free-radio-ins::before,
-  .free-radio .free-radio-ins::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: #fff;
-    border-radius: 50%; }
-  .free-radio .free-radio-ins::before {
-    width: .7rem;
-    height: .7rem;
-    transform: translate(-50%, -50%); }
-  .free-radio .free-radio-ins::after {
-    width: .35rem;
-    height: .35rem;
-    transition: transform .25s;
-    transform: translate(-50%, -50%) scale(0); }
-  .free-radio > input:checked + .free-radio-inner .free-radio-ins::after,
-  .free-radio > input:checked + .free-radio-inner .free-radio-ins {
-    background: #138265; }
-  .free-radio > input:checked + .free-radio-inner .free-radio-ins::after {
-    transform: translate(-50%, -50%) scale(1); }
-  .free-radio .free-radio-title {
-    padding-left: .3rem; }
-  .free-radio > input:disabled + .free-radio-ins,
-  .free-radio > input:disabled + .free-radio-ins:after {
-    background: rgba(0, 0, 0, 0.15) !important; }
-  .free-radio.free-primary .free-radio-ins::after,
-  .free-radio.free-primary > input:checked + .free-radio-ins {
-    background: #177bbb; }
-  .free-radio.free-info .free-radio-ins::after,
-  .free-radio.free-info > input:checked + .free-radio-ins {
-    background: #1ccacc; }
-  .free-radio.free-success .free-radio-ins::after,
-  .free-radio.free-success > input:checked + .free-radio-ins {
-    background: #1aae88; }
-  .free-radio.free-warning .free-radio-ins::after,
-  .free-radio.free-warning > input:checked + .free-radio-ins {
-    background: #fbb23e; }
-  .free-radio.free-danger .free-radio-ins::after,
-  .free-radio.free-danger > input:checked + .free-radio-ins {
-    background: #e33244; }
+  margin-bottom: .5rem;
+}
+
+.free-radio .free-radio-inner,
+.free-radio .free-radio-ins {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.free-radio .free-radio-inner {
+  padding-right: 6px;
+}
+
+.free-radio>input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+}
+
+.free-radio .free-radio-ins,
+.free-radio .free-radio-ins::after {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.26);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.free-radio .free-radio-ins::before,
+.free-radio .free-radio-ins::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.free-radio .free-radio-ins::before {
+  width: .7rem;
+  height: .7rem;
+  transform: translate(-50%, -50%);
+}
+
+.free-radio .free-radio-ins::after {
+  width: .35rem;
+  height: .35rem;
+  transition: transform .25s;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.free-radio>input:checked+.free-radio-inner .free-radio-ins::after,
+.free-radio>input:checked+.free-radio-inner .free-radio-ins {
+  background: #138265;
+}
+
+.free-radio>input:checked+.free-radio-inner .free-radio-ins::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.free-radio .free-radio-title {
+  padding-left: .3rem;
+}
+
+.free-radio>input:disabled+.free-radio-ins,
+.free-radio>input:disabled+.free-radio-ins:after {
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.free-primary>input:checked+.free-radio-inner .free-radio-ins::after,
+.free-primary>input:checked+.free-radio-inner .free-radio-ins {
+  background: #177bbb;
+}
+
+.free-info>input:checked+.free-radio-inner .free-radio-ins::after,
+.free-info>input:checked+.free-radio-inner .free-radio-ins {
+  background: #1ccacc;
+}
+
+.free-success>input:checked+.free-radio-inner .free-radio-ins::after,
+.free-success>input:checked+.free-radio-inner .free-radio-ins {
+  background: #1aae88;
+}
+
+.free-warning>input:checked+.free-radio-inner .free-radio-ins::after,
+.free-warning>input:checked+.free-radio-inner .free-radio-ins {
+  background: #fbb23e;
+}
+
+.free-danger>input:checked+.free-radio-inner .free-radio-ins::after,
+.free-danger>input:checked+.free-radio-inner .free-radio-ins {
+  background: #e33244;
+}
+
 
 /*# sourceMappingURL=radio.component.css.map */
