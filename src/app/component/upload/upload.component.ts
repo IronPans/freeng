@@ -89,10 +89,11 @@ export class UploadComponent implements AfterViewInit {
   @Output() onError: EventEmitter<any> = new EventEmitter();
   @Output() onBeforeSend: EventEmitter<any> = new EventEmitter();
   @Output() onRemove: EventEmitter<any> = new EventEmitter();
-  @ViewChild('input') input: ElementRef;
+  @ViewChild('input') inputViewChild: ElementRef;
   @ViewChild('container') uploadViewChild: ElementRef;
   @ContentChild(HeaderComponent) header: ElementRef;
   uploadElem: HTMLDivElement;
+  inputElem: any;
   files: any[];
   progress: number;
   _title: string;
@@ -120,6 +121,7 @@ export class UploadComponent implements AfterViewInit {
   ngAfterViewInit() {
     this._title = this.title;
     this.uploadElem = this.uploadViewChild.nativeElement;
+    this.inputElem = this.inputViewChild.nativeElement;
     if (this.mode === 'advanced') {
       this.zone.runOutsideAngular(() => {
         this.uploadElem.addEventListener('dragover', this.onDragOver.bind(this));
@@ -172,7 +174,10 @@ export class UploadComponent implements AfterViewInit {
 
   onDelete(index: number) {
     this.files.splice(index, 1);
-    this.onRemove.emit({files: this.files})
+    this.onRemove.emit({files: this.files});
+    if (this.mode === 'advanced') {
+      this.inputElem.value = '';
+    }
   }
 
   upload(files?: any) {

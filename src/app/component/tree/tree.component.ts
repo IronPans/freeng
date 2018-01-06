@@ -1,211 +1,428 @@
-import { CommonModule } from '@angular/common';
 import {
-  NgModule, Component, Input, OnChanges, Output, EventEmitter, forwardRef, Inject,
-  ElementRef, AfterViewInit
+  NgModule,
+  Component,
+  Input,
+  AfterContentInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+  OnInit,
+  EmbeddedViewRef,
+  ViewContainerRef,
+  ContentChildren,
+  QueryList,
+  TemplateRef,
+  Inject,
+  forwardRef
 } from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import {DomRenderer} from '../common/dom';
+import {CommonModule} from '@angular/common';
+import {ShareModule} from '../common/share';
+import {FreeTemplateDirective} from '../common/share';
+
+export interface TreeNode {
+  label?: string;
+  data?: any;
+  type?: string;
+  icon?: any;
+  expandedIcon?: any;
+  collapsedIcon?: any;
+  leaf?: boolean;
+  expanded?: boolean;
+  parent?: TreeNode;
+  partialSelected?: boolean;
+  style?: string,
+  styleClass?: string;
+  selectable?: boolean;
+  children?: TreeNode[];
+}
 
 @Component({
-  selector: 'free-echeckbox',
-  template: `
-    <label class="free-checkbox">
-      <div class="free-checkbox-inner">
-        <input type="checkbox" #rb
-               [checked]="checked" name="{{checkboxName}}" (change)="onChange(rb.checked)">
-        <div class="free-checkbox-ins"></div>
-      </div>
-    </label>
-  `
+  selector: 'free-template-loader',
+  template: ``
 })
-export class ECheckboxComponent {
+export class TreeNodeLoaderComponent implements OnInit, OnDestroy {
 
-  @Input() checkboxName: string;
-  @Input() checked: boolean;
-  @Output() onClick: EventEmitter<any> = new EventEmitter();
-  checkbox: HTMLInputElement;
-  constructor() {
+  @Input() node: any;
+  @Input() template: TemplateRef<any>;
+  view: EmbeddedViewRef<any>;
+
+  constructor(public viewContainer: ViewContainerRef) {
   }
 
-  onChange(value: boolean) {
-    this.checked = value;
-    this.onClick.emit({
-      checked: value
+  ngOnInit() {
+    this.view = this.viewContainer.createEmbeddedView(this.template, {
+      '\$implicit': this.node
     });
+  }
+
+  ngOnDestroy() {
+    this.view.destroy();
   }
 }
 
 @Component({
-  selector: 'free-tree-item',
+  selector: 'free-tree-node',
   template: `
-    <li class="free-tree-item" #item [class.open]="expanded">
-      <span>
-        <i class="fa fa-angle-left" (click)="toggle($event, item)"></i>
-        <free-echeckbox *ngIf="selectable" (onClick)="onFoldClick($event, target)"></free-echeckbox>
-        <div class="free-tree-item-inner">
-          <i class="fa" [ngClass]="{'fa-folder': !isOpen, 'fa-folder-open': isOpen}"></i>
-          {{title}}
-        </div>
-      </span>
-      <ul *ngIf="folder" [@treeState]="isActive">
-        <free-tree-item *ngFor="let f of folder" title="{{f.title}}" [selectable]="selectable"
-                        [file]="f?.file"  [folder]="f?.folder" [expanded]="f.expanded"></free-tree-item>
-      </ul>
-      <ul *ngIf="file" [@treeState]="isActive">
-        <li *ngFor="let f of file; index as i" class="last" (click)="onClick(f)">
-          <span>
-            <free-echeckbox *ngIf="selectable" (onClick)="onFileClick($event, target, i)"></free-echeckbox>
-            <i class="fa {{f.type || 'fa-file-word-o'}}"></i>
-            {{f.title}}
+    <ng-template [ngIf]="node">
+      <li [ngClass]="['free-treenode',node.styleClass||'', isLeaf() ? 'free-treenode-leaf': '']">
+        <div class="free-treenode-content" (click)="onNodeClick($event)" (touchend)="onNodeTouchEnd()"
+             [ngClass]="{'free-treenode-selectable':tree.selectionMode &&
+             node.selectable !== false,'free-treenode-content-selected':isSelected()}">
+                    <span class="free-tree-toggler fa fa-fw"
+                          [ngClass]="{'fa-caret-right':!node.expanded,'fa-caret-down':node.expanded}"
+                          (click)="toggle($event)"></span>
+          <div class="free-tree-checkbox" *ngIf="tree.selectionMode == 'checkbox'">
+            <div class="free-tree-checkbox-box">
+                    <span class="free-tree-checkbox-icon fa"
+                              [ngClass]="{'fa-check':isSelected(),'fa-minus':node.partialSelected}">
+                        </span>
+            </div>
+          </div>
+          <span [class]="getIcon()" *ngIf="node.icon||node.expandedIcon||node.collapsedIcon"></span>
+          <span class="free-treenode-label" [ngClass]="{'free-selected-highlight':isSelected()}">
+            <span *ngIf="!tree.getTemplateForNode(node)">{{node.label}}</span>
+            <span *ngIf="tree.getTemplateForNode(node)">
+              <free-template-loader [node]="node" [template]="tree.getTemplateForNode(node)">
+                                </free-template-loader>
+            </span>
           </span>
-        </li>
-      </ul>
-    </li>
-  `,
-  animations: [
-    trigger('treeState', [
-      state('active', style({
-        height: '*'
-      })),
-      state('inactive', style({
-        height: 0
-      })),
-      transition('active <=> inactive', animate('.25s ease'))
-    ])
-  ]
+        </div>
+        <ul class="free-treenode-children" style="display: none;" *ngIf="node.children && node.expanded"
+            [style.display]="node.expanded ? 'block' : 'none'">
+          <free-tree-node *ngFor="let childNode of node.children;let index=index"
+                          [node]="childNode" [parentNode]="node" [index]="index"></free-tree-node>
+        </ul>
+      </li>
+    </ng-template>
+  `
 })
+export class TreeNodeComponent implements OnInit {
 
-export class TreeItemComponent implements AfterViewInit, OnChanges {
+  static ICON_CLASS = 'fa fa-fw';
 
-  @Input() title: string;
-  @Input() folder: any;
-  @Input() file: any;
-  @Input() selectable: boolean;
-  @Input() expanded: boolean;
-  @Input() expandedIcon: string;
-  @Input() collapsedIcon: string;
+  @Input() node: TreeNode;
+
+  @Input() parentNode: TreeNode;
+
   @Input() index: number;
-  @Output() onSelect: EventEmitter<any> = new EventEmitter();
-  isActive: string;
-  isOpen: boolean;
-  target: any;
-  constructor(@Inject(forwardRef(() => TreeComponent)) private tree: TreeComponent,
-              private er: ElementRef) {
-    this.isActive = 'inactive';
+
+  constructor(@Inject(forwardRef(() => TreeComponent)) public tree: TreeComponent) {
   }
 
-  ngAfterViewInit() {
-    this.target = this.er.nativeElement;
+  ngOnInit() {
+    this.node.parent = this.parentNode;
   }
 
-  ngOnChanges() {
-    if (this.expanded) {
-      this.isActive = 'active';
-      this.isOpen = true;
+  getIcon() {
+    let icon: string;
+
+    if (this.node.icon) {
+      icon = this.node.icon;
+    } else {
+      icon = this.node.expanded && this.node.children && this.node.children.length ?
+        this.node.expandedIcon : this.node.collapsedIcon;
     }
+
+    return TreeNodeComponent.ICON_CLASS + ' ' + icon;
   }
 
-  toggle(event: any, item) {
-    event.stopPropagation();
-    const cl = item.classList;
-    cl.toggle('open');
-    this.isOpen = !this.isOpen;
-    this.isActive = this.isOpen ? 'active' : 'inactive';
+  isLeaf() {
+    return this.node.leaf === false ? false : !(this.node.children && this.node.children.length);
   }
 
-  onClick(item: any) {
-    this.onSelect.emit(item);
+  toggle(event: Event) {
+    if (this.node.expanded) {
+      this.tree.onNodeCollapse.emit({originalEvent: event, node: this.node});
+    } else {
+      this.tree.onNodeExpand.emit({originalEvent: event, node: this.node});
+    }
+
+    this.node.expanded = !this.node.expanded
   }
 
-  onFoldClick(event, item) {
-    this.tree.getSelection(item);
+  onNodeClick(event: MouseEvent) {
+    this.tree.onNodeClick(event, this.node);
   }
 
-  onFileClick(event, item, index) {
-    this.tree.getSelection(item, index);
+  onNodeTouchEnd() {
+    this.tree.onNodeTouchEnd();
+  }
+
+  isSelected() {
+    return this.tree.isSelected(this.node);
   }
 }
 
 @Component({
   selector: 'free-tree',
   template: `
-    <div class="free-tree">
-      <ul>
-       <free-tree-item *ngFor="let menu of menus;index as i" [index]="i" title="{{menu.title}}"
-                       [selectable]="selectable"
-                     [file]="menu?.file"  [folder]="menu?.folder" [expanded]="menu.expanded">
-       </free-tree-item>
+    <div [ngClass]="{'free-tree':true,'free-tree-selectable':selectionMode,'free-tree-loading': loading}"
+         [ngStyle]="style" [class]="styleClass">
+      <div class="free-tree-loading-mask" *ngIf="loading"></div>
+      <div class="free-tree-loading-content" *ngIf="loading">
+        <i [class]="'fa fa-pulse fa-2x ' + loadingIcon"></i>
+      </div>
+      <ul class="free-tree-inner" *ngIf="value">
+        <free-tree-node *ngFor="let node of value;let index=index" [node]="node" [index]="index">
+        </free-tree-node>
       </ul>
-    </div>`,
-  providers: [DomRenderer]
+      <div class="free-tree-empty-message" *ngIf="!loading && !value">{{emptyMessage}}</div>
+    </div>
+  `
 })
+export class TreeComponent implements AfterContentInit {
 
-export class TreeComponent {
-  @Input() menus: any;
-  @Input() selectable: boolean;
-  selected: any;
-  constructor(private domRenderer: DomRenderer) {
-    this.selected = [];
+  @Input() value: TreeNode[];
+
+  @Input() selectionMode: string;
+
+  @Input() selection: any;
+
+  @Input() style: any;
+
+  @Input() styleClass: string;
+
+  @Input() metaKeySelection = true;
+
+  @Input() loading: boolean;
+
+  @Input() loadingIcon: string;
+
+  @Input() emptyMessage: string;
+
+  @Input() passSelectedUp = true;
+
+  @Input() passSelectedDown = true;
+
+  @Output() selectionChange: EventEmitter<any> = new EventEmitter();
+
+  @Output() onNodeSelect: EventEmitter<any> = new EventEmitter();
+
+  @Output() onNodeUnselect: EventEmitter<any> = new EventEmitter();
+
+  @Output() onNodeExpand: EventEmitter<any> = new EventEmitter();
+
+  @Output() onNodeCollapse: EventEmitter<any> = new EventEmitter();
+
+  @ContentChildren(FreeTemplateDirective) templates: QueryList<any>;
+
+  public templateMap: any;
+
+  public nodeTouched: boolean;
+
+  constructor() {
+    this.loadingIcon = 'fa-spinner';
+    this.emptyMessage = 'No records found';
   }
 
-  getSelection(item, index?: number) {
-    const selected = [];
-    this.selected = [];
-    while (item && !this.domRenderer.hasClass(item, 'free-tree')) {
-      const itemIndex = this.getItemIndex(item);
-      this.selected.unshift({
-        type: index ? 'file' : 'folder',
-        index: itemIndex
-      });
-      item = this.getItem(item.parentNode);
+  ngAfterContentInit() {
+    if (this.templates.length) {
+      this.templateMap = {};
     }
-    if (typeof index !== 'undefined') {
-      this.selected.push({
-        type: 'file',
-        index: index
-      });
-    }
-    let label = this.menus;
-    const first = this.selected[0];
-    selected.push(label[first['index']].title);
-    label = label[first['index']][first['type']];
-    this.selected.forEach((v, k) => {
-      const next = this.selected[k + 1];
-      if (next) {
-        selected.push(label[next.index].title);
-        label = label[next.index][next.type];
-      }
+
+    this.templates.forEach((item) => {
+      this.templateMap[item.name] = item.template;
     });
-    console.log(selected);
   }
 
-  getItem(item) {
-    while (item) {
-      if (this.domRenderer.hasClass(item, 'free-tree-item')) {
-        item = item.parentNode;
-        break;
+  onNodeClick(event: MouseEvent, node: TreeNode) {
+    const eventTarget = event.target;
+
+    if (eventTarget['className'] && eventTarget['className'].indexOf('free-tree-toggler') === 0) {
+      return;
+    } else if (this.selectionMode) {
+      if (node.selectable === false) {
+        return;
       }
-      item = item.parentNode;
+
+      const index = this.findIndexInSelection(node);
+      const selected = (index >= 0);
+
+      if (this.isCheckboxSelectionMode()) {
+        if (selected) {
+          if (this.passSelectedDown) {
+            this.passDown(node, false);
+          } else {
+            this.selection = this.selection.filter((val, i) => i !== index);
+          }
+
+          if (this.passSelectedUp && node.parent) {
+            this.passUp(node.parent, false);
+          }
+
+          this.selectionChange.emit(this.selection);
+          this.onNodeUnselect.emit({originalEvent: event, node: node});
+        } else {
+          if (this.passSelectedDown) {
+            this.passDown(node, true);
+          } else {
+            this.selection = [...this.selection || [], node];
+          }
+
+          if (this.passSelectedUp && node.parent) {
+            this.passUp(node.parent, true);
+          }
+
+          this.selectionChange.emit(this.selection);
+          this.onNodeSelect.emit({originalEvent: event, node: node});
+        }
+      } else {
+        const metaSelection = this.nodeTouched ? false : this.metaKeySelection;
+
+        if (metaSelection) {
+          const metaKey = (event.metaKey || event.ctrlKey);
+
+          if (selected && metaKey) {
+            if (this.isSingleSelectionMode()) {
+              this.selectionChange.emit(null);
+            } else {
+              this.selection = this.selection.filter((val, i) => i !== index);
+              this.selectionChange.emit(this.selection);
+            }
+
+            this.onNodeUnselect.emit({originalEvent: event, node: node});
+          } else {
+            if (this.isSingleSelectionMode()) {
+              this.selectionChange.emit(node);
+            } else if (this.isMultipleSelectionMode()) {
+              this.selection = (!metaKey) ? [] : this.selection || [];
+              this.selection = [...this.selection, node];
+              this.selectionChange.emit(this.selection);
+            }
+
+            this.onNodeSelect.emit({originalEvent: event, node: node});
+          }
+        } else {
+          if (this.isSingleSelectionMode()) {
+            if (selected) {
+              this.selection = null;
+              this.onNodeUnselect.emit({originalEvent: event, node: node});
+            } else {
+              this.selection = node;
+              this.onNodeSelect.emit({originalEvent: event, node: node});
+            }
+          } else {
+            if (selected) {
+              this.selection = this.selection.filter((val, i) => i !== index);
+              this.onNodeUnselect.emit({originalEvent: event, node: node});
+            } else {
+              this.selection = [...this.selection || [], node];
+              this.onNodeSelect.emit({originalEvent: event, node: node});
+            }
+          }
+
+          this.selectionChange.emit(this.selection);
+        }
+      }
     }
-    return item;
+
+    this.nodeTouched = false;
   }
 
-  getItemIndex(item) {
-    const items = item.parentNode.querySelectorAll('free-tree-item');
-    let index;
-    for (let i = 0; i < items.length; i++) {
-      if (items[i] === item) {
-        index = i;
+  onNodeTouchEnd() {
+    this.nodeTouched = true;
+  }
+
+  findIndexInSelection(node: TreeNode) {
+    let index: number = -1;
+
+    if (this.selectionMode && this.selection) {
+      if (this.isSingleSelectionMode()) {
+        index = (this.selection === node) ? 0 : -1;
+      } else {
+        for (let i = 0; i < this.selection.length; i++) {
+          if (this.selection[i] === node) {
+            index = i;
+            break;
+          }
+        }
       }
     }
+
     return index;
+  }
+
+  passUp(node: TreeNode, select: boolean) {
+    if (node.children && node.children.length) {
+      let selectedCount = 0;
+      let childPartialSelected = false;
+      for (const child of node.children) {
+        if (this.isSelected(child)) {
+          selectedCount++;
+        } else if (child.partialSelected) {
+          childPartialSelected = true;
+        }
+      }
+
+      if (select && selectedCount === node.children.length) {
+        this.selection = [...this.selection || [], node];
+        node.partialSelected = false;
+      } else {
+        if (!select) {
+          const index = this.findIndexInSelection(node);
+          if (index >= 0) {
+            this.selection = this.selection.filter((val, i) => i !== index);
+          }
+        }
+
+        node.partialSelected = (childPartialSelected ||
+        selectedCount > 0 && selectedCount !== node.children.length);
+      }
+    }
+
+    const parent = node.parent;
+    if (parent) {
+      this.passUp(parent, select);
+    }
+  }
+
+  passDown(node: TreeNode, select: boolean) {
+    const index = this.findIndexInSelection(node);
+
+    if (select && index === -1) {
+      this.selection = [...this.selection || [], node];
+    } else if (!select && index > -1) {
+      this.selection = this.selection.filter((val, i) => i !== index);
+    }
+
+    node.partialSelected = false;
+
+    if (node.children && node.children.length) {
+      for (const child of node.children) {
+        this.passDown(child, select);
+      }
+    }
+  }
+
+  isSelected(node: TreeNode) {
+    return this.findIndexInSelection(node) !== -1;
+  }
+
+  isSingleSelectionMode() {
+    return this.selectionMode && this.selectionMode === 'single';
+  }
+
+  isMultipleSelectionMode() {
+    return this.selectionMode && this.selectionMode === 'multiple';
+  }
+
+  isCheckboxSelectionMode() {
+    return this.selectionMode && this.selectionMode === 'checkbox';
+  }
+
+  getTemplateForNode(node: TreeNode): TemplateRef<any> {
+    if (this.templateMap) {
+      return node.type ? this.templateMap[node.type] : this.templateMap['default'];
+    } else {
+      return null;
+    }
   }
 }
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [ECheckboxComponent, TreeItemComponent, TreeComponent],
-  exports: [ECheckboxComponent, TreeItemComponent, TreeComponent]
+  declarations: [TreeComponent, TreeNodeComponent, TreeNodeLoaderComponent],
+  exports: [TreeComponent, ShareModule]
 })
-
-export class TreeModule {}
+export class TreeModule {
+}

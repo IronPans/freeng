@@ -1,11 +1,42 @@
-.free-tree .free-checkbox {
-  display: inline; }
-  .free-tree .free-checkbox .free-checkbox-ins {
-    transform: scale(0.8); }
-  .free-tree .free-checkbox .free-checkbox-inner {
-    padding: 0; }
-    .free-tree .free-checkbox .free-checkbox-inner > input:checked + .free-checkbox-ins:before {
-      background: #222; }
+.free-tree .free-treenode-children {
+  margin: 0;
+  padding: 0 0 0 1em; }
+.free-tree.free-tree-selectable .free-tree-inner {
+  cursor: pointer; }
+.free-tree .free-treenode.free-treenode-leaf > .free-treenode-content > .free-tree-toggler {
+  visibility: hidden; }
+.free-tree .free-treenode .free-treenode-content.free-treenode-selectable .free-treenode-label:not(.free-selected-highlight):hover {
+  background: #eee; }
+.free-tree .free-tree-loading,
+.free-tree .free-tree-loading-mask {
+  background: #666666;
+  opacity: .50;
+  filter: Alpha(Opacity=50); }
+.free-tree .free-treenode-label {
+  padding: 0 5px;
+  border-radius: 3px; }
+.free-tree .free-selected-highlight {
+  border-color: #166cc1;
+  background: #1976d2;
+  color: #FFF; }
+.free-tree .free-tree-checkbox {
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: .25em; }
+  .free-tree .free-tree-checkbox .free-tree-checkbox-box {
+    width: 1.125em;
+    height: 1.125em;
+    line-height: 1.125em;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #d6d6d6;
+    background: #ffffff;
+    color: #555555; }
+    .free-tree .free-tree-checkbox .free-tree-checkbox-box .free-tree-checkbox-icon {
+      margin-left: 1px;
+      display: block; }
 .free-tree ul {
   list-style: none;
   color: #333; }
@@ -14,40 +45,5 @@
   .free-tree ul li span:before,
   .free-tree ul li span:after {
     font-family: "FontAwesome"; }
-  .free-tree ul li.free-tree-item {
-    cursor: pointer;
-    line-height: 1.2rem; }
-    .free-tree ul li.free-tree-item > ul {
-      overflow: hidden; }
-    .free-tree ul li.free-tree-item ul li {
-      margin: 0 20px; }
-    .free-tree ul li.free-tree-item > span {
-      display: inline-flex;
-      align-items: center;
-      line-height: 0; }
-      .free-tree ul li.free-tree-item > span free-echeckbox + .free-tree-item-inner {
-        padding-left: .3rem; }
-      .free-tree ul li.free-tree-item > span > i {
-        order: -2;
-        display: block;
-        line-height: 0;
-        padding: 0 .3rem;
-        transition: all .25s; }
-      .free-tree ul li.free-tree-item > span:hover {
-        color: #222; }
-    .free-tree ul li.free-tree-item.open {
-      height: auto; }
-      .free-tree ul li.free-tree-item.open > span > i {
-        transform: rotate(-90deg); }
-  .free-tree ul li.last span {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    padding-left: 15px; }
-    .free-tree ul li.last span i {
-      padding: 0 .3rem 0 0;
-      color: #222; }
-    .free-tree ul li.last span free-echeckbox + i {
-      padding: 0 .3rem; }
 
 /*# sourceMappingURL=tree.component.css.map */

@@ -1,3 +1,4 @@
-
+:host ::ng-deep .tree-template button {
+  margin-bottom: 10px; }
 
 /*# sourceMappingURL=main-tree.component.css.map */

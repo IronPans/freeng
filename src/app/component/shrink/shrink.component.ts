@@ -42,15 +42,15 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
   _items: any;
   btn: HTMLDivElement;
   container: HTMLDivElement;
+  itemWidth: any;
+  distance: number;
+  delay: any;
+  angle: number;
   @Input()  reverse: boolean;
   @Input() menus: any;
   @Input() type = 'horizontal';
   @Input() direction = 'lt';
   @Input() hover: boolean;
-  itemWidth: any;
-  distance: number;
-  delay: any;
-  angle: number;
   @ViewChild('btn') _btn: ElementRef;
   @ViewChild('container') _container: ElementRef;
   @ViewChildren(ShrinkItemComponent) items: QueryList<ShrinkItemComponent>;
@@ -76,7 +76,6 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
     this.btn = this._btn.nativeElement;
     this.container = this._container.nativeElement;
     this._items = this.items.toArray();
-    this.itemWidth = this.btn.offsetWidth;
     const type = this.type.split('-');
     if (type[1] && type[1] === 'reverse') {
       this.type = type[0];
@@ -96,6 +95,7 @@ export class ShrinkComponent implements OnInit, AfterViewInit {
 
   open() {
     const op = this.reverse ? '-' : '';
+    this.itemWidth = this.btn.offsetWidth;
     this.domRenderer.addClass(this.btn, 'burge-open');
     switch (this.type) {
       case 'horizontal':

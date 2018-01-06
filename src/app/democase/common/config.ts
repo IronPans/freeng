@@ -1,6 +1,6 @@
 
 export const config = {
-  version: '0.4.5',
+  version: '0.5.0',
   theme: [
     { name: 'primary', color: '#1976d2'},
     { name: 'info', color: '#1ccacc'},

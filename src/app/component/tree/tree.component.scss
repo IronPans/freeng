@@ -2,17 +2,67 @@ $default:#222;
 
 .free-tree {
 
-  .free-checkbox {
-    display: inline;
+  .free-treenode-children {
+    margin: 0;
+    padding: 0 0 0 1em;
+  }
 
-    .free-checkbox-ins {
-      transform: scale(.8);
+  &.free-tree-selectable .free-tree-inner {
+    cursor: pointer;
+  }
+
+  .free-treenode {
+    &.free-treenode-leaf>.free-treenode-content>.free-tree-toggler {
+      visibility: hidden;
     }
 
-    .free-checkbox-inner {
-      padding: 0;
-      & > input:checked + .free-checkbox-ins:before {
-        background: $default;
+    .free-treenode-content {
+      &.free-treenode-selectable {
+        .free-treenode-label:not(.free-selected-highlight):hover {
+          background: #eee;
+        }
+      }
+    }
+  }
+
+  .free-tree-loading,
+  .free-tree-loading-mask {
+    background: #666666;
+    opacity: .50;
+    filter:Alpha(Opacity=50);
+  }
+
+  .free-treenode-label {
+    padding: 0 5px;
+    border-radius: 3px;
+  }
+
+  .free-selected-highlight {
+    border-color: #166cc1;
+    background: #1976d2;
+    color: #FFF;
+  }
+
+  .free-tree-checkbox {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: .25em;
+
+    .free-tree-checkbox-box {
+      width: 1.125em;
+      height: 1.125em;
+      line-height: 1.125em;
+      border-radius: 2px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #d6d6d6;
+      background: #ffffff;
+      color: #555555;
+
+      .free-tree-checkbox-icon {
+        margin-left: 1px;
+        display: block;
       }
     }
   }
@@ -26,65 +76,6 @@ $default:#222;
     li span:before,
     li span:after {
       font-family: "FontAwesome";
-    }
-
-    li.free-tree-item {
-      cursor: pointer;
-      line-height: 1.2rem;
-
-      & > ul {
-        overflow: hidden;
-      }
-
-      ul li {
-        margin: 0 20px;
-      }
-
-      & > span {
-        display: inline-flex;
-        align-items: center;
-        line-height: 0;
-
-        free-echeckbox + .free-tree-item-inner {
-          padding-left: .3rem;
-        }
-
-        & > i {
-          order: -2;
-          display: block;
-          line-height: 0;
-          padding: 0 .3rem;
-          transition: all .25s;
-        }
-
-        &:hover {
-          color: $default;
-        }
-      }
-
-      &.open {
-        height: auto;
-
-        & > span > i {
-          transform: rotate(-90deg);
-        }
-      }
-    }
-
-    li.last span {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      padding-left: 15px;
-
-      i {
-        padding: 0 .3rem 0 0;
-        color: $default;
-      }
-
-      free-echeckbox + i {
-        padding: 0 .3rem;
-      }
     }
   }
 }

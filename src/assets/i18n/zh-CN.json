@@ -652,8 +652,35 @@
       "DESCRIPTION": "文件树，简单实用",
       "OPTION": [
         "设置树形菜单数据",
-        "是否展开，默认false"
-      ]
+        "定义选择模式，可选值：'single', 'multiple', and 'checkbox'.",
+        "选择数据",
+        "组件的内联样式。",
+        "组件的样式类。",
+        "显示加载程序以指示正在进行数据加载",
+        "指示数据加载时显示的图标",
+        "当无数据时显示文字提示"
+      ],
+      "EVENTS": [
+        "选择节点时调用回调。",
+        "未选中节点时调用回调。",
+        "当节点展开时调用回调。",
+        "当节点折叠时调用回调。"
+      ],
+      "CHILD": [
+        "节点的标签",
+        "节点表示的数据",
+        "匹配ng-template类型的节点的类型",
+        "内容旁边要显示的节点的图标",
+        "在展开状态下使用的图标。",
+        "在折叠状态下使用的图标",
+        "指定节点是否有子节点，用于延迟加载",
+        "节点是否处于展开或折叠状态",
+        "节点的内联样式",
+        "节点的样式类",
+        "用于禁用特定节点的选择",
+        "子节点数组"
+      ],
+      "TREENODE": "Tree组件需要一组TreeNode对象作为数值。所有的属性都是可选的。"
     },
     "UPLOAD": {
       "DESCRIPTION": "支持缩略图预览、列表显示图片大小。",
@@ -899,6 +926,13 @@
       },
       "v045": {
         "BUG": "<li>修复Modal无法移动</li>"
+      },
+      "v046": {
+        "BUG": "<li>Radio修复设置Theme无效<a href='https://github.com/IronPans/freeng/issues/8' target='_blank'>#8</a></li> <li>开关中Change Event demo中切换报错<a href='https://github.com/IronPans/freeng/issues/10' target='_blank'>#10</a></li><li>upload 控件，选中任一文件，然后删除，再次选中此文件失败<a href='https://github.com/IronPans/freeng/issues/11' target='_blank'>#11</a></li>"
+      },
+      "v050": {
+        "CHANGES": "<li>兼容 Angular 5.0 版本，Angular 4.x 版本请使用 0.4.6 版本的 FreeNG</li>",
+        "REFACTOR": "<li>重构Tree组件。</li>"
       },
       "ADD": "新增",
       "FIX": "修复",

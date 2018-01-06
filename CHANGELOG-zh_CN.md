@@ -2,7 +2,61 @@
 
 [EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
 
-## 0.4.0(2017-11-04)
+## 0.5.0(2018-01-06)
+
+**CHANGES**
+  
+- 兼容 Angular 5.0 版本，Angular 4.x 版本请使用 0.4.6 版本的 FreeNG
+
+**Refactor**
+
+- 重构Tree组件。
+
+## 0.4.6(2017-12-27)
+
+**Bug Fixes**
+  
+- Radio修复设置Theme无效<a href='https://github.com/IronPans/freeng/issues/8' target='_blank'>#8</a>
+- 开关中Change Event demo中切换报错<a href='https://github.com/IronPans/freeng/issues/10' target='_blank'>#10</a>
+- upload 控件，选中任一文件，然后删除，再次选中此文件失败<a href='https://github.com/IronPans/freeng/issues/11' target='_blank'>#11</a>
+
+## 0.4.5(2017-12-09)
+
+**Bug Fixes**
+  
+- 修复Modal无法移动
+
+## 0.4.4(2017-12-02)
+
+**Features**
+
+- Inputtext新增disabled属性
+
+**Bug Fixes**
+  
+- 修复无法动态创建tab
+- 修复Accordion在Sidenav中使用时，动画无效
+- 修复Switch位置错乱的问题
+- 修复Checkbox设置默认值的问题
+
+## 0.4.3(2017-11-18)
+
+**Bug Fixes**
+  
+- 修复Paginator分页器的按钮点击无效
+
+## 0.4.2(2017-11-12)
+
+**Features**
+
+- Checkbox移除theme属性，新增styleClass/binary属性
+- 官网新增Grid栅格系统实例说明
+
+**Bug Fixes**
+  
+- 修复Selector选择器多选时选择无效的问题
+
+## 0.4.1(2017-11-04)
 
 **Features**
 

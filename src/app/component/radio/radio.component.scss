@@ -77,6 +77,7 @@
   }
 
   >input:disabled {
+    cursor: not-allowed;
     +.free-radio-ins,
     +.free-radio-ins:after {
       background: rgba(0, 0, 0, 0.15) !important;
@@ -85,8 +86,10 @@
 
   @each $theme, $color in $theme {
     &.free-#{$theme} {
-      .free-radio-ins::after,
-      >input:checked+.free-radio-ins {
+      >input:checked+.free-radio-inner .free-radio-ins {
+        &::after {
+          background: $color;
+        }
         background: $color;
       }
     }

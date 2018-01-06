@@ -19,7 +19,7 @@ export class MainSwitchComponent implements OnInit {
   }
 
   onChange(event: any) {
-    alert('是否选中：' + event.target.checked);
+    alert('是否选中：' + event.checked);
   }
 
 }

@@ -649,9 +649,36 @@
     "TREE": {
       "DESCRIPTION": "file tree, simple and practical",
       "OPTION": [
-        "Set tree menu data",
-        "Whether to expand, the default false"
-      ]
+        "Set Tree Menu Data",
+        "Define the selection mode, optional values: 'single', 'multiple', and 'checkbox'.",
+        "Choose data",
+        "Inline styles for components.",
+        "The component's style class.",
+        "Show loader to indicate that data loading is in progress",
+        "Icon indicating when data is loaded",
+        "When there is no data to display text prompts"
+      ],
+      "EVENTS": [
+        "Callback to invoke when a node is selected.",
+        "Callback to invoke when a node is unselected.",
+        "Callback to invoke when a node is expanded.",
+        "Callback to invoke when a node is collapsed."
+      ],
+      "CHILD": [
+        "Label of the node.",
+        "Data represented by the node.",
+        "Type of the node to match ng-template type.",
+        "Icon of the node to display next to content.",
+        "Icon to use in expanded state.",
+        "Icon to use in collapsed state.",
+        "Specifies if the node has children. Used in lazy loading.",
+        "Whether the node is in an expanded or collapsed state.",
+        "Inline style of the node.",
+        "Style class of the node.",
+        "Used to disable selection of a particular node.",
+        "An array of treenodes as children."
+      ],
+      "TREENODE": "Tree component requires an array of TreeNode objects as its value.all of the properties are optional."
     },
     "UPLOAD": {
       "DESCRIPTION": "Supports thumbnail preview, list shows picture size.",
@@ -893,6 +920,13 @@
     },
     "v045": {
       "BUG": "<li>Fix Modal can not move.</li>"
+    },
+    "v046": {
+      "BUG": "<li>Radio repair Theme is invalid<a href='https://github.com/IronPans/freeng/issues/8' target='_blank'>#8</a></li> <li>Switch in the Change Event demo switch error<a href='https://github.com/IronPans/freeng/issues/10' target='_blank'>#10</a></li><li>upload control, select any file, and then delete, select this file again failed<a href='https://github.com/IronPans/freeng/issues/11' target='_blank'>#11</a></li>"
+    },
+    "v050": {
+      "CHANGES": "<li>Compatible with Angular 5.0 version, Angular 4.x version Use FreeNG version 0.4.6</li>",
+      "REFACTOR": "<li>Refactoring the Tree component.</li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

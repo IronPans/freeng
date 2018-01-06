@@ -2,7 +2,60 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
-## 0.4.0(2017-11-04)
+## 0.5.0(2018-01-06)
+
+**CHANGES**
+  
+- Compatible with Angular 5.0 version, Angular 4.x version Use FreeNG version 0.4.6
+
+**Refactor**
+
+- Refactoring the Tree component.
+
+## 0.4.6(2017-12-27)
+
+**Bug Fixes**
+  
+- Radio repair Theme is invalid<a href='https://github.com/IronPans/freeng/issues/8' target='_blank'>#8</a>
+- Switch in the Change Event demo switch error<a href='https://github.com/IronPans/freeng/issues/10' target='_blank'>#10</a>
+- upload control, select any file, and then delete, select this file again failed<a href='https://github.com/IronPans/freeng/issues/11' target='_blank'>#11</a>
+
+## 0.4.5(2017-12-09)
+
+**Bug Fixes**
+  
+- Fix Modal can not move.
+
+## 0.4.4(2017-12-02)
+
+**Features**
+
+- Inputtext add disabled attribute
+
+**Bug Fixes**
+  
+- Fix can not create tab dynamically
+- Fix Accordion Animation is not valid when used in Sidenav
+- Repair Switch the location of the problem
+- Repair Checkbox set the default value of the problem
+
+## 0.4.3(2017-11-18)
+
+**Bug Fixes**
+  
+- Pagination fix pager invalid click on the first page.
+
+## 0.4.2(2017-11-12)
+
+**Features**
+
+- checkbox added binary to return only one boolean
+
+**Bug Fixes**
+  
+- Multi-select repair invalid selector.
+
+## 0.4.1(2017-11-04)
 
 **Features**
 

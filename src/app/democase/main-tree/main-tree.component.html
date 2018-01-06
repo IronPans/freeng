@@ -1,12 +1,11 @@
 <div class="main-container">
   <div class="row">
     <div fGrid="6" class="free-demo-board">
-      <p>
-        {{'DEMO.TREE.DESCRIPTION' | translate}}
-      </p>
+      <p>{{'DEMO.TREE.DESCRIPTION' | translate}}</p>
       <hr>
-      <h3 class="free-head-title">{{'API-OPTION' | translate}}<span class="symbol component"></span></h3>
-
+      <h3 class="free-head-title">
+        {{'API-OPTION' | translate}}<span class="symbol component"></span>
+      </h3>
       <div class="free-demo-row">
         <h3 class="free-title">free-tree</h3>
         <p>{{'COMPONENT.TREE' | translate}}</p>
@@ -18,10 +17,9 @@
               <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
             </free-table-row>
           </free-table-header>
-
           <free-table-body>
             <free-table-row>
-              <free-table-cell>menus</free-table-cell>
+              <free-table-cell>value</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Array</code></ng-template>
               </free-table-cell>
@@ -30,12 +28,240 @@
               </free-table-cell>
             </free-table-row>
             <free-table-row>
+              <free-table-cell>selectionMode</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.OPTION.1' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>selection</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>any</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.OPTION.2' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>style</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.OPTION.3' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>styleClass</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.OPTION.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>loading</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.OPTION.5' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>loadingIcon</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.OPTION.6' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>emptyMessage</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.OPTION.7' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+          </free-table-body>
+        </free-table>
+
+        <h3 class="free-head-title">{{'EVENT' | translate}}</h3>
+        <div class="free-demo-row">
+          <free-table>
+            <free-table-header>
+              <free-table-row>
+                <free-table-head><ng-template>{{'EVENT' | translate}}</ng-template></free-table-head>
+                <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+                <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+              </free-table-row>
+            </free-table-header>
+
+            <free-table-body>
+              <free-table-row>
+                <free-table-cell>onNodeSelect</free-table-cell>
+                <free-table-cell>
+                  <ng-template><code>Function</code></ng-template>
+                </free-table-cell>
+                <free-table-cell>
+                  <ng-template>{{'DEMO.TREE.EVENTS.0' | translate}}</ng-template>
+                </free-table-cell>
+              </free-table-row>
+              <free-table-row>
+                <free-table-cell>onNodeUnselect</free-table-cell>
+                <free-table-cell>
+                  <ng-template><code>Function</code></ng-template>
+                </free-table-cell>
+                <free-table-cell>
+                  <ng-template>{{'DEMO.TREE.EVENTS.1' | translate}}</ng-template>
+                </free-table-cell>
+              </free-table-row>
+              <free-table-row>
+                <free-table-cell>onNodeExpand</free-table-cell>
+                <free-table-cell>
+                  <ng-template><code>Function</code></ng-template>
+                </free-table-cell>
+                <free-table-cell>
+                  <ng-template>{{'DEMO.TREE.EVENTS.2' | translate}}</ng-template>
+                </free-table-cell>
+              </free-table-row>
+              <free-table-row>
+                <free-table-cell>onNodeCollapse</free-table-cell>
+                <free-table-cell>
+                  <ng-template><code>Function</code></ng-template>
+                </free-table-cell>
+                <free-table-cell>
+                  <ng-template>{{'DEMO.TREE.EVENTS.3' | translate}}</ng-template>
+                </free-table-cell>
+              </free-table-row>
+            </free-table-body>
+          </free-table>
+        </div>
+
+        <h3 class="free-title">TreeNode</h3>
+        <p>{{'DEMO.TREE.TREENODE' | translate}}</p>
+        <free-table>
+          <free-table-header>
+            <free-table-row>
+              <free-table-head><ng-template>{{'PROPERTY' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'TYPE' | translate}}</ng-template></free-table-head>
+              <free-table-head><ng-template>{{'DESCRIPTION' | translate}}</ng-template></free-table-head>
+            </free-table-row>
+          </free-table-header>
+          <free-table-body>
+            <free-table-row>
+              <free-table-cell>label</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.0' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>data</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>any</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.1' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>type</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.2' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>icon</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>any</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.3' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>expandedIcon</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.4' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>collapsedIcon</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.5' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>leaf</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.6' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
               <free-table-cell>expanded</free-table-cell>
               <free-table-cell>
                 <ng-template><code>Boolean</code></ng-template>
               </free-table-cell>
               <free-table-cell>
-                <ng-template>{{'DEMO.TREE.OPTION.1' | translate}}</ng-template>
+                <ng-template>{{'DEMO.TREE.CHILD.7' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>style</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.8' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>styleClass</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>String</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.9' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>selectable</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>Boolean</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.10' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
+            <free-table-row>
+              <free-table-cell>children</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>TreeNode[]</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.TREE.CHILD.11' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
           </free-table-body>
@@ -61,56 +287,195 @@
         <h3 class="free-toolbar">Default</h3>
         <free-tab-group direction="right">
           <free-tab header="PREVIEW">
-            <free-tree [menus]="menus"></free-tree>
+            <free-tree [value]="tree1"></free-tree>
           </free-tab>
           <free-tab header="CODE">
             <free-code lang="html">
-              &lt;free-tree [menus]="menus"&gt;&lt;/free-tree&gt;
+              &lt;free-tree [menus]="tree1"&gt;&lt;/free-tree&gt;
             </free-code>
 
             <h4>Javasript：</h4>
             <free-code lang="javascript">
-              this.menus = [
-                &#123;
-                  title: 'Message',
-                  folder: [
-                  &#123;
-                      title: 'Javascript',
-                      file: [
+              this.mainTreeService.getFiles().subscribe(files => this.tree1 = files['data']);
+
+              getFiles() &#123;
+                return this.http.get('assets/json/files.json');
+              &#125;
+            </free-code>
+
+            <h4>JSON：</h4>
+            <free-code lang="json">
+              &#123;
+                  "data": [
                     &#123;
-                         title: 'canvas'
-                    &#125;
-                      ]
-                 &#125;
+                        "label": "freeng",
+                        "data": "freeng project",
+                        "expandedIcon": "fa-folder-open",
+                        "collapsedIcon": "fa-folder",
+                        "children": [
+                            &#123;
+                            "label": "src",
+                            "data": "src resources",
+                            "expandedIcon": "fa-folder-open",
+                            "collapsedIcon": "fa-folder",
+                            "children": [
+                                  &#123;
+                                      "label": "app",
+                                      "data": "app resources",
+                                      "expandedIcon": "fa-folder-open",
+                                      "collapsedIcon": "fa-folder",
+                                      "children": [
+                                      &#123;
+                                          "label": "app.module.ts",
+                                          "icon": "fa-file-word-o",
+                                          "data": "app.module.ts"
+                                      &#125;,
+                                      &#123;
+                                          "label": "app.component.ts",
+                                          "icon": "fa-file-word-o",
+                                          "data": "app.component.ts"
+                                      &#125;
+                                  ]
+                                  &#125;,
+                                  &#123;
+                                      "label": "index.html",
+                                      "icon": "fa-file-word-o",
+                                      "data": "index.html"
+                                  &#125;,
+                                  &#123;
+                                      "label": "style.css",
+                                      "icon": "fa-file-word-o",
+                                      "data": "style.css"
+                                  &#125;
+                            ]
+                            &#125;,
+                            &#123;
+                                "label": "package.json",
+                                "icon": "fa-file-word-o",
+                                "data": "package.json"
+                            &#125;
+                        ]
+                        &#125;
                   ]
-               &#125;,
-                &#123;
-                   title: 'Css',
-                   file: [
-                 &#123;
-                      title: 'background'
-                  &#125;
-                   ]
-                &#125;
-              ];
+              &#125;
             </free-code>
           </free-tab>
         </free-tab-group>
       </div>
 
-      <!--<div class="free-card-board">-->
-        <!--<h3 class="free-toolbar">Default</h3>-->
-        <!--<free-tab-group direction="right">-->
-          <!--<free-tab header="PREVIEW">-->
-            <!--<free-tree [menus]="menus" [selectable]="true"></free-tree>-->
-          <!--</free-tab>-->
-          <!--<free-tab header="CODE">-->
-            <!--<free-code lang="html">-->
-              <!--&lt;free-tree [menus]="menus"&gt;&lt;/free-tree&gt;-->
-            <!--</free-code>-->
-          <!--</free-tab>-->
-        <!--</free-tab-group>-->
-      <!--</div>-->
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Loader</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-tree [value]="tree6" [loading]="loading"></free-tree>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tree [value]="tree6" [loading]="loading"&gt;&lt;/free-tree&gt;
+            </free-code>
+
+            <h4>Javasript：</h4>
+            <free-code lang="javascript">
+              this.mainTreeService.getFiles().subscribe(files => &#123;
+                setTimeout(() => &#123;
+                  this.tree6 = files['data'];
+                  this.loading = false;
+                &#125;, 1000);
+              &#125;);
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Single Selection</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-tree [value]="tree2" selectionMode="single" [(selection)]="selectedFile"></free-tree>
+            <div style="margin-top:8px">Selected Node: {{selectedFile ? selectedFile.label : 'none'}}</div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tree [value]="tree2" selectionMode="single" [(selection)]="selectedFile"&gt;&lt;/free-tree&gt;
+            </free-code>
+
+            <h4>Javasript：</h4>
+            <free-code lang="javascript">
+              this.selectedFile = [];
+
+              this.mainTreeService.getFiles().subscribe(files => this.tree2 = files['data']);
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Multiple Selection with Checkbox</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-tree [value]="tree3" selectionMode="checkbox" [(selection)]="selectedFiles2"></free-tree>
+            <div style="margin-top:8px">Selected Nodes: <span *ngFor="let file of selectedFiles2">
+              {{file.label}} </span></div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tree [value]="tree3" selectionMode="checkbox" [(selection)]="selectedFiles2"&gt;&lt;/free-tree&gt;
+            </free-code>
+
+            <h4>Javasript：</h4>
+            <free-code lang="javascript">
+              this.mainTreeService.getFiles().subscribe(files => this.tree3 = files['data']);
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Lazy Loading</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-tree [value]="tree4" (onNodeExpand)="nodeExpand($event)"></free-tree>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tree [value]="tree4" (onNodeExpand)="nodeExpand($event)"&gt;&lt;/free-tree&gt;
+            </free-code>
+
+            <h4>Javasript：</h4>
+            <free-code lang="javascript">
+              this.mainTreeService.getLazyFiles().subscribe(files => this.tree4 = files['data']);
+
+              nodeExpand(event) &#123;
+                if (event.node) &#123;
+                  this.mainTreeService.getLazyFiles().subscribe(nodes => event.node.children = nodes['data']);
+                &#125;
+              &#125;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">Template</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <free-tree [value]="tree5" [styleClass]="'tree-template'">
+              <ng-template let-node [fTemplate]="'default'">
+                <button fButton>{{node['label']}}</button>
+              </ng-template>
+            </free-tree>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-tree [value]="tree5" [styleClass]="'tree-template'"&gt;
+                &lt;ng-template let-node [fTemplate]="'default'"&gt;
+                  &lt;button fButton&gt;&#123;&#123;node['label']&#125;&#125;&lt;/button&gt;
+                &lt;/ng-template&gt;
+              &lt;/free-tree&gt;
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
     </div>
   </div>
   <blockquote>FreeNG - {{'MOTTO' | translate}}</blockquote>
