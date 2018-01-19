@@ -928,6 +928,9 @@
       "CHANGES": "<li>Compatible with Angular 5.0 version, Angular 4.x version Use FreeNG version 0.4.6</li>",
       "REFACTOR": "<li>Refactoring the Tree component.</li>"
     },
+    "v051": {
+      "BUG": "<li>Fix Spinner can enter text question.<a href='https://github.com/IronPans/freeng/issues/12' target='_blank'>#12</a></li></li>"
+    },
     "ADD": "Add",
     "FIX": "Fix",
     "UPDATE": "Update"

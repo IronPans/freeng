@@ -934,6 +934,9 @@
         "CHANGES": "<li>兼容 Angular 5.0 版本，Angular 4.x 版本请使用 0.4.6 版本的 FreeNG</li>",
         "REFACTOR": "<li>重构Tree组件。</li>"
       },
+      "v051": {
+        "BUG": "<li>修复Spinner可以输入文字的问题<a href='https://github.com/IronPans/freeng/issues/12' target='_blank'>#12</a></li></li>"
+      },
       "ADD": "新增",
       "FIX": "修复",
       "UPDATE": "更新"

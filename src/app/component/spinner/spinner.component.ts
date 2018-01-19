@@ -14,9 +14,12 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   selector: 'free-spinner',
   template: `
     <div class="free-spinner">
-      <button class="free-spinner-minus" #minus (click)="onMinus()" [class.disabled]="min <= value"></button>
-      <input type="text" [(ngModel)]="value">
-      <button class="free-spinner-add" #add (click)="onAdd()" [class.disabled]="max >= value"></button>
+      <button class="free-spinner-minus" #minus
+              (click)="spin($event, -1)" [class.disabled]="min <= value"></button>
+      <input type="text" [value]="_value" (keydown)="onInputKeydown($event)" (keyup)="onInputKeyup($event)"
+             (keypress)="onInputKeyPress($event)" (change)="handleChange($event)">
+      <button class="free-spinner-add" #add (click)="spin($event, 1)"
+              [class.disabled]="max >= value"></button>
     </div>
   `,
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
@@ -56,6 +59,12 @@ export class SpinnerComponent implements ControlValueAccessor, OnInit {
     }
   }
 
+  formatNumber(value: any) {
+    let v = Number(value);
+    v = isNaN(v) ? (this.min ? this.min : 0) : v;
+    return v;
+  }
+
   writeValue(value: any) {
     if (value) {
       this.value = value;
@@ -70,29 +79,45 @@ export class SpinnerComponent implements ControlValueAccessor, OnInit {
     this.onTouchedChange = fn;
   }
 
-  onAdd() {
-    if (this.max && this.max <= this.value) {
-      this.value = this.max;
-    } else {
-      this.value += this.step;
-    }
+  spin(event, add) {
+    let value = this.min ? Math.max(this.min, this.value) : this.value;
+    value = this.max ? Math.min(this.max, value) : value;
+    this.value = value + add * this.step;
     this.onModelChange(this.value);
     this.onChange.emit(this.value);
   }
 
-  onMinus() {
-    if (this.min && this.value <= this.min) {
-      this.value = this.min;
-    } else {
-      this.value -= this.step;
+  onInputKeydown(event: KeyboardEvent) {
+    if (event.which === 38) {
+      this.spin(event, 1);
+      event.preventDefault();
+    } else if (event.which === 40) {
+      this.spin(event, -1);
+      event.preventDefault();
     }
+  }
+
+  onInputKeyPress(event: KeyboardEvent) {
+    const keyPattern: RegExp = /[0-9\+\-]/;
+    if (!keyPattern.test(String.fromCharCode(event.charCode)) &&
+      event.keyCode !== 9 && event.keyCode !== 8 && event.keyCode !== 37 &&
+      event.keyCode !== 39 && event.keyCode !== 46) {
+      event.preventDefault();
+    }
+  }
+
+  onInputKeyup(event: Event) {
+    this.value = this.formatNumber((<HTMLInputElement>event.target).value);
     this.onModelChange(this.value);
+  }
+
+  handleChange(event: any) {
     this.onChange.emit(this.value);
   }
 }
 
 @NgModule({
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   declarations: [SpinnerComponent],
   exports: [SpinnerComponent]
 })
