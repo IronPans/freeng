@@ -212,7 +212,8 @@
         "是否显示时间(时分秒)，可选，默认为false",
         "是否内联显示，可选，默认为false",
         "设置宽度(只有内联显示时才生效)，可选，默认为250",
-        "是否只显示时间选择，可选，默认为false"
+        "是否只显示时间选择，可选，默认为false",
+        "选择显示的日期面板，可选，可选值：'y'、'ym'、'm'（只选择年、年月、月）"
       ],
       "EVENTS": [
         "当选择值时触发的回调事件，可选。"
@@ -936,6 +937,10 @@
       },
       "v051": {
         "BUG": "<li>修复Spinner可以输入文字的问题<a href='https://github.com/IronPans/freeng/issues/12' target='_blank'>#12</a></li></li>"
+      },
+      "v052": {
+        "FEATURE": "<li>优化日期选择器的样式</li><li>日期选择器新增年、年月或月选择面板属性dateView。</li>",
+        "BUG": "<li>修复日期选择器选择Now时无法传递值。<a href='https://github.com/IronPans/freeng/issues/14'>#14</a></li><li>修复自定义滚动框Scroll无法滚动</li>"
       },
       "ADD": "新增",
       "FIX": "修复",

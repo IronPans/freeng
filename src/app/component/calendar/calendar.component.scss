@@ -37,6 +37,7 @@
     top: 2rem;
     left: 0;
     width: 100%;
+    padding: 10px;
     height: calc(100% - 2rem);
     background: #fff;
 
@@ -52,6 +53,17 @@
 
         &:hover {
           background: #eee;
+        }
+
+        &.free-date-active {
+          color: #fff;
+          border-radius: 3px;
+          background-color: #115d8e;
+
+          span {
+            color: #fff;
+            background-color: #115d8e;
+          }
         }
       }
     }
@@ -209,10 +221,6 @@
         transition: all .25s;
         user-select: none;
         font-size: .9em;
-
-        &.current {
-          color: #666;
-        }
 
         &.today {
           background-color: #eee;

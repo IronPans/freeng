@@ -22,6 +22,7 @@
     top: 2rem;
     left: 0;
     width: 100%;
+    padding: 10px;
     height: calc(100% - 2rem);
     background: #fff; }
     .free-calendar .free-calendar-year table,
@@ -37,6 +38,15 @@
         .free-calendar .free-calendar-year table tr td:hover,
         .free-calendar .free-calendar-month table tr td:hover {
           background: #eee; }
+        .free-calendar .free-calendar-year table tr td.free-date-active,
+        .free-calendar .free-calendar-month table tr td.free-date-active {
+          color: #fff;
+          border-radius: 3px;
+          background-color: #115d8e; }
+          .free-calendar .free-calendar-year table tr td.free-date-active span,
+          .free-calendar .free-calendar-month table tr td.free-date-active span {
+            color: #fff;
+            background-color: #115d8e; }
   .free-calendar .free-calendar-year table tr:first-child td:first-child,
   .free-calendar .free-calendar-year table tr:last-child td:last-child {
     color: #999; }
@@ -152,8 +162,6 @@
         transition: all .25s;
         user-select: none;
         font-size: .9em; }
-        .free-calendar .free-calendar-wrapper .calendar-body .item.current {
-          color: #666; }
         .free-calendar .free-calendar-wrapper .calendar-body .item.today {
           background-color: #eee; }
         .free-calendar .free-calendar-wrapper .calendar-body .item.selected {

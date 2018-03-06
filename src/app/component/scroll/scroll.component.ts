@@ -262,7 +262,7 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   updatePosition() {
-    let top = this.scrollTop;
+    let top = this.scrollTop || 0;
     top = Math.min(Math.max(top, 0), this.maxScrollTop);
     this.scrollTop = top;
     this.scrollTo(top, 0, true);
@@ -369,11 +369,11 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
       if (this.isMobile) {
         this.hideBar();
       }
-      this.unbinDocumentTouchListener();
+      this.unbindDocumentTouchListener();
     });
   }
 
-  unbinDocumentTouchListener() {
+  unbindDocumentTouchListener() {
     if (this.documentTouchmoveListener) {
       this.documentTouchmoveListener();
       this.documentTouchmoveListener = null;
@@ -400,7 +400,7 @@ export class ScrollComponent implements OnInit, AfterViewInit, OnDestroy {
       this.wheelListener();
       this.wheelListener = null;
     }
-    this.unbinDocumentTouchListener();
+    this.unbindDocumentTouchListener();
     this.queueHide = null;
   }
 }

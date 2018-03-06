@@ -91,7 +91,7 @@ export class CalendarSelectorComponent {
       <div class="free-select-input" [class.free-select-timeonly]="timeOnly"
            (click)="onClick()" *ngIf="!inline">
         <input type="text" placeholder="{{pholder}}" #target (input)="onInputChange(target.value)"
-               value="{{value}}" [readonly]="readonly">
+               value="{{formatValue()}}" [readonly]="readonly">
       </div>
       <div class="free-calendar-wrapper" *ngIf="inline || opened"
            [@selectState]="'in'" [style.width]="width">
@@ -158,7 +158,8 @@ export class CalendarSelectorComponent {
             <table>
               <tbody>
               <tr *ngFor="let year of years;index as i">
-                <td *ngFor="let y of year;index as j" (click)="selectYear(i, j, y - 1)">{{y - 1}}</td>
+                <td *ngFor="let y of year;index as j"
+                    [ngClass]="{'free-date-active': currentYear == y - 1}" (click)="selectYear(i, j, y - 1)">{{y - 1}}</td>
               </tr>
               </tbody>
             </table>
@@ -167,7 +168,8 @@ export class CalendarSelectorComponent {
             <table>
               <tbody>
               <tr *ngFor="let month of months; index as i">
-                <td *ngFor="let m of month; index as j" (click)="selectMonth(i, j)">
+                <td *ngFor="let m of month; index as j"
+                    [ngClass]="{'free-date-active': currentMonth - 1 == (i * 3 + j)}" (click)="selectMonth(i, j)">
                   <span *ngIf="lang === 'en'; else cn">
                   {{m}}
                 </span>
@@ -222,6 +224,7 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
   @Input() pholder: string;
   @Input() readonly: boolean;
   @Input() timeOnly: boolean;
+  @Input() dateView: string;
   @Input()
   set minDate(value: string) {
     this._minDate = value;
@@ -333,6 +336,15 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
         this.setDate(this.defaultDate);
         this.value = this.domRenderer.dateFormat(this.currentDate, 'hh:mm:ss');
       }
+    }
+    switch (this.dateView) {
+      case 'y':
+      case 'ym':
+        this.yearState = true;
+        break;
+      case 'm':
+        this.monthState = true;
+        break;
     }
     this.onDocumentClickListener();
   }
@@ -557,14 +569,20 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
     if ((!i && !j) || (i === 3 && j === 2)) {
       return;
     }
-    this.monthState = true;
     this.selectYears = year;
+    this.selectMonths = 1;
+    if (this.dateView === 'y') {
+      this.monthState = false;
+      this.itemClick = false;
+      this.selectDate(this.selectYears + '-' + this.selectMonths + '-' + this.currentDay);
+      this.onModelChange(this.formatValue());
+    } else {
+      this.monthState = true;
+    }
   }
 
   selectMonth(i, j) {
     this.selectMonths = i * 3 + j + 1;
-    this.monthState = false;
-    this.yearState = false;
     this.itemClick = true;
     if (this.showTime) {
       this.selectDate(this.selectYears + '-' + this.selectMonths + '-' + this.currentDay
@@ -573,6 +591,20 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
       this.selectDate(this.selectYears + '-' + this.selectMonths + '-' + this.currentDay);
     }
     this.createCalendar();
+    if (this.dateView === 'ym') {
+      this.yearState = true;
+      this.monthState = false;
+      this.itemClick = false;
+      this.onModelChange(this.formatValue());
+    } else if (this.dateView === 'm') {
+      this.monthState = true;
+      this.itemClick = false;
+      this.onModelChange(this.formatValue());
+    } else {
+      this.yearState = false;
+      this.itemClick = true;
+      this.monthState = false;
+    }
   }
 
   selectDate(value: any) {
@@ -650,6 +682,7 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
   toToady() {
     this.selectDate(this.todayDate);
     this.createCalendar();
+    this.onModelChange(this.formatValue());
   }
 
   onDateSelect(event: any, item: any, index: number) {
@@ -657,7 +690,7 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
       this.selectdReset();
       this.selectDate(item.value);
       item.selected = true;
-      this.onModelChange(this.value);
+      this.onModelChange(this.formatValue());
       this.close();
     } else {
       this.itemClick = true;
@@ -693,6 +726,21 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
     this.value = this.domRenderer.dateFormat(this.currentDate, this.format);
   }
 
+  formatValue() {
+    let value: any = '';
+    if (this.value) {
+      value = this.value;
+      if (this.dateView === 'y') {
+        value = this.value.slice(0, 4);
+      } else if (this.dateView === 'ym') {
+        value = this.value.slice(0, 7);
+      } else if (this.dateView === 'm') {
+        value = this.value.slice(6, 7);
+      }
+    }
+    return value;
+  }
+
   onClick() {
     if (this.disabled) { return; }
     if (!this.opened) {
@@ -713,8 +761,16 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
     if (!this.inline) {
       this.opened = false;
       this.selfClick = false;
-      this.yearState = false;
-      this.monthState = false;
+      if (this.dateView === 'y' || this.dateView === 'ym') {
+        this.yearState = true;
+      } else {
+        this.yearState = false;
+      }
+      if (this.dateView === 'm') {
+        this.monthState = true;
+      } else {
+        this.monthState = false;
+      }
     }
   }
 
@@ -736,13 +792,9 @@ export class CalendarComponent implements ControlValueAccessor, OnInit, OnDestro
     date.setSeconds(this.currentSecond);
     this.value = this.domRenderer.dateFormat(date, 'hh:mm:ss');
     this.onChange.emit({
-      value: this.value,
-      hour: this.currentHour,
-      minute: this.currentMinute,
-      second: this.currentSecond
+      value: this.formatValue()
     });
-    console.log(this.value);
-    this.onModelChange(this.value);
+    this.onModelChange(this.formatValue());
   }
 
   onDocumentClickListener() {

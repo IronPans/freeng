@@ -46,9 +46,11 @@ testem.log
 /e2e/*.map
 
 #release
-src/app/component/tsconfig.json
 build.sh
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# package
+package-lock.json

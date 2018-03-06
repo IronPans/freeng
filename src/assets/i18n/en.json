@@ -211,7 +211,8 @@
         "Whether to display the time (hours and seconds), optional, the default is false",
         "Whether inline display, optional, default is false",
         "Set the width (only inline display when the effective), optional, the default is 250",
-        "Whether to display the time only，optional，the default is false"
+        "Whether to display the time only，optional，the default is false",
+        "Select the date panel to display, optional, optional values: 'y', 'ym', 'm' (only select the year, month, month)"
       ],
       "EVENTS": [
         "Callback event triggered when the value is change, optional."
@@ -930,6 +931,10 @@
     },
     "v051": {
       "BUG": "<li>Fix Spinner can enter text question.<a href='https://github.com/IronPans/freeng/issues/12' target='_blank'>#12</a></li></li>"
+    },
+    "v052": {
+      "FEATURE": "<li> Optimize the style of the date picker </li> <li> Date picker New Year, Year, Month, or Month Select the panel property dateView. </li>",
+      "BUG": "<li>Repairing date picker can not pass value when selecting Now。<a href='https://github.com/IronPans/freeng/issues/14'>#14</a></li><li>Fix the custom scroll box Scroll can not be scrolled</li>"
     },
     "ADD": "Add",
     "FIX": "Fix",

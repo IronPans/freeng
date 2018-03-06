@@ -2,6 +2,24 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
+## 0.5.2(2018-03-06)
+
+**Bug Fixes**
+  
+- Repairing date picker can not pass value when selecting Now。<a href='https://github.com/IronPans/freeng/issues/14'>#14</a>
+- Fix the custom scroll box Scroll can not be scrolled
+
+**Features**
+
+- Optimize the style of the date picker
+- Date picker New Year, Year, Month, or Month Select the panel property dateView
+
+## 0.5.1(2018-01-19)
+
+**Bug Fixes**
+  
+- Fix Spinner can enter text question.<a href='https://github.com/IronPans/freeng/issues/12' target='_blank'>#12</a>
+
 ## 0.5.0(2018-01-06)
 
 **CHANGES**

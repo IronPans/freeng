@@ -137,6 +137,15 @@
                 <ng-template>{{'DEMO.CALENDAR.OPTION.12' | translate}}</ng-template>
               </free-table-cell>
             </free-table-row>
+            <free-table-row>
+              <free-table-cell>dateView</free-table-cell>
+              <free-table-cell>
+                <ng-template><code>string</code></ng-template>
+              </free-table-cell>
+              <free-table-cell>
+                <ng-template>{{'DEMO.CALENDAR.OPTION.13' | translate}}</ng-template>
+              </free-table-cell>
+            </free-table-row>
           </free-table-body>
         </free-table>
       </div>
@@ -209,6 +218,26 @@
             <h4>Javascript</h4>
             <free-code lang="javascript">
               this.defaultDate = '2015/10/11';
+            </free-code>
+          </free-tab>
+        </free-tab-group>
+      </div>
+
+      <div class="free-card-board">
+        <h3 class="free-toolbar">View</h3>
+        <free-tab-group direction="right">
+          <free-tab header="PREVIEW">
+            <div style="height: 400px">
+              <free-calendar dateView="y"></free-calendar>
+              <free-calendar dateView="ym"></free-calendar>
+              <free-calendar dateView="m"></free-calendar>
+            </div>
+          </free-tab>
+          <free-tab header="CODE">
+            <free-code lang="html">
+              &lt;free-calendar dateView="y"&gt;&lt;/free-calendar&gt;
+              &lt;free-calendar dateView="ym"&gt;&lt;/free-calendar&gt;
+              &lt;free-calendar dateView="m"&gt;&lt;/free-calendar&gt;
             </free-code>
           </free-tab>
         </free-tab-group>
