@@ -1,17 +1,18 @@
 {
   "name": "freeng",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build --prod",
+    "build:aot": "ng build --aot --prod"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/IronPans/freeng.git"
   },
   "description": "UI Components for Angular",
-  "homepage": "https://ironpans.github.io/freeng/",
+  "homepage": "https://freengs.github.io",
   "keywords": [
     "angular",
     "angular4",

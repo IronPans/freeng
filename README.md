@@ -12,7 +12,7 @@ UI Components for Angular.
 
 ## Demo
 
-View all the Components in action at [HomePage](https://ironpans.github.io/freeng/)
+View all the Components in action at [HomePage](https://freengs.github.io)
 
 ## Installation
 

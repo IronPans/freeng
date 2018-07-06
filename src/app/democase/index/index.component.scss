@@ -6,6 +6,19 @@
   line-height: 1.2rem;
 }
 
+.remind {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  padding: 16px;
+  border-radius: 5px;
+  transform: translate(-50%,0);
+  color: #dd4b39;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 1px 0 10px 1px rgba(0, 0, 0, 0.3);
+}
+
 :host /deep/ {
 
   .top-menu {

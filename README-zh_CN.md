@@ -10,7 +10,7 @@ Angular 4的UI 组件。
 
 ## 实例
 
-在[HomePage](https://ironpans.github.io/freeng/)查看所有的组件
+在[HomePage](https://freengs.github.io)查看所有的组件
 
 ## 安装
 
