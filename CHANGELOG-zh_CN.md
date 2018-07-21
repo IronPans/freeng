@@ -2,6 +2,12 @@
 
 [EN CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG.md)
 
+## 0.6.1(2018-07-21)
+
+**Bug Fixes**
+
+- 修复Accordion嵌套在Steps(或其他隐藏元素中时)，展开错误
+
 ## 0.5.2(2018-03-06)
 
 **Bug Fixes**

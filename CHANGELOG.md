@@ -2,6 +2,12 @@
 
 [中文 CHANGELOG](https://github.com/IronPans/freeng/blob/master/CHANGELOG-zh_CN.md)
 
+## 0.6.1(2018-07-21)
+
+**Bug Fixes**
+
+- Repair Accordion nested in Steps (or other hidden elements), expand error.
+
 ## 0.5.2(2018-03-06)
 
 **Bug Fixes**

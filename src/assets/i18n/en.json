@@ -936,6 +936,9 @@
       "FEATURE": "<li> Optimize the style of the date picker </li> <li> Date picker New Year, Year, Month, or Month Select the panel property dateView. </li>",
       "BUG": "<li>Repairing date picker can not pass value when selecting Now。<a href='https://github.com/IronPans/freeng/issues/14'>#14</a></li><li>Fix the custom scroll box Scroll can not be scrolled</li>"
     },
+    "v061": {
+      "BUG": "<li>Repair Accordion nested in Steps (or other hidden elements), expand error.</li>"
+    },
     "ADD": "Add",
     "FIX": "Fix",
     "UPDATE": "Update"

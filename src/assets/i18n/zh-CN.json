@@ -942,6 +942,9 @@
         "FEATURE": "<li>优化日期选择器的样式</li><li>日期选择器新增年、年月或月选择面板属性dateView。</li>",
         "BUG": "<li>修复日期选择器选择Now时无法传递值。<a href='https://github.com/IronPans/freeng/issues/14'>#14</a></li><li>修复自定义滚动框Scroll无法滚动</li>"
       },
+      "v061": {
+        "BUG": "<li>修复Accordion嵌套在Steps(或其他隐藏元素中时)，展开错误</li>"
+      },
       "ADD": "新增",
       "FIX": "修复",
       "UPDATE": "更新"

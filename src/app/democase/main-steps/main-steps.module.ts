@@ -10,6 +10,7 @@ import {MainStepsComponent} from './main-steps.component';
 import {MainStepsRoutingModule} from './main-steps-routing.module';
 import {StepsModule} from '../../component/steps/steps.component';
 import {ButtonModule} from '../../component/button/button.directive';
+import {AccordionModule} from '../../component/accordion/accordion.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import {ButtonModule} from '../../component/button/button.directive';
     GridModule,
     StepsModule,
     ButtonModule,
+    AccordionModule,
     LanguageModule
   ],
   declarations: [MainStepsComponent]

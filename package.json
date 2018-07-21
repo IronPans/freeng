@@ -1,11 +1,11 @@
 {
   "name": "freeng",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve",
-    "build": "ng build --prod",
-    "build:aot": "ng build --aot --prod"
+    "start": "ng serve --open --watch --progress",
+    "build": "ng build --progress",
+    "build:aot": "ng build --aot --prod --extract-css --progress"
   },
   "repository": {
     "type": "git",

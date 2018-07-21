@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {NgModule, Component, OnInit, Input} from '@angular/core';
+import {NgModule, Component, OnInit, Input, ViewChild, AfterViewInit} from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ShareModule } from '../common/share';
 
@@ -45,7 +45,7 @@ export class AccordionGroupComponent {
           <ng-content select="f-header"></ng-content>
         </span>
       </div>
-      <div class="accordion-content" [@accordionState]="activeName"
+      <div class="accordion-content" #content [@accordionState]="activeName"
            (@accordionState.done)="transitionDone()" (@accordionState.start)="transitionStart()">
         <div class="accordion-inner">
           <ng-content></ng-content>
@@ -62,7 +62,7 @@ export class AccordionGroupComponent {
     transition('active <=> inactive', animate('300ms ease'))
   ])]
 })
-export class AccordionComponent implements OnInit {
+export class AccordionComponent implements AfterViewInit{
   @Input() header: string;
   @Input() disabled: boolean;
   @Input() toggleable: boolean;
@@ -96,6 +96,7 @@ export class AccordionComponent implements OnInit {
   isAnimating: boolean;
   activeName = 'inactive';
   accordionGroup: AccordionGroupComponent;
+  @ViewChild('content') content: any;
   constructor(accordionGroup: AccordionGroupComponent) {
     this.accordionGroup = accordionGroup;
     this.toggleable = true;
@@ -105,7 +106,10 @@ export class AccordionComponent implements OnInit {
     this.accordionGroup.addGroup(this);
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    if (this.content && !this.selected) {
+      this.content.nativeElement.style.height = '0px';
+    }
   }
 
   toggleClass() {
